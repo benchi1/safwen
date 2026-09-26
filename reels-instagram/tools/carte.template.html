@@ -1,0 +1,819 @@
+<template id="carte-template">
+  <!-- Fichier généré par tools/build-carte.mjs : modifier tools/carte.template.html -->
+  <div data-composition-id="carte" data-width="1080" data-height="1920" data-duration="56">
+    <div class="fond"></div>
+
+    <svg class="monde" data-layout-allow-overflow viewBox="0 0 1080 1920" width="1080" height="1920">
+      <defs>
+        <radialGradient id="ocean" cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stop-color="#0C2447" />
+          <stop offset="100%" stop-color="#061329" />
+        </radialGradient>
+        <linearGradient id="trace" x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0%" stop-color="#4FA3FF" stop-opacity="0.35" />
+          <stop offset="100%" stop-color="#BFE0FF" />
+        </linearGradient>
+      </defs>
+      <g id="carte-g">
+        <!--SPHERE-->
+        <!--GRATICULE-->
+        <g id="pays-g">
+<!--PAYS-->
+        </g>
+        <g id="reseau-g"></g>
+        <g id="traces-g"></g>
+      </g>
+    </svg>
+
+    <div class="vignette"></div>
+    <div id="epingles" data-layout-allow-overflow></div>
+
+    <!-- Curseur de survol (séquence d'ouverture) -->
+    <div id="curseur">
+      <svg viewBox="0 0 32 32" width="56" height="56">
+        <path d="M4 3 L27 15 L16.5 17.5 L12 28 Z" fill="#F5F8FC" stroke="#061329" stroke-width="1.6" stroke-linejoin="round" />
+      </svg>
+    </div>
+    <div id="infobulle"><span class="ib-pays"></span><span class="ib-sites"></span></div>
+
+    <!-- Moteur LEAP, vue de profil (entrée d'air à droite) -->
+    <div id="moteur" data-layout-allow-overflow>
+      <div class="moteur-inner">
+        <div class="trainee-miroir"><div class="trainee" data-layout-allow-overflow></div></div>
+        <svg viewBox="0 0 300 120" width="250" height="100">
+          <defs>
+            <linearGradient id="metal" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#F4F7FB" />
+              <stop offset="45%" stop-color="#C3CEDD" />
+              <stop offset="100%" stop-color="#5E6E88" />
+            </linearGradient>
+            <linearGradient id="coeur" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#8C98AB" />
+              <stop offset="100%" stop-color="#2B3548" />
+            </linearGradient>
+          </defs>
+          <g class="corps">
+          <path d="M8 60 L50 47 L50 73 Z" fill="url(#coeur)" />
+          <path d="M44 44 L86 37 L86 83 L44 76 Z" fill="#3A4659" />
+          <path d="M72 33 C120 19 212 13 270 15 L270 105 C212 107 120 101 72 87 Z" fill="url(#metal)" />
+          <path d="M84 40 C140 30 210 26 262 26" stroke="#FFFFFF" stroke-opacity="0.7" stroke-width="3" fill="none" />
+          <path d="M80 74 C140 84 210 88 266 88" stroke="#1A4C9C" stroke-width="5" fill="none" />
+          <ellipse cx="270" cy="60" rx="12" ry="45" fill="#D9E1EC" />
+          <ellipse cx="274" cy="60" rx="6" ry="37" fill="#1B2436" />
+          </g>
+          <text x="150" y="67" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="800" fill="#0A1F3F" letter-spacing="3">LEAP</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Bandeau haut : progression + survol -->
+    <div id="bandeau">
+      <div class="etapes"></div>
+      <div id="survol">
+        <span class="survol-label">Survol</span>
+        <span class="survol-fil"></span>
+      </div>
+    </div>
+
+    <div id="accroche-carte">
+      <p class="ac-kicker">Le réseau LEAP</p>
+      <p class="ac-titre">5 escales · 4 pays</p>
+    </div>
+
+    <div id="fiches"></div>
+
+    <style>
+      [data-composition-id="carte"] {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        color: #f5f8fc;
+      }
+      [data-composition-id="carte"] .fond {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(120% 70% at 50% 40%, #0b2447 0%, #050d1c 70%);
+      }
+      [data-composition-id="carte"] .monde {
+        position: absolute;
+        inset: 0;
+      }
+      [data-composition-id="carte"] .sphere {
+        fill: url(#ocean);
+        stroke: #1c3f73;
+        stroke-width: 1.5;
+        vector-effect: non-scaling-stroke;
+      }
+      [data-composition-id="carte"] .graticule {
+        fill: none;
+        stroke: #16345f;
+        stroke-width: 0.8;
+        vector-effect: non-scaling-stroke;
+      }
+      [data-composition-id="carte"] .pays {
+        fill: #10284a;
+        stroke: #25507f;
+        stroke-width: 0.8;
+        vector-effect: non-scaling-stroke;
+      }
+      [data-composition-id="carte"] .pays-site {
+        fill: #16335e;
+      }
+      [data-composition-id="carte"] .reseau {
+        fill: none;
+        stroke: #7fb5ff;
+        stroke-opacity: 0.45;
+        stroke-width: 2;
+        stroke-dasharray: 2 9;
+        stroke-linecap: round;
+        vector-effect: non-scaling-stroke;
+      }
+      [data-composition-id="carte"] .trace {
+        fill: none;
+        stroke: url(#trace);
+        stroke-width: 5;
+        stroke-linecap: round;
+        vector-effect: non-scaling-stroke;
+        filter: drop-shadow(0 0 6px rgba(79, 163, 255, 0.8));
+      }
+      [data-composition-id="carte"] .vignette {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, rgba(5, 13, 28, 0.85) 0%, rgba(5, 13, 28, 0) 22%),
+          linear-gradient(0deg, rgba(5, 13, 28, 0.95) 0%, rgba(5, 13, 28, 0) 45%);
+      }
+      [data-composition-id="carte"] #epingles {
+        position: absolute;
+        inset: 0;
+      }
+      [data-composition-id="carte"] .epingle {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+      }
+      [data-composition-id="carte"] .ep-corps {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      [data-composition-id="carte"] .ep-point {
+        position: absolute;
+        left: -9px;
+        top: -9px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #f5f8fc;
+        border: 4px solid #4fa3ff;
+        box-shadow: 0 0 18px rgba(79, 163, 255, 0.9);
+      }
+      [data-composition-id="carte"] .ep-autre .ep-point {
+        left: -6px;
+        top: -6px;
+        width: 12px;
+        height: 12px;
+        border-width: 3px;
+        background: #bfe0ff;
+      }
+      [data-composition-id="carte"] .ep-onde {
+        position: absolute;
+        left: -20px;
+        top: -20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid #4fa3ff;
+      }
+      [data-composition-id="carte"] .ep-nom {
+        position: absolute;
+        top: -17px;
+        white-space: nowrap;
+        font-size: 26px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        color: #f5f8fc;
+        text-shadow: 0 2px 10px rgba(5, 13, 28, 0.95);
+      }
+      [data-composition-id="carte"] .ep-nom.droite {
+        left: 22px;
+      }
+      [data-composition-id="carte"] .ep-nom.gauche {
+        right: 22px;
+      }
+      [data-composition-id="carte"] .ep-nom.haut {
+        left: -40px;
+        top: -58px;
+      }
+      [data-composition-id="carte"] #curseur,
+      [data-composition-id="carte"] #infobulle,
+      [data-composition-id="carte"] #moteur {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      [data-composition-id="carte"] #curseur svg {
+        filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+      }
+      [data-composition-id="carte"] #infobulle {
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        padding: 16px 24px;
+        border-radius: 14px;
+        background: rgba(245, 248, 252, 0.96);
+        color: #0a1f3f;
+        white-space: nowrap;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+      }
+      [data-composition-id="carte"] .ib-pays {
+        font-size: 34px;
+        font-weight: 800;
+      }
+      [data-composition-id="carte"] .ib-sites {
+        font-size: 26px;
+        font-weight: 600;
+        color: #1a4c9c;
+      }
+      [data-composition-id="carte"] .moteur-inner {
+        position: absolute;
+        left: -125px;
+        top: -50px;
+        width: 250px;
+        height: 100px;
+        filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.55));
+      }
+      [data-composition-id="carte"] .trainee-miroir {
+        position: absolute;
+        inset: 0;
+        transform-origin: 125px 50px;
+      }
+      [data-composition-id="carte"] .trainee {
+        transform-origin: 100% 50%;
+        position: absolute;
+        left: -300px;
+        top: 38px;
+        width: 330px;
+        height: 24px;
+        border-radius: 12px;
+        background: linear-gradient(90deg, rgba(191, 224, 255, 0) 0%, rgba(191, 224, 255, 0.55) 100%);
+      }
+      [data-composition-id="carte"] #bandeau {
+        position: absolute;
+        top: 262px;
+        left: 80px;
+        right: 140px;
+      }
+      [data-composition-id="carte"] .etapes {
+        display: flex;
+        gap: 12px;
+      }
+      [data-composition-id="carte"] .etape {
+        flex: 1;
+        height: 6px;
+        border-radius: 3px;
+        background: rgba(191, 224, 255, 0.18);
+        overflow: hidden;
+      }
+      [data-composition-id="carte"] .etape-rempli {
+        width: 100%;
+        height: 100%;
+        background: #4fa3ff;
+        transform-origin: left center;
+        transform: scaleX(0);
+      }
+      [data-composition-id="carte"] #survol {
+        margin-top: 26px;
+        display: flex;
+        align-items: baseline;
+        gap: 18px;
+        white-space: nowrap;
+      }
+      [data-composition-id="carte"] .survol-label {
+        font-size: 24px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #4fa3ff;
+      }
+      [data-composition-id="carte"] .survol-fil {
+        font-size: 38px;
+        font-weight: 700;
+        color: rgba(245, 248, 252, 0.45);
+      }
+      [data-composition-id="carte"] .survol-fil b {
+        color: #f5f8fc;
+        font-weight: 800;
+      }
+      [data-composition-id="carte"] #accroche-carte {
+        position: absolute;
+        top: 300px;
+        left: 80px;
+        right: 140px;
+      }
+      [data-composition-id="carte"] .ac-kicker {
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #4fa3ff;
+      }
+      [data-composition-id="carte"] .ac-titre {
+        margin-top: 12px;
+        font-size: 84px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+      [data-composition-id="carte"] .fiche {
+        position: absolute;
+        left: 80px;
+        right: 140px;
+        top: 1040px;
+        padding: 30px 34px 32px;
+        border-radius: 22px;
+        background: rgba(10, 31, 63, 0.9);
+        border: 1px solid rgba(127, 181, 255, 0.28);
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+        overflow: hidden;
+      }
+      [data-composition-id="carte"] .fiche::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 8px;
+        background: linear-gradient(180deg, #4fa3ff, #1a4c9c);
+      }
+      [data-composition-id="carte"] .fi-kicker {
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #4fa3ff;
+      }
+      [data-composition-id="carte"] .fi-ville {
+        margin-top: 8px;
+        font-size: 66px;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.02;
+      }
+      [data-composition-id="carte"] .fi-nom {
+        margin-top: 10px;
+        font-size: 28px;
+        font-weight: 600;
+        color: #bfe0ff;
+      }
+      [data-composition-id="carte"] .fi-adresse {
+        margin-top: 14px;
+        font-size: 24px;
+        line-height: 1.4;
+        color: #b4c4da;
+      }
+      [data-composition-id="carte"] .fi-role {
+        display: inline-block;
+        margin-top: 18px;
+        padding: 8px 16px;
+        border-radius: 999px;
+        font-size: 22px;
+        font-weight: 700;
+        color: #0a1f3f;
+        background: #bfe0ff;
+      }
+    </style>
+
+    <script>
+      (function () {
+        const D = /*__DATA__*/null;
+        const ROOT = document.querySelector('[data-composition-id="carte"]');
+        const q = (s) => ROOT.querySelector(s);
+        const SVGNS = "http://www.w3.org/2000/svg";
+
+        // ---- Réglages du montage (secondes, temps de la composition) ----
+        const DUREE = 56;
+        const CX = 540;
+        const CY = 790;
+        const MONDE_A = { t: 5.0, c: [1000, 560], z: 0.5 };
+        const MONDE_B = { t: 10.2, c: [1010, 470], z: 0.58 };
+        const ARRIVEES = [11.8, 20.0, 29.0, 38.0, 45.0];
+        const DEPARTS = [16.8, 24.8, 33.0, 41.2, 48.6];
+        const FIN = { t0: 48.6, t1: 50.8, c: [1000, 600], z: 0.5 };
+        const ZOOM = { corbeil: 30, casablanca: 6.5, queretaro: 4.2, suzhou: 4.2, villaroche: 32 };
+        const CROISIERE = [3.4, 1.5, 0.62, 1.05];
+        const DERIVE = 1.07;
+        const PLANE = 150; // hauteur du moteur au-dessus de l'épingle à l'escale
+        const ROLES = {
+          corbeil: "Production de pièces moteur",
+          casablanca: "Maintenance moteurs · Atelier LEAP en préparation",
+          queretaro: "Pièces pour CFM56 et LEAP",
+          suzhou: "Site industriel",
+          villaroche: "Assemblage et essais du LEAP",
+        };
+        const SURVOL_INTRO = [
+          { id: "250", nom: "France", sites: "5 sites", cible: "corbeil", t: 6.0 },
+          { id: "504", nom: "Maroc", sites: "Casablanca", cible: "casablanca", t: 7.1 },
+          { id: "484", nom: "Mexique", sites: "Querétaro", cible: "queretaro", t: 8.1 },
+          { id: "156", nom: "Chine", sites: "Suzhou", cible: "suzhou", t: 9.1 },
+        ];
+        const SURVOL_INTRO_FIN = 10.1;
+
+        // ---- Outils ----
+        const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+        const lerp = (a, b, p) => a + (b - a) * p;
+        const lerp2 = (a, b, p) => [lerp(a[0], b[0], p), lerp(a[1], b[1], p)];
+        const eio = (p) => (p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2);
+        const eioInv = (y) => (y < 0.5 ? Math.sqrt(y / 2) : 1 - Math.sqrt((1 - y) / 2));
+        const lisse = (a, b, v) => {
+          const x = clamp((v - a) / (b - a));
+          return x * x * (3 - 2 * x);
+        };
+        const zlog = (a, b, p) => Math.exp(lerp(Math.log(a), Math.log(b), p));
+        const hex = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+        const mix = (a, b, p) => a.map((v, i) => Math.round(lerp(v, b[i], p)));
+        const rgb = (c) => `rgb(${c[0]},${c[1]},${c[2]})`;
+
+        const SITES = D.sites;
+        const TOUS = [...SITES, ...D.autres];
+        const parId = Object.fromEntries(TOUS.map((s) => [s.id, s]));
+
+        const bez = (i, p) => {
+          const a = SITES[i].xy;
+          const b = SITES[i + 1].xy;
+          const c = D.vols[i].c;
+          const u = 1 - p;
+          return [
+            u * u * a[0] + 2 * u * p * c[0] + p * p * b[0],
+            u * u * a[1] + 2 * u * p * c[1] + p * p * b[1],
+          ];
+        };
+        const bezD = (i, p) => {
+          const a = SITES[i].xy;
+          const b = SITES[i + 1].xy;
+          const c = D.vols[i].c;
+          return [
+            2 * (1 - p) * (c[0] - a[0]) + 2 * p * (b[0] - c[0]),
+            2 * (1 - p) * (c[1] - a[1]) + 2 * p * (b[1] - c[1]),
+          ];
+        };
+
+        // ---- Construction du DOM ----
+        const gReseau = q("#reseau-g");
+        const gTraces = q("#traces-g");
+        const traces = D.vols.map((v, i) => {
+          const a = SITES[i].xy;
+          const b = SITES[i + 1].xy;
+          const d = `M${a[0]},${a[1]} Q${v.c[0]},${v.c[1]} ${b[0]},${b[1]}`;
+          const r = document.createElementNS(SVGNS, "path");
+          r.setAttribute("d", d);
+          r.setAttribute("class", "reseau");
+          gReseau.appendChild(r);
+          const t = document.createElementNS(SVGNS, "path");
+          t.setAttribute("d", d);
+          t.setAttribute("class", "trace");
+          t.setAttribute("pathLength", "1");
+          t.setAttribute("stroke-dasharray", "1 1");
+          t.setAttribute("stroke-dashoffset", "1");
+          gTraces.appendChild(t);
+          return t;
+        });
+
+        const COTE = {
+          corbeil: "gauche",
+          villaroche: "droite",
+          gennevilliers: "droite",
+          creusot: "droite",
+          chatellerault: "gauche",
+        };
+        // Niveaux d'étiquettes : « France », puis « Île-de-France », puis chaque site.
+        const IDF = new Set(["corbeil", "villaroche", "gennevilliers"]);
+        const REGIONS = new Set(["creusot", "chatellerault"]);
+        const epingles = TOUS.map((s) => {
+          const e = document.createElement("div");
+          const principal = SITES.includes(s);
+          e.className = "epingle" + (principal ? "" : " ep-autre");
+          e.id = "ep-" + s.id;
+          e.innerHTML =
+            '<div class="ep-corps"><div class="ep-onde"></div><div class="ep-point"></div>' +
+            `<div class="ep-nom ${COTE[s.id] || "droite"}">${s.ville}</div></div>`;
+          q("#epingles").appendChild(e);
+          return { s, e, onde: e.querySelector(".ep-onde"), nom: e.querySelector(".ep-nom") };
+        });
+        // Étiquette de regroupement « France » pour les vues éloignées.
+        const grappe = document.createElement("div");
+        grappe.className = "epingle";
+        grappe.innerHTML = '<div class="ep-nom droite">France · 5 sites</div>';
+        q("#epingles").appendChild(grappe);
+        const grappeNom = grappe.firstChild;
+
+        const etapes = q(".etapes");
+        const remplis = SITES.map(() => {
+          const e = document.createElement("div");
+          e.className = "etape";
+          e.innerHTML = '<div class="etape-rempli"></div>';
+          etapes.appendChild(e);
+          return e.firstChild;
+        });
+
+        const fiches = SITES.map((s, i) => {
+          const f = document.createElement("div");
+          f.className = "fiche";
+          f.id = "fiche-" + s.id;
+          f.innerHTML =
+            `<p class="fi-kicker">Escale 0${i + 1} · ${s.pays}</p>` +
+            `<p class="fi-ville">${s.ville}</p>` +
+            `<p class="fi-nom">${s.nom}</p>` +
+            `<p class="fi-adresse">${s.adresse.join("<br>")}</p>` +
+            `<span class="fi-role">${ROLES[s.id]}</span>`;
+          q("#fiches").appendChild(f);
+          return f;
+        });
+
+        const paysEl = {};
+        const BASE = hex("#10284A");
+        const BASE_SITE = hex("#16335E");
+        const VISITE = hex("#1D4A8C");
+        const SURVOL = hex("#4FA3FF");
+        const touches = new Set();
+        D.vols.forEach((v) => v.survols.forEach((s) => touches.add(s.id)));
+        SITES.forEach((s) => touches.add(s.iso));
+        touches.forEach((id) => (paysEl[id] = q("#c-" + id)));
+        const estSite = new Set(SITES.map((s) => s.iso));
+
+        const moteur = q("#moteur");
+        const moteurInner = q(".moteur-inner");
+        const trainee = q(".trainee");
+        const traineeMiroir = q(".trainee-miroir");
+        const corps = q("#moteur .corps");
+        const gCarte = q("#carte-g");
+        const survolFil = q(".survol-fil");
+        const curseur = q("#curseur");
+        const infobulle = q("#infobulle");
+        const ibPays = q(".ib-pays");
+        const ibSites = q(".ib-sites");
+
+        // ---- Caméra ----
+        function glisse(t, t0, t1, cA, zA, cibleB, zB) {
+          // Zoom logarithmique ; la cible glisse linéairement vers le centre de l'écran.
+          const p = eio(clamp((t - t0) / (t1 - t0)));
+          const z = zlog(zA, zB, p);
+          const off = [(cibleB[0] - cA[0]) * zA, (cibleB[1] - cA[1]) * zA];
+          return { c: [cibleB[0] - (off[0] * (1 - p)) / z, cibleB[1] - (off[1] * (1 - p)) / z], z };
+        }
+
+        function etat(t) {
+          // Renvoie { cam, vol, p, escale } pour l'instant t.
+          if (t < MONDE_B.t) {
+            const p = eio(clamp((t - MONDE_A.t) / (MONDE_B.t - MONDE_A.t)));
+            return { cam: { c: lerp2(MONDE_A.c, MONDE_B.c, p), z: lerp(MONDE_A.z, MONDE_B.z, p) } };
+          }
+          if (t < ARRIVEES[0]) {
+            return { cam: glisse(t, MONDE_B.t, ARRIVEES[0], MONDE_B.c, MONDE_B.z, SITES[0].xy, ZOOM.corbeil) };
+          }
+          for (let i = 0; i < SITES.length; i++) {
+            const s = SITES[i];
+            if (t < DEPARTS[i]) {
+              const k = (t - ARRIVEES[i]) / (DEPARTS[i] - ARRIVEES[i]);
+              return { cam: { c: s.xy, z: ZOOM[s.id] * lerp(1, DERIVE, clamp(k)) }, escale: i };
+            }
+            if (i < SITES.length - 1 && t < ARRIVEES[i + 1]) {
+              const u = (t - DEPARTS[i]) / (ARRIVEES[i + 1] - DEPARTS[i]);
+              const p = eio(clamp(u));
+              const zA = ZOOM[s.id] * DERIVE;
+              const zB = ZOOM[SITES[i + 1].id];
+              const creux = Math.sin(Math.PI * p) * Math.log(CROISIERE[i] / Math.sqrt(zA * zB));
+              return { cam: { c: bez(i, p), z: zlog(zA, zB, p) * Math.exp(creux) }, vol: i, p };
+            }
+          }
+          const der = SITES[SITES.length - 1];
+          if (t < FIN.t1) {
+            return { cam: glisseInverse(t, der.xy, ZOOM[der.id] * DERIVE), fin: true };
+          }
+          const k = clamp((t - FIN.t1) / (DUREE - FIN.t1));
+          return { cam: { c: FIN.c, z: FIN.z * lerp(1, 1.04, k) }, fin: true };
+        }
+
+        function glisseInverse(t, cible, zA) {
+          const p = eio(clamp((t - FIN.t0) / (FIN.t1 - FIN.t0)));
+          const z = zlog(zA, FIN.z, p);
+          const off = [(cible[0] - FIN.c[0]) * FIN.z * p, (cible[1] - FIN.c[1]) * FIN.z * p];
+          return { c: [cible[0] - off[0] / z, cible[1] - off[1] / z], z };
+        }
+
+        const ecran = (cam, xy) => [CX + (xy[0] - cam.c[0]) * cam.z, CY + (xy[1] - cam.c[1]) * cam.z];
+        const place = (el, x, y, extra = "") => {
+          el.style.transform = `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) ${extra}`;
+        };
+
+        // ---- Rendu d'une image ----
+        let dernierFil = "";
+        function rendu(t) {
+          const E = etat(t);
+          const cam = E.cam;
+          gCarte.setAttribute(
+            "transform",
+            `translate(${(CX - cam.c[0] * cam.z).toFixed(2)} ${(CY - cam.c[1] * cam.z).toFixed(2)}) scale(${cam.z.toFixed(4)})`,
+          );
+
+          // Épingles et étiquettes selon le zoom.
+          const niv1 = lisse(2.4, 4, cam.z);
+          const niv2 = lisse(14, 20, cam.z);
+          epingles.forEach(({ s, e, onde, nom }, k) => {
+            const [x, y] = ecran(cam, s.xy);
+            place(e, x, y);
+            const ph = (t * 0.7 + k * 0.23) % 1;
+            onde.style.transform = `scale(${(0.4 + ph * 1.6).toFixed(3)})`;
+            onde.style.opacity = (1 - ph).toFixed(3);
+            const o = IDF.has(s.id) ? niv2 : REGIONS.has(s.id) ? niv1 * (1 - niv2) : 1;
+            nom.style.opacity = o.toFixed(3);
+            nom.style.visibility = o < 0.01 ? "hidden" : "visible";
+          });
+          const [gx, gy] = ecran(cam, parId.corbeil.xy);
+          place(grappe, gx, gy);
+          const oF = 1 - niv1;
+          const oI = niv1 * (1 - niv2);
+          grappeNom.textContent = oF >= oI ? "France · 5 sites" : "Île-de-France · 3 sites";
+          grappeNom.style.opacity = Math.max(oF, oI).toFixed(3);
+          grappeNom.style.visibility = Math.max(oF, oI) < 0.01 ? "hidden" : "visible";
+
+          // Traces : dessinées jusqu'à la position du moteur.
+          traces.forEach((tr, i) => {
+            let prog = 0;
+            if (E.vol === i) prog = E.p;
+            else if (t >= ARRIVEES[i + 1]) prog = 1;
+            tr.setAttribute("stroke-dashoffset", (1 - prog).toFixed(4));
+          });
+
+          // Pays : visités, survolés, escale active.
+          const intens = {};
+          const visite = {};
+          SITES.forEach((s, i) => {
+            if (t >= ARRIVEES[i]) visite[s.iso] = Math.max(visite[s.iso] || 0, lisse(ARRIVEES[i], ARRIVEES[i] + 0.6, t));
+          });
+          if (E.escale !== undefined) {
+            const i = E.escale;
+            const a = lisse(ARRIVEES[i] - 0.4, ARRIVEES[i] + 0.3, t) * (1 - lisse(DEPARTS[i] - 0.3, DEPARTS[i] + 0.2, t));
+            intens[SITES[i].iso] = Math.max(intens[SITES[i].iso] || 0, a * 0.3);
+          }
+          if (E.vol !== undefined) {
+            for (const sg of D.vols[E.vol].survols) {
+              const dist = E.p < sg.p0 ? sg.p0 - E.p : E.p > sg.p1 ? E.p - sg.p1 : 0;
+              const h = 1 - lisse(0, 0.05, dist);
+              if (h > 0) intens[sg.id] = Math.max(intens[sg.id] || 0, h);
+            }
+          }
+          let introIdx = -1;
+          if (t >= SURVOL_INTRO[0].t - 0.3 && t < SURVOL_INTRO_FIN + 0.3) {
+            SURVOL_INTRO.forEach((h, k) => {
+              const fin = k < SURVOL_INTRO.length - 1 ? SURVOL_INTRO[k + 1].t : SURVOL_INTRO_FIN;
+              const a = lisse(h.t + 0.25, h.t + 0.5, t) * (1 - lisse(fin - 0.05, fin + 0.2, t));
+              if (a > 0) intens[h.id] = Math.max(intens[h.id] || 0, a);
+              if (t >= h.t) introIdx = k;
+            });
+          }
+          for (const id in paysEl) {
+            const el = paysEl[id];
+            if (!el) continue;
+            let c = estSite.has(id) ? BASE_SITE : BASE;
+            if (visite[id]) c = mix(c, VISITE, visite[id]);
+            if (intens[id]) c = mix(c, SURVOL, intens[id] * 0.9);
+            el.style.fill = rgb(c);
+          }
+
+          // Curseur et infobulle de la séquence d'ouverture.
+          if (introIdx >= 0 && t < SURVOL_INTRO_FIN + 0.4) {
+            const h = SURVOL_INTRO[introIdx];
+            const prec = SURVOL_INTRO[introIdx - 1];
+            const pB = ecran(cam, parId[h.cible].xy);
+            const pA = prec ? ecran(cam, parId[prec.cible].xy) : [pB[0] + 260, pB[1] + 420];
+            const m = eio(clamp((t - h.t) / 0.45));
+            const x = lerp(pA[0], pB[0], m) + 6;
+            const y = lerp(pA[1], pB[1], m) + 6;
+            const vis = lisse(SURVOL_INTRO[0].t - 0.2, SURVOL_INTRO[0].t + 0.2, t) * (1 - lisse(SURVOL_INTRO_FIN, SURVOL_INTRO_FIN + 0.35, t));
+            place(curseur, x, y);
+            curseur.style.opacity = vis.toFixed(3);
+            ibPays.textContent = h.nom;
+            ibSites.textContent = h.sites;
+            const ib = lisse(h.t + 0.3, h.t + 0.5, t) * vis;
+            const bx = Math.min(x + 40, 560);
+            place(infobulle, bx, y + 58, `scale(${(0.92 + 0.08 * ib).toFixed(3)})`);
+            infobulle.style.opacity = ib.toFixed(3);
+          } else {
+            curseur.style.opacity = "0";
+            infobulle.style.opacity = "0";
+          }
+
+          // Moteur.
+          let pos;
+          let angle = 0;
+          let sx = 1;
+          let vitesse = 0;
+          if (E.vol !== undefined) {
+            const i = E.vol;
+            const p = E.p;
+            const e = ecran(cam, bez(i, p));
+            const sol = 1 - lisse(0, 0.16, p) * lisse(0, 0.16, 1 - p);
+            const d = bezD(i, p);
+            const dir = Math.sign(SITES[i + 1].xy[0] - SITES[i].xy[0]) || 1;
+            const prev = i > 0 ? Math.sign(SITES[i].xy[0] - SITES[i - 1].xy[0]) || 1 : 1;
+            sx = lerp(prev, dir, lisse(0, 0.1, p));
+            const brut = (Math.atan2(d[1], d[0]) * 180) / Math.PI;
+            angle = (dir < 0 ? brut - 180 : brut) * (1 - sol);
+            if (angle > 180) angle -= 360;
+            if (angle < -180) angle += 360;
+            pos = [e[0], e[1] - PLANE * sol + Math.sin(t * 2.4) * 5 * sol];
+            vitesse = 1 - sol;
+          } else if (E.escale !== undefined) {
+            const i = E.escale;
+            const e = ecran(cam, SITES[i].xy);
+            pos = [e[0], e[1] - PLANE + Math.sin(t * 2.4) * 5];
+            sx = i > 0 ? Math.sign(SITES[i].xy[0] - SITES[i - 1].xy[0]) || 1 : 1;
+          } else if (E.fin) {
+            const der = SITES[SITES.length - 1];
+            const e = ecran(cam, der.xy);
+            pos = [e[0], e[1] - PLANE];
+            sx = Math.sign(der.xy[0] - SITES[SITES.length - 2].xy[0]) || 1;
+          } else {
+            const e = ecran(cam, SITES[0].xy);
+            pos = [e[0], e[1] - PLANE];
+          }
+          const apparition = lisse(ARRIVEES[0] - 0.3, ARRIVEES[0] + 0.35, t);
+          const envol = lisse(FIN.t0, FIN.t0 + 0.8, t);
+          const echelle = (0.3 + 0.7 * apparition) * (1 + envol * 1.4);
+          // Le corps est retourné en miroir, jamais le texte « LEAP ».
+          const sens = sx < 0 ? -1 : 1;
+          corps.setAttribute("transform", sens < 0 ? "matrix(-1 0 0 1 300 0)" : "");
+          traineeMiroir.style.transform = `scaleX(${sens})`;
+          place(moteur, pos[0], pos[1] - envol * 160, `rotate(${angle.toFixed(2)}deg) scale(${(Math.abs(sx) * echelle).toFixed(3)}, ${echelle.toFixed(3)})`);
+          moteur.style.opacity = (apparition * (1 - envol)).toFixed(3);
+          trainee.style.opacity = (vitesse * 0.9).toFixed(3);
+          trainee.style.transform = `scaleX(${(0.3 + 0.7 * vitesse).toFixed(3)})`;
+
+          // Progression des escales.
+          remplis.forEach((r, i) => {
+            const debut = i === 0 ? MONDE_B.t : DEPARTS[i - 1];
+            const k = lisse(debut, ARRIVEES[i], t);
+            r.style.transform = `scaleX(${k.toFixed(3)})`;
+          });
+
+          // Fil d'Ariane des pays survolés.
+          let fil = "";
+          if (E.vol !== undefined) {
+            const et = D.vols[E.vol].etiquettes.filter((s) => s.p0 <= E.p);
+            fil = et
+              .slice(-3)
+              .map((s, k, arr) => (k === arr.length - 1 ? `<b>${s.nom}</b>` : s.nom))
+              .join("  ›  ");
+          } else if (E.escale !== undefined) {
+            fil = `<b>${SITES[E.escale].ville}</b>`;
+          } else if (!E.fin) {
+            fil = `<b>${SITES[0].ville}</b>`;
+          }
+          if (fil !== dernierFil) {
+            survolFil.innerHTML = fil;
+            dernierFil = fil;
+          }
+          q(".survol-label").textContent = E.vol !== undefined ? "Survol" : E.escale !== undefined ? "Escale" : "Cap sur";
+        }
+
+        // ---- Timeline ----
+        const tl = gsap.timeline({ paused: true });
+        const horloge = { t: 0 };
+        tl.to(horloge, { t: DUREE, duration: DUREE, ease: "none", onUpdate: () => rendu(horloge.t) }, 0);
+
+        // Accroche de la carte.
+        tl.from("#accroche-carte .ac-kicker", { opacity: 0, y: 24, duration: 0.5 }, 5.3)
+          .from("#accroche-carte .ac-titre", { opacity: 0, y: 40, duration: 0.6, ease: "power3.out" }, 5.45)
+          .to("#accroche-carte", { opacity: 0, y: -30, duration: 0.5, ease: "power2.in" }, 9.8);
+
+        // Épingles : apparition en cascade.
+        tl.from("#epingles .ep-corps", { scale: 0, duration: 0.5, ease: "back.out(2.2)", stagger: 0.08 }, 5.6);
+        tl.from("#epingles", { opacity: 0, duration: 0.3 }, 5.6);
+
+        // Réseau pointillé.
+        tl.from("#reseau-g", { opacity: 0, duration: 1.2 }, 6.2);
+
+        // Bandeau haut.
+        tl.from("#bandeau", { opacity: 0, y: -20, duration: 0.5 }, 10.6);
+        tl.to("#bandeau", { opacity: 0, duration: 0.5 }, FIN.t0);
+
+        // Fiches adresses.
+        fiches.forEach((f, i) => {
+          const a = ARRIVEES[i] + 0.2;
+          const d = DEPARTS[i] - 0.45;
+          tl.fromTo(f, { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, a);
+          tl.from(f.children, { opacity: 0, y: 16, duration: 0.4, stagger: 0.07 }, a + 0.15);
+          tl.to(f, { opacity: 0, y: 40, duration: 0.4, ease: "power2.in" }, d);
+        });
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["carte"] = tl;
+        rendu(0);
+      })();
+    </script>
+  </div>
+</template>

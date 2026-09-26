@@ -1,0 +1,140 @@
+<template id="intro-template">
+  <div data-composition-id="intro" data-width="1080" data-height="1920" data-duration="5.6">
+    <div class="in-scene">
+    <div class="in-fond"></div>
+    <div class="in-grille"></div>
+
+    <div class="in-soufflante">
+      <svg viewBox="-400 -400 800 800" width="760" height="760">
+        <defs>
+          <radialGradient id="in-disque" r="50%">
+            <stop offset="0%" stop-color="#0E1A2E" />
+            <stop offset="100%" stop-color="#03070F" />
+          </radialGradient>
+          <linearGradient id="in-levre" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0%" stop-color="#F4F7FB" />
+            <stop offset="60%" stop-color="#9AA9BF" />
+            <stop offset="100%" stop-color="#46556E" />
+          </linearGradient>
+          <radialGradient id="in-cone" cx="40%" cy="35%" r="70%">
+            <stop offset="0%" stop-color="#F4F7FB" />
+            <stop offset="100%" stop-color="#5E6E88" />
+          </radialGradient>
+        </defs>
+        <circle r="392" fill="url(#in-levre)" />
+        <circle r="352" fill="url(#in-disque)" />
+        <g class="in-aubes"></g>
+        <g class="in-cone">
+          <circle r="78" fill="url(#in-cone)" />
+          <path d="M0 0 C 20 -30, 50 -40, 70 -30" stroke="#0A1F3F" stroke-width="7" fill="none" stroke-linecap="round" />
+        </g>
+      </svg>
+    </div>
+
+    <div class="in-textes">
+      <p class="in-kicker">Safran Aircraft Engines</p>
+      <h1 class="in-titre">Un moteur,<br />un réseau mondial.</h1>
+    </div>
+    </div>
+
+    <style>
+      [data-composition-id="intro"] {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        color: #f5f8fc;
+      }
+      [data-composition-id="intro"] .in-scene {
+        position: absolute;
+        inset: 0;
+      }
+      [data-composition-id="intro"] .in-fond {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(90% 55% at 50% 38%, #123067 0%, #050d1c 75%);
+      }
+      [data-composition-id="intro"] .in-grille {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(127, 181, 255, 0.07) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(127, 181, 255, 0.07) 1px, transparent 1px);
+        background-size: 60px 60px;
+      }
+      [data-composition-id="intro"] .in-soufflante {
+        position: absolute;
+        left: 160px;
+        top: 330px;
+        width: 760px;
+        height: 760px;
+        filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.6));
+      }
+      [data-composition-id="intro"] .in-textes {
+        position: absolute;
+        left: 80px;
+        right: 140px;
+        top: 1170px;
+      }
+      [data-composition-id="intro"] .in-kicker {
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #4fa3ff;
+      }
+      [data-composition-id="intro"] .in-titre {
+        margin-top: 18px;
+        font-size: 96px;
+        font-weight: 800;
+        line-height: 1.02;
+        letter-spacing: -0.035em;
+      }
+    </style>
+
+    <script>
+      (function () {
+        const R = document.querySelector('[data-composition-id="intro"]');
+        const NS = "http://www.w3.org/2000/svg";
+        // 18 aubes de soufflante à flèche prononcée, bord d'attaque clair.
+        const g = R.querySelector(".in-aubes");
+        const pt = (r, a) => `${(r * Math.cos(a)).toFixed(1)},${(r * Math.sin(a)).toFixed(1)}`;
+        for (let k = 0; k < 18; k++) {
+          const a = (k / 18) * Math.PI * 2;
+          const d = Math.PI / 180;
+          const corps = document.createElementNS(NS, "path");
+          corps.setAttribute(
+            "d",
+            `M${pt(80, a - 6 * d)} Q${pt(220, a - 2 * d)} ${pt(348, a + 12 * d)} L${pt(348, a + 21 * d)} Q${pt(220, a + 12 * d)} ${pt(80, a + 8 * d)} Z`,
+          );
+          corps.setAttribute("fill", "#1B2A44");
+          corps.setAttribute("stroke", "#2E4466");
+          corps.setAttribute("stroke-width", "1.5");
+          g.appendChild(corps);
+          const bord = document.createElementNS(NS, "path");
+          bord.setAttribute("d", `M${pt(80, a - 6 * d)} Q${pt(220, a - 2 * d)} ${pt(348, a + 12 * d)}`);
+          bord.setAttribute("stroke", "#C9D5E6");
+          bord.setAttribute("stroke-width", "4");
+          bord.setAttribute("fill", "none");
+          g.appendChild(bord);
+        }
+
+        const S = '[data-composition-id="intro"]';
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo(S + " .in-aubes", { rotation: 0, svgOrigin: "0 0" }, { rotation: 900, svgOrigin: "0 0", duration: 5.6, ease: "power1.in" }, 0)
+          .fromTo(S + " .in-cone", { rotation: 0, svgOrigin: "0 0" }, { rotation: 900, svgOrigin: "0 0", duration: 5.6, ease: "power1.in" }, 0)
+          .from(S + " .in-soufflante", { scale: 0.6, opacity: 0, duration: 1.1, ease: "power3.out" }, 0)
+          .from(S + " .in-grille", { opacity: 0, duration: 1.2 }, 0)
+          .from(S + " .in-kicker", { opacity: 0, y: 30, duration: 0.5 }, 0.5)
+          .from(S + " .in-titre", { opacity: 0, y: 60, duration: 0.7, ease: "power3.out" }, 0.7)
+          // Transition : la soufflante avale la caméra, puis révèle la carte.
+          .to(S + " .in-textes", { opacity: 0, y: -40, duration: 0.4, ease: "power2.in" }, 4.3)
+          .to(S + " .in-soufflante", { scale: 7, duration: 1.0, ease: "power3.in" }, 4.4)
+          .to(S + " .in-scene", { opacity: 0, duration: 0.45, ease: "power1.in" }, 5.1);
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["intro"] = tl;
+      })();
+    </script>
+  </div>
+</template>

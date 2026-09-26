@@ -1,0 +1,8 @@
+v1|Safran Aircraft Engines. Un moteur, un réseau mondial.
+v2|Le LEAP équipe les avions court et moyen-courriers du monde entier. Suivons son voyage, de site en site.
+v3|Premier arrêt : Corbeil-Essonnes, au sud de Paris, l'un de nos grands sites industriels.
+v4|Cap sur Casablanca. À Nouaceur, nos équipes assurent la maintenance des moteurs, et un nouvel atelier dédié au LEAP se prépare.
+v5|Traversée de l'Atlantique, jusqu'à Querétaro, au Mexique, où sont produites des pièces pour les moteurs CFM56 et LEAP.
+v6|Puis l'Asie, avec notre site industriel de Suzhou, en Chine.
+v7|Enfin, retour en France, à Villaroche, où le LEAP est assemblé et testé.
+v8|Safran Aircraft Engines. Propulser l'aviation, partout dans le monde.

@@ -1,0 +1,80 @@
+<template id="outro-template">
+  <div data-composition-id="outro" data-width="1080" data-height="1920" data-duration="6">
+    <div class="ou-scene">
+      <div class="ou-voile"></div>
+      <div class="ou-textes">
+        <p class="ou-kicker">Safran Aircraft Engines</p>
+        <h2 class="ou-titre">Propulser l'aviation, partout dans le monde.</h2>
+        <div class="ou-villes">
+          <span>Corbeil-Essonnes</span><span>Casablanca</span><span>Querétaro</span><span>Suzhou</span><span>Villaroche</span>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      [data-composition-id="outro"] {
+        position: absolute;
+        inset: 0;
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        color: #f5f8fc;
+      }
+      [data-composition-id="outro"] .ou-scene {
+        position: absolute;
+        inset: 0;
+      }
+      [data-composition-id="outro"] .ou-voile {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg, rgba(5, 13, 28, 0.97) 0%, rgba(5, 13, 28, 0.85) 38%, rgba(5, 13, 28, 0) 62%);
+      }
+      [data-composition-id="outro"] .ou-textes {
+        position: absolute;
+        left: 80px;
+        right: 140px;
+        top: 1060px;
+      }
+      [data-composition-id="outro"] .ou-kicker {
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #4fa3ff;
+      }
+      [data-composition-id="outro"] .ou-titre {
+        margin-top: 16px;
+        font-size: 80px;
+        font-weight: 800;
+        line-height: 1.04;
+        letter-spacing: -0.035em;
+      }
+      [data-composition-id="outro"] .ou-villes {
+        margin-top: 34px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      [data-composition-id="outro"] .ou-villes span {
+        padding: 10px 18px;
+        border-radius: 999px;
+        border: 1px solid rgba(127, 181, 255, 0.45);
+        font-size: 24px;
+        font-weight: 600;
+        color: #bfe0ff;
+      }
+    </style>
+
+    <script>
+      (function () {
+        const S = '[data-composition-id="outro"]';
+        const tl = gsap.timeline({ paused: true });
+        tl.from(S + " .ou-voile", { opacity: 0, duration: 0.8 }, 0)
+          .from(S + " .ou-kicker", { opacity: 0, y: 24, duration: 0.5 }, 0.2)
+          .from(S + " .ou-titre", { opacity: 0, y: 50, duration: 0.7, ease: "power3.out" }, 0.35)
+          .from(S + " .ou-villes span", { opacity: 0, y: 18, duration: 0.4, stagger: 0.08 }, 0.9)
+          .to(S + " .ou-scene", { opacity: 0, duration: 0.6 }, 5.4);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["outro"] = tl;
+      })();
+    </script>
+  </div>
+</template>

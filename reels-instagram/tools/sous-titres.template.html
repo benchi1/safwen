@@ -1,0 +1,54 @@
+<template id="sous-titres-template">
+  <!-- Fichier généré par tools/build-sous-titres.py -->
+  <div data-composition-id="sous-titres" data-width="1080" data-height="1920" data-duration="56">
+    <div class="st-zone"></div>
+
+    <style>
+      [data-composition-id="sous-titres"] {
+        position: absolute;
+        inset: 0;
+        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+      }
+      [data-composition-id="sous-titres"] .st-zone {
+        position: absolute;
+        left: 80px;
+        right: 140px;
+        top: 1416px;
+        height: 70px;
+      }
+      [data-composition-id="sous-titres"] .st {
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding: 8px 18px;
+        border-radius: 10px;
+        background: rgba(5, 13, 28, 0.78);
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #f5f8fc;
+        white-space: nowrap;
+        opacity: 0;
+      }
+    </style>
+
+    <script>
+      (function () {
+        const SEGMENTS = /*__SEGMENTS__*/[];
+        const R = document.querySelector('[data-composition-id="sous-titres"]');
+        const zone = R.querySelector(".st-zone");
+        const tl = gsap.timeline({ paused: true });
+        SEGMENTS.forEach((s) => {
+          const e = document.createElement("div");
+          e.className = "st";
+          e.textContent = s.x;
+          zone.appendChild(e);
+          tl.fromTo(e, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.15 }, s.t)
+            .to(e, { opacity: 0, duration: 0.1 }, s.t + s.d - 0.1);
+        });
+        window.__timelines = window.__timelines || {};
+        window.__timelines["sous-titres"] = tl;
+      })();
+    </script>
+  </div>
+</template>

@@ -6,7 +6,7 @@ nombre de caractères sur la durée réelle de chaque piste de voix off.
 import json, re, subprocess, pathlib
 
 RACINE = pathlib.Path(__file__).resolve().parent.parent
-DEBUTS = {"v1": 0.6, "v2": 5.4, "v3": 11.9, "v4": 17.0, "v5": 25.0, "v6": 34.6, "v7": 41.3, "v8": 50.4}
+DEBUTS = {"v1": 0.6, "v2": 5.4, "v3": 12.1, "v4": 17.4, "v5": 26.3, "v6": 34.6, "v7": 41.3, "v8": 50.4}
 SANS_SOUS_TITRES = {"v1", "v8"}  # déjà écrits à l'écran (intro, fin)
 MAX = 30
 

@@ -10,6 +10,7 @@ Querétaro, Suzhou, puis Villaroche. Les pays s'allument quand il les survole.
 npm run dev      # studio de prévisualisation
 npm run check    # vérifications HyperFrames
 npm run render   # rendu MP4 dans renders/
+npm run render:instagram  # rendu + version allégée (~25 Mo) pour Instagram
 ```
 
 ## Structure

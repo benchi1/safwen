@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #000;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .scene {
+        position: absolute;
+        inset: 0;
+      }
+      #bb-canvas {
+        display: block;
+        width: 1080px;
+        height: 1920px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Bloom Bridge · 9:16 · quatre coupes reliées par des pics de bloom -->
+    <div id="root" data-composition-id="main" data-start="0" data-duration="15.6" data-width="1080" data-height="1920">
+      <canvas id="bb-canvas" class="scene clip" width="1080" height="1920" data-start="0" data-duration="15.6" data-track-index="0"></canvas>
+    </div>
+    <!-- Généré depuis src/ par `npm run build` (Three.js + bloom) -->
+    <script src="assets/vendor/bloom-bridge.js"></script>
+    <script>
+      (function () {
+        // La scène 3D est une fonction pure du temps : la timeline ne fait que piloter t.
+        const { createScene, DURATION } = window.BloomBridge;
+        const { render } = createScene(document.getElementById("bb-canvas"));
+        const state = { t: 0 };
+        render(0);
+        const tl = gsap.timeline({ paused: true });
+        tl.to(state, { t: DURATION, duration: DURATION, ease: "none", onUpdate: () => render(state.t) }, 0);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["main"] = tl;
+        window.__bb = { render };
+      })();
+    </script>
+  </body>
+</html>

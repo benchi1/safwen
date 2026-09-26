@@ -1,0 +1,6 @@
+.hyperframes/
+.thumbnails/
+snapshots/
+renders/
+node_modules/
+*.mp4

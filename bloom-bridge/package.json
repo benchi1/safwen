@@ -1,0 +1,15 @@
+{
+  "name": "bloom-bridge",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild src/main.js --bundle --format=iife --minify --outfile=assets/vendor/bloom-bridge.js",
+    "dev": "npx --yes hyperframes@0.8.77 preview",
+    "check": "npx --yes hyperframes@0.8.77 check",
+    "render": "npm run build && npx --yes hyperframes@0.8.77 render -f 30 -q high -o renders/bloom-bridge.mp4"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "three": "0.180.0"
+  }
+}

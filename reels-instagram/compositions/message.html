@@ -1,0 +1,19 @@
+<template id="message-template">
+  <div data-hf-id="hf-quah" data-composition-id="message" data-width="1080" data-height="1920" data-duration="5">
+    <div data-hf-id="hf-zbmn" class="safe">
+        <p data-hf-id="hf-5mh3" class="kicker">Le point clé</p>
+        <p data-hf-id="hf-5nf2" class="body">Une idée par écran. Des phrases courtes, lisibles sans le son.</p>
+    </div>
+
+    <script>
+      (function () {
+        const S = '[data-composition-id="message"]';
+        const tl = gsap.timeline({ paused: true });
+        tl.from(S + " .kicker", { opacity: 0, y: 30, duration: 0.5 }, 0.2)
+          .from(S + " .body", { opacity: 0, y: 40, duration: 0.6, ease: "power2.out" }, 0.4);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["message"] = tl;
+      })();
+    </script>
+  </div>
+</template>

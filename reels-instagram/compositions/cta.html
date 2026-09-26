@@ -1,0 +1,19 @@
+<template id="cta-template">
+  <div data-hf-id="hf-hapg" data-composition-id="cta" data-width="1080" data-height="1920" data-duration="5">
+    <div data-hf-id="hf-zbmn" class="safe">
+        <h2 data-hf-id="hf-cn7d" class="headline">Abonne-toi.</h2>
+        <p data-hf-id="hf-pni4" class="body">Appel à l'action final.</p>
+    </div>
+
+    <script>
+      (function () {
+        const S = '[data-composition-id="cta"]';
+        const tl = gsap.timeline({ paused: true });
+        tl.from(S + " .headline", { opacity: 0, scale: 0.9, duration: 0.6, ease: "back.out(1.6)" }, 0.2)
+          .from(S + " .body", { opacity: 0, y: 30, duration: 0.5 }, 0.6);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["cta"] = tl;
+      })();
+    </script>
+  </div>
+</template>

@@ -1,0 +1,19 @@
+<template id="accroche-template">
+  <div data-hf-id="hf-kj7g" data-composition-id="accroche" data-width="1080" data-height="1920" data-duration="5">
+    <div data-hf-id="hf-zbmn" class="safe">
+        <p data-hf-id="hf-ki20" class="kicker">Reel · 01</p>
+        <h1 data-hf-id="hf-59cw" class="headline">Ton accroche ici.</h1>
+    </div>
+
+    <script>
+      (function () {
+        const S = '[data-composition-id="accroche"]';
+        const tl = gsap.timeline({ paused: true });
+        tl.from(S + " .kicker", { opacity: 0, y: 30, duration: 0.5 }, 0.2)
+          .from(S + " .headline", { opacity: 0, y: 60, duration: 0.7, ease: "power3.out" }, 0.4);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["accroche"] = tl;
+      })();
+    </script>
+  </div>
+</template>

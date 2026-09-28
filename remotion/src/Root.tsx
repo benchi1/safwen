@@ -2,6 +2,7 @@ import "./index.css";
 import { Composition } from "remotion";
 import { HelloWorld } from "./HelloWorld";
 import { Logo } from "./HelloWorld/Logo";
+import { SAFRAN_DURATION, SafranResultats } from "./Safran";
 import { Showcase, SHOWCASE_DURATION } from "./Showcase";
 
 // Each <Composition> is an entry in the sidebar!
@@ -32,6 +33,15 @@ export const RemotionRoot: React.FC = () => {
         id="Showcase"
         component={Showcase}
         durationInFrames={SHOWCASE_DURATION}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+
+      <Composition
+        id="SafranResultats2025"
+        component={SafranResultats}
+        durationInFrames={SAFRAN_DURATION}
         fps={30}
         width={1080}
         height={1920}

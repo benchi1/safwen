@@ -1,0 +1,1546 @@
+<!doctype html>
+<html lang="fr" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Great Vibes";
+        src: url("assets/fonts/great-vibes-latin-400-normal.woff2") format("woff2");
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: "Montserrat";
+        src: url("assets/fonts/montserrat-latin-500-normal.woff2") format("woff2");
+        font-weight: 500;
+      }
+      @font-face {
+        font-family: "Montserrat";
+        src: url("assets/fonts/montserrat-latin-700-normal.woff2") format("woff2");
+        font-weight: 700;
+      }
+      @font-face {
+        font-family: "Montserrat";
+        src: url("assets/fonts/montserrat-latin-800-normal.woff2") format("woff2");
+        font-weight: 800;
+      }
+      @font-face {
+        font-family: "Cormorant Garamond";
+        src: url("assets/fonts/cormorant-garamond-latin-600-italic.woff2") format("woff2");
+        font-weight: 600;
+        font-style: italic;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #2a120c;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .couche {
+        position: absolute;
+        inset: 0;
+        width: 1080px;
+        height: 1920px;
+      }
+      #titre {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 150px;
+        text-align: center;
+        color: #f6ead8;
+        opacity: 0;
+        text-shadow: 0 6px 24px rgba(20, 6, 3, 0.55);
+      }
+      #titre .script {
+        font-family: "Great Vibes", cursive;
+        font-size: 62px;
+        line-height: 1;
+      }
+      #titre .gras {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 92px;
+        letter-spacing: 4px;
+        line-height: 1.05;
+        margin-top: 8px;
+      }
+      #titre .sous {
+        font-family: "Great Vibes", cursive;
+        font-size: 36px;
+        color: #e9c9a4;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Reel 13 s · Spicyfique « Mélange Grillades » · même chorégraphie que la référence amandes :
+         fleur → piment frais → braise → piment séché → rosace de 8 → tas d'épices → sachet kraft -->
+    <div id="root" data-composition-id="main" data-start="0" data-duration="13" data-width="1080" data-height="1920">
+      <canvas id="c-scene" class="clip couche" width="1080" height="1920" data-start="0" data-duration="13" data-track-index="0"></canvas>
+
+      <svg id="sachet" class="clip couche" data-start="0" data-duration="13" data-track-index="1" viewBox="0 0 1080 1920" width="1080" height="1920" data-layout-allow-overflow>
+        <defs>
+          <linearGradient id="g-kraft" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0%" stop-color="#8E6440" />
+            <stop offset="10%" stop-color="#B98F63" />
+            <stop offset="42%" stop-color="#D4AE82" />
+            <stop offset="60%" stop-color="#CFA77A" />
+            <stop offset="90%" stop-color="#AF8458" />
+            <stop offset="100%" stop-color="#7E5636" />
+          </linearGradient>
+          <linearGradient id="g-kraft-v" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#fff" stop-opacity="0.10" />
+            <stop offset="35%" stop-color="#fff" stop-opacity="0" />
+            <stop offset="85%" stop-color="#000" stop-opacity="0.05" />
+            <stop offset="100%" stop-color="#000" stop-opacity="0.28" />
+          </linearGradient>
+          <linearGradient id="g-etiquette" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#65211B" />
+            <stop offset="100%" stop-color="#4B1511" />
+          </linearGradient>
+          <radialGradient id="g-viande" cx="45%" cy="40%" r="65%">
+            <stop offset="0%" stop-color="#B8622E" />
+            <stop offset="60%" stop-color="#8A3A18" />
+            <stop offset="100%" stop-color="#4E1C0A" />
+          </radialGradient>
+          <filter id="f-kraft" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.9 0.08" numOctaves="3" seed="7" result="fibres" />
+            <feColorMatrix in="fibres" values="0 0 0 0 0.32  0 0 0 0 0.2  0 0 0 0 0.1  0 0 0 0.42 -0.05" result="teinte" />
+            <feComposite in="teinte" in2="SourceAlpha" operator="in" result="fibresClip" />
+            <feBlend in="SourceGraphic" in2="fibresClip" mode="multiply" result="base" />
+            <feTurbulence type="fractalNoise" baseFrequency="1.6" numOctaves="1" seed="3" result="points" />
+            <feColorMatrix in="points" values="0 0 0 0 0.25  0 0 0 0 0.15  0 0 0 0 0.08  0 0 0 -9 6.2" result="taches" />
+            <feComposite in="taches" in2="SourceAlpha" operator="in" result="tachesClip" />
+            <feBlend in="base" in2="tachesClip" mode="multiply" />
+          </filter>
+          <filter id="f-ombre-sachet" x="-30%" y="-20%" width="160%" height="150%">
+            <feDropShadow dx="18" dy="26" stdDeviation="22" flood-color="#120503" flood-opacity="0.6" />
+          </filter>
+          <filter id="f-flou" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="10" />
+          </filter>
+          <pattern id="p-soudure" width="6" height="42" patternUnits="userSpaceOnUse">
+            <rect width="3" height="42" fill="#000" opacity="0.07" />
+          </pattern>
+        </defs>
+
+        <g id="sachet-face" transform="translate(540 2600)">
+          <g filter="url(#f-ombre-sachet)">
+            <path d="M-262 16 Q-262 0 -246 0 L246 0 Q262 0 262 16 L270 692 Q272 752 212 752 L-212 752 Q-272 752 -270 692 Z" fill="url(#g-kraft)" filter="url(#f-kraft)" />
+          </g>
+          <path d="M-262 16 Q-262 0 -246 0 L246 0 Q262 0 262 16 L270 692 Q272 752 212 752 L-212 752 Q-272 752 -270 692 Z" fill="url(#g-kraft-v)" />
+          <!-- Reflets et plis du papier -->
+          <path d="M-205 60 C-215 250 -212 520 -196 720" stroke="#fff" stroke-width="34" opacity="0.10" fill="none" filter="url(#f-flou)" />
+          <path d="M150 90 C168 300 160 540 178 720" stroke="#3a220f" stroke-width="22" opacity="0.10" fill="none" filter="url(#f-flou)" />
+          <path d="M-262 700 Q0 668 270 700" stroke="#3a220f" stroke-width="16" opacity="0.12" fill="none" filter="url(#f-flou)" />
+          <!-- Soudure haute et zip -->
+          <rect x="-262" y="0" width="524" height="42" fill="url(#p-soudure)" />
+          <path d="M-262 42 L262 42" stroke="#8A6242" stroke-width="2" opacity="0.6" />
+          <path d="M-262 82 L262 82" stroke="#7A5334" stroke-width="3" opacity="0.55" />
+          <path d="M-262 87 L262 87" stroke="#E7C8A0" stroke-width="2" opacity="0.5" />
+          <path d="M-262 110 l12 7 l-12 7 Z M262 110 l-12 7 l12 7 Z" fill="#6E4A2C" />
+
+          <!-- Étiquette -->
+          <rect x="-196" y="168" width="392" height="496" rx="6" fill="url(#g-etiquette)" />
+          <rect x="-186" y="178" width="372" height="476" rx="4" fill="none" stroke="#C9A27A" stroke-width="1.5" opacity="0.6" />
+          <rect x="-150" y="200" width="300" height="400" rx="4" fill="#FCF7EF" />
+          <g transform="translate(0 256)">
+            <circle r="34" fill="none" stroke="#5E1D18" stroke-width="2" />
+            <circle r="27" fill="none" stroke="#5E1D18" stroke-width="1" stroke-dasharray="2 3" />
+            <text y="10" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-weight="600" font-size="28" fill="#5E1D18">Sf</text>
+          </g>
+          <text y="324" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="700" font-size="21" letter-spacing="6" fill="#5E1D18">SPICYFIQUE</text>
+          <path d="M-70 340 L70 340" stroke="#B88A5E" stroke-width="1.5" />
+          <text y="380" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-weight="600" font-size="38" fill="#3A120E">Mélange Grillades</text>
+          <text y="406" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="500" font-size="11" letter-spacing="0.6" fill="#1C0A07">ÉPICES MAROCAINES · RECETTE MAISON</text>
+          <!-- Assiette de grillades -->
+          <g transform="translate(0 492)">
+            <ellipse rx="112" ry="62" fill="#D9CDBD" />
+            <ellipse rx="100" ry="54" fill="#EDE5DA" />
+            <ellipse rx="84" ry="44" fill="#E4D9CB" />
+            <g transform="translate(-40 -6) rotate(-12)">
+              <ellipse rx="40" ry="26" fill="url(#g-viande)" />
+              <path d="M-26 -12 L14 16 M-12 -20 L28 8" stroke="#3A1406" stroke-width="4" stroke-linecap="round" opacity="0.8" />
+            </g>
+            <g transform="translate(34 -12) rotate(14)">
+              <ellipse rx="38" ry="24" fill="url(#g-viande)" />
+              <path d="M-24 -10 L14 14 M-10 -18 L26 6" stroke="#3A1406" stroke-width="4" stroke-linecap="round" opacity="0.8" />
+            </g>
+            <g transform="translate(2 18) rotate(-4)">
+              <ellipse rx="42" ry="22" fill="url(#g-viande)" />
+              <path d="M-26 -8 L12 14 M-10 -16 L28 6" stroke="#3A1406" stroke-width="4" stroke-linecap="round" opacity="0.8" />
+            </g>
+            <ellipse cx="-66" cy="22" rx="10" ry="4" fill="#4E7A2E" transform="rotate(-30 -66 22)" />
+            <ellipse cx="70" cy="18" rx="10" ry="4" fill="#5E8A34" transform="rotate(24 70 18)" />
+            <ellipse cx="54" cy="30" rx="8" ry="3.5" fill="#4E7A2E" transform="rotate(-12 54 30)" />
+            <circle cx="-14" cy="-24" r="3" fill="#C4381C" />
+            <circle cx="20" cy="4" r="2.5" fill="#D8561E" />
+            <circle cx="-30" cy="14" r="2.5" fill="#C4381C" />
+          </g>
+          <text y="584" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="700" font-size="11.5" letter-spacing="0.6" fill="#1C0A07">100 % NATUREL · SANS CONSERVATEUR</text>
+          <rect x="-166" y="616" width="34" height="26" rx="3" fill="#3E7A3A" />
+          <text x="-149" y="634" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="700" font-size="11" fill="#EAF2DF">BIO</text>
+          <text x="-120" y="634" font-family="Montserrat, sans-serif" font-weight="700" font-size="14" fill="#E9D5BE">100 g</text>
+          <text x="166" y="634" text-anchor="end" font-family="Montserrat, sans-serif" font-weight="500" font-size="13" fill="#E9D5BE">spicyfique.com</text>
+        </g>
+      </svg>
+
+      <canvas id="c-fx" class="clip couche" data-layout-allow-occlusion width="1080" height="1920" data-start="0" data-duration="13" data-track-index="2"></canvas>
+
+      <div id="titre" class="clip" data-start="0" data-duration="13" data-track-index="3">
+        <div class="script">La touche secrète qui transforme</div>
+        <div class="gras">VOS GRILLADES</div>
+        <div class="sous">Le goût qui fait la différence</div>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        const W = 1080;
+        const H = 1920;
+        const CX = 540;
+        const CY = 910;
+        const DUREE = 13;
+        const DEG = Math.PI / 180;
+
+        // ---------- Outils ----------
+        const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+        const lerp = (a, b, p) => a + (b - a) * p;
+        const phase = (t, a, b) => clamp((t - a) / (b - a));
+        const eio = (p) => (p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2);
+        const eo = (p) => 1 - Math.pow(1 - p, 3);
+        const ei = (p) => p * p * p;
+        const toile = (w, h) => {
+          const c = document.createElement("canvas");
+          c.width = w;
+          c.height = h;
+          return c;
+        };
+        // Pseudo-aléatoire déterministe (mulberry32).
+        const generateur = (graine) => () => {
+          graine |= 0;
+          graine = (graine + 0x6d2b79f5) | 0;
+          let x = Math.imul(graine ^ (graine >>> 15), 1 | graine);
+          x = (x + Math.imul(x ^ (x >>> 7), 61 | x)) ^ x;
+          return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
+        };
+        const alea = generateur(20260928);
+
+        // Bruit de valeur + fbm, pour les textures générées une seule fois.
+        const hache = (i, j, s) => {
+          let h = (i * 374761393 + j * 668265263 + s * 1442695041) | 0;
+          h = Math.imul(h ^ (h >>> 13), 1274126177);
+          return ((h ^ (h >>> 16)) >>> 0) / 4294967296;
+        };
+        const bruit = (x, y, s) => {
+          const i = Math.floor(x);
+          const j = Math.floor(y);
+          const fx = x - i;
+          const fy = y - j;
+          const u = fx * fx * (3 - 2 * fx);
+          const v = fy * fy * (3 - 2 * fy);
+          const a = hache(i, j, s);
+          const b = hache(i + 1, j, s);
+          const c = hache(i, j + 1, s);
+          const d = hache(i + 1, j + 1, s);
+          return a + (b - a) * u + (c - a) * v + (a - b - c + d) * u * v;
+        };
+        const fbm = (x, y, s, o = 5) => {
+          let t = 0;
+          let a = 0.5;
+          let f = 1;
+          let n = 0;
+          for (let k = 0; k < o; k++) {
+            t += a * bruit(x * f, y * f, s + k * 17);
+            n += a;
+            a *= 0.5;
+            f *= 2;
+          }
+          return t / n;
+        };
+
+        // ---------- Textures ----------
+        // Plan de travail : argile / pierre terracotta sombre.
+        const sol = (() => {
+          const w = 540;
+          const h = 960;
+          const c = toile(w, h);
+          const g = c.getContext("2d");
+          const img = g.createImageData(w, h);
+          for (let y = 0; y < h; y++) {
+            for (let x = 0; x < w; x++) {
+              const n = fbm(x / 70, y / 70, 3, 5);
+              const m = fbm(x / 6, y / 6, 9, 2);
+              const k = clamp(n * 1.25 - 0.1) * 0.8 + m * 0.2;
+              const i = (y * w + x) * 4;
+              img.data[i] = lerp(52, 112, k);
+              img.data[i + 1] = lerp(21, 50, k);
+              img.data[i + 2] = lerp(14, 32, k);
+              img.data[i + 3] = 255;
+            }
+          }
+          g.putImageData(img, 0, 0);
+          return c;
+        })();
+
+        // Charbon : relief éclairé + cendre.
+        const RES_C = 2;
+        const charbonTex = (() => {
+          const w = 160 * RES_C;
+          const h = 220 * RES_C;
+          const c = toile(w, h);
+          const g = c.getContext("2d");
+          const img = g.createImageData(w, h);
+          const haut = (x, y) => fbm(x / 16, y / 16, 21, 5) + 0.45 * fbm(x / 4, y / 4, 33, 3);
+          const L = [-0.5, -0.6, 0.62];
+          for (let y = 0; y < h; y++) {
+            for (let x = 0; x < w; x++) {
+              const ux = x / RES_C;
+              const uy = y / RES_C;
+              const h0 = haut(ux, uy);
+              const nx = (haut(ux + 0.6, uy) - h0) * -9;
+              const ny = (haut(ux, uy + 0.6) - h0) * -9;
+              const nl = Math.hypot(nx, ny, 1);
+              const ombre = clamp(0.25 + 1.1 * ((nx * L[0] + ny * L[1] + L[2]) / nl));
+              const cendre = fbm(ux / 3, uy / 3, 51, 2) > 0.66 ? 1 : 0;
+              const i = (y * w + x) * 4;
+              img.data[i] = lerp(18, 74, ombre) + cendre * 60;
+              img.data[i + 1] = lerp(16, 68, ombre) + cendre * 56;
+              img.data[i + 2] = lerp(15, 64, ombre) + cendre * 52;
+              img.data[i + 3] = 255;
+            }
+          }
+          g.putImageData(img, 0, 0);
+          return c;
+        })();
+
+        // Fumée douce.
+        const fumee = (() => {
+          const s = 256;
+          const c = toile(s, s);
+          const g = c.getContext("2d");
+          const img = g.createImageData(s, s);
+          for (let y = 0; y < s; y++) {
+            for (let x = 0; x < s; x++) {
+              const wx = fbm(x / 60, y / 60, 71, 3) * 3;
+              const n = fbm(x / 48 + wx, y / 48 - wx, 77, 5);
+              const r = Math.hypot(x - s / 2, y - s / 2) / (s / 2);
+              const a = clamp((n - 0.42) * 3.2) * clamp(1 - r * r);
+              const i = (y * s + x) * 4;
+              img.data[i] = 236;
+              img.data[i + 1] = 214;
+              img.data[i + 2] = 198;
+              img.data[i + 3] = a * 255;
+            }
+          }
+          g.putImageData(img, 0, 0);
+          return c;
+        })();
+
+        // Grain pellicule : 3 planches qui tournent.
+        const grains = [0, 1, 2].map((k) => {
+          const w = 540;
+          const h = 960;
+          const c = toile(w, h);
+          const g = c.getContext("2d");
+          const img = g.createImageData(w, h);
+          const r = generateur(900 + k);
+          for (let i = 0; i < w * h; i++) {
+            const v = 128 + (r() - 0.5) * 150;
+            img.data[i * 4] = v;
+            img.data[i * 4 + 1] = v;
+            img.data[i * 4 + 2] = v;
+            img.data[i * 4 + 3] = 255;
+          }
+          g.putImageData(img, 0, 0);
+          return c;
+        });
+
+        // ---------- Sprites ----------
+        // Piment séché : longueur nominale 150 px à l'échelle 1.
+        const RES_P = 1.5;
+        const cheminSec = (g, courbe) => {
+          g.beginPath();
+          g.moveTo(-2, -66);
+          g.bezierCurveTo(14, -68, 23, -50, 22, -24);
+          g.bezierCurveTo(21, 6, 14 + courbe, 38, 4 + courbe * 1.6, 62);
+          g.bezierCurveTo(1 + courbe * 2, 70, -3 + courbe * 2.2, 76, -6 + courbe * 2.4, 78);
+          g.bezierCurveTo(-9 + courbe * 2, 70, -16 + courbe, 44, -19, 14);
+          g.bezierCurveTo(-22, -18, -20, -58, -2, -66);
+          g.closePath();
+        };
+        const fabriquePimentSec = (graine, courbe, teinte) => {
+          const r = generateur(graine);
+          const c = toile(Math.ceil(80 * RES_P), Math.ceil(206 * RES_P));
+          const g = c.getContext("2d");
+          g.translate(c.width / 2, c.height / 2 + 6 * RES_P);
+          g.scale(RES_P, RES_P);
+          cheminSec(g, courbe);
+          const lin = g.createLinearGradient(-22, 0, 22, 0);
+          lin.addColorStop(0, teinte[0]);
+          lin.addColorStop(0.3, teinte[1]);
+          lin.addColorStop(0.5, teinte[2]);
+          lin.addColorStop(0.75, teinte[1]);
+          lin.addColorStop(1, teinte[3]);
+          g.fillStyle = lin;
+          g.fill();
+          g.save();
+          cheminSec(g, courbe);
+          g.clip();
+          // Plis longitudinaux en relief.
+          for (let k = 0; k < 12; k++) {
+            const x0 = -19 + k * 3.4 + (r() - 0.5) * 2;
+            const w1 = (r() - 0.5) * 8;
+            const w2 = (r() - 0.5) * 8;
+            g.beginPath();
+            g.moveTo(x0, -64);
+            g.bezierCurveTo(x0 + w1, -20, x0 * 0.7 + w2, 30, x0 * 0.25 + courbe * 2, 76);
+            g.strokeStyle = "rgba(30,2,1,0.38)";
+            g.lineWidth = 1.3;
+            g.stroke();
+            g.translate(1.1, 0);
+            g.strokeStyle = "rgba(255,120,90,0.16)";
+            g.lineWidth = 0.9;
+            g.stroke();
+            g.translate(-1.1, 0);
+          }
+          // Plis transversaux.
+          for (let k = 0; k < 7; k++) {
+            const y0 = -50 + r() * 110;
+            g.beginPath();
+            g.moveTo(-22, y0);
+            g.quadraticCurveTo(0, y0 + (r() - 0.5) * 10, 22, y0 + (r() - 0.5) * 6);
+            g.strokeStyle = "rgba(30,2,1,0.22)";
+            g.lineWidth = 1;
+            g.stroke();
+          }
+          // Brillance.
+          g.globalCompositeOperation = "screen";
+          g.filter = "blur(2.5px)";
+          g.beginPath();
+          g.moveTo(-9, -54);
+          g.bezierCurveTo(-13, -20, -11, 20, -4 + courbe, 50);
+          g.strokeStyle = "rgba(255,200,180,0.55)";
+          g.lineWidth = 4.5;
+          g.stroke();
+          g.filter = "blur(1px)";
+          g.beginPath();
+          g.moveTo(-8, -44);
+          g.bezierCurveTo(-10, -26, -10, -8, -9, 6);
+          g.strokeStyle = "rgba(255,235,225,0.6)";
+          g.lineWidth = 1.6;
+          g.stroke();
+          g.filter = "blur(3px)";
+          g.beginPath();
+          g.moveTo(14, -40);
+          g.bezierCurveTo(16, -10, 12, 20, 6 + courbe, 46);
+          g.strokeStyle = "rgba(255,120,80,0.28)";
+          g.lineWidth = 4;
+          g.stroke();
+          // Bords assombris.
+          g.globalCompositeOperation = "source-over";
+          g.filter = "blur(3px)";
+          cheminSec(g, courbe);
+          g.strokeStyle = "rgba(18,0,0,0.55)";
+          g.lineWidth = 7;
+          g.stroke();
+          g.restore();
+          g.filter = "none";
+          // Calice et queue.
+          g.beginPath();
+          g.moveTo(-15, -64);
+          g.bezierCurveTo(-12, -76, 12, -78, 16, -64);
+          g.bezierCurveTo(10, -58, 4, -62, 0, -58);
+          g.bezierCurveTo(-4, -62, -10, -58, -15, -64);
+          const cal = g.createLinearGradient(-15, -78, 16, -58);
+          cal.addColorStop(0, "#7C6B30");
+          cal.addColorStop(1, "#3A2E10");
+          g.fillStyle = cal;
+          g.fill();
+          g.beginPath();
+          g.moveTo(1, -72);
+          g.bezierCurveTo(2, -86, 6 + courbe, -94, 14 + courbe, -100);
+          g.strokeStyle = "#5E5226";
+          g.lineWidth = 4.5;
+          g.lineCap = "round";
+          g.stroke();
+          g.strokeStyle = "rgba(220,200,140,0.35)";
+          g.lineWidth = 1.2;
+          g.stroke();
+          return c;
+        };
+        const TEINTES_SEC = [
+          ["#4A0804", "#8E1810", "#B8281A", "#3A0503"],
+          ["#420604", "#7E140C", "#A52014", "#300302"],
+          ["#551006", "#9A2412", "#C43520", "#3E0804"],
+        ];
+        const PIMENTS = [];
+        for (let k = 0; k < 6; k++) PIMENTS.push(fabriquePimentSec(300 + k, (k % 3) * 3 - 3, TEINTES_SEC[k % 3]));
+
+        // Petites épices : flocons de piment, cumin, coriandre, poivre, graines.
+        const RES_E = 2;
+        const fabriqueEpice = (type, graine) => {
+          const r = generateur(graine);
+          const c = toile(40 * RES_E, 40 * RES_E);
+          const g = c.getContext("2d");
+          g.translate(c.width / 2, c.height / 2);
+          g.scale(RES_E, RES_E);
+          if (type === "flocon") {
+            const n = 7;
+            const rr = 8 + r() * 5;
+            g.beginPath();
+            for (let k = 0; k < n; k++) {
+              const a = (k / n) * Math.PI * 2 + r() * 0.5;
+              const d = rr * (0.55 + r() * 0.6);
+              g[k ? "lineTo" : "moveTo"](Math.cos(a) * d, Math.sin(a) * d * 0.8);
+            }
+            g.closePath();
+            const pal = [
+              ["#D8401F", "#8E170C"],
+              ["#E8622A", "#A8300F"],
+              ["#B82A16", "#6A0C06"],
+            ][Math.floor(r() * 3)];
+            const lg = g.createLinearGradient(-rr, -rr, rr, rr);
+            lg.addColorStop(0, pal[0]);
+            lg.addColorStop(1, pal[1]);
+            g.fillStyle = lg;
+            g.fill();
+            g.strokeStyle = "rgba(255,170,110,0.45)";
+            g.lineWidth = 0.8;
+            g.stroke();
+          } else if (type === "cumin") {
+            g.rotate((r() - 0.5) * 0.4);
+            g.beginPath();
+            g.ellipse(0, 0, 3.4, 10.5, 0, 0, Math.PI * 2);
+            const lg = g.createLinearGradient(-4, 0, 4, 0);
+            lg.addColorStop(0, "#6E4E26");
+            lg.addColorStop(0.45, "#C9A468");
+            lg.addColorStop(1, "#5A3C1C");
+            g.fillStyle = lg;
+            g.fill();
+            for (const x of [-1.5, 0, 1.5]) {
+              g.beginPath();
+              g.moveTo(x, -9);
+              g.lineTo(x * 0.8, 9);
+              g.strokeStyle = "rgba(60,36,14,0.55)";
+              g.lineWidth = 0.6;
+              g.stroke();
+            }
+          } else if (type === "coriandre") {
+            const rg = g.createRadialGradient(-2, -2, 1, 0, 0, 6.5);
+            rg.addColorStop(0, "#E6C38C");
+            rg.addColorStop(0.6, "#B48650");
+            rg.addColorStop(1, "#6A4420");
+            g.beginPath();
+            g.arc(0, 0, 6.5, 0, Math.PI * 2);
+            g.fillStyle = rg;
+            g.fill();
+            for (let k = 0; k < 5; k++) {
+              g.beginPath();
+              g.ellipse(0, 0, 6.4 * Math.abs(Math.cos(k * 0.63)), 6.4, 0, -Math.PI / 2, Math.PI / 2);
+              g.strokeStyle = "rgba(80,50,20,0.35)";
+              g.lineWidth = 0.6;
+              g.stroke();
+            }
+          } else if (type === "poivre") {
+            const rg = g.createRadialGradient(-1.5, -1.5, 0.5, 0, 0, 4.8);
+            rg.addColorStop(0, "#6E5A4A");
+            rg.addColorStop(1, "#1E1410");
+            g.beginPath();
+            g.arc(0, 0, 4.8, 0, Math.PI * 2);
+            g.fillStyle = rg;
+            g.fill();
+          } else {
+            // Graine de piment.
+            g.beginPath();
+            g.ellipse(0, 0, 4.2, 3.4, r() * 3, 0, Math.PI * 2);
+            g.fillStyle = "#EFCB7C";
+            g.fill();
+            g.strokeStyle = "rgba(150,100,40,0.6)";
+            g.lineWidth = 0.7;
+            g.stroke();
+          }
+          return c;
+        };
+        const TYPES_EPICES = ["flocon", "flocon", "flocon", "cumin", "cumin", "coriandre", "poivre", "graine"];
+        const EPICES = [];
+        TYPES_EPICES.forEach((t, k) => {
+          EPICES.push(fabriqueEpice(t, 500 + k));
+          EPICES.push(fabriqueEpice(t, 600 + k));
+        });
+
+        // Lit d'épices moulues sous le tas (paprika, piment, cumin).
+        const poudre = (() => {
+          const s = 600;
+          const c = toile(s, s);
+          const g = c.getContext("2d");
+          const img = g.createImageData(s, s);
+          const pal = [[150, 32, 14], [184, 58, 22], [120, 24, 10], [196, 96, 40], [96, 20, 10]];
+          for (let y = 0; y < s; y++) {
+            for (let x = 0; x < s; x++) {
+              const dx = x - s / 2;
+              const dy = y - s / 2;
+              const r = Math.hypot(dx, dy) / (s / 2);
+              const bord = 0.86 + 0.1 * fbm(Math.atan2(dy, dx) * 6 + 10, 3, 81, 3);
+              const a = clamp((bord - r) * 9);
+              const n = fbm(x / 3, y / 3, 91, 2);
+              const c0 = pal[Math.floor(n * 9) % 5];
+              const v = fbm(x / 40, y / 40, 97, 3);
+              // Relief : centre plus clair, bords plus sombres.
+              const l = (0.55 + 0.6 * v) * lerp(1.15, 0.6, r * r);
+              const i = (y * s + x) * 4;
+              img.data[i] = c0[0] * l;
+              img.data[i + 1] = c0[1] * l;
+              img.data[i + 2] = c0[2] * l;
+              img.data[i + 3] = a * 255;
+            }
+          }
+          g.putImageData(img, 0, 0);
+          return c;
+        })();
+
+        // Braise flottante (sprite additif).
+        const braiseSprite = (() => {
+          const c = toile(64, 64);
+          const g = c.getContext("2d");
+          const rg = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+          rg.addColorStop(0, "rgba(255,236,170,1)");
+          rg.addColorStop(0.18, "rgba(255,160,60,0.9)");
+          rg.addColorStop(0.45, "rgba(230,80,20,0.35)");
+          rg.addColorStop(1, "rgba(200,40,10,0)");
+          g.fillStyle = rg;
+          g.fillRect(0, 0, 64, 64);
+          return c;
+        })();
+
+        // ---------- Formes principales ----------
+        // Piment frais : paramétrage commun avec la fleur pour un morphing continu.
+        const N = 220;
+        const B = 205;
+        const A = 88;
+        const pli = (y) => 20 * Math.pow((y + B) / (2 * B), 2);
+        const PIMENT = [];
+        const FLEUR = [];
+        for (let k = 0; k < N; k++) {
+          const t = (k / N) * Math.PI * 2;
+          const c = Math.cos(t);
+          const y = -B * c;
+          const w = 0.16 + 0.84 * Math.pow((1 + c) / 2, 0.5);
+          PIMENT.push([A * Math.sin(t) * w + pli(y), y]);
+          const r = 150 * (0.34 + 0.66 * Math.pow(Math.abs(Math.cos(2.5 * t)), 0.55));
+          FLEUR.push([r * Math.sin(t), -r * Math.cos(t) + 10]);
+        }
+        const trace = (g, pts, s = 1, dx = 0, dy = 0) => {
+          g.beginPath();
+          pts.forEach((p, i) => g[i ? "lineTo" : "moveTo"](p[0] * s + dx, p[1] * s + dy));
+          g.closePath();
+        };
+        const tracePoly = (g, pts) => {
+          g.beginPath();
+          pts.forEach((p, i) => g[i ? "lineTo" : "moveTo"](p[0], p[1]));
+          g.closePath();
+        };
+
+        // Charbon, couvercle, coupelle et fissure.
+        const ROCHE = [[0, -100], [26, -97], [44, -88], [60, -70], [68, -46], [72, -20], [70, 8], [66, 32], [56, 60], [40, 82], [18, 98], [-6, 99], [-26, 92], [-46, 76], [-62, 52], [-70, 28], [-73, 0], [-70, -26], [-62, -56], [-48, -80], [-28, -95]];
+        const FISSURE = [[-71, -12], [-50, -18], [-40, -26], [-26, -10], [-12, -4], [2, -22], [14, -28], [26, -12], [40, -8], [54, -20], [70, -14]];
+        const COUVERCLE = [[-70, -26], [-62, -56], [-48, -80], [-28, -95], [0, -100], [26, -97], [44, -88], [60, -70], [68, -46], [71, -22], ...FISSURE.slice().reverse()];
+        const COUPELLE = [...FISSURE, [72, -4], [70, 8], [66, 32], [56, 60], [40, 82], [18, 98], [-6, 99], [-26, 92], [-46, 76], [-62, 52], [-70, 28], [-73, 0]];
+        const VEINES = [
+          [[-48, -64], [-34, -48], [-38, -30], [-22, -30]],
+          [[36, -76], [26, -54], [40, -40], [30, -30]],
+          [[-54, 30], [-34, 36], [-30, 58], [-12, 70]],
+          [[20, 20], [34, 40], [24, 64], [34, 84]],
+          [[-10, 30], [4, 44], [0, 62]],
+        ];
+        const ECLATS = [];
+        for (let k = 0; k < 10; k++) {
+          const pts = [];
+          const n = 5 + Math.floor(alea() * 3);
+          const rr = 8 + alea() * 9;
+          for (let j = 0; j < n; j++) {
+            const a = (j / n) * Math.PI * 2 + alea() * 0.6;
+            const d = rr * (0.6 + alea() * 0.6);
+            pts.push([Math.cos(a) * d, Math.sin(a) * d]);
+          }
+          const f = FISSURE[1 + (k % (FISSURE.length - 2))];
+          const a = -Math.PI / 2 + (alea() - 0.5) * Math.PI * 1.9;
+          const d = 160 + alea() * 90;
+          ECLATS.push({ pts, dep: f, arr: [Math.cos(a) * d, Math.sin(a) * d * 1.1 + 30], rot: (alea() - 0.5) * 6 });
+        }
+        const ETINCELLES = [];
+        for (let k = 0; k < 46; k++) {
+          const a = -Math.PI / 2 + (alea() - 0.5) * Math.PI * 1.7;
+          const v = 520 + alea() * 900;
+          ETINCELLES.push({ vx: Math.cos(a) * v, vy: Math.sin(a) * v, vie: 0.35 + alea() * 0.5, x0: (alea() - 0.5) * 90, y0: -15 + (alea() - 0.5) * 20 });
+        }
+
+        // ---------- Piments et épices du tas ----------
+        const NB_PIMENTS = 84;
+        const NB_EPICES = 260;
+        const R_TAS = 262;
+        const items = [];
+        const or = 2.39996323;
+        for (let i = 0; i < NB_PIMENTS; i++) {
+          const r = R_TAS * Math.sqrt((i + 0.5) / NB_PIMENTS);
+          const a = i * or + (alea() - 0.5) * 0.3;
+          items.push({
+            piment: true,
+            spr: PIMENTS[i % PIMENTS.length],
+            res: RES_P,
+            slot: [CX + Math.cos(a) * r, CY + Math.sin(a) * r, alea() * 360, 0.74 + alea() * 0.1],
+          });
+        }
+        for (let i = 0; i < NB_EPICES; i++) {
+          const r = (R_TAS + 10) * Math.sqrt((i + 0.5) / NB_EPICES) + (alea() - 0.5) * 12;
+          const a = i * or * 1.0003 + 1.3 + (alea() - 0.5) * 0.4;
+          items.push({
+            piment: false,
+            spr: EPICES[Math.floor(alea() * EPICES.length)],
+            res: RES_E,
+            slot: [CX + Math.cos(a) * r, CY + Math.sin(a) * r, alea() * 360, 1.05 + alea() * 0.5],
+          });
+        }
+        // Les 8 piments de la rosace : n° 0 au centre, 1-7 en couronne.
+        const ROSACE = [0, 11, 22, 33, 44, 55, 66, 77];
+        ROSACE.forEach((idx, k) => {
+          const p = items[idx];
+          p.rosace = k;
+          p.spr = PIMENTS[k % PIMENTS.length];
+          const a = (-90 + (k - 0.5) * (360 / 7)) * DEG;
+          p.ang = a;
+          p.t0 = 6.88 + k * 0.012;
+        });
+        items.forEach((p) => {
+          if (p.rosace !== undefined) {
+            p.tm0 = 9.98 + alea() * 0.12;
+          } else {
+            p.t0 = 9.86 + alea() * 0.14;
+            p.tc = 10.2 + alea() * 0.07;
+            p.tf = 10.52 + alea() * 0.1;
+            const a = alea() * Math.PI * 2;
+            p.dep = [CX + Math.cos(a) * (1150 + alea() * 250), CY + Math.sin(a) * (1150 + alea() * 250)];
+            const b = alea() * Math.PI * 2;
+            const d = Math.sqrt(alea()) * 540;
+            p.chaos = [CX + Math.cos(b) * d, CY + Math.sin(b) * d * 1.2];
+            p.spin = (alea() - 0.5) * 900;
+          }
+        });
+        // Ordre d'affichage mélangé.
+        const ordre = items.map((p) => [alea(), p]).sort((a, b) => a[0] - b[0]).map((e) => e[1]);
+
+        // Échelle du charbon (zoom à l'éclatement).
+        const echCharbon = (t) => lerp(1, 1.08, eio(phase(t, 3.2, 4.35))) * lerp(1, 1.24, eo(phase(t, 4.35, 4.75)));
+
+        // Pose du piment séché n° 0 avant la rosace.
+        const poseHeros = (t) => {
+          const S = echCharbon(t);
+          const dansCharbon = [CX + 6 * S, CY + 22 * S, -14, 0.78 * S];
+          const seul = [CX, CY, 8, 1.3 * (1 + 0.012 * Math.sin((t - 6.2) * 3))];
+          if (t < 5.9) return dansCharbon;
+          if (t < 6.2) {
+            const m = eio(phase(t, 5.9, 6.2));
+            return dansCharbon.map((v, i) => lerp(v, seul[i], m));
+          }
+          if (t < 6.9) return seul;
+          const m = eio(phase(t, 6.9, 7.55));
+          return [CX, CY, lerp(8, -12, m), lerp(seul[3], 0.95, m)];
+        };
+
+        // Transformation globale du tas (léger souffle puis étirement vers le haut).
+        const tas = (t, x, y) => {
+          const s = lerp(1, 1.05, eio(phase(t, 10.6, 11.65)));
+          const phi = 0.035 * phase(t, 10.6, 11.65);
+          const dx = x - CX;
+          const dy = y - CY;
+          let X = dx * Math.cos(phi) - dy * Math.sin(phi);
+          let Y = dx * Math.sin(phi) + dy * Math.cos(phi);
+          X *= s;
+          Y *= s;
+          const m = eio(phase(t, 11.65, 12.25));
+          return [CX + X * lerp(1, 0.96, m), lerp(CY, 840, m) + Y * lerp(1, 1.45, m), lerp(1, 1.04, m)];
+        };
+
+        // Position d'un élément du tas à l'instant t → [x, y, rot°, échelle, opacité].
+        const pose = (p, t) => {
+          const sl = p.slot;
+          const cible = () => {
+            const q = tas(t, sl[0], sl[1]);
+            return [q[0], q[1], sl[2], sl[3] * q[2]];
+          };
+          if (p.rosace !== undefined) {
+            let pr;
+            if (p.rosace === 0) {
+              pr = poseHeros(Math.min(t, 7.55));
+              if (t > 7.55) pr = [CX, CY, -12 + 3.6 * phase(t, 7.55, 9.9) * 2.35, 0.95 * lerp(1, 1.03, phase(t, 7.55, 9.9))];
+            } else {
+              const th = 0.05 * (clamp(t, 7.55, 9.9) - 7.55);
+              const g = lerp(1, 1.03, phase(t, 7.55, 9.9));
+              const a = p.ang + th;
+              const rotRad = (a / DEG) - 90;
+              let r;
+              let spin = 0;
+              if (t < p.t0) return null;
+              if (t < 7.18) {
+                const k = eo(phase(t, p.t0, 7.18));
+                r = lerp(1150, 430, k);
+                spin = 160 * (1 - k);
+              } else {
+                r = lerp(430, 150, eio(phase(t, 7.18, 7.55)));
+              }
+              pr = [CX + Math.cos(a) * r * g, CY + Math.sin(a) * r * g, rotRad + spin, 0.95 * g];
+            }
+            if (t < p.tm0) return [...pr, 1];
+            const k = eio(phase(t, p.tm0, p.tm0 + 0.52));
+            const c = cible();
+            return [lerp(pr[0], c[0], k), lerp(pr[1], c[1], k), lerp(pr[2], c[2], k), lerp(pr[3], c[3], k), 1];
+          }
+          if (t < p.t0) return null;
+          const c = cible();
+          const rot = sl[2] + p.spin * (1 - eo(phase(t, p.t0, p.tf)));
+          if (t < p.tc) {
+            const k = eo(phase(t, p.t0, p.tc));
+            return [lerp(p.dep[0], p.chaos[0], k), lerp(p.dep[1], p.chaos[1], k), rot, sl[3] * 1.15, 1];
+          }
+          const k = eio(phase(t, p.tc, p.tf));
+          return [lerp(p.chaos[0], c[0], k), lerp(p.chaos[1], c[1], k), rot, lerp(sl[3] * 1.15, c[3], k), 1];
+        };
+
+        // Cadrage : plan serré comme la référence, qui s'élargit quand le tas monte vers le sachet.
+        const cadrage = (t) => lerp(1.32, 1, eio(phase(t, 11.6, 12.25)));
+        let camera = null;
+
+        // ---------- Dessin ----------
+        const cv = document.getElementById("c-scene");
+        const ctx = cv.getContext("2d");
+        const fxc = document.getElementById("c-fx");
+        const fx = fxc.getContext("2d");
+        const sachetFace = document.getElementById("sachet-face");
+        const titre = document.getElementById("titre");
+
+        const ombre = (g, s, force = 1) => {
+          g.shadowColor = `rgba(14,4,2,${0.55 * force})`;
+          g.shadowBlur = 14 * s;
+          g.shadowOffsetX = 8 * s;
+          g.shadowOffsetY = 13 * s;
+        };
+        const sansOmbre = (g) => {
+          g.shadowColor = "transparent";
+          g.shadowBlur = 0;
+          g.shadowOffsetX = 0;
+          g.shadowOffsetY = 0;
+        };
+        const sprite = (g, spr, res, x, y, rot, s, a = 1) => {
+          const k = s / res;
+          g.save();
+          g.globalAlpha *= a;
+          g.translate(x, y);
+          g.rotate(rot * DEG);
+          g.drawImage(spr, (-spr.width / 2) * k, (-spr.height / 2) * k, spr.width * k, spr.height * k);
+          g.restore();
+        };
+
+        function fond(t) {
+          ctx.drawImage(sol, 0, 0, W, H);
+          // Lumière clé chaude, haut gauche.
+          const cle = ctx.createRadialGradient(430, 760, 60, 540, 900, 1250);
+          cle.addColorStop(0, "rgba(255,170,110,0.20)");
+          cle.addColorStop(0.45, "rgba(120,50,30,0.04)");
+          cle.addColorStop(1, "rgba(8,2,1,0.72)");
+          ctx.fillStyle = cle;
+          ctx.fillRect(0, 0, W, H);
+        }
+
+        function pimentFrais(t) {
+          // Fleur → piment frais (0,15 → 0,5 s), puis piment tenu sur sa tige.
+          const m = eio(phase(t, 0.12, 0.5));
+          const pts = FLEUR.map((p, i) => [lerp(p[0], PIMENT[i][0], m), lerp(p[1], PIMENT[i][1], m)]);
+          const s = lerp(0.9, 1, eo(phase(t, 0, 0.3))) * (1 + 0.008 * Math.sin(t * 2.4));
+          ctx.save();
+          ctx.translate(CX, CY);
+          ctx.scale(s, s);
+          tige(t, pts[0][1], m);
+          ombre(ctx, 1.2);
+          // Corps : blanc de fleur → rouge brillant.
+          trace(ctx, pts);
+          const lin = ctx.createLinearGradient(-A, 0, A, 0);
+          lin.addColorStop(0, "#6A0805");
+          lin.addColorStop(0.32, "#C41B10");
+          lin.addColorStop(0.5, "#E5301C");
+          lin.addColorStop(0.72, "#AA150C");
+          lin.addColorStop(1, "#4A0503");
+          ctx.fillStyle = lin;
+          ctx.globalAlpha = m;
+          ctx.fill();
+          ctx.globalAlpha = 1 - m;
+          const fl = ctx.createRadialGradient(0, 10, 4, 0, 10, 160);
+          fl.addColorStop(0, "#FFF7E8");
+          fl.addColorStop(0.55, "#F6E6DC");
+          fl.addColorStop(1, "#E3C4BE");
+          ctx.fillStyle = fl;
+          ctx.fill();
+          sansOmbre(ctx);
+          ctx.globalAlpha = 1;
+          ctx.save();
+          trace(ctx, pts);
+          ctx.clip();
+          if (m < 1) {
+            // Nervures et cœur de la fleur.
+            ctx.globalAlpha = 1 - m;
+            for (let k = 0; k < 5; k++) {
+              const a = (k / 5) * Math.PI * 2;
+              for (const d of [-0.12, 0, 0.12]) {
+                ctx.beginPath();
+                ctx.moveTo(0, 10);
+                ctx.quadraticCurveTo(Math.sin(a + d) * 60, 10 - Math.cos(a + d) * 60, Math.sin(a + d * 1.6) * 130, 10 - Math.cos(a + d * 1.6) * 130);
+                ctx.strokeStyle = "rgba(190,120,120,0.22)";
+                ctx.lineWidth = 1.2;
+                ctx.stroke();
+              }
+            }
+            const coeur = ctx.createRadialGradient(0, 10, 0, 0, 10, 46);
+            coeur.addColorStop(0, "rgba(214,226,130,0.9)");
+            coeur.addColorStop(1, "rgba(214,226,130,0)");
+            ctx.fillStyle = coeur;
+            ctx.fillRect(-60, -50, 120, 120);
+            for (let k = 0; k < 14; k++) {
+              const a = (k / 14) * Math.PI * 2;
+              const r = 18 + (k % 3) * 8;
+              ctx.beginPath();
+              ctx.moveTo(0, 10);
+              ctx.lineTo(Math.cos(a) * r, 10 + Math.sin(a) * r);
+              ctx.strokeStyle = "rgba(235,225,190,0.9)";
+              ctx.lineWidth = 1.5;
+              ctx.stroke();
+              ctx.beginPath();
+              ctx.arc(Math.cos(a) * r, 10 + Math.sin(a) * r, 3.6, 0, Math.PI * 2);
+              ctx.fillStyle = k % 2 ? "#E6BE3C" : "#C99A2A";
+              ctx.fill();
+            }
+            ctx.globalAlpha = 1;
+          }
+          if (m > 0) {
+            ctx.globalAlpha = m;
+            reflets(ctx);
+            ctx.globalAlpha = 1;
+          }
+          ctx.restore();
+          ctx.restore();
+        }
+
+        // Brillances du piment frais (dans un clip déjà posé).
+        function reflets(g) {
+          g.save();
+          g.globalCompositeOperation = "screen";
+          g.filter = "blur(9px)";
+          g.beginPath();
+          g.moveTo(-44, -150);
+          g.bezierCurveTo(-56, -60, -44, 40, -14, 150);
+          g.strokeStyle = "rgba(255,210,195,0.55)";
+          g.lineWidth = 16;
+          g.stroke();
+          g.filter = "blur(2px)";
+          g.beginPath();
+          g.moveTo(-40, -130);
+          g.bezierCurveTo(-48, -80, -46, -30, -38, 10);
+          g.strokeStyle = "rgba(255,245,240,0.85)";
+          g.lineWidth = 4;
+          g.stroke();
+          g.filter = "blur(10px)";
+          g.beginPath();
+          g.moveTo(66, -120);
+          g.bezierCurveTo(70, -20, 50, 80, 30, 160);
+          g.strokeStyle = "rgba(255,120,70,0.35)";
+          g.lineWidth = 14;
+          g.stroke();
+          g.globalCompositeOperation = "multiply";
+          g.filter = "blur(18px)";
+          g.beginPath();
+          g.moveTo(0, 130);
+          g.lineTo(20, 230);
+          g.strokeStyle = "rgba(90,10,6,0.55)";
+          g.lineWidth = 70;
+          g.stroke();
+          g.restore();
+        }
+
+        // Tige + calice ; `haut` = y du sommet du fruit, `m` = avancement du morphing.
+        function tige(t, haut, m) {
+          ctx.save();
+          ombre(ctx, 1);
+          ctx.translate(0, haut + 4);
+          ctx.beginPath();
+          ctx.moveTo(0, 0);
+          ctx.bezierCurveTo(6, -40, -10, -70, 4, -112);
+          ctx.bezierCurveTo(12, -140, 34, -156, 58, -170);
+          ctx.strokeStyle = "#5C4A2A";
+          ctx.lineWidth = 13;
+          ctx.lineCap = "round";
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.moveTo(4, -112);
+          ctx.bezierCurveTo(-14, -128, -28, -130, -44, -146);
+          ctx.lineWidth = 8;
+          ctx.stroke();
+          sansOmbre(ctx);
+          ctx.beginPath();
+          ctx.moveTo(-2, -4);
+          ctx.bezierCurveTo(4, -40, -12, -70, 2, -112);
+          ctx.strokeStyle = "rgba(210,190,140,0.35)";
+          ctx.lineWidth = 3;
+          ctx.stroke();
+          // Bourgeon.
+          ctx.beginPath();
+          ctx.ellipse(62, -174, 9, 6, -0.6, 0, Math.PI * 2);
+          ctx.fillStyle = "#7A5A36";
+          ctx.fill();
+          // Calice vert (apparaît avec le piment).
+          ctx.globalAlpha = m;
+          ctx.beginPath();
+          for (let k = 0; k <= 10; k++) {
+            const a = Math.PI + (k / 10) * Math.PI;
+            const r = k % 2 ? 22 : 40;
+            ctx[k ? "lineTo" : "moveTo"](Math.cos(a) * r, 8 + Math.sin(a) * r * 0.45);
+          }
+          ctx.quadraticCurveTo(0, 24, -40, 8);
+          const cg = ctx.createLinearGradient(-40, -10, 40, 20);
+          cg.addColorStop(0, "#6E9A3A");
+          cg.addColorStop(1, "#2E5218");
+          ctx.fillStyle = cg;
+          ctx.fill();
+          ctx.globalAlpha = 1;
+          ctx.restore();
+        }
+
+        // Intensité des braises.
+        const lueur = (t) => {
+          const scint = 0.07 * Math.sin(t * 11) + 0.05 * Math.sin(t * 23 + 1);
+          if (t < 3.2) return 0.55 + scint;
+          if (t < 4.35) return lerp(0.55, 1, ei(phase(t, 3.2, 4.35))) + scint;
+          return lerp(1.15, 0.7, eo(phase(t, 4.35, 5.9))) + scint;
+        };
+
+        function ligneLueur(g, pts, I) {
+          if (I <= 0) return;
+          g.save();
+          g.globalCompositeOperation = "lighter";
+          g.lineCap = "round";
+          g.lineJoin = "round";
+          const passe = (flou, couleur, lw) => {
+            g.filter = flou ? `blur(${flou}px)` : "none";
+            g.beginPath();
+            pts.forEach((p, i) => g[i ? "lineTo" : "moveTo"](p[0], p[1]));
+            g.strokeStyle = couleur;
+            g.lineWidth = lw;
+            g.stroke();
+          };
+          passe(9, `rgba(255,80,16,${0.55 * I})`, 14);
+          passe(3, `rgba(255,140,40,${0.8 * I})`, 5);
+          passe(0, `rgba(255,226,150,${Math.min(1, I)})`, 1.6);
+          g.restore();
+        }
+
+        function morceauCharbon(g, poly, I, interieur) {
+          g.save();
+          tracePoly(g, poly);
+          g.clip();
+          g.drawImage(charbonTex, -80, -110, 160, 220);
+          // Volume : bord assombri, face éclairée en haut à gauche.
+          const vol = g.createRadialGradient(-24, -34, 10, 0, 0, 120);
+          vol.addColorStop(0, "rgba(255,230,210,0.10)");
+          vol.addColorStop(0.6, "rgba(0,0,0,0.05)");
+          vol.addColorStop(1, "rgba(0,0,0,0.65)");
+          g.fillStyle = vol;
+          g.fillRect(-90, -120, 180, 240);
+          if (interieur) interieur();
+          g.restore();
+        }
+
+        function charbon(t) {
+          if (t < 1.3 || t > 6.15) return;
+          const S = echCharbon(t);
+          const I = lueur(t);
+          const fin = 1 - phase(t, 5.9, 6.12);
+          const k = eo(phase(t, 4.35, 4.62));
+          const k2 = eio(phase(t, 4.62, 5.95));
+          ctx.save();
+          ctx.globalAlpha = fin;
+          ctx.translate(CX, CY);
+          // Halo de chaleur sur le plan de travail.
+          ctx.save();
+          ctx.globalCompositeOperation = "lighter";
+          const halo = ctx.createRadialGradient(0, 10, 10, 0, 10, 300 * S);
+          halo.addColorStop(0, `rgba(255,110,30,${0.22 * I})`);
+          halo.addColorStop(1, "rgba(255,60,10,0)");
+          ctx.fillStyle = halo;
+          ctx.fillRect(-400, -400, 800, 800);
+          ctx.restore();
+          ctx.scale(S * lerp(1, 0.96, 1 - fin), S * lerp(1, 0.96, 1 - fin));
+
+          const ouvert = t >= 4.35;
+          if (!ouvert) {
+            ombre(ctx, S * 1.1);
+            tracePoly(ctx, ROCHE);
+            ctx.fillStyle = "#1A1614";
+            ctx.fill();
+            sansOmbre(ctx);
+            morceauCharbon(ctx, ROCHE, I);
+            VEINES.forEach((v) => ligneLueur(ctx, v, I * 0.9));
+            ligneLueur(ctx, FISSURE, I * phase(t, 3.6, 4.35) * 1.2);
+          } else {
+            // Coupelle + cavité incandescente.
+            ombre(ctx, S);
+            tracePoly(ctx, COUPELLE);
+            ctx.fillStyle = "#1A1614";
+            ctx.fill();
+            sansOmbre(ctx);
+            morceauCharbon(ctx, COUPELLE, I, () => {
+              const cav = ctx.createRadialGradient(4, 14, 4, 4, 14, 66);
+              cav.addColorStop(0, `rgba(255,236,160,${0.95 * I})`);
+              cav.addColorStop(0.35, `rgba(255,130,36,${0.9 * I})`);
+              cav.addColorStop(0.75, `rgba(170,40,10,${0.8 * I})`);
+              cav.addColorStop(1, "rgba(40,8,4,0)");
+              ctx.fillStyle = cav;
+              ctx.beginPath();
+              ctx.ellipse(4, 16, 58, 50, 0, 0, Math.PI * 2);
+              ctx.fill();
+            });
+            VEINES.slice(2).forEach((v) => ligneLueur(ctx, v, I * 0.8));
+            ligneLueur(ctx, FISSURE, I);
+            // Piment séché posé dans la cavité.
+            const hp = poseHeros(t);
+            ctx.save();
+            ctx.setTransform(camera);
+            ctx.globalAlpha = phase(t, 4.38, 4.52);
+            ombre(ctx, hp[3]);
+            sprite(ctx, items[0].spr, RES_P, hp[0], hp[1], hp[2], hp[3]);
+            ctx.restore();
+            // Couvercle soulevé.
+            ctx.save();
+            ctx.translate(lerp(0, -72, k) + lerp(0, -12, k2), lerp(0, -150, k) + lerp(0, -16, k2));
+            ctx.rotate((lerp(0, -32, k) + lerp(0, -8, k2)) * DEG);
+            ombre(ctx, S * (1 + k * 0.6));
+            tracePoly(ctx, COUVERCLE);
+            ctx.fillStyle = "#1A1614";
+            ctx.fill();
+            sansOmbre(ctx);
+            morceauCharbon(ctx, COUVERCLE, I, () => {
+              const dessous = ctx.createRadialGradient(0, -20, 4, 0, -20, 60);
+              dessous.addColorStop(0, `rgba(255,150,50,${0.75 * I})`);
+              dessous.addColorStop(1, "rgba(120,20,5,0)");
+              ctx.fillStyle = dessous;
+              ctx.fillRect(-80, -80, 160, 80);
+            });
+            ligneLueur(ctx, FISSURE, I * 0.8);
+            ctx.restore();
+            // Éclats.
+            ECLATS.forEach((e, i) => {
+              const q = eo(phase(t, 4.35 + i * 0.008, 4.66 + i * 0.008));
+              const x = lerp(e.dep[0], e.arr[0], q) + e.arr[0] * 0.04 * k2;
+              const y = lerp(e.dep[1], e.arr[1], q) + e.arr[1] * 0.04 * k2;
+              ctx.save();
+              ctx.translate(x, y);
+              ctx.rotate(e.rot * q);
+              ombre(ctx, 0.6);
+              tracePoly(ctx, e.pts);
+              ctx.fillStyle = "#221C19";
+              ctx.fill();
+              sansOmbre(ctx);
+              ctx.clip();
+              ctx.drawImage(charbonTex, -30, -30, 60, 60);
+              ctx.restore();
+              ctx.save();
+              ctx.translate(x, y);
+              ctx.rotate(e.rot * q);
+              ligneLueur(ctx, e.pts.slice(0, 3), I * 0.6 * (1 - k2 * 0.6));
+              ctx.restore();
+            });
+          }
+          ctx.restore();
+        }
+
+        function moitiesPiment(t) {
+          if (t < 1.36 || t > 3.18) return;
+          // Ouverture : éclatement rapide puis retour en coque ouverte (comme la bogue d'amande).
+          let dx;
+          let ang;
+          if (t < 1.5) {
+            const k = eo(phase(t, 1.36, 1.5));
+            dx = 38 * k;
+            ang = 8 * k;
+          } else if (t < 1.62) {
+            const k = eo(phase(t, 1.5, 1.62));
+            dx = lerp(38, 250, k);
+            ang = lerp(8, 30, k);
+          } else {
+            const k = eio(phase(t, 1.62, 1.88));
+            dx = lerp(250, 84, k);
+            ang = lerp(30, 12, k);
+          }
+          const fin = 1 - phase(t, 3.0, 3.16);
+          const s = 1 + 0.05 * (1 - fin);
+          const ouvert = eo(phase(t, 1.38, 1.6));
+          ctx.save();
+          ctx.globalAlpha = fin;
+          ctx.translate(CX, CY);
+          ctx.scale(s, s);
+          tige(t, -B, 1);
+          [-1, 1].forEach((cote) => {
+            ctx.save();
+            ctx.translate(cote * dx, 0);
+            ctx.translate(0, -B);
+            ctx.rotate(cote * ang * DEG);
+            ctx.translate(0, B);
+            // Découpe le long de la ligne médiane.
+            const clipMoitie = () => {
+              ctx.beginPath();
+              ctx.moveTo(pli(-B - 30), -B - 30);
+              for (let y = -B - 30; y <= B + 30; y += 12) ctx.lineTo(pli(y), y);
+              ctx.lineTo(cote * 400, B + 30);
+              ctx.lineTo(cote * 400, -B - 30);
+              ctx.closePath();
+            };
+            ctx.save();
+            clipMoitie();
+            ctx.clip();
+            ombre(ctx, 1.2);
+            trace(ctx, PIMENT);
+            const lin = ctx.createLinearGradient(-A, 0, A, 0);
+            lin.addColorStop(0, "#6A0805");
+            lin.addColorStop(0.32, "#C41B10");
+            lin.addColorStop(0.5, "#E5301C");
+            lin.addColorStop(0.72, "#AA150C");
+            lin.addColorStop(1, "#4A0503");
+            ctx.fillStyle = lin;
+            ctx.fill();
+            sansOmbre(ctx);
+            trace(ctx, PIMENT);
+            ctx.clip();
+            reflets(ctx);
+            // Chair intérieure, placenta et graines.
+            ctx.globalAlpha = ouvert * fin;
+            trace(ctx, PIMENT, 0.86, pli(0) * 0.14, 0);
+            const ch = ctx.createLinearGradient(cote * 70, 0, 0, 0);
+            ch.addColorStop(0, "#B8301A");
+            ch.addColorStop(0.6, "#EE6A3A");
+            ch.addColorStop(1, "#F59A62");
+            ctx.fillStyle = ch;
+            ctx.fill();
+            ctx.save();
+            trace(ctx, PIMENT, 0.86, pli(0) * 0.14, 0);
+            ctx.clip();
+            ctx.filter = "blur(3px)";
+            ctx.beginPath();
+            for (let y = -150; y <= 120; y += 10) ctx[y === -150 ? "moveTo" : "lineTo"](pli(y) + cote * 8, y);
+            ctx.strokeStyle = "rgba(250,228,190,0.85)";
+            ctx.lineWidth = 22;
+            ctx.stroke();
+            ctx.filter = "none";
+            const rg = generateur(cote > 0 ? 71 : 73);
+            for (let k = 0; k < 18; k++) {
+              const y = -140 + k * 14 + (rg() - 0.5) * 8;
+              const x = pli(y) + cote * (6 + rg() * 20);
+              ctx.save();
+              ctx.translate(x, y);
+              ctx.rotate(rg() * 3);
+              ctx.beginPath();
+              ctx.ellipse(0, 0, 7, 5.5, 0, 0, Math.PI * 2);
+              const gg = ctx.createRadialGradient(-2, -2, 0.5, 0, 0, 7);
+              gg.addColorStop(0, "#FFF0C0");
+              gg.addColorStop(1, "#D9A850");
+              ctx.fillStyle = gg;
+              ctx.fill();
+              ctx.strokeStyle = "rgba(140,80,30,0.5)";
+              ctx.lineWidth = 0.8;
+              ctx.stroke();
+              ctx.restore();
+            }
+            ctx.restore();
+            ctx.restore();
+            ctx.restore();
+          });
+          ctx.restore();
+          // Lumière de la braise sur l'intérieur du piment.
+          ctx.save();
+          ctx.globalAlpha = fin * ouvert;
+          ctx.globalCompositeOperation = "screen";
+          const l = ctx.createRadialGradient(CX, CY + 10, 20, CX, CY + 10, 260);
+          l.addColorStop(0, `rgba(255,120,40,${0.28 * lueur(t)})`);
+          l.addColorStop(1, "rgba(255,80,20,0)");
+          ctx.fillStyle = l;
+          ctx.fillRect(CX - 300, CY - 300, 600, 600);
+          ctx.restore();
+        }
+
+        function ligneFente(t) {
+          const k = eio(phase(t, 1.14, 1.34));
+          if (k <= 0 || t >= 1.36) return;
+          ctx.save();
+          ctx.translate(CX, CY);
+          ctx.beginPath();
+          const y1 = lerp(-B + 10, B - 10, k);
+          for (let y = -B + 10; y <= y1; y += 8) ctx[y === -B + 10 ? "moveTo" : "lineTo"](pli(y), y);
+          ctx.strokeStyle = "rgba(40,2,1,0.85)";
+          ctx.lineWidth = 3.5;
+          ctx.stroke();
+          ctx.globalCompositeOperation = "lighter";
+          ctx.strokeStyle = "rgba(255,110,40,0.5)";
+          ctx.lineWidth = 1.2;
+          ctx.stroke();
+          ctx.restore();
+        }
+
+        function dessineItem(p, t) {
+          const a = pose(p, t);
+          if (!a) return;
+          // Flou de mouvement : échantillons le long de la trajectoire.
+          const b = pose(p, t - 1 / 60);
+          if (b) {
+            const d = Math.hypot(a[0] - b[0], a[1] - b[1]);
+            if (d > 5) {
+              const n = Math.min(6, Math.ceil(d / 7));
+              for (let j = n; j >= 1; j--) {
+                const q = pose(p, t - (j / n) * (1 / 60));
+                if (q) sprite(ctx, p.spr, p.res, q[0], q[1], q[2], q[3], 0.32 * (1 - j / (n + 1)));
+              }
+            }
+          }
+          ombre(ctx, a[3] * (p.piment ? 1 : 0.35), p.piment ? 1 : 0.8);
+          sprite(ctx, p.spr, p.res, a[0], a[1], a[2], a[3], a[4]);
+          sansOmbre(ctx);
+        }
+
+        function piments(t) {
+          if (t < 6.12) return;
+          // Ombre de contact du tas.
+          const tasV = phase(t, 10.3, 10.7);
+          if (tasV > 0) {
+            const q = tas(t, CX, CY);
+            const m = eio(phase(t, 11.65, 12.25));
+            ctx.save();
+            ctx.globalAlpha = 0.5 * tasV;
+            ctx.filter = "blur(26px)";
+            ctx.beginPath();
+            ctx.ellipse(q[0] + 16, q[1] + 22, 290 * lerp(1, 0.96, m), 290 * lerp(1, 1.45, m), 0, 0, Math.PI * 2);
+            ctx.fillStyle = "#120402";
+            ctx.fill();
+            ctx.restore();
+          }
+          if (tasV > 0) {
+            const q = tas(t, CX, CY);
+            const m = eio(phase(t, 11.65, 12.25));
+            const e = lerp(0.7, 1, eo(tasV));
+            const R = (R_TAS + 26) * e;
+            ctx.save();
+            ctx.globalAlpha = tasV;
+            ctx.translate(q[0], q[1]);
+            ctx.scale(lerp(1, 0.96, m) * lerp(1, 1.05, eio(phase(t, 10.6, 11.65))), lerp(1, 1.45, m) * lerp(1, 1.05, eio(phase(t, 10.6, 11.65))));
+            ctx.drawImage(poudre, -R, -R, 2 * R, 2 * R);
+            ctx.restore();
+          }
+          for (const p of ordre) dessineItem(p, t);
+        }
+
+        // Dos du sachet (ouverture), sous le tas.
+        const hautSachet = (t) => lerp(2500, 1150, eo(phase(t, 11.65, 12.32)));
+        function dosSachet(t) {
+          const y = hautSachet(t);
+          if (y > 1990) return;
+          ctx.save();
+          ctx.translate(CX, y);
+          ctx.beginPath();
+          ctx.moveTo(-258, 20);
+          ctx.quadraticCurveTo(0, -34, 258, 20);
+          ctx.lineTo(258, 60);
+          ctx.lineTo(-258, 60);
+          ctx.closePath();
+          const g = ctx.createLinearGradient(0, -30, 0, 60);
+          g.addColorStop(0, "#8A6240");
+          g.addColorStop(1, "#3E2616");
+          ctx.fillStyle = g;
+          ctx.fill();
+          ctx.restore();
+        }
+
+        // ---------- Effets (calque du dessus) ----------
+        const BRAISES = [];
+        for (let k = 0; k < 44; k++) {
+          const flou = k < 8;
+          BRAISES.push({
+            x: alea() * W,
+            y: alea() * H,
+            v: 40 + alea() * 90,
+            amp: 10 + alea() * 30,
+            f: 0.6 + alea() * 1.4,
+            ph: alea() * 6,
+            s: flou ? 34 + alea() * 40 : 6 + alea() * 12,
+            flou,
+          });
+        }
+        const PREMIER_PLAN = [];
+        for (let k = 0; k < 20; k++) {
+          const a = alea() * Math.PI * 2;
+          PREMIER_PLAN.push({
+            spr: EPICES[Math.floor(alea() * 6)],
+            dep: [CX + Math.cos(a) * 1300, CY + Math.sin(a) * 1300],
+            arr: [CX - Math.cos(a) * 1300 + (alea() - 0.5) * 600, CY - Math.sin(a) * 1300 + (alea() - 0.5) * 600],
+            t0: 9.9 + alea() * 0.25,
+            s: 2.6 + alea() * 1.8,
+            flou: 5 + alea() * 6,
+            rot: alea() * 360,
+          });
+        }
+
+        function effets(t, frame) {
+          fx.clearRect(0, 0, W, H);
+          // Fumée qui traverse le cadre.
+          fx.save();
+          fx.globalCompositeOperation = "screen";
+          const intens = 0.03 + 0.06 * phase(t, 3.0, 4.3) * (1 - phase(t, 6.0, 7.0)) + 0.05 * phase(t, 11.6, 12.4);
+          for (let k = 0; k < 3; k++) {
+            fx.save();
+            fx.globalAlpha = intens * (k === 1 ? 1 : 0.7);
+            fx.translate(CX + Math.sin(t * 0.3 + k * 2) * 160 + (k - 1) * 260, CY - 120 - t * (22 + k * 8) + k * 300);
+            fx.rotate(t * 0.05 * (k % 2 ? -1 : 1) + k);
+            const s = 900 + k * 200;
+            fx.drawImage(fumee, -s / 2, -s / 2, s, s);
+            fx.restore();
+          }
+          // Panache au-dessus de la braise.
+          const pan = phase(t, 3.1, 3.6) * (1 - phase(t, 5.9, 6.3));
+          if (pan > 0) {
+            for (let k = 0; k < 3; k++) {
+              const u = ((t * 0.45 + k / 3) % 1);
+              fx.save();
+              fx.globalAlpha = 0.22 * pan * Math.sin(u * Math.PI);
+              fx.translate(CX + Math.sin(u * 5 + k) * 40, CY - 60 - u * 520);
+              fx.rotate(u * 1.5 + k);
+              const s = 260 + u * 420;
+              fx.drawImage(fumee, -s / 2, -s / 2, s, s);
+              fx.restore();
+            }
+          }
+          fx.restore();
+
+          // Braises flottantes et bokeh.
+          fx.save();
+          fx.globalCompositeOperation = "lighter";
+          const E = 0.35 + 0.65 * phase(t, 3.0, 3.8) * (1 - 0.45 * phase(t, 6.2, 7.0)) + 0.15 * phase(t, 11.8, 12.4);
+          for (const b of BRAISES) {
+            const y = ((((b.y - b.v * t) % (H + 200)) + H + 200) % (H + 200)) - 100;
+            const x = b.x + Math.sin(t * b.f + b.ph) * b.amp;
+            const sc = 0.6 + 0.4 * Math.sin(t * 7 * b.f + b.ph);
+            fx.globalAlpha = E * (b.flou ? 0.16 : 0.75 * sc);
+            fx.drawImage(braiseSprite, x - b.s / 2, y - b.s / 2, b.s, b.s);
+          }
+          // Gerbe d'étincelles à l'éclatement.
+          const te = t - 4.35;
+          if (te > 0 && te < 0.9) {
+            const S = echCharbon(t) * cadrage(t);
+            for (const e of ETINCELLES) {
+              if (te > e.vie) continue;
+              const x = CX + (e.x0 + e.vx * te) * S;
+              const y = CY + (e.y0 + e.vy * te + 700 * te * te) * S;
+              const vx = e.vx * S;
+              const vy = (e.vy + 1400 * te) * S;
+              const a = 1 - te / e.vie;
+              fx.beginPath();
+              fx.moveTo(x, y);
+              fx.lineTo(x - vx * 0.022, y - vy * 0.022);
+              fx.strokeStyle = `rgba(255,${Math.round(150 + 90 * a)},${Math.round(60 * a)},${a})`;
+              fx.lineWidth = 2.4;
+              fx.lineCap = "round";
+              fx.stroke();
+            }
+            // Éclair chaud.
+            fx.globalAlpha = 0.35 * (1 - eo(phase(te, 0, 0.35)));
+            const fl = fx.createRadialGradient(CX, CY, 0, CX, CY, 700);
+            fl.addColorStop(0, "rgba(255,170,80,1)");
+            fl.addColorStop(1, "rgba(255,80,20,0)");
+            fx.fillStyle = fl;
+            fx.fillRect(0, 0, W, H);
+          }
+          fx.restore();
+
+          // Épices au premier plan, floues (profondeur de champ) pendant l'arrivée du tas.
+          for (const p of PREMIER_PLAN) {
+            const k = phase(t, p.t0, p.t0 + 0.42);
+            if (k <= 0 || k >= 1) continue;
+            fx.save();
+            fx.filter = `blur(${p.flou}px)`;
+            fx.globalAlpha = 0.9;
+            sprite(fx, p.spr, RES_E, lerp(p.dep[0], p.arr[0], k), lerp(p.dep[1], p.arr[1], k), p.rot + k * 200, p.s);
+            fx.restore();
+          }
+
+          // Étalonnage : vignette + chaleur + grain.
+          const vig = fx.createRadialGradient(CX, 880, 360, CX, 900, 1180);
+          vig.addColorStop(0, "rgba(10,3,2,0)");
+          vig.addColorStop(1, "rgba(10,3,2,0.8)");
+          fx.fillStyle = vig;
+          fx.fillRect(0, 0, W, H);
+          fx.save();
+          fx.globalCompositeOperation = "soft-light";
+          fx.fillStyle = "rgba(255,150,80,0.16)";
+          fx.fillRect(0, 0, W, H);
+          fx.globalCompositeOperation = "overlay";
+          fx.globalAlpha = 0.1;
+          fx.drawImage(grains[frame % 3], 0, 0, W, H);
+          fx.restore();
+        }
+
+        // ---------- Rendu d'une image ----------
+        function rendu(t) {
+          ctx.clearRect(0, 0, W, H);
+          sansOmbre(ctx);
+          fond(t);
+          const Z = cadrage(t);
+          ctx.save();
+          ctx.translate(CX, CY);
+          ctx.scale(Z, Z);
+          ctx.translate(-CX, -CY);
+          camera = ctx.getTransform();
+          if (t < 1.36) {
+            pimentFrais(t);
+            ligneFente(t);
+          }
+          charbon(t);
+          moitiesPiment(t);
+          dosSachet(t);
+          piments(t);
+          ctx.restore();
+
+          sachetFace.setAttribute("transform", `translate(${CX} ${hautSachet(t).toFixed(1)})`);
+
+          const k = eo(phase(t, 12.3, 12.85));
+          titre.style.opacity = k.toFixed(3);
+          titre.style.transform = `translateY(${lerp(26, 0, k).toFixed(1)}px)`;
+          titre.querySelector(".sous").style.opacity = eo(phase(t, 12.55, 12.95)).toFixed(3);
+
+          effets(t, Math.floor(t * 24));
+        }
+
+        const tl = gsap.timeline({ paused: true });
+        const horloge = { t: 0 };
+        tl.to(horloge, { t: DUREE, duration: DUREE, ease: "none", onUpdate: () => rendu(horloge.t) }, 0);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["main"] = tl;
+        rendu(0);
+      })();
+    </script>
+  </body>
+</html>

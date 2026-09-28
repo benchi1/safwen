@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="fr" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #93b567;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      #scene {
+        position: absolute;
+        inset: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Reel 12 s · Spicyfique « Saveur Avocado » · flat lay illustré, morphing continu -->
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="12"
+      data-width="1080"
+      data-height="1920"
+    >
+      <svg id="scene" class="clip" data-start="0" data-duration="12" data-track-index="0" viewBox="0 0 1080 1920" width="1080" height="1920" data-layout-allow-overflow>
+        <defs>
+          <radialGradient id="fond" cx="45%" cy="40%" r="75%">
+            <stop offset="0%" stop-color="#A9C77C" />
+            <stop offset="70%" stop-color="#92B466" />
+            <stop offset="100%" stop-color="#7FA055" />
+          </radialGradient>
+          <filter id="grain" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4" />
+            <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.09 0" />
+          </filter>
+          <filter id="ombre" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="10" dy="16" stdDeviation="14" flood-color="#2F4418" flood-opacity="0.38" />
+          </filter>
+          <filter id="ombre-petite" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="3" dy="5" stdDeviation="3" flood-color="#2F4418" flood-opacity="0.4" />
+          </filter>
+          <!-- Peau d'avocat granuleuse : relief éclairé à partir d'un bruit -->
+          <filter id="peau" x="-5%" y="-5%" width="110%" height="110%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="3" seed="11" result="bruit" />
+            <feDiffuseLighting in="bruit" surfaceScale="3.2" lighting-color="#ffffff" result="relief">
+              <feDistantLight azimuth="225" elevation="48" />
+            </feDiffuseLighting>
+            <feComposite in="relief" in2="SourceAlpha" operator="in" result="reliefClip" />
+            <feBlend in="SourceGraphic" in2="reliefClip" mode="multiply" />
+          </filter>
+          <filter id="kraft" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.6 0.05" numOctaves="3" seed="7" result="fibres" />
+            <feColorMatrix in="fibres" values="0 0 0 0 0.35  0 0 0 0 0.22  0 0 0 0 0.1  0 0 0 0.35 0" result="teinte" />
+            <feComposite in="teinte" in2="SourceAlpha" operator="in" result="fibresClip" />
+            <feBlend in="SourceGraphic" in2="fibresClip" mode="multiply" />
+          </filter>
+          <radialGradient id="g-hero" cx="50%" cy="50%" r="60%" fx="36%" fy="30%">
+            <stop id="h0" offset="0%" />
+            <stop id="h1" offset="55%" />
+            <stop id="h2" offset="100%" />
+          </radialGradient>
+          <radialGradient id="g-chair" cx="50%" cy="55%" r="58%" fx="45%" fy="45%">
+            <stop offset="0%" stop-color="#F3EDB2" />
+            <stop offset="55%" stop-color="#D5E08A" />
+            <stop offset="100%" stop-color="#8FB84C" />
+          </radialGradient>
+          <radialGradient id="g-peau-ext" cx="50%" cy="50%" r="60%" fx="36%" fy="30%">
+            <stop offset="0%" stop-color="#4B5A2A" />
+            <stop offset="100%" stop-color="#1E2612" />
+          </radialGradient>
+          <radialGradient id="g-noyau" cx="50%" cy="50%" r="55%" fx="35%" fy="30%">
+            <stop offset="0%" stop-color="#C08A5A" />
+            <stop offset="45%" stop-color="#8A5A34" />
+            <stop offset="100%" stop-color="#4A2B16" />
+          </radialGradient>
+          <radialGradient id="g-creux" cx="50%" cy="50%" r="50%" fx="60%" fy="65%">
+            <stop offset="0%" stop-color="#E9E3A0" />
+            <stop offset="100%" stop-color="#B7C66C" />
+          </radialGradient>
+          <radialGradient id="g-poivre" cx="50%" cy="50%" r="55%" fx="35%" fy="30%">
+            <stop offset="0%" stop-color="#6B5646" />
+            <stop offset="100%" stop-color="#1C130D" />
+          </radialGradient>
+          <linearGradient id="g-sel" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#FFFFFF" />
+            <stop offset="100%" stop-color="#D8DEE2" />
+          </linearGradient>
+          <linearGradient id="g-sachet" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0%" stop-color="#A97E52" />
+            <stop offset="12%" stop-color="#C89E6E" />
+            <stop offset="50%" stop-color="#D2AA7A" />
+            <stop offset="88%" stop-color="#C39868" />
+            <stop offset="100%" stop-color="#9E744A" />
+          </linearGradient>
+        </defs>
+
+        <rect width="1080" height="1920" fill="url(#fond)" />
+        <rect width="1080" height="1920" filter="url(#grain)" />
+
+        <!-- Élément principal : fleur → petit fruit → avocat mûr -->
+        <g id="hero" filter="url(#ombre)">
+          <path id="hero-corps" fill="url(#g-hero)" />
+          <path id="hero-peau" fill="url(#g-hero)" filter="url(#peau)" opacity="0" />
+          <g id="etamines"></g>
+        </g>
+
+        <!-- Avocat ouvert -->
+        <g id="moitie-g" filter="url(#ombre)" opacity="0">
+          <path class="m-peau" fill="url(#g-peau-ext)" />
+          <path class="m-chair" fill="url(#g-chair)" />
+          <g id="noyau">
+            <circle r="74" fill="url(#g-noyau)" />
+            <ellipse cx="-22" cy="-26" rx="22" ry="14" fill="#fff" opacity="0.28" />
+          </g>
+        </g>
+        <g id="moitie-d" filter="url(#ombre)" opacity="0">
+          <path class="m-peau" fill="url(#g-peau-ext)" />
+          <path class="m-chair" fill="url(#g-chair)" />
+          <circle class="m-creux" r="76" fill="url(#g-creux)" />
+        </g>
+
+        <!-- Sachet : dos, ingrédients, face avant -->
+        <g id="sachet-dos">
+          <path d="M-262 -372 L262 -372 L262 -300 L-262 -300 Z" fill="#8C6440" />
+          <path d="M-240 -352 L240 -352 L240 -330 L-240 -330 Z" fill="#3E2A18" opacity="0.85" />
+        </g>
+        <g id="ingredients" filter="url(#ombre-petite)"></g>
+        <g id="sachet-face" filter="url(#ombre)">
+          <path d="M-270 -340 L270 -340 L270 330 Q270 370 230 370 L-230 370 Q-270 370 -270 330 Z" fill="url(#g-sachet)" filter="url(#kraft)" />
+          <path d="M-270 -300 L270 -300" stroke="#8C6440" stroke-width="3" opacity="0.7" />
+          <path d="M-270 -290 L270 -290" stroke="#E2C295" stroke-width="2" opacity="0.6" />
+          <path d="M-270 -250 l14 7 l-14 7 Z M270 -250 l-14 7 l14 7 Z" fill="#7FA055" />
+          <g transform="translate(0 40)">
+            <rect x="-190" y="-170" width="380" height="330" rx="26" fill="#F5EFDF" />
+            <rect x="-190" y="84" width="380" height="76" rx="0" fill="#5E8A2E" />
+            <path d="M-190 84 h380 v50 q0 26 -26 26 h-328 q-26 0 -26 -26 Z" fill="#5E8A2E" />
+            <g transform="translate(0 -78)">
+              <ellipse rx="44" ry="58" fill="#2E3A1D" />
+              <ellipse rx="36" ry="49" fill="#D5E08A" />
+              <circle cy="12" r="19" fill="#8A5A34" />
+            </g>
+            <text y="46" text-anchor="middle" font-family="Inter, sans-serif" font-size="44" font-weight="800" letter-spacing="2" fill="#2E3A1D">SPICYFIQUE</text>
+            <text y="132" text-anchor="middle" font-family="Inter, sans-serif" font-size="30" font-weight="700" fill="#F5EFDF">Saveur Avocado</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <script>
+      (function () {
+        const NS = "http://www.w3.org/2000/svg";
+        const $ = (s) => document.querySelector(s);
+
+        // ---- Outils ----
+        const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+        const lerp = (a, b, p) => a + (b - a) * p;
+        const eio = (p) => (p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2);
+        const eo = (p) => 1 - Math.pow(1 - p, 3);
+        const ei = (p) => p * p;
+        const phase = (t, a, b) => clamp((t - a) / (b - a));
+        const hex = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+        const mixc = (a, b, p) => a.map((v, i) => Math.round(lerp(v, b[i], p)));
+        const rgb = (c) => `rgb(${c[0]},${c[1]},${c[2]})`;
+        // Générateur pseudo-aléatoire déterministe (mulberry32).
+        let graine = 20260928;
+        const alea = () => {
+          graine |= 0;
+          graine = (graine + 0x6d2b79f5) | 0;
+          let x = Math.imul(graine ^ (graine >>> 15), 1 | graine);
+          x = (x + Math.imul(x ^ (x >>> 7), 61 | x)) ^ x;
+          return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
+        };
+
+        // ---- Formes (même paramétrage pour un morphing continu) ----
+        const N = 240;
+        const forme = (fn) => {
+          const pts = [];
+          for (let k = 0; k < N; k++) pts.push(fn((k / N) * Math.PI * 2));
+          return pts;
+        };
+        const poire = (A, B, rugosite = 0) => (t) => {
+          const n = 1 + rugosite * (Math.sin(37 * t) * 0.6 + Math.sin(71 * t + 1) * 0.4);
+          return [A * Math.sin(t) * (0.6 + 0.4 * (1 - Math.cos(t)) / 2) * n, (-B * Math.cos(t) + B * 0.08) * n];
+        };
+        const fleur = (R) => (t) => {
+          const r = R * (0.5 + 0.5 * Math.pow(Math.abs(Math.cos(3 * t)), 0.8));
+          return [r * Math.sin(t), -r * Math.cos(t)];
+        };
+        const FLEUR = forme(fleur(150));
+        const PETIT = forme(poire(96, 128));
+        const MUR = forme(poire(190, 262, 0.012));
+        const melange = (a, b, p) => a.map((v, i) => [lerp(v[0], b[i][0], p), lerp(v[1], b[i][1], p)]);
+        const chemin = (pts, s = 1) =>
+          "M" + pts.map((p) => `${(p[0] * s).toFixed(1)},${(p[1] * s).toFixed(1)}`).join("L") + "Z";
+
+        const dMur = chemin(MUR);
+        document.querySelectorAll(".m-peau").forEach((e) => e.setAttribute("d", dMur));
+        document.querySelectorAll(".m-chair").forEach((e) => e.setAttribute("d", chemin(MUR, 0.88)));
+        $("#noyau").setAttribute("transform", "translate(0 46)");
+        $(".m-creux").setAttribute("transform", "translate(0 46)");
+
+        // Étamines de la fleur.
+        const etamines = $("#etamines");
+        for (let k = 0; k < 14; k++) {
+          const a = (k / 14) * Math.PI * 2;
+          const r = 16 + (k % 3) * 9;
+          const c = document.createElementNS(NS, "circle");
+          c.setAttribute("cx", (Math.cos(a) * r).toFixed(1));
+          c.setAttribute("cy", (Math.sin(a) * r).toFixed(1));
+          c.setAttribute("r", "5");
+          c.setAttribute("fill", k % 2 ? "#E8C84A" : "#C9A93A");
+          etamines.appendChild(c);
+        }
+        const coeur = document.createElementNS(NS, "circle");
+        coeur.setAttribute("r", "13");
+        coeur.setAttribute("fill", "#B9C95E");
+        etamines.prepend(coeur);
+
+        // Couleurs de l'élément principal : fleur, jeune fruit, avocat mûr.
+        const TEINTES = [
+          ["#FDFCE6", "#E4E9A8", "#BCCB72"],
+          ["#C2E27A", "#76AE3E", "#3E6B1E"],
+          ["#6A7A3C", "#3A4720", "#1C2410"],
+        ].map((l) => l.map(hex));
+        const stops = [$("#h0"), $("#h1"), $("#h2")];
+
+        // ---- Ingrédients ----
+        const CX = 540;
+        const polygone = (r, n, irr) => {
+          const pts = [];
+          for (let k = 0; k < n; k++) {
+            const a = (k / n) * Math.PI * 2 + alea() * 0.4;
+            const rr = r * (1 - irr + alea() * irr * 2);
+            pts.push(`${(Math.cos(a) * rr).toFixed(1)},${(Math.sin(a) * rr).toFixed(1)}`);
+          }
+          return "M" + pts.join("L") + "Z";
+        };
+        const TYPES = [
+          { n: 34, rouge: true, cree: () => ({ d: polygone(15 + alea() * 9, 6, 0.3), fill: alea() < 0.5 ? "#C7351F" : "#A92A18" }) },
+          { n: 30, rouge: false, cree: () => ({ c: 8 + alea() * 3, fill: "url(#g-poivre)" }) },
+          { n: 34, rouge: true, cree: () => ({ d: polygone(9 + alea() * 5, 4, 0.45), fill: alea() < 0.7 ? "#E0461F" : "#F0CE7A" }) },
+          { n: 28, rouge: false, cree: () => ({ d: polygone(7 + alea() * 3, 4, 0.08), fill: "url(#g-sel)" }) },
+          { n: 44, vert: true, cree: () => ({ d: polygone(12 + alea() * 9, 6, 0.3), fill: alea() < 0.5 ? "#6E9A34" : "#C9DB7A" }) },
+        ];
+        const couche = $("#ingredients");
+        const parts = [];
+        TYPES.forEach((ty) => {
+          for (let k = 0; k < ty.n; k++) {
+            const f = ty.cree();
+            const el = document.createElementNS(NS, f.d ? "path" : "circle");
+            if (f.d) el.setAttribute("d", f.d);
+            else el.setAttribute("r", f.c.toFixed(1));
+            el.setAttribute("fill", f.fill);
+            couche.appendChild(el);
+            const r = Math.sqrt(alea()) * 330;
+            const a = alea() * Math.PI * 2;
+            const p = {
+              el,
+              vert: !!ty.vert,
+              // Point d'atterrissage, dispersé autour du centre.
+              sol: [CX + Math.cos(a) * r, 930 + Math.sin(a) * r * 1.15],
+              rot0: alea() * 360,
+              spin: (alea() - 0.5) * 540,
+              // Place dans l'anneau.
+              ang: alea() * Math.PI * 2,
+              rayon: 230 + (alea() - 0.5) * 60,
+            };
+            if (ty.vert) {
+              // Les éclats verts naissent des moitiés d'avocat.
+              const cote = k % 2 ? 1 : -1;
+              p.t0 = 6.9 + alea() * 0.5;
+              p.dur = 0.8;
+              p.depart = [CX + cote * 175 + (alea() - 0.5) * 200, 930 + (alea() - 0.5) * 300];
+            } else {
+              p.t0 = 6.2 + alea() * 1.4;
+              p.dur = 1.0 + alea() * 0.3;
+              p.depart = [p.sol[0] + (alea() - 0.5) * 120, -60 - alea() * 240];
+            }
+            p.tb = 8.1 + alea() * 0.3;
+            p.tc = 10.0 + (p.ang / (Math.PI * 2)) * 0.45;
+            parts.push(p);
+          }
+        });
+        // Mélange l'ordre d'affichage pour que les couleurs se croisent.
+        parts
+          .map((p) => [alea(), p])
+          .sort((a, b) => a[0] - b[0])
+          .forEach(([, p]) => couche.appendChild(p.el));
+
+        const OUVERTURE = [CX, 690];
+        const anneau = (t) => {
+          const m = eio(phase(t, 9.0, 9.7));
+          return { c: [CX, lerp(930, 390, m)], s: lerp(1, 0.78, m), rot: 0.35 * (t - 8.1) };
+        };
+
+        // ---- Rendu d'une image ----
+        const hero = $("#hero");
+        const heroCorps = $("#hero-corps");
+        const heroPeau = $("#hero-peau");
+        const mg = $("#moitie-g");
+        const md = $("#moitie-d");
+        const noyau = $("#noyau");
+        const sachetDos = $("#sachet-dos");
+        const sachetFace = $("#sachet-face");
+
+        function rendu(t) {
+          // 1. Fleur → jeune fruit → avocat mûr.
+          const m1 = eio(phase(t, 1.5, 2.9));
+          const m2 = eio(phase(t, 2.9, 4.4));
+          const pts = m2 > 0 ? melange(PETIT, MUR, m2) : melange(FLEUR, PETIT, m1);
+          const d = chemin(pts);
+          heroCorps.setAttribute("d", d);
+          heroPeau.setAttribute("d", d);
+          const coul = [0, 1, 2].map((i) => {
+            const a = mixc(TEINTES[0][i], TEINTES[1][i], m1);
+            return m2 > 0 ? mixc(TEINTES[1][i], TEINTES[2][i], m2) : a;
+          });
+          stops.forEach((s, i) => s.setAttribute("stop-color", rgb(coul[i])));
+          heroPeau.setAttribute("opacity", (eio(phase(t, 3.4, 4.4)) * 0.9).toFixed(3));
+          $("#etamines").setAttribute("opacity", (1 - phase(t, 1.5, 2.1)).toFixed(3));
+          const rot = lerp(-24, 0, m1) + 10 * (1 - m1) * phase(t, 0, 1.5);
+          const souffle = 1 + 0.02 * Math.sin(t * 1.6) * (1 - m2);
+          const disparu = phase(t, 4.6, 4.8);
+          hero.setAttribute("transform", `translate(${CX} 930) rotate(${rot.toFixed(2)}) scale(${souffle.toFixed(4)})`);
+          hero.setAttribute("opacity", (phase(t, 0, 0.4) * (1 - disparu)).toFixed(3));
+
+          // 2. L'avocat s'ouvre, le noyau s'efface, les moitiés fondent en éclats.
+          const ouv = eio(phase(t, 4.6, 5.6));
+          const fonte = ei(phase(t, 6.9, 7.6));
+          const ech = lerp(1, 0.78, ouv) * lerp(1, 0.15, fonte);
+          const dx = lerp(0, 178, ouv);
+          const opM = (t >= 4.6 ? 1 : 0) * (1 - fonte);
+          [
+            [mg, -1],
+            [md, 1],
+          ].forEach(([g, s]) => {
+            g.setAttribute("transform", `translate(${CX + s * dx} 930) scale(${ech.toFixed(4)})`);
+            g.setAttribute("opacity", opM.toFixed(3));
+            g.querySelector(".m-chair").setAttribute("opacity", eio(phase(t, 4.65, 5.3)).toFixed(3));
+          });
+          const nf = eio(phase(t, 5.8, 6.6));
+          noyau.setAttribute("transform", `translate(0 46) scale(${lerp(1, 0.3, nf).toFixed(3)})`);
+          noyau.setAttribute("opacity", (1 - nf).toFixed(3));
+
+          // 3. Pluie d'ingrédients, anneau, puis versement dans le sachet.
+          const A = anneau(t);
+          for (const p of parts) {
+            let x, y;
+            let sc = 1;
+            let op = 1;
+            const surAnneau = (tt) => {
+              const r = p.rayon * A.s;
+              return [A.c[0] + Math.cos(p.ang + A.rot) * r, A.c[1] + Math.sin(p.ang + A.rot) * r];
+            };
+            if (t < p.t0) {
+              op = 0;
+              [x, y] = p.depart;
+            } else if (t < p.tb) {
+              const k = phase(t, p.t0, p.t0 + p.dur);
+              if (p.vert) {
+                const e = eo(k);
+                x = lerp(p.depart[0], p.sol[0], e);
+                y = lerp(p.depart[1], p.sol[1], e);
+                sc = lerp(0.3, 1, e);
+                op = clamp(k * 4);
+              } else {
+                x = lerp(p.depart[0], p.sol[0], k);
+                y = lerp(p.depart[1], p.sol[1], ei(k));
+              }
+            } else if (t < p.tc) {
+              const k = eio(phase(t, p.tb, p.tb + 0.9));
+              const r = surAnneau(t);
+              x = lerp(p.sol[0], r[0], k);
+              y = lerp(p.sol[1], r[1], k);
+            } else {
+              const q = eio(phase(t, p.tc, p.tc + 0.85));
+              const r = p.rayon * A.s * (1 - q) + 10 * q;
+              const a = p.ang + A.rot + q * 4;
+              const c = [lerp(A.c[0], OUVERTURE[0], q), lerp(A.c[1], OUVERTURE[1], q)];
+              x = c[0] + Math.cos(a) * r;
+              y = c[1] + Math.sin(a) * r * (1 - 0.5 * q);
+              sc = lerp(1, 0.45, q);
+              op = 1 - phase(q, 0.75, 1);
+            }
+            const rotP = p.rot0 + p.spin * clamp(t - p.t0, 0, 1.3);
+            p.el.setAttribute("transform", `translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${rotP.toFixed(1)}) scale(${sc.toFixed(3)})`);
+            p.el.setAttribute("opacity", op.toFixed(3));
+          }
+
+          // 4. Le sachet monte du bas et reste centré pour le packshot.
+          const ys = lerp(2450, 1000, eo(phase(t, 9.0, 10.1)));
+          const tr = `translate(${CX} ${ys.toFixed(1)})`;
+          sachetDos.setAttribute("transform", tr);
+          sachetFace.setAttribute("transform", tr);
+        }
+
+        const tl = gsap.timeline({ paused: true });
+        const horloge = { t: 0 };
+        tl.to(horloge, { t: 12, duration: 12, ease: "none", onUpdate: () => rendu(horloge.t) }, 0);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["main"] = tl;
+        rendu(0);
+      })();
+    </script>
+  </body>
+</html>

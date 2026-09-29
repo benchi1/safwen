@@ -1,0 +1,37 @@
+{
+  "brand": "BeBail",
+  "tagline": "Gérer son immobilier ne devrait pas être un second métier.",
+  "brief": "Plateforme tout-en-un pour les propriétaires bailleurs : baux, quittances, signature électronique, LMNP, Airbnb et longue durée, avec un copilote IA. La marque doit rassurer (valeur juridique) tout en restant simple, moderne et humaine.",
+  "adjectives": ["serein", "simple", "moderne", "fiable", "humain"],
+  "criteria": "Réussite : se distinguer des immeubles et clés génériques de la gestion locative, tenir à 16 px, fonctionner en une couleur, porter l'idée du bail signé.",
+  "industry": "saas",
+  "mockups": ["website", "app-icon", "favicon-tab", "social", "business-card", "payment-card"],
+  "nav": ["Fonctionnalités", "Tarifs", "Assistant IA"],
+  "brand_color": "#17754A",
+  "tile_color": "#0B1116",
+  "greyscale": false,
+  "final": true,
+  "deck_title": "identité finale",
+  "label": "Logo final",
+  "designer": "BeBail",
+  "concepts": [
+    {
+      "name": "Signature",
+      "symbol": "logo/bebail-symbole-couleur-clair.svg",
+      "lockup": "logo/bebail-horizontal-couleur-clair.svg",
+      "stacked": "logo/bebail-empile-couleur-clair.svg",
+      "avatar": "logo/bebail-symbole-petit-couleur-clair.svg",
+      "symbol_on_tile": "logo/bebail-symbole-petit-couleur-sombre.svg",
+      "symbol_on_dark": "logo/bebail-symbole-couleur-sombre.svg",
+      "lockup_on_dark": "logo/bebail-horizontal-couleur-sombre.svg",
+      "stacked_on_dark": "logo/bebail-empile-couleur-sombre.svg",
+      "idea": "Une maison tracée d'un seul trait qui finit en paraphe : le bail signé, le chez-soi réglé.",
+      "rationale": [
+        "Un seul trait : la simplicité promise par la plateforme",
+        "Le paraphe évoque la signature électronique et la valeur juridique",
+        "Menthe sur nuit : reprend l'équité visuelle du site, vert sapin pour les fonds clairs"
+      ]
+    }
+  ],
+  "recommendation": "Signature : le seul signe de la catégorie qui raconte à la fois le logement et l'acte de signer."
+}

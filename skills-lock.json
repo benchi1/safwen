@@ -1,6 +1,12 @@
 {
   "version": 1,
   "skills": {
+    "logo-design": {
+      "source": "kaankiziltug/logo-design-skill",
+      "sourceType": "github",
+      "skillPath": "skills/logo-design/SKILL.md",
+      "computedHash": "48b74e7a844af0ef74a7a7c32eb316c8c7b55a168439c27afde74e085559a8ae"
+    },
     "text-to-lottie": {
       "source": "diffusionstudio/lottie",
       "sourceType": "github",

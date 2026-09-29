@@ -412,5 +412,5 @@ footer {{ padding-top: 32px; font-size: 13px; color: var(--muted); border-top: 1
 }})();
 </script>
 '''
-open("charte/charte-bebail.html", "w", encoding="utf-8").write(html)
+open("charte/charte-bebail-v1.html", "w", encoding="utf-8").write(html)
 print("ok", len(html) // 1024, "Ko")

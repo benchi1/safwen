@@ -1,0 +1,33 @@
+{
+  "brand": "bebail",
+  "tagline": "Gérer son immobilier ne devrait pas être un second métier.",
+  "brief": "Plateforme tout-en-un pour les propriétaires bailleurs : baux, quittances, signature électronique, LMNP, Airbnb et longue durée, avec un copilote IA.",
+  "adjectives": ["serein", "simple", "moderne", "fiable", "français"],
+  "industry": "saas",
+  "mockups": ["website", "app-icon", "favicon-tab", "social", "business-card", "payment-card"],
+  "nav": ["Fonctionnalités", "Tarifs", "Assistant IA"],
+  "brand_color": "#2F3BFF",
+  "tile_color": "#2F3BFF",
+  "greyscale": false,
+  "final": true,
+  "deck_title": "identité v2",
+  "label": "Logo final",
+  "designer": "bebail",
+  "concepts": [
+    {
+      "name": "b-signature",
+      "symbol": "logo/bebail-symbole-pierre.svg",
+      "lockup": "logo/bebail-horizontal-pierre.svg",
+      "stacked": "logo/bebail-empile-pierre.svg",
+      "avatar": "logo/bebail-symbole-petit-pierre.svg",
+      "symbol_on_tile": "logo/bebail-symbole-petit-encre.svg",
+      "stacked_on_tile": "logo/bebail-empile-encre.svg",
+      "symbol_on_dark": "logo/bebail-symbole-nuit.svg",
+      "lockup_on_dark": "logo/bebail-horizontal-nuit.svg",
+      "stacked_on_dark": "logo/bebail-empile-nuit.svg",
+      "idea": "Un b dont la panse est une maison et dont le pied file en paraphe : l'initiale, le logement et la signature en un trait.",
+      "rationale": ["Initiale propre à la marque, lisible à 16 px", "Le paraphe évoque la signature électronique", "Encre et pierre : une palette que personne n'a dans la gestion locative"]
+    }
+  ],
+  "recommendation": "b-signature en Encre sur Pierre."
+}

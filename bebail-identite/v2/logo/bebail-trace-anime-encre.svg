@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img"><title>bebail · chargement</title><style>
+.s{fill:none;stroke:#2F3BFF;stroke-width:28;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}
+.a{animation:a 2.4s cubic-bezier(.55,.05,.35,1) infinite}
+.b{animation:bb 2.4s cubic-bezier(.55,.05,.35,1) infinite}
+@keyframes a{0%{stroke-dashoffset:1;opacity:0}3%{opacity:1}38%,88%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+@keyframes bb{0%,34%{stroke-dashoffset:1;opacity:0}36%{opacity:1}62%,88%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+@media (prefers-reduced-motion:reduce){.s{animation:none;stroke-dashoffset:0}}
+</style><g transform="translate(-31.00 2.00)">
+<path class="s a" pathLength="1" d="M80 30V178C80 202 96 216 120 216H178C204 216 220 208 238 194"/><path class="s b" pathLength="1" d="M80 120L136 64L192 120V204"/></g></svg>

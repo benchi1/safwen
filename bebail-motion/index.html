@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>BeBail — motion</title>
+<style>
+  @font-face { font-family: Geist; src: url(fonts/Geist-400.ttf); font-weight: 400; }
+  @font-face { font-family: Geist; src: url(fonts/Geist-500.ttf); font-weight: 500; }
+  @font-face { font-family: Geist; src: url(fonts/Geist-600.ttf); font-weight: 600; }
+  @font-face { font-family: Geist; src: url(fonts/Geist-700.ttf); font-weight: 700; }
+  @font-face { font-family: Mono; src: url(fonts/GeistMono-500.ttf); font-weight: 500; }
+  @font-face { font-family: Serif; src: url(fonts/InstrumentSerif-Italic.ttf); font-style: italic; }
+  html, body { margin: 0; background: #000; overflow: hidden; }
+  canvas { display: block; }
+  body:not(.render) canvas { height: 100vh; width: 56.25vh; margin: auto; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<audio id="a" src="soundtrack.wav" preload="auto"></audio>
+<script src="reel.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Showreel 2026</title>
+<style>
+  @font-face { font-family: Anton; src: url(fonts/Anton.ttf); }
+  @font-face { font-family: SG; src: url(fonts/SpaceGrotesk-500.ttf); font-weight: 500; }
+  @font-face { font-family: SG; src: url(fonts/SpaceGrotesk-700.ttf); font-weight: 700; }
+  @font-face { font-family: Serif; src: url(fonts/InstrumentSerif-Italic.ttf); font-style: italic; }
+  @font-face { font-family: Mono; src: url(fonts/JetBrainsMono-500.ttf); font-weight: 500; }
+  html, body { margin: 0; background: #000; overflow: hidden; }
+  canvas { display: block; }
+  body:not(.render) canvas { width: 100vw; height: 56.25vw; max-height: 100vh; max-width: 177.78vh; margin: auto; }
+</style>
+</head>
+<body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<audio id="a" src="soundtrack.wav" preload="auto"></audio>
+<script src="reel.js"></script>
+</body>
+</html>

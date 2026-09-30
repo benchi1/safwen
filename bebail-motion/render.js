@@ -1,5 +1,5 @@
 // Rendu image par image : node render.js [stills t1,t2,...]
-// Sans argument : rend les images et encode renders/bebail.mp4 avec la bande-son.
+// Sans argument : rend les images et encode renders/video.mp4 (sans son ; voir mix.py pour l'audio).
 const { chromium } = require('playwright');
 const { spawn, execFileSync } = require('child_process');
 const fs = require('fs'), path = require('path');
@@ -27,9 +27,8 @@ const dir = __dirname, out = path.join(dir, 'renders');
   }
 
   const ff = spawn(FFMPEG, ['-y', '-v', 'error', '-f', 'image2pipe', '-framerate', String(FPS), '-c:v', 'png', '-i', '-',
-    '-i', path.join(dir, 'soundtrack.wav'),
     '-c:v', 'libx264', '-preset', 'slow', '-crf', '17', '-pix_fmt', 'yuv420p', '-tune', 'animation',
-    '-c:a', 'aac', '-b:a', '256k', '-shortest', '-movflags', '+faststart', path.join(out, 'bebail.mp4')], { stdio: ['pipe', 'inherit', 'inherit'] });
+    '-movflags', '+faststart', path.join(out, 'video.mp4')], { stdio: ['pipe', 'inherit', 'inherit'] });
   const t0 = Date.now();
   for (let i = 0; i < N; i++) {
     await page.evaluate(t => window.renderFrame(t), i / FPS);

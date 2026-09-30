@@ -2,11 +2,11 @@
 # Format : id|départ (en temps musicaux, 1 temps = 0,5 s)|texte envoyé au TTS
 # « BeBail » s'écrit « Bi-Baille » pour la prononciation.
 v1|0.6|Gérer son immobilier ne devrait pas être un second métier.
-v2|10.6|Excel, emails, quittances faites à la main… Airbnb d'un côté, les baux de l'autre. Trop d'outils. Trop de temps.
-v3|26.6|Voici Bi-Baille. La gestion locative, enfin sereine.
+v2|10.2|Excel, emails, quittances faites à la main… Airbnb d'un côté, les baux de l'autre. Trop d'outils. Trop de temps.
+v3|27|Voici Bi-Baille. La gestion locative, enfin sereine.
 v4|35|Tous vos biens, vos loyers et vos locataires, sur un seul écran, en temps réel.
 v5|51|Créez un bail conforme en quelques clics, et faites-le signer électroniquement.
-v6|67|Chaque mois, Bi-Baille détecte le loyer, génère la quittance, et l'envoie à votre locataire. Automatiquement.
-v7|82.6|Signature électronique, horodatage, archivage légal, données chiffrées en Europe.
+v6|66.8|Chaque mois, Bi-Baille détecte le loyer, génère la quittance, et l'envoie à votre locataire. Automatiquement.
+v7|82.8|Signature électronique, horodatage, archivage légal, données chiffrées en Europe.
 v8|94.6|De la dispersion… à la sérénité.
 v9|103|Bi-Baille. Essayez-le gratuitement, sur bi-baille point com.

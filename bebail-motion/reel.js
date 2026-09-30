@@ -251,8 +251,10 @@ function background(t) {
     [540 + Math.sin(t * .5) * 260, 1000 + Math.cos(t * .4) * 300, 760, [255, 138, 76], .20 * chaos],
     [CX, 820, 700, [62, 232, 154], .25 * prog(b, 26, 27) * (1 - prog(b, 33, 34.5)) + .22 * prog(b, 102, 104)],
   ];
+  const kick = b >= 34 && b < 102 ? 1 + .45 * Math.exp(-(b % 1) * 5) : 1;
   ctx.save(); ctx.globalCompositeOperation = 'lighter';
-  for (const [x, y, r, [R, G, Bl], a] of orbs) {
+  for (const [x, y, r, [R, G, Bl], a0] of orbs) {
+    const a = a0 * kick;
     if (a <= 0) continue;
     const g = ctx.createRadialGradient(x, y, 0, x, y, r);
     g.addColorStop(0, `rgba(${R},${G},${Bl},${a})`); g.addColorStop(1, `rgba(${R},${G},${Bl},0)`);
@@ -766,14 +768,32 @@ function draw(t) {
   lc.setTransform(1, 0, 0, 1, 0, 0); lc.globalAlpha = 1; lc.globalCompositeOperation = 'source-over'; lc.filter = 'none';
   lc.clearRect(0, 0, W, H);
   sc[3](lc, lb);
-  const ex = sc[2] ? E.inCubic(prog(b, sc[1] - sc[2], sc[1])) : 0;
+  // whip-pan : la scène sortante file vers le haut, l'entrante arrive d'en bas, avec traînée de flou
+  const ex = sc[2] ? E.inExpo(prog(b, sc[1] - .7, sc[1])) : 0;
+  const idx = SCENES.indexOf(sc);
+  const en = idx > 0 && SCENES[idx - 1][2] ? 1 - E.outExpo(prog(lb, 0, .8)) : 0;
+  const off = -ex * 900 + en * 900, smear = ex * 260 + en * 260;
+  const push = 1 + .035 * E.outCubic(prog(lb, 0, sc[1] - sc[0]));
   ctx.save();
-  if (ex > 0) {
-    ctx.globalAlpha = 1 - ex; ctx.filter = `blur(${ex * 18}px)`;
-    ctx.translate(CX, H / 2); ctx.scale(1 + ex * .08, 1 + ex * .08); ctx.translate(-CX, -H / 2 - ex * 60);
-  }
-  ctx.drawImage(LYR, 0, 0);
+  ctx.translate(CX, H / 2); ctx.scale(push, push); ctx.translate(-CX, -H / 2);
+  if (smear > 2) {
+    const n = 7;
+    for (let k = 0; k < n; k++) {
+      ctx.globalAlpha = (1 - Math.max(ex, en) * .5) / n * 1.6;
+      ctx.drawImage(LYR, 0, off + (k / (n - 1) - .5) * smear * (en > 0 ? -1 : 1));
+    }
+  } else ctx.drawImage(LYR, 0, off);
   ctx.restore();
+  // éclat menthe au moment de la coupe
+  const cut = Math.max(ex, en);
+  if (cut > .05) {
+    ctx.save(); ctx.globalCompositeOperation = 'lighter';
+    const y = H / 2 + (ex > 0 ? (1 - ex) * H * .6 : -(1 - en) * H * .6);
+    const g = ctx.createLinearGradient(0, y - 220, 0, y + 220);
+    g.addColorStop(0, 'rgba(62,232,154,0)'); g.addColorStop(.5, `rgba(62,232,154,${.28 * cut})`); g.addColorStop(1, 'rgba(62,232,154,0)');
+    ctx.fillStyle = g; ctx.fillRect(0, y - 220, W, 440);
+    ctx.restore();
+  }
   // grain
   ctx.save(); ctx.globalCompositeOperation = 'overlay'; ctx.globalAlpha = .07;
   ctx.drawImage(GRAIN[Math.floor(t * FPS) % GRAIN.length], 0, 0, W, H); ctx.restore();

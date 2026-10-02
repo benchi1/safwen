@@ -4,6 +4,7 @@ const C={dengri:'#1E3A5F',chaux:'#F5F1E8',terre:'#B0472A',huile:'#C9C63C'};
 const emb=E.emblem(C.chaux).replace(/^<svg[^>]*viewBox="([^"]+)"[^>]*>/,'').replace(/<\/svg>$/,'').replace(/currentColor/g,C.chaux);
 const vb=E.emblem(C.chaux).match(/viewBox="([^"]+)"/)[1].split(' ').map(Number);
 const lw=172,ly=430,sc=lw/vb[2],lx=210-lw/2;
+const SIG=fs.readFileSync(__dirname+'/signature.path','utf8');
 const svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 1100">
 <defs>
  <linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#10160B"/><stop offset=".18" stop-color="#3B4A22"/><stop offset=".32" stop-color="#1E2913"/><stop offset=".8" stop-color="#121A0C"/><stop offset="1" stop-color="#070A05"/></linearGradient>
@@ -19,6 +20,7 @@ ${Array.from({length:12},(_,i)=>`<line x1="${174+i*6.5}" y1="24" x2="${174+i*6.5
 <text x="210" y="142" text-anchor="middle" font-family="Archivo" font-stretch="125%" font-weight="700" font-size="11" letter-spacing="3" fill="${C.dengri}">RÉCOLTE 2026</text>
 <rect x="96" y="${ly-34}" width="228" height="650" fill="${C.dengri}"/>
 <g transform="translate(${lx-vb[0]*sc} ${ly-vb[1]*sc}) scale(${sc})">${emb}</g>
+<path d="${SIG}" fill="${C.chaux}"/>
 <line x1="134" x2="286" y1="900" y2="900" stroke="${C.chaux}" stroke-opacity=".5"/>
 <text x="210" y="934" text-anchor="middle" font-family="Instrument Serif" font-style="italic" font-size="30" fill="${C.chaux}">Vierge extra</text>
 <text x="210" y="960" text-anchor="middle" font-family="Archivo" font-stretch="112%" font-weight="700" font-size="10" letter-spacing="1.6" fill="${C.huile}">CHÉTOUI · PRESSÉE À FROID</text>

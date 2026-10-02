@@ -22,3 +22,12 @@ Lot 2 (échelle propre au lot ; ancre commune = « taie d'oreiller en soie ») :
 | collier perle d'eau douce | 0 | trop faible pour être mesuré |
 
 Conclusion demande : parmi les catégories testées, seule « taie d'oreiller en soie » combine volume mesurable, hausse sur 5 ans et pic cadeau prévisible. « kimono femme » a du volume mais requête générique en baisse (-40 %). « chapeau panama » : volume moyen, saison courte, stable/en baisse.
+
+## Requêtes associées (Google Trends via Firecrawl, FR, 5 ans, consulté 2026-10-02)
+Source : https://trends.firecrawl.dev/explore?q=taie+d%27oreiller+en+soie&geo=FR&date=today+5-y
+**taie d'oreiller en soie — top (indice relatif)** : taie oreiller soie 100 ; taie oreiller en soie 98 ; oreiller en soie 98 ; **taie d'oreiller en soie cheveux 87** ; taie d'oreiller satin 84 ; taie … ikea 51 ; … pour cheveux 34 ; mommes soie 28 ; **bonnet en soie 24** ; soie de murier 22 ; … bienfaits 13.
+**En hausse** : « lilly skin » (explosion) ; … nature et découverte +250 % ; **mommes soie +150 %** ; chillsilk +120 % ; **… 25 mommes +90 %** ; leclerc +90 % ; **bonnet en soie +60 %** ; soie de mûrier +50 %.
+Lecture : l'intention dominante est **cheveux** (87/100), la clientèle se renseigne sur le **momme** (montée en gamme), le **bonnet en soie** est l'extension naturelle ; la grande distribution (Ikea, Leclerc, Nature & Découvertes) tire le prix d'entrée vers le bas → se positionner au-dessus, sur la preuve technique (25 momme, grade 6A, tests).
+
+Source : https://trends.firecrawl.dev/explore?q=chapeau+panama&geo=FR&date=today+5-y
+**chapeau panama — top** : chapeau panama femme 100 ; prix chapeau panama 29 ; en hausse : prix chapeau panama roland garros +110 %. Lecture : demande majoritairement féminine et sensible au prix ; un seul pic événementiel (Roland-Garros, fin mai-juin).

@@ -1,0 +1,607 @@
+<title>VAGA Huile d'Olive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;700&family=Marcellus&display=swap">
+<style>
+/* Mise en page : livre de marque éditorial, alternance de chapitres sombres (nuit d'olivier) et clairs (pierre de Dougga) */
+:root{
+  --noir:#191D14; --olive:#3F4B24; --chetoui:#6E7B3A; --or:#C79A3E; --or-clair:#E2C27A;
+  --pierre:#DCCBA6; --chaux:#F4EFE4; --terre:#9A4527; --dengri:#2C4766;
+  --ink:#191D14; --muted:#5E604E; --line:#CDBF9F;
+  --f-display:"Marcellus","Trajan Pro",Georgia,serif;
+  --f-serif:"Cormorant Garamond",Georgia,serif;
+  --f-sans:"Manrope","Helvetica Neue",Arial,sans-serif;
+  --f-ar:"Amiri","Noto Naskh Arabic",serif;
+  --w:1180px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--chaux);color:var(--ink);font-family:var(--f-sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;display:block}
+.wrap{max-width:var(--w);margin:0 auto;padding-inline:clamp(16px,4vw,48px)}
+section{padding-block:clamp(64px,9vw,120px)}
+.dark{background:var(--noir);color:var(--chaux)}
+.dark .muted{color:#B9B49C}
+.stone{background:var(--pierre)}
+.muted{color:var(--muted)}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;margin:0;text-wrap:balance;letter-spacing:.04em}
+h2{font-size:clamp(32px,4.6vw,56px);line-height:1.08}
+h3{font-size:22px;line-height:1.2}
+p{margin:0;max-width:62ch}
+.eyebrow{font-family:var(--f-sans);font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--or)}
+.serif{font-family:var(--f-serif);font-style:italic}
+.ar{font-family:var(--f-ar);direction:rtl}
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(24px,5vw,72px);align-items:end;margin-bottom:clamp(40px,6vw,72px)}
+.head p{font-size:18px}
+.grid{display:grid;gap:clamp(16px,2vw,28px)}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.g6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.tile{border:1px solid var(--line);padding:clamp(18px,2.4vw,32px);display:flex;flex-direction:column;gap:12px;min-width:0}
+.dark .tile{border-color:#3A3F2E}
+.cap{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.note{font-size:14px;color:var(--muted)}
+.dark .note{color:#A9A58C}
+
+/* nav */
+nav.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(25,29,20,.92);backdrop-filter:blur(8px);color:var(--chaux)}
+nav.top .wrap{display:flex;align-items:center;gap:24px;height:58px}
+nav.top .mark{width:26px;flex:none}
+nav.top .wm{font-family:var(--f-display);letter-spacing:.3em;font-size:17px}
+nav.top ul{display:flex;gap:20px;list-style:none;margin:0 0 0 auto;padding:0;overflow-x:auto;scrollbar-width:none}
+nav.top a{color:#CFC9AE;text-decoration:none;font-size:12px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+nav.top a:hover,nav.top a:focus-visible{color:var(--or-clair)}
+a:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+
+/* hero */
+.hero{background:var(--noir);color:var(--chaux);padding-block:0;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center;min-height:620px;padding-block:72px}
+.hero h1{font-size:clamp(64px,11vw,148px);letter-spacing:.22em;line-height:.95;margin-left:-.04em}
+.hero .tag{font-family:var(--f-serif);font-style:italic;font-size:clamp(24px,3vw,36px);color:var(--or-clair);margin-top:18px}
+.hero .ar{font-size:30px;color:var(--pierre);margin-top:8px;text-align:left}
+.hero .lede{margin-top:28px;color:#C9C4A9;font-size:17px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:36px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#A9A58C}
+.hero .meta b{color:var(--or-clair);font-weight:700}
+.hero .stage{position:relative;display:flex;justify-content:center;align-items:flex-end;height:100%}
+.hero .sunbg{position:absolute;inset:auto 0 18% 0;margin:auto;width:min(420px,90%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#E8B95A 0%,#C79A3E 38%,rgba(199,154,62,0) 70%);opacity:.55}
+.hero .stage .b{position:relative;width:min(200px,42%);filter:drop-shadow(0 30px 40px rgba(0,0,0,.5))}
+.hero .stage .b.sm{width:min(130px,27%);margin-left:-18px;margin-bottom:0}
+.heroimg{width:100%;aspect-ratio:16/9;object-fit:cover;background:#2A2E20}
+
+/* platform */
+.pillars .tile h3{color:var(--olive)}
+.quote{font-family:var(--f-serif);font-style:italic;font-size:clamp(26px,3.4vw,40px);line-height:1.25;max-width:28ch}
+.kv{display:grid;grid-template-columns:150px minmax(0,1fr);gap:10px 24px;border-top:1px solid var(--line);padding-top:18px}
+.kv dt{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--terre)}
+.kv dd{margin:0}
+.timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid #3A3F2E}
+.timeline div{padding:22px 20px 0 0}
+.timeline .y{font-family:var(--f-display);font-size:30px;color:var(--or-clair)}
+
+/* logo */
+.logo-box{aspect-ratio:1;display:grid;place-items:center;padding:14%}
+.logo-box svg{width:100%;height:100%}
+.lock{display:flex;flex-direction:column;align-items:center;gap:10px}
+.lock .wm{font-family:var(--f-display);letter-spacing:.32em;font-size:clamp(28px,4vw,44px);margin-right:-.32em}
+.lock .sub{font-size:10px;letter-spacing:.3em;font-weight:700}
+.bg-noir{background:var(--noir);color:var(--chaux)} .bg-chaux{background:var(--chaux);color:var(--noir)}
+.bg-olive{background:var(--olive);color:var(--chaux)} .bg-or{background:var(--or);color:var(--noir)}
+.bg-pierre{background:var(--pierre);color:var(--noir)} .bg-dengri{background:var(--dengri);color:var(--chaux)}
+.bg-terre{background:var(--terre);color:var(--chaux)}
+.construct{position:relative;background:var(--chaux);border:1px solid var(--line)}
+.dont{position:relative}
+.dont::after{content:"";position:absolute;inset:10px;border:0;background:linear-gradient(to top right,transparent calc(50% - 1px),var(--terre) calc(50% - 1px),var(--terre) calc(50% + 1px),transparent calc(50% + 1px));pointer-events:none;opacity:.8}
+
+/* couleurs */
+.sw{display:flex;flex-direction:column;min-width:0}
+.sw .chip{aspect-ratio:3/4;display:flex;align-items:flex-end;padding:16px;font-family:var(--f-display);font-size:20px}
+.sw .info{padding:14px 2px;font-size:13px;line-height:1.5}
+.sw .info b{display:block;font-size:14px}
+.sw code{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted)}
+.ratio{display:flex;height:22px;margin-top:28px}
+.ratio span{display:block}
+
+/* typo */
+.spec{border-top:1px solid var(--line);padding-top:20px;display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;align-items:baseline}
+.spec+.spec{margin-top:36px}
+.spec .big{font-size:clamp(40px,6vw,76px);line-height:1}
+.scale div{display:flex;align-items:baseline;gap:18px;border-bottom:1px solid var(--line);padding:10px 0}
+.scale span.l{width:110px;flex:none;font-size:12px;color:var(--muted);letter-spacing:.1em}
+
+/* icônes */
+.ico{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;padding:26px 10px;border:1px solid #3A3F2E;min-width:0}
+.ico svg{width:56px;height:56px;color:var(--or-clair)}
+.ico span{font-size:12px;letter-spacing:.08em;color:#CFC9AE}
+
+/* pattern */
+.pattern{height:300px;border:1px solid var(--line)}
+
+/* gamme */
+.range{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:end}
+.range .item{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+.range .item .b{width:min(170px,80%)}
+.range .item h3{font-family:var(--f-serif);font-style:italic;font-size:28px;letter-spacing:0}
+.range .item p{font-size:14px}
+.notes{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.notes span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--line);padding:4px 9px}
+.mock{background:#E9E0CB;display:grid;place-items:center;padding:24px;min-width:0}
+.mock svg{width:100%;height:auto}
+
+/* photos */
+.photo{margin:0;display:flex;flex-direction:column;gap:12px;min-width:0}
+.photo img{width:100%;height:auto;background:#2A2E20}
+.photo figcaption{font-size:13px;color:#A9A58C}
+.photo.wide{grid-column:1/-1}
+.illus{border:1px solid #3A3F2E}
+
+/* goodies */
+.good{display:flex;flex-direction:column;gap:12px;min-width:0}
+.good .mock{aspect-ratio:1}
+.good b{font-family:var(--f-display);font-weight:400;font-size:19px;letter-spacing:.04em}
+.good span{font-size:13px;color:var(--muted)}
+
+/* social */
+.post{aspect-ratio:4/5;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:22px}
+.post .t{font-family:var(--f-serif);font-style:italic;font-size:clamp(22px,2.4vw,30px);line-height:1.15}
+.post .s{font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:700}
+.web{border:1px solid var(--line);background:var(--chaux);overflow:hidden}
+.web .bar{display:flex;gap:6px;padding:10px 14px;background:#E3D8BF}
+.web .bar i{width:9px;height:9px;border-radius:50%;background:#B9A980;display:block}
+.web .in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:360px}
+.web .l{padding:clamp(20px,4vw,48px);display:flex;flex-direction:column;justify-content:center;gap:16px}
+.btn{display:inline-block;background:var(--noir);color:var(--chaux);padding:12px 20px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;width:max-content}
+
+/* ton */
+.voice{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px;background:var(--line);border:1px solid var(--line)}
+.voice div{background:var(--chaux);padding:22px}
+.voice .yes::before{content:"Oui";color:var(--olive)}
+.voice .no::before{content:"Non";color:var(--terre)}
+.voice .yes::before,.voice .no::before{display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.voice p{font-family:var(--f-serif);font-size:21px;line-height:1.35}
+
+footer{background:var(--noir);color:#A9A58C;padding-block:48px;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+
+@media (max-width:900px){
+  .head,.hero .wrap,.web .in{grid-template-columns:1fr}
+  .g4,.g6{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g3,.range{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .timeline{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .hero .wrap{min-height:0}
+  .hero .stage{min-height:360px}
+}
+@media (max-width:560px){
+  .g2,.g3,.g4,.range,.voice{grid-template-columns:1fr}
+  .g6{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .spec,.kv{grid-template-columns:1fr}
+  nav.top ul{display:none}
+}
+@media (prefers-reduced-motion:no-preference){
+  .hero .sunbg{animation:rise 2.4s ease-out both}
+  @keyframes rise{from{transform:translateY(40px);opacity:.25}to{transform:none;opacity:.55}}
+}
+</style>
+
+<nav class="top" aria-label="Chapitres">
+  <div class="wrap">
+    <span class="mark" id="navMark"></span><span class="wm">VAGA</span>
+    <ul>
+      <li><a href="#plateforme">Plateforme</a></li><li><a href="#logo">Logo</a></li><li><a href="#couleurs">Couleurs</a></li>
+      <li><a href="#typo">Typographie</a></li><li><a href="#icones">Icônes</a></li><li><a href="#gamme">Gamme</a></li>
+      <li><a href="#photo">Photo</a></li><li><a href="#goodies">Goodies</a></li><li><a href="#digital">Digital</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Huile d'olive vierge extra · Béja, Tunisie</div>
+      <h1 style="margin-top:20px">VAGA</h1>
+      <div class="tag">L'or que Rome venait chercher.</div>
+      <div class="ar">ڤاڨا · ذهب باجة</div>
+      <p class="lede">Avant de s'appeler Béja, la ville s'appelait Vaga. À vingt kilomètres, le Capitole de Thugga regarde les mêmes collines depuis dix-huit siècles. VAGA met ce paysage en bouteille : une huile de Chétoui pressée à froid le jour de la cueillette.</p>
+      <div class="meta"><span><b>Variété</b> Chétoui</span><span><b>Acidité</b> &lt; 0,3 %</span><span><b>Pression</b> à froid, &lt; 27 °C</span><span><b>Récolte</b> novembre</span></div>
+    </div>
+    <div class="stage">
+      <div class="sunbg"></div>
+      <div class="b" id="heroBottle"></div>
+      <div class="b sm" id="heroBottle2"></div>
+    </div>
+  </div>
+  <img class="heroimg" src="images/vaga-dougga-hero.jpg" alt="La bouteille VAGA Capitole posée sur un fragment de colonne romaine, le Capitole de Dougga au couchant en arrière-plan">
+</header>
+
+<!-- PLATEFORME -->
+<section id="plateforme">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow">01 · Plateforme de marque</div><h2 style="margin-top:14px">Le nom, l'histoire, la promesse</h2></div>
+      <p class="muted">VAGA est le nom antique de Béja, ville numide puis romaine, surnommée le grenier de Rome pour ses blés. Le nom est court, se prononce pareil en français, en arabe et en anglais, et porte une origine vérifiable. C'est l'actif principal de la marque.</p>
+    </div>
+    <div class="grid g2" style="align-items:start">
+      <p class="quote">« Une huile qui a l'âge de ses pierres. »</p>
+      <dl class="kv">
+        <dt>Promesse</dt><dd>Une huile de terroir précise, tracée de l'arbre à la bouteille, avec la dignité d'un grand cru.</dd>
+        <dt>Mission</dt><dd>Faire reconnaître le nord-ouest tunisien comme une terre d'huiles d'exception, et payer juste ceux qui la travaillent.</dd>
+        <dt>Cible</dt><dd>Épiceries fines, chefs, diaspora tunisienne, amateurs de produits d'origine en Europe et dans le Golfe. 25–55 ans, prêts à payer 18 à 32 € la bouteille de 500 ml.</dd>
+        <dt>Positionnement</dt><dd>Le premium tunisien patrimonial. Plus ancré que les huiles « design » sans origine, plus élégant que l'huile de vrac.</dd>
+        <dt>Personnalité</dt><dd>Fière, sobre, généreuse, savante sans être pédante.</dd>
+      </dl>
+    </div>
+    <div class="grid g4 pillars" style="margin-top:56px">
+      <div class="tile"><span class="eyebrow">Pilier</span><h3>Origine</h3><p class="note">Béja, Téboursouk, Dougga. Chaque lot porte le nom de sa parcelle et la date de pression.</p></div>
+      <div class="tile"><span class="eyebrow">Pilier</span><h3>Patrimoine</h3><p class="note">Thugga, classée à l'UNESCO en 1997. Ses monuments deviennent notre alphabet visuel.</p></div>
+      <div class="tile"><span class="eyebrow">Pilier</span><h3>Les mains</h3><p class="note">Les cueilleurs en dengri bleu sont les visages de la marque. Jamais des mannequins.</p></div>
+      <div class="tile"><span class="eyebrow">Pilier</span><h3>Le soleil</h3><p class="note">Le soleil de l'emblème rappelle l'exposition des vergers sur les coteaux de la Medjerda.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="eyebrow">Le récit en quatre dates</div>
+    <div class="timeline" style="margin-top:28px">
+      <div><div class="y">IVe s. av. J.-C.</div><p class="note">Vaga, place commerciale numide, au cœur des plaines à blé.</p></div>
+      <div><div class="y">IIe s.</div><p class="note">Thugga élève son Capitole à Jupiter, Junon et Minerve. Les pressoirs tournent déjà.</p></div>
+      <div><div class="y">1997</div><p class="note">Dougga entre au patrimoine mondial de l'UNESCO.</p></div>
+      <div><div class="y">MMXXVI</div><p class="note">Première cuvée VAGA, pressée le jour même de la cueillette.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGO -->
+<section id="logo">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow">02 · Logo</div><h2 style="margin-top:14px">L'arche du Capitole, le soleil de Béja</h2></div>
+      <p class="muted">L'emblème place la façade du Capitole de Dougga dans une arche, devant un soleil levant. Quatre feuilles d'olivier et une olive d'or tiennent la base. Le logotype est dessiné en capitales d'inscription romaine, très espacées, comme une dédicace gravée.</p>
+    </div>
+    <div class="grid g3">
+      <div class="tile"><div class="logo-box bg-chaux"><div class="lock" id="lockMain"></div></div><span class="cap">Signature principale</span><span class="note">Emblème + logotype + mention d'origine. Pour l'étiquette, le coffret, la papeterie.</span></div>
+      <div class="tile"><div class="logo-box bg-noir"><div id="monoA" style="width:62%"></div></div><span class="cap">Monogramme</span><span class="note">Un V formé de deux feuilles, une olive d'or au sommet. Pour les capsules, les réseaux, les petits formats.</span></div>
+      <div class="tile"><div class="logo-box bg-pierre"><div id="sealA" style="width:100%"></div></div><span class="cap">Sceau</span><span class="note">Cachet de cire, tampon, collerette, certificat de lot.</span></div>
+    </div>
+
+    <div class="grid g2" style="margin-top:28px">
+      <div class="tile">
+        <div class="construct" style="aspect-ratio:4/3;display:grid;place-items:center" id="construct"></div>
+        <span class="cap">Construction et zone de protection</span>
+        <span class="note">La zone de protection vaut la hauteur du fronton (x) sur chaque côté. Taille minimale : 18 mm de haut pour l'emblème, 8 mm pour le monogramme, 90 px à l'écran.</span>
+      </div>
+      <div class="tile">
+        <div class="grid g3" style="gap:10px" id="variants"></div>
+        <span class="cap">Déclinaisons de couleur</span>
+        <span class="note">Le logo vit en noir olive, en chaux ou en or. L'or n'est imprimé qu'en dorure à chaud ou en Pantone 7562 C, jamais en jaune quadri.</span>
+      </div>
+    </div>
+
+    <h3 style="margin:56px 0 20px">Usages interdits</h3>
+    <div class="grid g4" id="donts"></div>
+  </div>
+</section>
+
+<!-- COULEURS -->
+<section id="couleurs" class="stone">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow" style="color:var(--terre)">03 · Couleurs</div><h2 style="margin-top:14px">Une palette prise sur place</h2></div>
+      <p>Chaque couleur est relevée dans le paysage de Béja : le verre sombre de l'huile, la pierre blonde de Dougga, la terre rouge des plaines, le bleu du dengri des cueilleurs.</p>
+    </div>
+    <div class="grid g4" id="swatches"></div>
+    <div class="ratio" aria-label="Proportions d'usage">
+      <span style="flex:40;background:var(--noir)"></span><span style="flex:25;background:var(--chaux)"></span><span style="flex:14;background:var(--pierre);outline:1px solid var(--line)"></span><span style="flex:8;background:var(--olive)"></span><span style="flex:6;background:var(--or)"></span><span style="flex:4;background:var(--dengri)"></span><span style="flex:3;background:var(--terre)"></span>
+    </div>
+    <p class="note" style="margin-top:10px">Proportions d'usage : 40 % noir olive, 25 % chaux, 14 % pierre, l'or et les couleurs d'accent en petites touches.</p>
+  </div>
+</section>
+
+<!-- TYPO -->
+<section id="typo">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow">04 · Typographie</div><h2 style="margin-top:14px">Gravé, écrit, imprimé</h2></div>
+      <p class="muted">Trois voix latines et une voix arabe. Marcellus pour ce qui est gravé, Cormorant pour ce qui est dit, Manrope pour ce qui informe. Amiri porte l'arabe, en naskh classique, avec le même calme.</p>
+    </div>
+    <div class="spec"><div><div class="cap">Titrage</div><div class="note">Marcellus · capitales, interlettrage +200 à +320</div></div><div class="big" style="font-family:var(--f-display);letter-spacing:.2em">THUGGA</div></div>
+    <div class="spec"><div><div class="cap">Accroche</div><div class="note">Cormorant Garamond Italique 400–500</div></div><div class="big serif">Pressée le jour même</div></div>
+    <div class="spec"><div><div class="cap">Texte</div><div class="note">Manrope 400 / 700 · mentions, étiquettes, web</div></div><p style="font-size:18px">Huile d'olive vierge extra, obtenue directement des olives et uniquement par des procédés mécaniques. Acidité libre inférieure à 0,3 %. Variété Chétoui, récolte précoce.</p></div>
+    <div class="spec"><div><div class="cap">Arabe</div><div class="note">Amiri 400 / 700</div></div><div class="big ar" style="text-align:left">زيت زيتون من باجة</div></div>
+    <div class="scale" style="margin-top:48px">
+      <div><span class="l">H1 · 72/76</span><span style="font-family:var(--f-display);font-size:44px;letter-spacing:.2em">VAGA</span></div>
+      <div><span class="l">H2 · 44/48</span><span style="font-family:var(--f-display);font-size:32px">Le Capitole</span></div>
+      <div><span class="l">Accroche · 28/34</span><span class="serif" style="font-size:26px">Fruité vert, amande fraîche</span></div>
+      <div><span class="l">Texte · 16/26</span><span>Cueillie à la main sur les coteaux de Téboursouk.</span></div>
+      <div><span class="l">Mention · 11/16</span><span class="cap" style="letter-spacing:.24em">Lot 26-TB-04 · 500 ml</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ICONES -->
+<section id="icones" class="dark">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow">05 · Iconographie</div><h2 style="margin-top:14px">L'alphabet de Dougga</h2></div>
+      <p class="muted">Douze pictogrammes au trait, dessinés sur une grille de 64 unités, trait de 2,2. Les monuments de Thugga côtoient les gestes de l'oléiculture. On les utilise pour les cuvées, les notes de dégustation, le site et les goodies.</p>
+    </div>
+    <div class="grid g6" id="icons"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow">06 · Motif</div><h2 style="margin-top:14px">La mosaïque d'olivier</h2></div>
+      <p class="muted">Le motif reprend la trame des mosaïques de Dougga : losanges et rameaux alternés. Il habille l'intérieur des coffrets, le papier de soie, l'arrière des cartes et le dos des étiquettes.</p>
+    </div>
+    <div class="grid g2">
+      <div class="pattern" id="pat1"></div>
+      <div class="pattern" id="pat2"></div>
+    </div>
+  </div>
+</section>
+
+<!-- GAMME -->
+<section id="gamme" class="stone">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow" style="color:var(--terre)">07 · Gamme et packaging</div><h2 style="margin-top:14px">Trois cuvées, trois monuments</h2></div>
+      <p>Chaque cuvée porte le nom d'un monument de Thugga. La couleur de l'étiquette code l'intensité : chaux pour la cuvée signature, olive pour le fruité intense, noir et or pour l'édition limitée numérotée.</p>
+    </div>
+    <div class="range" id="range"></div>
+    <div class="grid g3" style="margin-top:64px">
+      <div class="good"><div class="mock" id="pkLabel"></div><b>Étiquette à plat</b><span>Papier coton texturé, dorure à chaud or, embossage de l'emblème. 120 × 236 mm.</span></div>
+      <div class="good"><div class="mock" id="pkTin"></div><b>Bidon 3 L</b><span>Fer-blanc laqué noir olive, sérigraphie or. Pour les chefs et les familles.</span></div>
+      <div class="good"><div class="mock" id="pkBox"></div><b>Coffret Capitole</b><span>Carton rigide noir, intérieur imprimé du motif mosaïque, fermeture aimantée.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO -->
+<section id="photo" class="dark">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow">08 · Mises en scène</div><h2 style="margin-top:14px">Le soleil, l'arbre, les mains</h2></div>
+      <p class="muted">Lumière rasante de fin d'après-midi, toujours. Des visages vrais, le dengri bleu des cueilleurs, la terre rouge, la pierre. Pas de studio blanc, pas de filtre froid, pas de mise en scène de cuisine.</p>
+    </div>
+    <div class="grid g2">
+      <figure class="photo"><img src="images/vaga-olivier-soleil.jpg" alt="La bouteille VAGA posée dans la fourche d'un vieil olivier, traversée par le soleil" loading="lazy"><figcaption>Maquette · La bouteille dans l'olivier, exposition plein soleil.</figcaption></figure>
+      <figure class="photo"><img src="images/vaga-agriculteur-dengri.jpg" alt="Un oléiculteur tunisien en dengri bleu et chapeau de paille tient la bouteille VAGA dans une oliveraie" loading="lazy"><figcaption>Campagne · « Ceux qui la cueillent ». Un oléiculteur de Béja en dengri.</figcaption></figure>
+      <figure class="photo wide"><div class="illus" id="scene"></div><figcaption>Illustration de marque · Pour les fonds de site, l'affichage et les sacs.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- GOODIES -->
+<section id="goodies">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow">09 · Objets de marque</div><h2 style="margin-top:14px">Les goodies</h2></div>
+      <p class="muted">Peu d'objets, de vraies matières, des savoir-faire tunisiens quand c'est possible : paille tressée, céramique de Nabeul, cuir, coton. Chaque objet doit servir autour de l'huile ou de la table.</p>
+    </div>
+    <div class="grid g4" id="goodies-grid"></div>
+  </div>
+</section>
+
+<!-- DIGITAL -->
+<section id="digital" class="stone">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow" style="color:var(--terre)">10 · Digital</div><h2 style="margin-top:14px">Instagram et site</h2></div>
+      <p>Trois gabarits de publication : la citation sur fond noir olive, le monument sur pierre, le portrait de cueilleur. Le site s'ouvre sur l'image du Capitole et une seule action : commander la cuvée.</p>
+    </div>
+    <div class="grid g3" id="posts"></div>
+    <div class="web" style="margin-top:32px">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <div class="in">
+        <div class="l">
+          <span class="eyebrow">Récolte MMXXVI</span>
+          <div style="font-family:var(--f-display);font-size:clamp(28px,3.4vw,42px);letter-spacing:.06em;line-height:1.1">L'huile de Vaga, pressée le jour même.</div>
+          <p class="note">Chétoui de Téboursouk, au pied du Capitole de Dougga. Livraison en Tunisie et en Europe.</p>
+          <span class="btn">Commander la cuvée</span>
+        </div>
+        <div style="background:var(--noir);display:grid;place-items:center;padding:24px;min-width:0"><img src="images/vaga-olivier-soleil.jpg" alt="" style="max-height:340px;width:auto;object-fit:cover"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TON -->
+<section>
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow">11 · Ton de voix</div><h2 style="margin-top:14px">Parler comme un vigneron</h2></div>
+      <p class="muted">Précis sur les faits, chaleureux sur les gens. On donne des chiffres vrais (acidité, date, parcelle) et des noms vrais. On n'écrit jamais « le meilleur » ni « unique ».</p>
+    </div>
+    <div class="voice">
+      <div class="yes"><p>Cueillie le 12 novembre sur la parcelle de Aïn Melliti, pressée six heures plus tard.</p></div>
+      <div class="no"><p>Une huile d'exception, fruit d'un savoir-faire ancestral unique au monde.</p></div>
+      <div class="yes"><p>Am Salah taille ces arbres depuis 1979. Il goûte chaque cuve avant nous.</p></div>
+      <div class="no"><p>Nos agriculteurs passionnés mettent tout leur cœur dans chaque goutte.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span style="display:flex;align-items:center;gap:12px"><span id="footMark" style="width:30px"></span><span style="font-family:var(--f-display);letter-spacing:.3em;color:var(--chaux)">VAGA</span></span>
+    <span>Charte de marque v1.0 · Béja, Tunisie · MMXXVI</span>
+    <span class="ar" style="font-size:18px">باجة · دڤة · تونس</span>
+  </div>
+</footer>
+
+<script src="assets.js"></script>
+<script>
+(function(){
+  const V = window.VAGA, C = V.C, $ = id => document.getElementById(id);
+  const put = (id, html) => { const el = $(id); if (el) el.innerHTML = html; };
+
+  put('navMark', V.monogram(C.or, C.or));
+  put('footMark', V.monogram(C.or, C.or));
+  put('heroBottle', V.bottle());
+  put('heroBottle2', V.bottle({ cuvee: 'Théâtre', varietal: 'Chétoui · Fruité intense', label: C.olive, ink: C.chaux, vol: '250 ml' }));
+
+  const lock = (ink, accent, sub) => `<div style="width:58%">${V.emblem(ink, accent)}</div><div class="wm" style="color:${ink}">VAGA</div><div class="sub" style="color:${sub || ink}">BÉJA · TUNISIE</div>`;
+  put('lockMain', lock(C.noir, C.or, C.olive));
+  put('monoA', V.monogram(C.chaux, C.or));
+  put('sealA', V.seal(C.noir, C.terre));
+
+  /* construction */
+  put('construct', `<svg viewBox="0 0 400 300" style="width:100%;height:100%">
+    <rect x="100" y="28" width="200" height="244" fill="none" stroke="${C.terre}" stroke-dasharray="4 4"/>
+    <rect x="128" y="50" width="144" height="200" fill="none" stroke="${C.or}" stroke-width=".8"/>
+    <line x1="200" y1="10" x2="200" y2="290" stroke="${C.terre}" stroke-width=".6"/>
+    <circle cx="200" cy="148" r="31" fill="none" stroke="${C.terre}" stroke-width=".6"/>
+    <circle cx="200" cy="148" r="58" fill="none" stroke="${C.terre}" stroke-width=".6" stroke-dasharray="2 3"/>
+    <g transform="translate(118 50) scale(.82)">${V.emblemInner(C.noir, C.or)}</g>
+    <text x="104" y="22" font-family="Manrope" font-size="10" fill="${C.terre}">x</text><text x="296" y="22" font-family="Manrope" font-size="10" fill="${C.terre}">x</text>
+    <text x="12" y="290" font-family="Manrope" font-size="9" letter-spacing="1.5" fill="${C.muted || '#5E604E'}">GRILLE 8 × 8 · RAYON DE L'ARCHE = 9 u</text></svg>`);
+
+  /* variantes */
+  const vars = [[C.noir, C.or, 'bg-chaux'], [C.chaux, C.or, 'bg-noir'], [C.chaux, C.or, 'bg-olive'], [C.noir, C.noir, 'bg-or'], [C.chaux, C.or, 'bg-dengri'], [C.chaux, C.pierre, 'bg-terre']];
+  put('variants', vars.map(([i, a, bg]) => `<div class="${bg}" style="aspect-ratio:1;display:grid;place-items:center;padding:16%"><div style="width:100%">${V.emblem(i, a, { templeFill: 'none' })}</div></div>`).join(''));
+
+  /* interdits */
+  const donts = [
+    ['Déformer', `<div style="width:60%;transform:scaleX(1.5)">${V.emblem(C.noir, C.or)}</div>`],
+    ['Changer les couleurs', `<div style="width:50%">${V.emblem('#2F6FD0', '#E6408A')}</div>`],
+    ['Ombre portée ou effet', `<div style="width:50%;filter:drop-shadow(6px 6px 2px rgba(0,0,0,.6))">${V.emblem(C.noir, C.or)}</div>`],
+    ['Sur photo chargée', `<div style="width:100%;height:100%;display:grid;place-items:center;background:repeating-linear-gradient(45deg,#8A9650 0 14px,#C79A3E 14px 28px,#3F4B24 28px 42px)"><div style="width:42%">${V.emblem(C.olive, C.or)}</div></div>`]
+  ];
+  put('donts', donts.map(([t, h]) => `<div class="tile"><div class="logo-box bg-chaux dont" style="padding:10%">${h}</div><span class="cap" style="color:var(--terre)">${t}</span></div>`).join(''));
+
+  /* couleurs */
+  const sws = [
+    ['Noir olive', C.noir, C.chaux, '#191D14', '25 29 20', 'Pantone Black 5 C', 'Le verre, les fonds, le texte'],
+    ['Chaux', C.chaux, C.noir, '#F4EFE4', '244 239 228', 'Pantone 9224 C', 'Étiquette, papeterie'],
+    ['Pierre de Dougga', C.pierre, C.noir, '#DCCBA6', '220 203 166', 'Pantone 7501 C', 'Fonds secondaires, carton'],
+    ['Or de Vaga', C.or, C.noir, '#C79A3E', '199 154 62', 'Pantone 7562 C · dorure', 'Soleil, olive, filets'],
+    ['Vert Chétoui', C.olive, C.chaux, '#3F4B24', '63 75 36', 'Pantone 7764 C', 'Cuvée Théâtre, accents'],
+    ['Feuille', C.chetoui, C.chaux, '#6E7B3A', '110 123 58', 'Pantone 5763 C', 'Illustration, pictos'],
+    ['Bleu dengri', C.dengri, C.chaux, '#2C4766', '44 71 102', 'Pantone 7693 C', 'Tablier, campagne, digital'],
+    ['Terre de Béja', C.terre, C.chaux, '#9A4527', '154 69 39', 'Pantone 7593 C', 'Cire, mentions de lot']
+  ];
+  put('swatches', sws.map(([n, bg, fg, hex, rgb, pms, use]) => `<div class="sw"><div class="chip" style="background:${bg};color:${fg};${bg === C.chaux ? 'outline:1px solid var(--line)' : ''}">${n}</div><div class="info"><b>${n}</b><code>${hex} · RVB ${rgb}</code><br><code>${pms}</code><br><span class="note">${use}</span></div></div>`).join(''));
+
+  /* icônes */
+  put('icons', Object.keys(V.ICONS).map(k => `<div class="ico">${V.icon(k)}<span>${V.ICON_NAMES[k]}</span></div>`).join(''));
+
+  /* motif */
+  const patSvg = (bg, a, b) => {
+    const pid = 'p' + Math.random().toString(36).slice(2, 7);
+    return `<svg width="100%" height="100%" aria-hidden="true"><defs><pattern id="${pid}" width="80" height="80" patternUnits="userSpaceOnUse">
+      <rect width="80" height="80" fill="${bg}"/>
+      <path d="M40 4 76 40 40 76 4 40Z" fill="none" stroke="${a}" stroke-width="1.2"/>
+      <path d="M40 22 58 40 40 58 22 40Z" fill="none" stroke="${a}" stroke-width=".8"/>
+      <circle cx="40" cy="40" r="3" fill="${a}"/>
+      <g fill="${b}"><g transform="translate(0 0) rotate(45)"><path d="${V.LEAF}" transform="scale(.22)"/></g><g transform="translate(80 0) rotate(-45)"><path d="${V.LEAF}" transform="scale(.22)"/></g>
+      <g transform="translate(0 80) rotate(135)"><path d="${V.LEAF}" transform="scale(.22)"/></g><g transform="translate(80 80) rotate(-135)"><path d="${V.LEAF}" transform="scale(.22)"/></g></g>
+      </pattern></defs><rect width="100%" height="100%" fill="url(#${pid})"/></svg>`;
+  };
+  put('pat1', patSvg(C.noir, C.or, C.olive));
+  put('pat2', patSvg(C.pierre, C.terre, C.olive));
+
+  /* gamme */
+  const cuvees = [
+    { cuvee: 'Capitole', varietal: 'Chétoui · Récolte précoce', o: {}, icon: 'capitole', notes: ['Herbe coupée', 'Artichaut', 'Amande'], txt: 'La cuvée signature. Fruité vert moyen, ardence franche en finale.', prix: '500 ml · 24 €' },
+    { cuvee: 'Théâtre', varietal: 'Chétoui · Fruité intense', o: { label: C.olive, ink: C.chaux }, icon: 'theatre', notes: ['Tomate verte', 'Poivre', 'Feuille'], txt: 'Pour les palais affirmés. Amertume et piquant marqués, idéale sur grillades.', prix: '500 ml · 26 €' },
+    { cuvee: 'Mausolée', varietal: 'Édition limitée · N° 0001/1500', o: { label: C.noir, ink: C.or, accent: C.or, glass: '#14180E' }, icon: 'mausolee', notes: ['Fruits secs', 'Herbes', 'Banane verte'], txt: 'Arbres de plus de cent ans, première cueillette. Numérotée, à la cire.', prix: '500 ml · 32 €' }
+  ];
+  put('range', cuvees.map(c => `<div class="item"><div class="b">${V.bottle(Object.assign({ cuvee: c.cuvee, varietal: c.varietal }, c.o))}</div>
+    <div style="width:34px;color:var(--olive)">${V.icon(c.icon)}</div><h3>${c.cuvee}</h3><p class="note">${c.txt}</p><div class="notes">${c.notes.map(n => `<span>${n}</span>`).join('')}</div><span class="cap">${c.prix}</span></div>`).join(''));
+
+  /* étiquette à plat */
+  put('pkLabel', `<svg viewBox="0 0 300 300"><rect x="70" y="10" width="160" height="280" fill="${C.chaux}" stroke="${C.line || '#CDBF9F'}"/>
+    <rect x="78" y="18" width="144" height="264" fill="none" stroke="${C.or}"/>
+    <g transform="translate(120 30) scale(.3)">${V.emblemInner(C.noir, C.or)}</g>
+    <text x="150" y="134" text-anchor="middle" font-family="Marcellus" font-size="30" letter-spacing="7" fill="${C.noir}">VAGA</text>
+    <text x="150" y="150" text-anchor="middle" font-family="Manrope" font-weight="700" font-size="6.6" letter-spacing="2.4" fill="${C.noir}">HUILE D'OLIVE VIERGE EXTRA</text>
+    <line x1="115" x2="185" y1="160" y2="160" stroke="${C.or}"/>
+    <text x="150" y="186" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="24" fill="${C.noir}">Capitole</text>
+    <text x="150" y="202" text-anchor="middle" font-family="Manrope" font-size="6.4" letter-spacing="1.6" fill="${C.noir}">CHÉTOUI · RÉCOLTE PRÉCOCE</text>
+    <text x="150" y="228" text-anchor="middle" font-family="Amiri" font-size="12" fill="${C.noir}">زيت زيتون بكر ممتاز · باجة</text>
+    <text x="150" y="254" text-anchor="middle" font-family="Manrope" font-size="6" letter-spacing="1.4" fill="${C.terre}">LOT 26-TB-04 · PRESSÉE LE 12.11.2026</text>
+    <text x="150" y="268" text-anchor="middle" font-family="Manrope" font-size="6" letter-spacing="1.4" fill="${C.noir}">BÉJA · TUNISIE · 500 ML</text></svg>`);
+
+  /* bidon */
+  put('pkTin', `<svg viewBox="0 0 300 300"><ellipse cx="150" cy="284" rx="90" ry="7" fill="#000" opacity=".18"/>
+    <path d="M70 70h160v206q0 6-6 6H76q-6 0-6-6Z" fill="${C.noir}"/><path d="M70 70l18-22h124l18 22Z" fill="#2A2F21"/>
+    <rect x="160" y="30" width="34" height="20" rx="3" fill="${C.or}"/><rect x="104" y="36" width="40" height="8" rx="4" fill="#2A2F21"/>
+    <rect x="80" y="80" width="10" height="190" fill="#fff" opacity=".07"/>
+    <rect x="90" y="96" width="120" height="164" fill="none" stroke="${C.or}"/>
+    <g transform="translate(126 106) scale(.24)">${V.emblemInner(C.or, C.or, { templeFill: C.noir })}</g>
+    <text x="150" y="196" text-anchor="middle" font-family="Marcellus" font-size="26" letter-spacing="6" fill="${C.or}">VAGA</text>
+    <text x="150" y="214" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="16" fill="${C.chaux}">Huile de cuisine des chefs</text>
+    <text x="150" y="246" text-anchor="middle" font-family="Manrope" font-weight="700" font-size="9" letter-spacing="3" fill="${C.or}">3 LITRES</text></svg>`);
+
+  /* coffret */
+  put('pkBox', `<svg viewBox="0 0 300 300"><defs><pattern id="bxp" width="24" height="24" patternUnits="userSpaceOnUse"><rect width="24" height="24" fill="${C.olive}"/><path d="M12 2 22 12 12 22 2 12Z" fill="none" stroke="${C.or}" stroke-width=".7"/></pattern></defs>
+    <path d="M40 120 150 90 260 120 150 150Z" fill="url(#bxp)"/>
+    <path d="M40 120v120l110 40V150Z" fill="${C.noir}"/><path d="M260 120v120l-110 40V150Z" fill="#232819"/>
+    <path d="M40 120 150 90V20L40 50Z" fill="#232819"/>
+    <g transform="translate(70 180) skewY(20)"><text font-family="Marcellus" font-size="22" letter-spacing="5" fill="${C.or}" x="0" y="0">VAGA</text></g>
+    <g transform="translate(176 172) skewY(-20) scale(.34)">${V.seal(C.or, C.or)}</g>
+    <g transform="translate(74 44) skewY(-15) scale(.18)">${V.emblemInner(C.or, C.or, { templeFill: '#232819' })}</g>
+    ${[[96, 52], [126, 46], [156, 40]].map(([x, y]) => V.place(V.bottle({ vol: '100 ml' }), x, y + 20, 34)).join('')}</svg>`);
+
+  /* scène */
+  put('scene', V.sceneOlivier());
+
+  /* goodies */
+  const G = [];
+  G.push(['Tote bag en coton', 'Toile écrue 340 g, sérigraphie noir olive. Offert dès deux bouteilles.', 'bg', `<svg viewBox="0 0 300 300"><path d="M110 70c0-40 80-40 80 0" fill="none" stroke="#CDBFA0" stroke-width="8"/><path d="M64 80h172l-8 196H72Z" fill="#EFE6D2" stroke="#D6C9AC"/>
+    <g transform="translate(120 110) scale(.3)">${V.emblemInner(C.noir, C.or)}</g>
+    <text x="150" y="214" text-anchor="middle" font-family="Marcellus" font-size="24" letter-spacing="6" fill="${C.noir}">VAGA</text>
+    <text x="150" y="236" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="15" fill="${C.olive}">l'or de Béja</text></svg>`]);
+  G.push(['Tablier dengri', 'Toile bleu dengri, coutures or, monogramme brodé. Pour les dégustations et les chefs.', 'bg', `<svg viewBox="0 0 300 300"><path d="M118 30h64v40h0l60 40-14 20-26-18v180H98V92l-26 18-14-20 60-40Z" fill="${C.dengri}"/>
+    <path d="M118 30c-30-10-40 0-40 0M182 30c30-10 40 0 40 0" stroke="${C.or}" stroke-width="2" fill="none"/>
+    <rect x="114" y="170" width="72" height="50" fill="none" stroke="${C.or}" stroke-dasharray="3 2"/>
+    <g transform="translate(132 80) scale(.36)">${V.monogramInner(C.or, C.or)}</g>
+    <text x="150" y="146" text-anchor="middle" font-family="Marcellus" font-size="12" letter-spacing="4" fill="${C.or}">VAGA</text></svg>`]);
+  G.push(['Mdhalla brodée', 'Chapeau de paille des cueilleurs, ruban noir olive tissé « VAGA ». Équipe et presse.', 'bg', `<svg viewBox="0 0 300 300"><ellipse cx="150" cy="190" rx="130" ry="44" fill="#D9B86E"/><ellipse cx="150" cy="186" rx="124" ry="38" fill="none" stroke="#B8954C" stroke-dasharray="2 4"/>
+    <path d="M96 186c0-70 20-100 54-100s54 30 54 100" fill="#E2C47E"/><path d="M96 168h108v18H96z" fill="${C.noir}"/>
+    <text x="150" y="181" text-anchor="middle" font-family="Marcellus" font-size="11" letter-spacing="5" fill="${C.or}">VAGA</text>
+    ${[0, 1, 2, 3, 4, 5].map(i => `<path d="M${104 + i * 4} ${150 - i * 10}h${92 - i * 8}" stroke="#C9A65E" stroke-width="1.2"/>`).join('')}</svg>`]);
+  G.push(['Verre de dégustation', 'Le verre bleu cobalt normalisé des jurys oléicoles, monogramme or. Pour les ateliers.', 'bg', `<svg viewBox="0 0 300 300"><ellipse cx="150" cy="262" rx="70" ry="9" fill="#000" opacity=".15"/>
+    <path d="M86 90c0 0-6 120 20 160h88c26-40 20-160 20-160Z" fill="#1E3E8C"/><ellipse cx="150" cy="90" rx="64" ry="12" fill="#3157B3"/>
+    <path d="M100 110c-2 40 2 90 16 128" stroke="#fff" stroke-opacity=".25" stroke-width="6" fill="none"/>
+    <g transform="translate(130 150) scale(.4)">${V.monogramInner(C.or, C.or)}</g></svg>`]);
+  G.push(['Cartes de visite', 'Recto noir olive en dorure, verso coton chaux. 85 × 55 mm, 600 g.', 'bg', `<svg viewBox="0 0 300 300"><g transform="rotate(-8 150 150)"><rect x="46" y="70" width="190" height="122" fill="${C.noir}"/>
+    <g transform="translate(121 86) scale(.2)">${V.emblemInner(C.or, C.or, { templeFill: C.noir })}</g><text x="141" y="166" text-anchor="middle" font-family="Marcellus" font-size="16" letter-spacing="5" fill="${C.or}">VAGA</text></g>
+    <g transform="rotate(6 150 150)"><rect x="70" y="140" width="190" height="122" fill="${C.chaux}" stroke="#D6C9AC"/>
+    <text x="86" y="176" font-family="Marcellus" font-size="13" fill="${C.noir}">Safwen B.</text><text x="86" y="192" font-family="Manrope" font-size="7" letter-spacing="1.5" fill="${C.terre}">FONDATEUR · MAÎTRE MOULINIER</text>
+    <text x="86" y="226" font-family="Manrope" font-size="7" fill="${C.noir}">Route de Téboursouk, Béja</text><text x="86" y="238" font-family="Manrope" font-size="7" fill="${C.noir}">vaga-oil.tn</text>
+    <g transform="translate(212 196) scale(.3)">${V.monogramInner(C.olive, C.or)}</g></g></svg>`]);
+  G.push(['Cachet de cire', 'Cire terre de Béja sur le bouchon de la cuvée Mausolée et les coffrets.', 'bg', `<svg viewBox="0 0 300 300"><path d="M150 52c40 0 46 22 70 30 24 10 22 40 30 62 8 24-10 44-24 60-16 18-40 24-76 24s-58-8-74-26c-14-16-30-34-22-58 8-22 6-52 30-62 24-8 26-30 66-30Z" fill="${C.terre}"/>
+    <circle cx="150" cy="150" r="72" fill="#86391F"/><g transform="translate(78 78) scale(.72)">${V.seal('#C9764F', '#D9906A')}</g></svg>`]);
+  G.push(['Savon à l’huile VAGA', 'Savon à froid à 72 % d’huile Chétoui, frappé du monogramme. Cadeau client.', 'bg', `<svg viewBox="0 0 300 300"><path d="M50 150l100-46 100 46-100 46Z" fill="#B9B47E"/><path d="M50 150v40l100 46v-40Z" fill="#9C9862"/><path d="M250 150v40l-100 46v-40Z" fill="#8A864F"/>
+    <g transform="translate(150 150) scale(1 .46) rotate(45)"><rect x="-52" y="-52" width="104" height="104" fill="none" stroke="#8C8752" stroke-width="2"/></g>
+    <g transform="translate(128 120) scale(.44 .3)">${V.monogramInner('#7E7A45', '#7E7A45')}</g></svg>`]);
+  G.push(['Carnet de récolte', 'Couverture toile olive, embossage or, pages de notes de dégustation.', 'bg', `<svg viewBox="0 0 300 300"><rect x="78" y="40" width="150" height="220" fill="#E9E0CB" transform="translate(8 6)"/><rect x="78" y="40" width="150" height="220" fill="${C.olive}"/>
+    <rect x="78" y="40" width="14" height="220" fill="#34401E"/><g transform="translate(130 74) scale(.32)">${V.emblemInner(C.or, C.or, { templeFill: C.olive })}</g>
+    <text x="162" y="182" text-anchor="middle" font-family="Marcellus" font-size="17" letter-spacing="5" fill="${C.or}">VAGA</text>
+    <text x="162" y="204" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="14" fill="${C.chaux}">Carnet de récolte</text>
+    <rect x="206" y="40" width="8" height="240" fill="${C.terre}"/></svg>`]);
+  G.push(['Sac kraft', 'Kraft brun, poignées cordelette noire, emblème en dorure. Pour la boutique et les salons.', 'bg', `<svg viewBox="0 0 300 300"><path d="M110 80c0-40 80-40 80 0" fill="none" stroke="${C.noir}" stroke-width="4"/><path d="M70 80h160v196H70Z" fill="#B88B58"/><path d="M230 80l20 14v182h-20Z" fill="#9E7546"/>
+    <g transform="translate(122 112) scale(.28)">${V.emblemInner(C.noir, C.noir, { templeFill: '#B88B58' })}</g>
+    <text x="150" y="210" text-anchor="middle" font-family="Marcellus" font-size="20" letter-spacing="6" fill="${C.noir}">VAGA</text></svg>`]);
+  G.push(['Coupelle de dégustation', 'Céramique de Nabeul, émail chaux, filet or et rameau peint à la main.', 'bg', `<svg viewBox="0 0 300 300"><ellipse cx="150" cy="170" rx="118" ry="58" fill="#E9E1CE"/><ellipse cx="150" cy="164" rx="104" ry="48" fill="${C.chaux}" stroke="${C.or}" stroke-width="2"/>
+    <ellipse cx="150" cy="168" rx="66" ry="28" fill="#B8A532"/><ellipse cx="140" cy="162" rx="30" ry="10" fill="#D7C552" opacity=".7"/>
+    <g fill="${C.olive}"><g transform="translate(70 150) rotate(-60) scale(.3 .2)"><path d="${V.LEAF}"/></g><g transform="translate(230 150) rotate(60) scale(.3 .2)"><path d="${V.LEAF}"/></g></g></svg>`]);
+  G.push(['Porte-clés feuille', 'Laiton massif en forme de feuille d’olivier, olive gravée. Petit cadeau de fidélité.', 'bg', `<svg viewBox="0 0 300 300"><circle cx="150" cy="70" r="26" fill="none" stroke="#A89A72" stroke-width="5"/>
+    <g transform="translate(150 250) scale(2.8)"><path d="${V.LEAF}" fill="${C.or}"/></g><path d="M150 248V112" stroke="#8C6A24" stroke-width="2"/>
+    <ellipse cx="150" cy="104" rx="8" ry="10" fill="#8C6A24"/><text x="150" y="200" text-anchor="middle" font-family="Marcellus" font-size="10" letter-spacing="2" fill="#6E5019" transform="rotate(-90 150 200)">VAGA</text></svg>`]);
+  G.push(['Coffret dégustation', 'Trois mignonnettes 100 ml, une par cuvée, et une carte de notes. Le best-seller cadeau.', 'bg', `<svg viewBox="0 0 300 300"><rect x="30" y="200" width="240" height="70" fill="${C.noir}"/><rect x="30" y="190" width="240" height="14" fill="#2A2F21"/>
+    ${V.place(V.bottle({ vol: '100 ml' }), 62, 40, 60)}${V.place(V.bottle({ cuvee: 'Théâtre', varietal: 'Fruité intense', label: C.olive, ink: C.chaux, vol: '100 ml' }), 120, 40, 60)}${V.place(V.bottle({ cuvee: 'Mausolée', varietal: 'Édition limitée', label: C.noir, ink: C.or, glass: '#14180E', vol: '100 ml' }), 178, 40, 60)}
+    <text x="150" y="246" text-anchor="middle" font-family="Marcellus" font-size="16" letter-spacing="6" fill="${C.or}">TRILOGIE DE THUGGA</text></svg>`]);
+  put('goodies-grid', G.map(([t, d, , svg]) => `<div class="good"><div class="mock">${svg}</div><b>${t}</b><span>${d}</span></div>`).join(''));
+
+  /* posts */
+  put('posts', [
+    `<div class="post bg-noir"><span class="s" style="color:var(--or)">@vaga.oil</span><div class="t" style="color:var(--chaux)">« Rome venait chercher son blé à Vaga. Nous y pressons notre huile. »</div><div style="width:40px">${V.monogram(C.or, C.or)}</div></div>`,
+    `<div class="post bg-pierre"><span class="s" style="color:var(--terre)">Thugga · IIe siècle</span><div style="width:46%;align-self:center;color:var(--noir)">${V.icon('capitole', C.noir, 1.6)}</div><div><div class="t">Le Capitole</div><span class="s">Notre cuvée signature porte son nom</span></div></div>`,
+    `<div class="post" style="padding:0;background:var(--dengri)"><img src="images/vaga-agriculteur-dengri.jpg" alt="" style="width:100%;height:72%;object-fit:cover"><div style="padding:16px 20px;color:var(--chaux)"><div class="t" style="font-size:22px">Ceux qui la cueillent</div><span class="s" style="color:var(--or-clair)">Am Salah · Téboursouk</span></div></div>`
+  ].join(''));
+})();
+</script>

@@ -1,0 +1,370 @@
+<title>VAGA Charte Graphique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..800;1,100,400&family=Instrument+Serif:ital@0;1&family=Reem+Kufi:wght@400;600&display=swap">
+<style>
+/* Mise en page : affiche suisse méditerranéenne. Grands aplats bleu dengri, texte serré, symbole en très grand. */
+:root{
+  --dengri:#1E3A5F; --nuit:#13202F; --chaux:#F5F1E8; --huile:#C9C63C;
+  --terre:#B0472A; --pierre:#E4D5B3; --encre:#15181D; --gris:#5D6470; --filet:#D8CFBD;
+  --f-titre:"Instrument Serif","Times New Roman",serif;
+  --f-texte:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-ar:"Reem Kufi","Noto Kufi Arabic",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--chaux);color:var(--encre);font-family:var(--f-texte);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+svg,img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding-inline:clamp(16px,4vw,48px)}
+section{padding-block:clamp(64px,9vw,112px)}
+.bleu{background:var(--dengri);color:var(--chaux)}
+.nuit{background:var(--nuit);color:var(--chaux)}
+.pierre{background:var(--pierre)}
+h1,h2{font-family:var(--f-titre);font-weight:400;margin:0;line-height:.98;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(44px,6.4vw,84px)}
+h2 em{font-style:italic}
+h3{font-family:var(--f-texte);font-stretch:112%;font-weight:700;font-size:14px;letter-spacing:.16em;text-transform:uppercase;margin:0}
+p{margin:0;max-width:60ch}
+.lab{font-stretch:125%;font-weight:600;font-size:11px;letter-spacing:.28em;text-transform:uppercase}
+.num{font-family:var(--f-titre);font-style:italic;font-size:22px;color:var(--terre)}
+.bleu .num,.nuit .num{color:var(--huile)}
+.sub{color:var(--gris)}
+.bleu .sub,.nuit .sub{color:#AFBBCB}
+.head{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:clamp(40px,6vw,72px)}
+.head p{font-size:17px}
+.grid{display:grid;gap:clamp(12px,1.6vw,20px)}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.g6{grid-template-columns:repeat(6,minmax(0,1fr))}
+.card{display:flex;flex-direction:column;gap:10px;min-width:0}
+.card .lab{color:var(--gris)}
+.bleu .card .lab,.nuit .card .lab{color:#AFBBCB}
+.box{display:grid;place-items:center;aspect-ratio:1;padding:16%;min-width:0}
+.box.wide{aspect-ratio:16/9;padding:10%}
+.box>*{width:100%}
+.on-chaux{background:var(--chaux);color:var(--dengri);outline:1px solid var(--filet);outline-offset:-1px}
+.on-bleu{background:var(--dengri)} .on-nuit{background:var(--nuit)} .on-huile{background:var(--huile)}
+.on-terre{background:var(--terre)} .on-pierre{background:var(--pierre)} .on-encre{background:var(--encre)}
+
+/* Ouverture */
+.open{background:var(--dengri);color:var(--chaux);overflow:hidden}
+.open .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:center;padding-block:clamp(56px,8vw,104px)}
+.open .sym{width:min(440px,100%);justify-self:end}
+.open .word{width:min(520px,100%);margin-top:28px}
+.open .claim{font-family:var(--f-titre);font-style:italic;font-size:clamp(30px,3.6vw,46px);line-height:1.08;margin-top:36px;max-width:16ch}
+.open .meta{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:40px;color:#AFBBCB}
+.open .ar{font-family:var(--f-ar);font-size:22px;color:var(--huile);margin-top:18px;direction:rtl;text-align:left}
+.top{display:flex;justify-content:space-between;align-items:center;padding-block:18px;border-bottom:1px solid rgba(245,241,232,.18);flex-wrap:wrap;gap:8px}
+
+/* Concept */
+.idea{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--filet)}
+.idea>div{padding:28px 28px 0 0;display:flex;flex-direction:column;gap:14px;min-width:0}
+.idea .vis{height:120px;display:flex;align-items:center}
+.idea .vis svg{height:100%;width:auto}
+.why{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,2vw,24px);margin-top:56px}
+.why div{border-top:3px solid var(--dengri);padding-top:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.why p{font-size:14px}
+
+/* Construction */
+.constr{background:var(--chaux);border:1px solid var(--filet);aspect-ratio:1;display:grid;place-items:center;padding:6%}
+.rules{display:flex;flex-direction:column;gap:22px}
+.rules div{border-top:1px solid var(--filet);padding-top:14px;display:grid;grid-template-columns:140px minmax(0,1fr);gap:16px}
+.rules b{font-stretch:112%;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+
+/* Interdits */
+.no{position:relative}
+.no::after{content:"";position:absolute;inset:0;background:linear-gradient(to top right,transparent calc(50% - 1.5px),var(--terre) calc(50% - 1.5px),var(--terre) calc(50% + 1.5px),transparent calc(50% + 1.5px))}
+.no-l{color:var(--terre)!important}
+
+/* Couleurs */
+.pal{display:grid;grid-template-columns:2fr 1.4fr 1fr 1fr 1fr 1fr;gap:0;min-height:360px}
+.pal>div{display:flex;flex-direction:column;justify-content:space-between;padding:18px;min-width:0}
+.pal .n{font-family:var(--f-titre);font-size:clamp(22px,2.4vw,32px);line-height:1}
+.pal code{font-family:ui-monospace,Menlo,monospace;font-size:11.5px;line-height:1.6;display:block;opacity:.85}
+.combos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px}
+.combos div{aspect-ratio:3/2;display:flex;align-items:flex-end;justify-content:space-between;padding:14px;font-family:var(--f-titre);font-size:24px;min-width:0}
+.combos span{font-family:var(--f-texte);font-size:10px;letter-spacing:.2em;font-stretch:125%;font-weight:600}
+
+/* Typo */
+.spec{display:grid;grid-template-columns:220px minmax(0,1fr);gap:24px;border-top:1px solid var(--filet);padding-block:28px}
+.spec .big{font-size:clamp(46px,7vw,96px);line-height:1}
+.alpha{font-size:clamp(18px,2vw,24px);letter-spacing:.02em;margin-top:12px;color:var(--gris);word-break:break-word}
+.hier{border:1px solid var(--filet);padding:clamp(20px,4vw,48px);background:#fff;display:flex;flex-direction:column;gap:14px;margin-top:20px}
+
+/* Icônes */
+.ic{display:flex;flex-direction:column;align-items:center;gap:12px;padding:24px 8px;border:1px solid rgba(245,241,232,.16);text-align:center;min-width:0}
+.ic svg{width:46px;height:46px;color:var(--chaux)}
+.ic span{font-size:12px;color:#AFBBCB}
+
+/* Motif */
+.pat{height:280px;overflow:hidden}
+
+/* Application */
+.app{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.app .box{aspect-ratio:4/3}
+
+footer{background:var(--nuit);color:#AFBBCB;padding-block:40px;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:center}
+
+@media (max-width:900px){
+  .head,.open .wrap,.app{grid-template-columns:1fr}
+  .open .sym{justify-self:start;width:min(300px,80%)}
+  .g4,.g6,.why,.combos{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g3,.idea{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pal{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pal>div{min-height:150px}
+}
+@media (max-width:560px){
+  .g2,.g3,.idea,.why,.combos{grid-template-columns:1fr}
+  .spec,.rules div{grid-template-columns:1fr}
+}
+</style>
+
+<!-- OUVERTURE -->
+<header class="open">
+  <div class="wrap" style="padding-block:0"><div class="top" style="width:100%;grid-column:1/-1"><span class="lab">VAGA · Charte graphique</span><span class="lab" style="color:var(--huile)">Version 2 · MMXXVI</span></div></div>
+  <div class="wrap">
+    <div>
+      <div class="lab" style="color:#AFBBCB">Huile d'olive vierge extra · Béja, Tunisie</div>
+      <div class="word" id="openWord"></div>
+      <div class="claim">Le soleil de Dougga, pressé à froid.</div>
+      <div class="ar">زيت زيتون من باجة</div>
+      <div class="meta lab"><span>Logo</span><span>Couleurs</span><span>Typographie</span><span>Pictogrammes</span><span>Motif</span></div>
+    </div>
+    <div class="sym" id="openSym"></div>
+  </div>
+</header>
+
+<!-- 01 CONCEPT -->
+<section>
+  <div class="wrap">
+    <div class="head">
+      <div><div class="num">01</div><h2>Une idée, <em>trois lectures</em></h2></div>
+      <p class="sub">Vaga est le nom romain de Béja. À vingt kilomètres, le Capitole de Dougga domine les oliveraies depuis l'an 166. Le logo ne dessine pas un temple : il en garde la structure, réduite à trois gestes que l'œil reconnaît même à 16 pixels.</p>
+    </div>
+    <div class="idea" id="idea"></div>
+    <div class="why">
+      <div><h3>Pour la France</h3><p class="sub">Les rayons d'épicerie fine sont saturés de vert, de noir et d'or. Le bleu dengri se voit à trois mètres et n'appartient à aucune autre huile.</p></div>
+      <div><h3>Tunisien sans folklore</h3><p class="sub">Pas de zellige, pas de dromadaire. Le bleu des cueilleurs, la pierre de Dougga, la terre rouge de Béja suffisent.</p></div>
+      <div><h3>Premium par la retenue</h3><p class="sub">Deux couleurs par support, beaucoup de vide, une seule touche d'huile. Le luxe vient de la discipline, pas de la dorure.</p></div>
+      <div><h3>Lisible partout</h3><p class="sub">Un symbole plein et un logotype géométrique tiennent en gravure sur une capsule, en broderie et en favicon.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 LOGO -->
+<section class="bleu">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="num">02</div><h2>Le logo</h2></div>
+      <p class="sub">Trois éléments, toujours dessinés à partir des fichiers fournis. Jamais retapés, jamais redessinés.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card"><div class="box on-chaux" id="lV"></div><span class="lab">Signature verticale · principale</span></div>
+      <div class="card"><div class="box on-nuit" id="lSym"></div><span class="lab">Symbole · Soleil de Dougga</span></div>
+      <div class="card"><div class="box on-huile" id="lWord"></div><span class="lab">Logotype seul</span></div>
+    </div>
+    <div class="grid g2" style="margin-top:20px">
+      <div class="card"><div class="box wide on-chaux" id="lH"></div><span class="lab">Signature horizontale · web, en-têtes, bandeaux</span></div>
+      <div class="card"><div class="box wide on-terre" id="lH2"></div><span class="lab">Signature horizontale · édition limitée</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 CONSTRUCTION -->
+<section>
+  <div class="wrap">
+    <div class="head">
+      <div><div class="num">03</div><h2>Construction <em>et règles</em></h2></div>
+      <p class="sub">Le symbole tient sur une grille de 100 unités. Le logotype est construit sur une hauteur de capitale de 60 unités avec un fût de 10,5.</p>
+    </div>
+    <div class="grid g2" style="align-items:start">
+      <div class="constr" id="constr"></div>
+      <div class="rules">
+        <div><b>Zone de protection</b><span class="sub">Un espace vide égal au rayon du soleil divisé par deux (x) entoure toujours le logo. Rien n'y entre : texte, bord de page, pli.</span></div>
+        <div><b>Tailles minimales</b><span class="sub">Symbole : 6 mm imprimé, 16 px écran. Logotype : 18 mm, 64 px. Signature verticale : 24 mm de large.</span></div>
+        <div><b>L'olive</b><span class="sub">Le point dans chaque A est une olive. Il prend la couleur Huile sur bleu, Terre sur chaux, Chaux sur huile. En monochrome, il suit la couleur du logo.</span></div>
+        <div><b>Fichiers</b><span class="sub">SVG et PDF vectoriels pour l'impression, PNG transparents pour le web, version gravure au trait pour la capsule et le verre.</span></div>
+        <div><b>Proportions</b><span class="sub">Dans la signature verticale, le logotype est 2,5 fois plus large que le soleil. Ce rapport ne change jamais.</span></div>
+      </div>
+    </div>
+
+    <h3 style="margin:64px 0 20px">Versions de couleur autorisées</h3>
+    <div class="grid g6" id="variants"></div>
+
+    <h3 style="margin:64px 0 20px;color:var(--terre)">À ne jamais faire</h3>
+    <div class="grid g4" id="donts"></div>
+  </div>
+</section>
+
+<!-- 04 COULEURS -->
+<section class="pierre">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="num">04</div><h2>Couleurs</h2></div>
+      <p class="sub" style="color:#5A5446">Le bleu du dengri des cueilleurs porte la marque. L'huile, ce vert-jaune vif d'une Chétoui pressée en novembre, ne sert que d'accent. La terre est réservée à l'édition limitée.</p>
+    </div>
+    <div class="pal" id="pal"></div>
+    <div class="combos" id="combos"></div>
+    <p class="sub" style="margin-top:16px;color:#5A5446">Règle des 60 / 30 / 10 : un fond, une couleur de texte, une touche d'accent. Jamais plus de trois couleurs sur un même support.</p>
+  </div>
+</section>
+
+<!-- 05 TYPO -->
+<section>
+  <div class="wrap">
+    <div class="head">
+      <div><div class="num">05</div><h2>Typographie</h2></div>
+      <p class="sub">Une serif littéraire pour parler, une grotesque large pour informer, une coufique géométrique pour l'arabe, qui répond aux angles du logotype.</p>
+    </div>
+    <div class="spec"><div><h3>Titres</h3><p class="sub" style="font-size:14px;margin-top:6px">Instrument Serif, romain et italique. Corps 32 à 120.</p></div><div><div class="big" style="font-family:var(--f-titre)">Pressée <em>le jour même</em></div><div class="alpha" style="font-family:var(--f-titre)">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv 0123456789</div></div></div>
+    <div class="spec"><div><h3>Texte et mentions</h3><p class="sub" style="font-size:14px;margin-top:6px">Archivo, largeur 100 pour le texte, 125 pour les capitales espacées.</p></div><div><p style="font-size:19px;max-width:52ch">Chétoui de Téboursouk, cueillie à la main et pressée à froid moins de six heures après la récolte. Acidité 0,2 %.</p><div class="lab" style="margin-top:18px;font-size:13px">Lot 26-TB-04 · 50 cl · Béja, Tunisie</div></div></div>
+    <div class="spec"><div><h3>Arabe</h3><p class="sub" style="font-size:14px;margin-top:6px">Reem Kufi 400 et 600.</p></div><div><div class="big" style="font-family:var(--f-ar);direction:rtl;text-align:left;font-size:clamp(40px,6vw,76px)">زيت زيتون من باجة</div></div></div>
+    <div class="hier">
+      <span class="lab" style="color:var(--terre)">Exemple de hiérarchie</span>
+      <div style="font-family:var(--f-titre);font-size:clamp(34px,4.4vw,56px);line-height:1">L'huile de Vaga, <em>récolte 2026</em></div>
+      <p style="font-size:17px">Sur les coteaux de Téboursouk, les oliviers poussent entre les pierres de l'ancienne Thugga. Nous les cueillons à la main, en novembre, quand le fruit est encore vert.</p>
+      <span class="lab">Commander · 50 cl · 24 €</span>
+    </div>
+  </div>
+</section>
+
+<!-- 06 PICTOGRAMMES -->
+<section class="nuit">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="num">06</div><h2>Pictogrammes</h2></div>
+      <p class="sub">Douze signes pleins, dessinés sur une grille de 48 avec les mêmes formes que le symbole : disques, fûts droits, angles nets. Les monuments de Dougga y côtoient les gestes du moulin.</p>
+    </div>
+    <div class="grid g6" id="icons"></div>
+  </div>
+</section>
+
+<!-- 07 MOTIF -->
+<section>
+  <div class="wrap">
+    <div class="head">
+      <div><div class="num">07</div><h2>Le motif</h2></div>
+      <p class="sub">Le soleil levant se répète en arcades décalées, comme les gradins du théâtre de Dougga, avec une olive entre chaque arche. Il habille l'intérieur des coffrets, le papier de soie, le dos des étiquettes et les fonds de réseaux sociaux.</p>
+    </div>
+    <div class="grid g3">
+      <div class="pat" id="p1"></div><div class="pat" id="p2"></div><div class="pat" id="p3"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 TEST -->
+<section class="pierre">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="num">08</div><h2>Premier <em>test</em></h2></div>
+      <p class="sub" style="color:#5A5446">Deux supports pour vérifier que le système tient. L'étiquette complète, la bouteille et les goodies viennent dans l'étape suivante.</p>
+    </div>
+    <div class="app">
+      <div class="card"><div class="box on-bleu" id="tCard"></div><span class="lab" style="color:#5A5446">Carte de visite · recto et verso</span></div>
+      <div class="card"><div class="box on-chaux" id="tCap"></div><span class="lab" style="color:#5A5446">Capsule, sceau et collerette</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span id="foot" style="width:140px"></span><span>Charte graphique VAGA · v2 · Béja, Tunisie</span></div>
+</footer>
+
+<script src="logo.js"></script>
+<script>
+(function(){
+  const V = window.VAGA2, C = V.C, $ = i => document.getElementById(i);
+  const put = (i, h) => { const e = $(i); if (e) e.innerHTML = h; };
+
+  put('openSym', V.symbol(C.chaux));
+  put('openWord', V.wordmark(C.chaux, C.huile));
+  put('foot', V.wordmark(C.chaux, C.huile));
+
+  /* concept */
+  const sun = `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="${C.dengri}"/></svg>`;
+  const cols = `<svg viewBox="0 0 100 100"><path d="M0 52h100v5H0Z M28 57h6v43h-6Z M47 57h6v43h-6Z M66 57h6v43h-6Z" fill="${C.dengri}"/><path d="M4 52h92" stroke="${C.dengri}"/></svg>`;
+  const aOlive = `<svg viewBox="0 0 48 60"><polygon points="19,0 29,0 48,60 37.5,60 24,20 10.5,60 0,60" fill="${C.dengri}"/><circle cx="24" cy="46" r="5.4" fill="${C.terre}"/></svg>`;
+  put('idea', [
+    [sun, 'Le soleil', 'Celui qui mûrit les olives sur les coteaux de la Medjerda. Un disque plein, sans rayons.'],
+    [cols, 'Le Capitole', 'L’entablement et les colonnes de Dougga, découpés dans le soleil comme une ombre portée.'],
+    [aOlive, 'L’olive', 'Les A du logotype n’ont pas de barre : ce sont des frontons. Une olive est posée dessous.']
+  ].map(([v, t, d]) => `<div><div class="vis">${v}</div><h3>${t}</h3><p class="sub">${d}</p></div>`).join(''));
+
+  /* logos */
+  put('lV', V.lockupV(C.dengri, C.terre));
+  put('lSym', V.symbol(C.huile));
+  put('lWord', V.wordmark(C.dengri, C.chaux));
+  put('lH', V.lockupH(C.dengri, C.terre));
+  put('lH2', V.lockupH(C.chaux, C.pierre));
+
+  /* construction */
+  put('constr', `<svg viewBox="-30 -30 160 160" style="width:100%">
+    <defs><pattern id="gr" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M10 0H0V10" fill="none" stroke="#D8CFBD" stroke-width=".3"/></pattern></defs>
+    <rect x="-30" y="-30" width="160" height="160" fill="url(#gr)"/>
+    <rect x="-23" y="-23" width="146" height="146" fill="none" stroke="${C.terre}" stroke-width=".5" stroke-dasharray="2 2"/>
+    ${V.symbolInner(C.dengri, 0, 0, 1)}
+    <circle cx="50" cy="50" r="46" fill="none" stroke="${C.terre}" stroke-width=".4"/>
+    <path d="M-30 52H130M-30 57H130M31 -30V130M50 -30V130M69 -30V130" stroke="${C.terre}" stroke-width=".3"/>
+    <path d="M4 -10H96" stroke="${C.terre}" stroke-width=".5"/><text x="50" y="-13" text-anchor="middle" font-family="Archivo" font-size="4.5" fill="${C.terre}">Ø 92 u</text>
+    <path d="M-23 50H0" stroke="${C.terre}" stroke-width=".5"/><text x="-12" y="47" text-anchor="middle" font-family="Archivo" font-size="5" font-style="italic" fill="${C.terre}">x</text>
+    <text x="104" y="55.5" font-family="Archivo" font-size="4" fill="${C.terre}">5 u</text>
+    <text x="72" y="118" font-family="Archivo" font-size="4" fill="${C.terre}">fût 6 u · pas 19 u</text>
+  </svg>`);
+
+  /* variantes */
+  const vs = [['on-chaux', C.dengri, C.terre], ['on-bleu', C.chaux, C.huile], ['on-huile', C.dengri, C.chaux], ['on-nuit', C.huile, C.chaux], ['on-terre', C.chaux, C.pierre], ['on-pierre', C.encre, C.terre]];
+  put('variants', vs.map(([bg, f, o]) => `<div class="box ${bg}" style="padding:14%">${V.lockupV(f, o)}</div>`).join(''));
+
+  /* interdits */
+  const d = [
+    ['Déformer', `<div style="transform:scaleX(1.45);width:60%">${V.lockupV(C.dengri, C.terre)}</div>`],
+    ['Recolorer le symbole en plusieurs teintes', `<div style="width:70%">${V.symbol(C.huile).replace('<svg ', '<svg style="filter:hue-rotate(160deg)" ')}</div>`],
+    ['Ajouter ombre ou dégradé', `<div style="width:70%;filter:drop-shadow(5px 5px 3px rgba(0,0,0,.55))">${V.symbol(C.dengri)}</div>`],
+    ['Bleu sur terre, contraste faible', `<div class="on-terre" style="width:100%;height:100%;display:grid;place-items:center;padding:16%">${V.lockupV(C.dengri, C.dengri)}</div>`]
+  ];
+  put('donts', d.map(([t, h]) => `<div class="card"><div class="box on-chaux no" style="padding:12%">${h}</div><span class="lab no-l">${t}</span></div>`).join(''));
+
+  /* couleurs */
+  const pal = [
+    ['Bleu dengri', C.dengri, C.chaux, '#1E3A5F', '30 58 95', '100 80 30 25', 'PMS 2189 C'],
+    ['Chaux', C.chaux, C.dengri, '#F5F1E8', '245 241 232', '3 4 9 0', 'PMS 9224 C'],
+    ['Huile', C.huile, C.encre, '#C9C63C', '201 198 60', '25 10 90 0', 'PMS 584 C'],
+    ['Terre de Béja', C.terre, C.chaux, '#B0472A', '176 71 42', '15 80 90 5', 'PMS 7592 C'],
+    ['Pierre de Dougga', C.pierre, C.encre, '#E4D5B3', '228 213 179', '10 15 32 0', 'PMS 7527 C'],
+    ['Nuit', C.nuit, C.chaux, '#13202F', '19 32 47', '90 75 50 65', 'PMS 5395 C']
+  ];
+  put('pal', pal.map(([n, bg, fg, hex, rgb, cmjn, pms]) => `<div style="background:${bg};color:${fg}"><div class="n">${n}</div><div><code>${hex}</code><code>RVB ${rgb}</code><code>CMJN ${cmjn}</code><code>${pms}</code></div></div>`).join(''));
+  put('combos', [
+    [C.dengri, C.chaux, C.huile, 'Signature'], [C.chaux, C.dengri, C.terre, 'Étiquette'], [C.huile, C.dengri, C.chaux, 'Événement'], [C.terre, C.chaux, C.pierre, 'Limitée']
+  ].map(([b, f, a, t]) => `<div style="background:${b};color:${f}">Vaga<span style="color:${a}">${t.toUpperCase()}</span></div>`).join(''));
+
+  /* icônes */
+  put('icons', Object.keys(V.ICONS).map(k => `<div class="ic">${V.icon(k)}<span>${V.ICONS[k][0]}</span></div>`).join(''));
+
+  /* motif */
+  put('p1', V.pattern(C.dengri, C.chaux, C.huile));
+  put('p2', V.pattern(C.chaux, C.dengri, C.terre));
+  put('p3', V.pattern(C.terre, C.pierre, C.chaux));
+
+  /* tests */
+  put('tCard', `<svg viewBox="0 0 400 300" style="width:100%">
+    <g transform="rotate(-6 200 150)"><rect x="40" y="40" width="210" height="130" fill="${C.chaux}"/>
+      ${V.wordInner(C.dengri, C.terre, 60, 60, .42)}
+      <text x="60" y="118" font-family="Instrument Serif" font-size="17" fill="${C.encre}">Safwen B.</text>
+      <text x="60" y="132" font-family="Archivo" font-stretch="125%" font-weight="600" font-size="6" letter-spacing="1.6" fill="${C.terre}">FONDATEUR</text>
+      <text x="60" y="152" font-family="Archivo" font-size="7" fill="${C.encre}">Route de Téboursouk, Béja · vaga-huile.com</text></g>
+    <g transform="rotate(5 200 150)"><rect x="150" y="130" width="210" height="130" fill="${C.nuit}"/>${V.symbolInner(C.huile, 225, 165, .6)}</g>
+  </svg>`);
+  put('tCap', `<svg viewBox="0 0 400 300" style="width:100%">
+    <rect x="40" y="70" width="110" height="110" fill="${C.dengri}"/>${V.symbolInner(C.chaux, 63, 93, .64)}
+    <circle cx="245" cy="125" r="56" fill="${C.terre}"/><circle cx="245" cy="125" r="44" fill="none" stroke="${C.pierre}" stroke-width="1.2"/>${V.symbolInner(C.pierre, 222, 102, .46)}
+    <rect x="40" y="214" width="320" height="34" fill="${C.nuit}"/>
+    ${V.wordInner(C.chaux, C.huile, 56, 224, .25)}
+    <text x="344" y="235" text-anchor="end" font-family="Archivo" font-stretch="125%" font-weight="600" font-size="8" letter-spacing="3" fill="${C.huile}">RÉCOLTE 2026 · LOT 04</text>
+    <text x="95" y="198" text-anchor="middle" font-family="Archivo" font-size="9" fill="#5D6470">Dessus de capsule</text>
+    <text x="245" y="198" text-anchor="middle" font-family="Archivo" font-size="9" fill="#5D6470">Sceau · édition limitée</text>
+    <text x="200" y="266" text-anchor="middle" font-family="Archivo" font-size="9" fill="#5D6470">Collerette, à plat</text>
+  </svg>`);
+})();
+</script>

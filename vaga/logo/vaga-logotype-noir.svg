@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 258 64" role="img" aria-label="VAGA"><g transform="translate(0 0) scale(1)">
+      <polygon points="0,0 10.5,0 24,38 37.5,0 48,0 29,60 19,60" fill="#000"/>
+      <g transform="translate(64 0)"><polygon points="19,0 29,0 48,60 37.5,60 24,20 10.5,60 0,60" fill="#000"/><circle cx="24" cy="46" r="5.4" fill="#000"/></g>
+      <path d="M179.1 14.3A25.5 25.5 0 1 0 184.1 34.4H163" fill="none" stroke="#000" stroke-width="9.5"/>
+      <g transform="translate(206 0)"><polygon points="19,0 29,0 48,60 37.5,60 24,20 10.5,60 0,60" fill="#000"/><circle cx="24" cy="46" r="5.4" fill="#000"/></g>
+    </g></svg>

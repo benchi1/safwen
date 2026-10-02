@@ -1,0 +1,2 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Symbole VAGA"><g transform="translate(0 0) scale(1)"><mask id="m-7" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><path d="M0 52h100v5H0Z M28 57h6v43h-6Z M47 57h6v43h-6Z M66 57h6v43h-6Z" fill="#000"/></mask>
+      <circle cx="50" cy="50" r="46" fill="#000" mask="url(#m-7)"/></g></svg>

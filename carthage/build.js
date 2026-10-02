@@ -17,6 +17,24 @@ function tanit(cx,base){const leaf='M0 0C14 -15 42 -17 66 0C42 17 14 15 0 0Z';
   <path d="${leaf}" transform="translate(${cx-80} ${base-90}) rotate(-118)"/>
   <path d="${leaf}" transform="translate(${cx+80} ${base-90}) rotate(-62)"/>
   <circle cx="${cx}" cy="${base-128}" r="25"/>`;}
+/* Cuirasse de Ksour Essaf (musée du Bardo) : plastron, rang d'olives, deux disques, palmette, tête de Minerve casquée */
+function cuirasse(cx,top,k){const circ=(x,y,r)=>`M${x-r} ${y}a${r} ${r} 0 1 0 ${2*r} 0a${r} ${r} 0 1 0 ${-2*r} 0Z`;
+  const ov=(x,y,rx,ry)=>`M${x-rx} ${y}a${rx} ${ry} 0 1 0 ${2*rx} 0a${rx} ${ry} 0 1 0 ${-2*rx} 0Z`;
+  // plastron (plein) percé : rang d'olives, deux disques, palmette, niche de la tête
+  let p=`M-98 0C-60 0 -30 20 0 20C30 20 60 0 98 0L98 48C98 74 106 96 94 116C84 132 72 136 66 144C64 184 38 210 0 210C-38 210 -64 184 -66 144C-72 136 -84 132 -94 116C-106 96 -98 74 -98 48Z`;
+  [-62,-44,-26,-9,9,26,44,62].forEach((x,i)=>{const y=12+Math.abs(x)*-0.13+ (Math.abs(x)<30?10:6);p+=ov(x,y+6,4.6,6.4);});
+  p+=circ(-48,82,36)+circ(48,82,36)+`M-84 8H-78V44H-84ZM78 8H84V44H78Z`;
+  p+=`M-2.6 66H2.6V108H-2.6Z M0 64C-4 54 -4 44 0 34C4 44 4 54 0 64Z M-3 62C-12 58 -16 50 -15 40C-8 46 -4 54 -3 62Z M3 62C12 58 16 50 15 40C8 46 4 54 3 62Z`;
+  p+=`M0 112C-40 112 -56 136 -54 160C-52 190 -28 204 0 204C28 204 52 190 54 160C56 136 40 112 0 112Z`;
+  // disques : anneau + umbo
+  let disks=[-48,48].map(x=>circ(x,82,28)+circ(x,82,20)+circ(x,82,9)).join('');
+  // tête de Minerve : casque à panache, mèches de chaque côté, visage
+  let head=`M-30 150C-30 128 -16 118 0 118C16 118 30 128 30 150L22 146C18 134 10 130 0 130C-10 130 -18 134 -22 146Z`
+   +`M-6 118C-6 106 -2 100 0 98C2 100 6 106 6 118Z`
+   +`M-46 132C-38 126 -32 134 -32 146C-34 168 -40 182 -46 190C-50 172 -50 150 -46 132Z M46 132C38 126 32 134 32 146C34 168 40 182 46 190C50 172 50 150 46 132Z`
+   +ov(0,166,21,27);
+  let feat=ov(-8,160,4.2,2.2)+ov(8,160,4.2,2.2)+`M-1.6 162H1.6V178H-1.6Z`+`M-6 185H6V188H-6Z`;
+  return `<g transform="translate(${cx} ${top}) scale(${k})"><path fill-rule="evenodd" d="${p}"/><path fill-rule="evenodd" d="${disks}"/><path d="${head}"/><path class="bg" d="${feat}"/></g>`;}
 /* Port punique circulaire (cothon) vu du ciel : anneau, îlot de l'amirauté, chenal vers la mer */
 function cothon(y0,col,bg){const cx=W/2,cy=y0+3.2*u;
   return `<path d="${R(0,y0/u,13,1)}${R(0,y0/u+6,13,1)}"/>
@@ -24,7 +42,7 @@ function cothon(y0,col,bg){const cx=W/2,cy=y0+3.2*u;
   <circle cx="${cx}" cy="${cy}" r="${0.8*u}"/>
   <path d="${R(6,y0/u+5,1,1.2)}"/>
   <path d="M0 ${cy-u*0.5}h${3.2*u}v${u}h${-3.2*u}ZM${W} ${cy-u*0.5}h${-3.2*u}v${u}h${3.2*u}Z"/>`;}
-function emblem(col,o){o=Object.assign({text:true},o);let y=180;let d='';const c=tanit(W/2,y-22);
+function emblem(col,o){o=Object.assign({text:true},o);let y=o.tanit?180:240;let d='';const c=o.tanit?tanit(W/2,y-22):cuirasse(W/2,8,0.98).replace('class="bg"','fill="'+(o.bg||'#fff')+'"');
   for(const [a,b] of [['C','A'],['R','T'],['H','A'],['G','E']]){d+=L[a](0,y/u)+L[b](7,y/u);y+=8*u;}
   const port=cothon(y,col);y+=7*u;
   let t='';if(o.text){["HUILE D'OLIVE","DE CARTHAGE","TUNISIE"].forEach((s,i)=>{y+=i?36:56;

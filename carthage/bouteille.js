@@ -1,6 +1,6 @@
 const fs=require('fs');const E=require('./build.js');
 const C={pourpre:'#4E1A3D',sable:'#EADBC0',or:'#C9A04A'};
-const full=E.emblem(C.sable);const vb=full.match(/viewBox="([^"]+)"/)[1].split(' ').map(Number);
+const full=E.emblem(C.sable,{bg:C.pourpre});const vb=full.match(/viewBox="([^"]+)"/)[1].split(' ').map(Number);
 const emb=full.replace(/^<svg[^>]*>/,'').replace(/<\/svg>$/,'');
 const lw=116,ly=420,sc=lw/vb[2],lx=210-lw/2,embH=vb[3]*sc;
 const SIG=fs.readFileSync(__dirname+'/signature.path','utf8');const sigY=ly+embH+40;

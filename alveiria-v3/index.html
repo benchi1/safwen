@@ -653,10 +653,10 @@ function bottle(opts={}){
 /* modèle Blender : remplace verre, capsule et bouchon dès qu'il est chargé */
 const BOTTLES=[]; let GEO=null;
 function applyGLB(B){ B.glass.geometry=GEO.glass; B.sleeve.geometry=GEO.sleeve; [...B.cap.children].forEach(c=>{ if(c.isMesh) B.cap.remove(c); }); const m=new T.Mesh(GEO.cap,B.capM); B.cap.add(m); }
-function loadGLB(){ if(!T||!T.GLTFLoader) return; new T.GLTFLoader().load(IMG.glb,g=>{ const get=n=>{ let o=null; g.scene.traverse(c=>{ if(c.isMesh&&c.name.startsWith(n)) o=c; }); return o; };
+function loadGLB(){ if(!T||!T.GLTFLoader) return; const LD=new T.GLTFLoader(); const run=(fn,err)=>{ if(IMG.glb.startsWith('data:')){ const bin=Uint8Array.from(atob(IMG.glb.slice(IMG.glb.indexOf(',')+1)),c=>c.charCodeAt(0)); LD.parse(bin.buffer,'',fn,err); } else LD.load(IMG.glb,fn,undefined,err); }; run(g=>{ const get=n=>{ let o=null; g.scene.traverse(c=>{ if(c.isMesh&&c.name.startsWith(n)) o=c; }); return o; };
   const gl=get('Glass'), sl=get('Sleeve'), cp=get('Cap'); if(!gl||!sl||!cp) return; [gl,sl,cp].forEach(o=>o.updateWorldMatrix(true,false));
   const bake=(o,dy)=>{ const geo=o.geometry.clone(); geo.applyMatrix4(o.matrixWorld); geo.translate(0,dy,0); geo.computeVertexNormals(); return geo; };
-  GEO={glass:bake(gl,0),sleeve:bake(sl,-4.27),cap:bake(cp,-4.54)}; BOTTLES.forEach(applyGLB); },undefined,()=>{}); }
+  GEO={glass:bake(gl,0),sleeve:bake(sl,-4.27),cap:bake(cp,-4.54)}; BOTTLES.forEach(applyGLB); },()=>{}); }
 function addView(el,scene,camera,update,opts={}){ const v={el,scene,camera,update,visible:false,fit:opts.fit}; views.push(v); new IntersectionObserver(es=>{ v.visible=es[0].isIntersecting; },{rootMargin:'100px'}).observe(opts.observe||el); return v; }
 
 /* ---------- vue 1 : hero, huile vivante ---------- */

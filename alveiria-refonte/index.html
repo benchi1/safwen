@@ -1,0 +1,1112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alveiria Prima</title>
+<meta name="theme-color" content="#1a1a1a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Cinzel:wght@400;500&display=swap">
+<style>
+/* Layout : chapitres plein écran qui alternent encre (#1a1a1a) et crème ; une bouteille 3D fixe glisse d'ancre en ancre au fil du scroll. */
+:root{
+  --ink:#1A1A1A; --ink-warm:#1B1810; --body:#56524A; --muted:#6B665F;
+  --cream-50:#F9F7F1; --cream:#F4F0E7; --cream-2:#EFEBE0; --sand-300:#E6DFD1; --sand-400:#D1CBB8; --sand-500:#B5A88D; --line:#DEDAD1;
+  --olive:#685B41; --olive-2:#6D6148; --terra:#965635; --terra-2:#834921; --gold:#AB8730; --bar:#2A2821; --ink-2:#232220;
+  --display:'Cormorant Garamond','EB Garamond',Garamond,Georgia,serif;
+  --text:'EB Garamond',Garamond,Georgia,'Times New Roman',serif;
+  --logo:'Cinzel','Trajan Pro',Georgia,serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --gutter:clamp(20px,5.5vw,80px);
+  --nav-h:72px; --bar-h:34px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:auto;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink-warm);font-family:var(--text);font-size:18px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+.dark :focus-visible{outline-color:var(--gold)}
+h1,h2,h3{font-weight:300;margin:0;text-wrap:balance}
+p{margin:0}
+
+/* ---------- Header : bandeau + nav verre ---------- */
+.header{position:fixed;inset:0 0 auto 0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:transform .5s var(--ease)}
+.header.hide-bar{transform:translateY(calc(-1 * var(--bar-h)))}
+.bar{height:var(--bar-h);background:var(--bar);color:var(--sand-400);overflow:hidden;display:flex;align-items:center;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.bar-track{display:flex;gap:56px;white-space:nowrap;animation:marquee 38s linear infinite;padding-left:56px}
+.bar-track span::after{content:"·";margin-left:56px;color:var(--gold)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+.nav{height:var(--nav-h);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 var(--gutter);
+  background:rgba(244,240,231,.72);-webkit-backdrop-filter:blur(24px) saturate(1.4);backdrop-filter:blur(24px) saturate(1.4);
+  border-bottom:1px solid rgba(181,168,141,.35);color:var(--ink-warm);transition:background .5s var(--ease),color .5s var(--ease),border-color .5s var(--ease)}
+.nav.on-dark{background:rgba(26,26,26,.55);color:var(--cream);border-bottom-color:rgba(209,203,184,.14)}
+.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;justify-self:start}
+.brand svg{width:22px;height:27px;fill:#60583B;transition:fill .5s var(--ease)}
+.brand .word{font-family:var(--logo);font-size:21px;letter-spacing:.2em;color:#614C34;transition:color .5s var(--ease)}
+.nav.on-dark .brand svg{fill:var(--cream-50)} .nav.on-dark .brand .word{color:var(--cream-50)}
+.links{display:flex;gap:44px}
+.links a{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;position:relative;padding:6px 0}
+.links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.links a:hover::after,.links a[aria-current="page"]::after{transform:scaleX(1)}
+.actions{display:flex;gap:22px;align-items:center;justify-self:end}
+.icon{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.cart-btn{display:inline-flex;align-items:center;gap:6px;position:relative}
+.count{min-width:20px;height:20px;border-radius:10px;background:var(--terra);color:var(--cream-50);font-size:12px;display:grid;place-items:center;padding:0 5px;font-variant-numeric:tabular-nums;transition:transform .4s var(--ease)}
+.count.bump{animation:bump .6s var(--ease)}
+@keyframes bump{40%{transform:scale(1.45)}}
+.menu-btn{display:none;justify-self:start}
+@media (max-width:900px){
+  :root{--nav-h:64px}
+  .nav{grid-template-columns:1fr auto 1fr}
+  .links,.hide-m{display:none}
+  .menu-btn{display:inline-flex}
+  .brand{justify-self:center}
+  .brand .word{font-size:17px}
+}
+.sheet{position:fixed;inset:0;z-index:60;background:var(--ink);color:var(--cream);padding:calc(env(safe-area-inset-top,0px) + 24px) var(--gutter) 40px;display:flex;flex-direction:column;gap:32px;transform:translateY(-100%);transition:transform .6s var(--ease)}
+.sheet.open{transform:none}
+.sheet nav{display:flex;flex-direction:column;gap:10px}
+.sheet nav a{font-family:var(--display);font-size:46px;font-weight:300;text-decoration:none;line-height:1.15}
+.sheet .close{align-self:flex-end}
+
+/* ---------- Stage 3D ---------- */
+#stage{position:fixed;inset:0;width:100vw;height:100vh;z-index:1;pointer-events:none;opacity:1;transition:opacity .6s var(--ease)}
+#stage.off{opacity:0}
+.anchor{position:relative;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.anchor:active{cursor:grabbing}
+.anchor .fallback{position:absolute;inset:0;margin:auto;height:100%;width:auto;object-fit:contain;display:none}
+.no-webgl .anchor .fallback{display:block}
+.drag-hint{position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);display:flex;gap:8px;align-items:center;font-size:12px;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;opacity:.8}
+.drag-hint .icon{width:18px;height:18px}
+
+/* ---------- Chapitres ---------- */
+.view{display:none}
+.view.active{display:block}
+.ch{position:relative;min-height:100vh;padding-block:calc(var(--nav-h) + var(--bar-h) + 48px) 96px;padding-inline:var(--gutter);display:flex;align-items:center}
+.ch.light{background:var(--cream);color:var(--ink-warm)}
+.ch.alt{background:var(--cream-2)}
+.ch.dark{background:var(--ink);color:var(--cream)}
+.wrap{position:relative;z-index:2;width:100%;max-width:1280px;margin:0 auto}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,6vw,96px);align-items:center}
+.split.rev{grid-template-columns:.95fr 1.05fr}
+.split.rev > :first-child{order:2}
+.eyebrow{font-size:13px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);display:inline-flex;align-items:center;gap:14px}
+.dark .eyebrow{color:var(--sand-500)}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--gold)}
+.display{font-family:var(--display);font-weight:300;font-size:clamp(56px,9.4vw,152px);line-height:.94;letter-spacing:-.02em}
+.h1{font-family:var(--display);font-weight:300;font-size:clamp(46px,6.6vw,104px);line-height:1;letter-spacing:-.015em}
+.h2{font-family:var(--display);font-weight:400;font-size:clamp(36px,4.2vw,60px);line-height:1.06;letter-spacing:-.01em}
+.h3{font-family:var(--text);font-weight:400;font-size:clamp(22px,2vw,28px);line-height:1.25}
+.lead{font-size:clamp(19px,1.6vw,23px);line-height:1.6;color:var(--body);max-width:34em}
+.dark .lead{color:var(--sand-400)}
+.body{color:var(--body);max-width:36em}
+.dark .body{color:var(--sand-400)}
+.stack{display:flex;flex-direction:column;gap:28px;min-width:0}
+.stack.tight{gap:16px}
+.row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:14px;padding:20px 34px;font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;transition:background .4s var(--ease),color .4s var(--ease),gap .4s var(--ease),border-color .4s var(--ease)}
+.btn .icon{width:18px;height:18px;transition:transform .4s var(--ease)}
+.btn:hover .icon{transform:translateX(4px)}
+.btn-primary{background:linear-gradient(180deg,var(--terra),var(--terra-2));color:var(--cream-50)}
+.btn-primary:hover{background:var(--terra-2)}
+.btn-primary[disabled]{background:var(--sand-400);color:var(--muted);cursor:not-allowed}
+.btn-ghost{border-color:currentColor}
+.btn-ghost:hover{background:var(--ink-warm);color:var(--cream)}
+.dark .btn-ghost:hover{background:var(--cream);color:var(--ink)}
+.btn-link{padding:6px 0;border:0;border-bottom:1px solid currentColor}
+.btn-block{width:100%;justify-content:center}
+
+/* hero */
+.hero{background:var(--ink);overflow:hidden}
+.hero .photo{position:absolute;inset:0;background:center/cover no-repeat url(assets/aerial.jpg);transform:scale(1.08);will-change:transform}
+.hero .photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(26,26,26,.92) 0%,rgba(26,26,26,.72) 45%,rgba(26,26,26,.35) 100%),linear-gradient(0deg,rgba(26,26,26,.85),transparent 40%)}
+.hero .anchor{height:min(78vh,760px)}
+.scroll-cue{position:absolute;left:var(--gutter);bottom:32px;z-index:2;display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--sand-500)}
+.scroll-cue i{display:block;width:1px;height:44px;background:linear-gradient(var(--gold),transparent);animation:cue 2.4s var(--ease) infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;border-top:1px solid var(--line);padding-top:28px}
+.dark .facts{border-top-color:rgba(209,203,184,.18)}
+.fact dt{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.dark .fact dt{color:var(--sand-500)}
+.fact dd{margin:0;font-size:19px;line-height:1.35}
+.figure-photo{position:relative;overflow:hidden;border-radius:2px}
+.figure-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 1.2s var(--ease)}
+.figure-photo:hover img{transform:scale(1.1)}
+.figure-photo figcaption{position:absolute;left:16px;bottom:14px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream-50);text-shadow:0 1px 8px rgba(0,0,0,.5)}
+.terre-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:end}
+.terre-grid .anchor{height:min(62vh,600px)}
+
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,48px);counter-reset:s}
+.step{border-top:1px solid rgba(209,203,184,.22);padding-top:24px;display:flex;flex-direction:column;gap:12px}
+.step .n{font-family:var(--display);font-size:15px;letter-spacing:.2em;color:var(--gold)}
+.step h3{font-family:var(--display);font-size:32px;font-weight:400}
+.step p{color:var(--sand-400);font-size:17px}
+.big-nums{display:flex;flex-wrap:wrap;gap:clamp(24px,5vw,80px);align-items:flex-end}
+.big{display:flex;flex-direction:column;gap:6px}
+.big b{font-family:var(--display);font-weight:300;font-size:clamp(84px,11vw,180px);line-height:.85;letter-spacing:-.03em;font-variant-numeric:lining-nums}
+.big span{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.dark .big span{color:var(--sand-500)}
+.big b small{font-size:.38em;letter-spacing:0}
+.recolte-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(24px,5vw,80px);align-items:center}
+.recolte-grid .anchor{height:min(56vh,540px)}
+.placeholder{display:inline-block;border:1px dashed var(--sand-500);color:var(--muted);font-size:13px;letter-spacing:.06em;padding:2px 8px;font-family:var(--text);font-weight:400}
+
+.profile{display:flex;flex-direction:column;gap:14px;max-width:520px}
+.rate{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.rate span{font-size:21px}
+.fleurons{display:flex;gap:16px}
+.fleurons svg{width:24px;height:24px;fill:var(--olive)}
+.fleurons svg.off{opacity:.13}
+.chips{display:flex;flex-wrap:wrap;gap:12px}
+.chip{background:var(--sand-300);border:1.5px solid var(--sand-400);color:var(--olive);padding:10px 22px;font-size:17px}
+.poly-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:center}
+.poly-grid .anchor{height:min(70vh,660px)}
+
+.bottle-ch{min-height:120vh}
+.bottle-ch .anchor{height:min(78vh,760px);width:100%;margin:0 auto}
+.callouts{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 360px minmax(0,1fr);gap:clamp(16px,4vw,64px);align-items:center}
+.callouts ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:clamp(48px,10vh,120px)}
+.callouts li{display:flex;flex-direction:column;gap:6px;max-width:300px}
+.callouts .left li{margin-left:auto;text-align:right}
+.callouts li b{font-family:var(--display);font-weight:400;font-size:28px;line-height:1.1;color:var(--cream)}
+.callouts li span{color:var(--sand-400);font-size:16px}
+.callouts li::before{content:"";width:48px;height:1px;background:var(--gold);margin-bottom:10px}
+.callouts .left li::before{align-self:flex-end}
+
+.section-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;margin-bottom:56px}
+.ornament{display:flex;align-items:center;gap:12px}
+.ornament i{width:110px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.ornament b{width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,32px)}
+.card{background:var(--cream-50);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.card:hover{transform:scale(1.02);box-shadow:0 30px 60px -10px rgba(26,26,26,.14)}
+.card .vis{position:relative;aspect-ratio:10/11;background:var(--cream-2);overflow:hidden;max-width:100%}
+.card .vis img{position:absolute;inset:6% 0 0 0;margin:auto;height:88%;width:auto;object-fit:contain;transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.card .vis img.r15{opacity:0}
+.card:hover .vis img.r0{opacity:0;transform:scale(1.04)}
+.card:hover .vis img.r15{opacity:1;transform:scale(1.04)}
+.card .vis .tag{position:absolute;left:16px;top:16px;background:var(--terra);color:var(--cream-50);font-size:12px;letter-spacing:.18em;text-transform:uppercase;padding:6px 12px}
+.card .txt{padding:26px 28px 30px;display:flex;flex-direction:column;gap:8px}
+.card .meta{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:6px}
+.card .price{font-size:19px;color:var(--body);font-variant-numeric:tabular-nums}
+.card .go{display:inline-flex;gap:8px;align-items:center;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;transition:gap .4s var(--ease),color .4s var(--ease)}
+.card:hover .go{gap:12px;color:var(--terra)}
+.card .go .icon{width:16px;height:16px}
+
+.promise{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,48px)}
+.promise > div{display:flex;flex-direction:column;gap:14px;border-top:1px solid rgba(209,203,184,.2);padding-top:26px}
+.promise .icon{width:32px;height:32px;stroke:var(--gold);stroke-width:1.2}
+.promise b{font-family:var(--display);font-weight:300;font-size:clamp(44px,5vw,72px);line-height:1;color:var(--cream)}
+.promise p{color:var(--sand-400)}
+.quote{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(28px,3.2vw,46px);line-height:1.2;color:var(--cream);max-width:24em}
+.light .quote{color:var(--ink-warm)}
+.promise-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.45fr);gap:clamp(24px,4vw,64px);align-items:center}
+.promise-grid .anchor{height:min(60vh,560px)}
+
+footer.site{background:var(--ink);color:var(--sand-400);padding:96px var(--gutter) calc(40px + env(safe-area-inset-bottom,0px));position:relative;z-index:2}
+.foot{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px}
+.foot h4{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--sand-500);font-weight:500;margin:0 0 16px}
+.foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.foot a{text-decoration:none;color:var(--cream)}
+.foot a:hover{color:var(--gold)}
+.foot .brand svg{fill:var(--cream-50);width:30px;height:36px}.foot .brand .word{color:var(--cream-50);font-size:26px}
+.news{display:flex;border-bottom:1px solid var(--sand-500);margin-top:18px;max-width:380px}
+.news input{flex:1;min-width:0;background:none;border:0;color:var(--cream);font:inherit;padding:12px 0}
+.news input::placeholder{color:var(--sand-500)}
+.news button{color:var(--cream);display:flex;align-items:center}
+.legal{max-width:1280px;margin:72px auto 0;padding-top:24px;border-top:1px solid rgba(209,203,184,.14);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;font-size:14px;color:var(--sand-500)}
+
+/* ---------- Pages secondaires ---------- */
+.page-head{padding-block:calc(var(--nav-h) + var(--bar-h) + 80px) 64px;padding-inline:var(--gutter)}
+.page-head .wrap{display:flex;flex-direction:column;gap:22px}
+.sec{padding:96px var(--gutter)}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px}
+.filter{border:1.5px solid var(--sand-400);padding:10px 20px;font-size:15px;color:var(--olive);transition:background .4s var(--ease),color .4s var(--ease)}
+.filter[aria-pressed="true"]{background:var(--ink-warm);color:var(--cream);border-color:var(--ink-warm)}
+.band{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:center}
+
+/* PDP */
+.pdp{padding:calc(var(--nav-h) + var(--bar-h) + 40px) var(--gutter) 96px}
+.pdp-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:start}
+.pdp-media{position:sticky;top:calc(var(--nav-h) + var(--bar-h) + 24px);display:flex;flex-direction:column;gap:16px}
+.pdp-stage{position:relative;background:var(--cream-2);border-radius:16px;height:min(74vh,720px);overflow:hidden;max-width:100%}
+.pdp-stage .anchor{position:absolute;inset:6% 0 8% 0;height:auto}
+.pdp-stage .drag-hint{bottom:18px;color:var(--olive)}
+.thumbs{display:flex;gap:12px}
+.thumbs button{width:76px;height:92px;border-radius:8px;overflow:hidden;background:var(--cream-2);border:1.5px solid transparent;transition:border-color .4s var(--ease)}
+.thumbs button[aria-pressed="true"]{border-color:var(--terra)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.photo-view{position:absolute;inset:0;background:center/cover no-repeat;opacity:0;transition:opacity .5s var(--ease);pointer-events:none}
+.photo-view.show{opacity:1}
+.badges{display:flex;gap:12px;flex-wrap:wrap}
+.badge{font-family:var(--display);font-size:17px;letter-spacing:.14em;text-transform:uppercase;padding:8px 18px;border:1.5px solid var(--olive-2)}
+.badge.full{background:var(--terra);border-color:var(--terra);color:var(--cream-50)}
+.price-xl{font-family:var(--text);font-size:30px;font-variant-numeric:tabular-nums}
+.features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding-block:24px;border-block:1px solid var(--line)}
+.features div{display:flex;gap:12px;align-items:center;font-size:16px;line-height:1.3}
+.features .icon{flex:none;width:30px;height:30px;stroke:var(--olive)}
+.opt-label{font-weight:600;font-size:17px;margin-bottom:12px;display:flex;justify-content:space-between}
+.opt-label span{font-weight:400;color:var(--muted)}
+.formats{display:flex;gap:12px}
+.fmt{min-width:140px;padding:16px 24px;border:1.5px solid var(--sand-400);font-size:22px;transition:background .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease)}
+.fmt[aria-pressed="true"]{background:var(--terra);border-color:var(--terra);color:var(--cream-50)}
+.formulas{display:flex;flex-direction:column;gap:22px}
+.formula{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;text-align:left;padding:22px 26px;border:1.5px solid var(--line);border-radius:16px;transition:border-color .4s var(--ease),background .4s var(--ease)}
+.formula[aria-checked="true"]{border-color:var(--terra);background:var(--cream-50)}
+.formula .radio{width:24px;height:24px;border-radius:50%;border:1.5px solid var(--sand-400);background:var(--cream-50);transition:border .4s var(--ease)}
+.formula[aria-checked="true"] .radio{border:7px solid var(--terra)}
+.formula b{display:block;font-size:19px;font-weight:600;letter-spacing:.02em}
+.formula small{color:var(--muted);font-size:16px}
+.formula .p{font-size:22px;font-variant-numeric:tabular-nums}
+.formula .p.save{color:var(--terra)}
+.formula .save-tag{position:absolute;top:-13px;left:24px;background:var(--terra);color:var(--cream-50);font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:4px 10px}
+.buy{display:flex;gap:12px;align-items:stretch}
+.stepper{display:flex;align-items:center;border:1.5px solid var(--sand-400)}
+.stepper button{width:52px;height:100%;min-height:56px;display:grid;place-items:center}
+.stepper button .icon{width:18px;height:18px}
+.stepper output{min-width:36px;text-align:center;font-size:20px;font-variant-numeric:tabular-nums}
+.buy .btn{flex:1;justify-content:center}
+.ship-note{display:flex;gap:10px;align-items:center;font-size:16px;color:var(--body)}
+.ship-note .icon{width:20px;height:20px;stroke:var(--olive)}
+.acc{border-top:1px solid var(--line)}
+.acc-item{border-bottom:1px solid var(--line)}
+.acc-item > button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:24px 0;font-size:20px;font-weight:500;text-align:left}
+.acc-item > button .icon{transition:transform .5s var(--ease);flex:none}
+.acc-item > button[aria-expanded="true"] .icon{transform:rotate(180deg)}
+.acc-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s var(--ease)}
+.acc-panel.open{grid-template-rows:1fr}
+.acc-panel > div{overflow:hidden}
+.acc-panel .inner{padding-bottom:28px;display:flex;flex-direction:column;gap:18px;color:var(--body)}
+.spec{display:grid;grid-template-columns:auto 1fr;gap:10px 24px;margin:0}
+.spec dt{font-weight:600;color:var(--ink-warm)}
+.spec dd{margin:0}
+.pairings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.pairings h5{margin:0 0 4px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);font-weight:500}
+.method{display:flex;flex-direction:column;gap:6px}
+.method b{font-family:var(--display);font-weight:400;font-size:24px;color:var(--ink-warm)}
+.bullets{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px}
+.bullets li::marker{color:var(--olive)}
+
+/* histoire / contact */
+.story{display:flex;flex-direction:column;gap:120px}
+.timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}
+.timeline div{border-top:1px solid var(--sand-500);padding-top:20px;display:flex;flex-direction:column;gap:8px}
+.timeline b{font-family:var(--display);font-weight:400;font-size:28px}
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 32px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1/-1}
+.field label{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);font-weight:500}
+.field input,.field select,.field textarea{font:inherit;font-size:19px;color:var(--ink-warm);background:transparent;border:0;border-bottom:1px solid var(--sand-500);padding:12px 0;border-radius:0;transition:border-color .4s var(--ease)}
+.field textarea{min-height:140px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-bottom:2px solid var(--terra)}
+.info-cards{display:flex;flex-direction:column;gap:28px}
+.info-cards div{display:flex;gap:16px}
+.info-cards .icon{flex:none;stroke:var(--olive);width:26px;height:26px;margin-top:3px}
+.toast{position:fixed;left:50%;bottom:calc(28px + env(safe-area-inset-bottom,0px));transform:translate(-50%,140%);z-index:80;background:var(--ink);color:var(--cream);padding:16px 24px;font-size:16px;display:flex;gap:10px;align-items:center;transition:transform .5s var(--ease);max-width:calc(100vw - 32px)}
+.toast.show{transform:translate(-50%,0)}
+.toast .icon{stroke:var(--gold);width:20px;height:20px;flex:none}
+
+/* handoff */
+.doc{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:22px;color:var(--body)}
+.doc h2{font-family:var(--display);font-size:40px;font-weight:400;color:var(--ink-warm);margin-top:40px}
+.doc h3{font-size:21px;color:var(--ink-warm);font-weight:600}
+.doc code,.doc pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px}
+.doc pre{background:var(--ink);color:var(--sand-400);padding:20px;overflow-x:auto;border-radius:8px;line-height:1.55}
+.doc table{border-collapse:collapse;width:100%;font-size:16px}
+.doc .tbl{overflow-x:auto}
+.doc td,.doc th{border-bottom:1px solid var(--line);padding:10px 12px 10px 0;text-align:left;vertical-align:top}
+.doc th{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--olive);font-weight:500}
+.swatch{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:8px;border:1px solid var(--line)}
+
+/* ---------- Tiroir panier ---------- */
+.scrim{position:fixed;inset:0;z-index:70;background:rgba(26,26,26,.45);opacity:0;pointer-events:none;transition:opacity .5s var(--ease)}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:71;width:min(460px,100vw);background:var(--cream);box-shadow:-20px 0 80px rgba(13,13,13,.25);transform:translateX(105%);transition:transform .6s var(--ease);display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.drawer.open{transform:none}
+.drawer header{display:flex;justify-content:space-between;align-items:center;padding:24px 28px;border-bottom:1px solid var(--line)}
+.drawer header h2{font-family:var(--display);font-size:34px;font-weight:400}
+.progress{padding:20px 28px;display:flex;flex-direction:column;gap:10px;border-bottom:1px solid var(--line)}
+.progress p{display:flex;gap:10px;align-items:center;font-size:16px}
+.progress .icon{width:20px;height:20px;stroke:var(--olive);flex:none}
+.track{height:4px;background:var(--sand-300);border-radius:2px;overflow:hidden}
+.track i{display:block;height:100%;width:0;background:var(--terra);border-radius:2px;transition:width .6s var(--ease)}
+.lines{flex:1;overflow-y:auto;padding:0 28px}
+.line{display:grid;grid-template-columns:88px minmax(0,1fr) auto;gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}
+.line .th{width:88px;height:112px;background:var(--cream-2);border-radius:8px;display:grid;place-items:center;overflow:hidden}
+.line .th img{height:96%;width:auto}
+.line b{font-size:19px;font-weight:500;display:block}
+.line small{color:var(--muted);font-size:15px}
+.line .stepper{margin-top:10px;width:max-content}
+.line .stepper button{width:40px;min-height:40px}
+.line .r{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;font-variant-numeric:tabular-nums}
+.line .rm{font-size:15px;color:var(--muted);text-decoration:underline}
+.empty{padding:60px 0;text-align:center;display:flex;flex-direction:column;gap:18px;align-items:center;color:var(--body)}
+.drawer footer{padding:22px 28px;border-top:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
+.total{display:flex;justify-content:space-between;font-size:20px;font-variant-numeric:tabular-nums}
+.drawer footer small{color:var(--muted);font-size:14px}
+.flyer{position:fixed;z-index:90;pointer-events:none;width:60px;height:auto;transition:transform .6s var(--ease),opacity .6s var(--ease)}
+
+/* reveal */
+.rv{transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.pre{opacity:.25;transform:translateY(28px)}
+
+@media (max-width:900px){
+  body{font-size:17px}
+  .ch{min-height:auto;padding-block:calc(var(--nav-h) + var(--bar-h) + 40px) 80px;align-items:flex-start}
+  .split,.split.rev,.terre-grid,.recolte-grid,.poly-grid,.promise-grid,.band,.pdp-grid{grid-template-columns:minmax(0,1fr)}
+  .split.rev > :first-child{order:0}
+  .hero{min-height:100svh}
+  .hero .anchor{height:52vh;margin-top:-12px}
+  .terre-grid .anchor,.recolte-grid .anchor,.promise-grid .anchor{height:44vh;width:60%;margin-left:auto}
+  .poly-grid .anchor{height:46vh}
+  .poly-grid{gap:40px}
+  .steps,.promise,.cards,.timeline{grid-template-columns:minmax(0,1fr)}
+  .facts{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .callouts{grid-template-columns:minmax(0,1fr)}
+  .callouts ul{gap:28px}
+  .callouts .left li{margin-left:0;text-align:left}
+  .callouts .left li::before{align-self:flex-start}
+  .bottle-ch{min-height:auto}
+  .bottle-ch .anchor{height:62vh}
+  .foot{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .foot > :first-child{grid-column:1/-1}
+  .pdp-media{position:relative;top:0}
+  .pdp-stage{height:62vh}
+  .features{grid-template-columns:minmax(0,1fr)}
+  .form{grid-template-columns:minmax(0,1fr)}
+  .pairings{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .scroll-cue{display:none}
+  .sec{padding:72px var(--gutter)}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .rv.pre{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="arch" viewBox="0 0 64 78"><path d="M0 78V32A32 32 0 0 1 64 32V78H48V34A16 16 0 0 0 16 34V78Z"/></symbol>
+    <symbol id="fleuron" viewBox="0 0 24 24"><path d="M12 1.5c2.2 3 2.2 6.4 0 9.5-2.2-3.1-2.2-6.5 0-9.5zM12 22.5c2.2-3 2.2-6.4 0-9.5-2.2 3.1-2.2 6.5 0 9.5zM1.5 12c3-2.2 6.4-2.2 9.5 0-3.1 2.2-6.5 2.2-9.5 0zM22.5 12c-3-2.2-6.4-2.2-9.5 0 3.1 2.2 6.5 2.2 9.5 0z"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 9h16M4 15h16"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path d="M5 12h14"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3c3 4.5 6 8 6 11a6 6 0 0 1-12 0c0-3 3-6.5 6-11z"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 10 11 5 20 4c0 9-5 15-15 15z"/><path d="M5 19L14 10"/></symbol>
+    <symbol id="i-press" viewBox="0 0 24 24"><path d="M12 4v5"/><circle cx="12" cy="3" r="1"/><ellipse cx="12" cy="14" rx="8" ry="3"/><path d="M4 14v3c0 1.7 3.6 3 8 3s8-1.3 8-3v-3"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c2.5 2.5 2.5 13.5 0 16M12 4c-2.5 2.5-2.5 13.5 0 16"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
+    <symbol id="i-rotate" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v5h-5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 6h18v12H3z"/><path d="M3 6l9 7 9-7"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+  </defs>
+</svg>
+
+<canvas id="stage" aria-hidden="true"></canvas>
+
+<header class="header" id="header">
+  <div class="bar" aria-label="Annonces">
+    <div class="bar-track" aria-hidden="true">
+      <span>Huile extra vierge première pression à froid</span><span>Livraison offerte dès 49 € en France</span><span>Expédiée sous 24 h</span><span>Livraison en Europe</span>
+      <span>Huile extra vierge première pression à froid</span><span>Livraison offerte dès 49 € en France</span><span>Expédiée sous 24 h</span><span>Livraison en Europe</span>
+    </div>
+  </div>
+  <div class="nav" id="nav">
+    <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu"><svg class="icon"><use href="#i-menu"/></svg></button>
+    <a class="brand" href="#accueil" aria-label="Alveiria, accueil"><svg><use href="#arch"/></svg><span class="word">ALVEIRIA</span></a>
+    <nav class="links" aria-label="Navigation principale">
+      <a href="#collection">Nos huiles</a><a href="#accueil" data-scroll="terre">La terre</a><a href="#histoire">Notre histoire</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="actions">
+      <button class="hide-m" aria-label="Rechercher"><svg class="icon"><use href="#i-search"/></svg></button>
+      <button class="hide-m" aria-label="Mon compte"><svg class="icon"><use href="#i-user"/></svg></button>
+      <button class="cart-btn" id="cartBtn" aria-label="Ouvrir le panier"><svg class="icon"><use href="#i-bag"/></svg><span class="count" id="count">0</span></button>
+    </div>
+  </div>
+</header>
+
+<div class="sheet" id="sheet" aria-hidden="true">
+  <button class="close" id="sheetClose" aria-label="Fermer le menu"><svg class="icon"><use href="#i-close"/></svg></button>
+  <nav aria-label="Menu mobile"><a href="#accueil">Accueil</a><a href="#collection">Nos huiles</a><a href="#produit">Prima</a><a href="#histoire">Notre histoire</a><a href="#contact">Contact</a></nav>
+  <p class="body" style="color:var(--sand-400)">Livraison offerte dès 49 € en France · expédiée sous 24 h · Europe.</p>
+</div>
+
+<!-- ================= ACCUEIL ================= -->
+<main class="view" id="view-accueil" data-stage="1">
+  <section class="ch dark hero" data-theme-nav="dark" id="hero">
+    <div class="photo" id="heroPhoto" role="img" aria-label="Vue aérienne d'une piste entre les oliviers du nord-ouest tunisien"></div>
+    <div class="wrap split">
+      <div class="stack">
+        <span class="eyebrow">Huile d'olive extra vierge · Tunisie</span>
+        <h1 class="display">L'excellence de l'huile d'olive tunisienne.</h1>
+        <p class="lead">Découvrez l'huile Chetoui, trésor du terroir tunisien, riche en polyphénols et aux arômes intenses d'herbe fraîche et d'amande verte.</p>
+        <div class="row" style="margin-top:8px">
+          <a class="btn btn-primary" href="#produit">Découvrir Prima <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-ghost" href="#histoire">Notre histoire</a>
+        </div>
+      </div>
+      <div class="anchor" data-rot="-8" data-tilt="-3" data-op="1" data-idle="1" aria-label="Bouteille Alveiria Prima, faites-la tourner">
+        <img class="fallback" src="assets/bottle.jpg" alt="Bouteille Alveiria Prima 500 ml sur une pierre">
+        <span class="drag-hint" style="color:var(--sand-500)"><svg class="icon"><use href="#i-rotate"/></svg>Glissez pour la faire tourner</span>
+      </div>
+    </div>
+    <div class="scroll-cue"><i></i>Défiler</div>
+  </section>
+
+  <section class="ch light" data-theme-nav="light" id="terre">
+    <div class="wrap stack" style="gap:56px">
+      <div class="stack tight rv">
+        <span class="eyebrow">La terre</span>
+        <h2 class="h1" style="max-width:13em">Le nord-ouest tunisien, et ses oliviers centenaires.</h2>
+      </div>
+      <div class="terre-grid">
+        <div class="anchor" data-rot="35" data-tilt="4" data-op="1"><img class="fallback" src="assets/bottle.jpg" alt=""></div>
+        <div class="stack rv">
+          <figure class="figure-photo" style="margin:0;aspect-ratio:4/3"><img src="assets/grove.jpg" alt="Olivier ancestral au bord d'une piste, sacs de récolte au soleil"><figcaption>Oliveraie · Siliana</figcaption></figure>
+          <p class="lead">Nos olives Chetoui poussent à Sidi Bou Rouis, dans le gouvernorat de Siliana. Des oliveraies ancestrales, cultivées selon des pratiques respectueuses de l'environnement, qui préservent la biodiversité et les sols du terroir tunisien.</p>
+          <dl class="facts" style="margin:0">
+            <div class="fact"><dt>Variété</dt><dd>Chetoui 100 %</dd></div>
+            <div class="fact"><dt>Origine</dt><dd>Nord-ouest de la Tunisie</dd></div>
+            <div class="fact"><dt>Récolte</dt><dd>Novembre – décembre 2025</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ch dark" data-theme-nav="dark" id="recolte">
+    <div class="wrap stack" style="gap:64px">
+      <div class="recolte-grid">
+        <div class="stack rv">
+          <span class="eyebrow">La récolte et la pression</span>
+          <h2 class="h1">Cueillie verte. Pressée dans les 24 heures.</h2>
+          <div class="big-nums">
+            <div class="big"><b>24<small> h</small></b><span>de l'arbre au moulin</span></div>
+            <div class="big"><b><small>&lt;</small>27<small> °C</small></b><span>extraction à froid</span></div>
+          </div>
+        </div>
+        <div class="anchor" data-rot="-40" data-tilt="-5" data-op="1"><img class="fallback" src="assets/bottle.jpg" alt=""></div>
+      </div>
+      <ol class="steps rv" style="list-style:none;margin:0;padding:0">
+        <li class="step"><span class="n">01</span><h3>Récolte précoce</h3><p>Nos olives Chetoui sont récoltées en début de saison, lorsque le fruit est encore vert, pour garantir une teneur maximale en polyphénols et un fruité vert intense.</p></li>
+        <li class="step"><span class="n">02</span><h3>Extraction à froid</h3><p>L'extraction est réalisée exclusivement à froid, à une température inférieure à 27 °C, dans les 24 heures suivant la récolte pour préserver toutes les qualités organoleptiques.</p></li>
+        <li class="step"><span class="n">03</span><h3>Contrôle qualité</h3><p>Chaque lot est analysé pour garantir un indice d'acidité de 0,26 %, et une teneur élevée en polyphénols, bien au-delà des standards de l'huile extra vierge.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="ch light alt" data-theme-nav="light" id="polyphenols">
+    <div class="wrap poly-grid">
+      <div class="stack rv">
+        <span class="eyebrow">Les polyphénols</span>
+        <h2 class="h2">Pourquoi cette huile est différente.</h2>
+        <p class="body">Les polyphénols sont les antioxydants naturels de l'olive. Ils donnent à l'huile son ardence en gorge et son amertume franche. Cueillir tôt, quand le fruit est encore vert, c'est choisir d'en garder le plus possible.</p>
+        <div class="big"><b>0,26<small> %</small></b><span>Acidité libre mesurée · seuil extra vierge ≤ 0,8 %</span></div>
+        <div class="big"><b style="font-size:clamp(56px,6vw,96px)"><span class="placeholder" style="font-size:22px;letter-spacing:.04em">[ valeur d'analyse ]</span><small> mg/kg</small></b><span>Polyphénols totaux · chiffre à fournir par le laboratoire</span></div>
+      </div>
+      <div class="anchor" data-rot="10" data-tilt="0" data-op="1"><img class="fallback" src="assets/bottle.jpg" alt=""></div>
+      <div class="stack rv">
+        <span class="eyebrow">Dégustation</span>
+        <div class="profile" id="profileHome"></div>
+        <span class="eyebrow" style="margin-top:12px">Arômes dominants</span>
+        <div class="chips"><span class="chip">Herbe fraîche</span><span class="chip">Amande verte</span><span class="chip">Artichaut</span><span class="chip">Tomate verte</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ch dark bottle-ch" data-theme-nav="dark" id="bouteille">
+    <div class="wrap stack" style="gap:48px">
+      <div class="stack tight rv" style="align-items:center;text-align:center">
+        <span class="eyebrow">La bouteille</span>
+        <h2 class="h1">Faite pour durer, comme l'huile qu'elle protège.</h2>
+      </div>
+      <div class="callouts">
+        <ul class="left">
+          <li><b>Verre opaque</b><span>La lumière oxyde l'huile. Le verre teinté la garde à l'abri.</span></li>
+          <li><b>L'arche d'Alveiria</b><span>Une frise grecque et l'arche romaine, mémoire du nord-ouest tunisien.</span></li>
+        </ul>
+        <div class="anchor" data-rot="0" data-tilt="0" data-op="1" data-idle="1" data-scale="1"><img class="fallback" src="assets/bottle.jpg" alt=""><span class="drag-hint" style="color:var(--sand-500)"><svg class="icon"><use href="#i-rotate"/></svg>Glissez pour la faire tourner</span></div>
+        <ul class="right">
+          <li><b>500 ml</b><span>Bouchon à vis. Refermez après chaque usage.</span></li>
+          <li><b>14 à 18 °C</b><span>À l'abri de la lumière et de la chaleur, idéalement.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="ch light" data-theme-nav="light" id="collection-home">
+    <div class="wrap">
+      <div class="section-head rv">
+        <span class="eyebrow" style="color:var(--olive)">Nouveauté</span>
+        <div class="ornament" aria-hidden="true"><i></i><b></b><i></i></div>
+        <h2 class="h2">Nos huiles d'olive</h2>
+      </div>
+      <div class="cards" data-cards="home"></div>
+      <div class="anchor" data-op="0" data-rot="90" aria-hidden="true" style="position:absolute;left:50%;top:10%;width:1px;height:40vh;pointer-events:none"></div>
+    </div>
+  </section>
+
+  <section class="ch dark" data-theme-nav="dark" id="promesse">
+    <div class="wrap stack" style="gap:72px">
+      <div class="promise-grid">
+        <div class="stack rv">
+          <span class="eyebrow">Notre promesse</span>
+          <h2 class="h1">Du moulin à votre table, sans détour.</h2>
+          <p class="quote">« Chaque goutte, un héritage. Chaque arôme, une histoire. »</p>
+        </div>
+        <div class="anchor" data-rot="20" data-tilt="3" data-op="1"><img class="fallback" src="assets/bottle.jpg" alt=""></div>
+      </div>
+      <div class="promise rv">
+        <div><svg class="icon"><use href="#i-truck"/></svg><b>49 €</b><p>Livraison offerte en France dès 49 € d'achat.</p></div>
+        <div><svg class="icon"><use href="#i-clock"/></svg><b>24 h</b><p>Commande expédiée sous 24 heures.</p></div>
+        <div><svg class="icon"><use href="#i-globe"/></svg><b>Europe</b><p>Nous livrons aussi partout en Europe.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= COLLECTION ================= -->
+<main class="view" id="view-collection">
+  <section class="page-head" style="background:var(--cream)">
+    <div class="wrap">
+      <span class="eyebrow">Collection</span>
+      <h1 class="display" style="font-size:clamp(56px,8vw,128px)">Nos huiles d'olive</h1>
+      <p class="lead">Une seule variété, la Chetoui. Un seul domaine, le nord-ouest tunisien. Choisissez le format et le rythme qui vous ressemblent.</p>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:0;background:var(--cream)">
+    <div class="wrap">
+      <div class="filters" role="group" aria-label="Filtrer">
+        <button class="filter" aria-pressed="true" data-f="all">Toutes</button>
+        <button class="filter" aria-pressed="false" data-f="500">500 ml</button>
+        <button class="filter" aria-pressed="false" data-f="750">750 ml</button>
+        <button class="filter" aria-pressed="false" data-f="abo">Abonnement</button>
+      </div>
+      <div class="cards" data-cards="collection"></div>
+    </div>
+  </section>
+  <section class="sec" style="background:var(--ink);color:var(--cream)">
+    <div class="wrap band">
+      <figure class="figure-photo" style="margin:0;aspect-ratio:4/3"><img src="assets/grove.jpg" alt="Olivier ancestral et sacs de récolte"><figcaption>Récolte 2025</figcaption></figure>
+      <div class="stack">
+        <span class="eyebrow" style="color:var(--sand-500)">Responsabilité</span>
+        <h2 class="h2">Engagements environnementaux</h2>
+        <ul class="bullets" style="color:var(--sand-400)"><li>Agriculture raisonnée sans pesticides de synthèse</li><li>Irrigation goutte-à-goutte pour économiser l'eau</li><li>Valorisation des sous-produits de l'huilerie</li><li>Emballages recyclables et éco-conçus</li><li>Circuits courts et commerce équitable</li></ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= FICHE PRODUIT ================= -->
+<main class="view" id="view-produit" data-stage="1">
+  <section class="pdp" style="background:var(--cream)">
+    <div class="pdp-grid">
+      <div class="pdp-media">
+        <div class="pdp-stage" id="pdpStage">
+          <div class="photo-view" id="photoView" style="background-image:url(assets/bottle.jpg)"></div>
+          <div class="anchor" id="pdpAnchor" data-rot="0" data-tilt="0" data-op="1" data-idle="1"><img class="fallback" src="assets/bottle.jpg" alt="Bouteille Alveiria Prima"><span class="drag-hint"><svg class="icon"><use href="#i-rotate"/></svg>Glissez pour tourner · 360°</span></div>
+        </div>
+        <div class="thumbs" role="group" aria-label="Vues">
+          <button aria-pressed="true" data-view="3d" aria-label="Vue 3D"><img id="thumb3d" src="assets/bottle.jpg" alt=""></button>
+          <button aria-pressed="false" data-view="photo" aria-label="Photo sur la pierre"><img src="assets/bottle.jpg" alt=""></button>
+          <button aria-pressed="false" data-view="stone" aria-label="Texture de la pierre"><img src="assets/stone.jpg" alt=""></button>
+        </div>
+      </div>
+      <div class="stack" style="gap:30px">
+        <div class="badges"><span class="badge full">Récolte 2025</span><span class="badge">Extra vierge</span></div>
+        <h1 class="h1" style="font-size:clamp(44px,4.6vw,72px);letter-spacing:.02em">Alveiria — Prima</h1>
+        <div class="price-xl" id="pdpPrice">€22.90</div>
+        <div class="features">
+          <div><svg class="icon"><use href="#i-drop"/></svg>Extra vierge première pression</div>
+          <div><svg class="icon"><use href="#i-leaf"/></svg>Riche en polyphénols</div>
+          <div><svg class="icon"><use href="#i-press"/></svg>Pressée dans les 24 h</div>
+        </div>
+        <div>
+          <div class="opt-label">Format <span id="fmtNote">500 ml · bouteille opaque</span></div>
+          <div class="formats" role="group" aria-label="Format">
+            <button class="fmt" aria-pressed="true" data-fmt="500">500 ml</button>
+            <button class="fmt" aria-pressed="false" data-fmt="750">750 ml</button>
+          </div>
+        </div>
+        <div>
+          <div class="opt-label">Choisissez votre formule</div>
+          <div class="formulas" role="radiogroup" aria-label="Formule">
+            <button class="formula" role="radio" aria-checked="true" data-formula="unique"><span class="radio"></span><span><b>Achat unique</b><small>Sans engagement</small></span><span class="p" id="pUnique">€22.90</span></button>
+            <button class="formula" role="radio" aria-checked="false" data-formula="abo"><span class="save-tag">★ Économisez 5 %</span><span class="radio"></span><span><b>S'abonner &amp; économiser</b><small>Livraison chaque mois</small></span><span class="p save" id="pAbo">€21.76</span></button>
+          </div>
+        </div>
+        <div class="buy">
+          <div class="stepper" aria-label="Quantité"><button data-q="-1" aria-label="Retirer une bouteille"><svg class="icon"><use href="#i-minus"/></svg></button><output id="qty">1</output><button data-q="1" aria-label="Ajouter une bouteille"><svg class="icon"><use href="#i-plus"/></svg></button></div>
+          <button class="btn btn-primary" id="addBtn">Ajouter au panier · <span id="addTotal">€22.90</span></button>
+        </div>
+        <p class="ship-note"><svg class="icon"><use href="#i-truck"/></svg><span id="shipNote">Livraison offerte dès 49 € en France · expédiée sous 24 h</span></p>
+        <div class="acc" id="acc">
+          <div class="acc-item"><button aria-expanded="true">Le produit<svg class="icon"><use href="#i-chev"/></svg></button><div class="acc-panel open"><div><div class="inner">
+            <p><b style="color:var(--ink-warm)">L'originelle. L'essence même du terroir tunisien.</b></p>
+            <p>Parfaite expression de la variété <b>Chetoui</b>, la cuvée <b>Prima</b> est notre huile d'olive gastronomique par excellence. Récoltée dans les oliveraies ancestrales du nord-ouest de la Tunisie, elle dévoile un profil sensoriel d'une grande élégance, à la fois doux et parfaitement équilibré.</p>
+            <p>Pensée pour sublimer vos créations culinaires, Prima accompagne vos cuissons délicates et apporte une touche lumineuse à vos plats du quotidien.</p>
+            <p class="quote" style="font-size:26px;color:var(--olive)">« Chaque goutte, un héritage. Chaque arôme, une histoire. »</p>
+          </div></div></div></div>
+          <div class="acc-item"><button aria-expanded="false">Profil de saveur<svg class="icon"><use href="#i-chev"/></svg></button><div class="acc-panel"><div><div class="inner">
+            <div class="profile" id="profilePdp"></div>
+            <span class="eyebrow">Arômes dominants</span>
+            <div class="chips"><span class="chip">Herbe fraîche</span><span class="chip">Amande verte</span><span class="chip">Artichaut</span><span class="chip">Tomate verte</span></div>
+            <span class="eyebrow">Notes secondaires</span>
+            <div class="chips"><span class="chip">Poivre</span><span class="chip">Feuille d'olivier</span><span class="chip">Menthe</span></div>
+          </div></div></div></div>
+          <div class="acc-item"><button aria-expanded="false">Accord gastronomique<svg class="icon"><use href="#i-chev"/></svg></button><div class="acc-panel"><div><div class="inner">
+            <p>L'huile Chetoui, avec son caractère affirmé et ses notes herbacées, se marie parfaitement avec les plats méditerranéens. Son ardence et son amertume équilibrées en font un condiment idéal pour sublimer vos préparations.</p>
+            <div class="pairings"><div><h5>Salades</h5>Taboulé, fattouch, salade méchouia</div><div><h5>Grillades</h5>Poissons, viandes grillées, légumes</div><div><h5>Soupes</h5>Un filet pour rehausser tous vos potages</div><div><h5>Tartines</h5>Pain frais, fleur de sel, huile Chetoui</div></div>
+          </div></div></div></div>
+          <div class="acc-item"><button aria-expanded="false">Caractéristiques techniques<svg class="icon"><use href="#i-chev"/></svg></button><div class="acc-panel"><div><div class="inner">
+            <dl class="spec"><dt>Variété</dt><dd>100 % Chetoui</dd><dt>Extraction</dt><dd>Mécanique à froid (première pression)</dd><dt>Acidité libre</dt><dd>0,26 % (vierge extra supérieure)</dd><dt>Conservation</dt><dd>À l'abri de la lumière et de la chaleur (idéalement entre 14 °C et 18 °C)</dd><dt>Contenant</dt><dd>Bouteille opaque protectrice</dd><dt>Origine</dt><dd>Sidi Bou Rouis, Siliana, Tunisie</dd><dt>Récolte</dt><dd>Novembre – décembre 2025</dd></dl>
+          </div></div></div></div>
+          <div class="acc-item"><button aria-expanded="false">Méthodes de production<svg class="icon"><use href="#i-chev"/></svg></button><div class="acc-panel"><div><div class="inner">
+            <div class="method"><b>Récolte précoce</b><p>Nos olives Chetoui sont récoltées en début de saison, lorsque le fruit est encore vert, pour garantir une teneur maximale en polyphénols et un fruité vert intense.</p></div>
+            <div class="method"><b>Extraction à froid</b><p>L'extraction est réalisée exclusivement à froid, à une température inférieure à 27 °C, dans les 24 heures suivant la récolte.</p></div>
+            <div class="method"><b>Contrôle qualité</b><p>Chaque lot est analysé pour garantir un indice d'acidité de 0,26 % et une teneur élevée en polyphénols.</p></div>
+          </div></div></div></div>
+          <div class="acc-item"><button aria-expanded="false">Questions fréquentes<svg class="icon"><use href="#i-chev"/></svg></button><div class="acc-panel"><div><div class="inner">
+            <div class="method"><b style="font-size:20px">Quelle est la différence entre Chetoui et les autres variétés ?</b><p><span class="placeholder">Réponse à reprendre du site actuel</span></p></div>
+            <div class="method"><b style="font-size:20px">Combien de temps puis-je conserver cette huile ?</b><p><span class="placeholder">Réponse à reprendre du site actuel</span></p></div>
+            <div class="method"><b style="font-size:20px">L'huile est-elle adaptée à la cuisson ?</b><p><span class="placeholder">Réponse à reprendre du site actuel</span></p></div>
+            <div class="method"><b style="font-size:20px">Proposez-vous des formats différents ?</b><p>Prima existe en 500 ml et en 750 ml.</p></div>
+          </div></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= HISTOIRE ================= -->
+<main class="view" id="view-histoire">
+  <section class="ch dark hero" data-theme-nav="dark" style="min-height:86vh">
+    <div class="photo" style="background-image:url(assets/grove.jpg)" role="img" aria-label="Olivier ancestral"></div>
+    <div class="wrap stack" style="max-width:1280px">
+      <span class="eyebrow">Notre histoire</span>
+      <h1 class="display" style="max-width:10em">Chaque goutte, un héritage.</h1>
+      <p class="lead">Alveiria est née d'un attachement : celui d'oliveraies ancestrales du nord-ouest tunisien, et d'une variété, la Chetoui, qui y donne le meilleur d'elle-même.</p>
+    </div>
+  </section>
+  <section class="sec" style="background:var(--cream)">
+    <div class="wrap story">
+      <div class="band">
+        <div class="stack">
+          <span class="eyebrow">Le terroir</span>
+          <h2 class="h2">Sidi Bou Rouis, gouvernorat de Siliana.</h2>
+          <p class="body">Sur ces terres du nord-ouest, les oliviers ont traversé les générations. Nous y récoltons nos olives Chetoui en début de saison, quand le fruit est encore vert, pour garder intacts son fruité et ses polyphénols.</p>
+        </div>
+        <figure class="figure-photo" style="margin:0;aspect-ratio:4/3"><img src="assets/aerial.jpg" alt="Vue aérienne d'une piste entre les oliviers"><figcaption>Nord-ouest tunisien</figcaption></figure>
+      </div>
+      <div class="stack">
+        <span class="eyebrow">Une année d'olivier</span>
+        <div class="timeline">
+          <div><b>Novembre</b><p class="body">Début de la récolte, olives encore vertes.</p></div>
+          <div><b>Sous 24 h</b><p class="body">Pression mécanique à froid, sous 27 °C.</p></div>
+          <div><b>Chaque lot</b><p class="body">Analyse : acidité de 0,26 %, polyphénols élevés.</p></div>
+          <div><b>Décembre</b><p class="body">Fin de récolte, mise en bouteille opaque.</p></div>
+        </div>
+      </div>
+      <div class="band">
+        <figure class="figure-photo" style="margin:0;aspect-ratio:3/4;max-height:640px"><img src="assets/bottle.jpg" alt="Bouteille Prima sur la pierre" style="object-position:center 30%"><figcaption>Prima · 500 ml</figcaption></figure>
+        <div class="stack">
+          <span class="eyebrow">Responsabilité</span>
+          <h2 class="h2">Engagements environnementaux</h2>
+          <p class="body">Alveiria s'engage pour une oléiculture responsable et durable. Nos oliveraies sont cultivées selon des pratiques respectueuses de l'environnement, préservant la biodiversité et les sols du terroir tunisien.</p>
+          <ul class="bullets body"><li>Agriculture raisonnée sans pesticides de synthèse</li><li>Irrigation goutte-à-goutte pour économiser l'eau</li><li>Valorisation des sous-produits de l'huilerie</li><li>Emballages recyclables et éco-conçus</li><li>Circuits courts et commerce équitable</li></ul>
+          <div><a class="btn btn-primary" href="#produit">Goûter Prima <svg class="icon"><use href="#i-arrow"/></svg></a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= CONTACT ================= -->
+<main class="view" id="view-contact">
+  <section class="page-head" style="background:var(--cream)">
+    <div class="wrap">
+      <span class="eyebrow">Contact</span>
+      <h1 class="display" style="font-size:clamp(56px,8vw,128px)">Parlons d'huile.</h1>
+      <p class="lead">Une question sur une commande, un abonnement ou un accord mets et huile ? Écrivez-nous.</p>
+    </div>
+  </section>
+  <section class="sec" style="padding-top:0;background:var(--cream)">
+    <div class="wrap band" style="align-items:start">
+      <form class="form" id="contactForm" novalidate>
+        <div class="field"><label for="c-name">Nom</label><input id="c-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="c-mail">Adresse e-mail</label><input id="c-mail" name="email" type="email" autocomplete="email" required placeholder="vous@exemple.fr"></div>
+        <div class="field full"><label for="c-topic">Sujet</label><select id="c-topic" name="topic"><option>Ma commande</option><option>Mon abonnement</option><option>Professionnels et restaurants</option><option>Autre</option></select></div>
+        <div class="field full"><label for="c-msg">Message</label><textarea id="c-msg" name="message" required></textarea></div>
+        <div class="field full"><button class="btn btn-primary" type="submit" style="align-self:flex-start">Envoyer le message <svg class="icon"><use href="#i-arrow"/></svg></button><p id="formMsg" class="body" role="status" style="min-height:1.6em"></p></div>
+      </form>
+      <div class="info-cards">
+        <div><svg class="icon"><use href="#i-pin"/></svg><div><b>Origine</b><p class="body">Sidi Bou Rouis, Siliana, Tunisie</p></div></div>
+        <div><svg class="icon"><use href="#i-truck"/></svg><div><b>Livraison</b><p class="body">Offerte dès 49 € en France, expédiée sous 24 h. Livraison en Europe.</p></div></div>
+        <div><svg class="icon"><use href="#i-mail"/></svg><div><b>Adresse e-mail</b><p class="body"><span class="placeholder">à reprendre du site actuel</span></p></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= HANDOFF ================= -->
+<main class="view" id="view-handoff">
+  <section class="page-head" style="background:var(--cream)"><div class="wrap"><span class="eyebrow">Pour l'équipe dev</span><h1 class="h1">Notes de handoff</h1></div></section>
+  <section class="sec" style="padding-top:0;background:var(--cream)">
+    <div class="doc">
+      <p>Ce prototype est la version codée de la maquette Figma <b>Alveiria — Refonte 2026</b> (pages Foundations &amp; Components). Tokens, composants et bouteille à 37 angles y sont définis ; les écrans ci-dessous en sont l'implémentation de référence.</p>
+      <h2>Bouteille 3D</h2>
+      <h3>Scène (Three.js r128)</h3>
+      <ul class="bullets">
+        <li>Verre : <code>LatheGeometry</code> sur un profil de 12 points (fond, épaule, col), <code>MeshPhysicalMaterial</code> #1D2114, roughness 0,12, clearcoat 1.</li>
+        <li>Étiquette : cylindre ouvert, θ = 162°, texture = photo de l'étiquette dé-projetée (arcsin) pour supprimer la compression des bords.</li>
+        <li>Capsule et bouchon : cylindres noirs, trois stries.</li>
+        <li>Éclairage : clé chaude #FFE2B8 à gauche, contre-jour #FFC58A, environnement équirectangulaire peint (deux softboxes) passé au PMREM.</li>
+        <li>Production : remplacer par un GLB modélisé dans Blender (Draco), même rig de lumière, même texture d'étiquette en 2K.</li>
+      </ul>
+      <h3>Rotation liée au scroll</h3>
+      <p>Chaque chapitre contient une ancre <code>.anchor</code> (data-rot, data-tilt, data-op). À chaque frame, on prend les deux ancres qui encadrent le centre du viewport, on interpole leur rectangle écran et leur rotation, avec un tour complet supplémentaire entre deux chapitres. Le glisser ajoute un décalage avec inertie.</p>
+      <pre>// Équivalent GSAP ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+const tl = gsap.timeline({ scrollTrigger:{ trigger:'#home', start:'top top', end:'bottom bottom', scrub:0.8 }});
+chapters.forEach(c =&gt; tl.to(bottle.rotation, { y: deg(c.rot) + Math.PI*2, ease:'none' }, c.index)
+                       .to(bottle.position, { x: c.x, y: c.y, ease:'none' }, c.index));
+// easing des transitions UI : cubic-bezier(0.22, 0.61, 0.36, 1), 400–600 ms</pre>
+      <h2>Tokens</h2>
+      <div class="tbl"><table><thead><tr><th>Token</th><th>Valeur</th><th>Usage</th></tr></thead><tbody>
+        <tr><td><span class="swatch" style="background:#1A1A1A"></span>ink/900</td><td>#1A1A1A</td><td>Chapitres sombres, theme-color</td></tr>
+        <tr><td><span class="swatch" style="background:#1B1810"></span>ink/850</td><td>#1B1810</td><td>Texte principal sur crème</td></tr>
+        <tr><td><span class="swatch" style="background:#56524A"></span>ink/700</td><td>#56524A</td><td>Texte courant</td></tr>
+        <tr><td><span class="swatch" style="background:#6B665F"></span>ink/500</td><td>#6B665F</td><td>Texte discret (assombri pour l'AA)</td></tr>
+        <tr><td><span class="swatch" style="background:#F4F0E7"></span>cream/100</td><td>#F4F0E7</td><td>Fond clair</td></tr>
+        <tr><td><span class="swatch" style="background:#EFEBE0"></span>cream/200</td><td>#EFEBE0</td><td>Fond alterné</td></tr>
+        <tr><td><span class="swatch" style="background:#965635"></span>terracotta/600</td><td>#965635</td><td>Actions, sélection</td></tr>
+        <tr><td><span class="swatch" style="background:#834921"></span>terracotta/700</td><td>#834921</td><td>Survol, dégradé du CTA</td></tr>
+        <tr><td><span class="swatch" style="background:#685B41"></span>olive/700</td><td>#685B41</td><td>Sur-titres, fleurons, icônes</td></tr>
+        <tr><td><span class="swatch" style="background:#AB8730"></span>gold/500</td><td>#AB8730</td><td>Filets et ornements seulement (2,9:1 sur crème, jamais en texte)</td></tr>
+        <tr><td><span class="swatch" style="background:#2A2821"></span>bar</td><td>#2A2821</td><td>Bandeau d'annonce</td></tr>
+      </tbody></table></div>
+      <h2>Ce qui reste à fournir</h2>
+      <ul class="bullets"><li>Teneur en polyphénols (mg/kg) issue de l'analyse du lot 2025.</li><li>Prix du format 750 ml.</li><li>Réponses de la FAQ et adresse de contact.</li><li>SVG officiel du logo et fichiers de police du site.</li></ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site" id="footer" data-theme-nav="dark">
+  <div class="foot">
+    <div class="stack tight">
+      <a class="brand" href="#accueil"><svg><use href="#arch"/></svg><span class="word">ALVEIRIA</span></a>
+      <p>Huile d'olive extra vierge de Tunisie. Variété Chetoui, première pression à froid.</p>
+      <form class="news" id="newsForm"><label for="n-mail" class="sr" style="position:absolute;left:-9999px">Adresse e-mail</label><input id="n-mail" type="email" placeholder="Votre e-mail pour la récolte 2026" required><button aria-label="S'inscrire"><svg class="icon"><use href="#i-arrow"/></svg></button></form>
+    </div>
+    <div><h4>Boutique</h4><ul><li><a href="#collection">Nos huiles</a></li><li><a href="#produit">Prima 500 ml</a></li><li><a href="#produit">Abonnement</a></li></ul></div>
+    <div><h4>Maison</h4><ul><li><a href="#histoire">Notre histoire</a></li><li><a href="#accueil" data-scroll="terre">La terre</a></li><li><a href="#accueil" data-scroll="recolte">La récolte</a></li></ul></div>
+    <div><h4>Aide</h4><ul><li><a href="#contact">Contact</a></li><li><a href="#produit">Livraison et retours</a></li><li><a href="#handoff">Notes de handoff</a></li></ul></div>
+  </div>
+  <div class="legal"><span>© 2026 Alveiria · Produit en Tunisie</span><span>Livraison offerte dès 49 € en France · Europe</span></div>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Panier" aria-hidden="true">
+  <header><h2>Votre panier</h2><button id="drawerClose" aria-label="Fermer le panier"><svg class="icon"><use href="#i-close"/></svg></button></header>
+  <div class="progress"><p id="progText"><svg class="icon"><use href="#i-truck"/></svg><span></span></p><div class="track"><i id="progBar"></i></div></div>
+  <div class="lines" id="lines"></div>
+  <footer><div class="total"><span>Sous-total</span><span id="subtotal">€0.00</span></div><small>Taxes incluses. Frais de livraison calculés à l'étape suivante.</small><button class="btn btn-primary btn-block" id="checkout">Passer commande <svg class="icon"><use href="#i-arrow"/></svg></button></footer>
+</aside>
+<div class="toast" id="toast" role="status"><svg class="icon"><use href="#i-check"/></svg><span></span></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+const LABEL_SRC='assets/label-unwrap.jpg', BOTTLE_PHOTO='assets/bottle.jpg';
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fmt = n => n==null ? 'Prix à confirmer' : '€'+n.toFixed(2);
+const FREE = 49;
+
+/* ---------- Données ---------- */
+const PRODUCTS = [
+  {id:'prima-500', name:'Alveiria — Prima', eyebrow:'Récolte 2025 · Extra vierge', detail:'500 ml', price:22.90, f:'500', tag:'Nouveauté'},
+  {id:'prima-750', name:'Alveiria — Prima', eyebrow:'Récolte 2025 · Extra vierge', detail:'750 ml', price:null, f:'750'},
+  {id:'prima-abo', name:'Prima en abonnement', eyebrow:'Livraison chaque mois · −5 %', detail:'500 ml', price:21.76, f:'abo', per:' / mois'},
+];
+const RATINGS = [['Fruité',4],['Ardence',3],['Amertume',3]];
+
+/* ---------- Profil de saveur ---------- */
+$$('#profileHome,#profilePdp').forEach(el=>{
+  el.innerHTML = RATINGS.map(([k,v])=>`<div class="rate"><span>${k}</span><span class="fleurons" aria-label="${v} sur 5">${[1,2,3,4,5].map(i=>`<svg class="${i>v?'off':''}"><use href="#fleuron"/></svg>`).join('')}</span></div>`).join('');
+});
+
+/* ---------- Cartes produits ---------- */
+let snaps = {r0:BOTTLE_PHOTO, r15:BOTTLE_PHOTO};
+function renderCards(){
+  $$('[data-cards]').forEach(box=>{
+    const filter = box.dataset.filter||'all';
+    box.innerHTML = PRODUCTS.filter(p=>filter==='all'||p.f===filter).map(p=>`
+      <a class="card" href="#produit" data-fmt="${p.f==='750'?'750':'500'}" data-formula="${p.f==='abo'?'abo':'unique'}">
+        <div class="vis">${p.tag?`<span class="tag">${p.tag}</span>`:''}<img class="r0" src="${snaps.r0}" alt="${p.name} ${p.detail}"><img class="r15" src="${snaps.r15}" alt=""></div>
+        <div class="txt"><span class="eyebrow">${p.eyebrow}</span><span class="h3">${p.name}</span>
+          <div class="meta"><span class="price">${p.price==null?'Prix à confirmer':fmt(p.price)+(p.per||'')} · ${p.detail}</span><span class="go">Voir <svg class="icon"><use href="#i-arrow"/></svg></span></div></div>
+      </a>`).join('');
+  });
+  $$('.card').forEach(c=>c.addEventListener('click',()=>{ pdp.fmt=c.dataset.fmt; pdp.formula=c.dataset.formula; syncPdp(); }));
+}
+$$('.filter').forEach(b=>b.addEventListener('click',()=>{
+  $$('.filter').forEach(x=>x.setAttribute('aria-pressed', x===b));
+  $('[data-cards="collection"]').dataset.filter=b.dataset.f; renderCards();
+}));
+
+/* ---------- Fiche produit ---------- */
+const pdp = {fmt:'500', formula:'unique', qty:1};
+function unitPrice(){ if(pdp.fmt==='750') return null; return pdp.formula==='abo'?21.76:22.90; }
+function syncPdp(){
+  $$('.fmt').forEach(b=>b.setAttribute('aria-pressed', b.dataset.fmt===pdp.fmt));
+  $$('.formula').forEach(b=>b.setAttribute('aria-checked', b.dataset.formula===pdp.formula));
+  const u = unitPrice();
+  $('#pdpPrice').textContent = u==null?'Prix à confirmer':fmt(u);
+  $('#pUnique').textContent = pdp.fmt==='750'?'—':'€22.90';
+  $('#pAbo').textContent = pdp.fmt==='750'?'—':'€21.76';
+  $('#fmtNote').textContent = pdp.fmt==='750'?'750 ml · prix à confirmer':'500 ml · bouteille opaque';
+  $('#qty').textContent = pdp.qty;
+  const add=$('#addBtn');
+  if(u==null){ add.disabled=true; add.innerHTML='750 ml bientôt disponible'; }
+  else { add.disabled=false; add.innerHTML=`Ajouter au panier · <span id="addTotal">${fmt(u*pdp.qty)}</span>`; }
+  const left = FREE - cartTotal();
+  $('#shipNote').textContent = left>0 ? `Plus que ${fmt(left).replace('€','')} € pour la livraison offerte · expédiée sous 24 h` : 'Livraison offerte · expédiée sous 24 h';
+}
+$$('.fmt').forEach(b=>b.addEventListener('click',()=>{pdp.fmt=b.dataset.fmt; syncPdp();}));
+$$('.formula').forEach(b=>b.addEventListener('click',()=>{pdp.formula=b.dataset.formula; syncPdp();}));
+$$('.stepper [data-q]', $('.buy')).forEach(b=>b.addEventListener('click',()=>{pdp.qty=Math.max(1,Math.min(12,pdp.qty+ +b.dataset.q)); syncPdp();}));
+$$('#acc .acc-item > button').forEach(b=>b.addEventListener('click',()=>{
+  const open = b.getAttribute('aria-expanded')!=='true';
+  b.setAttribute('aria-expanded',open); b.nextElementSibling.classList.toggle('open',open);
+}));
+$$('.thumbs button').forEach(b=>b.addEventListener('click',()=>{
+  $$('.thumbs button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  const v=b.dataset.view, pv=$('#photoView');
+  pv.style.backgroundImage = `url(${v==='stone'?'assets/stone.jpg':BOTTLE_PHOTO})`;
+  pv.classList.toggle('show', v!=='3d');
+  pdpPhoto = v!=='3d';
+}));
+let pdpPhoto=false;
+
+/* ---------- Panier ---------- */
+let cart = [];
+try{ cart = JSON.parse(localStorage.getItem('alveiria-cart')||'[]'); }catch(e){ cart=[]; }
+const save=()=>{ try{ localStorage.setItem('alveiria-cart', JSON.stringify(cart)); }catch(e){} };
+function cartTotal(){ return cart.reduce((s,l)=>s+l.price*l.qty,0); }
+function renderCart(){
+  const n = cart.reduce((s,l)=>s+l.qty,0); $('#count').textContent=n;
+  const t = cartTotal(); $('#subtotal').textContent=fmt(t);
+  const left = FREE - t;
+  $('#progText span').textContent = cart.length===0 ? 'Livraison offerte dès 49 € en France' : left>0 ? `Plus que ${left.toFixed(2).replace('.',',')} € pour la livraison offerte` : 'Livraison offerte · expédiée sous 24 h';
+  $('#progText use').setAttribute('href', left<=0&&cart.length?'#i-check':'#i-truck');
+  $('#progBar').style.width = Math.min(100, t/FREE*100)+'%';
+  $('#checkout').disabled = cart.length===0;
+  $('#lines').innerHTML = cart.length===0 ? `<div class="empty"><p class="h3">Votre panier est vide.</p><p>Prima vous attend, récolte 2025.</p><a class="btn btn-ghost" href="#produit" data-close>Découvrir Prima</a></div>` :
+    cart.map((l,i)=>`<div class="line"><div class="th"><img src="${snaps.r0}" alt=""></div><div><b>${l.name}</b><small>${l.detail}</small><div class="stepper"><button data-i="${i}" data-d="-1" aria-label="Retirer une bouteille"><svg class="icon"><use href="#i-minus"/></svg></button><output>${l.qty}</output><button data-i="${i}" data-d="1" aria-label="Ajouter une bouteille"><svg class="icon"><use href="#i-plus"/></svg></button></div></div><div class="r"><span>${fmt(l.price*l.qty)}</span><button class="rm" data-rm="${i}">Retirer</button></div></div>`).join('');
+  $$('#lines [data-d]').forEach(b=>b.addEventListener('click',()=>{ const l=cart[+b.dataset.i]; l.qty=Math.max(1,l.qty+ +b.dataset.d); save(); renderCart(); syncPdp(); }));
+  $$('#lines [data-rm]').forEach(b=>b.addEventListener('click',()=>{ cart.splice(+b.dataset.rm,1); save(); renderCart(); syncPdp(); }));
+  $$('#lines [data-close]').forEach(a=>a.addEventListener('click',closeCart));
+}
+function openCart(){ $('#drawer').classList.add('open'); $('#scrim').classList.add('open'); $('#drawer').setAttribute('aria-hidden','false'); }
+function closeCart(){ $('#drawer').classList.remove('open'); $('#scrim').classList.remove('open'); $('#drawer').setAttribute('aria-hidden','true'); }
+$('#cartBtn').addEventListener('click',openCart); $('#drawerClose').addEventListener('click',closeCart); $('#scrim').addEventListener('click',closeCart);
+addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeCart(); closeSheet(); }});
+$('#checkout').addEventListener('click',()=>toast('Paiement hors du périmètre de la maquette'));
+$('#addBtn').addEventListener('click',()=>{
+  const u=unitPrice(); if(u==null) return;
+  const detail = `500 ml · ${pdp.formula==='abo'?'Abonnement mensuel':'Achat unique'}`;
+  const ex = cart.find(l=>l.detail===detail);
+  if(ex) ex.qty+=pdp.qty; else cart.push({name:'Alveiria — Prima', detail, price:u, qty:pdp.qty});
+  save(); fly(); setTimeout(()=>{ renderCart(); syncPdp(); const c=$('#count'); c.classList.remove('bump'); void c.offsetWidth; c.classList.add('bump'); setTimeout(openCart,250); }, reduce?0:620);
+});
+function fly(){
+  if(reduce) return;
+  const from = ($('#pdpAnchor').getBoundingClientRect()), to=$('#cartBtn').getBoundingClientRect();
+  const img=new Image(); img.src=snaps.r0; img.className='flyer'; img.alt='';
+  const w=Math.min(140, from.width*.5);
+  img.style.width=w+'px'; img.style.left=(from.left+from.width/2-w/2)+'px'; img.style.top=(from.top+from.height*.1)+'px';
+  document.body.appendChild(img);
+  const dx = to.left+to.width/2-(from.left+from.width/2), dy = to.top+to.height/2-(from.top+from.height*.1+w);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{ img.style.transform=`translate(${dx}px,${dy}px) scale(.18) rotate(18deg)`; img.style.opacity='.4'; }));
+  setTimeout(()=>img.remove(),650);
+}
+function toast(msg){ const t=$('#toast'); $('span',t).textContent=msg; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove('show'),2600); }
+
+/* ---------- Formulaires ---------- */
+$('#contactForm').addEventListener('submit',e=>{ e.preventDefault(); const f=e.target; const ok=f.checkValidity(); $('#formMsg').textContent = ok ? 'Merci. Votre message est prêt ; l’envoi sera branché au service client en production.' : 'Indiquez votre nom, une adresse e-mail valide et votre message.'; });
+$('#newsForm').addEventListener('submit',e=>{ e.preventDefault(); toast(e.target.checkValidity()?'Inscription enregistrée pour la maquette':'Saisissez une adresse e-mail valide'); });
+
+/* ---------- Menu mobile ---------- */
+function closeSheet(){ $('#sheet').classList.remove('open'); $('#sheet').setAttribute('aria-hidden','true'); }
+$('#menuBtn').addEventListener('click',()=>{ $('#sheet').classList.add('open'); $('#sheet').setAttribute('aria-hidden','false'); });
+$('#sheetClose').addEventListener('click',closeSheet);
+$$('#sheet a').forEach(a=>a.addEventListener('click',closeSheet));
+
+/* ---------- Routage ---------- */
+const ROUTES=['accueil','collection','produit','histoire','contact','handoff'];
+let anchors=[], current='accueil';
+function route(){
+  const h=(location.hash||'#accueil').slice(1); const r = ROUTES.includes(h)?h:'accueil';
+  current=r;
+  $$('.view').forEach(v=>v.classList.toggle('active', v.id==='view-'+r));
+  $$('.links a').forEach(a=>a.toggleAttribute('aria-current', a.getAttribute('href')==='#'+r && !a.dataset.scroll));
+  $$('.links a').forEach(a=>{ if(a.hasAttribute('aria-current')) a.setAttribute('aria-current','page'); });
+  window.scrollTo(0,0);
+  anchors = $$('#view-'+r+' .anchor');
+  $('#stage').classList.toggle('off', anchors.length===0);
+  prepReveal(); updateNav();
+  if(pendingScroll){ const el=document.getElementById(pendingScroll); pendingScroll=null; if(el) setTimeout(()=>el.scrollIntoView({behavior:reduce?'auto':'smooth'}),60); }
+}
+let pendingScroll=null;
+$$('[data-scroll]').forEach(a=>a.addEventListener('click',()=>{ pendingScroll=a.dataset.scroll; if(location.hash==='#accueil'||location.hash===''){ route(); } }));
+addEventListener('hashchange',route);
+
+/* ---------- Nav sur fond sombre + bandeau ---------- */
+let lastY=0;
+function updateNav(){
+  const y=scrollY; $('#header').classList.toggle('hide-bar', y>120 && y>lastY); lastY=y;
+  const probe = 40 + 36;
+  let dark=false;
+  for(const s of $$('#view-'+current+' [data-theme-nav], #footer')){ const r=s.getBoundingClientRect(); if(r.top<=probe && r.bottom>probe){ dark = s.dataset.themeNav==='dark'; break; } }
+  $('#nav').classList.toggle('on-dark', dark);
+  const hp=$('#heroPhoto'); if(hp && current==='accueil' && !reduce) hp.style.transform=`scale(1.08) translateY(${y*.25}px)`;
+}
+addEventListener('scroll',updateNav,{passive:true});
+
+/* ---------- Révélations ---------- */
+const io = 'IntersectionObserver' in window ? new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.remove('pre'); io.unobserve(e.target);} }),{rootMargin:'0px 0px -10% 0px'}) : null;
+function prepReveal(){ if(!io||reduce) return; $$('#view-'+current+' .rv').forEach(el=>{ const r=el.getBoundingClientRect(); if(r.top>innerHeight){ el.classList.add('pre'); io.observe(el);} }); }
+
+/* ---------- Bouteille 3D ---------- */
+const canvas=$('#stage');
+let THREEok = !!window.THREE;
+let renderer, scene, camera, bottle, spin;
+try{
+  if(!THREEok) throw 0;
+  renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+}catch(e){ THREEok=false; }
+if(!THREEok){ document.documentElement.classList.add('no-webgl'); canvas.style.display='none'; }
+
+function envTexture(){
+  const c=document.createElement('canvas'); c.width=1024; c.height=512; const g=c.getContext('2d');
+  const bg=g.createLinearGradient(0,0,0,512); bg.addColorStop(0,'#5a4632'); bg.addColorStop(.5,'#2a2119'); bg.addColorStop(1,'#120f0b'); g.fillStyle=bg; g.fillRect(0,0,1024,512);
+  g.filter='blur(18px)';
+  g.fillStyle='#fff2dc'; g.fillRect(170,110,90,260);
+  g.fillStyle='#ffd9a6'; g.fillRect(700,140,60,200);
+  g.fillStyle='rgba(255,236,205,.5)'; g.fillRect(420,40,200,60);
+  const t=new THREE.CanvasTexture(c); t.mapping=THREE.EquirectangularReflectionMapping; t.encoding=THREE.sRGBEncoding; return t;
+}
+function buildBottle(){
+  scene=new THREE.Scene();
+  const pm=new THREE.PMREMGenerator(renderer); scene.environment = pm.fromEquirectangular(envTexture()).texture;
+  camera=new THREE.PerspectiveCamera(30,1,0.1,100); camera.position.set(0,0,12);
+  scene.add(new THREE.HemisphereLight(0xfff3e0,0x2b2116,.35));
+  const key=new THREE.DirectionalLight(0xffe2b8,2.1); key.position.set(-4,4,6); scene.add(key);
+  const rim=new THREE.DirectionalLight(0xffc58a,1.6); rim.position.set(5,2,-4); scene.add(rim);
+  const fill=new THREE.DirectionalLight(0xf6efe2,.5); fill.position.set(3,-1,5); scene.add(fill);
+  bottle=new THREE.Group(); spin=new THREE.Group(); bottle.add(spin); scene.add(bottle);
+  const P=[[0,0],[.44,0],[.49,.03],[.5,.1],[.5,3.6],[.485,3.7],[.42,3.82],[.31,3.93],[.235,4.02],[.208,4.12],[.205,4.6],[0,4.6]].map(([r,y])=>new THREE.Vector2(r,y));
+  const glass=new THREE.Mesh(new THREE.LatheGeometry(P,96), new THREE.MeshPhysicalMaterial({color:new THREE.Color(0x0e1109).convertSRGBToLinear(), roughness:.12, metalness:0, clearcoat:1, clearcoatRoughness:.06, envMapIntensity:1.25, reflectivity:.6}));
+  spin.add(glass);
+  const L=Math.PI*.9, labelH=2.68;
+  const tex=new THREE.TextureLoader().load(LABEL_SRC,()=>{ makeSnaps(); });
+  tex.encoding=THREE.sRGBEncoding; tex.anisotropy=renderer.capabilities.getMaxAnisotropy();
+  const label=new THREE.Mesh(new THREE.CylinderGeometry(.503,.503,labelH,96,1,true,-L/2,L), new THREE.MeshStandardMaterial({map:tex, roughness:.78, metalness:0, envMapIntensity:.35}));
+  label.position.y=.77+labelH/2; spin.add(label);
+  const black=(r)=>new THREE.MeshPhysicalMaterial({color:new THREE.Color(0x0b0b0a).convertSRGBToLinear(), roughness:r, metalness:.1, clearcoat:.4, envMapIntensity:.8});
+  const sleeve=new THREE.Mesh(new THREE.CylinderGeometry(.216,.222,.56,64), black(.45)); sleeve.position.y=4.27; spin.add(sleeve);
+  const cap=new THREE.Mesh(new THREE.CylinderGeometry(.25,.25,.46,64), black(.55)); cap.position.y=4.77; spin.add(cap);
+  const top=new THREE.Mesh(new THREE.CylinderGeometry(.235,.25,.02,64), black(.4)); top.position.y=5.01; spin.add(top);
+  for(const y of [4.92,4.84,4.76]){ const ring=new THREE.Mesh(new THREE.TorusGeometry(.251,.006,8,64), black(.8)); ring.rotation.x=Math.PI/2; ring.position.y=y; spin.add(ring); }
+  spin.position.y=-2.5;
+}
+function makeSnaps(){
+  try{
+    const r2=new THREE.WebGLRenderer({antialias:true, alpha:true, preserveDrawingBuffer:true});
+    r2.outputEncoding=THREE.sRGBEncoding; r2.toneMapping=THREE.ACESFilmicToneMapping; r2.toneMappingExposure=1.05; r2.setSize(360,760);
+    const cam=new THREE.PerspectiveCamera(30,360/760,.1,100); cam.position.set(0,0,10.6);
+    const save={x:bottle.position.x,y:bottle.position.y,s:bottle.scale.x,ry:spin.rotation.y,rz:bottle.rotation.z,v:bottle.visible};
+    bottle.position.set(0,0,0); bottle.scale.setScalar(1); bottle.rotation.z=0; bottle.visible=true;
+    spin.rotation.y=0; r2.render(scene,cam); snaps.r0=r2.domElement.toDataURL('image/png');
+    spin.rotation.y=THREE.MathUtils.degToRad(15); r2.render(scene,cam); snaps.r15=r2.domElement.toDataURL('image/png');
+    bottle.position.set(save.x,save.y,0); bottle.scale.setScalar(save.s); spin.rotation.y=save.ry; bottle.rotation.z=save.rz; bottle.visible=save.v;
+    r2.dispose(); r2.forceContextLoss&&r2.forceContextLoss();
+    $('#thumb3d').src=snaps.r0; renderCards(); renderCart();
+  }catch(e){}
+}
+if(THREEok) buildBottle();
+
+/* glisser pour tourner */
+let drag=0, vel=0, dragging=null;
+document.addEventListener('pointerdown',e=>{ const a=e.target.closest('.anchor'); if(!a) return; dragging={x:e.clientX,y:e.clientY,id:e.pointerId,locked:false}; });
+document.addEventListener('pointermove',e=>{ if(!dragging||e.pointerId!==dragging.id) return; const dx=e.clientX-dragging.x, dy=e.clientY-dragging.y;
+  if(!dragging.locked){ if(Math.abs(dx)>6 && Math.abs(dx)>Math.abs(dy)) dragging.locked=true; else if(Math.abs(dy)>8){ dragging=null; return; } else return; }
+  drag += dx*.6; vel=dx*.6; dragging.x=e.clientX; dragging.y=e.clientY; });
+addEventListener('pointerup',()=>{ dragging=null; }); addEventListener('pointercancel',()=>{ dragging=null; });
+
+const S={x:0,y:0,h:0,rot:0,tilt:0,op:0}; let first=true;
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+function target(){
+  const vc=innerHeight/2;
+  const R=anchors.map(a=>{ const r=a.getBoundingClientRect(); return {cx:r.left+r.width/2, cy:r.top+r.height/2, h:r.height, rot:+(a.dataset.rot||0), tilt:+(a.dataset.tilt||0), op:+(a.dataset.op||1), idle:a.dataset.idle==='1', vis:a.offsetParent!==null}; }).filter(r=>r.vis);
+  if(!R.length) return null;
+  let i=0; while(i<R.length-1 && R[i+1].cy<vc) i++;
+  const A=R[i], B=R[Math.min(i+1,R.length-1)];
+  let t = (A===B||A.cy>=vc)?0:Math.min(1,Math.max(0,(vc-A.cy)/(B.cy-A.cy)));
+  // reste posée sur l'ancre tant qu'elle est proche du centre, puis voyage
+  t = ease(Math.min(1,Math.max(0,(t-.18)/.64)));
+  const lerp=(a,b)=>a+(b-a)*t;
+  const travel = innerWidth<900 ? 1-Math.sin(Math.PI*t)*.9 : 1;
+  return {x:lerp(A.cx,B.cx), y:lerp(A.cy,B.cy), h:lerp(A.h,B.h), rot:A.rot+((B.rot-A.rot)+(A===B?0:360))*t, tilt:lerp(A.tilt,B.tilt), op:lerp(A.op,B.op)*travel, idle:t<.5?A.idle:B.idle};
+}
+let W=0,H=0;
+function resize(){ if(!THREEok) return; W=innerWidth; H=innerHeight; renderer.setSize(W,H,false); camera.aspect=W/H; camera.updateProjectionMatrix(); }
+addEventListener('resize',resize); resize();
+const clock = THREEok? new THREE.Clock():null;
+function frame(){
+  requestAnimationFrame(frame);
+  if(!THREEok || !bottle || !anchors.length) return;
+  const T=target(); if(!T) return;
+  const k = first?1:.14; first=false;
+  for(const p of ['x','y','h','rot','tilt','op']) S[p]+=(T[p]-S[p])*k;
+  if(!dragging){ drag+=vel; vel*=.92; }
+  const time=clock.getElapsedTime();
+  const idle = (T.idle && !reduce) ? Math.sin(time*.5)*10 : 0;
+  // écran -> monde
+  const visH = 2*camera.position.z*Math.tan(THREE.MathUtils.degToRad(camera.fov/2));
+  const px2w = visH/H;
+  bottle.position.x = (S.x - W/2)*px2w;
+  bottle.position.y = -(S.y - H/2)*px2w;
+  const sc = (S.h*px2w)/5.1; bottle.scale.setScalar(Math.max(.01,sc));
+  spin.rotation.y = THREE.MathUtils.degToRad(S.rot + drag + idle + (pdpPhoto&&current==='produit'?0:0));
+  bottle.rotation.z = THREE.MathUtils.degToRad(S.tilt);
+  bottle.visible = !(current==='produit' && pdpPhoto) && S.op>.02;
+  canvas.style.opacity = current==='produit'&&pdpPhoto ? 0 : Math.min(1,S.op);
+  renderer.render(scene,camera);
+}
+renderCards(); renderCart(); syncPdp(); route(); frame();
+})();
+</script>
+
+</body>
+</html>

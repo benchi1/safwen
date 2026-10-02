@@ -39,18 +39,18 @@ ws.auto_filter.ref = ws.dimensions
 # (id, produit, pays, prix usine €, coef coût rendu, prix TTC visé,
 #  demande /25, marge /25, concurrence /20, import /15, rachat /15, justification)
 SL = [
-    ("A01", "Taie d'oreiller soie de mûrier 25 momme", "Chine", 13.20, 1.45, 79,
-     20, 17, 9, 12, 13,
+    ("A01", "Taie d'oreiller soie de mûrier 25 momme", "Chine", 13.20, 1.66, 89,
+     20, 18, 8, 12, 13,
      "Demande : seul mot-clé de la shortlist avec volume réel et pic de Noël en hausse (56→87, +55 % en 4 ans, Google Trends). "
-     "Concurrence : ~410 pubs Meta actives, Amazon inondé à 15-27 € (Ravmix 19 759 avis) → CAC élevé. Import : NC 6302 39 90, 12 % (TARIC). Prix usine 15 $ FOB (Xinlan/Zhigeng, data/fournisseurs_taie.csv) ; KO au critère 3 sous 76 € TTC. "
+     "Concurrence : ~410 pubs Meta actives, Amazon inondé à 15-27 € (Ravmix 19 759 avis) → CAC élevé. Import : NC 6302 39 90, 12 % (TARIC). Prix usine 15 $ FOB (Xinlan/Zhigeng, data/fournisseurs_taie.csv) ; Coût rendu complet 21,88 € (unit-economics.xlsx) → KO à 79 € (27,7 %), OK à 89 € (24,6 %), prix au-dessus du cœur DTC 55-72 €. "
      "Rachat : cadeau Noël + extensions (masque, chouchous)."),
-    ("D05", "Chapeau Panama toquilla tissé main", "Équateur", 22.00, 1.25, 139,
-     14, 19, 16, 12, 6,
-     "Demande : moyenne 12 (échelle lot 1), pics juin-juillet 33-43, stable/légère baisse. Concurrence : 2 pubs Meta actives (1 annonceur). "
+    ("D05", "Chapeau Panama toquilla tissé main (ÉLIMINÉ après coût rendu complet)", "Équateur", 24.65, 1.70, 139,
+     14, 8, 16, 12, 6,
+     "Coût rendu complet 41,81 € pour 36 pièces (fret volumétrique, boîte, transitaire) → 30 % du TTC et marge 64 % : KO critères 1 et 3. Demande : moyenne 12 (échelle lot 1), pics juin-juillet 33-43, stable/légère baisse. Concurrence : 2 pubs Meta actives (1 annonceur). "
      "Import : NC 6504 00 00, 0 % (droit tiers 0 % + préférence Équateur, TARIC). Saison courte, rachat faible."),
-    ("B01", "Kimono coton imprimé au bloc (Jaipur)", "Inde", 7.50, 1.35, 79,
-     12, 20, 13, 12, 9,
-     "Demande : « kimono femme » moyenne 40 mais requête générique en baisse (~-40 % sur 5 ans). Concurrence : ~31 pubs Meta. "
+    ("B01", "Kimono long coton imprimé au bloc (Jaipur)", "Inde", 5.72, 2.38, 85,
+     15, 23, 15, 12, 10,
+     "Demande : « kimono femme » = plus gros volume de la shortlist (moy. 40 vs 20 pour la taie) ; générique -40 % mais sous-segments « kimono femme abaya » +120 %, « chic » +120 %, « coton » +80 %. Concurrence : ~31 pubs Meta, Amazon sans acteur premium (259 résultats, ≤186 avis). Coût rendu complet 13,62 € (unit-economics.xlsx). "
      "Import : NC 6208 91 00 19, 12 % tiers / 9,6 % SPG Inde (TARIC). Marge très élevée (coût rendu ~13 % du TTC)."),
     ("B02", "Gants cuir d'agneau doublés", "Pakistan", 7.31, 1.25, 79,
      6, 20, 11, 12, 9,
@@ -103,7 +103,7 @@ ws2.freeze_panes = "C2"
 ws3 = wb.create_sheet("Méthode")
 rows = [
     ["Élément", "Règle"],
-    ["Coût rendu", "Prix usine × coefficient (fret + droits + transitaire + assurance). Coefficient 1,25 si droit 0 %, 1,30-1,35 si droit 12 %. Détail exact par produit dans unit-economics.xlsx."],
+    ["Coût rendu", "Top 3 : coefficient = coût rendu complet / prix usine, issu de unit-economics.xlsx (fret, assurance, droits, transitaire, tests, packaging). Autres : prix usine × coefficient (fret + droits + transitaire + assurance). Coefficient 1,25 si droit 0 %, 1,30-1,35 si droit 12 %. Détail exact par produit dans unit-economics.xlsx."],
     ["Prix HT", "Prix TTC / 1,2 (TVA 20 %)."],
     ["Demande /25", "Google Trends France 5 ans (connecteur Firecrawl, 2026-10-02) : volume relatif sur échelle commune + tendance + régularité. Voir data/trends_notes.md."],
     ["Marge /25", "Marge brute et marge de manœuvre pour absorber un CAC Meta/Google de 15-30 € (prix élevé et coût rendu bas = note haute)."],

@@ -31,3 +31,8 @@ Lecture : l'intention dominante est **cheveux** (87/100), la clientèle se rense
 
 Source : https://trends.firecrawl.dev/explore?q=chapeau+panama&geo=FR&date=today+5-y
 **chapeau panama — top** : chapeau panama femme 100 ; prix chapeau panama 29 ; en hausse : prix chapeau panama roland garros +110 %. Lecture : demande majoritairement féminine et sensible au prix ; un seul pic événementiel (Roland-Garros, fin mai-juin).
+
+Source : https://trends.firecrawl.dev/explore?q=kimono+femme&geo=FR&date=today+5-y (consulté 2026-10-02)
+**kimono femme — top** : veste kimono femme 100 ; robe kimono 82 ; robe kimono femme 79 ; **kimono femme long 65** ; peignoir kimono femme 37 ; ensemble kimono femme 32 ; kimono femme plage 31 ; kimono femme soie 29 ; **kimono femme abaya 28 ; abaya femme 28** ; kimono femme coton 22 ; kimono femme chic 16.
+**En hausse** : **kimono femme abaya +120 %** ; **kimono femme chic +120 %** ; **abaya femme +110 %** ; ensemble kimono femme +100 % ; manteau kimono femme +90 % ; **kimono femme coton +80 %** ; veste kimono femme +60 %.
+Lecture : la requête générique recule (-40 %), mais le sous-segment **kimono long / pudique / chic en coton** progresse de +80 à +120 %. Usage majoritaire = vêtement de dessus (veste, robe), pas seulement d'intérieur → saisonnalité atténuée (superposition toute l'année).

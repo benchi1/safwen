@@ -374,7 +374,7 @@ body > footer{position:relative;z-index:3;background:var(--night);padding:clamp(
   <!-- 1. HERO : huile vivante + bouteille de verre -->
   <section class="view hero" id="hero" data-view="hero" aria-label="Alveiria Prima">
     <div class="hit" id="heroHit" aria-label="Bouteille en 3D, glissez pour la faire tourner"></div>
-    <img class="fallback" src="assets/bottle.jpg" alt="Bouteille Alveiria Prima 500 ml">
+    <img class="fallback" src="assets/prima-still.png" alt="Bouteille Alveiria Prima 500 ml">
     <div class="ui">
       <span class="tag">Récolte 2025 · Extra vierge · 100 % Chetoui</span>
       <div>
@@ -496,7 +496,7 @@ body > footer{position:relative;z-index:3;background:var(--night);padding:clamp(
   <!-- 9. Boutique / configurateur 3D -->
   <section class="shop" id="boutique" aria-labelledby="prima">
     <div class="shop-grid">
-      <div class="cfg-view view" id="vbCfg" data-view="cfg"><span class="badge">Récolte 2025</span><img class="fallback" src="assets/bottle.jpg" alt="Bouteille Alveiria Prima"><span class="hint">Glissez · 360°</span></div>
+      <div class="cfg-view view" id="vbCfg" data-view="cfg"><span class="badge">Récolte 2025</span><img class="fallback" src="assets/prima-still.png" alt="Bouteille Alveiria Prima"><span class="hint">Glissez · 360°</span></div>
       <div class="cfg">
         <span class="tag">Commander</span>
         <h2 id="prima">Prima <span class="it gold">500 ml</span></h2>
@@ -517,14 +517,14 @@ body > footer{position:relative;z-index:3;background:var(--night);padding:clamp(
 </footer>
 
 <div class="dock" id="dock" role="region" aria-label="Commande rapide">
-  <div class="th"><img class="snap" src="assets/bottle.jpg" alt=""></div>
+  <div class="th"><img class="snap" src="assets/prima-still.png" alt=""></div>
   <div class="nm"><b>Prima · 500 ml</b><span>Extra vierge · Chetoui</span></div>
   <div class="qty"><button data-dq="-1" aria-label="Retirer une bouteille">−</button><output id="dq">1</output><button data-dq="1" aria-label="Ajouter une bouteille">+</button></div>
   <button class="cta" id="dockBuy">Commander <span id="dockT">€22.90</span></button>
 </div>
 
 <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Commande">
-  <div class="lft"><img class="snap" src="assets/bottle.jpg" alt=""><p class="q">« Chaque goutte, un héritage. Chaque arôme, une histoire. »</p></div>
+  <div class="lft"><img class="snap" src="assets/prima-still.png" alt=""><p class="q">« Chaque goutte, un héritage. Chaque arôme, une histoire. »</p></div>
   <div class="rgt">
     <header><h2 id="sTitle">Votre commande</h2><button class="x" id="sClose" aria-label="Fermer">×</button></header>
     <div class="steps"><span class="on">Panier</span><span>Livraison</span><span>Paiement</span></div>
@@ -535,7 +535,8 @@ body > footer{position:relative;z-index:3;background:var(--night);padding:clamp(
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.147.0/examples/js/loaders/GLTFLoader.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
@@ -543,7 +544,7 @@ body > footer{position:relative;z-index:3;background:var(--night);padding:clamp(
 (function(){
 'use strict';
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
-const IMG={label:'assets/label-unwrap.jpg',stone:'assets/stone.jpg',aerial:'assets/aerial.jpg',grove:'assets/grove.jpg',bottle:'assets/bottle.jpg'};
+const IMG={label:'assets/label-unwrap.jpg',stone:'assets/stone.jpg',aerial:'assets/aerial.jpg',grove:'assets/grove.jpg',bottle:'assets/bottle.jpg',glb:'assets/alveiria-prima.glb',still:'assets/prima-still.png'};
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const mobile=()=>innerWidth<860;
 const eur=n=>'€'+n.toFixed(2);
@@ -621,7 +622,7 @@ function lights(s){ s.environment=env(); s.add(new T.HemisphereLight(0xfff3e0,0x
 function tex(src,cb){ const t=new T.TextureLoader().load(src,cb); t.encoding=T.sRGBEncoding; return t; }
 
 /* --- étiquette déroulable (cylindre ↔ plan) --- */
-const LBL={L:Math.PI*.9,H:2.68,r:.503,seg:96};
+const LBL={L:Math.PI*.9,H:2.93,y0:.37,r:.503,seg:96};
 function labelGeo(){ const {L,H,r,seg}=LBL; const pos=[],uv=[],idx=[],cyl=[],flat=[]; for(let j=0;j<=1;j++) for(let i=0;i<=seg;i++){ const u=i/seg, th=-L/2+L*u, y=(j-.5)*H; cyl.push(r*Math.sin(th),y,r*Math.cos(th)); flat.push(r*L*(u-.5),y,r+.02); pos.push(r*Math.sin(th),y,r*Math.cos(th)); uv.push(u,j); }
   for(let i=0;i<seg;i++){ const a=i,b=i+1,c=i+seg+1,d=i+seg+2; idx.push(a,b,d,a,d,c); }
   const g=new T.BufferGeometry(); g.setAttribute('position',new T.Float32BufferAttribute(pos,3)); g.setAttribute('uv',new T.Float32BufferAttribute(uv,2)); g.setIndex(idx); g.computeVertexNormals(); g.userData={cyl,flat}; return g; }
@@ -639,7 +640,7 @@ function bottle(opts={}){
   const oil=new T.Mesh(new T.CylinderGeometry(.455,.455,1,64),oilM); oil.geometry.translate(0,.5,0); oil.position.y=.075; spin.add(oil);
   const setOil=h=>{ oil.visible=h>.01; oil.scale.y=Math.max(.001,h); };
   setOil(opts.oil==null?3.5:opts.oil);
-  const lg=labelGeo(); const label=new T.Mesh(lg,new T.MeshStandardMaterial({map:labelTex,roughness:.75,envMapIntensity:.4,side:T.DoubleSide})); label.position.y=.77+LBL.H/2; spin.add(label);
+  const lg=labelGeo(); const label=new T.Mesh(lg,new T.MeshStandardMaterial({map:labelTex,roughness:.75,envMapIntensity:.4,side:T.DoubleSide})); label.position.y=LBL.y0+LBL.H/2; spin.add(label);
   const black=r=>new T.MeshPhysicalMaterial({color:lin(0x0b0b0a),roughness:r,metalness:.1,clearcoat:.5,envMapIntensity:.9});
   const sleeve=new T.Mesh(new T.CylinderGeometry(.216,.222,.56,64),black(.45)); sleeve.position.y=4.27; spin.add(sleeve);
   const cap=new T.Group(); cap.position.y=4.54; spin.add(cap); const capM=black(.55);
@@ -647,8 +648,15 @@ function bottle(opts={}){
   const c2=new T.Mesh(new T.CylinderGeometry(.235,.25,.02,64),capM); c2.position.y=.47; cap.add(c2);
   for(const y of [.38,.3,.22]){ const ring=new T.Mesh(new T.TorusGeometry(.251,.006,8,64),black(.8)); ring.rotation.x=Math.PI/2; ring.position.y=y; cap.add(ring); }
   const mouth=new T.Object3D(); mouth.position.y=4.6; spin.add(mouth);
-  return {root,spin,glass,glassM,oil,setOil,label,lg,sleeve,cap,capM,mouth};
+  const B={root,spin,glass,glassM,oil,setOil,label,lg,sleeve,cap,capM,mouth}; BOTTLES.push(B); if(GEO) applyGLB(B); return B;
 }
+/* modèle Blender : remplace verre, capsule et bouchon dès qu'il est chargé */
+const BOTTLES=[]; let GEO=null;
+function applyGLB(B){ B.glass.geometry=GEO.glass; B.sleeve.geometry=GEO.sleeve; [...B.cap.children].forEach(c=>{ if(c.isMesh) B.cap.remove(c); }); const m=new T.Mesh(GEO.cap,B.capM); B.cap.add(m); }
+function loadGLB(){ if(!T||!T.GLTFLoader) return; new T.GLTFLoader().load(IMG.glb,g=>{ const get=n=>{ let o=null; g.scene.traverse(c=>{ if(c.isMesh&&c.name.startsWith(n)) o=c; }); return o; };
+  const gl=get('Glass'), sl=get('Sleeve'), cp=get('Cap'); if(!gl||!sl||!cp) return; [gl,sl,cp].forEach(o=>o.updateWorldMatrix(true,false));
+  const bake=(o,dy)=>{ const geo=o.geometry.clone(); geo.applyMatrix4(o.matrixWorld); geo.translate(0,dy,0); geo.computeVertexNormals(); return geo; };
+  GEO={glass:bake(gl,0),sleeve:bake(sl,-4.27),cap:bake(cp,-4.54)}; BOTTLES.forEach(applyGLB); },undefined,()=>{}); }
 function addView(el,scene,camera,update,opts={}){ const v={el,scene,camera,update,visible:false,fit:opts.fit}; views.push(v); new IntersectionObserver(es=>{ v.visible=es[0].isIntersecting; },{rootMargin:'100px'}).observe(opts.observe||el); return v; }
 
 /* ---------- vue 1 : hero, huile vivante ---------- */
@@ -667,7 +675,7 @@ function initHero(){
   const s=new T.Scene(); lights(s); const cam=new T.PerspectiveCamera(28,1,.1,100); cam.position.set(0,0,15);
   const bgM=new T.ShaderMaterial({uniforms:{uTime:{value:0},uMouse:{value:new T.Vector2(9,9)},uAspect:{value:1.6},uPush:{value:0}},vertexShader:'varying vec2 vUv; void main(){vUv=uv; gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:oilFrag});
   const bg=new T.Mesh(new T.PlaneGeometry(1,1),bgM); bg.position.z=-7; s.add(bg);
-  const B=bottle({oil:3.5}); s.add(B.root);
+  const B=bottle({oil:3.35}); s.add(B.root);
   const st={rise:reduce?1:0,drag:0,vel:0,mx:0,my:0,push:0};
   const ray=new T.Raycaster(), v2=new T.Vector2();
   const hit=$('#heroHit'); let d=null;
@@ -716,7 +724,7 @@ function initOlives(){
       const melted=clamp(melt*1.4-(sl.y/3.6)*.4,0,1); const s2=k<=0?0:(1-melted); sc.set(s2,s2,s2);
       q.setFromEuler(rot[i]); m4.compose(p,q,sc); inst.setMatrixAt(i,m4); }
     inst.instanceMatrix.needsUpdate=true;
-    B.setOil(melt*3.45);
+    B.setOil(melt*3.33);
     const cnt=Math.round(fall*1200); $('#oc').textContent=cnt.toLocaleString('fr-FR');
     const phase=pr<.62?0:pr<.86?1:2; ph.forEach((s,i)=>s.classList.toggle('on',i===phase));
   },{observe:sec});
@@ -725,7 +733,7 @@ function initOlives(){
 /* ---------- vue 3 : vue éclatée ---------- */
 function initExplode(){
   const s=new T.Scene(); lights(s); const cam=new T.PerspectiveCamera(30,1,.1,100);
-  const B=bottle({oil:3.45}); s.add(B.root);
+  const B=bottle({oil:3.33}); s.add(B.root);
   const sec=$('#anatomie'); const hots=Object.fromEntries($$('.hot').map(h=>[h.dataset.h,h]));
   const anchors={cap:new T.Object3D(),sleeve:new T.Object3D(),label:new T.Object3D(),glass:new T.Object3D(),oil:new T.Object3D()};
   B.cap.add(anchors.cap); anchors.cap.position.set(.26,.3,0);
@@ -741,7 +749,7 @@ function initExplode(){
     B.spin.rotation.y = .35 - k*.35 + Math.sin(t*.4)*.06;
     B.cap.position.y=4.54+k*(mobile()?1.0:1.7); B.cap.rotation.y=-k*Math.PI*2;
     B.sleeve.position.y=4.27+k*(mobile()?.55:.95);
-    morphLabel(B.lg,k); B.label.position.set(k*(mobile()?0:1.75), .77+LBL.H/2 + (mobile()?k*-.2:0), k*(mobile()?1.2:.4)); B.label.rotation.y=-k*.25;
+    morphLabel(B.lg,k); B.label.position.set(k*(mobile()?0:1.75), LBL.y0+LBL.H/2 + (mobile()?k*-.2:0), k*(mobile()?1.2:.4)); B.label.rotation.y=-k*.25;
     B.oil.position.x=-k*(mobile()?.9:1.55); B.oil.position.z=k*(mobile()?-.6:0);
     B.root.rotation.z=k*.03;
     for(const [key,a] of Object.entries(anchors)){ a.getWorldPosition(v); v.project(cam); const x=rect.left+(v.x*.5+.5)*rect.width, y=rect.top+(-v.y*.5+.5)*rect.height; const el=hots[key]; el.style.transform=`translate(${el.classList.contains('left')?x-el.offsetWidth+5:x-5}px,${y-el.offsetHeight/2}px)`; el.style.opacity=k>.55?1:0; }
@@ -783,7 +791,7 @@ function woodTex(){ const c=document.createElement('canvas'); c.width=1024; c.he
   const t=new T.CanvasTexture(c); t.encoding=T.sRGBEncoding; t.wrapS=T.RepeatWrapping; return t; }
 function initPour(){
   const s=new T.Scene(); lights(s); const cam=new T.PerspectiveCamera(30,1,.1,200);
-  const B=bottle({oil:3.2}); s.add(B.root);
+  const B=bottle({oil:3.15}); s.add(B.root);
   const prof=[[0,-.02],[.55,-.02],[.75,0],[1.05,.12],[1.32,.36],[1.5,.68],[1.56,.9],[1.52,.92],[1.44,.72],[1.28,.44],[1.02,.24],[.7,.14],[0,.12]].map(([r,y])=>new T.Vector2(r,y));
   const bowlG=new T.Group(); bowlG.add(new T.Mesh(new T.LatheGeometry(prof,96),new T.MeshStandardMaterial({map:woodTex(),roughness:.5,side:T.DoubleSide,color:lin(0xd9b48c)}))); s.add(bowlG);
   const oilM=new T.MeshPhysicalMaterial({color:lin(0xb8962a),roughness:.05,clearcoat:1,clearcoatRoughness:.02,envMapIntensity:1.7,emissive:lin(0x2a1c02)});
@@ -801,7 +809,7 @@ function initPour(){
     B.cap.rotation.y=-open*Math.PI*3; B.cap.position.y=4.54+open*.18+lift*1.1; B.capM.transparent=true; B.capM.opacity=1-lift; B.cap.visible=lift<.99;
     const ang=T.MathUtils.degToRad(118)*(tilt*(1-back));
     B.root.position.set(C.bx+tilt*(1-back)*.35,C.by-.6*(1-tilt),0); B.root.rotation.z=-ang; B.spin.rotation.y=.4+Math.sin(t*.6)*.05;
-    B.setOil(3.2-fill*.9);
+    B.setOil(3.15-fill*.9);
     bowlG.position.set(C.bowlX,C.bowlY,0);
     const lvl=.16+fill*.5, rIn=.7+(1.44-.7)*Math.min(1,(lvl-.14)/.58); surf.position.y=lvl; surf.scale.setScalar(Math.max(.01,rIn*.98)); surf.visible=fill>.005;
     B.mouth.getWorldPosition(v3);
@@ -819,7 +827,7 @@ function initPour(){
 let cfg=null;
 function initCfg(){
   const s=new T.Scene(); lights(s); const cam=new T.PerspectiveCamera(26,1,.1,100); cam.position.set(0,0,15);
-  const B=bottle({oil:3.5}); s.add(B.root);
+  const B=bottle({oil:3.35}); s.add(B.root);
   stoneTex=tex(IMG.stone); stoneTex.wrapS=stoneTex.wrapT=T.RepeatWrapping; stoneTex.repeat.set(2,1);
   const ped=new T.Mesh(new T.CylinderGeometry(1.25,1.4,1.1,72),new T.MeshStandardMaterial({map:stoneTex,roughness:.95,color:lin(0xb7a78c)})); s.add(ped);
   const el=$('#vbCfg'); const st={drag:0,vel:0,scale:1,ts:1}; let d=null;
@@ -842,11 +850,11 @@ function frame(){
     v.camera.aspect=r.width/r.height; v.update(t,dt,r.width,r.height,r); if(v.camera.isPerspectiveCamera) v.camera.updateProjectionMatrix();
     const y=H-r.bottom; R.setViewport(r.left,y,r.width,r.height); R.setScissor(r.left,y,r.width,r.height); R.render(v.scene,v.camera); }
 }
-try{ if(ok){ initHero(); initOlives(); initExplode(); initTerroir(); initPour(); initCfg(); frame(); } }catch(e){ console.warn(e); ok=false; document.documentElement.classList.add('no-webgl'); }
+try{ if(ok){ initHero(); initOlives(); initExplode(); initTerroir(); initPour(); initCfg(); loadGLB(); frame(); } }catch(e){ console.warn(e); ok=false; document.documentElement.classList.add('no-webgl'); }
 
 /* instantané pour le dock et le tunnel */
-let snap=IMG.bottle;
-document.addEventListener('label',()=>{ setTimeout(()=>{ try{ const r2=new T.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true}); r2.outputEncoding=T.sRGBEncoding; r2.toneMapping=T.ACESFilmicToneMapping; r2.setSize(320,720);
+let snap=IMG.still; $$('.snap').forEach(i=>i.src=snap);
+if(false) document.addEventListener('label',()=>{ setTimeout(()=>{ try{ const r2=new T.WebGLRenderer({antialias:true,alpha:true,preserveDrawingBuffer:true}); r2.outputEncoding=T.sRGBEncoding; r2.toneMapping=T.ACESFilmicToneMapping; r2.setSize(320,720);
   const sc=new T.Scene(); const keep=R; R=r2; envMap=null; lights(sc); const B=bottle({oil:3.5}); B.spin.rotation.y=-.2; sc.add(B.root); const c=new T.PerspectiveCamera(30,320/720,.1,100); c.position.set(0,0,10.3);
   r2.render(sc,c); snap=r2.domElement.toDataURL('image/png'); r2.dispose(); R=keep; envMap=null; $$('.snap').forEach(i=>i.src=snap); }catch(e){} },400); });
 

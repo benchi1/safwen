@@ -12,6 +12,12 @@
       "sourceType": "github",
       "skillPath": "skills/text-to-lottie/SKILL.md",
       "computedHash": "143009abf43d2ac6bd9970c42373e6ae029b91cc56124e56287162010a0e9fc1"
+    },
+    "impeccable": {
+      "source": "pbakaus/impeccable",
+      "sourceType": "github",
+      "skillPath": "plugin/skills/impeccable/SKILL.md",
+      "commit": "508d7e8955de3b3caf2d8676e85206723d41a887"
     }
   }
 }

@@ -1,0 +1,323 @@
+<title>Muhlah — conformité PME Qatar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout : prototype d'app trilingue (FR/EN/AR, RTL) + vues Financement, Rentabilité, Dossier. Une colonne sous 860px. */
+:root{
+  --bg:#F3F2F0; --surface:#FFFFFF; --sunk:#E9E6E2; --ink:#231A1E; --muted:#6A5F64; --line:#DAD3D1;
+  --maroon:#8A1538; --maroon-soft:#F5E3E8; --pearl:#3F7F8C; --ok:#2B7A57; --ok-soft:#DDF0E6; --warn:#A06400; --warn-soft:#FBEBCF; --crit:#B3261E; --crit-soft:#FADDDA;
+  --font:"Readex Pro", "Segoe UI", "Noto Sans Arabic", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#171214; --surface:#211A1D; --sunk:#1A1416; --ink:#F1E9EC; --muted:#B3A6AC; --line:#3A2F33;
+  --maroon:#E07A98; --maroon-soft:#3B1F28; --pearl:#7FC1CE; --ok:#62C795; --ok-soft:#173326; --warn:#E5B04E; --warn-soft:#3A2D14; --crit:#F2877F; --crit-soft:#3E1F1D; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#171214; --surface:#211A1D; --sunk:#1A1416; --ink:#F1E9EC; --muted:#B3A6AC; --line:#3A2F33;
+  --maroon:#E07A98; --maroon-soft:#3B1F28; --pearl:#7FC1CE; --ok:#62C795; --ok-soft:#173326; --warn:#E5B04E; --warn-soft:#3A2D14; --crit:#F2877F; --crit-soft:#3E1F1D; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.6 var(--font);margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{margin:0;font-weight:700;text-wrap:balance;letter-spacing:-.01em}
+.eyebrow{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.proto{background:var(--maroon);color:#FFFFFF;font-size:13px}
+.proto .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:space-between;padding-block:8px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tabs a{color:#FFFFFF;text-decoration:none;padding:4px 12px;border-radius:999px;opacity:.75;border:1px solid transparent}
+.tabs a[aria-current="page"]{opacity:1;border-color:#FFFFFF}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--pearl);outline-offset:2px}
+/* motif zigzag du drapeau, en bandeau */
+.serr{height:10px;background:linear-gradient(135deg,var(--maroon) 25%,transparent 25%) 0 0/10px 10px,linear-gradient(225deg,var(--maroon) 25%,transparent 25%) 0 0/10px 10px;opacity:.9}
+/* App */
+.app{display:grid;grid-template-columns:220px 1fr 300px;border:1px solid var(--line);background:var(--surface);border-radius:14px;overflow:hidden;margin-block:20px;min-height:620px}
+.side{background:var(--sunk);padding:16px 12px;display:flex;flex-direction:column;gap:16px;border-inline-end:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:20px}
+.logo i{width:26px;height:26px;border-radius:7px;background:var(--maroon);display:grid;place-items:center;color:#FFFFFF;font-style:normal;font-size:14px}
+.side nav{display:flex;flex-direction:column;gap:2px}
+.side button{all:unset;cursor:pointer;padding:8px 10px;border-radius:8px;font-size:14px;display:flex;justify-content:space-between;gap:8px}
+.side button[aria-current="true"]{background:var(--surface);font-weight:500;box-shadow:0 1px 0 var(--line)}
+.side button:focus-visible{outline:2px solid var(--pearl)}
+.n{font:12px var(--mono);background:var(--crit-soft);color:var(--crit);border-radius:999px;padding:0 6px}
+.langs{display:flex;gap:4px;margin-top:auto}
+.langs button{all:unset;cursor:pointer;font-size:12.5px;padding:4px 9px;border:1px solid var(--line);border-radius:999px}
+.langs button[aria-pressed="true"]{background:var(--maroon);color:#FFFFFF;border-color:var(--maroon)}
+.main{padding:20px 22px;min-width:0}
+.head{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;align-items:baseline;margin-bottom:14px}
+.head h2{font-size:24px}
+.ex{font-size:12px;color:var(--muted);background:var(--sunk);padding:3px 8px;border-radius:6px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:16px}
+.stat{border:1px solid var(--line);border-radius:10px;padding:12px}
+.stat .v{font:500 24px var(--mono)}
+.stat .s{font-size:12.5px;color:var(--muted)}
+.list{display:flex;flex-direction:column;gap:8px}
+.dl{display:grid;grid-template-columns:62px 1fr auto;gap:12px;align-items:center;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.days{font:600 17px var(--mono);text-align:center;border-radius:8px;padding:6px 0}
+.d-crit{background:var(--crit-soft);color:var(--crit)} .d-warn{background:var(--warn-soft);color:var(--warn)} .d-ok{background:var(--ok-soft);color:var(--ok)}
+.dl .t{font-weight:500}
+.dl .m{font-size:12.5px;color:var(--muted)}
+.btn{all:unset;cursor:pointer;background:var(--maroon);color:#FFFFFF;padding:7px 12px;border-radius:8px;font-size:13px;font-weight:500;white-space:nowrap}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn:focus-visible{outline:2px solid var(--pearl)}
+table.t{width:100%;border-collapse:collapse;font-size:14px}
+table.t th,table.t td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+table.t th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.r{text-align:end!important;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.tbl{overflow-x:auto}
+.chat{display:flex;flex-direction:column;gap:10px}
+.q{align-self:flex-end;background:var(--maroon);color:#FFFFFF;border-radius:12px 12px 2px 12px;padding:9px 12px;max-width:80%}
+.a{background:var(--sunk);border-radius:12px 12px 12px 2px;padding:10px 12px;max-width:92%}
+.a small{display:block;color:var(--muted);margin-top:6px}
+/* Téléphone WhatsApp */
+.phone{background:var(--sunk);border-inline-start:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:10px}
+.screen{background:#E7DDD3;border-radius:18px;padding:12px;min-height:420px;border:6px solid var(--ink)}
+.wahead{display:flex;align-items:center;gap:8px;background:#1F5E4F;color:#FFFFFF;margin:-12px -12px 12px;padding:10px 12px;border-radius:12px 12px 0 0;font-size:13px}
+.bubble{background:#FFFFFF;color:#1B1B1B;border-radius:10px;padding:9px 11px;font-size:13.5px;line-height:1.5;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.bubble .time{display:block;text-align:end;font-size:11px;color:#6B6B6B;margin-top:4px}
+.qr{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.qr span{background:#FFFFFF;color:#1F5E4F;border-radius:999px;padding:4px 10px;font-size:12.5px}
+.toast{font-size:13px;color:var(--ok)}
+/* Vues */
+.view{padding-block:34px 64px}
+.view h2{font-size:clamp(28px,4vw,42px)}
+.lead{color:var(--muted);max-width:74ch;margin:10px 0 24px}
+.road{display:grid;gap:12px}
+.step{display:grid;grid-template-columns:150px 1fr auto;gap:16px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.step .when{font:500 13px var(--mono);color:var(--maroon)}
+.step h3{font-size:18px;margin-bottom:4px}
+.step p{margin:0;font-size:14px;color:var(--muted)}
+.amt{font:500 18px var(--mono);text-align:end;white-space:nowrap}
+.tag{display:inline-block;font-size:12px;font-weight:500;padding:2px 8px;border-radius:999px;margin-top:6px}
+.tg-ok{background:var(--ok-soft);color:var(--ok)} .tg-w{background:var(--warn-soft);color:var(--warn)} .tg-no{background:var(--crit-soft);color:var(--crit)}
+.sim{display:grid;grid-template-columns:330px 1fr;gap:24px;align-items:start}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px}
+.field{display:grid;grid-template-columns:1fr 92px;gap:8px;align-items:center;margin-bottom:11px;font-size:14px}
+.field input{width:100%;padding:7px 8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:13.5px var(--mono);text-align:right;border-radius:6px}
+.field small{grid-column:1/-1;color:var(--muted);font-size:12px;margin-top:-5px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px}
+.kpi .v{font:500 22px var(--mono);margin-top:4px}
+.kpi .s{font-size:12px;color:var(--muted)}
+.chart svg{width:100%;height:auto;display:block}
+.dossier h3{font-size:19px;margin:32px 0 10px}
+.cards3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.cards3 div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;font-size:14px}
+.cards3 b{display:block;margin-bottom:4px}
+.src{font-size:12px;color:var(--muted)}
+.box{border:2px solid var(--maroon);border-radius:12px;padding:16px 18px;margin-bottom:24px;background:var(--surface)}
+@media (max-width:1100px){.app{grid-template-columns:200px 1fr}.phone{grid-column:1/-1;border-inline-start:0;border-top:1px solid var(--line)}.screen{max-width:360px}}
+@media (max-width:980px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.sim{grid-template-columns:1fr}}
+@media (max-width:860px){.app{grid-template-columns:1fr}.side{border-inline-end:0;border-bottom:1px solid var(--line)}.side nav{flex-direction:row;flex-wrap:wrap}.stats,.cards3{grid-template-columns:1fr}.step{grid-template-columns:1fr}.amt{text-align:start}.dl{grid-template-columns:54px 1fr}.dl .btn{grid-column:2}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="proto"><div class="wrap">
+  <span>Maquette MVP · tech Qatar · Safwen Ben Chiboub · 3 octobre 2026</span>
+  <nav class="tabs" aria-label="Vues">
+    <a href="#app" data-v="app">Application</a>
+    <a href="#financement" data-v="financement">Financement Qatar</a>
+    <a href="#rentabilite" data-v="rentabilite">Rentabilité</a>
+    <a href="#dossier" data-v="dossier">Dossier</a>
+  </nav>
+</div></div>
+<div class="serr" aria-hidden="true"></div>
+
+<!-- ===== APP ===== -->
+<section id="v-app" class="wrap">
+  <div class="app" id="app">
+    <aside class="side">
+      <div class="logo"><i>م</i>Muhlah</div>
+      <nav id="nav"></nav>
+      <div class="langs" role="group" aria-label="Langue">
+        <button data-l="fr" aria-pressed="true">FR</button><button data-l="en" aria-pressed="false">EN</button><button data-l="ar" aria-pressed="false">عربي</button>
+      </div>
+    </aside>
+    <div class="main" id="main"></div>
+    <div class="phone">
+      <div class="eyebrow" id="phoneLabel">Rappel envoyé sur WhatsApp</div>
+      <div class="screen"><div class="wahead">● Muhlah · rappels</div><div class="bubble" id="wa"></div><div class="qr" id="qr"></div></div>
+    </div>
+  </div>
+  <p class="src" style="margin-bottom:30px">Données d'exemple : société, salariés et dates fictifs. Les procédures affichées sont des modèles à faire valider par un PRO partenaire avant mise en production.</p>
+</section>
+
+<!-- ===== FINANCEMENT ===== -->
+<section id="v-financement" class="wrap view" hidden>
+  <div class="eyebrow">Feuille de route du financement qatari</div>
+  <h2>Ce qui est accessible depuis Paris, et ce qui demande une société au Qatar</h2>
+  <p class="lead">Aucun dispositif qatari ne verse d'argent à un fondateur sans structure sur place. Le chemin réaliste : construire et valider depuis Paris, créer la société au Web Summit Qatar, puis candidater aux programmes qui financent les startups basées au Qatar.</p>
+  <div class="road">
+    <div class="step"><div class="when">oct.-déc. 2026</div><div><h3>MVP + 10 pilotes depuis Paris</h3><p>Landing trilingue, 20 entretiens (LinkedIn, CCI franco-qatarienne), 10 pilotes gratuits 60 jours. C'est la « validation de marché » que demandent tous les dossiers.</p><span class="tag tg-ok">Depuis Paris</span></div><div class="amt">≈ 5 k€</div></div>
+    <div class="step"><div class="when">avant fin 2026</div><div><h3>Candidature à l'incubation QSTP</h3><p>La cohorte de septembre 2026 comptait 27 startups internationales sur 52. Pas de montant en cash publié : mentors, mise en relation investisseurs.</p><span class="tag tg-ok">Depuis Paris</span></div><div class="amt">0 €</div></div>
+    <div class="step"><div class="when">31 janv.-3 févr. 2027</div><div><h3>Web Summit Qatar : LLC QFC avec activité tech</h3><p>Frais d'enregistrement et de licence annulés 3 ans (économie ≈ 15 500 $ selon la presse). Démarcher les ≈ 300 sociétés créées sur place : c'est la cible exacte.</p><span class="tag tg-w">Déplacement 5 jours</span></div><div class="amt">1,5-2,5 k€</div></div>
+    <div class="step"><div class="when">févr.-mars 2027</div><div><h3>Visa entrepreneur 5 ans</h3><p>Sur présentation d'un incubateur. Relevé bancaire de 3 mois avec au moins 10 000 $ (immobilisés, pas dépensés), casier judiciaire apostillé.</p><span class="tag tg-w">Société créée</span></div><div class="amt">10 000 $ bloqués</div></div>
+    <div class="step"><div class="when">T2 2027</div><div><h3>QBIC Lean Startup Program</h3><p>11 semaines + 1 an d'incubation. Réservé aux startups basées au Qatar.</p><span class="tag tg-w">Société au Qatar</span></div><div class="amt">250 000 QAR</div></div>
+    <div class="step"><div class="when">appel annuel (juin-août)</div><div><h3>QRDI SBIG phase I : subvention non dilutive</h3><p>Faisabilité IA (lecture des documents arabes, agent de conformité, facture électronique). Siège au Qatar exigé.</p><span class="tag tg-w">Société au Qatar</span></div><div class="amt">≤ 800 000 QAR</div></div>
+    <div class="step"><div class="when">fin 2027</div><div><h3>Startup Qatar Investment Program, volet START (QDB)</h3><p>Investissement en capital par jalons, pour une startup tech avec PoC ou MVP qui s'installe au Qatar. Objectif : plus de 100 clients payants avant de candidater.</p><span class="tag tg-w">Engagement d'opérer au Qatar</span></div><div class="amt">≤ 1,1 M$</div></div>
+    <div class="step"><div class="when">hors de portée</div><div><h3>Incitations Invest Qatar 1 Md$ · Fund of Funds QIA · fonds produit QSTP</h3><p>Respectivement : 25 M QAR investis et 5 emplois minimum ; réservé aux fonds VC ; 20 % d'associés qataris exigés.</p><span class="tag tg-no">Non accessible</span></div><div class="amt">—</div></div>
+  </div>
+  <p class="src">Vérifié directement (2026-10-03) : startupqatar.qa/en/investment-program et qdb.qa (START ≤ 1,1 M$, GROW ≤ 5,5 M$, QBIC plafond 100 000 QAR sur la page d'accueil Startup Qatar, AI Compute Credits). Autres conditions (QFC, visa, QBIC LSP 250 000 QAR, SBIG) : presse qatarie, détail et liens dans projets-3/data/tech-qatar.md. À relire sur les pages officielles avant tout dépôt.</p>
+</section>
+
+<!-- ===== RENTABILITÉ ===== -->
+<section id="v-rentabilite" class="wrap view" hidden>
+  <div class="eyebrow">Simulateur SaaS · QAR et euros (1 € ≈ 4,2 QAR)</div>
+  <h2>Abonnés, commissions PRO et trésorerie sur 24 mois</h2>
+  <p class="lead">Prix du dossier : Starter 199, Pro 499, Partner (cabinets) 1 499 QAR/mois, plus 10-15 % de commission sur les démarches transmises aux PRO. Coûts d'outils 190-335 €/mois. Rythme d'acquisition, churn et mix : ESTIMATIONS à valider sur les 10 pilotes.</p>
+  <div class="sim">
+    <div class="panel" id="sin"></div>
+    <div>
+      <div class="kpis" id="sk"></div>
+      <div class="panel chart" style="margin-top:14px"><div class="eyebrow">Revenu mensuel en QAR (barres) et trésorerie cumulée en € (ligne)</div><svg id="schart" viewBox="0 0 680 260" role="img" aria-label="Revenus et trésorerie sur 24 mois"></svg></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOSSIER ===== -->
+<section id="v-dossier" class="wrap view dossier" hidden>
+  <div class="eyebrow">Dossier de décision · tech Qatar</div>
+  <h2>Pourquoi Muhlah</h2>
+  <div class="box"><b>Verdict : GO pour les pilotes, financement en deuxième temps.</b> 76/100, devant le concierge tourisme sur WhatsApp (68) et la veille d'appels d'offres (64), sur 17 idées étudiées. Le problème est propre au Qatar, il grossit chaque trimestre, et la cible se trouve en un seul endroit : les sociétés qui s'immatriculent.</div>
+  <h3>La demande, vérifiée</h3>
+  <div class="cards3">
+    <div><b>3 295 sociétés étrangères</b>créées au Qatar au seul 1er trimestre 2026, soit un rythme d'environ 13 000 par an. <span class="src">Gulf Times, Startup Scene ME</span></div>
+    <div><b>3 500 QAR/mois</b>le prix d'entrée d'un service PRO mensuel ; 250 à 750 QAR par démarche (QID, visa), en plus des frais d'État. <span class="src">Expert Corporate ; Qatar Living</span></div>
+    <div><b>100 % de détention étrangère</b>possible dans la plupart des secteurs : la vague d'implantations va continuer. <span class="src">Emerhub ; K&amp;L Gates</span></div>
+  </div>
+  <h3>Concurrents et substituts</h3>
+  <div class="tbl"><table class="t">
+    <thead><tr><th>Acteur</th><th>Prix</th><th>Limite</th></tr></thead>
+    <tbody>
+      <tr><td>Agences PRO (Expert Group, Brite Consult)</td><td class="r">1 500-4 000 QAR/mois</td><td>Cher pour une société de moins de 10 personnes, pas de tableau de bord</td></tr>
+      <tr><td>Metrash (ministère de l'Intérieur)</td><td class="r">gratuit</td><td>Rappels QID individuels, aucune vue entreprise multi-documents</td></tr>
+      <tr><td>Zimyo, ZenHR, Bayzat (SIRH du Golfe)</td><td class="r">dès 2 $/salarié</td><td>Paie lourde, pas centrés sur les procédures qataries</td></tr>
+      <tr><td>Remindax</td><td class="r">abonnement</td><td>Rappels génériques, aucune connaissance des procédures</td></tr>
+      <tr><td><b>Muhlah</b></td><td class="r"><b>199-1 499 QAR/mois</b></td><td><b>Qatar-natif, trilingue, libre-service, avec passage à un PRO humain</b></td></tr>
+    </tbody></table></div>
+  <h3>La critique d'expert</h3>
+  <div class="cards3">
+    <div><b>« Un tableur suffit. »</b>Pour 3 salariés, oui. La valeur doit être le résultat : zéro amende, zéro visa bloqué, et le bouton « Le faire faire ». Cible prioritaire : 5 à 25 salariés, et les cabinets de création en marque blanche.</div>
+    <div><b>Une information fausse coûte cher au client.</b>Chaque procédure cite sa source officielle et est validée par un PRO partenaire. CGU avec limitation de responsabilité, assurance RC pro dès les premiers revenus.</div>
+    <div><b>Fondateur à Paris.</b>Les financeurs veulent une présence au Qatar. Parade : LLC QFC au WSQ 2027, visa entrepreneur, séjours trimestriels, et un partenaire commercial à Doha rémunéré en parts.</div>
+  </div>
+  <h3>Conformité et données</h3>
+  <div class="tbl"><table class="t"><tbody>
+    <tr><td><b>PDPPL (loi qatarie 13/2016)</b></td><td>Passeports et QID sont des données sensibles. Consentement explicite, minimisation (dates et numéros plutôt que scans), hébergement dans le Golfe dès que possible, revue par un cabinet de Doha (≈ 1 000-1 500 €).</td></tr>
+    <tr><td><b>WhatsApp Business API</b></td><td>Messages de rappel sur modèles validés par Meta, opt-in obligatoire, coût par message via 360dialog ou Twilio.</td></tr>
+    <tr><td><b>Positionnement</b></td><td>Outil d'organisation et de rappel, pas de conseil juridique. Les démarches sont réalisées par des PRO agréés.</td></tr>
+  </tbody></table></div>
+  <p class="src">Détail : projets-3/data/tech-qatar.md (dispositifs de financement, marché, 17 idées, shortlist, plan) et verifs-qatar.md.</p>
+</section>
+
+<script>
+(function(){
+/* ---------- i18n ---------- */
+const L={
+ fr:{nav:["Tableau de bord","Échéances","Salariés","Assistant"],phone:"Rappel envoyé sur WhatsApp",ex:"Exemple · Atelier Lumen LLC (QFC) · 9 salariés",
+   dash:"Tableau de bord",score:"Score de conformité",next:"Prochaine échéance critique",saved:"Amendes et blocages évités",
+   dl:"Échéances des 120 prochains jours",doit:"Le faire faire",remind:"Rappeler",emp:"Salariés et cartes de résident (QID)",
+   assist:"Assistant",ask:"Ma carte d'établissement expire bientôt. Qu'est-ce que je risque ?",
+   ans:"Tant que la carte d'établissement n'est pas renouvelée, la société ne peut plus déposer de demandes de visa ni renouveler les QID de ses salariés. Renouvelez-la avant le 28/10 : Muhlah a préparé la checklist et peut transmettre le dossier à un PRO partenaire.",
+   srcs:"Sources : portail Metrash du ministère de l'Intérieur, guichet unique investisseurs (sw.gov.qa). Procédure à valider par le PRO partenaire.",
+   wa:"Bonjour Karim, la carte d'établissement d'Atelier Lumen expire dans 25 jours (28/10/2026). Sans elle, aucun visa ni QID ne pourra être traité. La checklist des pièces est prête dans Muhlah.",
+   qr:["1 · Le faire faire par un PRO","2 · Me rappeler à J-7","3 · Voir la checklist"],
+   done:"Maquette : demande transmise au PRO partenaire. Devis attendu sous 24 h (frais de service dès 250 QAR, plus les frais d'État)."},
+ en:{nav:["Dashboard","Deadlines","Employees","Assistant"],phone:"Reminder sent on WhatsApp",ex:"Example · Atelier Lumen LLC (QFC) · 9 employees",
+   dash:"Dashboard",score:"Compliance score",next:"Next critical deadline",saved:"Fines and blocks avoided",
+   dl:"Deadlines in the next 120 days",doit:"Get it done",remind:"Remind me",emp:"Employees and residence cards (QID)",
+   assist:"Assistant",ask:"My establishment card expires soon. What is the risk?",
+   ans:"Until the establishment card is renewed, the company cannot file visa applications or renew its employees' QIDs. Renew it before 28/10: Muhlah has prepared the checklist and can hand the file to a partner PRO.",
+   srcs:"Sources: Ministry of Interior Metrash portal, investor single window (sw.gov.qa). Procedure to be validated by the partner PRO.",
+   wa:"Hi Karim, Atelier Lumen's establishment card expires in 25 days (28/10/2026). Without it, no visa or QID can be processed. Your document checklist is ready in Muhlah.",
+   qr:["1 · Have a PRO do it","2 · Remind me at D-7","3 · View checklist"],
+   done:"Mockup: request sent to the partner PRO. Quote within 24 h (service fee from QAR 250, plus government fees)."},
+ ar:{nav:["لوحة التحكم","المواعيد النهائية","الموظفون","المساعد"],phone:"تذكير مُرسل عبر واتساب",ex:"مثال · أتيليه لومن ذ.م.م (مركز قطر للمال) · 9 موظفين",
+   dash:"لوحة التحكم",score:"مؤشر الامتثال",next:"أقرب موعد حرج",saved:"غرامات وعوائق تم تجنبها",
+   dl:"المواعيد خلال 120 يوماً القادمة",doit:"نفّذها عني",remind:"ذكّرني",emp:"الموظفون وبطاقات الإقامة",
+   assist:"المساعد",ask:"بطاقة المنشأة ستنتهي قريباً. ما هي المخاطر؟",
+   ans:"إلى حين تجديد بطاقة المنشأة، لا تستطيع الشركة تقديم طلبات تأشيرات أو تجديد البطاقات الشخصية لموظفيها. جدّدها قبل 28/10: جهّز مُهلة قائمة المستندات ويمكنه إحالة الملف إلى مندوب علاقات عامة شريك.",
+   srcs:"المصادر: بوابة مطراش التابعة لوزارة الداخلية، والنافذة الواحدة للمستثمرين. يجب التحقق من الإجراء مع المندوب الشريك.",
+   wa:"مرحباً كريم، تنتهي بطاقة المنشأة الخاصة بشركة أتيليه لومن خلال 25 يوماً (28/10/2026). بدونها لا يمكن معالجة أي تأشيرة أو بطاقة شخصية. قائمة المستندات جاهزة في مُهلة.",
+   qr:["1 · نفّذها عني عبر مندوب","2 · ذكّرني قبل 7 أيام","3 · عرض القائمة"],
+   done:"نموذج: تم إرسال الطلب إلى المندوب الشريك. عرض السعر خلال 24 ساعة."}
+};
+const ITEMS=[
+ {d:25,fr:"Carte d'établissement",en:"Establishment card",ar:"بطاقة المنشأة",date:"28/10/2026",lvl:"crit",fr2:"Bloque visas et QID si expirée",en2:"Blocks visas and QIDs if expired",ar2:"تعطّل التأشيرات والبطاقات عند انتهائها"},
+ {d:16,fr:"QID · Rahul Menon (développeur)",en:"QID · Rahul Menon (developer)",ar:"بطاقة شخصية · راهول مينون",date:"19/10/2026",lvl:"crit",fr2:"Renouvellement + assurance santé",en2:"Renewal + health insurance",ar2:"تجديد + تأمين صحي"},
+ {d:58,fr:"QID · Sophie Martin (directrice commerciale)",en:"QID · Sophie Martin (sales director)",ar:"بطاقة شخصية · صوفي مارتن",date:"30/11/2026",lvl:"warn",fr2:"Renouvellement",en2:"Renewal",ar2:"تجديد"},
+ {d:73,fr:"Registre de commerce (CR)",en:"Commercial registration (CR)",ar:"السجل التجاري",date:"15/12/2026",lvl:"warn",fr2:"Renouvellement global sur le guichet unique",en2:"Comprehensive renewal on the single window",ar2:"تجديد شامل عبر النافذة الواحدة"},
+ {d:89,fr:"Rapport de qatarisation (Kawader)",en:"Qatarisation report (Kawader)",ar:"تقرير التقطير (كوادر)",date:"31/12/2026",lvl:"ok",fr2:"Loi 12/2024 · modèle à valider",en2:"Law 12/2024 · template to validate",ar2:"قانون 12/2024"},
+ {d:99,fr:"Licence commerciale (municipalité)",en:"Trade licence (municipality)",ar:"الرخصة التجارية",date:"10/01/2027",lvl:"ok",fr2:"Renouvellement annuel",en2:"Annual renewal",ar2:"تجديد سنوي"}
+];
+const EMP=[["Karim Haddad","Gérant","12/05/2027","ok"],["Rahul Menon","Développeur","19/10/2026","crit"],["Sophie Martin","Directrice commerciale","30/11/2026","warn"],["Aisha Rahman","Office manager","02/03/2027","ok"],["Omar Saleh","Comptable","21/08/2027","ok"]];
+let lang="fr",pane=0;
+const app=document.getElementById("app"),main=document.getElementById("main");
+function t(k){return L[lang][k];}
+function nm(it){return it[lang];} function sub(it){return it[lang+"2"];}
+function dlist(n){return `<div class="list">${ITEMS.slice(0,n).sort((a,b)=>a.d-b.d).map(it=>`<div class="dl"><div class="days d-${it.lvl}">J-${it.d}</div><div><div class="t">${nm(it)}</div><div class="m"><span class="mono">${it.date}</span> · ${sub(it)}</div></div><button class="btn${it.lvl==="ok"?" ghost":""}" data-do="1">${it.lvl==="ok"?t("remind"):t("doit")}</button></div>`).join("")}</div>`;}
+const panes=[
+ ()=>`<div class="head"><h2>${t("dash")}</h2><span class="ex">${t("ex")}</span></div>
+   <div class="stats"><div class="stat"><div class="eyebrow">${t("score")}</div><div class="v">72/100</div><div class="s">2 critiques · 2 à surveiller</div></div>
+   <div class="stat"><div class="eyebrow">${t("next")}</div><div class="v">J-16</div><div class="s">QID · Rahul Menon</div></div>
+   <div class="stat"><div class="eyebrow">${t("saved")}</div><div class="v">3</div><div class="s">depuis l'inscription (exemple)</div></div></div>${dlist(4)}<div class="toast" id="tst" hidden></div>`,
+ ()=>`<div class="head"><h2>${t("dl")}</h2><span class="ex">${t("ex")}</span></div>${dlist(6)}<div class="toast" id="tst" hidden></div>`,
+ ()=>`<div class="head"><h2>${t("emp")}</h2><span class="ex">${t("ex")}</span></div><div class="tbl"><table class="t"><thead><tr><th>Nom</th><th>Poste</th><th>QID expire le</th><th></th></tr></thead><tbody>${EMP.map(e=>`<tr><td>${e[0]}</td><td>${e[1]}</td><td class="mono">${e[2]}</td><td><span class="days d-${e[3]}" style="padding:2px 8px;font-size:12px">${e[3]==="ok"?"OK":e[3]==="warn"?"J-58":"J-16"}</span></td></tr>`).join("")}</tbody></table></div>`,
+ ()=>`<div class="head"><h2>${t("assist")}</h2><span class="ex">${t("ex")}</span></div><div class="chat"><div class="q">${t("ask")}</div><div class="a">${t("ans")}<small>${t("srcs")}</small></div><button class="btn" style="align-self:flex-start" data-do="1">${t("doit")}</button><div class="toast" id="tst" hidden></div></div>`
+];
+function render(){
+  app.dir=lang==="ar"?"rtl":"ltr"; app.lang=lang;
+  document.getElementById("nav").innerHTML=t("nav").map((n,i)=>`<button data-p="${i}" aria-current="${i===pane}">${n}${i===1?'<span class="n">2</span>':""}</button>`).join("");
+  main.innerHTML=panes[pane]();
+  document.getElementById("phoneLabel").textContent=t("phone");
+  document.getElementById("wa").innerHTML=`${t("wa")}<span class="time">09:00 ✓✓</span>`;
+  document.getElementById("qr").innerHTML=t("qr").map(q=>`<span>${q}</span>`).join("");
+  document.querySelectorAll(".langs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.l===lang));
+}
+document.getElementById("nav").addEventListener("click",e=>{const b=e.target.closest("button");if(b){pane=+b.dataset.p;render();}});
+document.querySelector(".langs").addEventListener("click",e=>{const b=e.target.closest("button");if(b){lang=b.dataset.l;render();}});
+main.addEventListener("click",e=>{if(e.target.closest("[data-do]")){const s=document.getElementById("tst");if(s){s.hidden=false;s.textContent=t("done");}}});
+render();
+
+/* ---------- Simulateur ---------- */
+const FX=4.2;
+const P=[["st","Starter (QAR/mois)",199,""],["pr","Pro (QAR/mois)",499,""],["pa","Partner cabinets (QAR/mois)",1499,""],
+ ["mst","Part Starter (%)",60,"ESTIMATION"],["mpr","Part Pro (%)",35,"ESTIMATION ; le reste = Partner"],
+ ["comm","Commissions PRO par client (QAR/mois)",40,"ESTIMATION : 12 % × 500 QAR × 0,67 démarche/mois"],
+ ["var","Coût variable par client (QAR/mois)",15,"WhatsApp + IA, ESTIMATION"],["fixed","Outils fixes (€/mois)",260,"190-335 € selon le dossier"],
+ ["new0","Nouveaux clients mois 1",2,"pilotes convertis"],["newmax","Nouveaux clients / mois en croisière",10,"atteints au mois 12"],
+ ["churn","Churn mensuel (%)",4,"ESTIMATION"],["launch","Budget de lancement (€)",7500,"MVP, juridique Doha, WSQ, marketing"],["grant","Financement obtenu (€)",0,"ex. QBIC 250 000 QAR ≈ 59 500 € au mois 9"],["gm","Mois du financement",9,""]];
+const sin=document.getElementById("sin");
+sin.innerHTML=P.map(([id,l,v,h])=>`<div class="field"><label for="m-${id}">${l}</label><input id="m-${id}" type="number" step="any" value="${v}">${h?`<small>${h}</small>`:""}</div>`).join("");
+const g=id=>parseFloat(document.getElementById("m-"+id).value)||0;
+const fmt=(n,u)=>Math.round(n).toLocaleString("fr-FR")+" "+u;
+function sim(){
+  const a=g("mst")/100,b=g("mpr")/100,c=Math.max(0,1-a-b);
+  const arpu=g("st")*a+g("pr")*b+g("pa")*c+g("comm"), gm=arpu-g("var");
+  const ch=g("churn")/100;let cust=0,cash=-g("launch"),rev=[],cs=[cash],be=0;
+  for(let m=1;m<=24;m++){const nw=g("new0")+(g("newmax")-g("new0"))*Math.min(m-1,11)/11;cust=cust*(1-ch)+nw;
+    const r=cust*arpu; const net=(cust*gm)/FX-g("fixed")+(m===g("gm")?g("grant"):0);cash+=net;rev.push(r);cs.push(cash);if(!be&&(cust*gm)/FX-g("fixed")>0)be=m;}
+  document.getElementById("sk").innerHTML=`
+   <div class="kpi"><div class="eyebrow">Panier moyen</div><div class="v">${fmt(arpu,"QAR")}</div><div class="s">≈ ${fmt(arpu/FX,"€")} · marge ${(gm/arpu*100).toFixed(0)} %</div></div>
+   <div class="kpi"><div class="eyebrow">Revenu M12</div><div class="v">${fmt(rev[11],"QAR")}</div><div class="s">≈ ${fmt(rev[11]/FX,"€")}/mois</div></div>
+   <div class="kpi"><div class="eyebrow">Rentable dès</div><div class="v">${be?"M"+be:"> M24"}</div><div class="s">marge brute > outils fixes</div></div>
+   <div class="kpi"><div class="eyebrow">Trésorerie M24</div><div class="v">${fmt(cs[24],"€")}</div><div class="s">creux : ${fmt(Math.min(...cs),"€")}</div></div>`;
+  const W=680,H=260,pl=60,pr=60,pt=14,pb=28,n=24,mx=Math.max(...rev,1),cmx=Math.max(...cs,1),cmn=Math.min(0,...cs);
+  const x=i=>pl+i*(W-pl-pr)/n,yr=v=>pt+(mx-v)*(H-pt-pb)/mx,yc=v=>pt+(cmx-v)*(H-pt-pb)/(cmx-cmn||1),bw=(W-pl-pr)/n*.6;
+  let s="";[0,.5,1].forEach(f=>{const v=mx*f;s+=`<line x1="${pl}" x2="${W-pr}" y1="${yr(v)}" y2="${yr(v)}" stroke="var(--line)"/><text x="${pl-6}" y="${yr(v)+4}" text-anchor="end" font-size="11" fill="var(--muted)" font-family="var(--mono)">${Math.round(v/1000)}k QAR</text>`;});
+  rev.forEach((v,i)=>s+=`<rect x="${x(i)+((W-pl-pr)/n-bw)/2}" y="${yr(v)}" width="${bw}" height="${yr(0)-yr(v)}" fill="var(--maroon)" opacity=".8"/>`);
+  s+=`<line x1="${pl}" x2="${W-pr}" y1="${yc(0)}" y2="${yc(0)}" stroke="var(--pearl)" stroke-dasharray="4 4"/>`;
+  [cmn,cmx].forEach(v=>s+=`<text x="${W-pr+6}" y="${yc(v)+4}" font-size="11" fill="var(--pearl)" font-family="var(--mono)">${Math.round(v/1000)}k €</text>`);
+  s+=`<path d="${cs.map((v,i)=>`${i?"L":"M"}${x(i).toFixed(1)} ${yc(v).toFixed(1)}`).join(" ")}" fill="none" stroke="var(--pearl)" stroke-width="2.5"/>`;
+  for(let i=0;i<=24;i+=6)s+=`<text x="${x(i)}" y="${H-8}" text-anchor="middle" font-size="11" fill="var(--muted)">M${i}</text>`;
+  document.getElementById("schart").innerHTML=s;
+}
+sin.addEventListener("input",sim);sim();
+
+/* ---------- Vues ---------- */
+const views=["app","financement","rentabilite","dossier"];
+function route(){const h=(location.hash||"#app").slice(1);const v=views.includes(h)?h:"app";
+ views.forEach(n=>document.getElementById("v-"+n).hidden=n!==v);
+ document.querySelectorAll(".tabs a").forEach(a=>a.setAttribute("aria-current",a.dataset.v===v?"page":"false"));window.scrollTo(0,0);}
+window.addEventListener("hashchange",route);route();
+})();
+</script>

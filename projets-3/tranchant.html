@@ -1,0 +1,322 @@
+<title>Tranchant — aiguiseur à rouleau</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..900&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout : boutique mono-produit + 3 vues outils (test 14 j, rentabilité, dossier). Grilles 2 colonnes qui tombent à 1 sous 760px. */
+:root{
+  --bg:#EEF0F1; --surface:#FFFFFF; --sunk:#E2E6E8; --ink:#1B2326; --muted:#55626A; --line:#CDD4D8;
+  --walnut:#7A4A28; --edge:#2C6E8F; --go:#23784F; --mid:#A26A00; --no:#B23A30;
+  --display:"Archivo", "Arial Narrow", system-ui, sans-serif;
+  --body:"Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12171A; --surface:#1B2226; --sunk:#151B1E; --ink:#E7ECEE; --muted:#9AA8AF; --line:#2E393F;
+  --walnut:#D49A6A; --edge:#7CC0E0; --go:#5FC795; --mid:#E5B24E; --no:#F08A80; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12171A; --surface:#1B2226; --sunk:#151B1E; --ink:#E7ECEE; --muted:#9AA8AF; --line:#2E393F;
+  --walnut:#D49A6A; --edge:#7CC0E0; --go:#5FC795; --mid:#E5B24E; --no:#F08A80; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 var(--body);margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);font-stretch:85%;font-weight:800;text-wrap:balance;margin:0;letter-spacing:-.01em}
+.eyebrow{font:600 12px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.proto{background:var(--ink);color:var(--bg);font-size:13px}
+.proto .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:space-between;padding-block:8px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tabs a{color:var(--bg);text-decoration:none;padding:4px 12px;border:1px solid transparent;opacity:.72}
+.tabs a[aria-current="page"]{border-color:var(--bg);opacity:1}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--edge);outline-offset:2px}
+/* Boutique */
+.announce{background:var(--walnut);color:var(--surface);text-align:center;font-size:14px;padding:7px 16px}
+.shopbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.shopbar .wrap{display:flex;justify-content:space-between;align-items:center;padding-block:12px;gap:12px}
+.logo{font:900 26px var(--display);font-stretch:115%;letter-spacing:.06em}
+.logo span{color:var(--edge)}
+.pdp{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;padding-block:36px;align-items:start}
+.visual{background:var(--surface);border:1px solid var(--line);aspect-ratio:1;display:grid;place-items:center;position:relative}
+.visual svg{width:92%;height:auto}
+.badge{position:absolute;left:14px;top:14px;background:var(--ink);color:var(--surface);font:600 12px var(--body);letter-spacing:.08em;text-transform:uppercase;padding:5px 9px}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px}
+.thumbs div{background:var(--surface);border:1px solid var(--line);aspect-ratio:1;display:grid;place-items:center;font-size:12px;color:var(--muted);text-align:center;padding:6px}
+.pdp h1{font-size:clamp(34px,4.6vw,54px);line-height:1.02}
+.stars{color:var(--walnut);font-size:14px;margin:10px 0}
+.lead{color:var(--muted);font-size:18px;margin:8px 0 18px;max-width:48ch}
+.kits{display:grid;gap:10px;margin:14px 0}
+.kit{all:unset;cursor:pointer;display:grid;grid-template-columns:1fr auto;gap:2px 12px;border:1.5px solid var(--line);background:var(--surface);padding:14px 16px}
+.kit[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 4px 0 0 var(--edge)}
+.kit b{font:800 18px var(--display);font-stretch:90%}
+.kit .p{font:500 20px var(--mono);text-align:right}
+.kit small{grid-column:1/-1;color:var(--muted);font-size:14px}
+.cta{all:unset;cursor:pointer;display:block;text-align:center;background:var(--ink);color:var(--surface);font:700 17px var(--body);padding:15px;margin-top:6px}
+.cta:focus-visible{outline:2px solid var(--edge)}
+.reassure{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;font-size:13px;color:var(--muted);text-align:center}
+.reassure div{border:1px solid var(--line);padding:8px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding-block:44px;border-top:1px solid var(--line)}
+.steps div{background:var(--surface);border:1px solid var(--line);padding:20px}
+.steps .n{font:800 40px var(--display);color:var(--edge);line-height:1}
+.steps h3{font-size:22px;margin:6px 0}
+.compare{padding-block:10px 50px}
+.compare h2{font-size:34px;margin-bottom:14px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font:600 12px var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.r{text-align:right!important;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.tbl{overflow-x:auto}
+.us{background:color-mix(in srgb,var(--edge) 10%,transparent)}
+footer.sf{border-top:1px solid var(--line);padding-block:24px;font-size:13px;color:var(--muted)}
+/* Vues outils */
+.view{padding-block:36px 64px}
+.view h2{font-size:clamp(30px,4vw,46px)}
+.vlead{color:var(--muted);max-width:72ch;margin:10px 0 24px}
+.two{display:grid;grid-template-columns:330px 1fr;gap:24px;align-items:start}
+.panel{background:var(--surface);border:1px solid var(--line);padding:20px}
+.field{display:grid;grid-template-columns:1fr 92px;gap:8px;align-items:center;margin-bottom:11px;font-size:15px}
+.field input{width:100%;padding:7px 8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:14px var(--mono);text-align:right}
+.field small{grid-column:1/-1;color:var(--muted);font-size:12.5px;margin-top:-6px}
+.verdict{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding:18px 20px;border:2px solid var(--line);margin-bottom:14px;background:var(--surface)}
+.verdict .big{font:900 34px var(--display);font-stretch:110%;letter-spacing:.04em}
+.pill{font:600 12px var(--body);padding:2px 9px;border-radius:999px;white-space:nowrap}
+.p-go{background:color-mix(in srgb,var(--go) 18%,transparent);color:var(--go)}
+.p-mid{background:color-mix(in srgb,var(--mid) 20%,transparent);color:var(--mid)}
+.p-no{background:color-mix(in srgb,var(--no) 18%,transparent);color:var(--no)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--line);padding:14px}
+.kpi .v{font:500 23px var(--mono);margin-top:4px}
+.kpi .s{font-size:12.5px;color:var(--muted)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.dossier h3{font-family:var(--body);font-weight:600;font-size:20px;margin:34px 0 10px}
+.src{font-size:12.5px;color:var(--muted)}
+.cards3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.cards3 div{background:var(--surface);border:1px solid var(--line);padding:14px;font-size:15px}
+.cards3 b{display:block;margin-bottom:4px}
+.box{border-left:4px solid var(--edge);background:var(--surface);padding:16px 18px;margin-bottom:24px}
+@media (max-width:900px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}}
+@media (max-width:760px){.pdp,.cols,.cards3,.steps{grid-template-columns:1fr}.reassure{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="proto"><div class="wrap">
+  <span>Maquette MVP · e-commerce testable · Safwen Ben Chiboub · 3 octobre 2026</span>
+  <nav class="tabs" aria-label="Vues">
+    <a href="#boutique" data-v="boutique">Boutique</a>
+    <a href="#test" data-v="test">Test 14 jours</a>
+    <a href="#rentabilite" data-v="rentabilite">Rentabilité</a>
+    <a href="#dossier" data-v="dossier">Dossier</a>
+  </nav>
+</div></div>
+
+<!-- ===== BOUTIQUE ===== -->
+<section id="v-boutique">
+  <div class="announce">Livraison 2 à 5 jours depuis l'Europe · Garantie 2 ans · Retour 30 jours</div>
+  <header class="shopbar"><div class="wrap"><div class="logo">TRANCHANT<span>.</span></div><span class="mono" style="font-size:14px">Panier (0)</span></div></header>
+  <div class="wrap">
+    <div class="pdp">
+      <div>
+        <div class="visual"><span class="badge">−50 % vs le premium</span>
+          <svg viewBox="0 0 400 300" role="img" aria-label="Aiguiseur à rouleau et support magnétique">
+            <rect x="0" y="250" width="400" height="10" fill="var(--sunk)"/>
+            <!-- support magnétique -->
+            <path d="M210 250 L210 160 L330 160 L360 250 Z" fill="var(--walnut)"/>
+            <rect x="212" y="166" width="10" height="84" fill="var(--ink)" opacity=".25"/>
+            <text x="285" y="215" text-anchor="middle" font-family="var(--mono)" font-size="13" fill="var(--surface)">15° | 20°</text>
+            <!-- lame -->
+            <path d="M120 120 L330 156 L330 162 L118 128 Z" fill="var(--muted)"/>
+            <path d="M120 120 L60 108 Q48 112 56 122 L118 128Z" fill="var(--ink)"/>
+            <!-- rouleau -->
+            <rect x="96" y="176" width="88" height="62" rx="6" fill="var(--walnut)"/>
+            <circle cx="96" cy="207" r="38" fill="var(--edge)"/><circle cx="96" cy="207" r="30" fill="var(--surface)" opacity=".35"/>
+            <circle cx="184" cy="207" r="38" fill="var(--ink)"/><circle cx="184" cy="207" r="30" fill="var(--surface)" opacity=".18"/>
+            <text x="96" y="212" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="var(--surface)">#400</text>
+            <text x="184" y="212" text-anchor="middle" font-family="var(--mono)" font-size="12" fill="var(--surface)">#1000</text>
+          </svg></div>
+        <div class="thumbs"><div>Vidéo tomate avant / après</div><div>Disque diamant #400</div><div>Bloc aimanté 15° / 20°</div><div>Coffret Kit Chef</div></div>
+      </div>
+      <div>
+        <div class="eyebrow">Aiguiseur à rouleau diamant · support magnétique</div>
+        <h1>Vos couteaux coupent comme neufs. En 2 minutes.</h1>
+        <div class="stars">★★★★★ <span class="mono">4,8</span> · avis affichés après le test (aucun avis inventé)</div>
+        <p class="lead">Posez la lame sur le bloc aimanté : l'angle est juste tout seul. Faites rouler 10 fois sur chaque disque. Pas de pierre à tremper, pas de technique à apprendre.</p>
+        <div class="kits" id="kits">
+          <button class="kit" aria-pressed="true" data-p="49"><b>Kit Essentiel</b><span class="p">49 €</span><small>Rouleau 2 disques (diamant #400 + #1000) · bloc magnétique 15°/20°</small></button>
+          <button class="kit" aria-pressed="false" data-p="69"><b>Kit Chef · le cadeau</b><span class="p">69 €</span><small>Kit Essentiel + cuir à affiler + pâte à polir + coffret + guide en français</small></button>
+        </div>
+        <button class="cta" id="buy">Ajouter au panier · 49 €</button>
+        <div class="reassure"><div>Expédié sous 24 h</div><div>Garantie 2 ans</div><div>Satisfait ou remboursé 30 j</div></div>
+        <p class="mono" id="buymsg" style="font-size:13px;color:var(--go)" hidden>Maquette : en phase test, la commande part automatiquement chez le fournisseur UE via l'appli CJdropshipping.</p>
+      </div>
+    </div>
+    <div class="steps">
+      <div><span class="n">1</span><h3>Clipsez la lame</h3>Le bloc aimanté tient le couteau à 15° (japonais) ou 20° (européen).</div>
+      <div><span class="n">2</span><h3>Roulez sur le #400</h3>10 allers-retours pour reformer le fil.</div>
+      <div><span class="n">3</span><h3>Finissez au #1000</h3>10 allers-retours, puis le cuir. La feuille de papier se tranche net.</div>
+    </div>
+    <div class="compare">
+      <h2>Le même geste, la moitié du prix</h2>
+      <div class="tbl"><table>
+        <thead><tr><th>Modèle</th><th class="r">Prix</th><th>Disques</th><th>Angles</th></tr></thead>
+        <tbody>
+          <tr><td>HORL 2 Cruise (référence premium)</td><td class="r">99-119 €</td><td>diamant + céramique</td><td>15° / 20°</td></tr>
+          <tr><td>Damas Origin</td><td class="r">74,90-84,90 €</td><td>2 disques</td><td>15° / 20°</td></tr>
+          <tr class="us"><td><b>Tranchant Kit Essentiel</b></td><td class="r"><b>49 €</b></td><td>diamant #400 + #1000</td><td>15° / 20°</td></tr>
+          <tr><td>Génériques ManoMano</td><td class="r">20-35 €</td><td>variable</td><td>variable, sans garantie FR</td></tr>
+        </tbody></table></div>
+      <p class="src">Prix relevés sur les sites des marques et revendeurs, 2026-10-03 (dossier, §3.4). Aucune mention de marque concurrente dans les publicités.</p>
+    </div>
+  </div>
+  <footer class="sf"><div class="wrap">Tranchant. — Paris · Importateur responsable (GPSR) : Tranchant SAS · Lot et notice de sécurité sur l'emballage · Aimants : tenir hors de portée des enfants</div></footer>
+</section>
+
+<!-- ===== TEST 14 JOURS ===== -->
+<section id="v-test" class="wrap view" hidden>
+  <div class="eyebrow">Tableau de bord du test · à remplir avec tes vrais chiffres Shopify et Meta</div>
+  <h2>14 jours, 550 €, une décision</h2>
+  <p class="vlead">Budget : 400 € de Meta Ads (28 €/jour), 70 € d'échantillons, 40 € de Shopify et d'applis, 40 € de réserve. Les seuils viennent du dossier. Les valeurs pré-remplies sont un exemple, pas un résultat.</p>
+  <div class="two">
+    <div class="panel" id="tin"></div>
+    <div>
+      <div class="verdict" id="tverdict"></div>
+      <div class="panel tbl"><table id="tcrit"></table></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RENTABILITÉ ===== -->
+<section id="v-rentabilite" class="wrap view" hidden>
+  <div class="eyebrow">Simulateur · phase test (dropshipping) puis phase import (300 kits)</div>
+  <h2>Ce qui reste par commande, avant et après l'import</h2>
+  <p class="vlead">Coûts par défaut : 19 € (Essentiel) et 26 € (Chef) livrés par CJ depuis un stock UE en phase test (ESTIMATION à confirmer, compte CJ connecté) ; 11,40 € et 14 € débarqués en phase import (Yangjiang Amber / Jiangmen Houselin, 2,7 % de droits sous réserve du RTC).</p>
+  <div class="two">
+    <div class="panel" id="rin"></div>
+    <div>
+      <div class="kpis" id="rk"></div>
+      <div class="cols">
+        <div class="panel tbl"><div class="eyebrow">Par commande moyenne</div><table id="rtab"></table></div>
+        <div class="panel tbl"><div class="eyebrow">Trésorerie de l'import</div><table id="rcash"></table></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOSSIER ===== -->
+<section id="v-dossier" class="wrap view dossier" hidden>
+  <div class="eyebrow">Dossier de décision</div>
+  <h2>Pourquoi un aiguiseur à rouleau</h2>
+  <div class="box"><b>Verdict : GO pour le test, sous 2 conditions.</b> 76/100, devant le masque de sommeil 3D (72) et le gilet d'hydratation trail (60), sur 16 produits étudiés. Produit utile, démontrable en 15 secondes, sans électronique ni marquage CE. Conditions : (1) le stock UE est confirmé chez CJ avant de lancer ; (2) une étude de liberté d'exploitation sur les brevets HORL avant l'import.</div>
+
+  <h3>La demande, mesurée</h3>
+  <div class="cards3">
+    <div><b>Un leader qui éduque le marché</b>« horl 2 » +450 % et « aiguiseur couteau horl » +350 % dans les recherches associées à « aiguiseur couteau » (Google Trends FR, 5 ans).</div>
+    <div><b>Une publicité presque vide</b>~7 publicités Meta actives en France sur « aiguiseur à rouleau » (bibliothèque publicitaire, 2026-10-03).</div>
+    <div><b>Des acheteurs réels</b>Damas Origin : 4,8/5 sur 2 327 avis. HORL : plus de 50 achats/mois sur Amazon.fr. « couteau japonais » +60 %.</div>
+  </div>
+  <p class="src">Sources : trends.firecrawl.dev/explore?q=aiguiseur+couteau&geo=FR ; facebook.com/ads/library (FR, « aiguiseur à rouleau ») ; fiches produits citées dans projets-3/data/ecommerce.md.</p>
+
+  <h3>Fournisseurs</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Phase</th><th>Fournisseur</th><th>Ville</th><th class="r">MOQ</th><th class="r">Prix</th></tr></thead>
+    <tbody>
+      <tr><td>Test</td><td>CJ Dropshipping (appli Shopify « CJdropshipping »), stock FR/DE à confirmer</td><td>Entrepôts UE</td><td class="r">1</td><td class="r">≈ 17-20 € livré (ESTIM.)</td></tr>
+      <tr><td>Test (secours)</td><td>DEBUNS sur ManoMano.fr</td><td>UE</td><td class="r">1</td><td class="r">19,99 €</td></tr>
+      <tr><td>Import</td><td>Yangjiang Amber Industrial</td><td>Yangjiang</td><td class="r">100</td><td class="r">12,42-13,80 $</td></tr>
+      <tr><td>Import</td><td>Jiangmen Houselin Wood Product</td><td>Jiangmen</td><td class="r">300</td><td class="r">7,02-7,92 $</td></tr>
+      <tr><td>Import</td><td>Yangjiang Yangdong Ruitai Hardware</td><td>Yangjiang</td><td class="r">≈ 100</td><td class="r">sur devis</td></tr>
+    </tbody></table></div>
+  <p class="src">Prix d'usine repris d'extraits Alibaba : à confirmer par échantillon. Contrôles : planéité des disques, grain réel, force de l'aimant, angle à ±1°.</p>
+
+  <h3>La critique d'expert</h3>
+  <div class="cards3">
+    <div><b>Brevets HORL (15-25 %).</b>HORL détient des brevets européens sur le rouleau et le support d'angle magnétique. Avant l'import : étude de liberté d'exploitation par un conseil en propriété industrielle (800-2 000 €). Pendant le test, vendre un modèle déjà distribué en UE par d'autres.</div>
+    <div><b>Les génériques à 20 €.</b>La marque doit justifier 49 € : vidéo de démonstration, garantie 2 ans, Kit Chef en coffret, guide en français, SAV rapide. Sans ça, c'est une guerre de prix perdue d'avance.</div>
+    <div><b>Saison.</b>Pic au 4e trimestre (cadeau), creux en janvier-février. Lancer le test en octobre ; relancer à la fête des grands-mères, la fête des pères et la saison barbecue.</div>
+  </div>
+
+  <h3>Douane et conformité</h3>
+  <div class="tbl"><table><tbody>
+    <tr><td><b>Code NC</b></td><td>8205 51 00 probable, 2,7 % (à confirmer par RTC, gratuit, ~1 mois). Alternative 6804 21 00 si la douane retient le disque abrasif.</td></tr>
+    <tr><td><b>GPSR</b></td><td>Nom et adresse de l'importateur, numéro de lot, notice de sécurité en français (lame, aimants hors de portée des enfants), registre des réclamations. ≈ 200 €.</td></tr>
+    <tr><td><b>Pas de CE</b></td><td>Outil manuel sans électronique ni batterie.</td></tr>
+  </tbody></table></div>
+  <p class="src">Détail complet : projets-3/data/ecommerce.md (longlist de 16 produits, shortlist, critique, 5 concurrents, plan de test).</p>
+</section>
+
+<script>
+(function(){
+const eur=(n,d=2)=>n.toLocaleString("fr-FR",{minimumFractionDigits:d,maximumFractionDigits:d})+" €";
+/* Boutique */
+const kits=document.getElementById("kits"),buy=document.getElementById("buy");
+kits.addEventListener("click",e=>{const k=e.target.closest(".kit");if(!k)return;kits.querySelectorAll(".kit").forEach(x=>x.setAttribute("aria-pressed",x===k));buy.textContent="Ajouter au panier · "+k.dataset.p+" €";});
+buy.addEventListener("click",()=>document.getElementById("buymsg").hidden=false);
+
+/* Test 14 jours */
+const T=[["spend","Dépense pub (€)",400],["orders","Commandes",19],["sessions","Sessions boutique",950],["atc","Ajouts au panier",66],["aov","Panier moyen (€)",54],["refunds","Retours / plaintes",1]];
+const tin=document.getElementById("tin");
+tin.innerHTML=T.map(([id,l,v])=>`<div class="field"><label for="t-${id}">${l}</label><input id="t-${id}" type="number" step="any" value="${v}"></div>`).join("")+`<p class="src">Exemple fictif pour montrer la lecture. Remplace par tes chiffres à J14.</p>`;
+const tv=id=>parseFloat(document.getElementById("t-"+id).value)||0;
+function test(){
+  const o=tv("orders"),cpa=o?tv("spend")/o:Infinity,cr=tv("sessions")?o/tv("sessions"):0,atc=tv("sessions")?tv("atc")/tv("sessions"):0,ref=o?tv("refunds")/o:0;
+  const rows=[
+   ["Commandes",o.toFixed(0),o>=15?2:o>=8?1:0,"≥ 15","8-14","< 8"],
+   ["CPA (pub ÷ commandes)",isFinite(cpa)?eur(cpa):"—",cpa<=18?2:cpa<=25?1:0,"≤ 18 €","18-25 €","> 25 €"],
+   ["Taux de conversion",(cr*100).toFixed(2)+" %",cr>=.018?2:cr>=.01?1:0,"≥ 1,8 %","1-1,8 %","< 1 %"],
+   ["Ajouts au panier / sessions",(atc*100).toFixed(1)+" %",atc>=.06?2:atc>=.04?1:0,"≥ 6 %","4-6 %","< 4 %"],
+   ["Panier moyen",eur(tv("aov")),tv("aov")>=52?2:1,"≥ 52 €","49-52 €","—"],
+   ["Retours / plaintes",(ref*100).toFixed(1)+" %",ref<=.05?2:ref<=.1?1:0,"≤ 5 %","5-10 %","> 10 %"]];
+  const lab=["NO-GO","À AJUSTER","GO"],cls=["p-no","p-mid","p-go"];
+  document.getElementById("tcrit").innerHTML=`<thead><tr><th>Indicateur</th><th class="r">Résultat</th><th>Statut</th><th>GO</th><th>Ajuster</th><th>Stop</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${r[0]}</td><td class="r">${r[1]}</td><td><span class="pill ${cls[r[2]]}">${lab[r[2]]}</span></td><td>${r[3]}</td><td>${r[4]}</td><td>${r[5]}</td></tr>`).join("")}</tbody>`;
+  const hardStop=rows[0][2]===0||rows[1][2]===0||rows[5][2]===0;
+  const allGo=rows[0][2]===2&&rows[1][2]===2&&rows[2][2]>=1;
+  const v=hardStop?0:allGo?2:1;
+  const txt=["Arrêter. Basculer le budget sur le masque de sommeil 3D (n°2 de la shortlist).","Prolonger de 7 jours avec un nouvel angle (cadeau ou économie) et le Kit Chef mis en avant.","Commander 300 kits (Amber ou Houselin) après l'étude brevets, arrivée visée mi-novembre."];
+  const col=["var(--no)","var(--mid)","var(--go)"];
+  document.getElementById("tverdict").style.borderColor=col[v];
+  document.getElementById("tverdict").innerHTML=`<span class="big" style="color:${col[v]}">${lab[v]}</span><span>${txt[v]}</span>`;
+}
+tin.addEventListener("input",test);test();
+
+/* Rentabilité */
+const R=[["pe","Prix Kit Essentiel TTC (€)",49,""],["pc","Prix Kit Chef TTC (€)",69,""],["mix","Part de Kit Chef (%)",35,"ESTIMATION"],
+ ["te","Coût test Essentiel livré (€)",19,"CJ stock UE, ESTIMATION"],["tc","Coût test Chef livré (€)",26,"ESTIMATION"],
+ ["ve","Coût import Essentiel débarqué (€)",11.4,"usine 8,60 + fret 2 + droits/transitaire 0,80"],["vc","Coût import Chef débarqué (€)",14,""],
+ ["ship","Expédition client en phase import (€)",4.5,"point relais pro, < 1 kg"],["ret","Retours (%)",3,"ESTIMATION"],["cac","CAC (€)",18,"seuil GO du test"],["orders","Commandes / mois",150,"après import"]];
+const rin=document.getElementById("rin");
+rin.innerHTML=R.map(([id,l,v,h])=>`<div class="field"><label for="r-${id}">${l}</label><input id="r-${id}" type="number" step="any" value="${v}">${h?`<small>${h}</small>`:""}</div>`).join("");
+const rv=id=>parseFloat(document.getElementById("r-"+id).value)||0;
+function rent(){
+  const m=rv("mix")/100,ttc=rv("pe")*(1-m)+rv("pc")*m,ht=ttc/1.2,fee=ttc*.015+.25,retp=rv("ret")/100;
+  const ctest=rv("te")*(1-m)+rv("tc")*m, cvol=rv("ve")*(1-m)+rv("vc")*m;
+  const contT=ht-ctest-fee-retp*ctest, contV=ht-cvol-rv("ship")-fee-retp*(cvol+rv("ship"));
+  const gmT=(ht-ctest)/ht,gmV=(ht-cvol)/ht, monthly=rv("orders")*(contV-rv("cac"));
+  document.getElementById("rk").innerHTML=`
+   <div class="kpi"><div class="eyebrow">Panier moyen</div><div class="v">${eur(ttc)}</div><div class="s">${Math.round(m*100)} % de Kit Chef</div></div>
+   <div class="kpi"><div class="eyebrow">CAC max · test</div><div class="v">${eur(contT)}</div><div class="s">marge brute ${(gmT*100).toFixed(0)} % ${gmT>=.4?'<span class="pill p-go">≥ 40 %</span>':'<span class="pill p-no">&lt; 40 %</span>'}</div></div>
+   <div class="kpi"><div class="eyebrow">CAC max · import</div><div class="v">${eur(contV)}</div><div class="s">marge brute ${(gmV*100).toFixed(0)} % ${gmV>=.6?'<span class="pill p-go">≥ 60 %</span>':'<span class="pill p-no">&lt; 60 %</span>'}</div></div>
+   <div class="kpi"><div class="eyebrow">Résultat / mois (import)</div><div class="v" style="color:${monthly>=0?"var(--go)":"var(--no)"}">${eur(monthly,0)}</div><div class="s">${rv("orders")} commandes × (contribution − CAC)</div></div>`;
+  document.getElementById("rtab").innerHTML=`<thead><tr><th></th><th class="r">Test</th><th class="r">Import</th></tr></thead><tbody>
+   <tr><td>Prix HT</td><td class="r">${eur(ht)}</td><td class="r">${eur(ht)}</td></tr>
+   <tr><td>Produit (livré / débarqué)</td><td class="r">−${eur(ctest)}</td><td class="r">−${eur(cvol)}</td></tr>
+   <tr><td>Expédition client</td><td class="r">incluse</td><td class="r">−${eur(rv("ship"))}</td></tr>
+   <tr><td>Paiement</td><td class="r">−${eur(fee)}</td><td class="r">−${eur(fee)}</td></tr>
+   <tr><td>Retours</td><td class="r">−${eur(retp*ctest)}</td><td class="r">−${eur(retp*(cvol+rv("ship")))}</td></tr>
+   <tr><td><b>Contribution avant pub</b></td><td class="r"><b>${eur(contT)}</b></td><td class="r"><b>${eur(contV)}</b></td></tr>
+   <tr><td>Après CAC de ${eur(rv("cac"),0)}</td><td class="r">${eur(contT-rv("cac"))}</td><td class="r">${eur(contV-rv("cac"))}</td></tr></tbody>`;
+  const stock=300*cvol,qc=400,reg=200,tot=stock+qc+reg;
+  document.getElementById("rcash").innerHTML=`<tbody>
+   <tr><td>300 kits débarqués</td><td class="r">${eur(stock,0)}</td></tr>
+   <tr><td>Échantillons + inspection AQL</td><td class="r">${eur(qc,0)}</td></tr>
+   <tr><td>RTC + étiquetage GPSR</td><td class="r">${eur(reg,0)}</td></tr>
+   <tr><td>Étude brevets (liberté d'exploitation)</td><td class="r">800-2 000 €</td></tr>
+   <tr><td><b>Besoin hors étude brevets</b></td><td class="r"><b>${eur(tot,0)}</b></td></tr>
+   <tr><td>300 kits écoulés en</td><td class="r">${(300/Math.max(rv("orders"),1)).toFixed(1)} mois</td></tr></tbody>`;
+}
+rin.addEventListener("input",rent);rent();
+
+/* Vues */
+const views=["boutique","test","rentabilite","dossier"];
+function route(){const h=(location.hash||"#boutique").slice(1);const v=views.includes(h)?h:"boutique";
+ views.forEach(n=>document.getElementById("v-"+n).hidden=n!==v);
+ document.querySelectorAll(".tabs a").forEach(a=>a.setAttribute("aria-current",a.dataset.v===v?"page":"false"));window.scrollTo(0,0);}
+window.addEventListener("hashchange",route);route();
+})();
+</script>

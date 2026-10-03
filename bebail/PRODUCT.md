@@ -37,7 +37,7 @@ Décision ouverte. Le différenciateur face aux concurrents (Rentila, Smovin, et
 
 ## Capabilities and Constraints
 
-Fonctions annoncées dans le brief client et le film (`bebail-identite/charte/presentation-spec.json`, `bebail-motion/voix/script.txt`) :
+Fonctions annoncées dans le brief client et le film (`../bebail-identite/charte/presentation-spec.json`, `../bebail-motion/voix/script.txt`) :
 
 - vue unique des biens, loyers et locataires en temps réel ;
 - création de baux conformes et signature électronique ;
@@ -55,14 +55,14 @@ Terminologie : « bailleur », « locataire », « bien », « bail », « quitt
 - Nom : BeBail. Le mot-symbole de la v2 s'écrit en minuscules, « bebail ». Prononciation « Bi-Baille ».
 - Signature : « Gérer son immobilier ne devrait pas être un second métier. » Autre formule du film : « La gestion locative, enfin sereine. »
 - Adjectifs de marque : serein, simple, moderne, fiable, humain. La marque doit rassurer sur la valeur juridique sans devenir froide.
-- Logo : la piste « Signature », une maison tracée d'un seul trait qui finit en paraphe (le bail signé). Déclinaisons dans `bebail-identite/charte/logo/`.
-- Charte de référence : `bebail-identite/charte/charte-bebail.html` (v2, « Encre & Pierre »). `charte-bebail-v1.html` et la couleur verte de `presentation-spec.json` sont des versions antérieures.
+- Logo : la piste « Signature », une maison tracée d'un seul trait qui finit en paraphe (le bail signé). Déclinaisons dans `../bebail-identite/charte/logo/`.
+- Charte de référence : `../bebail-identite/charte/charte-bebail.html` (v2, « Encre & Pierre »). `charte-bebail-v1.html` et la couleur verte de `presentation-spec.json` sont des versions antérieures.
 - Domaine cité dans le film : bebail.com (non vérifié).
 
 ## Evidence on Hand
 
-- Identité complète : logos, icônes, planches, charte, présentation client (`bebail-identite/presentation-client/`, PPTX et PDF).
-- Film vertical 9:16 de 58 s avec voix off et musique (`bebail-motion/`).
+- Identité complète : logos, icônes, planches, charte, présentation client (`../bebail-identite/presentation-client/`, PPTX et PDF).
+- Film vertical 9:16 de 58 s avec voix off et musique (`../bebail-motion/`).
 - Absents, à ne pas inventer : clients, témoignages, chiffres d'usage, captures d'une vraie interface, tarifs, mentions presse, certifications.
 
 ## Product Principles

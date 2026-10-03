@@ -1,0 +1,382 @@
+<title>Retenu — appels d'offres TPE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout : prototype d'application SaaS (barre latérale + espace de travail) + vues Rentabilité et Dossier. Une colonne sous 820px. */
+:root{
+  --bg:#F2F4F7; --surface:#FFFFFF; --sunk:#E8ECF1; --ink:#14213D; --muted:#56627A; --line:#D6DCE5;
+  --stamp:#C2362B; --stamp-soft:#FBE7E4; --go:#1F7A5C; --go-soft:#DDF1E8; --warn:#A86A00; --warn-soft:#FCEFD5;
+  --display:"Bricolage Grotesque", "Avenir Next Condensed", "Arial Narrow", system-ui, sans-serif;
+  --body:"Public Sans", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1625; --surface:#172034; --sunk:#111A2B; --ink:#E6EBF4; --muted:#9AA6BC; --line:#2A3650;
+  --stamp:#F0776B; --stamp-soft:#3A1F22; --go:#5CC79F; --go-soft:#16352C; --warn:#E8B24C; --warn-soft:#3A2E15; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1625; --surface:#172034; --sunk:#111A2B; --ink:#E6EBF4; --muted:#9AA6BC; --line:#2A3650;
+  --stamp:#F0776B; --stamp-soft:#3A1F22; --go:#5CC79F; --go-soft:#16352C; --warn:#E8B24C; --warn-soft:#3A2E15; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--body);margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;letter-spacing:-.01em}
+.eyebrow{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.proto{background:var(--ink);color:var(--bg);font-size:13px}
+.proto .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:space-between;padding-block:8px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tabs a{color:var(--bg);text-decoration:none;padding:4px 12px;border-radius:6px;opacity:.7;border:1px solid transparent}
+.tabs a[aria-current="page"]{opacity:1;border-color:var(--bg)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--stamp);outline-offset:2px}
+/* Logo tampon */
+.brand{display:flex;align-items:center;gap:10px}
+.stamp{font-family:var(--display);font-weight:800;color:var(--stamp);border:2.5px solid var(--stamp);padding:1px 9px;border-radius:5px;transform:rotate(-4deg);display:inline-block;letter-spacing:.04em;font-size:20px;line-height:1.3}
+/* App */
+.app{display:grid;grid-template-columns:230px 1fr;min-height:640px;border:1px solid var(--line);background:var(--surface);margin-block:22px;border-radius:10px;overflow:hidden}
+.side{background:var(--sunk);border-right:1px solid var(--line);padding:18px 14px;display:flex;flex-direction:column;gap:18px}
+.side nav{display:flex;flex-direction:column;gap:2px}
+.side button{all:unset;cursor:pointer;padding:9px 10px;border-radius:7px;display:flex;justify-content:space-between;align-items:center;font-size:14px}
+.side button[aria-current="true"]{background:var(--surface);font-weight:600;box-shadow:0 1px 0 var(--line)}
+.side button:focus-visible{outline:2px solid var(--stamp)}
+.count{font:12px var(--mono);background:var(--surface);border:1px solid var(--line);padding:0 6px;border-radius:999px}
+.count.alert{background:var(--warn-soft);color:var(--warn);border-color:transparent}
+.who{font-size:13px;color:var(--muted);margin-top:auto;border-top:1px solid var(--line);padding-top:12px}
+.who b{color:var(--ink);display:block}
+.main{padding:22px 24px;min-width:0}
+.mhead{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:baseline;margin-bottom:14px}
+.mhead h2{font-size:26px}
+.example{font-size:12px;color:var(--muted);background:var(--sunk);padding:3px 8px;border-radius:5px}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.chip{font-size:12.5px;border:1px solid var(--line);padding:3px 10px;border-radius:999px;color:var(--muted)}
+.chip b{color:var(--ink);font-weight:600}
+.split{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:18px}
+.list{display:flex;flex-direction:column;gap:8px}
+.ao{all:unset;cursor:pointer;display:grid;grid-template-columns:52px 1fr;gap:12px;padding:12px;border:1px solid var(--line);border-radius:9px;background:var(--surface)}
+.ao[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 3px 0 0 var(--ink)}
+.ao:focus-visible{outline:2px solid var(--stamp)}
+.score{display:grid;place-items:center;border-radius:8px;font:600 18px var(--mono);height:52px}
+.score small{display:block;font:600 9.5px var(--body);letter-spacing:.08em}
+.s-go{background:var(--go-soft);color:var(--go)} .s-mid{background:var(--warn-soft);color:var(--warn)} .s-no{background:var(--stamp-soft);color:var(--stamp)}
+.ao .t{font-weight:600;font-size:14.5px;line-height:1.35}
+.ao .m{font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 12px;margin-top:3px}
+.detail{border:1px solid var(--line);border-radius:9px;padding:16px;background:var(--surface);min-width:0}
+.detail h3{font-size:19px;margin:4px 0 10px}
+.bar{height:8px;background:var(--sunk);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ink)}
+.crit{display:grid;grid-template-columns:1fr 46px;gap:4px 10px;align-items:center;font-size:13.5px;margin:8px 0 14px}
+.crit .mono{text-align:right}
+.trap{background:var(--stamp-soft);color:var(--ink);border-radius:7px;padding:9px 11px;font-size:13.5px;margin-bottom:6px}
+.trap b{color:var(--stamp)}
+.check{list-style:none;padding:0;margin:6px 0 14px;font-size:13.5px;display:grid;gap:4px}
+.check li::before{content:"☐ ";color:var(--muted)} .check li.ok::before{content:"☑ ";color:var(--go)}
+.btn{all:unset;cursor:pointer;background:var(--ink);color:var(--surface);padding:10px 16px;border-radius:7px;font-weight:600;font-size:14px;display:inline-block}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn:focus-visible{outline:2px solid var(--stamp)}
+.doc{border:1px solid var(--line);border-radius:9px;background:var(--surface);padding:26px 30px;max-width:780px}
+.doc h3{font-size:16px;margin:18px 0 6px;font-family:var(--body);font-weight:600}
+.doc p{margin:0 0 8px}
+.fill{background:var(--warn-soft);color:var(--warn);padding:0 4px;border-radius:3px;font-size:13px}
+.weight{font:12px var(--mono);color:var(--muted);margin-left:6px}
+.vault{width:100%;border-collapse:collapse;font-size:14px}
+.vault td,.vault th{padding:10px;border-bottom:1px solid var(--line);text-align:left}
+.vault th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.st{font-size:12px;padding:2px 8px;border-radius:999px;font-weight:600}
+.st.ok{background:var(--go-soft);color:var(--go)} .st.w{background:var(--warn-soft);color:var(--warn)} .st.ko{background:var(--stamp-soft);color:var(--stamp)}
+.toast{margin-top:10px;font-size:13px;color:var(--go)}
+/* Vues analyse */
+.view{padding-block:34px 64px}
+.view h2{font-size:clamp(30px,4vw,44px)}
+.lead{color:var(--muted);max-width:70ch;margin:10px 0 24px}
+.sim{display:grid;grid-template-columns:330px 1fr;gap:24px;align-items:start}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px}
+.field{display:grid;grid-template-columns:1fr 92px;gap:8px;align-items:center;margin-bottom:11px;font-size:14px}
+.field input{width:100%;padding:7px 8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:13.5px var(--mono);text-align:right;border-radius:6px}
+.field small{grid-column:1/-1;color:var(--muted);font-size:12px;margin-top:-5px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px}
+.kpi .v{font:500 23px var(--mono);margin-top:4px}
+.kpi .s{font-size:12px;color:var(--muted)}
+.chart svg{width:100%;height:auto;display:block}
+table.t{width:100%;border-collapse:collapse;font-size:14px}
+table.t th,table.t td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+table.t th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.r{text-align:right!important;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.tbl{overflow-x:auto}
+.verdict{border:2px solid var(--stamp);border-radius:10px;padding:18px 20px;margin-bottom:26px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.verdict p{margin:4px 0 0;max-width:80ch}
+.dossier h3{font-family:var(--body);font-weight:600;font-size:19px;margin:34px 0 10px}
+.cards3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.cards3 div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;font-size:14px}
+.cards3 b{display:block;margin-bottom:4px}
+.src{font-size:12px;color:var(--muted)}
+@media (max-width:980px){.split{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.sim{grid-template-columns:1fr}}
+@media (max-width:820px){.app{grid-template-columns:1fr}.side{border-right:0;border-bottom:1px solid var(--line)}.side nav{flex-direction:row;flex-wrap:wrap}.who{display:none}.cards3{grid-template-columns:1fr}.main{padding:16px}.doc{padding:18px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="proto"><div class="wrap">
+  <span>Maquette MVP · projet tech · Safwen Ben Chiboub · 3 octobre 2026</span>
+  <nav class="tabs" aria-label="Vues">
+    <a href="#app" data-v="app">Application</a>
+    <a href="#rentabilite" data-v="rentabilite">Rentabilité</a>
+    <a href="#dossier" data-v="dossier">Dossier</a>
+  </nav>
+</div></div>
+
+<!-- ================= APPLICATION ================= -->
+<section id="v-app" class="wrap">
+  <div class="app">
+    <aside class="side">
+      <div class="brand"><span class="stamp">RETENU</span></div>
+      <nav aria-label="Application">
+        <button data-p="veille" aria-current="true">Veille <span class="count">5</span></button>
+        <button data-p="dce">Analyse du DCE <span class="count">1</span></button>
+        <button data-p="memoire">Mémoire technique</button>
+        <button data-p="coffre">Coffre administratif <span class="count alert">1</span></button>
+      </nav>
+      <div class="who"><b>Propreté Ourcq SARL</b>12 salariés · Montreuil (93)<br>Offre Solo · 79 €/mois</div>
+    </aside>
+    <div class="main" id="main"></div>
+  </div>
+  <p class="src" style="margin-bottom:30px">Données d'exemple : les marchés, l'entreprise et les dates sont fictifs, construits sur le format réel des annonces BOAMP.</p>
+</section>
+
+<!-- ================= RENTABILITÉ ================= -->
+<section id="v-rentabilite" class="wrap view" hidden>
+  <div class="eyebrow">Simulateur SaaS · cases modifiables</div>
+  <h2>Abonnés, revenus récurrents et point mort sur 24 mois</h2>
+  <p class="lead">Valeurs par défaut du dossier : Solo 79 €/mois, Pro 149 €/mois, coût IA + infra ≈ 10 €/utilisateur (Sonnet 5 et Mistral Small, méthode en annexe). J'ajoute un poste que le dossier oubliait : la relecture humaine incluse dans Pro, à 35 € la relecture (ESTIMATION). CAC et churn sont des ESTIMATIONS à valider sur les 30 premiers clients.</p>
+  <div class="sim">
+    <div class="panel" id="inputs"></div>
+    <div>
+      <div class="kpis" id="kpis"></div>
+      <div class="panel chart" style="margin-top:14px">
+        <div class="eyebrow">Revenu récurrent mensuel (barres) et trésorerie cumulée décaissée (ligne)</div>
+        <svg id="chart" viewBox="0 0 680 260" role="img" aria-label="MRR et trésorerie sur 24 mois"></svg>
+      </div>
+      <div class="panel" style="margin-top:14px"><div class="eyebrow">Économie d'un client moyen, par mois</div><div class="tbl"><table class="t" id="unit"></table></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DOSSIER ================= -->
+<section id="v-dossier" class="wrap view dossier" hidden>
+  <div class="eyebrow">Dossier de décision · tech</div>
+  <h2>Pourquoi un copilote d'appels d'offres pour les TPE de services</h2>
+  <div class="verdict"><span class="stamp" style="font-size:26px">RETENU</span>
+    <div><b>Verdict : GO, à condition de passer la prévente.</b>
+    <p>68/100 sur 22 idées étudiées, devant le contenu pour mandataires immobiliers (66) et les avis Google pour restaurants (60). La douleur est la mieux payée de la liste. Garde-fou : 10 dossiers vendus à 59 € en 3 semaines, avant d'écrire une ligne de code.</p></div></div>
+
+  <h3>La douleur, chiffrée</h3>
+  <div class="cards3">
+    <div><b>800 à 1 800 €</b>le prix d'un consultant pour un dossier de réponse. En interne, 400 à 2 000 € de temps. <span class="src">olra.fr/blog/combien-coute-reponse-appel-offres</span></div>
+    <div><b>40 à 60 % de la note</b>vient du mémoire technique, la partie que les TPE rédigent le soir par copier-coller. <span class="src">remporte.fr, guide nettoyage</span></div>
+    <div><b>15 500 + 33 550</b>entreprises de propreté et de paysage en France. 92 % des entreprises de propreté ont moins de 50 salariés. <span class="src">FEP ; Les Entreprises du Paysage</span></div>
+  </div>
+  <p class="src">Marché global : 223 000 marchés publics en 2024 pour 233 Md€, dont 60 % des contrats remportés par des PME (recensement DAJ 2024).</p>
+
+  <h3>Concurrents et angle libre</h3>
+  <div class="tbl"><table class="t">
+    <thead><tr><th>Outil</th><th>Prix</th><th>Faiblesse exploitable</th></tr></thead>
+    <tbody>
+      <tr><td>DossiersGagnants</td><td class="r">79 €/dossier · 189 €/mois</td><td>Généraliste multi-pays, grille tarifaire instable</td></tr>
+      <tr><td>Olra</td><td class="r">79-149 €/mois</td><td>Pensé pour le BTP, rien de propre à la propreté ou au paysage</td></tr>
+      <tr><td>marchespublics.ai</td><td class="r">149-1 290 € TTC/mois</td><td>1 à 2 mémoires/mois seulement dans les offres d'entrée</td></tr>
+      <tr><td>Remporte</td><td class="r">≈ 4 000 € HT/an</td><td>Engagement annuel lourd pour une TPE</td></tr>
+      <tr><td>VeillAO / Marchés Online</td><td class="r">25-100 €/mois</td><td>Veille seule, pas de rédaction</td></tr>
+      <tr><td><b>Retenu</b></td><td class="r"><b>59 €/dossier · 79-149 €/mois</b></td><td><b>Bibliothèques métier propreté et paysage, relecture humaine, coffre avec rappels</b></td></tr>
+    </tbody></table></div>
+
+  <h3>La critique d'expert, et la parade</h3>
+  <div class="cards3">
+    <div><b>Aucune légitimité « marchés publics ».</b>Un gérant ne confie pas un marché à 50 000 € à un inconnu. Parade : un ex-acheteur public ou consultant AO comme associé minoritaire ou relecteur payé (300-800 €/mois), affiché sur le site.</div>
+    <div><b>10 outils IA lancés depuis 2024.</b>Le MVP ne gagnera pas sur la technique. Il gagne sur la verticale (2 métiers), l'accompagnement (visio d'onboarding) et le prix au dossier pour ceux qui répondent moins de 6 fois par an.</div>
+    <div><b>La veille BOAMP est incomplète.</b>Une partie des MAPA de moins de 90 k€ ne paraît que sur les profils acheteurs. On le dit clairement, et on compense par l'analyse de n'importe quel DCE déposé par le client.</div>
+  </div>
+
+  <h3>Pile technique et coûts</h3>
+  <div class="tbl"><table class="t">
+    <thead><tr><th>Brique</th><th>Rôle</th><th class="r">Coût</th></tr></thead>
+    <tbody>
+      <tr><td>Lovable Pro</td><td>Interface et logique</td><td class="r">25 $/mois</td></tr>
+      <tr><td>Supabase Pro (région UE)</td><td>Base, authentification, stockage des DCE, cron de veille</td><td class="r">25 $/mois</td></tr>
+      <tr><td>API BOAMP</td><td>Annonces, licence ouverte 2.0</td><td class="r">0 €</td></tr>
+      <tr><td>Mistral Small (UE)</td><td>Résumés et score go/no-go</td><td class="r">&lt; 0,10 $/utilisateur</td></tr>
+      <tr><td>Claude Sonnet 5</td><td>Analyse des DCE (contexte long) et rédaction</td><td class="r">≈ 6,5 $/utilisateur</td></tr>
+      <tr><td>Stripe Billing</td><td>Abonnements</td><td class="r">1,5 % + 0,25 € + 0,7 %</td></tr>
+    </tbody></table></div>
+  <p class="src">Tarifs repris de pages tierces (eesel.ai, flexprice.io, burnwise.io, benchlm.ai) : à revérifier sur les pages officielles avant de s'engager.</p>
+
+  <h3>Conformité</h3>
+  <div class="tbl"><table class="t"><tbody>
+    <tr><td><b>RGPD</b></td><td>Le client est responsable du traitement, Retenu est sous-traitant (art. 28). DPA dans les CGU, registre des traitements, DCE supprimés 12 mois après la date limite, hébergement UE.</td></tr>
+    <tr><td><b>AI Act</b></td><td>Pas un système à haut risque. Art. 4 (maîtrise de l'IA) depuis le 02/02/2025 ; art. 50 (transparence) depuis le 02/08/2026 : mention « rédigé avec assistance IA » dans l'interface et les métadonnées du DOCX.</td></tr>
+    <tr><td><b>Responsabilité</b></td><td>CGV : pas de garantie d'attribution, pas de conseil juridique, le client reste seul responsable de son offre. Aucune licence requise.</td></tr>
+  </tbody></table></div>
+
+  <h3>Plan 8 semaines, avec arrêt possible</h3>
+  <div class="tbl"><table class="t">
+    <thead><tr><th>Semaines</th><th>Livrable</th><th>Go / no-go</th></tr></thead>
+    <tbody>
+      <tr><td>S1-S3</td><td>Page d'accueil, 40 appels de gérants (liste tirée des données publiques DECP), prévente « dossier accompagné à 59 € » traité à la main avec l'IA et l'expert</td><td><b>≥ 10 préventes payées et ≥ 3 intentions d'abonnement, sinon arrêt</b></td></tr>
+      <tr><td>S2-S4</td><td>Veille BOAMP, profil entreprise, analyse du DCE</td><td>20 comptes Découverte</td></tr>
+      <tr><td>S5-S7</td><td>Mémoire, export DOCX, coffre, Stripe</td><td>5 mémoires notés ≥ 7/10 par l'expert</td></tr>
+      <tr><td>S8</td><td>Lancement, pages SEO « appels d'offres nettoyage [département] », webinaire CMA/CCI</td><td>10 abonnés payants</td></tr>
+    </tbody></table></div>
+  <p class="src">Sources complètes : projets-2/data/tech.md (22 idées, shortlist, critique, registre des risques).</p>
+</section>
+
+<script>
+(function(){
+/* ---------- Données d'exemple ---------- */
+const AOS=[
+ {id:1,score:82,title:"Nettoyage des locaux de la médiathèque et de deux annexes",buyer:"Ville de Montreuil (93)",type:"MAPA",value:"≈ 120 k€ / 3 ans",deadline:"24/10/2026",days:21,lots:1,
+  crit:[["Valeur technique",60],["Prix",40]],sub:[["Méthodologie et organisation",25],["Moyens humains et encadrement",20],["Démarche environnementale",15]],
+  traps:["<b>Visite obligatoire</b> le 14/10 à 10 h : sans attestation de visite, l'offre est irrecevable.","Effectif minimum exigé : <b>4 agents</b> affectés, avec remplacement sous 24 h."],
+  pieces:[["DC1, DC2 ou DUME",1],["Attestation URSSAF de moins de 6 mois",1],["Attestation d'assurance RC Pro",1],["Mémoire technique (10 pages max.)",0],["Attestation de visite",0],["BPU complété",0]]},
+ {id:2,score:74,title:"Entretien des espaces verts de 14 résidences",buyer:"Seine-Saint-Denis Habitat",type:"Appel d'offres ouvert",value:"≈ 480 k€ / 4 ans",deadline:"05/11/2026",days:33,lots:4,
+  crit:[["Valeur technique",55],["Prix",45]],sub:[["Plan de gestion différenciée",25],["Moyens matériels",15],["Insertion sociale",15]],
+  traps:["Clause d'insertion : <b>5 % des heures</b> réservées à des publics éloignés de l'emploi.","Allotissement : 4 lots, répondre à <b>2 lots maximum</b> conseillé vu votre effectif."],
+  pieces:[["DUME",1],["Attestation URSSAF",1],["Références de moins de 3 ans",1],["Mémoire technique par lot",0],["Plan de gestion différenciée",0]]},
+ {id:3,score:61,title:"Nettoyage de la vitrerie de 9 écoles",buyer:"Ville de Bobigny (93)",type:"MAPA",value:"≈ 45 k€ / an",deadline:"18/10/2026",days:15,lots:1,
+  crit:[["Prix",60],["Valeur technique",40]],sub:[["Sécurité du travail en hauteur",25],["Planning hors temps scolaire",15]],
+  traps:["Travail en hauteur : <b>habilitation nacelle</b> exigée pour 2 agents.","Prix pondéré à 60 % : marge serrée à prévoir."],
+  pieces:[["DC1/DC2",1],["Attestation URSSAF",1],["Habilitations CACES",0],["Mémoire technique",0]]},
+ {id:4,score:55,title:"Prestations de nettoyage des bureaux",buyer:"CPAM de la Seine-Saint-Denis",type:"Appel d'offres ouvert",value:"≈ 900 k€ / 4 ans",deadline:"12/11/2026",days:40,lots:2,
+  crit:[["Valeur technique",50],["Prix",40],["RSE",10]],sub:[["Organisation multisite",25],["Contrôle qualité",15],["Formation",10]],
+  traps:["Chiffre d'affaires minimum exigé : <b>1,5 M€</b>. Votre CA (0,9 M€) est en dessous : envisager un groupement."],
+  pieces:[["DUME",1],["Bilans des 3 derniers exercices",0],["Attestation URSSAF",1],["Mémoire technique",0]]},
+ {id:5,score:38,title:"Entretien des parcs et jardins du centre-ville",buyer:"Ville de Saint-Denis (93)",type:"MAPA",value:"≈ 70 k€ / an",deadline:"09/10/2026",days:6,lots:1,
+  crit:[["Prix",50],["Valeur technique",50]],sub:[["Qualifications",25],["Méthodologie",25]],
+  traps:["Certification <b>Qualipaysage</b> exigée : vous ne l'avez pas.","Date limite dans <b>6 jours</b>."],
+  pieces:[["DC1/DC2",1],["Certificat Qualipaysage",0],["Mémoire technique",0]]}
+];
+let current=1, pane="veille";
+const main=document.getElementById("main");
+const cls=s=>s>=70?"s-go":s>=50?"s-mid":"s-no";
+const lab=s=>s>=70?"GO":s>=50?"À VOIR":"NO-GO";
+function veille(){
+  const a=AOS.find(x=>x.id===current);
+  return `<div class="mhead"><h2>Veille du jour</h2><span class="example">Exemple · 5 annonces BOAMP correspondent à votre profil</span></div>
+  <div class="filters"><span class="chip">Métier <b>Propreté, vitrerie</b></span><span class="chip">Départements <b>93, 75, 94</b></span><span class="chip">Montant <b>&lt; 1 M€</b></span><span class="chip">Mis à jour <b>ce matin, 7 h</b></span></div>
+  <div class="split"><div class="list">${AOS.map(x=>`<button class="ao" data-id="${x.id}" aria-pressed="${x.id===current}">
+     <div class="score ${cls(x.score)}">${x.score}<small>${lab(x.score)}</small></div>
+     <div><div class="t">${x.title}</div><div class="m"><span>${x.buyer}</span><span>${x.type}</span><span class="mono">${x.value}</span><span>Limite ${x.deadline} (J-${x.days})</span></div></div></button>`).join("")}</div>
+   <div class="detail">${resume(a)}</div></div>`;
+}
+function resume(a){
+  return `<div class="eyebrow">Résumé IA · 5 lignes</div><h3>${a.title}</h3>
+  <p style="margin:0 0 10px;font-size:14px">${a.buyer} · ${a.type} · ${a.lots} lot${a.lots>1?"s":""} · <span class="mono">${a.value}</span></p>
+  <div class="eyebrow" style="margin-top:8px">Pondération des critères</div>
+  <div class="crit">${a.crit.map(([n,w])=>`<span>${n}</span><span class="mono">${w} %</span><div class="bar" style="grid-column:1/-1"><i style="width:${w}%"></i></div>`).join("")}</div>
+  <div class="eyebrow">Points de vigilance</div>${a.traps.map(t=>`<div class="trap">${t}</div>`).join("")}
+  <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><button class="btn" data-go="dce">Analyser le DCE complet</button><button class="btn ghost" data-go="memoire">Préparer le mémoire</button></div>`;
+}
+function dce(){
+  const a=AOS.find(x=>x.id===current);const done=a.pieces.filter(p=>p[1]).length;
+  return `<div class="mhead"><h2>Analyse du DCE</h2><span class="example">Exemple · RC 18 p., CCTP 42 p., CCAP 26 p. lus en 2 min</span></div>
+  <div class="split"><div class="detail"><div class="eyebrow">Marché</div><h3>${a.title}</h3>
+   <p style="font-size:14px;margin:0 0 12px">${a.buyer} · date limite <b>${a.deadline}</b> à 12 h · <span class="mono">${a.value}</span></p>
+   <div class="eyebrow">Critères et sous-critères</div>
+   <div class="crit">${a.crit.map(([n,w])=>`<span><b>${n}</b></span><span class="mono">${w} %</span>`).join("")}${a.sub.map(([n,w])=>`<span>— ${n}</span><span class="mono">${w} %</span>`).join("")}</div>
+   <div class="eyebrow">Pièges détectés</div>${a.traps.map(t=>`<div class="trap">${t}</div>`).join("")}</div>
+   <div class="detail"><div class="eyebrow">Checklist de dépôt · ${done}/${a.pieces.length} prêtes</div>
+   <div class="bar" style="margin:8px 0"><i style="width:${Math.round(done/a.pieces.length*100)}%;background:var(--go)"></i></div>
+   <ul class="check">${a.pieces.map(([n,ok])=>`<li class="${ok?"ok":""}">${n}${ok?" · depuis le coffre":""}</li>`).join("")}</ul>
+   <button class="btn" data-go="memoire">Générer le mémoire calqué sur ces critères</button></div></div>`;
+}
+function memoire(){
+  const a=AOS.find(x=>x.id===current);
+  return `<div class="mhead"><h2>Mémoire technique</h2><span class="example">Exemple · brouillon généré, à relire</span></div>
+  <div class="doc"><div class="eyebrow">${a.buyer} · ${a.title}</div>
+   <h2 style="font-size:24px;margin:6px 0 4px">Mémoire technique · Propreté Ourcq SARL</h2>
+   <p style="font-size:12.5px;color:var(--muted)">Plan calqué sur le règlement de consultation · rédigé avec assistance IA</p>
+   ${a.sub.map(([n,w],i)=>`<h3>${i+1}. ${n}<span class="weight">${w} % de la note</span></h3>${para(n)}`).join("")}
+   <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px"><button class="btn" id="export">Exporter en DOCX</button><button class="btn ghost" id="review">Demander une relecture humaine (Pro)</button></div>
+   <div class="toast" id="tst" hidden></div></div>`;
+}
+function para(n){
+  if(/Méthodologie|Plan de gestion|Organisation/.test(n))return `<p>Les prestations seront réalisées en horaires décalés (6 h-9 h) pour ne pas gêner l'accueil du public. Chaque site dispose d'un protocole écrit par zone (accueil, salles, sanitaires) et d'un cahier de liaison numérique consulté par le référent de la ville.</p><p>Fréquences proposées : <span class="fill">à confirmer selon le CCTP, annexe 2</span>.</p>`;
+  if(/humains|Formation/.test(n))return `<p>Une équipe dédiée de 4 agents encadrée par <span class="fill">nom du chef d'équipe</span>, présent dans l'entreprise depuis <span class="fill">X ans</span>. Absences remplacées sous 24 h grâce à un pool de 3 agents polyvalents formés au site.</p>`;
+  if(/environnement|RSE|Insertion/.test(n))return `<p>Produits écolabellisés (Ecolabel européen) pour 100 % des usages courants, dosage par centrale de dilution, microfibres lavées et réutilisées. Bilan de consommation transmis chaque trimestre.</p>`;
+  return `<p>Section générée à partir de votre bibliothèque métier et de vos références. <span class="fill">À compléter avec un exemple chiffré</span>.</p>`;
+}
+function coffre(){
+  const rows=[["Kbis","12/09/2026","valide 3 mois","ok","À jour"],["Attestation de vigilance URSSAF","20/04/2026","expire le 20/10/2026","w","Expire dans 17 jours"],["Attestation de régularité fiscale","15/01/2026","annuelle","ok","À jour"],["Assurance RC Pro","01/01/2026","31/12/2026","ok","À jour"],["DC1 / DC2 pré-remplis","—","—","ok","Prêts"],["Certificat Qualipaysage","—","—","ko","Absent"]];
+  return `<div class="mhead"><h2>Coffre administratif</h2><span class="example">Exemple · rappels automatiques à J-30</span></div>
+  <div class="tbl"><table class="vault"><thead><tr><th>Document</th><th>Déposé le</th><th>Validité</th><th>Statut</th></tr></thead><tbody>
+  ${rows.map(r=>`<tr><td>${r[0]}</td><td class="mono">${r[1]}</td><td>${r[2]}</td><td><span class="st ${r[3]}">${r[4]}</span></td></tr>`).join("")}</tbody></table></div>
+  <div class="trap" style="margin-top:14px;background:var(--warn-soft)"><b style="color:var(--warn)">Rappel envoyé par e-mail et WhatsApp :</b> renouvelez l'attestation URSSAF sur urssaf.fr avant le 20/10, elle est exigée pour 3 de vos 5 marchés en cours.</div>`;
+}
+const PANES={veille,dce,memoire,coffre};
+function render(){main.innerHTML=PANES[pane]();
+  document.querySelectorAll(".side button").forEach(b=>b.setAttribute("aria-current",b.dataset.p===pane));}
+document.querySelector(".side nav").addEventListener("click",e=>{const b=e.target.closest("button");if(b){pane=b.dataset.p;render();}});
+main.addEventListener("click",e=>{
+  const ao=e.target.closest(".ao");if(ao){current=+ao.dataset.id;render();return;}
+  const go=e.target.closest("[data-go]");if(go){pane=go.dataset.go;render();return;}
+  if(e.target.id==="export"||e.target.id==="review"){const t=document.getElementById("tst");t.hidden=false;
+    t.textContent=e.target.id==="export"?"Maquette : l'export produit un .docx avec la mention « rédigé avec assistance IA » dans les métadonnées.":"Maquette : la relecture est confiée à l'expert AO, retour sous 48 h ouvrées.";}
+});
+render();
+
+/* ---------- Simulateur SaaS ---------- */
+const P=[
+ ["solo","Prix Solo (€ HT/mois)",79,""],["pro","Prix Pro (€ HT/mois)",149,""],["mix","Part de clients Pro (%)",30,"ESTIMATION"],
+ ["var","Coût IA + infra + Stripe par client (€)",10,"méthode : tech.md §4.4"],["rev","Coût d'une relecture humaine (€)",35,"ESTIMATION, 1 par mois en Pro"],
+ ["new0","Nouveaux clients au mois 1",3,"prévente"],["newmax","Nouveaux clients / mois en croisière",15,"atteints au mois 12"],
+ ["churn","Churn mensuel (%)",6,"ESTIMATION prudente"],["cac","CAC (€)",250,"prospection DECP + temps fondateur"],["timeshare","Part du CAC en temps du fondateur (%)",80,"non décaissée : ≈ 1 000 € de temps pour 5 clients"],
+ ["fixed","Coûts fixes (€/mois)",100,"Lovable, Supabase, domaine, e-mails"],["expert","Expert AO (€/mois)",400,"relecteur payé, parade légitimité"],
+ ["launch","Budget de lancement (€)",8000,"freelance sécurité, bibliothèques, juridique, salons"],
+];
+const inp=document.getElementById("inputs");
+inp.innerHTML=P.map(([id,l,v,h])=>`<div class="field"><label for="s-${id}">${l}</label><input id="s-${id}" type="number" step="any" value="${v}">${h?`<small>${h}</small>`:""}</div>`).join("");
+const g=id=>parseFloat(document.getElementById("s-"+id).value)||0;
+const eur=(n,d=0)=>n.toLocaleString("fr-FR",{minimumFractionDigits:d,maximumFractionDigits:d})+" €";
+function calc(){
+  const mix=g("mix")/100, arpu=g("solo")*(1-mix)+g("pro")*mix, cost=g("var")+mix*g("rev"), gm=arpu-cost, gmp=gm/arpu, churn=g("churn")/100;
+  const ltv=churn>0?gm/churn:Infinity, payback=g("cac")/gm;
+  let cust=0,cash=-g("launch"),mrr=[],cashS=[cash],be=0;
+  for(let m=1;m<=24;m++){
+    const nw=g("new0")+(g("newmax")-g("new0"))*Math.min(m-1,11)/11;
+    cust=cust*(1-churn)+nw;
+    const rev=cust*arpu, c=cust*cost+g("fixed")+g("expert")+nw*g("cac")*(1-g("timeshare")/100);
+    cash+=rev-c; mrr.push(rev); cashS.push(cash);
+    if(!be&&rev-c>0)be=m;
+  }
+  document.getElementById("kpis").innerHTML=`
+   <div class="kpi"><div class="eyebrow">ARPU</div><div class="v">${eur(arpu)}</div><div class="s">marge brute ${(gmp*100).toFixed(0)} %</div></div>
+   <div class="kpi"><div class="eyebrow">LTV / CAC</div><div class="v">${isFinite(ltv)?(ltv/g("cac")).toFixed(1):"∞"}</div><div class="s">LTV ${isFinite(ltv)?eur(ltv):"∞"} · payback ${payback.toFixed(1)} mois</div></div>
+   <div class="kpi"><div class="eyebrow">MRR au mois 12</div><div class="v">${eur(mrr[11])}</div><div class="s">M24 : ${eur(mrr[23])}</div></div>
+   <div class="kpi"><div class="eyebrow">Mois rentable</div><div class="v">${be?"M"+be:"> M24"}</div><div class="s">trésorerie M24 : ${eur(cashS[24])}</div></div>`;
+  document.getElementById("unit").innerHTML=`<tbody>
+   <tr><td>Revenu moyen (${Math.round(mix*100)} % Pro)</td><td class="r">${eur(arpu,2)}</td></tr>
+   <tr><td>IA, hébergement, Stripe</td><td class="r">−${eur(g("var"),2)}</td></tr>
+   <tr><td>Relecture humaine (part Pro)</td><td class="r">−${eur(mix*g("rev"),2)}</td></tr>
+   <tr><td><b>Marge brute par client</b></td><td class="r"><b>${eur(gm,2)}</b></td></tr>
+   <tr><td>Durée de vie moyenne (1 / churn)</td><td class="r">${churn>0?(1/churn).toFixed(1)+" mois":"—"}</td></tr></tbody>`;
+  draw(mrr,cashS);
+}
+function draw(mrr,cash){
+  const W=680,H=260,pl=58,pr=12,pt=14,pb=28,n=24;
+  const mx=Math.max(...mrr,...cash,1),mn=Math.min(0,...cash),rng=mx-mn;
+  const x=i=>pl+i*(W-pl-pr)/n, y=v=>pt+(mx-v)*(H-pt-pb)/rng, bw=(W-pl-pr)/n*.62;
+  const step=Math.pow(10,Math.floor(Math.log10(rng/4)));const tick=Math.ceil(rng/4/step)*step;
+  let s="";for(let v=Math.ceil(mn/tick)*tick;v<=mx;v+=tick)s+=`<line x1="${pl}" x2="${W-pr}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${pl-6}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="var(--muted)" font-family="var(--mono)">${Math.round(v/1000)} k€</text>`;
+  mrr.forEach((v,i)=>s+=`<rect x="${x(i)+((W-pl-pr)/n-bw)/2}" y="${y(v)}" width="${bw}" height="${y(0)-y(v)}" fill="var(--ink)" opacity=".85"/>`);
+  const line=cash.map((v,i)=>`${i?"L":"M"}${x(i).toFixed(1)} ${y(v).toFixed(1)}`).join(" ");
+  s+=`<line x1="${pl}" x2="${W-pr}" y1="${y(0)}" y2="${y(0)}" stroke="var(--muted)"/><path d="${line}" fill="none" stroke="var(--stamp)" stroke-width="2.5"/><circle cx="${x(24)}" cy="${y(cash[24])}" r="4.5" fill="var(--stamp)"/>`;
+  for(let i=0;i<=24;i+=6)s+=`<text x="${x(i)}" y="${H-8}" text-anchor="middle" font-size="11" fill="var(--muted)">M${i}</text>`;
+  s+=`<text x="${x(24)-8}" y="${y(cash[24])-10}" text-anchor="end" font-size="12" fill="var(--ink)" font-family="var(--mono)">${eur(cash[24])}</text>`;
+  document.getElementById("chart").innerHTML=s;
+}
+inp.addEventListener("input",calc);calc();
+
+/* ---------- Vues ---------- */
+const views=["app","rentabilite","dossier"];
+function route(){const h=(location.hash||"#app").slice(1);const v=views.includes(h)?h:"app";
+  views.forEach(n=>document.getElementById("v-"+n).hidden=n!==v);
+  document.querySelectorAll(".tabs a").forEach(a=>a.setAttribute("aria-current",a.dataset.v===v?"page":"false"));window.scrollTo(0,0);}
+window.addEventListener("hashchange",route);route();
+})();
+</script>

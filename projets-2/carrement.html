@@ -1,0 +1,412 @@
+<title>Carrément — carrés de soie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Italiana&family=Jost:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
+<style>
+/* Layout : boutique éditoriale en 3 vues (boutique / rentabilité / dossier), grille 12 col qui tombe à 1 col sous 720px. */
+:root{
+  --bg:#F3F5F2; --surface:#FFFFFF; --ink:#1E1A24; --muted:#5E5867; --line:#DCDDE2;
+  --plum:#6B2350; --plum-soft:#F2E3EC; --saffron:#E3A72F; --good:#2E7D5B; --bad:#B23A3A;
+  --display:"Italiana", "Didot", "Bodoni 72", Georgia, serif;
+  --body:"Jost", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --mono:"DM Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#16131A; --surface:#211C26; --ink:#F1ECF3; --muted:#B4AABB; --line:#3A3341;
+  --plum:#E08BBE; --plum-soft:#3A2233; --saffron:#F0BE5A; --good:#6CC79C; --bad:#F08A8A; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#16131A; --surface:#211C26; --ink:#F1ECF3; --muted:#B4AABB; --line:#3A3341;
+  --plum:#E08BBE; --plum-soft:#3A2233; --saffron:#F0BE5A; --good:#6CC79C; --bad:#F08A8A; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+/* Bandeau maquette */
+.proto{background:var(--ink);color:var(--bg);font-size:13px}
+.proto .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:space-between;padding-block:8px}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tabs a{color:var(--bg);text-decoration:none;padding:4px 12px;border-radius:999px;border:1px solid transparent;opacity:.75}
+.tabs a[aria-current="page"]{border-color:var(--bg);opacity:1}
+.tabs a:focus-visible{outline:2px solid var(--saffron);outline-offset:2px}
+/* Boutique */
+.shopbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.shopbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.logo{font-family:var(--display);font-size:30px;letter-spacing:.02em}
+.logo b{color:var(--plum);font-weight:400}
+.shopnav{display:flex;gap:20px;font-size:14px;color:var(--muted);flex-wrap:wrap}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:48px 40px}
+.hero h1{font-size:clamp(40px,6vw,76px);line-height:1.02}
+.hero h1 em{font-style:normal;color:var(--plum)}
+.hero p{max-width:46ch;color:var(--muted);font-size:18px;margin:18px 0 26px}
+.hero-art{position:relative;aspect-ratio:1;max-width:100%}
+.hero-art svg{width:100%;height:100%;display:block;filter:drop-shadow(0 18px 30px rgba(30,20,40,.18));transform:rotate(-6deg);transition:transform .6s ease}
+.hero-art:hover svg{transform:rotate(-2deg) scale(1.01)}
+.tag{position:absolute;right:4%;bottom:6%;background:var(--surface);border:1px solid var(--line);padding:8px 12px;font-size:13px;border-radius:2px}
+form.wait{display:flex;gap:8px;flex-wrap:wrap;max-width:460px}
+form.wait input{flex:1 1 220px;min-width:0;padding:13px 14px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;border-radius:2px}
+.btn{background:var(--plum);color:var(--surface);border:0;padding:13px 20px;font:500 15px var(--body);border-radius:2px;cursor:pointer}
+.btn:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--saffron);outline-offset:2px}
+.ok{color:var(--good);font-size:14px;margin-top:10px}
+.strip{display:flex;flex-wrap:wrap;gap:10px 28px;border-block:1px solid var(--line);padding-block:14px;font-size:14px;color:var(--muted)}
+.strip span::before{content:"◆ ";color:var(--saffron)}
+.section{padding-block:56px}
+.section h2{font-size:clamp(30px,4vw,44px);margin-bottom:8px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;margin-top:28px}
+.card{display:flex;flex-direction:column;gap:8px;cursor:pointer;background:none;border:0;padding:0;text-align:left;color:inherit;font:inherit}
+.card .art{aspect-ratio:1;background:var(--surface);border:1px solid var(--line);padding:14px}
+.card .art svg{width:100%;height:100%;display:block}
+.card:hover .art,.card[aria-pressed="true"] .art{border-color:var(--plum)}
+.card .name{font-family:var(--display);font-size:22px}
+.card .meta{display:flex;justify-content:space-between;font-size:14px;color:var(--muted)}
+.pdp{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;background:var(--surface);border:1px solid var(--line);padding:32px}
+.pdp .art{aspect-ratio:1}
+.pdp .art svg{width:100%;height:100%}
+.pdp h3{font-size:38px}
+.price{font-family:var(--mono);font-size:22px;margin:6px 0 16px}
+.specs{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-size:14px;margin:18px 0}
+.specs dt{color:var(--muted)}
+.specs dd{margin:0}
+.wear{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.wear div{border:1px solid var(--line);padding:12px;font-size:13px}
+.wear b{display:block;font-weight:600;margin-bottom:2px}
+footer.shopfoot{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);font-size:13px}
+/* Rentabilité + dossier */
+.view{padding-block:40px 64px}
+.view h2{font-size:clamp(32px,4vw,48px)}
+.lead{color:var(--muted);max-width:68ch;margin:10px 0 28px}
+.sim{display:grid;grid-template-columns:340px 1fr;gap:28px;align-items:start}
+.panel{background:var(--surface);border:1px solid var(--line);padding:22px}
+.field{display:grid;grid-template-columns:1fr 92px;gap:8px;align-items:center;margin-bottom:12px;font-size:14px}
+.field input{width:100%;padding:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:14px var(--mono);text-align:right;border-radius:2px}
+.field small{grid-column:1/-1;color:var(--muted);font-size:12px;margin-top:-6px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.kpi{background:var(--surface);border:1px solid var(--line);padding:14px}
+.kpi .v{font-family:var(--mono);font-size:24px;margin-top:4px}
+.kpi .s{font-size:12px;color:var(--muted)}
+.pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle}
+.pill.ok2{background:color-mix(in srgb,var(--good) 18%,transparent);color:var(--good)}
+.pill.ko{background:color-mix(in srgb,var(--bad) 18%,transparent);color:var(--bad)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+td.r,th.r{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.tbl{overflow-x:auto;margin-top:12px}
+.chart{margin-top:18px}
+.chart svg{width:100%;height:auto;display:block}
+.cols2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.verdict{border-left:4px solid var(--plum);background:var(--plum-soft);padding:18px 20px;margin-bottom:28px}
+.verdict p{margin:6px 0 0}
+.dossier h3{font-family:var(--body);font-weight:600;font-size:20px;margin:36px 0 10px}
+.src{font-size:12px;color:var(--muted)}
+.crit{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.crit div{background:var(--surface);border:1px solid var(--line);padding:14px;font-size:14px}
+.crit b{display:block;margin-bottom:4px}
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.sim{grid-template-columns:1fr}}
+@media (max-width:720px){.hero,.pdp,.cols2{grid-template-columns:1fr}.crit{grid-template-columns:1fr}.shopnav{display:none}.pdp{padding:18px}.wear{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="proto"><div class="wrap">
+  <span>Maquette MVP · projet e-commerce · Safwen Ben Chiboub · 3 octobre 2026</span>
+  <nav class="tabs" aria-label="Vues">
+    <a href="#boutique" data-v="boutique">Boutique</a>
+    <a href="#rentabilite" data-v="rentabilite">Rentabilité</a>
+    <a href="#dossier" data-v="dossier">Dossier</a>
+  </nav>
+</div></div>
+
+<!-- ========== BOUTIQUE ========== -->
+<section id="v-boutique">
+  <header class="shopbar"><div class="wrap">
+    <div class="logo">Carrément<b>.</b></div>
+    <nav class="shopnav"><span>Carrés 90</span><span>Minis 53</span><span>Coffrets</span><span>Comment le porter</span></nav>
+    <span class="num" style="font-size:14px">Panier (0)</span>
+  </div></header>
+
+  <div class="wrap">
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Collection n°1 · 4 dessins · 200 pièces numérotées</div>
+        <h1>Le carré de soie de créatrice, <em>à moins de 100 €.</em></h1>
+        <p>Twill de soie de mûrier 14 mm, roulotté à la main, dessiné par des illustratrices indépendantes. Au cou, dans les cheveux, sur le sac.</p>
+        <form class="wait" id="wait">
+          <label for="email" class="eyebrow" style="flex-basis:100%">Liste d'attente : −10 % et accès 48 h avant tout le monde</label>
+          <input id="email" type="email" required placeholder="votre@email.fr" autocomplete="email">
+          <button class="btn" type="submit">Je réserve ma place</button>
+        </form>
+        <div class="ok" id="waitok" hidden>Merci, votre place est réservée. Vous recevrez le code −10 % à l'ouverture.</div>
+      </div>
+      <div class="hero-art"><svg id="heroScarf" viewBox="0 0 100 100" role="img" aria-label="Carré Orangerie"></svg><div class="tag">« Orangerie » · 95 €</div></div>
+    </div>
+    <div class="strip"><span>Livraison offerte dès 49 €</span><span>Retours 30 jours</span><span>Dessin signé et numéroté</span><span>Coffret cadeau inclus</span></div>
+  </div>
+
+  <div class="wrap section">
+    <div class="eyebrow">La collection</div>
+    <h2>Quatre dessins, deux formats</h2>
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <div class="wrap section" style="padding-top:0">
+    <div class="pdp" id="pdp"></div>
+  </div>
+
+  <footer class="shopfoot"><div class="wrap">Carrément. — Paris · 100 % soie de mûrier · Fabriqué à Hangzhou, dessiné en France · Importateur responsable (GPSR) : Carrément SAS, Paris</div></footer>
+</section>
+
+<!-- ========== RENTABILITÉ ========== -->
+<section id="v-rentabilite" class="wrap view" hidden>
+  <div class="eyebrow">Simulateur · toutes les cases sont modifiables</div>
+  <h2>Ce que rapporte un carré, et le lancement sur 12 mois</h2>
+  <p class="lead">Valeurs par défaut issues du dossier : prix usine Yueran 13,50 $ (palier 50-199), droit 8 % (NC 6214 10 00 90), Shopify 1,5 % + 0,25 €, Mondial Relay pro 4,50 €. Le CAC et le taux de rachat sont des ESTIMATIONS à remplacer après le test publicitaire.</p>
+  <div class="sim">
+    <div class="panel" id="inputs"></div>
+    <div>
+      <div class="kpis" id="kpis"></div>
+      <div class="panel chart" style="margin-top:16px">
+        <div class="eyebrow">Trésorerie cumulée sur 12 mois (stock, dessins et pub inclus)</div>
+        <svg id="cashchart" viewBox="0 0 640 240" role="img" aria-label="Trésorerie cumulée"></svg>
+      </div>
+      <div class="panel" style="margin-top:16px">
+        <div class="eyebrow">Décomposition d'une commande (carré seul)</div>
+        <div class="tbl"><table id="waterfall"></table></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DOSSIER ========== -->
+<section id="v-dossier" class="wrap view dossier" hidden>
+  <div class="eyebrow">Dossier de décision · e-commerce</div>
+  <h2>Pourquoi le carré de soie, et pas autre chose</h2>
+  <div class="verdict">
+    <b>Verdict : GO sous conditions.</b>
+    <p>Score 79/100 sur une longlist de 24 produits dans 14 pays. C'est le seul produit de la shortlist dont la demande est mesurable et en hausse en France. Condition n°1 : une 1re commande doit coûter moins de 54 € en publicité, sinon on coupe.</p>
+  </div>
+
+  <h3>La demande, mesurée</h3>
+  <div class="cols2">
+    <div class="panel chart">
+      <div class="eyebrow">Pic de décembre « foulard en soie », Google Trends France</div>
+      <svg id="trendchart" viewBox="0 0 420 200" role="img" aria-label="Pics de décembre 2021 à 2025"></svg>
+      <div class="src">trends.firecrawl.dev, FR, 5 ans, consulté le 2026-10-03. Échelle commune avec « taie d'oreiller en soie » (moyenne 32) ; « foulard en soie » : moyenne 19.</div>
+    </div>
+    <div class="panel">
+      <div class="eyebrow">Ce que les chiffres disent, et ce qu'ils ne disent pas</div>
+      <ul>
+        <li>Pic de Noël : 35 → 62 entre 2021 et 2025. La base hors saison passe de 12-15 à 17-25.</li>
+        <li>Requête dominante : « foulard soie femme » (100). Usage montant : « foulard en soie cheveux » (25).</li>
+        <li><b>Correctif :</b> une partie des requêtes vient des mots fléchés (« foulard en soie en 6 lettres »). Hausse réelle retenue avec prudence : +30 à +50 %.</li>
+        <li>Concurrence publicitaire : ~77 pubs Meta actives en France, surtout de petites maisons (Malfroy, Lecomte Flament, MÊME). Aucun acteur dominant.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Positionnement prix</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Marque</th><th>Carré 90</th><th>Positionnement</th></tr></thead>
+    <tbody>
+      <tr><td>Accessmoda</td><td class="r">37,50 €</td><td>Entrée de gamme sans récit, c'est le plancher</td></tr>
+      <tr><td><b>Carrément.</b></td><td class="r"><b>95 €</b></td><td><b>Dessin de créatrice, roulotté main, moins de 100 €</b></td></tr>
+      <tr><td>La Caressette</td><td class="r">120 €</td><td>Dessins exclusifs, roulotté main : la plus proche</td></tr>
+      <tr><td>Be Parisian</td><td class="r">210 €</td><td>Création parisienne, made in France</td></tr>
+      <tr><td>Christian Lacroix</td><td class="r">215 €</td><td>Griffe en multimarque</td></tr>
+      <tr><td>Maison Fétiche</td><td class="r">279 €</td><td>Luxe créateur, roulotté à la française</td></tr>
+    </tbody></table></div>
+  <p class="src">Prix relevés sur les sites des marques (data/ecommerce.md, §4.2).</p>
+
+  <h3>Fournisseurs à consulter (devis + 2 échantillons chacun)</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Atelier</th><th>Ville</th><th>MOQ</th><th>Prix indicatif</th><th>Contact public</th></tr></thead>
+    <tbody>
+      <tr><td>Yueran Textile</td><td>n.c.</td><td class="r">50/dessin</td><td class="r">13,50 $ (50-199)</td><td>formulaire digitalprintsilk.com</td></tr>
+      <tr><td>Taihu Snow Silk</td><td>Suzhou</td><td class="r">50</td><td class="r">10,99-49,99 $</td><td>carol@taihusnow.com</td></tr>
+      <tr><td>Hangzhou Sino Silk</td><td>Hangzhou</td><td class="r">50/dessin</td><td class="r">6,75-6,95 $ (satin)</td><td>support@snsilk.com</td></tr>
+      <tr><td>DreamSilk</td><td>Suzhou</td><td class="r">50</td><td>sur devis</td><td>info@dreamsilken.com</td></tr>
+      <tr><td>Huacuiyuan Silk Scarf</td><td>Hangzhou</td><td>« pas de MOQ »</td><td>sur devis</td><td>tina@silkhangzhou.com</td></tr>
+    </tbody></table></div>
+
+  <h3>La critique d'expert</h3>
+  <div class="crit">
+    <div><b>Tout repose sur le dessin.</b>Un motif moyen ne se vend pas, même bien photographié. Parade : collaborer avec 4 illustratrices payées 300 € d'avance + 8 % de redevance, au lieu de 2 000 € de cession. Moins de cash bloqué, et chaque artiste fait sa propre promotion.</div>
+    <div><b>La 1re commande rapporte peu.</b>Avec un CAC de 40 €, il reste ~14 € par 1re commande. La rentabilité vient du rachat : drops de printemps et de Noël, coffrets, mini en vente additionnelle.</div>
+    <div><b>Ressemblance avec Luméa.</b>Même cliente, même logique de textile imprimé. Gardez deux marques distinctes, mais partagez les données (liste e-mail, audiences Meta) : c'est un levier de CAC, pas un doublon.</div>
+  </div>
+
+  <h3>Risques chiffrés</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Risque</th><th>Proba.</th><th>Impact</th><th>Solution</th><th class="r">Coût</th></tr></thead>
+    <tbody>
+      <tr><td>Écart échantillon / série (couleurs, roulotté machine)</td><td>30 %</td><td>Retours, avis négatifs</td><td>Pré-série photographiée + inspection tierce (QIMA)</td><td class="r">≈ 250-300 $</td></tr>
+      <tr><td>Copie des dessins</td><td>25 %</td><td>Érosion du prix</td><td>Dépôt dessins et modèles EUIPO + contrat de cession</td><td class="r">≈ 350 € (ESTIM.)</td></tr>
+      <tr><td>Mini classé en 6213 au lieu de 6214</td><td>40 %</td><td>Droit différent</td><td>Demande de RTC à la douane avant le 2e réassort</td><td class="r">0 €</td></tr>
+      <tr><td>CAC > 54 € après 1 000 € dépensés</td><td>35 % (ESTIM.)</td><td>1re commande à perte</td><td>Couper la campagne, basculer sur organique + créatrices</td><td class="r">0 €</td></tr>
+    </tbody></table></div>
+
+  <h3>Plan 90 jours</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Semaines</th><th>Action</th><th>Critère de passage</th></tr></thead>
+    <tbody>
+      <tr><td>S1-S3</td><td>Recruter 4 illustratrices, devis de 3 ateliers, 2 échantillons chacun, page liste d'attente</td><td>1 échantillon validé, roulotté main vérifié</td></tr>
+      <tr><td>S4-S6</td><td>Reels et UGC (« 3 façons de le porter »), 300 € de pub test, liste d'attente</td><td>≥ 300 inscrites, coût par inscrite ≤ 1,50 €</td></tr>
+      <tr><td>S7-S10</td><td>Commande 4 × 50 carrés + 100 minis, coffrets, précommande</td><td>≥ 40 précommandes</td></tr>
+      <tr><td>S11-S13</td><td>Livraison avant Noël (pic de décembre), drop n°2 annoncé</td><td>CAC ≤ 54 €, note ≥ 4,6/5</td></tr>
+    </tbody></table></div>
+  <p class="src">Sources complètes : projets-2/data/ecommerce.md, ecommerce_fournisseurs.csv, verifs.md.</p>
+</section>
+
+<script>
+(function(){
+/* ---------- Motifs de carrés (illustrations) ---------- */
+const DESIGNS={
+  orangerie:{name:"Orangerie",price:95,size:"90 × 90",bg:"#E9A53B",band:"#6B2350",ink:"#FFF6E3",accent:"#2E5E4A",artist:"Inès L., illustratrice à Lyon"},
+  rivage:{name:"Rivage",price:95,size:"90 × 90",bg:"#1F3557",band:"#E3A72F",ink:"#D7E6F2",accent:"#F2C6B4",artist:"Maëlle D., graveuse à Nantes"},
+  atlas:{name:"Atlas",price:95,size:"90 × 90",bg:"#2F6B57",band:"#F3E2C0",ink:"#F3E2C0",accent:"#C8553D",artist:"Yasmine B., céramiste à Marseille"},
+  nuit:{name:"Nuit d'août",price:95,size:"90 × 90",bg:"#3B1A3F",band:"#E08BBE",ink:"#F6D77A",accent:"#9CC5E8",artist:"Léa K., illustratrice à Paris"},
+  miniOr:{name:"Mini Orangerie",price:49,size:"53 × 53",base:"orangerie"},
+  miniRi:{name:"Mini Rivage",price:49,size:"53 × 53",base:"rivage"},
+  coffret:{name:"Coffret duo minis",price:89,size:"2 × 53 × 53",base:"atlas",duo:"nuit"},
+  miniNu:{name:"Mini Nuit d'août",price:49,size:"53 × 53",base:"nuit"}
+};
+function frame(d,inner){
+  return `<rect width="100" height="100" fill="${d.band}"/><rect x="6" y="6" width="88" height="88" fill="${d.bg}"/>
+  <rect x="8.5" y="8.5" width="83" height="83" fill="none" stroke="${d.ink}" stroke-width=".5" stroke-dasharray="1.2 1.2"/>${inner}`;
+}
+function motif(key){
+  const d=DESIGNS[key]; let s="";
+  if(key==="orangerie"){
+    for(let i=0;i<4;i++){const cx=[30,70,30,70][i],cy=[30,30,70,70][i];
+      s+=`<circle cx="${cx}" cy="${cy}" r="12" fill="${d.ink}"/><circle cx="${cx}" cy="${cy}" r="10" fill="${d.band}" opacity=".85"/>`;
+      for(let a=0;a<8;a++){const t=a*Math.PI/4;s+=`<line x1="${cx}" y1="${cy}" x2="${(cx+10*Math.cos(t)).toFixed(1)}" y2="${(cy+10*Math.sin(t)).toFixed(1)}" stroke="${d.ink}" stroke-width=".7"/>`;}
+      s+=`<path d="M${cx+8} ${cy-14} q6 -4 9 2 q-6 2 -9 -2z" fill="${d.accent}"/>`;}
+    s+=`<circle cx="50" cy="50" r="6" fill="${d.accent}"/><circle cx="50" cy="50" r="2.5" fill="${d.ink}"/>`;
+  } else if(key==="rivage"){
+    for(let r=0;r<9;r++){const y=14+r*9;let p=`M10 ${y}`;for(let x=10;x<90;x+=10)p+=` q5 ${r%2?-5:5} 10 0`;s+=`<path d="${p}" fill="none" stroke="${r%3===1?d.accent:d.ink}" stroke-width="${r%3===1?1.4:.7}"/>`;}
+    s+=`<circle cx="72" cy="28" r="7" fill="${d.band}"/>`;
+  } else if(key==="atlas"){
+    for(let x=0;x<5;x++)for(let y=0;y<5;y++){const cx=18+x*16,cy=18+y*16;
+      s+=`<path d="M${cx} ${cy-7} L${cx+7} ${cy} L${cx} ${cy+7} L${cx-7} ${cy}Z" fill="none" stroke="${d.ink}" stroke-width=".8"/>`;
+      if((x+y)%2===0)s+=`<circle cx="${cx}" cy="${cy}" r="2.4" fill="${d.accent}"/>`; else s+=`<rect x="${cx-1.6}" y="${cy-1.6}" width="3.2" height="3.2" fill="${d.ink}" transform="rotate(45 ${cx} ${cy})"/>`;}
+  } else if(key==="nuit"){
+    let seed=7;const rnd=()=>{seed=(seed*9301+49297)%233280;return seed/233280};
+    for(let i=0;i<46;i++){const x=12+rnd()*76,y=12+rnd()*76,r=.4+rnd()*1.2;s+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(2)}" fill="${d.ink}"/>`;}
+    s+=`<circle cx="62" cy="38" r="13" fill="${d.ink}"/><circle cx="67" cy="34" r="12" fill="${d.bg}"/>`;
+    s+=`<path d="M14 80 Q30 66 46 78 T86 74" fill="none" stroke="${d.accent}" stroke-width="1.2"/>`;
+  }
+  return frame(d,s);
+}
+function art(key){const d=DESIGNS[key];return d.base?motif(d.base):motif(key);}
+document.getElementById("heroScarf").innerHTML=motif("orangerie");
+
+const order=["orangerie","rivage","atlas","nuit","miniOr","miniRi","miniNu","coffret"];
+const grid=document.getElementById("grid");
+grid.innerHTML=order.map(k=>{const d=DESIGNS[k];
+  return `<button class="card" data-k="${k}" aria-pressed="false"><div class="art"><svg viewBox="0 0 100 100" aria-hidden="true">${art(k)}</svg></div>
+  <span class="name">${d.name}</span><span class="meta"><span>${d.size} cm</span><span class="num">${d.price} €</span></span></button>`}).join("");
+function showPdp(k){
+  const d=DESIGNS[k],base=DESIGNS[d.base||k];
+  grid.querySelectorAll(".card").forEach(c=>c.setAttribute("aria-pressed",c.dataset.k===k));
+  document.getElementById("pdp").innerHTML=`<div class="art"><svg viewBox="0 0 100 100" role="img" aria-label="${d.name}">${art(k)}</svg></div>
+  <div><div class="eyebrow">Fiche produit · exemple</div><h3>${d.name}</h3><div class="price">${d.price},00 € <span style="font-size:13px;color:var(--muted)">TTC · livraison offerte</span></div>
+  <p>Dessin original de ${base.artist}, imprimé sur twill de soie de mûrier puis roulotté à la main. Édition de 50 pièces numérotées.</p>
+  <dl class="specs"><dt>Format</dt><dd>${d.size} cm</dd><dt>Matière</dt><dd>100 % soie de mûrier, twill 14 mm</dd><dt>Finition</dt><dd>Roulotté main</dd><dt>Entretien</dt><dd>Nettoyage à sec ou lavage main à froid</dd><dt>Origine</dt><dd>Fabriqué à Hangzhou (Chine), dessiné en France</dd></dl>
+  <button class="btn" type="button">Ajouter au panier</button>
+  <div class="wear"><div><b>Au cou</b>Nœud lâche, pointe devant</div><div><b>Dans les cheveux</b>Bandeau ou nœud sur queue de cheval</div><div><b>Sur le sac</b>Noué à l'anse, en accent de couleur</div></div></div>`;
+}
+grid.addEventListener("click",e=>{const c=e.target.closest(".card");if(c)showPdp(c.dataset.k)});
+showPdp("orangerie");
+document.getElementById("wait").addEventListener("submit",e=>{e.preventDefault();document.getElementById("waitok").hidden=false;});
+
+/* ---------- Simulateur ---------- */
+const P=[
+ ["usd","Prix usine carré ($)",13.5,"Yueran, palier 50-199"],
+ ["fx","Change (€ pour 1 $)",0.89,""],
+ ["fret","Fret aérien par pièce (€)",0.70,"ESTIMATION 20 kg × 7 $/kg ÷ 200"],
+ ["duty","Droit de douane (%)",8,"NC 6214 10 00 90"],
+ ["pack","Emballage de marque (€)",2.50,"boîte rigide, papier de soie, carte"],
+ ["other","Échantillons + pertes + transitaire (€)",2.33,"1re commande ; 0,55 € en réassort"],
+ ["price","Prix de vente TTC (€)",95,""],
+ ["ship","Livraison client offerte (€ HT)",4.50,"Mondial Relay pro"],
+ ["ret","Taux de retour (%)",5,"ESTIMATION accessoire non taillé"],
+ ["cac","Coût d'acquisition client (€)",40,"ESTIMATION, à mesurer au test"],
+ ["repeat","Clientes qui rachètent sur 12 mois (%)",25,"ESTIMATION drops printemps + Noël"],
+ ["orders","Commandes / mois en vitesse de croisière",60,"atteintes au mois 6, montée linéaire"],
+ ["upfront","Lancement : stock 300 pièces + dessins + divers (€)",6000,"200 carrés + 100 minis + 4 illustratrices"],
+];
+const inp=document.getElementById("inputs");
+inp.innerHTML=P.map(([id,l,v,h])=>`<div class="field"><label for="i-${id}">${l}</label><input id="i-${id}" type="number" step="any" value="${v}">${h?`<small>${h}</small>`:""}</div>`).join("");
+const g=id=>parseFloat(document.getElementById("i-"+id).value)||0;
+const eur=(n,d=2)=>n.toLocaleString("fr-FR",{minimumFractionDigits:d,maximumFractionDigits:d})+" €";
+function calc(){
+  const fob=g("usd")*g("fx"), dut=(fob+g("fret"))*g("duty")/100;
+  const landed=fob+g("fret")+dut+g("pack")+g("other");
+  const ttc=g("price"), ht=ttc/1.2, fee=ttc*0.015+0.25, ship=g("ship");
+  const ret=g("ret")/100*(5+0.2*landed+ship);
+  const contrib=ht-landed-fee-ship-ret;
+  const first=contrib-g("cac");
+  const repeatShare=g("repeat")/100;
+  const ltv=contrib*(1+repeatShare)-g("cac");
+  const k=document.getElementById("kpis");
+  const c1=(ht-landed)/ht, c3=landed/ttc;
+  k.innerHTML=`
+   <div class="kpi"><div class="eyebrow">Coût rendu</div><div class="v">${eur(landed)}</div><div class="s">${(c3*100).toFixed(1)} % du TTC <span class="pill ${c3<=.25?"ok2":"ko"}">${c3<=.25?"≤ 25 %":"> 25 %"}</span></div></div>
+   <div class="kpi"><div class="eyebrow">Marge brute</div><div class="v">${(c1*100).toFixed(1)} %</div><div class="s">du HT <span class="pill ${c1>=.65?"ok2":"ko"}">${c1>=.65?"≥ 65 %":"< 65 %"}</span></div></div>
+   <div class="kpi"><div class="eyebrow">Reste après pub, 1re commande</div><div class="v" style="color:${first>=0?"var(--good)":"var(--bad)"}">${eur(first)}</div><div class="s">CAC max tenable : ${eur(contrib,0)}</div></div>
+   <div class="kpi"><div class="eyebrow">Valeur cliente 12 mois</div><div class="v">${eur(ltv)}</div><div class="s">contribution × (1 + rachat) − CAC</div></div>`;
+  document.getElementById("waterfall").innerHTML=`<thead><tr><th>Poste</th><th class="r">€</th></tr></thead><tbody>
+   <tr><td>Prix HT</td><td class="r">${eur(ht)}</td></tr>
+   <tr><td>Coût rendu (usine ${eur(fob)}, fret, droits ${eur(dut)}, emballage, divers)</td><td class="r">−${eur(landed)}</td></tr>
+   <tr><td>Frais Shopify Payments</td><td class="r">−${eur(fee)}</td></tr>
+   <tr><td>Livraison offerte</td><td class="r">−${eur(ship)}</td></tr>
+   <tr><td>Retours</td><td class="r">−${eur(ret)}</td></tr>
+   <tr><td><b>Contribution avant pub</b></td><td class="r"><b>${eur(contrib)}</b></td></tr>
+   <tr><td>Coût d'acquisition</td><td class="r">−${eur(g("cac"))}</td></tr>
+   <tr><td><b>Reste sur une 1re commande</b></td><td class="r"><b>${eur(first)}</b></td></tr></tbody>`;
+  // 12 mois : montée linéaire jusqu'au mois 6. Le 1er stock (300 pièces) est payé dans le lancement ;
+  // ensuite réassort par lots de 200 au coût de réassort. Les rachats ne coûtent pas de pub.
+  const restockUnit=landed-g("other")+0.55, newShare=1/(1+repeatShare), fixed=66;
+  let cash=-g("upfront"), inv=300, pts=[cash];
+  for(let m=1;m<=12;m++){
+    const o=g("orders")*Math.min(m,6)/6;
+    while(inv<o){cash-=200*restockUnit;inv+=200;}
+    inv-=o;
+    cash+=o*(contrib+landed)-o*newShare*g("cac")-fixed;
+    pts.push(cash);
+  }
+  drawCash(pts);
+}
+function drawCash(pts){
+  const W=640,H=240,pl=56,pr=16,pt=14,pb=30;
+  const mn=Math.min(0,...pts),mx=Math.max(0,...pts),rng=(mx-mn)||1;
+  const x=i=>pl+i*(W-pl-pr)/12, y=v=>pt+(mx-v)*(H-pt-pb)/rng;
+  const step=Math.pow(10,Math.floor(Math.log10(rng/4)));const tick=Math.ceil(rng/4/step)*step;
+  let grid="";for(let v=Math.ceil(mn/tick)*tick;v<=mx;v+=tick)grid+=`<line x1="${pl}" x2="${W-pr}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${pl-6}" y="${y(v)+4}" text-anchor="end" font-size="11" fill="var(--muted)" font-family="var(--mono)">${Math.round(v/1000)} k€</text>`;
+  const line=pts.map((v,i)=>`${i?"L":"M"}${x(i).toFixed(1)} ${y(v).toFixed(1)}`).join(" ");
+  const area=`${line} L${x(12)} ${y(0)} L${x(0)} ${y(0)}Z`;
+  let lbl="";for(let i=0;i<=12;i+=3)lbl+=`<text x="${x(i)}" y="${H-8}" text-anchor="middle" font-size="11" fill="var(--muted)">M${i}</text>`;
+  const be=pts.findIndex((v,i)=>i>0&&v>=0);
+  const end=pts[12];
+  document.getElementById("cashchart").innerHTML=`${grid}<line x1="${pl}" x2="${W-pr}" y1="${y(0)}" y2="${y(0)}" stroke="var(--muted)"/>
+   <path d="${area}" fill="var(--plum)" opacity=".12"/><path d="${line}" fill="none" stroke="var(--plum)" stroke-width="2.5"/>
+   <circle cx="${x(12)}" cy="${y(end)}" r="4.5" fill="var(--plum)"/><text x="${x(12)-8}" y="${y(end)-10}" text-anchor="end" font-size="12" fill="var(--ink)" font-family="var(--mono)">${eur(end,0)}</text>${lbl}
+   ${be>0?`<text x="${x(be)}" y="${y(0)-8}" text-anchor="middle" font-size="11" fill="var(--good)">retour à 0 : M${be}</text>`:""}`;
+}
+inp.addEventListener("input",calc);calc();
+
+/* ---------- Tendance ---------- */
+(function(){const yrs=["2021","2022","2023","2024","2025"],v=[35,33,35,44,62],W=420,H=200,pl=34,pb=26,pt=12,bw=46;
+ const y=t=>pt+(70-t)*(H-pt-pb)/70;let s="";
+ [0,20,40,60].forEach(t=>s+=`<line x1="${pl}" x2="${W-8}" y1="${y(t)}" y2="${y(t)}" stroke="var(--line)"/><text x="${pl-6}" y="${y(t)+4}" text-anchor="end" font-size="11" fill="var(--muted)">${t}</text>`);
+ v.forEach((t,i)=>{const x=pl+20+i*74;s+=`<rect x="${x}" y="${y(t)}" width="${bw}" height="${y(0)-y(t)}" fill="${i===4?"var(--plum)":"var(--saffron)"}"/><text x="${x+bw/2}" y="${y(t)-6}" text-anchor="middle" font-size="12" fill="var(--ink)" font-family="var(--mono)">${t}</text><text x="${x+bw/2}" y="${H-8}" text-anchor="middle" font-size="11" fill="var(--muted)">déc. ${yrs[i]}</text>`;});
+ document.getElementById("trendchart").innerHTML=s;})();
+
+/* ---------- Vues ---------- */
+const views=["boutique","rentabilite","dossier"];
+function route(){const h=(location.hash||"#boutique").slice(1);const v=views.includes(h)?h:"boutique";
+  views.forEach(n=>document.getElementById("v-"+n).hidden=n!==v);
+  document.querySelectorAll(".tabs a").forEach(a=>a.setAttribute("aria-current",a.dataset.v===v?"page":"false"));window.scrollTo(0,0);}
+window.addEventListener("hashchange",route);route();
+})();
+</script>

@@ -17,3 +17,11 @@ Test fait dans la session principale avant toute recherche. Firecrawl est prése
 - Amazon : rendu en anglais même avec location FR ; les prix restent en euros et valides pour amazon.fr.
 - Firecrawl : la concurrence est plafonnée (attente de 5 s observée à 4 appels simultanés). Je groupe par 3-4.
 - Sous-agents : pas d'accès à Firecrawl. Ils font la recherche WebSearch et écrivent dans des fichiers ; toutes les mesures chiffrées (Trends, Meta, Amazon, Etsy, TARIC) sont faites ici.
+
+## Leçons apprises pendant la session (à reprendre la prochaine fois)
+- **Contrairement à la note de départ, les sous-agents avaient accès à Firecrawl** et partageaient le même quota que la session principale. Résultat : des erreurs « Rate limit exceeded » (environ 15 requêtes par minute au total). Il faut soit leur interdire Firecrawl dès le lancement, soit leur réserver une plage.
+- Sans Firecrawl, les sous-agents n'ont pas pu lire Reddit, Qatar Living, l'App Store ni la presse qatarie : WebFetch est bloqué par le proxy. D'où 156 plaintes sur 169 au statut « extrait ».
+- Deux sous-agents ont été coupés par la limite de session de l'API. Leurs fichiers partiels ont été récupérés et complétés à la main.
+- Trends `interest_over_time` sur 12 mois (53 points) coûte beaucoup moins de contexte que sur 5 ans (261 points). Garder un mot ancre identique dans chaque lot pour comparer les lots.
+- LibreOffice ne démarre pas dans ce conteneur : les formules des tableurs ont été vérifiées par un recalcul en Python.
+- Le tarif WhatsApp par pays n'est publié que dans un CSV Meta, illisible via Firecrawl.

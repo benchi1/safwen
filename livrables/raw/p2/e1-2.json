@@ -1,0 +1,280 @@
+{
+ "agent": "e1-2",
+ "calls_used": 10,
+ "results": [
+  {
+   "candidate_id": "magnetic-motion-sensor-closet-light",
+   "searches": [
+    {
+     "query": "\"réglette led détecteur de mouvement\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22r%C3%A9glette%20led%20d%C3%A9tecteur%20de%20mouvement%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "lumière placard sans fil",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=lumi%C3%A8re%20placard%20sans%20fil&search_type=keyword_unordered",
+     "results_text": "120 résultats",
+     "results_n": 120,
+     "cards_seen": 29,
+     "relevant_cards": 5,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "lumière placard sans fil (keyword_unordered)",
+   "best_results_n": 120,
+   "best_results_text": "120 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=lumi%C3%A8re%20placard%20sans%20fil&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Lumic",
+     "library_id": "2912242292455489",
+     "started": "21 juin 2026",
+     "days": 105,
+     "variants": null,
+     "domain": "lumic.fr"
+    },
+    {
+     "name": "Maison Baugmann",
+     "library_id": "1396871111957756",
+     "started": "19 sep 2026",
+     "days": 15,
+     "variants": null,
+     "domain": "baugmann.com"
+    }
+   ],
+   "advertisers_distinct": 2,
+   "partial_lot": true,
+   "oldest_days": 105,
+   "status": "MESURÉ",
+   "note": "Le zéro en expression exacte est confirmé par une 2e recherche, qui elle trouve des pubs. Le compteur de 120 est très bruité : sur 29 cartes vues, seules 5 vendent le produit. Le reste, ce sont des compléments santé, des désodorisants pour animaux, des sérums, des romans, etc., remontés par les mots 'placard'/'lumière'. Lumic vend exactement ce produit : 'Mouvement 3.0', avec 'Fixation magnétique, détecteur de mouvement, et une batterie qui tient un mois entier', 'Plus de 2000 avis 5 étoiles sur Trustpilot', '2 achetées = 1 offerte'. Maison Baugmann (4 cartes) vend un 'plafonnier-led-detecteur-mouvement' sans fil rechargeable USB-C pour placard/garage, une variante proche (plafonnier, pas réglette). Le 1er appel en format query a répondu 'The information is not on the page.' : refait une fois en markdown. Pour tenir le quota, toutes les recherches suivantes ont été faites directement en markdown (onlyMainContent). Aucun prix Amazon n'a été mesuré ici, donc la promo Prime d'octobre ne joue pas sur ces mesures."
+  },
+  {
+   "candidate_id": "magnetic-double-sided-windshield-cleaner",
+   "searches": [
+    {
+     "query": "\"nettoyeur vitre magnétique\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22nettoyeur%20vitre%20magn%C3%A9tique%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "nettoyeur pare-brise double face",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=nettoyeur%20pare-brise%20double%20face&search_type=keyword_unordered",
+     "results_text": "12 résultats",
+     "results_n": 12,
+     "cards_seen": 12,
+     "relevant_cards": 12,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "nettoyeur pare-brise double face (keyword_unordered)",
+   "best_results_n": 12,
+   "best_results_text": "12 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=nettoyeur%20pare-brise%20double%20face&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Soleilcoin",
+     "library_id": "1628996488860558",
+     "started": "15 sep 2026",
+     "days": 19,
+     "variants": null,
+     "domain": "soleilcoin.fr"
+    },
+    {
+     "name": "Powerfulm",
+     "library_id": "1064521463026869",
+     "started": "18 sep 2026",
+     "days": 16,
+     "variants": null,
+     "domain": "powerfulm.com"
+    },
+    {
+     "name": "Providegive.Stop",
+     "library_id": "1721075845822404",
+     "started": "18 sep 2026",
+     "days": 16,
+     "variants": null,
+     "domain": "providegive.com"
+    },
+    {
+     "name": "Hidpotential",
+     "library_id": "969439102868812",
+     "started": "22 sep 2026",
+     "days": 12,
+     "variants": null,
+     "domain": "hidpotential.com"
+    },
+    {
+     "name": "Rhino-blanc (avec Bonnejourne_fr)",
+     "library_id": "2291320228380426",
+     "started": "30 sep 2026",
+     "days": 4,
+     "variants": null,
+     "domain": "m.bonnejourne.fr"
+    }
+   ],
+   "advertisers_distinct": 5,
+   "partial_lot": false,
+   "oldest_days": 19,
+   "status": "MESURÉ",
+   "note": "Le zéro en expression exacte ('nettoyeur vitre magnétique') est confirmé par une 2e recherche, qui elle trouve des pubs. Les 12 cartes, toutes vues, vendent ce produit (nettoyeur magnétique double face pour pare-brise). Répartition : Rhino-blanc 4, Hidpotential 3, Powerfulm 2, Providegive 2, Soleilcoin 1. Toutes les pubs ont démarré entre le 15 sep et le 4 oct 2026 (Hidpotential 1454275859918556 : 'Début de la diffusion le 4 oct 2026 · Temps actif total : 6 heures'). Plusieurs annonceurs pointent vers la même fiche Shopify au slug allemand 'doppelmagnet-scheibenreiniger-f-r-autos-streifenfreies-reinigungsset-f-r-autoglas'. Providegive affiche 'remise limitée de 49%'. Aucun prix Amazon n'a été mesuré."
+  },
+  {
+   "candidate_id": "pet-grooming-hammock",
+   "searches": [
+    {
+     "query": "\"hamac toilettage chien\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22hamac%20toilettage%20chien%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "hamac coupe griffes chien",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=hamac%20coupe%20griffes%20chien&search_type=keyword_unordered",
+     "results_text": "2 résultats",
+     "results_n": 2,
+     "cards_seen": 2,
+     "relevant_cards": 2,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "hamac coupe griffes chien (keyword_unordered)",
+   "best_results_n": 2,
+   "best_results_text": "2 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=hamac%20coupe%20griffes%20chien&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Vitaluster shop",
+     "library_id": "1138430512475485",
+     "started": "13 août 2026",
+     "days": 52,
+     "variants": null,
+     "domain": "vitaluster.com"
+    }
+   ],
+   "advertisers_distinct": 1,
+   "partial_lot": false,
+   "oldest_days": 52,
+   "status": "MESURÉ",
+   "note": "Le zéro en expression exacte est confirmé par une 2e recherche : 2 résultats, 2 cartes, un seul annonceur (Vitaluster shop, IDs 1138430512475485 et 4784991658399393, tous deux du 13 août 2026). Cas limite : la pub vend une 'Table de toilettage 2-en-1 pour petits chiens, utilisable en table ou hamac suspendu' (fiche '2-in-1-foldable-pet-grooming-bed'). C'est une variante hybride table/hamac et non un hamac simple. Si on l'exclut, on compte 0 annonceur. Concurrence publicitaire FR quasi nulle sur ces mots-clés."
+  },
+  {
+   "candidate_id": "quiet-pet-nail-grinder",
+   "searches": [
+    {
+     "query": "\"ponceuse griffes chien\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22ponceuse%20griffes%20chien%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "lime à griffes électrique chien",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=lime%20%C3%A0%20griffes%20%C3%A9lectrique%20chien&search_type=keyword_unordered",
+     "results_text": "43 résultats",
+     "results_n": 43,
+     "cards_seen": 30,
+     "relevant_cards": 30,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "lime à griffes électrique chien (keyword_unordered)",
+   "best_results_n": 43,
+   "best_results_text": "43 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=lime%20%C3%A0%20griffes%20%C3%A9lectrique%20chien&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Activ'Pet",
+     "library_id": "1556160526096084",
+     "started": "11 juin 2026",
+     "days": 115,
+     "variants": null,
+     "domain": "activ-pet.com"
+    },
+    {
+     "name": "Yahory shop",
+     "library_id": "1965646834133359",
+     "started": "7 août 2026",
+     "days": 58,
+     "variants": null,
+     "domain": "yahory.com"
+    }
+   ],
+   "advertisers_distinct": 2,
+   "partial_lot": true,
+   "oldest_days": 115,
+   "status": "MESURÉ",
+   "note": "Le zéro en expression exacte ('ponceuse griffes chien') est confirmé par une 2e recherche, qui elle trouve des pubs. Sur 43 résultats, 30 cartes vues, toutes sur le produit. Activ'Pet occupe 28 de ces cartes, avec 'Lime Silencieuse Pro' ('tourne sous 40 dB') : nombreuses créas actives, lancées entre le 11 juin et le 25 sep 2026. Yahory shop a 2 cartes ('lime à ongles électrique pour animaux avec indicateur de charge', fiche 'electric-pet-nail-grinder-with-led-power-display'). Les 13 résultats non vus pourraient contenir d'autres annonceurs."
+  },
+  {
+   "candidate_id": "mini-cordless-car-vacuum",
+   "searches": [
+    {
+     "query": "\"aspirateur voiture sans fil\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22aspirateur%20voiture%20sans%20fil%22&search_type=keyword_exact_phrase",
+     "results_text": "14 résultats",
+     "results_n": 14,
+     "cards_seen": 14,
+     "relevant_cards": 14,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"aspirateur voiture sans fil\" (keyword_exact_phrase)",
+   "best_results_n": 14,
+   "best_results_text": "14 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22aspirateur%20voiture%20sans%20fil%22&search_type=keyword_exact_phrase",
+   "advertisers": [
+    {
+     "name": "Demeurya",
+     "library_id": "1626218922246950",
+     "started": "25 sep 2026",
+     "days": 9,
+     "variants": null,
+     "domain": "demeurya.com"
+    },
+    {
+     "name": "Yahory shop",
+     "library_id": "1106558395258476",
+     "started": "27 sep 2026",
+     "days": 7,
+     "variants": null,
+     "domain": "yahory.com"
+    },
+    {
+     "name": "Mangree us",
+     "library_id": "1869686241068154",
+     "started": "29 sep 2026",
+     "days": 5,
+     "variants": null,
+     "domain": "mangree.com"
+    }
+   ],
+   "advertisers_distinct": 3,
+   "partial_lot": false,
+   "oldest_days": 9,
+   "status": "MESURÉ",
+   "note": "Les 14 cartes, toutes vues, vendent le produit, donc pas de 2e recherche. Répartition : Demeurya 11 cartes ('Vortia', '18 000 Pa', '-40 %' ; 3 pubs du 1 oct 2026 marquées 'Impressions : <100'), Yahory shop 2 (fiche 'higoiop-1', '10 000 Pa'), Mangree us 1 (même fiche 'higoiop-1', 'Livraison 24h | Retour 30j sans justification :-50 %'). Toutes les pubs ont 9 jours au plus. Yahory shop est aussi annonceur sur la ponceuse à griffes. Aucun prix Amazon n'a été mesuré. Le marché de l'aspirateur voiture est très présent sur Amazon et la promo Prime d'octobre peut y fausser les prix de référence."
+  }
+ ]
+}

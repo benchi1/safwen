@@ -1,0 +1,199 @@
+{
+ "agent": "e1-9",
+ "calls_used": 11,
+ "results": [
+  {
+   "candidate_id": "message-card-pendant-necklace",
+   "searches": [
+    {
+     "query": "\"collier avec carte message\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22collier%20avec%20carte%20message%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "collier cadeau maman",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=collier%20cadeau%20maman&search_type=keyword_unordered",
+     "results_text": "760 résultats",
+     "results_n": 760,
+     "cards_seen": 20,
+     "relevant_cards": 3,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "collier cadeau maman (keyword_unordered)",
+   "best_results_n": 760,
+   "best_results_text": "760 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=collier%20cadeau%20maman&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "LumaLove",
+     "library_id": "1844544719850358",
+     "started": "le 27 juil 2026",
+     "days": 69,
+     "variants": null,
+     "domain": "mylumalove.com"
+    }
+   ],
+   "advertisers_distinct": 1,
+   "partial_lot": true,
+   "oldest_days": 69,
+   "status": "MESURÉ",
+   "note": "Exact phrase 'collier avec carte message' = 0 ad in FR. The unordered search shows 760 results, but almost all of the 20 cards seen are neighbouring products: engraved or personalised name necklaces from Farmhouse Peace/Farmhouse Cadeaux (walnut box), Le Journal d'Emilie/tanndem.com, Jessemade Fr, Liorafrance, Merci Maman. Only LumaLove ('Collier fille message touchant', 3 cards: IDs 1844544719850358, 1840491797388155, 1108654234868266) matches the 'message necklace' concept. Uncertain: the extractor marked 'Message card: no' on every card, so the card in a box is NOT confirmed even for LumaLove. Strict count = 0 to 1 advertiser. The 760 counter measures the broad 'personalised gift necklace' market, not this product."
+  },
+  {
+   "candidate_id": "manual-neck-shoulder-relief-tool",
+   "searches": [
+    {
+     "query": "\"masseur cervical manuel\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22masseur%20cervical%20manuel%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "masseur nuque manuel",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=masseur%20nuque%20manuel&search_type=keyword_unordered",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"masseur cervical manuel\" (keyword_exact_phrase)",
+   "best_results_n": 0,
+   "best_results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22masseur%20cervical%20manuel%22&search_type=keyword_exact_phrase",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "Zero confirmed by 2 searches: exact phrase and unordered 'masseur nuque manuel'. Both pages loaded normally and showed the Meta empty-results message. This only covers these phrasings. Advertisers may use other wording (e.g. 'masseur cervical' alone, 'outil trigger point'), which was not tested because of the quota."
+  },
+  {
+   "candidate_id": "rechargeable-fabric-shaver",
+   "searches": [
+    {
+     "query": "\"rasoir anti bouloche\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22rasoir%20anti%20bouloche%22&search_type=keyword_exact_phrase",
+     "results_text": "2 résultats",
+     "results_n": 2,
+     "cards_seen": 2,
+     "relevant_cards": 1,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "anti bouloche électrique",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=anti%20bouloche%20%C3%A9lectrique&search_type=keyword_unordered",
+     "results_text": "1 résultat",
+     "results_n": 1,
+     "cards_seen": 1,
+     "relevant_cards": 1,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"rasoir anti bouloche\" (keyword_exact_phrase)",
+   "best_results_n": 2,
+   "best_results_text": "2 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22rasoir%20anti%20bouloche%22&search_type=keyword_exact_phrase",
+   "advertisers": [
+    {
+     "name": "Parisook",
+     "library_id": "970721922714266",
+     "started": "3 oct 2026",
+     "days": 1,
+     "variants": null,
+     "domain": "parisook.com"
+    }
+   ],
+   "advertisers_distinct": 1,
+   "partial_lot": false,
+   "oldest_days": 1,
+   "status": "MESURÉ",
+   "note": "Very low ad competition in FR. Only 1 distinct advertiser sells this product (Parisook, 'rasoir à peluches électrique'), and its ad started on 3 oct 2026, 1 day ago. It is the same ad in both searches. The other card (SteamOne, steam-one.com, ID 1704258758366943, 'Pas besoin de planche à repasser') is a neighbouring product (steamer) and was not counted. 'N ads use this creative' was not shown."
+  },
+  {
+   "candidate_id": "under-desk-cable-tray",
+   "searches": [
+    {
+     "query": "\"range câble bureau\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22range%20c%C3%A2ble%20bureau%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "goulotte sous bureau",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=goulotte%20sous%20bureau&search_type=keyword_unordered",
+     "results_text": "The provided page contains no results or ad cards.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"range câble bureau\" (keyword_exact_phrase)",
+   "best_results_n": 0,
+   "best_results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22range%20c%C3%A2ble%20bureau%22&search_type=keyword_exact_phrase",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "The exact phrase gives 0, with the Meta empty-results message copied word for word. For the 2nd (unordered) search, the extractor answered 'The provided page contains no results or ad cards.' without copying the Meta sentence. That page is treated as 0, but it was not checked again in markdown because the quota was used up. This zero is slightly less firm than the others."
+  },
+  {
+   "candidate_id": "electric-pet-massager",
+   "searches": [
+    {
+     "query": "\"masseur pour chien\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22masseur%20pour%20chien%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "masseur électrique chat",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=masseur%20%C3%A9lectrique%20chat&search_type=keyword_unordered",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"masseur pour chien\" (keyword_exact_phrase)",
+   "best_results_n": 0,
+   "best_results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22masseur%20pour%20chien%22&search_type=keyword_exact_phrase",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "For the exact phrase, the query mode answered 'The information is not on the page.' A markdown retry (1 extra call) shows the Meta message 'Aucune publicité ne correspond à vos critères de recherche.' The unordered 2nd search 'masseur électrique chat' also gives the same message, so the zero is confirmed. Calls used for this candidate: 3."
+  }
+ ]
+}

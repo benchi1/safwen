@@ -2,11 +2,14 @@
  "firecrawl_calls_budget_gate1": 250,
  "used": {
   "P0": 14,
-  "P1": 140
+  "P1": 140,
+  "P2": 166
  },
  "credits_used_estimate": {
   "P0": 69,
-  "P1": 781
+  "P1": 781,
+  "P2": 784
  },
- "notes": "scrape query = 5 crédits, search 5 résultats = 2 crédits, alexandria trends = 5 crédits par capacité ; P1 : 140 appels (77 scrapes, 18 recherches, 3 appels Trends à 10 capacités, ~42 appels de complément), compté d'après les pages déclarées par les agents"
+ "notes": "scrape query = 5 crédits, search 5 résultats = 2 crédits, alexandria trends = 5 crédits par capacité ; P1 : 140 appels (77 scrapes, 18 recherches, 3 appels Trends à 10 capacités, ~42 appels de complément), compté d'après les pages déclarées par les agents",
+ "total_credits_estimate": 1634
 }

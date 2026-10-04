@@ -1,0 +1,302 @@
+{
+ "agent": "e1-7",
+ "calls_used": 11,
+ "results": [
+  {
+   "candidate_id": "precision-electric-screwdriver-set",
+   "searches": [
+    {
+     "query": "\"tournevis électrique de précision\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22tournevis%20%C3%A9lectrique%20de%20pr%C3%A9cision%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "tournevis de précision sans fil",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=tournevis%20de%20pr%C3%A9cision%20sans%20fil&search_type=keyword_unordered",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "tournevis de précision sans fil (keyword_unordered)",
+   "best_results_n": 0,
+   "best_results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=tournevis%20de%20pr%C3%A9cision%20sans%20fil&search_type=keyword_unordered",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "Zéro confirmé par 2 recherches : en phrase exacte, puis en mots non ordonnés. La 2e recherche a été lue deux fois : le format query a répondu « no total results text and no ad cards », puis le markdown montre la page vide « Aucune publicité ne correspond à vos critères de recherche. ». 3 appels utilisés. Attention, voisinage : la recherche « tournevis électrique rechargeable » (candidat mini-cordless) montre 4 annonceurs FR qui vendent de petits tournevis électriques avec embouts. Ils peuvent aussi concurrencer ce produit : Grange des loups « Le mini tournevis électrique avec tous ses embouts », Middo « Set de tournevis compact et rechargeable », Copensunny et Biaotic. Le mot « précision » n'apparaît dans aucune de ces pubs."
+  },
+  {
+   "candidate_id": "mini-cordless-screwdriver-bit-set",
+   "searches": [
+    {
+     "query": "\"mini visseuse sans fil\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22mini%20visseuse%20sans%20fil%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "tournevis électrique rechargeable",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=tournevis%20%C3%A9lectrique%20rechargeable&search_type=keyword_unordered",
+     "results_text": "22 résultats",
+     "results_n": 22,
+     "cards_seen": 20,
+     "relevant_cards": 20,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "tournevis électrique rechargeable (keyword_unordered)",
+   "best_results_n": 22,
+   "best_results_text": "22 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=tournevis%20%C3%A9lectrique%20rechargeable&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Copensunny",
+     "library_id": "893978783575291",
+     "started": "3 jan 2026",
+     "days": 274,
+     "variants": null,
+     "domain": "COPENSUNNY.COM"
+    },
+    {
+     "name": "Biaotic store",
+     "library_id": "2413587655752211",
+     "started": "3 jan 2026",
+     "days": 274,
+     "variants": null,
+     "domain": "BIAOTIC.COM"
+    },
+    {
+     "name": "Grange des loups",
+     "library_id": "1723380955550664",
+     "started": "10 sep 2026",
+     "days": 24,
+     "variants": null,
+     "domain": "WWW.AMAZON.FR"
+    },
+    {
+     "name": "Middo",
+     "library_id": "1795583268844444",
+     "started": "23 sep 2026",
+     "days": 11,
+     "variants": null,
+     "domain": "MIDDO-PARIS.FR"
+    }
+   ],
+   "advertisers_distinct": 4,
+   "partial_lot": true,
+   "oldest_days": 274,
+   "status": "MESURÉ",
+   "note": "La phrase exacte « mini visseuse sans fil » donne 0, la 2e recherche en donne 22. Les 20 cartes vues portent sur de petits tournevis électriques rechargeables. Les textes copiés sont « Tournevis Électrique Hybride 2-en-1 » chez Copensunny et Biaotic, « Le mini tournevis électrique avec tous ses embouts » chez Grange des loups, « Set de tournevis compact et rechargeable » chez Middo. Middo occupe 16 des 20 cartes, toutes lancées entre le 23 et le 26 sep 2026 : c'est un test créatif en cours. Grange des loups renvoie vers amazon.fr, et un prix Amazon vu en ce moment peut être un prix promo Prime d'octobre. Le texte « N ads use this creative and text » n'a été rendu pour aucune carte, donc variants = null. Ces produits sont peut-être aussi des tournevis de précision : le chevauchement avec le candidat precision-electric-screwdriver-set est possible."
+  },
+  {
+   "candidate_id": "self-leveling-cross-line-laser-level",
+   "searches": [
+    {
+     "query": "\"niveau laser\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22niveau%20laser%22&search_type=keyword_exact_phrase",
+     "results_text": "76 résultats",
+     "results_n": 76,
+     "cards_seen": 20,
+     "relevant_cards": 15,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"niveau laser\" (keyword_exact_phrase)",
+   "best_results_n": 76,
+   "best_results_text": "76 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22niveau%20laser%22&search_type=keyword_exact_phrase",
+   "advertisers": [
+    {
+     "name": "Huepar France",
+     "library_id": "860009310124824",
+     "started": "2 jan 2026",
+     "days": 275,
+     "variants": null,
+     "domain": "fr.huepar.com"
+    },
+    {
+     "name": "Copensunny",
+     "library_id": "2144028309688350",
+     "started": "12 mai 2026",
+     "days": 145,
+     "variants": null,
+     "domain": "copensunny.com"
+    },
+    {
+     "name": "Bluromi store",
+     "library_id": "2066078634786990",
+     "started": "6 juil 2026",
+     "days": 90,
+     "variants": null,
+     "domain": "bluromi.com"
+    },
+    {
+     "name": "kardone.fr",
+     "library_id": "4526099360942607",
+     "started": "23 août 2026",
+     "days": 42,
+     "variants": null,
+     "domain": "www.kardone.fr"
+    },
+    {
+     "name": "Joyeloo",
+     "library_id": "2295290434629424",
+     "started": "1 sep 2026",
+     "days": 33,
+     "variants": null,
+     "domain": "newjoyloo.com"
+    },
+    {
+     "name": "Lomali",
+     "library_id": "1108919491647178",
+     "started": "25 sep 2026",
+     "days": 9,
+     "variants": null,
+     "domain": ""
+    }
+   ],
+   "advertisers_distinct": 6,
+   "partial_lot": true,
+   "oldest_days": 275,
+   "status": "MESURÉ",
+   "note": "Une seule recherche, suffisante : 15 cartes pertinentes sur 20 vues. Huepar France (marque) occupe 9 cartes, avec des lasers 4D autonivelants : ZK04CG, W04CG, S04CG. Copensunny vend un laser 16 lignes, kardone.fr le « Kit complet L16 niveau laser », Lomali « Niveau laser AutoNivo4D™ avec trépied 150 cm ». Ce sont des lasers multi-lignes, la même famille en version haut de gamme. Sont exclus comme produits voisins ou non pertinents : Anibiy cool (2 cartes « Niveau infrarouge à 90° »), Yahory shop (« Niveau laser infrarouge à angle droit (90°) »), Testdolie (papier peint) et Luminis (« Luminis X1 double laser », type flou). Si on compte Anibiy et Yahory, on arrive à 8 annonceurs. Le domaine de Lomali a été rendu « None », d'où le champ vide. Pour Copensunny, kardone.fr, Lomali et Huepar (ID 1089624780651062), l'extraction a rendu le texte littéral « N ads use this creative and text » sans le nombre, donc variants = null."
+  },
+  {
+   "candidate_id": "mini-thermal-sticker-printer",
+   "searches": [
+    {
+     "query": "\"mini imprimante thermique\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22mini%20imprimante%20thermique%22&search_type=keyword_exact_phrase",
+     "results_text": "9 résultats",
+     "results_n": 9,
+     "cards_seen": 4,
+     "relevant_cards": 4,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "imprimante portable sans encre",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=imprimante%20portable%20sans%20encre&search_type=keyword_unordered",
+     "results_text": "40 résultats",
+     "results_n": 40,
+     "cards_seen": 20,
+     "relevant_cards": 17,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "imprimante portable sans encre (keyword_unordered)",
+   "best_results_n": 40,
+   "best_results_text": "40 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=imprimante%20portable%20sans%20encre&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "TeddyprintStore",
+     "library_id": "2464981517196851",
+     "started": "9 avr 2025",
+     "days": 543,
+     "variants": 3,
+     "domain": "www.teddyprintpocket.fr"
+    },
+    {
+     "name": "Flippy Price - New Arrivals",
+     "library_id": "656247867129682",
+     "started": "9 avr 2025",
+     "days": 543,
+     "variants": 3,
+     "domain": ""
+    },
+    {
+     "name": "Eclire France",
+     "library_id": "658273440475977",
+     "started": "25 oct 2025",
+     "days": 344,
+     "variants": null,
+     "domain": "eclire.com"
+    },
+    {
+     "name": "Copensunny",
+     "library_id": "822989507474993",
+     "started": "2 août 2026",
+     "days": 63,
+     "variants": null,
+     "domain": "copensunny.com"
+    },
+    {
+     "name": "Biaotic store",
+     "library_id": "1557807098894284",
+     "started": "24 sep 2026",
+     "days": 10,
+     "variants": null,
+     "domain": "biaotic.com"
+    },
+    {
+     "name": "SofiAvenue",
+     "library_id": "2274050666763666",
+     "started": "24 sep 2026",
+     "days": 10,
+     "variants": null,
+     "domain": "sofiavenue.com"
+    }
+   ],
+   "partial_lot": true,
+   "advertisers_distinct": 6,
+   "oldest_days": 543,
+   "status": "MESURÉ",
+   "note": "La phrase exacte donne « 9 résultats » en 4 cartes, toutes chez TeddyprintStore (teddyprintpocket.fr). Les cartes y regroupent plusieurs pubs : « 3 publicités utilisent ce contenu publicitaire et ce texte » deux fois, « 2 publicités… » une fois. J'ai fait la 2e recherche, non obligatoire, pour élargir le relevé : « 40 résultats », 20 cartes. TeddyprintStore y occupe 10 cartes. Biaotic, Copensunny et Eclire vendent tous le même modèle « D810 » (« Imprimante thermique portable D810 sans encre » / « Imprimante Bluetooth D810 sans fil sans encre »). Flippy Price vend la marque Phomemo, SofiAvenue la « Memory Maker mini imprimante photo portable » (cas limite, compté quand même). Exclus : 3 cartes Carrefour (offres magasin). L'extraction n'est pas fiable sur deux points. D'abord, le Library ID 537126052422609 est rendu pour TeddyprintStore (10 avr 2025) dans la 1re recherche et pour « Carrefour Reims Cernay » dans la 2e. Ensuite, plusieurs champs domaine ont été remplacés par le Library ID. Le domaine de Flippy Price n'est pas rendu (champ vide). Le D810 est peut-être aussi une étiqueteuse : il peut concurrencer bluetooth-label-maker."
+  },
+  {
+   "candidate_id": "bluetooth-label-maker",
+   "searches": [
+    {
+     "query": "\"étiqueteuse bluetooth\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22%C3%A9tiqueteuse%20bluetooth%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "étiqueteuse portable",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%C3%A9tiqueteuse%20portable&search_type=keyword_unordered",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "étiqueteuse portable (keyword_unordered)",
+   "best_results_n": 0,
+   "best_results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%C3%A9tiqueteuse%20portable&search_type=keyword_unordered",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "Zéro confirmé par 2 recherches. Pour la 2e, le format query a répondu « The information is not on the page. ». La relance en markdown montre la page vide de Meta « Aucune publicité ne correspond à vos critères de recherche. ». 3 appels utilisés. Attention, voisinage : dans la recherche « imprimante portable sans encre » (candidat mini-thermal), Biaotic store, Copensunny et Eclire France font de la pub pour une « Imprimante Bluetooth D810 sans fil sans encre ». Ce modèle peut servir d'étiqueteuse, donc la concurrence réelle est peut-être sous-estimée par le mot « étiqueteuse ». La 3e expression, « imprimante étiquettes rangement », n'a pas été testée (quota atteint)."
+  }
+ ]
+}

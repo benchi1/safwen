@@ -1,0 +1,273 @@
+{
+ "agent": "comp3-2",
+ "calls_used": 8,
+ "results": [
+  {
+   "candidate_id": "christmas-money-holder-ornament",
+   "note": "Amazon US, query 'christmas money holder', page OK (HTTP 200). The query format returned only 3 results, so I retried once in markdown (2 calls in total) and read 48 organic results (sr_1_1 to sr_1_48). None of them is the exact product, the Christmas ball you pull a garland of banknotes out of. The page is dominated by money-holder envelopes and cards and by acrylic, wooden or candy-cane ornaments that hold cash. The closest result is a candy-cane ornament (sr_1_2, B0HD5ZMGZ4), recorded as an adjacent proxy with status ESTIMATION. Other acrylic money-holder ornaments with a badge: B0HFNH12GR '500+ bought in past month' (4 ratings) and B0HGRFW7LW '200+ bought in past month' (7 ratings). No Prime deal badge on the first results. US D signal: high demand for the category, few ratings per listing (new listings in Q4).",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "absent",
+     "value": null,
+     "unit": "n/a",
+     "quote": "48 organic results read for 'christmas money holder': no pull-out banknote Christmas ball; envelopes/cards and acrylic, wooden or candy-cane ornaments only",
+     "stable_id": "amazon.com/s?k=christmas+money+holder",
+     "url": "https://www.amazon.com/s?k=christmas+money+holder",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "christmas money holder",
+     "method": "markdown",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 13,
+     "unit": "ratings",
+     "quote": "12Pcs Candy Cane Christmas Money Holder Ornament, Wooden Cash Gift Ornament | Wood Christmas Hanging Money Clip for Tree G... $15.99 (13) 300+ bought in past month B0HD5ZMGZ4",
+     "stable_id": "B0HD5ZMGZ4",
+     "url": "https://www.amazon.com/s?k=christmas+money+holder",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "christmas money holder",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 300,
+     "unit": "units/month (badge 300+)",
+     "quote": "300+ bought in past month B0HD5ZMGZ4",
+     "stable_id": "B0HD5ZMGZ4",
+     "url": "https://www.amazon.com/s?k=christmas+money+holder",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "christmas money holder",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "manual-neck-shoulder-relief-tool",
+   "note": "Amazon US, query 'neck and shoulder massager manual', page OK. The first relevant organic result is Ranarose (manual trigger-point back and neck tool). The '1.1K' rating count is a rounded display, so the value is 1100. Other manual tools: VOYOR B07F6ZNHD9 (8.2K ratings, 900+/month), LuxFit B01N7QY5E7 (2.1K, 100+), LiBa B07P5PFFMZ (29K, 1K+), Body Back Buddy B0006VJ6TO (18.5K, 2K+). PHILIPS results (B0GHNN33Y6 and others) carry a 'Limited time deal' badge (October Prime promo). Those are electric massagers, not counted. Strong, mature US D signal.",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 1100,
+     "unit": "ratings",
+     "quote": "Ranarose Deep Tissue Back & Neck Massager for Body Muscle Pain Relief | Trigger P $18.99 (1.1K) 6K+ bought in past month B0D2VTMH6Y False",
+     "stable_id": "B0D2VTMH6Y",
+     "url": "https://www.amazon.com/s?k=neck+and+shoulder+massager+manual",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "neck and shoulder massager manual",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 6000,
+     "unit": "units/month (badge 6K+)",
+     "quote": "6K+ bought in past month B0D2VTMH6Y",
+     "stable_id": "B0D2VTMH6Y",
+     "url": "https://www.amazon.com/s?k=neck+and+shoulder+massager+manual",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "neck and shoulder massager manual",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "electric-pet-massager",
+   "note": "Amazon US, query 'electric pet massager', page OK. Results 1 to 8 are COMFIER human massagers (probably a sponsored brand block; several show a discount such as -28% or -20%, and one shows 'Ends in 07:03:04' with a Prime deal = Yes: October Prime promo prices). The first relevant result is no. 9, Tilcare B09NQ6QW4Q. Other pet massagers: B0C3CH9HT1 (441 ratings), B0CHS57288 (473), B0G4PBM82B (16 ratings, 100+/month). The '1K' rating count is a rounded display. Moderate US D signal.",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 1000,
+     "unit": "ratings",
+     "quote": "Tilcare Handheld Pet Massager for Dogs and Cats Electric Cat and Dog Massage T $24.99 1K 200+ bought in past month B09NQ6QW4Q No",
+     "stable_id": "B09NQ6QW4Q",
+     "url": "https://www.amazon.com/s?k=electric+pet+massager",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "electric pet massager",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 200,
+     "unit": "units/month (badge 200+)",
+     "quote": "200+ bought in past month B09NQ6QW4Q",
+     "stable_id": "B09NQ6QW4Q",
+     "url": "https://www.amazon.com/s?k=electric+pet+massager",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "electric pet massager",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "heated-ankle-foot-massager",
+   "note": "Amazon US, query 'portable heated foot massager', page OK. The first result (B0H69RFXMJ, heated rechargeable ankle wrap) is exactly the product: 23 ratings, shared by 5 variants of the same listing, and no 'bought' badge. The first result showing a badge is no. 9, B0H55RS8W6 (portable heated vibrating foot and ankle massager): 200+/month, 14 ratings. Others: B0F5PH4MG9 (900+/month, 45 ratings), B0HF7FFD12 (heated ankle wrap, 200+/month, 87 ratings). Results 6 to 8 show (1.1k), probably ratings shared at parent level. One ASIN returned by the extraction, 'B0H69B2BGF8', has 11 characters and is unreliable. No Prime deal badge. The listings are recent: emerging US D signal.",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 23,
+     "unit": "ratings",
+     "quote": "Foot Massager for Neuropathy and Plantar Fasciitis Relief, Ankle Massager | 20/35/45min Timer, 11.22-inch Strap, 3000mAh, Cordless Rechargeable Ankle Heating pad, Ankle Heel Massager with Heat $39.99 (23) B0H69RFXMJ No",
+     "stable_id": "B0H69RFXMJ",
+     "url": "https://www.amazon.com/s?k=portable+heated+foot+massager",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "portable heated foot massager",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 200,
+     "unit": "units/month (badge 200+)",
+     "quote": "Portable Foot & Ankle Massager with Heat & Vibration, Deep Kneading Relief for Heel, Arch & Plantar Fasciitis, Rechargeable for Home & Travel Use $29.39 (14) 200+ bought in past month B0H55RS8W6 No",
+     "stable_id": "B0H55RS8W6",
+     "url": "https://www.amazon.com/s?k=portable+heated+foot+massager",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "portable heated foot massager",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "long-handle-baseboard-mop",
+   "note": "Meta Ad Library US (active ads), query 'baseboard cleaner tool with handle': '~1,600 results', but none of the first 20 cards sells a long-handle baseboard mop. The cards are dominated by Uproot Clean (pet hair remover), Snappory (gutter cleaning tool), generators, siding and similar. The closest is card 1 (Occasionalous-er, V-shaped brush for tile gaps and baseboards, started Sep 27, 2026, ID 963733526779418), a different product. No US O signal for this product.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 0,
+     "unit": "ads among first 20 cards",
+     "quote": "~1,600 results ... 1. Page name: Occasionalous-er Started running on: Sep 27, 2026 Library ID: 963733526779418 Landing domain: www.crispelyx.com Product advertised: V-shaped brush for cleaning tile gaps and baseboards",
+     "stable_id": "963733526779418",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=baseboard%20cleaner%20tool%20with%20handle&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "baseboard cleaner tool with handle",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "absent",
+     "value": null,
+     "unit": "n/a",
+     "quote": "No long-handle baseboard mop among the first 20 cards (Uproot Clean, Snappory, DuroMax, Cost Guide - Siding, xTool...)",
+     "stable_id": "meta-us-q-baseboard-cleaner-tool-with-handle",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=baseboard%20cleaner%20tool%20with%20handle&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "baseboard cleaner tool with handle",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "rechargeable-fabric-shaver",
+   "note": "Meta Ad Library US, query 'fabric shaver': '~80 results'. 10 of the first 20 cards sell a fabric shaver: cards 2, 3, 5, 6, 9, 12, 13, 16, 17, 19. Advertisers are Nori (3 ads, nori.co), Steamery Pilo Core (3 ads, each '2 ads use this creative and text'), Noviera (noviera.store, started Oct 4, 2026), Alibaba, Offer Spot (yolokfx.com, 'Free fabric shaver') and an Amazon affiliate creator (amzlink.to). Card 20 ('Free shaver promotional offer') is not counted because it is ambiguous. Most ads are very recent (late Sep / early Oct, the start of sweater season). The oldest relevant ad is 37 days old.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 10,
+     "unit": "ads among first 20 cards",
+     "quote": "~80 results",
+     "stable_id": "meta-us-q-fabric-shaver",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=fabric%20shaver&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "fabric shaver",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 37,
+     "unit": "days since Started running on",
+     "quote": "Page Name: Danielle Donohue with AdMee.Talent Started running on: Aug 28, 2026 Library ID: 952590764546163 Landing domain: amzlink.to Product advertised: LED fabric shaver for sweaters and home textiles.",
+     "stable_id": "952590764546163",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=fabric%20shaver&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "fabric shaver",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "under-desk-cable-tray",
+   "note": "Meta Ad Library US, query 'under desk cable management tray': '~410 results'. 4 of the first 20 cards sell a standalone under-desk tray: KEEGH via smartcarting.com (cards 7 and 17) and Temu (cards 10 and 12). The other cards show desks with a built-in tray (Secretlab, Blacklyte, Vernal, FlexiSpot) or unrelated products. They are not counted. The oldest relevant ad is the Temu ad from Apr 25, 2026, 162 days old. The sellers are Temu and a deals site, not a Shopify brand.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 4,
+     "unit": "ads among first 20 cards",
+     "quote": "~410 results",
+     "stable_id": "meta-us-q-under-desk-cable-management-tray",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=under%20desk%20cable%20management%20tray&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "under desk cable management tray",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 162,
+     "unit": "days since Started running on",
+     "quote": "12. Temu Started running on Apr 25, 2026 Library ID: 923004077225806 www.temu.com A Cable Management Tray For Under The Desk",
+     "stable_id": "923004077225806",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=under%20desk%20cable%20management%20tray&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "under desk cable management tray",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  }
+ ]
+}

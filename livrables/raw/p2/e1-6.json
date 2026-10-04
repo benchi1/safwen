@@ -1,0 +1,215 @@
+{
+ "agent": "e1-6",
+ "calls_used": 11,
+ "results": [
+  {
+   "candidate_id": "sunrise-wake-up-light",
+   "searches": [
+    {
+     "query": "\"réveil lumineux\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22r%C3%A9veil%20lumineux%22&search_type=keyword_exact_phrase",
+     "results_text": "10 résultats",
+     "results_n": 10,
+     "cards_seen": 7,
+     "relevant_cards": 1,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "simulateur d'aube",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=simulateur%20d%27aube&search_type=keyword_unordered",
+     "results_text": "1 900 résultats",
+     "results_n": 1900,
+     "cards_seen": 15,
+     "relevant_cards": 7,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"réveil lumineux\" (keyword_exact_phrase)",
+   "best_results_n": 10,
+   "best_results_text": "10 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22r%C3%A9veil%20lumineux%22&search_type=keyword_exact_phrase",
+   "advertisers": [
+    {
+     "name": "Morphee",
+     "library_id": "2032832517574376",
+     "started": "9 mar 2026",
+     "days": 209,
+     "variants": 2,
+     "domain": "www.morphee.co"
+    },
+    {
+     "name": "Unicos France",
+     "library_id": "1432223615431089",
+     "started": "3 sep 2026",
+     "days": 31,
+     "variants": null,
+     "domain": "unicos.com"
+    }
+   ],
+   "advertisers_distinct": 2,
+   "partial_lot": true,
+   "oldest_days": 209,
+   "status": "MESURÉ",
+   "note": "Exact phrase 'réveil lumineux' : 10 résultats, 7 cartes lues, 1 seule pertinente (Unicos France, 'réveil lumineux personnalisé'). Le reste : TaqaVibe (bracelet réveil silencieux, 4 cartes), Voltyzen (diffuseur flamme), Bonial (promos), donc produits voisins exclus. 2e recherche unordered 'simulateur d'aube' : compteur 1 900 très bruité (tonies Toniebox 2 domine), mais Morphee pousse son produit 'SUN' (6 cartes, plus ancienne 9 mar 2026, morphee.co) ; classé pertinent comme lampe simulateur d'aube d'après le contexte de la requête, l'extracteur ne donne que le nom 'SUN'. Le compteur 1 900 n'est pas représentatif, d'où best_query = exact phrase. Anomalie d'extraction : l'ID 1106702225090028 est attribué à Voltyzen dans la 1re recherche et à Morphee dans la 2e, et un ID '791437068' paraît tronqué ; ces IDs ne sont pas utilisés. Pas d'impact de la promo Prime ici (aucun prix mesuré)."
+  },
+  {
+   "candidate_id": "rechargeable-hand-warmer",
+   "searches": [
+    {
+     "query": "\"chauffe-mains rechargeable\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22chauffe-mains%20rechargeable%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "chauffe-mains USB",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=chauffe-mains%20USB&search_type=keyword_unordered",
+     "results_text": "5 résultats",
+     "results_n": 5,
+     "cards_seen": 5,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "chauffe-mains USB (keyword_unordered)",
+   "best_results_n": 5,
+   "best_results_text": "5 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=chauffe-mains%20USB&search_type=keyword_unordered",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "Zéro confirmé par 2 recherches. Exact phrase : 'Aucune publicité ne correspond à vos critères de recherche.' Unordered 'chauffe-mains USB' : 5 résultats, toutes lues, aucune ne vend un chauffe-mains : Cyclicare (bouillotte rechargeable USB, produit voisin), Nid Chaud (plaid chauffant), Infos Prothèses Dentaires (DentaClean, 3 cartes). Aucun annonceur FR actif sur ce produit au 2026-10-04 (début de saison froide)."
+  },
+  {
+   "candidate_id": "motion-sensor-wide-beam-headlamp",
+   "searches": [
+    {
+     "query": "\"lampe frontale rechargeable\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22lampe%20frontale%20rechargeable%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "lampe frontale détecteur de mouvement",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=lampe%20frontale%20d%C3%A9tecteur%20de%20mouvement&search_type=keyword_unordered",
+     "results_text": "25 résultats",
+     "results_n": 25,
+     "cards_seen": 20,
+     "relevant_cards": 20,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "lampe frontale détecteur de mouvement (keyword_unordered)",
+   "best_results_n": 25,
+   "best_results_text": "25 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=lampe%20frontale%20d%C3%A9tecteur%20de%20mouvement&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Maison Baugmann",
+     "library_id": "1329678625754323",
+     "started": "25 sep 2026",
+     "days": 9,
+     "variants": null,
+     "domain": "baugmann.com"
+    },
+    {
+     "name": "Handikitz",
+     "library_id": "1410003880649185",
+     "started": "29 nov 2025",
+     "days": 309,
+     "variants": null,
+     "domain": "handikitz.com"
+    }
+   ],
+   "advertisers_distinct": 2,
+   "partial_lot": true,
+   "oldest_days": 309,
+   "status": "MESURÉ",
+   "note": "Exact phrase 'lampe frontale rechargeable' : 0 (query vide, puis markdown confirmant 'Aucune publicité ne correspond à vos critères de recherche.'). Unordered 'lampe frontale détecteur de mouvement' : 25 résultats, 20 cartes lues : Maison Baugmann 19 cartes ('lampe frontale LED', lancées 25-26 sep 2026, test créatif massif récent), Handikitz 1 carte ('lampe frontale puissante', active depuis 29 nov 2025). Les textes extraits ne confirment pas explicitement le détecteur de mouvement ni le grand angle : pertinence probable mais à vérifier visuellement. Mention 'N ads use this creative and text' non rendue."
+  },
+  {
+   "candidate_id": "magnetic-screw-holder-wristband",
+   "searches": [
+    {
+     "query": "\"bracelet magnétique bricolage\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22bracelet%20magn%C3%A9tique%20bricolage%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "bracelet aimanté vis",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=bracelet%20aimant%C3%A9%20vis&search_type=keyword_unordered",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"bracelet magnétique bricolage\" (keyword_exact_phrase)",
+   "best_results_n": 0,
+   "best_results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22bracelet%20magn%C3%A9tique%20bricolage%22&search_type=keyword_exact_phrase",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "Zéro confirmé par 2 recherches (exact phrase et unordered 'bracelet aimanté vis'), pages rendues normalement avec le message officiel 'Aucune publicité...'. Limite : 'bracelet porte-vis' et 'bracelet magnétique' seul non testés faute de quota ; un annonceur pourrait utiliser un autre libellé (ex. 'bracelet magnétique' + 'bricoleur' hors expression exacte)."
+  },
+  {
+   "candidate_id": "weighted-under-door-draft-stopper",
+   "searches": [
+    {
+     "query": "\"boudin de porte\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22boudin%20de%20porte%22&search_type=keyword_exact_phrase",
+     "results_text": "2 résultats",
+     "results_n": 2,
+     "cards_seen": 2,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "boudin anti courant d'air",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=boudin%20anti%20courant%20d%27air&search_type=keyword_unordered",
+     "results_text": "46 résultats",
+     "results_n": 46,
+     "cards_seen": 15,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"boudin de porte\" (keyword_exact_phrase)",
+   "best_results_n": 2,
+   "best_results_text": "2 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22boudin%20de%20porte%22&search_type=keyword_exact_phrase",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": true,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "Exact 'boudin de porte' : 2 résultats, tous deux Vivienne Été pour 'Relievu Collagène liquide pour chiens' (hors sujet). Unordered 'boudin anti courant d'air' : 46 résultats, 15 cartes lues, aucune ne vend un boudin de porte (viveaprotect anti-étouffement, Nuvaskin, Koreva, CimAlp, etc. : bruit dû au mot 'anti'). Zéro sur les cartes vues ; partial_lot=true car 46 > 15 cartes lues, donc 31 cartes non vérifiées."
+  }
+ ]
+}

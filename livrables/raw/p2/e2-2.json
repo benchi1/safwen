@@ -1,0 +1,154 @@
+{
+ "agent": "e2-2",
+ "calls_used": 13,
+ "results": [
+  {
+   "candidate_id": "mini-cordless-screwdriver-bit-set",
+   "aliexpress": {
+    "url": "https://fr.aliexpress.com/w/wholesale-mini-cordless-electric-screwdriver-rechargeable.html",
+    "min_price_eur": 15.39,
+    "price_quote": "Kit de tournevis électrique de précision 62 en 1, sans fil, rechargeable, mini- Price: 15,39€",
+    "max_sold_n": 10000,
+    "sold_quote": "+ 10 000 vendus",
+    "identical": true,
+    "scrape_status": "ok"
+   },
+   "amazon_fr": {
+    "url": "https://www.amazon.fr/s?k=mini+visseuse+sans+fil",
+    "asin": "B0D5CJY1H8",
+    "price_eur": 28.99,
+    "price_quote": "MQFORU 72 in 1 Mini Cordless Electric Screwdriver Kit with 64 Magnetic Bits, Price: €28.99",
+    "ratings_n": 622,
+    "ratings_quote": "Number of ratings: 622",
+    "bought_n": 50,
+    "bought_quote": "50+ bought in past month",
+    "identical": true,
+    "prime_badge": false,
+    "scrape_status": "ok"
+   },
+   "temu": {
+    "url": "https://www.temu.com/lu-fr/1pc--16v-perceuse-sans-fil-visseuse-%C3%A9lectrique-mini-pilote-de-puissance-sans-fil-batterie-au-lithium-ion-dc-3-8-pouces-g-601099520523091.html",
+    "price_eur": null,
+    "quote": "1pc 16v perceuse fil visseuse électrique, mini de fil, batterie au lithium-ion 3/8 pouces au prix le plus bas Temu.",
+    "found": false,
+    "scrape_status": "ok"
+   },
+   "target_price_eur": 64.9,
+   "target_rationale": "4 x 15,39 EUR = 61,56 EUR impose au moins 64,90 EUR, au-dessus du kit générique Amazon identique (28,99 EUR) et même du Bosch IXO (49,99 EUR) : le prix tient seulement avec un pack nettement plus riche.",
+   "differentiation": "Coffret rigide premium avec embouts supplémentaires classés et notice et SAV en français, montrés ouverts à l'écran",
+   "differentiation_cost_eur": 3,
+   "note": "Tension prix forte : la règle des 4x dépasse le prix Amazon de l'identique (28,99 EUR) et des marques (Bosch IXO 49,99 EUR, Einhell 19,90 EUR). La page Amazon a été rendue en en-gb (titres traduits). Aucun badge promo Prime vu sur les 15 résultats. Autres repères Amazon : HYCHIKA B07RGK11RY 37,63 EUR, 14K avis, 400+ achats/mois. Temu : pas de fiche du mini tournevis à embouts, seulement des perceuses-visseuses 16V et 21V."
+  },
+  {
+   "candidate_id": "self-leveling-cross-line-laser-level",
+   "aliexpress": {
+    "url": "https://fr.aliexpress.com/w/wholesale-self-leveling-cross-line-laser-level-green.html",
+    "min_price_eur": 30.19,
+    "price_quote": "Outil laser T04, 2 lignes, faisceau vert, ligne croisée, auto-nivelant, mini n Price: 30,19€",
+    "max_sold_n": 5000,
+    "sold_quote": "+ 5 K vendus",
+    "identical": true,
+    "scrape_status": "ok"
+   },
+   "amazon_fr": {
+    "url": "https://www.amazon.fr/s?k=niveau+laser",
+    "asin": "",
+    "price_eur": null,
+    "price_quote": "The page is an error page (\"Toutes nos excuses\").",
+    "ratings_n": null,
+    "ratings_quote": "",
+    "bought_n": null,
+    "bought_quote": "",
+    "identical": false,
+    "prime_badge": false,
+    "scrape_status": "error"
+   },
+   "temu": {
+    "url": "https://www.temu.com/self-leveling-level-laser-5040045317680-s.html",
+    "price_eur": null,
+    "quote": "Rating 4.8(1,565)Laser Level with Green Beam & Cross Line - 100ft/30m Range, Magnetic Base, Tool for, DIY, Ceiling/ - Compatible with laser detectors.",
+    "found": true,
+    "scrape_status": "ok"
+   },
+   "target_price_eur": 124.9,
+   "target_rationale": "4 x 30,19 EUR = 120,76 EUR donne un plancher de 124,90 EUR ; aucun prix Amazon.fr n'a pu être mesuré pour vérifier la cohérence avec le marché.",
+   "differentiation": "Kit complet visible en ouverture : trépied, support magnétique, cible et housse de transport, plus notice FR",
+   "differentiation_cost_eur": 6,
+   "note": "Amazon.fr INVALIDE : erreur 503 « Toutes nos excuses » au 1er essai, puis encore au retry (servi depuis le cache). Valeurs Amazon à null. Le plancher AliExpress identique (2 lignes croisées vertes) est de 30,19 EUR. Le 16 lignes EX016 à 19,19 EUR n'est pas le même produit. Les 5K ventes viennent du Pracmanu 12 lignes (même fonction, plus de lignes). Temu : fiches US identiques sans prix dans l'extrait, plus une fiche us-fr 12 lignes."
+  },
+  {
+   "candidate_id": "ratchet-belt-no-holes",
+   "aliexpress": {
+    "url": "https://fr.aliexpress.com/w/wholesale-men-ratchet-belt-automatic-buckle-no-holes.html",
+    "min_price_eur": 5.29,
+    "price_quote": "Lot de 2 ceintures automatiques à cliquet pour homme, en cuir de vachette pl Prix : 5,29€",
+    "max_sold_n": 500,
+    "sold_quote": "+ 500 vendus",
+    "identical": true,
+    "scrape_status": "ok"
+   },
+   "amazon_fr": {
+    "url": "https://www.amazon.fr/s?k=ceinture+sans+trou+homme",
+    "asin": "",
+    "price_eur": null,
+    "price_quote": "",
+    "ratings_n": null,
+    "ratings_quote": "",
+    "bought_n": null,
+    "bought_quote": "",
+    "identical": false,
+    "prime_badge": false,
+    "scrape_status": "error"
+   },
+   "temu": {
+    "url": "https://www.temu.com/fr/ceinture-en-cuir-sans-trou-pour-homme-boucle-automatique-simple-et-tendance-d%C3%A9contract%C3%A9e-pour-le-travail-tour-de-taille-r%C3%A9glable-g-601099564307268.html",
+    "price_eur": null,
+    "quote": "ceinture en cuir pour homme, boucle automatique, simple et tendance, décontractée pour , réglable. au prix le plus bas Temu.",
+    "found": true,
+    "scrape_status": "ok"
+   },
+   "target_price_eur": 39.9,
+   "target_rationale": "Ceinture cuir à cliquet en coffret à 39,90 EUR : plus de 4x le prix réaliste d'une pièce complète (9,39 EUR, donc 37,56 EUR) et largement plus de 4x le plancher affiché de 5,29 EUR.",
+   "differentiation": "Gravure des initiales sur la boucle et coffret cadeau, montrés en gros plan",
+   "differentiation_cost_eur": 2.5,
+   "note": "Le plancher de 5,29 EUR (« Lot de 2 ») est sans doute le prix « à partir de » d'une variante. Pour une ceinture complète, le repère réaliste est 9,39 EUR (« Ceinture à boucle automatique réglable, sans trous », + 500 vendus). Le 6,79 EUR « sans boucle » est exclu (sangle seule) et le « + 700 vendus » est une boucle seule (accessoire). Amazon.fr INVALIDE : le scrape a dépassé 60 s, plus de quota pour un retry, valeurs à null. Temu : fiche FR identique trouvée, prix absent de l'extrait."
+  },
+  {
+   "candidate_id": "cordless-heated-neck-shoulder-kneading-massager",
+   "aliexpress": {
+    "url": "https://fr.aliexpress.com/w/wholesale-neck-shoulder-massager-kneading-heating-cordless.html",
+    "min_price_eur": 31.59,
+    "price_quote": "Masseur bionique 4D pour les doigts, le cou et les épaules, sans fil, Trapezius cervi Price: 31,59€",
+    "max_sold_n": 10000,
+    "sold_quote": "+ 10 000 vendus",
+    "identical": true,
+    "scrape_status": "ok"
+   },
+   "amazon_fr": {
+    "url": "https://www.amazon.fr/s?k=masseur+cou+et+%C3%A9paules",
+    "asin": "B0H28QSS7H",
+    "price_eur": 35.98,
+    "price_quote": "Masseur Cervical à Main Bionique, 4D Massage Cervicales et Cou avec Télécommande 5 Niveaux D'Intensité et 2 Niveaux de Chaleur - Price: 35,98 €",
+    "ratings_n": 14,
+    "ratings_quote": "(14)",
+    "bought_n": 100,
+    "bought_quote": "Plus de 100 achetés au cours du mois dernier",
+    "identical": true,
+    "prime_badge": false,
+    "scrape_status": "ok"
+   },
+   "temu": {
+    "url": "https://www.temu.com/ma/masseur-chauffant-rechargeable-usb-pour-le-cou-et-les-%C3%A9paules-appareil-de-massage-%C3%A9lectrique-avec-simulation-manuelle-pour-le-cou-les-%C3%A9paules-et-le--masseur-trap%C3%A8ze-pour-le-cou-offrant-un-massage-%C3%A0-p%C3%A2tisserie--pour-les-%C3%A9paules-et-les-jambes-il-est-portable-et-un--de-cadeau-id%C3%A9al-g-601105244806937.html",
+    "price_eur": null,
+    "quote": "Masseur chauffant rechargeable USB pour le cou et les épaules, appareil de massage électrique avec simulation manuelle pour le cou, les épaules et le ...",
+    "found": true,
+    "scrape_status": "ok"
+   },
+   "target_price_eur": 129.9,
+   "target_rationale": "La règle des 4x (4 x 31,59 EUR = 126,36 EUR) impose 129,90 EUR, mais c'est incohérent avec Amazon.fr où l'identique se vend 35,98 EUR et le leader du rayon (Brelley) 37,99 EUR.",
+   "differentiation": "AUCUNE",
+   "differentiation_cost_eur": 0,
+   "note": "Conflit majeur entre la règle des 4x et le marché : l'identique est à 35,98 EUR sur Amazon (100+ achats/mois), la variante rechargeable B0GV541RVV à 39,99 EUR (13 avis, 50+ achats/mois) et Brelley B0DYJ5M8F6 à 37,99 EUR (744 avis, 700+ achats/mois). Aucun badge promo Prime vu. Le max de ventes AliExpress (+ 10 000 vendus) vient du « Masseur sans fil pour le cou et les épaules, avec moteur sans balais » à 43,19 EUR. Temu : fiches identiques au Maroc et au Luxembourg, sans prix dans les extraits."
+  }
+ ]
+}

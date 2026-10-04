@@ -1,0 +1,239 @@
+{
+ "agent": "e1-3",
+ "calls_used": 11,
+ "results": [
+  {
+   "candidate_id": "ultrasonic-anti-bark-device",
+   "searches": [
+    {
+     "query": "\"anti aboiement ultrason\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22anti%20aboiement%20ultrason%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "boîtier anti aboiement",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=bo%C3%AEtier%20anti%20aboiement&search_type=keyword_unordered",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"anti aboiement ultrason\"",
+   "best_results_n": 0,
+   "best_results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22anti%20aboiement%20ultrason%22&search_type=keyword_exact_phrase",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "Zéro confirmé par 2 recherches (exacte + unordered). La 1re tentative en format query a renvoyé 'no total results text and no ad cards' ; le repli markdown a montré la page vide 'Aucune publicité ne correspond à vos critères de recherche.' (2 appels pour cette recherche). Le scraper fonctionne bien par ailleurs (d'autres requêtes de la session renvoient des cartes), ce zéro n'est donc pas un échec de rendu."
+  },
+  {
+   "candidate_id": "zip-trading-card-binder",
+   "searches": [
+    {
+     "query": "\"classeur cartes pokémon\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22classeur%20cartes%20pok%C3%A9mon%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "classeur cartes à collectionner",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=classeur%20cartes%20%C3%A0%20collectionner&search_type=keyword_unordered",
+     "results_text": "2 résultats",
+     "results_n": 2,
+     "cards_seen": 2,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "classeur cartes à collectionner",
+   "best_results_n": 2,
+   "best_results_text": "2 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=classeur%20cartes%20%C3%A0%20collectionner&search_type=keyword_unordered",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "Recherche exacte = 0. La recherche unordered donne 2 résultats, aucun ne vend un classeur : 'Merveilles du Monde' (www.merveilles-du-monde.fr, 'Le chocolat de votre enfance pourrait bien devenir le leur.') et '_poke_collectors_' (instagram.com, 'Votre nouveau repaire Pokémon débarque à Cannes !', une boutique physique). Aucun annonceur actif en France sur ce produit dans les cartes vues."
+  },
+  {
+   "candidate_id": "ai-translation-earbuds",
+   "searches": [
+    {
+     "query": "\"écouteurs traducteur\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22%C3%A9couteurs%20traducteur%22&search_type=keyword_exact_phrase",
+     "results_text": "1 résultat",
+     "results_n": 1,
+     "cards_seen": 1,
+     "relevant_cards": 1,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "écouteurs traduction instantanée",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%C3%A9couteurs%20traduction%20instantan%C3%A9e&search_type=keyword_unordered",
+     "results_text": "280 résultats",
+     "results_n": 280,
+     "cards_seen": 20,
+     "relevant_cards": 19,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "écouteurs traduction instantanée",
+   "best_results_n": 280,
+   "best_results_text": "280 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%C3%A9couteurs%20traduction%20instantan%C3%A9e&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Flyxli",
+     "library_id": "1555506929284538",
+     "started": "9 juil 2026",
+     "days": 87,
+     "variants": null,
+     "domain": "flyxli.com"
+    },
+    {
+     "name": "De&Mindarcx",
+     "library_id": "1214394990794054",
+     "started": "10 juil 2026",
+     "days": 86,
+     "variants": null,
+     "domain": "www.mindarcx.com"
+    },
+    {
+     "name": "Dailynestbarn.DA01",
+     "library_id": "28271117922472063",
+     "started": "26 juil 2026",
+     "days": 70,
+     "variants": null,
+     "domain": "www.dailynestbarn.com"
+    },
+    {
+     "name": "Brandlyra.by",
+     "library_id": "1612122250257064",
+     "started": "31 août 2026",
+     "days": 34,
+     "variants": null,
+     "domain": "www.brandlyra.com"
+    },
+    {
+     "name": "Providegive.Stop",
+     "library_id": "875463658866266",
+     "started": "20 sep 2026",
+     "days": 14,
+     "variants": null,
+     "domain": "www.providegive.com"
+    }
+   ],
+   "advertisers_distinct": 5,
+   "partial_lot": true,
+   "oldest_days": 87,
+   "status": "MESURÉ",
+   "note": "Annonceurs comptés par domaine de destination : 5. Dailynestbarn passe par 4 pages (AI07, DA01, BA, IL02), toutes vers www.dailynestbarn.com ; par nom de page, on compte 8 annonceurs. Pour chaque annonceur, la fiche retient sa pub la plus ancienne. Compteurs de variantes vus sur d'autres pubs : Dailynestbarn.AI07, ID 1083134564257183 (5 sep 2026), '26 publicités utilisent ce contenu publicitaire et ce texte' ; De&Mindarcx, ID 1033485146203145 (9 août 2026), '16 publicités utilisent ce contenu publicitaire et ce texte'. Flyxli a au moins 7 pubs actives parmi les 20 cartes. Une carte exclue (Luropprt-buy, des lunettes intelligentes IA, produit voisin). Seulement 20 cartes vues sur 280 résultats. La recherche exacte n'a donné qu'une carte (Flyxli, ID 1380797547516374, 25 août 2026)."
+  },
+  {
+   "candidate_id": "slim-wallet-tracker-card",
+   "searches": [
+    {
+     "query": "\"carte traceur\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22carte%20traceur%22&search_type=keyword_exact_phrase",
+     "results_text": "1 résultat",
+     "results_n": 1,
+     "cards_seen": 1,
+     "relevant_cards": 1,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "traceur portefeuille",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=traceur%20portefeuille&search_type=keyword_unordered",
+     "results_text": "18 résultats",
+     "results_n": 18,
+     "cards_seen": 18,
+     "relevant_cards": 14,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "traceur portefeuille",
+   "best_results_n": 18,
+   "best_results_text": "18 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=traceur%20portefeuille&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Trovae",
+     "library_id": "1817115649478448",
+     "started": "30 sep 2026",
+     "days": 4,
+     "variants": null,
+     "domain": "trovae.eu"
+    },
+    {
+     "name": "Locali",
+     "library_id": "1074508808959136",
+     "started": "30 sep 2026",
+     "days": 4,
+     "variants": null,
+     "domain": "localicard.com"
+    }
+   ],
+   "advertisers_distinct": 2,
+   "partial_lot": false,
+   "oldest_days": 4,
+   "status": "MESURÉ",
+   "note": "La recherche exacte porte sur 'carte traceur' (raccourci de 'carte traceur portefeuille'). Sur la recherche unordered, Trovae a 13 cartes ('Traceur Bluetooth au format carte bancaire'), dont 12 lancées le 30 sep 2026 et 1 le 4 oct 2026. Locali a 1 carte ('Traceur format carte bancaire pour portefeuille'). Vitivie (vitivie.com, 4 cartes) est exclu : il vend un traceur GPS pour voiture ou moto, un produit voisin ; sa plus ancienne pub date du 13 mar 2026. Pour la carte 12, l'extraction a renvoyé un identifiant ambigu ('4571212583150456 (ID: 1625268405 on page)'), non retenu. Les deux annonceurs ont démarré il y a 4 jours : concurrence très récente."
+  },
+  {
+   "candidate_id": "butter-slicer-dispenser",
+   "searches": [
+    {
+     "query": "\"coupe beurre\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22coupe%20beurre%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "trancheur beurre",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=trancheur%20beurre&search_type=keyword_unordered",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"coupe beurre\"",
+   "best_results_n": 0,
+   "best_results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22coupe%20beurre%22&search_type=keyword_exact_phrase",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "Zéro confirmé par une 2e recherche unordered ('trancheur beurre', sans le 'à'). Le quota de 11 appels est atteint : 'distributeur beurre tranches' n'a pas été testé."
+  }
+ ]
+}

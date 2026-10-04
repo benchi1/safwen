@@ -1,0 +1,199 @@
+{
+ "agent": "e1-10",
+ "calls_used": 11,
+ "results": [
+  {
+   "candidate_id": "heated-ankle-foot-massager",
+   "searches": [
+    {
+     "query": "\"masseur de pieds chauffant\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22masseur%20de%20pieds%20chauffant%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "masseur cheville portable",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=masseur%20cheville%20portable&search_type=keyword_unordered",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"masseur de pieds chauffant\" (exact phrase, FR, actives)",
+   "best_results_n": 0,
+   "best_results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22masseur%20de%20pieds%20chauffant%22&search_type=keyword_exact_phrase",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "Zéro confirmé par 2 recherches (exacte + non ordonnée). 1er appel en format query a renvoyé 'The information is not on the page.', relancé en markdown : page rendue normalement (filtres visibles, pays France) avec le message 'Aucune publicité ne correspond à vos critères de recherche.' Le scraper rend bien des résultats sur d'autres requêtes de cette session (cf. candidats 2 et 5), donc ce zéro n'est pas un blocage."
+  },
+  {
+   "candidate_id": "adhesive-silicone-door-draft-seal",
+   "searches": [
+    {
+     "query": "\"bas de porte silicone\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22bas%20de%20porte%20silicone%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "bande isolante porte",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=bande%20isolante%20porte&search_type=keyword_unordered",
+     "results_text": "1 résultat",
+     "results_n": 1,
+     "cards_seen": 1,
+     "relevant_cards": 1,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "bande isolante porte (non ordonné, FR, actives)",
+   "best_results_n": 1,
+   "best_results_text": "1 résultat",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=bande%20isolante%20porte&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Michael Carter",
+     "library_id": "1633588441728198",
+     "started": "28 sep 2026",
+     "days": 6,
+     "variants": null,
+     "domain": "aquelie.com"
+    }
+   ],
+   "advertisers_distinct": 1,
+   "partial_lot": false,
+   "oldest_days": 6,
+   "status": "MESURÉ",
+   "note": "Recherche exacte à 0, 2e recherche à '1 résultat'. Produit lu sur la carte : 'Le Joint d'Étanchéité Aquelie' (boutique aquelie.com, page au nom de personne 'Michael Carter', typique dropshipping). Compté comme pertinent parce que l'annonce correspond aux mots 'bande isolante porte', mais la sortie ne dit pas explicitement s'il s'agit d'un bas de porte adhésif en silicone : à vérifier. 'N ads use this creative' absent. Pub démarrée il y a 6 jours seulement."
+  },
+  {
+   "candidate_id": "foldable-aluminum-laptop-stand",
+   "searches": [
+    {
+     "query": "\"support ordinateur portable\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22support%20ordinateur%20portable%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "support ordinateur portable pliable",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=support%20ordinateur%20portable%20pliable&search_type=keyword_unordered",
+     "results_text": "1 résultat",
+     "results_n": 1,
+     "cards_seen": 1,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "support ordinateur portable pliable (non ordonné, FR, actives)",
+   "best_results_n": 1,
+   "best_results_text": "1 résultat",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=support%20ordinateur%20portable%20pliable&search_type=keyword_unordered",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "La recherche exacte porte sur une expression plus large ('support ordinateur portable', sans 'pliable') et donne pourtant 0. La 2e recherche, non ordonnée, donne '1 résultat' : Kilayou us (kilayou.com, ID 27216078021366037, démarrée le 29 juin 2026), qui vend un 'chargeur multifonction 240 W'. Produit voisin, donc non compté. Aucun annonceur pertinent en France : zéro pertinent confirmé par les 2 recherches."
+  },
+  {
+   "candidate_id": "laptop-stand-usb-c-dock",
+   "searches": [
+    {
+     "query": "\"support PC portable\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22support%20PC%20portable%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "rehausseur laptop USB-C",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=rehausseur%20laptop%20USB-C&search_type=keyword_unordered",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"support PC portable\" (exact phrase, FR, actives)",
+   "best_results_n": 0,
+   "best_results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22support%20PC%20portable%22&search_type=keyword_exact_phrase",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "Zéro confirmé par 2 recherches. L'expression exacte a été élargie à 'support PC portable' (début du mot-clé 'support PC portable avec hub USB-C'), et même cette forme large donne 0. 'station d'accueil support ordinateur' n'a pas été testé (quota)."
+  },
+  {
+   "candidate_id": "cup-holder-car-phone-mount",
+   "searches": [
+    {
+     "query": "\"support téléphone porte-gobelet\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22support%20t%C3%A9l%C3%A9phone%20porte-gobelet%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "support smartphone voiture porte-gobelet",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=support%20smartphone%20voiture%20porte-gobelet&search_type=keyword_unordered",
+     "results_text": "5 résultats",
+     "results_n": 5,
+     "cards_seen": 2,
+     "relevant_cards": 2,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "support smartphone voiture porte-gobelet (non ordonné, FR, actives)",
+   "best_results_n": 5,
+   "best_results_text": "5 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=support%20smartphone%20voiture%20porte-gobelet&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Retro Shop",
+     "library_id": "1581668346951127",
+     "started": "23 juil 2026",
+     "days": 73,
+     "variants": 2,
+     "domain": "facebook.com"
+    }
+   ],
+   "advertisers_distinct": 1,
+   "partial_lot": true,
+   "oldest_days": 73,
+   "status": "MESURÉ",
+   "note": "Recherche exacte à 0, 2e recherche à '5 résultats'. Deux cartes vues, toutes deux de Retro Shop : ID 1581668346951127 (démarrée le 23 juil 2026, '2 publicités utilisent ce contenu publicitaire et ce texte') et ID 861725583687865 (démarrée le 29 juil 2026, '3 publicités utilisent ce contenu publicitaire et ce texte'). Avec 2 + 3 = 5, ces deux cartes couvrent probablement les 5 résultats. partial_lot vaut true parce que la règle compare le compteur (5) aux cartes vues (2). Produit lu : 'Support smartphone voiture'. Le modèle pour porte-gobelet n'est pas explicite dans la sortie, mais la recherche contenait 'porte-gobelet'. Lien vers facebook.com (pas de boutique externe). Un seul annonceur distinct."
+  }
+ ]
+}

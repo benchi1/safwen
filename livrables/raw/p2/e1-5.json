@@ -1,0 +1,233 @@
+{
+ "agent": "e1-5",
+ "calls_used": 11,
+ "results": [
+  {
+   "candidate_id": "engraved-leather-bracelet-men",
+   "searches": [
+    {
+     "query": "\"bracelet homme gravé\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22bracelet%20homme%20grav%C3%A9%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "bracelet cuir personnalisé homme",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=bracelet%20cuir%20personnalis%C3%A9%20homme&search_type=keyword_unordered",
+     "results_text": "100 résultats",
+     "results_n": 100,
+     "cards_seen": 20,
+     "relevant_cards": 18,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "bracelet cuir personnalisé homme (keyword_unordered)",
+   "best_results_n": 100,
+   "best_results_text": "100 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=bracelet%20cuir%20personnalis%C3%A9%20homme&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Farmhouse Peace",
+     "library_id": "1539465207020607",
+     "started": "25 juin 2026",
+     "days": 101,
+     "variants": null,
+     "domain": "farmhousepeace.com"
+    },
+    {
+     "name": "Farmhouse Cadeaux",
+     "library_id": "1361751426062397",
+     "started": "14 juil 2026",
+     "days": 82,
+     "variants": null,
+     "domain": "farmhousepeace.com"
+    }
+   ],
+   "advertisers_distinct": 2,
+   "partial_lot": true,
+   "oldest_days": 101,
+   "status": "MESURÉ",
+   "note": "La phrase exacte 'bracelet homme gravé' donne 0 résultat ; la 2e recherche (sans ordre) donne '100 résultats'. 18 des 20 cartes vues viennent de 2 pages (Farmhouse Peace, Farmhouse Cadeaux) qui renvoient vers le même domaine farmhousepeace.com : en réalité c'est donc 1 seule marque. Leurs pubs : 'Cadeau personnalisé homme bracelet cuir infini/coffret' et 'Bracelet Amour Infini prénoms gravés'. Farmhouse Peace a plusieurs pubs actives entre le 25 juin et le 1 oct 2026. Exclus : La Boutique des Hommes (bracelet photo cordon, un produit voisin) et Amazon.fr (bracelet en acier inoxydable). La mention 'N ads use this creative and text' n'était visible sur aucune carte."
+  },
+  {
+   "candidate_id": "ratchet-belt-no-holes",
+   "searches": [
+    {
+     "query": "\"ceinture à cliquet\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22ceinture%20%C3%A0%20cliquet%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "ceinture sans trou homme",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=ceinture%20sans%20trou%20homme&search_type=keyword_unordered",
+     "results_text": "37 résultats",
+     "results_n": 37,
+     "cards_seen": 20,
+     "relevant_cards": 3,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "ceinture sans trou homme (keyword_unordered)",
+   "best_results_n": 37,
+   "best_results_text": "37 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=ceinture%20sans%20trou%20homme&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Amazon Fashion EU",
+     "library_id": "1547595623324927",
+     "started": "24 juil 2026",
+     "days": 72,
+     "variants": null,
+     "domain": "amazon.fr"
+    },
+    {
+     "name": "Bellutia",
+     "library_id": "1075458845122811",
+     "started": "30 sep 2026",
+     "days": 4,
+     "variants": null,
+     "domain": "bellutia.com"
+    }
+   ],
+   "advertisers_distinct": 2,
+   "partial_lot": true,
+   "oldest_days": 72,
+   "status": "MESURÉ",
+   "note": "La phrase exacte 'ceinture à cliquet' donne 0 résultat : la réponse 'query' ne contenait pas les données, la reprise en markdown affiche 'Aucune publicité ne correspond à vos critères de recherche.'. La 2e recherche donne '37 résultats', mais la plupart des cartes sont hors sujet (romans, applis, chaussures). Pertinents : Amazon Fashion EU, 2 pubs 'ceinture homme à cliquet sans trou' (IDs 1547595623324927 et 27688798650782067), qui renvoient vers amazon.fr pendant la promo Prime d'octobre ; et Bellutia, 'ceinture sans trou microajust'. Exclue : La Boutique de la Ceinture (ceinture tressée et ceinture de costume, pas à cliquet). Aucune mention 'N ads use this creative' sur les cartes pertinentes."
+  },
+  {
+   "candidate_id": "flapping-bird-cat-toy",
+   "searches": [
+    {
+     "query": "\"oiseau qui bat des ailes\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22oiseau%20qui%20bat%20des%20ailes%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "jouet chat oiseau",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=jouet%20chat%20oiseau&search_type=keyword_unordered",
+     "results_text": "1 résultat",
+     "results_n": 1,
+     "cards_seen": 1,
+     "relevant_cards": 1,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "jouet chat oiseau (keyword_unordered)",
+   "best_results_n": 1,
+   "best_results_text": "1 résultat",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=jouet%20chat%20oiseau&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Lorune VI",
+     "library_id": "3443613759142819",
+     "started": "26 juil 2026",
+     "days": 70,
+     "variants": null,
+     "domain": "lorune.fr"
+    }
+   ],
+   "advertisers_distinct": 1,
+   "partial_lot": false,
+   "oldest_days": 70,
+   "status": "MESURÉ",
+   "note": "La phrase exacte 'oiseau qui bat des ailes' donne 0 résultat, confirmé par la 2e recherche qui ne trouve que '1 résultat'. La seule pub, de Lorune VI, décrit un 'Jouet oiseau réaliste avec chant' : le battement d'ailes n'est pas confirmé par le texte lu, à vérifier sur la page lorune.fr. Cette même pub ressort aussi dans la recherche 'jouet interactif chat'."
+  },
+  {
+   "candidate_id": "automatic-moving-cat-toy",
+   "searches": [
+    {
+     "query": "\"jouet chat automatique\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22jouet%20chat%20automatique%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "jouet interactif chat",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=jouet%20interactif%20chat&search_type=keyword_unordered",
+     "results_text": "8 résultats",
+     "results_n": 8,
+     "cards_seen": 8,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "jouet interactif chat (keyword_unordered)",
+   "best_results_n": 8,
+   "best_results_text": "8 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=jouet%20interactif%20chat&search_type=keyword_unordered",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "La phrase exacte 'jouet chat automatique' donne 0 résultat. La 2e recherche donne '8 résultats' et 8 cartes vues, dont aucune ne vend clairement un jouet pour chat qui se déplace seul. Deux cartes restent ambiguës, avec le descriptif générique 'Jouet Interactif pour Animaux' : Biaotic store (ID 1184102247154302, 1 déc 2025, biaotic.com, 307 jours) et W8Cat Pet Toys (ID 4833993700162260, 3 oct 2026, w8cat.com). Si ce sont des jouets automatiques, le total passerait à 2 annonceurs et oldest_days à 307 ; à vérifier sur les pages. Exclus : Wedinery D (jouet pour chien), Sueean (jouet corde), Natraline (marionnette), Lorune VI (oiseau qui chante), Hendalla NL (ID non lisible dans la réponse de l'outil). Le 0 annonceur pertinent n'est donc pas un compteur à 0."
+  },
+  {
+   "candidate_id": "cordless-heated-neck-shoulder-kneading-massager",
+   "searches": [
+    {
+     "query": "\"masseur cou et épaules\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22masseur%20cou%20et%20%C3%A9paules%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "masseur cervical chauffant",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=masseur%20cervical%20chauffant&search_type=keyword_unordered",
+     "results_text": "5 résultats",
+     "results_n": 5,
+     "cards_seen": 5,
+     "relevant_cards": 3,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "masseur cervical chauffant (keyword_unordered)",
+   "best_results_n": 5,
+   "best_results_text": "5 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=masseur%20cervical%20chauffant&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Cervalya",
+     "library_id": "1139911692323128",
+     "started": "3 oct 2026",
+     "days": 1,
+     "variants": null,
+     "domain": "cervalya.fr"
+    }
+   ],
+   "advertisers_distinct": 1,
+   "partial_lot": false,
+   "oldest_days": 1,
+   "status": "MESURÉ",
+   "note": "La phrase exacte 'masseur cou et épaules' donne 0 résultat. La 2e recherche donne '5 résultats'. Cervalya a 3 pubs (IDs 1139911692323128, 1108835061593360 et 2270427290384336), toutes lancées le 3 oct 2026 vers cervalya.fr, pour le produit 'Cervalya™-masseur-cervical-chauffant'. Le pétrissage et l'absence de fil ne sont pas confirmés par le texte lu. Exclu : Santé & Science, produit 'FisioRest' (2 pubs, 30 sep et 1 oct 2026, trymovena.fr), dont le type n'est pas identifiable dans la sortie de l'outil ; à vérifier."
+  }
+ ]
+}

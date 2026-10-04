@@ -1,0 +1,246 @@
+{
+ "agent": "e1-4",
+ "calls_used": 10,
+ "results": [
+  {
+   "candidate_id": "vacuum-mason-jar-lids",
+   "searches": [
+    {
+     "query": "\"couvercle sous vide\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22couvercle%20sous%20vide%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "bocal sous vide",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=bocal%20sous%20vide&search_type=keyword_unordered",
+     "results_text": "83 résultats",
+     "results_n": 83,
+     "cards_seen": 20,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"couvercle sous vide\" (keyword_exact_phrase)",
+   "best_results_n": 0,
+   "best_results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22couvercle%20sous%20vide%22&search_type=keyword_exact_phrase",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "Recherche exacte : le mode query a répondu 'The information is not on the page.', relance en markdown qui affiche 'Aucune publicité ne correspond à vos critères de recherche.' Zéro confirmé par la 2e recherche 'bocal sous vide' (non ordonnée) : 83 résultats, mais aucune des 20 premières cartes ne vend des couvercles sous vide (compléments alimentaires, sacs à pain, appli de lecture, etc.). Les 63 cartes restantes n'ont pas été vues."
+  },
+  {
+   "candidate_id": "mini-electric-food-chopper",
+   "searches": [
+    {
+     "query": "\"mini hachoir\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22mini%20hachoir%22&search_type=keyword_exact_phrase",
+     "results_text": "23 résultats",
+     "results_n": 23,
+     "cards_seen": 20,
+     "relevant_cards": 15,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"mini hachoir\" (keyword_exact_phrase)",
+   "best_results_n": 23,
+   "best_results_text": "23 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22mini%20hachoir%22&search_type=keyword_exact_phrase",
+   "advertisers": [
+    {
+     "name": "Jolietoile",
+     "library_id": "2082907285771827",
+     "started": "6 juil 2026",
+     "days": 90,
+     "variants": null,
+     "domain": "m.jolietoile.fr"
+    },
+    {
+     "name": "Mindlyra#wx",
+     "library_id": "1353797853386256",
+     "started": "6 juil 2026",
+     "days": 90,
+     "variants": null,
+     "domain": "www.mindlyra.com"
+    },
+    {
+     "name": "Kilayou shop",
+     "library_id": "2889530044725075",
+     "started": "12 juil 2026",
+     "days": 84,
+     "variants": null,
+     "domain": "kilayou.com"
+    },
+    {
+     "name": "Growarcx+SF (aussi page Growarcx-32)",
+     "library_id": "1428691409321278",
+     "started": "25 août 2026",
+     "days": 40,
+     "variants": null,
+     "domain": "www.growarcx.com"
+    },
+    {
+     "name": "Aneedparis",
+     "library_id": "1722378993101449",
+     "started": "21 sep 2026",
+     "days": 13,
+     "variants": null,
+     "domain": "aneedparis.com"
+    },
+    {
+     "name": "Boutiquefortun now",
+     "library_id": "1605892391193210",
+     "started": "22 sep 2026",
+     "days": 12,
+     "variants": null,
+     "domain": "boutiquefortun.com"
+    }
+   ],
+   "advertisers_distinct": 6,
+   "partial_lot": true,
+   "oldest_days": 90,
+   "status": "MESURÉ",
+   "note": "Expression exacte 'mini hachoir' (sous-chaîne de 'mini hachoir électrique') pour couvrir aussi 'mini hachoir sans fil'. 15 cartes pertinentes sur 20 vues : Jolietoile seul en a 7 ('Broyeur d'ail électrique domestique'). Growarcx+SF et Growarcx-32 ont le même domaine, comptés comme 1 annonceur (5 cartes). Exclus : Moulinex (Easy Fry, hachoir à viande), Garvee France (attelage, et 'Mini Hachoir Manuel à Ail', manuel donc produit voisin). Aucun texte 'N ads use this creative and text' n'a été rendu. 3 cartes sur 23 n'ont pas été vues."
+  },
+  {
+   "candidate_id": "pull-out-cabinet-spice-rack",
+   "searches": [
+    {
+     "query": "\"range épices\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22range%20%C3%A9pices%22&search_type=keyword_exact_phrase",
+     "results_text": "3 résultats",
+     "results_n": 3,
+     "cards_seen": 3,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "organisateur épices",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=organisateur%20%C3%A9pices&search_type=keyword_unordered",
+     "results_text": "9 résultats",
+     "results_n": 9,
+     "cards_seen": 8,
+     "relevant_cards": 7,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "organisateur épices (keyword_unordered)",
+   "best_results_n": 9,
+   "best_results_text": "9 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=organisateur%20%C3%A9pices&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Vitaluster shop",
+     "library_id": "1053483007167097",
+     "started": "28 juil 2026",
+     "days": 68,
+     "variants": 2,
+     "domain": "vitaluster.com"
+    },
+    {
+     "name": "EclireHome",
+     "library_id": "1100383222460554",
+     "started": "30 sep 2026",
+     "days": 4,
+     "variants": null,
+     "domain": "eclire.com"
+    }
+   ],
+   "advertisers_distinct": 2,
+   "partial_lot": true,
+   "oldest_days": 68,
+   "status": "MESURÉ",
+   "note": "Recherche exacte 'range épices' : 3 résultats. Ixina Longwy (cuisiniste, 'Meuble range-épices coulissant', ID 1840868316900014, 28 sep 2026, lien instagram.com) est exclu car c'est un module de cuisine équipée, donc un produit voisin. Les 2 autres cartes sont Le Mascaret, une cuisine d'exposition. Recherche non ordonnée 'organisateur épices' : Vitaluster a 5 cartes ('Organisateur de placard à deux niveaux coulissants en acier carbone'). Le '2 publicités utilisent ce contenu publicitaire et ce texte' est sur l'ID 1333687831863378 (9 août 2026). EclireHome a 2 cartes ('Étagère coulissante en acier à deux niveaux'). Attention : l'outil a lui-même étiqueté ces annonces 'pull-out sliding cabinet spice rack' ; le libellé copié parle d'un organisateur de placard coulissant, sans dire 'épices'. Une carte Ludikits est hors sujet. 8 cartes vues sur 9."
+  },
+  {
+   "candidate_id": "pet-hair-carpet-rake",
+   "searches": [
+    {
+     "query": "\"racloir poils\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22racloir%20poils%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "poils tapis",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=poils%20tapis&search_type=keyword_unordered",
+     "results_text": "280 résultats",
+     "results_n": 280,
+     "cards_seen": 20,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"racloir poils\" (keyword_exact_phrase)",
+   "best_results_n": 0,
+   "best_results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22racloir%20poils%22&search_type=keyword_exact_phrase",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "L'expression exacte 'racloir poils' donne 0. La 2e recherche non ordonnée 'poils tapis' donne 280 résultats, mais 20 cartes seulement ont été vues (7 %) et aucune ne vend clairement un racloir ou une brosse anti-poils manuelle. On y trouve des aspirateurs robots (Dreame, Roborock, Ecovacs, Mova), de la litière Pacha, des produits pour chats, H2O at Home et DustGo (un 'appareil', ID 1693736388694700). Seniya ('Votre canapé retiens bien plus', ID 4425216521084005, fb.me) reste indéterminé et n'est pas compté. Le zéro ne vaut que pour l'expression exacte : 260 cartes non vues de la recherche large peuvent contenir des concurrents."
+  },
+  {
+   "candidate_id": "personalized-leather-toiletry-bag",
+   "searches": [
+    {
+     "query": "\"trousse de toilette personnalisée\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22trousse%20de%20toilette%20personnalis%C3%A9e%22&search_type=keyword_exact_phrase",
+     "results_text": "8 résultats",
+     "results_n": 8,
+     "cards_seen": 9,
+     "relevant_cards": 3,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "trousse toilette cuir gravée",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=trousse%20toilette%20cuir%20grav%C3%A9e&search_type=keyword_unordered",
+     "results_text": "2 résultats",
+     "results_n": 2,
+     "cards_seen": 2,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"trousse de toilette personnalisée\" (keyword_exact_phrase)",
+   "best_results_n": 8,
+   "best_results_text": "8 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22trousse%20de%20toilette%20personnalis%C3%A9e%22&search_type=keyword_exact_phrase",
+   "advertisers": [
+    {
+     "name": "Cadeauplus",
+     "library_id": "1045369251836522",
+     "started": "30 sep 2026",
+     "days": 4,
+     "variants": null,
+     "domain": "cadeauplus.com"
+    }
+   ],
+   "advertisers_distinct": 1,
+   "partial_lot": false,
+   "oldest_days": 4,
+   "status": "MESURÉ",
+   "note": "Recherche exacte : le compteur indique 8, mais l'extraction a rendu 9 cartes. La 9e porte un ID anormal (825293108_1444454907653844_4445305935915892055), donc possible erreur d'extraction. 'Trousse De Toilette Personnalisée' renvoie vers cadeauplus.com sur 3 cartes : 2 de la page Cadeauplus et 1 de la page Roseta (ID 1608607380806953, 30 sep 2026). Elles sont comptées comme 1 seul annonceur, par domaine. Roseta (rosetadesign.com) vend surtout des sacs week-end ou bowling personnalisés (produit voisin, non compté). Sogaia ('Trousse de Toilette à Suspendre pour Femme', non personnalisée) n'est pas compté. 2e recherche non ordonnée 'trousse toilette cuir gravée' : 2 résultats, ARNT REAL (arntreal.com, 2 oct 2026, 'Le sac est juste parfait'). Produit non identifiable comme trousse personnalisée, non compté."
+  }
+ ]
+}

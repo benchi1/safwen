@@ -1,0 +1,273 @@
+{
+ "agent": "comp3-1",
+ "calls_used": 7,
+ "results": [
+  {
+   "candidate_id": "desk-clamp-tablet-phone-arm",
+   "note": "Amazon US 'tablet desk mount arm' OK (pas de captcha). Résultats 1-4 (Urmust, notes au format '1.3k' sans parenthèses) sont probablement sponsorisés. #5 Urmust B0FM3QYF5W (1.3K, 2K+) est un support à socle rotatif, pas une pince. Premier résultat à pince retenu : MAGIPEA gooseneck 'Hands-Free Clamp Mount' (#6). Autres bras à pince : #7 B0FN3F8YG7 C-Clamp (436, 500+), #8 LISEN B0BW3KB8Y4 (2.4K, 400+), #12 Lamicall B0GK93SXHV (1.8K, 6K+). Aucun badge Prime deal sur la page, mais les prix relevés pendant la promo Prime d'octobre peuvent être des prix promo.",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 17800,
+     "unit": "avis",
+     "quote": "MAGIPEA Gooseneck Tablet Holder for Bed, Reinforced Flexible Arm Tablet Stand with 360° Rotation, Hands-Free Clamp Mount for 4.7–13\" iPad, Kindle, Galaxy Tab, Switch $19.99 (17.8K) 2K+ bought in past month B07PT3T8TV",
+     "stable_id": "B07PT3T8TV",
+     "url": "https://www.amazon.com/s?k=tablet+desk+mount+arm",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "tablet desk mount arm",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 2000,
+     "unit": "achats/mois (plancher du badge 2K+)",
+     "quote": "2K+ bought in past month",
+     "stable_id": "B07PT3T8TV",
+     "url": "https://www.amazon.com/s?k=tablet+desk+mount+arm",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "tablet desk mount arm",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "magnetic-gym-phone-mount",
+   "note": "Amazon US 'magnetic gym phone mount' OK. Les 15 premiers résultats sont tous des supports magnétiques pour la salle de sport. Premier : B0FXMGWHQ7. Autres : GolbinBox B0G56QG1S8 (313, 4K+), Magnetic 360° B0DRPMQDZ5 (652, 3K+), APPS2Car B0CCY5PZ7B (1.5K, 1K+), Gym Mate B0BRDY5N22 (1.2K, 100+). Aucun badge Prime deal. Les prix ($7.99 à $28.99) peuvent être des prix de la promo Prime d'octobre.",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 454,
+     "unit": "avis",
+     "quote": "Dual Magnetic Phone Holder for Gym or Metal Surface, for MagSafe | $9.99 | (454) | 2K+ bought in past month | B0FXMGWHQ7 | No",
+     "stable_id": "B0FXMGWHQ7",
+     "url": "https://www.amazon.com/s?k=magnetic+gym+phone+mount",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "magnetic gym phone mount",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 2000,
+     "unit": "achats/mois (plancher du badge 2K+)",
+     "quote": "2K+ bought in past month",
+     "stable_id": "B0FXMGWHQ7",
+     "url": "https://www.amazon.com/s?k=magnetic+gym+phone+mount",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "magnetic gym phone mount",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "smart-mug-warmer",
+   "note": "Amazon US 'smart mug warmer' OK. Le #1 et le #5 sont le même ASIN B0CC8DS2S5 (Coffee Mug Warmer, '(3.9k)', 3K+). Les #2-4 KitchekShop partagent le même compteur 3.9k (variantes de couleur). Autres : HouseGem B0D9N8Y3WL (2.8K, 6K+), House Gem B0CCP46DK9 (4.6K, 4K+), iKago B0BYTZ9Q6D (1.7K, 300+). La page mélange plaques chauffantes et mugs auto-chauffants Supsonic ($59.99 à $99.99). Aucun badge Prime deal ; le prix de $19.99 peut être un prix promo de la promo Prime d'octobre.",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 3900,
+     "unit": "avis",
+     "quote": "Coffee Mug Warmer-Fastest Heating & Highest Temperature, Coffee Cup Warmer for Desk Auto Shut Off, 4 Temp Settings & 1-12H Timer, Smart Electric Mug & Candle Warmer for Coffee, Tea (Black) $19.99 (3.9k) 3K+ bought in past month B0CC8DS2S5",
+     "stable_id": "B0CC8DS2S5",
+     "url": "https://www.amazon.com/s?k=smart+mug+warmer",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "smart mug warmer",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 3000,
+     "unit": "achats/mois (plancher du badge 3K+)",
+     "quote": "3K+ bought in past month",
+     "stable_id": "B0CC8DS2S5",
+     "url": "https://www.amazon.com/s?k=smart+mug+warmer",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "smart mug warmer",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "cat-scratcher-rope-basket",
+   "note": "Amazon US 'cat scratcher bed' OK, mais la page est dominée par des lits-donuts et des griffoirs en carton ou en sisal : Peekaboo Cat Cave (5K, 1K+), ZOMISIA carton B0F8B4TSG2 (694, 3K+), miwoowim B0DR95WZ75 (1K, 3K+), Hide & Scratch carton B0B297SHJJ (4.3K, 1K+). Un seul panier en corde dans le top 15 : #10 'Handwoven Cotton Rope Cat Basket, Cat Bed & Scratcher' B0HDPKXH4B ($45.99), sans nombre d'avis ni badge d'achats visibles. La demande D pour la variante en corde est donc très faible ou non mesurable sur cette requête, alors que la catégorie générique a du volume. Aucun badge Prime deal.",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": null,
+     "unit": "avis",
+     "quote": "Handwoven Cotton Rope Cat Basket, Cat Bed & Scratcher Price: $45.99 Number of Ratings: Information is not on the page. Bought in Past Month: Information is not on the page. ASIN: B0HDPKXH4B",
+     "stable_id": "B0HDPKXH4B",
+     "url": "https://www.amazon.com/s?k=cat+scratcher+bed",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "cat scratcher bed",
+     "method": "freeform",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": null,
+     "unit": "achats/mois",
+     "quote": "Bought in Past Month: Information is not on the page.",
+     "stable_id": "B0HDPKXH4B",
+     "url": "https://www.amazon.com/s?k=cat+scratcher+bed",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "cat scratcher bed",
+     "method": "freeform",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "xxl-artistic-desk-mat",
+   "note": "Amazon US 'large desk mat' OK, mais aucun tapis illustré ou artistique dans le top 15. La page est dominée par des sous-mains unis en similicuir : YSAGi B0BMTSL48B (22.5K, 4K+) et Aothia B086BLQZ5L (79.3K, 6K+). Le plus proche, un tapis tissu XXL uni noir, est le #15 B0CKMFL9CC ((1.4K), 5K+, $9.99) ; il sert de proxy de catégorie, ce n'est pas ce produit. Pour mesurer la variante illustrée, une requête plus ciblée serait nécessaire (ex. 'aesthetic desk mat'). Aucun badge Prime deal.",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "absent",
+     "value": null,
+     "unit": "",
+     "quote": "Top 15 = 'YSAGi Leather Desk Protector...' / 'Aothia Leather Desk Pad Protector...' / '31.5\" x 15.7\" Waterproof Fabric Desk Pad Large Mouse Pad Office Game, Black' — aucun titre illustré/artistique",
+     "stable_id": "",
+     "url": "https://www.amazon.com/s?k=large+desk+mat",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "large desk mat",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings_proxy_plain_fabric_mat",
+     "value": 1400,
+     "unit": "avis",
+     "quote": "31.5\" x 15.7\" Waterproof Fabric Desk Pad Large Mouse Pad Office Game, Black | Stitched edges,non-slip base,smooth surface, $9.99 (1.4K) 5K+ bought in past month B0CKMFL9CC",
+     "stable_id": "B0CKMFL9CC",
+     "url": "https://www.amazon.com/s?k=large+desk+mat",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "large desk mat",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "vertical-laptop-stand-dock",
+   "note": "Amazon US 'vertical laptop stand' OK. Les 15 résultats sont tous des supports verticaux. Premier : Vaydeer 'Notebook Dock' B089SZGBKJ. Autres : UGREEN B091B4SWR7 (12K, 2K+), OMOTON B078W4XP77 (10.6K, 1K+), B0B5H6VNHX (3.6K, 1K+). Le prix de $12.34 du #1 (non rond) peut être un prix de la promo Prime d'octobre ; aucun badge Prime deal n'a été détecté.",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 2700,
+     "unit": "avis",
+     "quote": "Vaydeer Vertical Laptop Stand Holder Organizer Plastic Adjustable Desktop Notebook Dock Space-Saving 3 in 1 ... Price: $12.34 Number of ratings: (2.7K) Bought in past month: 2K+ bought in past month ASIN: B089SZGBKJ",
+     "stable_id": "B089SZGBKJ",
+     "url": "https://www.amazon.com/s?k=vertical+laptop+stand",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "vertical laptop stand",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 2000,
+     "unit": "achats/mois (plancher du badge 2K+)",
+     "quote": "2K+ bought in past month",
+     "stable_id": "B089SZGBKJ",
+     "url": "https://www.amazon.com/s?k=vertical+laptop+stand",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "vertical laptop stand",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "message-card-pendant-necklace",
+   "note": "Amazon US 'necklace with message card' OK. Les résultats sont des 'Friendship ... Necklace' bon marché ($2.98 à $14.98 : Baydurcan, QXFQJT, LANG XUAN), vendus souvent avec une carte de vœux. Les titres sont tronqués à 80 caractères et ne mentionnent ni carte ni coffret : le rattachement à CE produit (collier avec carte message en coffret) est un jugement, voir l'ESTIMATION. Aucun format 'message card + gift box' premium visible. Signal faible : badges entre 50+ et 100+. Le plus gros volume d'avis est Baydurcan B08LD9M381 / B07QS8W9VC (7.9K, 100+ sur B07QS8W9VC). Aucun badge Prime deal.",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 401,
+     "unit": "avis",
+     "quote": "Title: Baydurcan Friendship Anchor Compass Necklace Good Luck Elephant Pendant Chain Price: $8.98 Ratings: (401) Bought in past month: 50+ bought in past month ASIN: B07RTRDYBN",
+     "stable_id": "B07RTRDYBN",
+     "url": "https://www.amazon.com/s?k=necklace+with+message+card",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "necklace with message card",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 50,
+     "unit": "achats/mois (plancher du badge 50+)",
+     "quote": "50+ bought in past month",
+     "stable_id": "B07RTRDYBN",
+     "url": "https://www.amazon.com/s?k=necklace+with+message+card",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "necklace with message card",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_product_match",
+     "value": null,
+     "unit": "",
+     "quote": "Baydurcan Friendship Anchor Compass Necklace Good Luck Elephant Pendant Chain",
+     "stable_id": "B07RTRDYBN",
+     "url": "https://www.amazon.com/s?k=necklace+with+message+card",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "necklace with message card",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    }
+   ]
+  }
+ ]
+}

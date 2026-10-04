@@ -1,0 +1,154 @@
+{
+ "agent": "e2-1",
+ "calls_used": 13,
+ "results": [
+  {
+   "candidate_id": "vacuum-suction-phone-mount",
+   "aliexpress": {
+    "url": "https://fr.aliexpress.com/w/wholesale-vacuum-suction-cup-phone-holder-magnetic.html",
+    "min_price_eur": 9.39,
+    "price_quote": "13. Nouveau 360 ° Support magnétique d'aspiration sous vide réglable support de t\nPrice: 9,39€",
+    "max_sold_n": 1000,
+    "sold_quote": "Vendus: + 1 000 vendus",
+    "identical": true,
+    "scrape_status": "ok"
+   },
+   "amazon_fr": {
+    "url": "https://www.amazon.fr/s?k=support+téléphone+ventouse",
+    "asin": "B0FMD7BTKC",
+    "price_eur": 22.55,
+    "price_quote": "Lamicall Car Phone Holder for MagSafe - Vacuum Suction Cup & 24X N55\nPrice: €22.55",
+    "ratings_n": 2000,
+    "ratings_quote": "Number of ratings: 2K",
+    "bought_n": 500,
+    "bought_quote": "500+ bought in past month",
+    "identical": true,
+    "prime_badge": false,
+    "scrape_status": "ok"
+   },
+   "temu": {
+    "url": "https://www.temu.com/ca-fr/support-t%C3%A9l%C3%A9phone-ventouse-%C3%A0-aspiration-rotatif-%C3%A0-360--de-ventouse-magn%C3%A9tique---t%C3%A9lescopique--adh%C3%A9sif-adapt%C3%A9-%C3%A0-une-utilisation-en-voiture-et-%C3%A0--avec-un--de-bague-magn%C3%A9tique--g-601104702505960.html",
+    "price_eur": null,
+    "quote": "Support Téléphone Ventouse à Aspiration, Rotatif à 360°, de Ventouse Magnétique , Télescopique Adhésif, Adapté à une Utilisation en Voiture et à , avec un ...",
+    "found": true,
+    "scrape_status": "ok"
+   },
+   "target_price_eur": 29.9,
+   "target_rationale": "Amazon.fr vend le même support à ventouse sous vide 22,55 € (Lamicall) et des supports à ventouse 9 à 18 € ; 29,90 € est le plafond crédible avec un pack, mais cela ne fait que 3,2 fois le coût AliExpress de 9,39 €, donc la règle des 4 fois N'EST PAS respectée.",
+   "differentiation": "Pack « miroir + voiture » : support sous vide + anneau magnétique adhésif pour les téléphones non MagSafe + chiffon de nettoyage de surface, présentés ensemble dans la vidéo (fixation sur un miroir de salle de bain en 1 geste).",
+   "differentiation_cost_eur": 1.2,
+   "note": "Produit identique retenu = annonce explicitement « aspiration sous vide » à 9,39 €. Il existe aussi sur AliExpress des supports magnétiques à ventouse classiques bien moins chers (3,59 €, « + 3 000 vendus » ; 3,11 €, « + 3 000 vendus ») et un support magnétique générique à « + 10 000 vendus » (4,29 €), sans doute différents (ventouse simple, pas de pompe à vide). La page Amazon.fr s'est affichée en anglais (en-gb), les titres sont donc traduits et les prix en €. Aucun badge d'offre Prime vu malgré la promo Prime d'octobre. Le marché Amazon des supports voiture à ventouse est très concurrentiel (Miracase 30,5K avis, 4K+ achats par mois, 14,98 €). Les 4 fois le coût ne sont pas atteignables au prix du marché."
+  },
+  {
+   "candidate_id": "rechargeable-hand-warmer",
+   "aliexpress": {
+    "url": "https://fr.aliexpress.com/w/wholesale-rechargeable-hand-warmer-magnetic-2-pack.html",
+    "min_price_eur": 17.19,
+    "price_quote": "8. Chauffe-mains magnétique rechargeable, lot de 2, chauffe-mains portable, cadeau te\nPrice: 17,19€",
+    "max_sold_n": 600,
+    "sold_quote": "Vendus: + 600 vendus",
+    "identical": true,
+    "scrape_status": "ok"
+   },
+   "amazon_fr": {
+    "url": "https://www.amazon.fr/s?k=chauffe-mains+rechargeable",
+    "asin": "B0H71MYDBK",
+    "price_eur": 14.99,
+    "price_quote": "SWEETFULL Pack of 2 Rechargeable Hand Warmers 2 in 1 Magnetic 3 Modes\nPrice: €14.99",
+    "ratings_n": 65,
+    "ratings_quote": "Number of ratings: 65",
+    "bought_n": 200,
+    "bought_quote": "200+ bought in past month",
+    "identical": true,
+    "prime_badge": false,
+    "scrape_status": "ok"
+   },
+   "temu": {
+    "url": "https://www.temu.com/ca-fr/chauffe-mains-5020085904393-s.html",
+    "price_eur": null,
+    "quote": "4.5316 Lot de 2 chauffe-mains rechargeables avec * magnétique, chargement USB-C, batterie lithium-polymère 3000Mah, 3 réglages de température, excellents cadeaux d'* ...",
+    "found": true,
+    "scrape_status": "ok"
+   },
+   "target_price_eur": 29.9,
+   "target_rationale": "Amazon.fr vend le même lot de 2 magnétique 12,99 à 14,99 € (SWEETFULL) et les modèles de marque 18 à 25 € (OCOOPA 18,04 €, OUTJUT 24,69 €), donc 29,90 € est déjà au-dessus du marché ; cela ne fait que 1,7 fois le coût AliExpress de 17,19 €, et la règle des 4 fois N'EST PAS respectée.",
+   "differentiation": "Coffret cadeau de Noël avec pochette de transport + câble USB-C double + notice FR, et démonstration à la caméra thermique (mains bleues puis rouges) en 3 secondes.",
+   "differentiation_cost_eur": 2,
+   "note": "Le prix plancher en France est sur Amazon.fr (14,99 €, et SWEETFULL lot de 2 à 12,99 € sans avis), PLUS BAS que le prix AliExpress France le plus bas (17,19 €). Aucun badge d'offre Prime vu, mais la promo Prime d'octobre est en cours : ces prix peuvent être promotionnels. Plusieurs ASIN SWEETFULL identiques (B0H71MYDBK, B0H72352XC, B0H71RJZ21, B0HGXS8FH4). Produit saisonnier (hiver) et à batterie lithium (contraintes de transport). Plus gros volume vu sur Amazon : « 200+ bought in past month ». Le prix d'achat AliExpress au détail rend la marge impossible : il faut un sourcing en gros (agent, 1688) pour que le produit soit viable."
+  },
+  {
+   "candidate_id": "precision-electric-screwdriver-set",
+   "aliexpress": {
+    "url": "https://fr.aliexpress.com/w/wholesale-precision-electric-screwdriver-set-rechargeable.html",
+    "min_price_eur": 15.39,
+    "price_quote": "1. Kit de tournevis électrique de précision 62 en 1, sans fil, rechargeable, mini\n- Price: 15,39€",
+    "max_sold_n": 10000,
+    "sold_quote": "- Sold: + 10 000 vendus",
+    "identical": true,
+    "scrape_status": "ok"
+   },
+   "amazon_fr": {
+    "url": "https://www.amazon.fr/s?k=tournevis+électrique+de+précision",
+    "asin": "",
+    "price_eur": null,
+    "price_quote": "The page is an error page (\"Toutes nos excuses / Une erreur de système interne a été décelée\").",
+    "ratings_n": null,
+    "ratings_quote": "",
+    "bought_n": null,
+    "bought_quote": "",
+    "identical": false,
+    "prime_badge": false,
+    "scrape_status": "error"
+   },
+   "temu": {
+    "url": "https://www.temu.com/ca-fr/Ensemble-De-Tournevis-%C3%89lectriques-De-Pr%C3%A9cision-28-En-1-Mini-Tournevis-%C3%89lectrique-Ensemble-De-Tournevis-%C3%89lectriques-Rechargeables-g-601099543864345.html",
+    "price_eur": 42.95,
+    "quote": "Rating 4.8(6,272)42,95€. 1set electric screwdriver set electric screwdriver set 50 in 1 precision screwdriver set 3 torque settings.",
+    "found": true,
+    "scrape_status": "ok"
+   },
+   "target_price_eur": 64.9,
+   "target_rationale": "64,90 € fait 4,2 fois le coût AliExpress de 15,39 € (62 en 1) et reste sous le prix US de 49,99 $ majoré de la TVA, mais le marché Amazon.fr n'a PAS pu être mesuré et un set Temu 50 en 1 est à 42,95 € : ce prix est à valider.",
+   "differentiation": "Coffret aluminium magnétique premium avec embouts rangés visibles + lampe LED + notice et SAV en français, montré en dévissant une manette en 1 seconde.",
+   "differentiation_cost_eur": 3,
+   "note": "Amazon.fr a renvoyé une erreur 503 « Toutes nos excuses » au 1er essai ; la nouvelle tentative a resservi la même erreur depuis le cache (cacheState: hit), donc scrape_status = error et valeurs null : statut INVALIDE pour Amazon. Le prix Temu de 42,95 € vient de Temu Slovénie (temu.com/si-en, set 50 en 1), pas de Temu France. L'URL Temu FR-CA donnée est celle de la fiche du même produit (28 en 1) sans prix dans l'extrait. Sur AliExpress, gros volumes : 62 en 1 à 15,39 € (« + 10 000 vendus »), 6 en 1 à 17,79 € (« + 10 000 vendus »), 62 en 1 à 24,59 € (« + 4 000 vendus »)."
+  },
+  {
+   "candidate_id": "wireless-wall-sconce-magnetic-bulb",
+   "aliexpress": {
+    "url": "https://fr.aliexpress.com/w/wholesale-wireless-wall-sconce-rechargeable-magnetic-bulb.html",
+    "min_price_eur": 33.99,
+    "price_quote": "5. 2/1 pcs applique murale magnétique rechargeable 50, noir et or, pour salon, c\nPrice: 33,99€",
+    "max_sold_n": 728,
+    "sold_quote": "Vendus: 728 vendus",
+    "identical": true,
+    "scrape_status": "ok"
+   },
+   "amazon_fr": {
+    "url": "https://www.amazon.fr/s?k=applique+murale+sans+fil",
+    "asin": "B0CJRD7ZBH",
+    "price_eur": 27.07,
+    "price_quote": "FULEN Indoor Wall Light, Rechargeable LED Wall Lamp with Remote Control or\nPrice: €27.07",
+    "ratings_n": 1700,
+    "ratings_quote": "Number of ratings: (1.7K)",
+    "bought_n": 100,
+    "bought_quote": "Bought in past month: 100+ bought in past month",
+    "identical": false,
+    "prime_badge": false,
+    "scrape_status": "ok"
+   },
+   "temu": {
+    "url": "https://www.temu.com/us-fr/ensemble-de-2-appliques-murales-en-cristal-a-piles-applique-murale--fil-noire--avec-ampoules-led-rechargeables-usb-12-couleurs-applique-murale-en-cristal-a--variable-avec-telecommande-pour-chambre-a-coucher-salon-ampoules-incluses-g-606820273875680.html",
+    "price_eur": null,
+    "quote": "Ensemble de 2 appliques murales en cristal à piles, applique murale sans fil noire/dorée avec ampoules LED rechargeables USB, 12 couleurs, applique murale ...",
+    "found": true,
+    "scrape_status": "ok"
+   },
+   "target_price_eur": 49.9,
+   "target_rationale": "Amazon.fr place les appliques sans fil à télécommande entre 27,07 € (FULEN, à l'unité) et 57,99 à 75,99 € (Ketom et Kimjo, souvent en lot de 2), donc 49,90 € l'unité est cohérent avec le marché ; cela ne fait que 1,5 fois le coût AliExpress de 33,99 €, et la règle des 4 fois N'EST PAS respectée.",
+   "differentiation": "Lot de 2 appliques assorties avec ampoules magnétiques + télécommande + adhésif sans perçage, présentées allumées ensemble dans la vidéo (ambiance « location, zéro électricien »), notice FR.",
+   "differentiation_cost_eur": 4,
+   "note": "Produit identique retenu = annonce AliExpress explicitement « applique murale magnétique rechargeable » (« 2/1 pcs ») à 33,99 €, mais avec seulement 7 ventes ; le prix affiché correspond probablement à la variante 1 pièce. Il y a moins cher sans ampoule magnétique confirmée : 29,39 € (1 vente). Le chiffre « 728 vendus » vient de « Sans fil rechargeable alimenté par batterie Wall Band 4000mah dimmable amovible » (35,59 €), identité à confirmer. Résultat Amazon.fr le plus proche : FULEN avec télécommande ; l'ampoule magnétique n'est pas confirmée, d'où identical=false. Page Amazon affichée en en-gb, aucun badge d'offre Prime vu. Le seul prix Temu vu est « 188 DH » sur Temu Maroc, non converti, donc null. Produit lourd (900 g) et à batterie lithium : le coût livré réel sera supérieur au prix AliExpress."
+  }
+ ]
+}

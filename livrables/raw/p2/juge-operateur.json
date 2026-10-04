@@ -1,0 +1,500 @@
+{
+ "agent": "juge-operateur",
+ "ratings": [
+  {
+   "candidate_id": "adhesive-shower-caddy-set",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 6,
+   "creative_ease": 12,
+   "rationale": "Vraie gêne de locataire et test de charge facile à filmer. Mais l'adhésif qui lâche sur du carrelage humide est la première cause de retour, et l'angle avant/après reste limité."
+  },
+  {
+   "candidate_id": "titanium-cutting-board",
+   "problem_real": false,
+   "gift_obvious": false,
+   "wow_valid": false,
+   "problem_strength": 5,
+   "creative_ease": 10,
+   "rationale": "La peur des microplastiques est une envie plus qu'une douleur ressentie, et le « titane pur » AliExpress est souvent de l'inox revêtu. Annoncer « aucune rayure » est faux après quelques coupes : risque de litige et de retours."
+  },
+  {
+   "candidate_id": "expandable-over-sink-dish-rack",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 6,
+   "creative_ease": 13,
+   "rationale": "Le plan de travail minuscule est une douleur parisienne réelle, et l'avant/après du plan dégagé se tourne seul dans n'importe quelle cuisine. En revanche, les cotes d'évier non standard génèrent des retours et l'angle reste unique."
+  },
+  {
+   "candidate_id": "latte-art-stencil-camera",
+   "problem_real": false,
+   "gift_obvious": true,
+   "wow_valid": true,
+   "problem_strength": 4,
+   "creative_ease": 14,
+   "rationale": "Le clic qui dépose un dessin net sur la mousse se filme bien en gros plan et fait un bon petit cadeau. Mais c'est un gadget d'impulsion à faible panier, sans douleur derrière (3 avis aux US)."
+  },
+  {
+   "candidate_id": "wireless-wall-sconce-magnetic-bulb",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 6,
+   "creative_ease": 15,
+   "rationale": "La combinaison « locataire + pas d'électricien » parle en France et l'avant/après d'ambiance est très visuel, avec plusieurs angles (salon, chambre, couloir). Il faut néanmoins un bel intérieur pour tourner, et la batterie lithium ajoute du SAV."
+  },
+  {
+   "candidate_id": "magnetic-motion-sensor-closet-light",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 5,
+   "creative_ease": 12,
+   "rationale": "Le placard qui s'allume tout seul est simple et vrai à filmer. Mais le produit est banal, vendu chez Action et Amazon à bas prix, ce qui rend la comparaison de prix défavorable."
+  },
+  {
+   "candidate_id": "magnetic-double-sided-windshield-cleaner",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 5,
+   "creative_ease": 12,
+   "rationale": "Le patin qui suit à travers la vitre est un vrai effet visuel, et la buée intérieure du pare-brise est une gêne connue. Mais à travers un pare-brise feuilleté épais et incliné, l'aimant décroche souvent : risque élevé de « ne marche pas » au SAV."
+  },
+  {
+   "candidate_id": "pet-grooming-hammock",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 6,
+   "creative_ease": 11,
+   "rationale": "La coupe des griffes d'un chien qui se débat est une vraie galère. Mais la démo dépend d'un chien qui coopère, ne vaut que pour les petits gabarits, et les erreurs de taille génèrent des retours."
+  },
+  {
+   "candidate_id": "quiet-pet-nail-grinder",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 6,
+   "creative_ease": 13,
+   "rationale": "La peur de couper la veine est une douleur réelle, et le gros plan sur la griffe arrondie est convaincant. La catégorie est toutefois saturée et il faut un animal calme à disposition pour tourner."
+  },
+  {
+   "candidate_id": "mini-cordless-car-vacuum",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": false,
+   "problem_strength": 5,
+   "creative_ease": 11,
+   "rationale": "Le besoin est réel, mais une traînée de miettes aspirée n'arrête plus personne en 2026 : produit ultra saturé. La faible puissance réelle déçoit et provoque des retours."
+  },
+  {
+   "candidate_id": "ultrasonic-anti-bark-device",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": false,
+   "problem_strength": 8,
+   "creative_ease": 7,
+   "rationale": "La douleur est forte (voisins, plaintes). Mais l'efficacité est très inégale selon les chiens, et le « chien qui s'arrête net » se filme rarement sans mise en scène : taux de remboursement élevé assuré."
+  },
+  {
+   "candidate_id": "zip-trading-card-binder",
+   "problem_real": true,
+   "gift_obvious": true,
+   "wow_valid": false,
+   "problem_strength": 5,
+   "creative_ease": 11,
+   "rationale": "Bon cadeau pour un enfant fan de Pokémon, et la pile en vrac devenue classeur rangé est compréhensible. Mais l'effet est plat, pas frappant, et le produit est générique, trouvable en magasin."
+  },
+  {
+   "candidate_id": "ai-translation-earbuds",
+   "problem_real": true,
+   "gift_obvious": true,
+   "wow_valid": false,
+   "problem_strength": 6,
+   "creative_ease": 10,
+   "rationale": "La traduction « instantanée » est surpromise : latence et erreurs réelles rendent la démo honnête peu impressionnante, et il faut un vrai locuteur étranger pour tourner. Gros risque de retours « ne fonctionne pas comme la pub »."
+  },
+  {
+   "candidate_id": "slim-wallet-tracker-card",
+   "problem_real": true,
+   "gift_obvious": true,
+   "wow_valid": false,
+   "problem_strength": 7,
+   "creative_ease": 12,
+   "rationale": "La perte du portefeuille est une angoisse réelle et le produit fait un cadeau facile. Mais le point sur une carte de téléphone n'est pas un visuel frappant, et l'incompatibilité Android génère des retours."
+  },
+  {
+   "candidate_id": "butter-slicer-dispenser",
+   "problem_real": false,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 3,
+   "creative_ease": 10,
+   "rationale": "La sortie des tranches est satisfaisante à filmer, mais l'outil est pensé pour les sticks de beurre US. La plaquette française de 250 g ne rentre pas : le produit est inadapté au marché."
+  },
+  {
+   "candidate_id": "vacuum-mason-jar-lids",
+   "problem_real": false,
+   "gift_obvious": false,
+   "wow_valid": false,
+   "problem_strength": 4,
+   "creative_ease": 9,
+   "rationale": "Les filetages Mason US ne vont pas sur les bocaux Le Parfait et les pots courants en France, donc retours garantis. Pomper un couvercle ne se voit pas : aucun effet visuel."
+  },
+  {
+   "candidate_id": "mini-electric-food-chopper",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 6,
+   "creative_ease": 15,
+   "rationale": "La démo « 3 secondes, oignon haché, zéro larme » est réelle, facile à tourner seul et décline plusieurs angles (ail, herbes, bébé). La catégorie est saturée et l'autonomie de batterie est un point de SAV."
+  },
+  {
+   "candidate_id": "pull-out-cabinet-spice-rack",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 5,
+   "creative_ease": 12,
+   "rationale": "L'avant/après du placard qui s'ouvre sur des pots alignés fonctionne. Mais les cotes de placard varient et la mauvaise taille entraîne des retours. La douleur reste modérée."
+  },
+  {
+   "candidate_id": "pet-hair-carpet-rake",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 7,
+   "creative_ease": 17,
+   "rationale": "La boule de poils sortie d'un tapis « propre » est l'un des avant/après les plus viraux et les plus honnêtes qui soient, tournable partout. Le produit est léger, sans batterie, avec peu de SAV et plusieurs angles possibles (canapé, voiture, tapis)."
+  },
+  {
+   "candidate_id": "personalized-leather-toiletry-bag",
+   "problem_real": false,
+   "gift_obvious": true,
+   "wow_valid": false,
+   "problem_strength": 4,
+   "creative_ease": 8,
+   "rationale": "Un gros plan sur un prénom gravé n'est pas une démo. La personnalisation en dropshipping (délais, fautes de gravure, PU vendu comme du cuir) multiplie le SAV."
+  },
+  {
+   "candidate_id": "engraved-leather-bracelet-men",
+   "problem_real": false,
+   "gift_obvious": true,
+   "wow_valid": false,
+   "problem_strength": 5,
+   "creative_ease": 10,
+   "rationale": "Cadeau émotionnel évident pour la fête des pères ou Noël. Mais le « il s'émeut » est joué et non démontrable, et le message gravé limite les angles et ajoute des erreurs de personnalisation."
+  },
+  {
+   "candidate_id": "ratchet-belt-no-holes",
+   "problem_real": true,
+   "gift_obvious": true,
+   "wow_valid": true,
+   "problem_strength": 4,
+   "creative_ease": 12,
+   "rationale": "Le clic d'ajustement au millimètre est réel et filmable, et le produit fait un cadeau homme correct. La douleur est faible et le tour de taille génère des retours."
+  },
+  {
+   "candidate_id": "flapping-bird-cat-toy",
+   "problem_real": true,
+   "gift_obvious": true,
+   "wow_valid": true,
+   "problem_strength": 6,
+   "creative_ease": 16,
+   "rationale": "Le chat qui bondit sur l'oiseau est une réaction réelle, facile à obtenir avec plusieurs chats UGC, et l'ennui du chat d'appartement parle en France. Point faible : la durabilité face aux griffes."
+  },
+  {
+   "candidate_id": "automatic-moving-cat-toy",
+   "problem_real": true,
+   "gift_obvious": true,
+   "wow_valid": true,
+   "problem_strength": 5,
+   "creative_ease": 13,
+   "rationale": "La démo est filmable, mais beaucoup de chats se lassent vite, ce qui pèse sur les avis et les retours. La catégorie est déjà très exploitée."
+  },
+  {
+   "candidate_id": "cordless-heated-neck-shoulder-kneading-massager",
+   "problem_real": true,
+   "gift_obvious": true,
+   "wow_valid": true,
+   "problem_strength": 7,
+   "creative_ease": 15,
+   "rationale": "La nuque raide après l'écran est massivement partagée, et le produit est un cadeau Q4 évident avec beaucoup de verbatims exploitables. Le relâchement visible reste en partie joué, mais le mouvement des « mains » est réel."
+  },
+  {
+   "candidate_id": "sunrise-wake-up-light",
+   "problem_real": true,
+   "gift_obvious": true,
+   "wow_valid": false,
+   "problem_strength": 6,
+   "creative_ease": 11,
+   "rationale": "Les matins noirs d'hiver sont une vraie douleur et le produit fait un bon cadeau. Mais l'effet demande un timelapse, peu percutant en 3 s, face à Philips et Lidl qui écrasent la comparaison de prix."
+  },
+  {
+   "candidate_id": "rechargeable-hand-warmer",
+   "problem_real": true,
+   "gift_obvious": true,
+   "wow_valid": true,
+   "problem_strength": 6,
+   "creative_ease": 13,
+   "rationale": "Douleur hivernale réelle, cadeau facile, image thermique honnête et frappante. Mais il faut une caméra thermique pour tourner, et le prix bas plus la batterie lithium compliquent la marge et l'expédition."
+  },
+  {
+   "candidate_id": "motion-sensor-wide-beam-headlamp",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 5,
+   "creative_ease": 12,
+   "rationale": "Le geste qui allume le bandeau 230° dans le noir est filmable et réel. Mais Decathlon vend l'équivalent pas cher en magasin et le besoin reste modéré."
+  },
+  {
+   "candidate_id": "magnetic-screw-holder-wristband",
+   "problem_real": false,
+   "gift_obvious": true,
+   "wow_valid": true,
+   "problem_strength": 4,
+   "creative_ease": 14,
+   "rationale": "Les vis qui sautent sur le poignet sont un vrai effet visuel, tournable seul, et le produit fait un cadeau papa évident. La douleur est faible et le panier aussi."
+  },
+  {
+   "candidate_id": "weighted-under-door-draft-stopper",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 7,
+   "creative_ease": 13,
+   "rationale": "La flamme qui cesse de vaciller est une preuve honnête, et le froid et la facture de chauffage parlent fort en hiver. Mais le produit est un basique vendu 5 à 10 € chez Action, ce qui rend la comparaison de prix brutale."
+  },
+  {
+   "candidate_id": "precision-electric-screwdriver-set",
+   "problem_real": false,
+   "gift_obvious": true,
+   "wow_valid": true,
+   "problem_strength": 4,
+   "creative_ease": 11,
+   "rationale": "Bon cadeau geek, démo correcte sur une manette. Mais la cible est de niche et le prix US de 50 $ est difficile à tenir face à Xiaomi et Amazon."
+  },
+  {
+   "candidate_id": "mini-cordless-screwdriver-bit-set",
+   "problem_real": true,
+   "gift_obvious": true,
+   "wow_valid": true,
+   "problem_strength": 6,
+   "creative_ease": 14,
+   "rationale": "Le meuble en kit monté en 2 secondes par vis est concret, comparatif et tournable seul en appartement. Mais Bosch IXO et les marques de distributeur chez Leroy Merlin et Lidl sont de rudes concurrents en comparaison de prix."
+  },
+  {
+   "candidate_id": "self-leveling-cross-line-laser-level",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 5,
+   "creative_ease": 13,
+   "rationale": "La croix laser et cinq cadres alignés d'un coup donnent un résultat clair et réel. L'usage est ponctuel, la douleur modérée, et la concurrence en grandes surfaces de bricolage est forte."
+  },
+  {
+   "candidate_id": "mini-thermal-sticker-printer",
+   "problem_real": false,
+   "gift_obvious": true,
+   "wow_valid": true,
+   "problem_strength": 4,
+   "creative_ease": 13,
+   "rationale": "Le ticket qui sort de l'appareil de poche est filmable et plaît aux ados en cadeau. Mais c'est une envie gadget, et l'appli chinoise plus le papier propriétaire génèrent du SAV."
+  },
+  {
+   "candidate_id": "bluetooth-label-maker",
+   "problem_real": false,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 4,
+   "creative_ease": 12,
+   "rationale": "L'avant/après du garde-manger étiqueté fonctionne, mais il demande un décor préparé. C'est une envie d'organisation plus qu'une douleur, et Brother et Dymo sont bien installés."
+  },
+  {
+   "candidate_id": "vacuum-suction-phone-mount",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 5,
+   "creative_ease": 13,
+   "rationale": "Le verrouillage sur le miroir qui tient le téléphone est un effet réel et décline plusieurs angles (salle de bain, cuisine, sport). Gare aux décrochages sur les surfaces non lisses, et la douleur reste moyenne."
+  },
+  {
+   "candidate_id": "desk-clamp-tablet-phone-arm",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": false,
+   "problem_strength": 5,
+   "creative_ease": 9,
+   "rationale": "La nuque tendue est une douleur réelle, mais une tablette tenue par un bras n'a rien de frappant. Le produit est générique et sans aucune donnée de vente US."
+  },
+  {
+   "candidate_id": "magnetic-gym-phone-mount",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 4,
+   "creative_ease": 10,
+   "rationale": "Le téléphone qui se colle sur la machine est simple et réel, mais la cible est étroite. Tourner en salle exige une autorisation, et beaucoup de cadres de machine ne sont pas magnétiques."
+  },
+  {
+   "candidate_id": "smart-mug-warmer",
+   "problem_real": true,
+   "gift_obvious": true,
+   "wow_valid": false,
+   "problem_strength": 4,
+   "creative_ease": 11,
+   "rationale": "Le café froid en télétravail est une gêne légère, et le produit fait un cadeau bureau correct. Mais « posée depuis une heure » ne se prouve pas en 3 s sans timelapse ni affirmation invérifiable."
+  },
+  {
+   "candidate_id": "cat-scratcher-rope-basket",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": false,
+   "problem_strength": 6,
+   "creative_ease": 11,
+   "rationale": "Le canapé lacéré est une vraie douleur. Mais la démo dépend du bon vouloir du chat, qui ne vient pas toujours devant la caméra, et le produit est volumineux, donc cher à expédier."
+  },
+  {
+   "candidate_id": "xxl-artistic-desk-mat",
+   "problem_real": false,
+   "gift_obvious": true,
+   "wow_valid": true,
+   "problem_strength": 3,
+   "creative_ease": 12,
+   "rationale": "Le déroulé qui transforme le setup est filmable et plaît aux gamers en cadeau. Mais c'est une pure envie esthétique à faible panier, avec une concurrence infinie."
+  },
+  {
+   "candidate_id": "vertical-laptop-stand-dock",
+   "problem_real": false,
+   "gift_obvious": false,
+   "wow_valid": false,
+   "problem_strength": 3,
+   "creative_ease": 7,
+   "rationale": "Un portable rangé debout ne surprend personne et le gain de place est marginal. Il n'y a aucun angle émotionnel ni avant/après fort."
+  },
+  {
+   "candidate_id": "message-card-pendant-necklace",
+   "problem_real": false,
+   "gift_obvious": true,
+   "wow_valid": false,
+   "problem_strength": 5,
+   "creative_ease": 10,
+   "rationale": "Le cadeau est évident, mais l'émotion du déballage est mise en scène et non démontrable. Le format « carte message + collier » est saturé et associé aux arnaques de pub en France, ce qui coûte en confiance et en avis."
+  },
+  {
+   "candidate_id": "christmas-money-holder-ornament",
+   "problem_real": false,
+   "gift_obvious": true,
+   "wow_valid": true,
+   "problem_strength": 4,
+   "creative_ease": 13,
+   "rationale": "La guirlande de billets qui se déroule est un vrai effet filmable et amusant. Mais la fenêtre de vente est ultra courte (décembre), pour un petit panier et un rituel moins ancré en France qu'aux US."
+  },
+  {
+   "candidate_id": "manual-neck-shoulder-relief-tool",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": false,
+   "problem_strength": 5,
+   "creative_ease": 9,
+   "rationale": "La nuque tendue après l'écran est réelle, mais le « visage qui se relâche » est purement joué. Rien ne se voit objectivement, et le produit manuel paraît cheap à côté des masseurs électriques."
+  },
+  {
+   "candidate_id": "long-handle-baseboard-mop",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 5,
+   "creative_ease": 14,
+   "rationale": "Le « moitié propre, moitié sale » sur une plinthe est un avant/après honnête, tournable debout chez soi. La douleur se limite au ménage du week-end, sans urgence."
+  },
+  {
+   "candidate_id": "rechargeable-fabric-shaver",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 6,
+   "creative_ease": 16,
+   "rationale": "La bande rasée qui fait paraître le pull neuf est l'un des meilleurs avant/après réels, avec beaucoup d'angles (pull, canapé, manteau). Mais Lidl et Action vendent l'équivalent à moins de 10 €, ce qui oblige à soigner l'offre."
+  },
+  {
+   "candidate_id": "under-desk-cable-tray",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 4,
+   "creative_ease": 11,
+   "rationale": "L'avant/après « spaghetti vs sol dégagé » fonctionne, mais l'installation par vis ou adhésif sous le bureau rebute. La douleur est faible, surtout esthétique."
+  },
+  {
+   "candidate_id": "electric-pet-massager",
+   "problem_real": false,
+   "gift_obvious": true,
+   "wow_valid": false,
+   "problem_strength": 3,
+   "creative_ease": 11,
+   "rationale": "Aucune douleur, juste un gadget mignon. La réaction de l'animal qui « fond » est aléatoire et souvent l'inverse (peur du bruit), donc difficile à tourner sans sélectionner les prises."
+  },
+  {
+   "candidate_id": "heated-ankle-foot-massager",
+   "problem_real": true,
+   "gift_obvious": true,
+   "wow_valid": false,
+   "problem_strength": 5,
+   "creative_ease": 9,
+   "rationale": "Les pieds fatigués sont une gêne réelle et le produit fait un cadeau bien-être plausible. Mais la chaleur ne se voit pas, et le soupir de soulagement est joué, ce qui ne prouve rien."
+  },
+  {
+   "candidate_id": "rechargeable-heated-fingerless-gloves",
+   "problem_real": true,
+   "gift_obvious": true,
+   "wow_valid": false,
+   "problem_strength": 5,
+   "creative_ease": 10,
+   "rationale": "Les doigts froids dehors sur le téléphone sont un vrai problème hivernal. Mais une LED rouge ne démontre pas la chaleur, et les tailles plus l'autonomie faible génèrent des retours."
+  },
+  {
+   "candidate_id": "adhesive-silicone-door-draft-seal",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 7,
+   "creative_ease": 15,
+   "rationale": "Le filet de lumière qui disparaît sous la porte est une preuve visuelle honnête, et le froid, le bruit et la facture de chauffage parlent fort. Pose en 30 s, tournable seul dans n'importe quel appartement, mais produit commodité peu cher en magasin."
+  },
+  {
+   "candidate_id": "foldable-aluminum-laptop-stand",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": true,
+   "problem_strength": 5,
+   "creative_ease": 11,
+   "rationale": "Le dépliage depuis une taille de poche et la posture corrigée sont démontrables. Mais le produit est saturé sur Amazon à 15-20 €, ce qui laisse peu de marge et de différenciation."
+  },
+  {
+   "candidate_id": "laptop-stand-usb-c-dock",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": false,
+   "problem_strength": 4,
+   "creative_ease": 8,
+   "rationale": "Brancher un câble et voir tout se connecter n'a rien de visuel. Les incompatibilités USB-C (vidéo, charge) selon les PC sont un nid de SAV."
+  },
+  {
+   "candidate_id": "cup-holder-car-phone-mount",
+   "problem_real": true,
+   "gift_obvious": false,
+   "wow_valid": false,
+   "problem_strength": 4,
+   "creative_ease": 9,
+   "rationale": "La niche (voitures anciennes, grilles d'aération fragiles) est réelle mais étroite, et une base vissée dans un porte-gobelet n'a rien de frappant. Les tailles de porte-gobelet varient, ce qui génère des retours."
+  }
+ ]
+}

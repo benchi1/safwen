@@ -1,0 +1,154 @@
+{
+ "agent": "e2-3",
+ "calls_used": 12,
+ "results": [
+  {
+   "candidate_id": "sunrise-wake-up-light",
+   "aliexpress": {
+    "url": "https://fr.aliexpress.com/w/wholesale-sunrise-alarm-clock-wake-up-light.html",
+    "min_price_eur": 22.99,
+    "price_quote": "Réveil lumineux avec simulation d'aube, horloge de bureau avec lumières colo | 22,99€ | + 1 000 vendus | Livraison gratuite dès 10€ d'achat",
+    "max_sold_n": 5000,
+    "sold_quote": "Réveil lumineux avec Simulation de lever/coucher du soleil, double alarme, R | 39,99€ | + 5 000 vendus",
+    "identical": true,
+    "scrape_status": "ok"
+   },
+   "amazon_fr": {
+    "url": "https://www.amazon.fr/s?k=r%C3%A9veil+lumineux",
+    "asin": "B0FB9CWT4D",
+    "price_eur": 38.99,
+    "price_quote": "LIORQUE Reveil Simulateur Aube, 30 Sons, 30 Niveaux Volume, Adaptateur - Price: 38,99 €",
+    "ratings_n": 772,
+    "ratings_quote": "Ratings: (772)",
+    "bought_n": 600,
+    "bought_quote": "Plus de 600 achetés au cours du mois dernier",
+    "identical": true,
+    "prime_badge": false,
+    "scrape_status": "ok"
+   },
+   "temu": {
+    "url": "https://www.temu.com/lu-fr/sunrise-alarm-clock-wake-up-light-white-noise-sound--with-30--dimmable-night-light-digital-alarm-clock-for-bedroom-heavy-sleepers--ideal-gift-g-605545490687714.html",
+    "price_eur": null,
+    "quote": "réveil simulation machine à 30 - Temu Luxembourg | Rating 5.0(1)Magasinez réveil avec simulation , machine à avec 30 apaisants, veilleuse réglable, réveil numérique pour chambre",
+    "found": true,
+    "scrape_status": "ok"
+   },
+   "target_price_eur": 59.9,
+   "target_rationale": "Aligné sur le haut du marché Amazon.fr des simulateurs d'aube (38,99 € LIORQUE, 42,99 € APUZOM, 59,99 € B0FJFM5YKN) ; ATTENTION règle x4 NON tenue : 59,90 / 22,99 = 2,6x, atteindre 4x imposerait ~92 €, hors marché.",
+   "differentiation": "Pack « routine sommeil » : réveil + masque de nuit + boîte cadeau, notice et SAV en français, livraison 48-72 h depuis la France ; visible en vidéo par la mise en scène lever de soleil en chambre sombre + unboxing.",
+   "differentiation_cost_eur": 3.5,
+   "note": "Amazon.fr : 1 seul résultat proche aux 15 premiers avec ventes fortes ; autres simulateurs d'aube : B0FJFM5YKN 59,99 € (443 avis, Plus de 500/mois), B0FWBWBHFJ 42,99 € (149 avis, Plus de 400/mois), B0CT8H2T43 31,58 € (772 avis). Aucun badge Prime deal affiché sur les 15 résultats malgré la période promo Prime d'octobre (prix possiblement promo non signalés). AliExpress : produit à 9,49€ (+5 000 vendus) écarté = réveil USB à lumière d'ambiance, pas un simulateur d'aube. Temu présent (fiche Luxembourg FR) sans prix dans l'extrait."
+  },
+  {
+   "candidate_id": "motion-sensor-wide-beam-headlamp",
+   "aliexpress": {
+    "url": "https://fr.aliexpress.com/w/wholesale-230-degree-wide-beam-headlamp-motion-sensor.html",
+    "min_price_eur": 3.39,
+    "price_quote": "230 ° Lampe frontale à faisceau lumineux LED avec capteur, batterie intégrée, r | Price: 3,39€ | 13 vendus | Livraison gratuite dès 10,00€ d'achat",
+    "max_sold_n": 35,
+    "sold_quote": "230 ° Lampes frontales industrielles Beam 5000 mAh, lampe frontale rechargeable lo | Price: 8,59€ | 35 vendus",
+    "identical": true,
+    "scrape_status": "ok"
+   },
+   "amazon_fr": {
+    "url": "https://www.amazon.fr/s?k=lampe+frontale+rechargeable",
+    "asin": "B0FN7R5TJG",
+    "price_eur": 8.78,
+    "price_quote": "2500 Lumens IPX6 Rechargeable LED Headlamp with Mot | €8.78",
+    "ratings_n": 67,
+    "ratings_quote": "67",
+    "bought_n": null,
+    "bought_quote": "",
+    "identical": false,
+    "prime_badge": false,
+    "scrape_status": "ok"
+   },
+   "temu": {
+    "url": "https://www.temu.com/us-fr/2-pieces-lampe-frontale-led-rechargeable-230-large-avec-capteur-de-mouvement-lampe--pour--course-reparation-peche----cob-super-lumineuse-pour-casque-de-securite-g-601099675535796.html",
+    "price_eur": null,
+    "quote": "Rating 4.7(436)Lampe frontale LED rechargeable 2 pièces, 230° avec détecteur de mouvement, lampe frontale pour randonnée, course, réparation, pêche, vélo, camping",
+    "found": true,
+    "scrape_status": "ok"
+   },
+   "target_price_eur": 24.9,
+   "target_rationale": "Vendu en pack de 2 à 24,90 € face au pack 2 Blukar à 22,99 € sur Amazon.fr ; coût livré 2 x 3,39 = 6,78 € soit 3,7x (règle x4 presque tenue ; à l'unité, Amazon plafonne à 8,78-12,99 € et le x4 n'est pas défendable).",
+   "differentiation": "Pack duo (couple/parent-enfant) avec démonstration du capteur de mouvement main devant la lampe + câble USB-C et pochette, notice FR ; visible en moins de 3 s (geste qui allume/éteint).",
+   "differentiation_cost_eur": 1.5,
+   "note": "Page Amazon.fr rendue en anglais (en-gb) mais domaine amazon.fr et prix en €. Aucun 230° explicite dans les 15 premiers Amazon ; marché dominé par Blukar : B09G6M8JLK 12,99 € (21.1K avis, 2K+ bought in past month), pack 2 B0BLVT2Y9N 22,99 € (21.1K, 1K+). Aucun badge Prime deal vu (promo Prime d'octobre en cours, prix possiblement promo). AliExpress 3,39 € = probable prix d'appel (livraison gratuite seulement dès 10 €) ; lampes frontales à détecteur de mouvement non-230° jusqu'à + 10 K vendus. Temu : plusieurs fiches 230° identiques (us-fr, lu-fr, ch-fr, ma, fr) sans prix en €. US lu 13,99 $."
+  },
+  {
+   "candidate_id": "personalized-leather-toiletry-bag",
+   "aliexpress": {
+    "url": "https://fr.aliexpress.com/w/wholesale-personalized-leather-toiletry-bag-men-custom-name.html",
+    "min_price_eur": 10.59,
+    "price_quote": "Sac étanche pour hommes avec nom gravé, nom personnalisé, cuir PU durable, multi-us | Prix: 10,59€ | 417 vendus",
+    "max_sold_n": 417,
+    "sold_quote": "417 vendus",
+    "identical": true,
+    "scrape_status": "ok"
+   },
+   "amazon_fr": {
+    "url": "https://www.amazon.fr/s?k=trousse+de+toilette+personnalis%C3%A9e+homme",
+    "asin": "",
+    "price_eur": null,
+    "price_quote": "",
+    "ratings_n": null,
+    "ratings_quote": "",
+    "bought_n": null,
+    "bought_quote": "",
+    "identical": false,
+    "prime_badge": false,
+    "scrape_status": "error"
+   },
+   "temu": {
+    "url": "https://www.temu.com/lu-fr/1pc-trousse-de-toilette-grav%C3%A9e-personnalis%C3%A9e--d%C3%A9contract%C3%A9-en-cuir-synth%C3%A9tique--et-de-haute-qualit%C3%A9-marron--avec-fermeture-%C3%A9-poign%C3%A9e-sup%C3%A9rieure-id%C3%A9al--cadeau-d-anniversaire-anniversaire-ou-no%C3%ABl-g-601100695899319.html",
+    "price_eur": null,
+    "quote": "Rating 4.6(18)1pc trousse de toilette gravée personnalisée pour homme - style décontracté en cuir synthétique et de haute qualité, marron avec fermeture é & poignée",
+    "found": true,
+    "scrape_status": "ok"
+   },
+   "target_price_eur": 44.9,
+   "target_rationale": "4,2x le prix AliExpress identique (10,59 €), positionnement cadeau personnalisé (fête des pères, témoins, Noël) ; non recoupé avec Amazon.fr (page en erreur), à valider contre cadeauplus.com.",
+   "differentiation": "Personnalisation visible (prénom/initiales gravés ou brodés filmés en gros plan) + boîte cadeau et carte message en français, délai garanti avant Noël.",
+   "differentiation_cost_eur": 3,
+   "note": "status INVALIDE pour Amazon.fr : page 503 « Toutes nos excuses - Une erreur de système interne a été décelée » au 1er essai (query) et au 2e essai (markdown, servi depuis le cache) ; aucune valeur Amazon rendue. AliExpress : autres identiques 12,89 € (128 vendus, trousse + portefeuille homme gravé) et 20,39 € (1 vendu, Kit Dopp cuir marron) ; produits à 2,39-6,29 € écartés (trousses à crayons / maquillage femme). Temu : 5 fiches trousses homme personnalisées (ca-fr, lu-fr, ma) sans prix dans les extraits."
+  },
+  {
+   "candidate_id": "mini-thermal-sticker-printer",
+   "aliexpress": {
+    "url": "https://fr.aliexpress.com/w/wholesale-mini-portable-thermal-printer-bluetooth-sticker.html",
+    "min_price_eur": 17.49,
+    "price_quote": "DOLEWA D8 Mini imprimantes portables sans fil Bluetooth sans encre fabricant d'autoc | Price: 17,49€ | + 5 000 vendus | Livraison gratuite dès 10€ d'achat",
+    "max_sold_n": 5000,
+    "sold_quote": "+ 5 000 vendus",
+    "identical": true,
+    "scrape_status": "ok"
+   },
+   "amazon_fr": {
+    "url": "https://www.amazon.fr/s?k=mini+imprimante+thermique",
+    "asin": "B0BD5BX4HW",
+    "price_eur": 29.99,
+    "price_quote": "Mini Imprimante Thermique Portable, Mini Imprimante Etiquette Autocollante | Price: 29,99 €",
+    "ratings_n": 9100,
+    "ratings_quote": "Number of ratings: 9,1 k",
+    "bought_n": 50,
+    "bought_quote": "Plus de 50 achetés au cours du mois dernier",
+    "identical": true,
+    "prime_badge": false,
+    "scrape_status": "ok"
+   },
+   "temu": {
+    "url": "https://www.temu.com/lu-fr/mini-imprimante-thermique--fil-bluetooth-imprimante-de-poche-portable--encre-adapt%C3%A9e-aux-%C3%A9tiquettes-de-notes-et-aux-notes-emballage-en-bo%C3%AEte-cadeau--et-autocollants-al%C3%A9atoires-gratuits-g-605573139527755.html",
+    "price_eur": null,
+    "quote": "Rating 4.7(7,997)Jun 17, 2026 · Mini-imprimante thermique fil Bluetooth, imprimante de poche portable encre adaptée aux étiquettes de notes et aux notes, emballage en boîte",
+    "found": true,
+    "scrape_status": "ok"
+   },
+   "target_price_eur": 39.9,
+   "target_rationale": "Au-dessus d'Amazon.fr (16,99-30,86 € sur les mini-imprimantes de poche) grâce à un kit complet ; ATTENTION règle x4 NON tenue : 39,90 / 17,49 = 2,3x, le x4 (~70 €) est hors marché.",
+   "differentiation": "Kit créatif complet : imprimante + 10 rouleaux (blanc, autocollant, couleur) + stickers et étui, appli expliquée en français ; visible en vidéo par l'impression d'un sticker photo en direct.",
+   "differentiation_cost_eur": 4,
+   "note": "Amazon.fr : alternatives B0DQ8MN8DQ Memoking T02 30,86 € (9,1 k avis), B0F247HSPM 16,99 € (74 avis), B0DHV9S1KJ 18,99 € avec 14 rouleaux (176 avis) ; faible badge mensuel (Plus de 50) sur le leader. Aucun badge Prime deal vu malgré la promo Prime d'octobre. AliExpress : Phomemo Q30 à 4,19 € (+ 10 000 vendus) et Phomemo M110 5,59 € écartés = étiqueteuses, prix d'appel probables ; autre identique 20,39 € (+ 5 000 vendus). Temu : prix vu seulement en USD sur fiche us-fr (« $29.99 PRESQUE ÉPUISÉ Payez $7.49 aujourd'hui »), donc price_eur null."
+  }
+ ]
+}

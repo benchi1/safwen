@@ -1,0 +1,186 @@
+{
+ "agent": "comp3-3",
+ "calls_used": 5,
+ "results": [
+  {
+   "candidate_id": "rechargeable-heated-fingerless-gloves",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 0,
+     "unit": "cartes pertinentes sur 20",
+     "quote": "~91 results | cartes : 'Cat patterned fingerless gloves', 'Knitted fingerless gloves with cat pattern', 'Knitted winter fingerless gloves', 'Cat patterned winter hand warmers', 'Pharmacist refusing own blood thinner'...",
+     "stable_id": "meta_ads_library_us_q=heated fingerless gloves",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=heated%20fingerless%20gloves&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "heated fingerless gloves",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "absent",
+     "value": null,
+     "unit": "n/a",
+     "quote": "Aucune des 20 premières cartes ne mentionne de mitaine chauffante / rechargeable : produits lus = 'Cat patterned fingerless gloves', 'Knitted fingerless gloves with cat pattern', 'Knitted winter fingerless gloves', 'Cat patterned winter hand warmers' (Mindsparkl, Bisnftwrem, Mavihub, Perpetualing) + 10 cartes 'Mr. Leeroy' sur les anticoagulants",
+     "stable_id": "meta_ads_library_us_q=heated fingerless gloves",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=heated%20fingerless%20gloves&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "heated fingerless gloves",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ],
+   "note": "Bibliothèque publicitaire Meta US : '~91 results'. Aucune des 20 premières cartes ne vend de mitaines chauffantes rechargeables : 10 sont des mitaines tricotées à motif chat (non chauffantes, dropshippers de type Mindsparkl/Bisnftwrem/Mavihub/Perpetualing, dates de lancement du 3 au 27 sept. 2026, plus 1 le 1er oct.), 10 sont des pubs 'Mr. Leeroy' sur les anticoagulants (hors sujet). 'Cat patterned winter hand warmers' a été lu comme des gants tricotés, pas comme un produit chauffant : c'est mon jugement, à vérifier visuellement. Pas de carte pertinente, donc pas de preuve meta_us_ad (la plus ancienne). Qualité des données : la carte 12 (Mavihub) a renvoyé un Library ID en double avec la carte 11 (1382477860219403, signalé 'ID repeated in source'), tout comme la carte 19. Réponse servie depuis le cache Firecrawl (cachedAt 2026-10-04T16:44Z). Conclusion : la famille O n'est pas confirmée pour ce candidat via cette requête."
+  },
+  {
+   "candidate_id": "adhesive-silicone-door-draft-seal",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 15,
+     "unit": "cartes pertinentes sur 20",
+     "quote": "~180 results | pertinentes : #1 Toworkact 'adhesive weather‑stripping seal strip', #2/#15 Bisnftwrem9-, #5/#10 Bisnftwrem/D, #13 Mindsparkl, #17 Mindsparkl.33 'self‑adhesive weather seal strip', #3 Blanceresem.MB06 et #19 Festivalment.FM08 'U‑channel door bottom seal stopper', #4/#6 Rrighodew 'Weather Stripping Seal', #8/#9 BatterHome 'adhesive weather strip', #12 JumpsUSA Online Store 'Weather Stripping Door Seal Strip', #20 Rrighodew 'Adhesive Seal Strip'",
+     "stable_id": "meta_ads_library_us_q=adhesive door draft seal strip",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=adhesive%20door%20draft%20seal%20strip&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "adhesive door draft seal strip",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 78,
+     "unit": "jours depuis le lancement",
+     "quote": "4. Rrighodew, Jul 18, 2026, 1501782441966020, 4 ads use this creative and text, www.facebook.com, Weather Stripping Seal",
+     "stable_id": "1501782441966020",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=adhesive%20door%20draft%20seal%20strip&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "adhesive door draft seal strip",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ],
+   "note": "Bibliothèque publicitaire Meta US : '~180 results'. 15/20 cartes vendent un joint adhésif de porte ou de bas de porte (jugement de pertinence). Exclus : 3 cartes Dovemead 'Triple Seal Under Door Draft Stopper' (boudin à enfiler, non adhésif), Cartrea 'waterproof sealing strip' (probablement un ruban d'étanchéité salle de bain/cuisine) et Blessede-D 'Self-Adhesive Sealing Strips' (ambigu ; si on le compte, on passe à 16). La pub pertinente la plus ancienne est Rrighodew, lancée le 18 juil. 2026 (Library ID 1501782441966020, soit 78 jours au 2026-10-04, '4 ads use this creative and text'). Rrighodew a aussi une variante lancée le 25 août 2026 (2291698508289784). Toutes les autres ont été lancées en sept. ou oct. 2026, ce qui signale une vague saisonnière. Beaucoup d'annonceurs sont des boutiques de dropshipping génériques (Bisnftwrem, Mindsparkl, BatterHome)."
+  },
+  {
+   "candidate_id": "foldable-aluminum-laptop-stand",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 1500,
+     "unit": "avis (affichage arrondi '1.5K')",
+     "quote": "1. OMOTON LA10 360° Rotating Laptop Stand Riser Foldable for Desk, Silver | Aluminium Aolly, Tool-free Adjusta... $35.99 (1.5K) 1K+ bought in past month B0CQR99BG2",
+     "stable_id": "B0CQR99BG2",
+     "url": "https://www.amazon.com/s?k=foldable+laptop+stand",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "foldable laptop stand",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 1000,
+     "unit": "achats/mois (plancher du badge '1K+')",
+     "quote": "1K+ bought in past month",
+     "stable_id": "B0CQR99BG2",
+     "url": "https://www.amazon.com/s?k=foldable+laptop+stand",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "foldable laptop stand",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ],
+   "note": "Amazon US : premier résultat aluminium et pliable = OMOTON LA10 (B0CQR99BG2), $35.99, '(1.5K)' avis, '1K+ bought in past month', pas de badge Prime deal. Il apparaît aux positions #1 et #5, donc la position #1 est peut-être un emplacement sponsorisé mal détecté. Autre aluminium pliable plus fin : Lamicall B0GX6QFZLZ, $15.99, (815) avis, '300+ bought in past month'. Les supports pliables en ABS/silicone sont mieux classés en volume, mais ce n'est pas le même produit : Tonmom B08G84P8ZX, $8.99, (17.6K) avis, '7K+ bought in past month' ; B091M7XJ2K, $6.79, '5K+'. LOXP (B0DBLBJ2HG, $27.99, 2.4K avis, '6K+') est réglable et rotatif, mais le titre ne dit pas 'aluminium pliable'. Aucun badge Prime deal sur les 15 résultats, donc pas de prix promo Prime visible. Les avis sont affichés arrondis par Amazon (1.5K)."
+  },
+  {
+   "candidate_id": "laptop-stand-usb-c-dock",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 883,
+     "unit": "avis",
+     "quote": "1. BENFEI Laptop Stand with USB C 7in1 Docking Station,HDMI 4K@60Hz,1*SD 1*Micro SD,100W Power Delivery... Price: $45.99 Number of ratings: (883) Bought in past month: None ASIN: B0F9P1GPGL",
+     "stable_id": "B0F9P1GPGL",
+     "url": "https://www.amazon.com/s?k=laptop+stand+with+usb+c+hub",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "laptop stand with usb c hub",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": null,
+     "unit": "achats/mois",
+     "quote": "Bought in past month: None",
+     "stable_id": "B0F9P1GPGL",
+     "url": "https://www.amazon.com/s?k=laptop+stand+with+usb+c+hub",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "laptop stand with usb c hub",
+     "method": "freeform",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ],
+   "note": "Amazon US : premier résultat qui correspond au produit = BENFEI support + dock USB-C 7-en-1 (B0F9P1GPGL), $45.99, (883) avis, pas de badge 'bought in past month'. Les signaux de volume sont faibles dans toute la catégorie : Mukiya B0BWTQ1Z7Z, $35.99, (753) avis, '300+ bought in past month' ; BENFEI B0F9NG6S82, $49.99, (630) avis, '200+' ; Mukiya bi-écran B0FMRW19DQ, $53.97, (93) avis, '100+'. Aucune fiche ne dépasse environ 900 avis. Les modèles en aluminium avec dock 9-en-1 et 11-en-1 se vendent $65.99 à $89.99, avec moins de 40 avis. Aucun badge Prime deal sur les 15 résultats."
+  },
+  {
+   "candidate_id": "cup-holder-car-phone-mount",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 4000,
+     "unit": "avis (affichage arrondi '4K')",
+     "quote": "1. Phone Holders for Your Car, 2 in 1 Universal Stable Cup Car Phone Holder, $21.99, (4K), 6K+ bought in past month, B0D795K88R, No",
+     "stable_id": "B0D795K88R",
+     "url": "https://www.amazon.com/s?k=cup+holder+phone+mount",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "cup holder phone mount",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 6000,
+     "unit": "achats/mois (plancher du badge '6K+')",
+     "quote": "6K+ bought in past month",
+     "stable_id": "B0D795K88R",
+     "url": "https://www.amazon.com/s?k=cup+holder+phone+mount",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "cup holder phone mount",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ],
+   "note": "Amazon US : les 15 résultats non sponsorisés sont tous des supports de téléphone pour porte-gobelet. Le premier est B0D795K88R (2-en-1), $21.99, '(4K)' avis, '6K+ bought in past month'. La catégorie est profonde et bien installée : Miracase B094QVTL37, (15K) avis, '4K+' ; B083Z7FW7R, (22.7K) avis, '2K+' ; APPS2Car B08D9K56KB, (15.1K) avis ; WeatherTech CupFone B07KY1XKRQ, $43.95, (49.2K) avis, '1K+'. Les nouveaux entrants se vendent aussi vite : DYLEN B0GQRTLG37, (496) avis, '3K+' ; B0GVJXP8LP, $9.99, (396) avis, '3K+'. Prix de $9.99 à $43.95. Aucun badge Prime deal, donc pas de prix promo Prime visible. Les avis sont affichés arrondis par Amazon."
+  }
+ ]
+}

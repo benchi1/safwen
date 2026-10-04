@@ -1,0 +1,198 @@
+{
+ "agent": "e1-8",
+ "calls_used": 11,
+ "results": [
+  {
+   "candidate_id": "vacuum-suction-phone-mount",
+   "searches": [
+    {
+     "query": "\"support téléphone ventouse\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22support%20t%C3%A9l%C3%A9phone%20ventouse%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "support téléphone sous vide",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=support%20t%C3%A9l%C3%A9phone%20sous%20vide&search_type=keyword_unordered",
+     "results_text": "9 résultats",
+     "results_n": 9,
+     "cards_seen": 9,
+     "relevant_cards": 2,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "support téléphone sous vide (keyword_unordered)",
+   "best_results_n": 9,
+   "best_results_text": "9 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=support%20t%C3%A9l%C3%A9phone%20sous%20vide&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Wedinery D",
+     "library_id": "733987509467753",
+     "started": "31 juil 2025",
+     "days": 430,
+     "variants": null,
+     "domain": "wedinery.com"
+    },
+    {
+     "name": "Statik",
+     "library_id": "1021140234221928",
+     "started": "25 juil 2026",
+     "days": 71,
+     "variants": null,
+     "domain": "statik.com"
+    }
+   ],
+   "advertisers_distinct": 2,
+   "partial_lot": false,
+   "oldest_days": 430,
+   "status": "MESURÉ",
+   "note": "Le 1er appel en format query a renvoyé 'The information is not on the page.' ; refait en markdown : la recherche exacte affiche 'Aucune publicité ne correspond à vos critères de recherche.' Zéro confirmé par la 2e recherche, non ordonnée, qui donne 9 résultats (9 cartes lues). 7 cartes sur 9 sont hors sujet (fourgons, gazon synthétique, marketing, compléments Vitabolis/Salvini, Reveline). Wedinery D : 'Poignée magnétique + fixation sous vide', 'aspiration 34,6 kPa', page wedinery.com/products/niuwedz, 'JUSQU'À 56% DE RÉDUCTION'. Statik : 'The HyperMount provides a stable hold for your phone', 'Nombre faible d'impressions', 'Impressions : <100', page statik.com/pages/offer-hypermount-branded-c ; le texte de la pub ne dit pas explicitement 'ventouse/sous vide', donc annonceur probable mais pas confirmé. Aucune mention 'N publicités utilisent…' visible. Pour tenir le quota, les autres recherches de la session ont été faites directement en markdown."
+  },
+  {
+   "candidate_id": "desk-clamp-tablet-phone-arm",
+   "searches": [
+    {
+     "query": "\"support tablette bureau\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22support%20tablette%20bureau%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "bras articulé tablette",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=bras%20articul%C3%A9%20tablette&search_type=keyword_unordered",
+     "results_text": "1 résultat",
+     "results_n": 1,
+     "cards_seen": 1,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "bras articulé tablette (keyword_unordered)",
+   "best_results_n": 1,
+   "best_results_text": "1 résultat",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=bras%20articul%C3%A9%20tablette&search_type=keyword_unordered",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "La seule carte est un produit voisin, donc non comptée : Biaotic store (ID 1360989079452818, 'Début de diffusion le 12 août 2026', soit 53 j, biaotic.com/products/telefoon). Texte : 'Support Téléphone/Tablette Bras Robotisé – Pour Lit, Canapé, Bureau, Cadeau Tech, Sans Pince, 4 Rotules', donc un bras articulé SANS pince. Si l'orchestrateur assimile ce bras au candidat, cela fait 1 annonceur, à 53 jours. La recherche exacte 'support tablette bureau' renvoie zéro."
+  },
+  {
+   "candidate_id": "magnetic-gym-phone-mount",
+   "searches": [
+    {
+     "query": "\"support téléphone salle de sport\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22support%20t%C3%A9l%C3%A9phone%20salle%20de%20sport%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "support téléphone magnétique musculation",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=support%20t%C3%A9l%C3%A9phone%20magn%C3%A9tique%20musculation&search_type=keyword_unordered",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"support téléphone salle de sport\" (keyword_exact_phrase)",
+   "best_results_n": 0,
+   "best_results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22support%20t%C3%A9l%C3%A9phone%20salle%20de%20sport%22&search_type=keyword_exact_phrase",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "Zéro confirmé : les deux recherches renvoient 'Aucune publicité ne correspond à vos critères de recherche.' Les deux pages se sont chargées normalement (filtre 'Statut en ligne : Actives', pays France), donc ce n'est pas un blocage. Aucune pub active en France sur ces termes FR. Un zéro sur mots-clés exacts n'exclut pas des pubs rédigées autrement (par ex. en anglais)."
+  },
+  {
+   "candidate_id": "smart-mug-warmer",
+   "searches": [
+    {
+     "query": "\"chauffe-tasse\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22chauffe-tasse%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "chauffe tasse électrique",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=chauffe%20tasse%20%C3%A9lectrique&search_type=keyword_unordered",
+     "results_text": "1 résultat",
+     "results_n": 1,
+     "cards_seen": 1,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"chauffe-tasse\" (keyword_exact_phrase)",
+   "best_results_n": 0,
+   "best_results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22chauffe-tasse%22&search_type=keyword_exact_phrase",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "La 2e recherche, non ordonnée, renvoie '1 résultat', mais c'est un produit voisin : Colody.fr C (ID 1615297593662569, 'Début de diffusion le 30 sep 2026', colody.fr/products/water-boiler). Texte : 'Cette bouilloire électrique portable…', donc une bouilloire de voyage et pas un chauffe-tasse. Aucun annonceur de chauffe-tasse actif en France sur ces termes."
+  },
+  {
+   "candidate_id": "vertical-laptop-stand-dock",
+   "searches": [
+    {
+     "query": "\"support vertical ordinateur portable\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22support%20vertical%20ordinateur%20portable%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "dock vertical macbook",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=dock%20vertical%20macbook&search_type=keyword_unordered",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"support vertical ordinateur portable\" (keyword_exact_phrase)",
+   "best_results_n": 0,
+   "best_results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22support%20vertical%20ordinateur%20portable%22&search_type=keyword_exact_phrase",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "Zéro confirmé : les deux recherches renvoient 'Aucune publicité ne correspond à vos critères de recherche.' Les pages se sont chargées normalement. Point de méthode commun aux 5 candidats : le champ 'Emplacement actuel' de la page variait (États-Unis, Royaume-Uni, Russie, France) selon le proxy de Firecrawl, mais le filtre pays affiché était toujours 'France'. La promo Amazon Prime ne joue pas ici, car cette étape ne mesure aucun prix."
+  }
+ ]
+}

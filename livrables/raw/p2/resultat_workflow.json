@@ -1,0 +1,847 @@
+{
+ "calls": {
+  "comp3-1": 7,
+  "comp3-2": 8,
+  "comp3-3": 5,
+  "e1-1": 11,
+  "e1-2": 10,
+  "e1-3": 11,
+  "e1-4": 10,
+  "e1-5": 11,
+  "e1-6": 11,
+  "e1-7": 11,
+  "e1-8": 11,
+  "e1-9": 11,
+  "e1-10": 11,
+  "e2-1": 13,
+  "e2-2": 13,
+  "e2-3": 12,
+  "e3-trends": 0
+ },
+ "calls_total": 166,
+ "top5": [],
+ "top5b": [],
+ "finalists": [],
+ "verdict": {},
+ "fact_checks": null,
+ "rows": [
+  {
+   "id": "vacuum-suction-phone-mount",
+   "fr": "Support de téléphone à ventouse sous vide",
+   "cat": "bureau-tech",
+   "origin": "P1",
+   "stage": 2,
+   "eliminated": "étage 2 : panier moyen 37.23 € < 45 €",
+   "score": 40,
+   "raw": 54,
+   "detail": {
+    "demande": 18,
+    "fenetre": 14,
+    "economie": 0,
+    "creatif": 13,
+    "logistique": 9
+   },
+   "caps": [
+    "marché FR non prouvé : plafond 40"
+   ],
+   "measured_pct": null,
+   "fr_advertisers": 2,
+   "fr_results": "9 résultats",
+   "econ": {
+    "P": 29.9,
+    "aov": 37.23,
+    "unit": 7.98,
+    "unitSrc": "85 % du prix AliExpress livré 9.39 € (ESTIMATION)",
+    "S": 11.77,
+    "margin": 0.504,
+    "roas": 3.16,
+    "roas_franchise": 3.8,
+    "minPub": 9.39,
+    "anchor": 0.31,
+    "multiple": 2.62
+   },
+   "trends": null,
+   "season": null,
+   "judges": [
+    {
+     "pr": true,
+     "g": false,
+     "w": true,
+     "ps": 4,
+     "ce": 13
+    },
+    {
+     "pr": true,
+     "g": false,
+     "w": true,
+     "ps": 5,
+     "ce": 13
+    }
+   ]
+  },
+  {
+   "id": "rechargeable-hand-warmer",
+   "fr": "Chauffe-mains électrique rechargeable",
+   "cat": "sport-plein-air",
+   "origin": "P1",
+   "stage": 2,
+   "eliminated": "étage 2 : panier moyen 37.23 € < 45 €",
+   "score": 40,
+   "raw": 44,
+   "detail": {
+    "demande": 16,
+    "fenetre": 8,
+    "economie": 0,
+    "creatif": 13,
+    "logistique": 7
+   },
+   "caps": [
+    "marché FR non prouvé : plafond 40"
+   ],
+   "measured_pct": null,
+   "fr_advertisers": 0,
+   "fr_results": "5 résultats",
+   "econ": {
+    "P": 29.9,
+    "aov": 37.23,
+    "unit": 14.61,
+    "unitSrc": "85 % du prix AliExpress livré 17.19 € (ESTIMATION)",
+    "S": 1.74,
+    "margin": 0.18,
+    "roas": 21.39,
+    "roas_franchise": 25.67,
+    "minPub": 14.99,
+    "anchor": 0.5,
+    "multiple": 1.59
+   },
+   "trends": null,
+   "season": null,
+   "judges": [
+    {
+     "pr": true,
+     "g": true,
+     "w": true,
+     "ps": 6,
+     "ce": 12
+    },
+    {
+     "pr": true,
+     "g": true,
+     "w": true,
+     "ps": 6,
+     "ce": 13
+    }
+   ]
+  },
+  {
+   "id": "wireless-wall-sconce-magnetic-bulb",
+   "fr": "Appliques murales sans fil rechargeables avec télécommande",
+   "cat": "maison-rangement",
+   "origin": "P1",
+   "stage": 2,
+   "eliminated": "étage 2 : prix 49.9 € < 4 × coût livré (35.11 €)",
+   "score": 40,
+   "raw": 47,
+   "detail": {
+    "demande": 10,
+    "fenetre": 16,
+    "economie": 0,
+    "creatif": 15,
+    "logistique": 6
+   },
+   "caps": [
+    "marché FR non prouvé : plafond 40"
+   ],
+   "measured_pct": null,
+   "fr_advertisers": 2,
+   "fr_results": "3 résultats",
+   "econ": {
+    "P": 49.9,
+    "aov": 62.13,
+    "unit": 28.89,
+    "unitSrc": "85 % du prix AliExpress livré 33.99 € (ESTIMATION)",
+    "S": -1.23,
+    "margin": 0.084,
+    "roas": 99,
+    "roas_franchise": 118.8,
+    "minPub": 33.99,
+    "anchor": 0.68,
+    "multiple": 1.42
+   },
+   "trends": null,
+   "season": null,
+   "judges": [
+    {
+     "pr": true,
+     "g": false,
+     "w": true,
+     "ps": 6,
+     "ce": 14
+    },
+    {
+     "pr": true,
+     "g": false,
+     "w": true,
+     "ps": 6,
+     "ce": 15
+    }
+   ]
+  },
+  {
+   "id": "mini-cordless-screwdriver-bit-set",
+   "fr": "Mini visseuse sans fil rechargeable avec coffret d'embouts",
+   "cat": "bricolage",
+   "origin": "P1",
+   "stage": 2,
+   "eliminated": "étage 2 : prix 64.9 € < 4 × coût livré (18.3 €)",
+   "score": 40,
+   "raw": 59,
+   "detail": {
+    "demande": 14,
+    "fenetre": 16,
+    "economie": 8,
+    "creatif": 15,
+    "logistique": 6
+   },
+   "caps": [
+    "marché FR non prouvé : plafond 40"
+   ],
+   "measured_pct": null,
+   "fr_advertisers": 4,
+   "fr_results": "22 résultats",
+   "econ": {
+    "P": 64.9,
+    "aov": 80.8,
+    "unit": 13.08,
+    "unitSrc": "85 % du prix AliExpress livré 15.39 € (ESTIMATION)",
+    "S": 35.72,
+    "margin": 0.633,
+    "roas": 2.26,
+    "roas_franchise": 2.71,
+    "minPub": 15.39,
+    "anchor": 0.24,
+    "multiple": 3.55
+   },
+   "trends": null,
+   "season": null,
+   "judges": [
+    {
+     "pr": true,
+     "g": true,
+     "w": true,
+     "ps": 6,
+     "ce": 15
+    },
+    {
+     "pr": true,
+     "g": true,
+     "w": true,
+     "ps": 6,
+     "ce": 14
+    }
+   ]
+  },
+  {
+   "id": "self-leveling-cross-line-laser-level",
+   "fr": "Niveau laser autonivelant à lignes croisées",
+   "cat": "bricolage",
+   "origin": "P1",
+   "stage": 2,
+   "eliminated": "étage 2 : prix 124.9 € < 4 × coût livré (32.88 €)",
+   "score": 40,
+   "raw": 56,
+   "detail": {
+    "demande": 11,
+    "fenetre": 16,
+    "economie": 10,
+    "creatif": 13,
+    "logistique": 6
+   },
+   "caps": [
+    "marché FR non prouvé : plafond 40"
+   ],
+   "measured_pct": null,
+   "fr_advertisers": 6,
+   "fr_results": "76 résultats",
+   "econ": {
+    "P": 124.9,
+    "aov": 155.5,
+    "unit": 25.66,
+    "unitSrc": "85 % du prix AliExpress livré 30.19 € (ESTIMATION)",
+    "S": 73.06,
+    "margin": 0.657,
+    "roas": 2.13,
+    "roas_franchise": 2.55,
+    "minPub": 30.19,
+    "anchor": 0.24,
+    "multiple": 3.8
+   },
+   "trends": null,
+   "season": null,
+   "judges": [
+    {
+     "pr": true,
+     "g": false,
+     "w": true,
+     "ps": 5,
+     "ce": 13
+    },
+    {
+     "pr": true,
+     "g": false,
+     "w": true,
+     "ps": 5,
+     "ce": 13
+    }
+   ]
+  },
+  {
+   "id": "ratchet-belt-no-holes",
+   "fr": "Ceinture à cliquet sans trous",
+   "cat": "cadeau-lifestyle",
+   "origin": "P1",
+   "stage": 2,
+   "eliminated": "étage 2 : contribution avant pub 24.22 € < 25 €",
+   "score": 40,
+   "raw": 46,
+   "detail": {
+    "demande": 12,
+    "fenetre": 12,
+    "economie": 2,
+    "creatif": 11,
+    "logistique": 9
+   },
+   "caps": [
+    "marché FR non prouvé : plafond 40"
+   ],
+   "measured_pct": null,
+   "fr_advertisers": 2,
+   "fr_results": "37 résultats",
+   "econ": {
+    "P": 39.9,
+    "aov": 49.68,
+    "unit": 4.5,
+    "unitSrc": "85 % du prix AliExpress livré 5.29 € (ESTIMATION)",
+    "S": 24.22,
+    "margin": 0.699,
+    "roas": 2.05,
+    "roas_franchise": 2.46,
+    "minPub": 5.29,
+    "anchor": 0.13,
+    "multiple": 4.33
+   },
+   "trends": null,
+   "season": null,
+   "judges": [
+    {
+     "pr": true,
+     "g": true,
+     "w": true,
+     "ps": 4,
+     "ce": 10
+    },
+    {
+     "pr": true,
+     "g": true,
+     "w": true,
+     "ps": 4,
+     "ce": 12
+    }
+   ]
+  },
+  {
+   "id": "cordless-heated-neck-shoulder-kneading-massager",
+   "fr": "Masseur cou et épaules chauffant à pétrissage sans fil",
+   "cat": "bien-etre-non-medical",
+   "origin": "P1",
+   "stage": 2,
+   "eliminated": "étage 2 : ROAS seuil 1.95 > 1,8",
+   "score": 40,
+   "raw": 58,
+   "detail": {
+    "demande": 16,
+    "fenetre": 12,
+    "economie": 10,
+    "creatif": 14,
+    "logistique": 6
+   },
+   "caps": [
+    "marché FR non prouvé : plafond 40"
+   ],
+   "measured_pct": null,
+   "fr_advertisers": 1,
+   "fr_results": "5 résultats",
+   "econ": {
+    "P": 129.9,
+    "aov": 161.73,
+    "unit": 26.85,
+    "unitSrc": "85 % du prix AliExpress livré 31.59 € (ESTIMATION)",
+    "S": 82.95,
+    "margin": 0.709,
+    "roas": 1.95,
+    "roas_franchise": 2.34,
+    "minPub": 31.59,
+    "anchor": 0.24,
+    "multiple": 4.47
+   },
+   "trends": null,
+   "season": null,
+   "judges": [
+    {
+     "pr": true,
+     "g": true,
+     "w": true,
+     "ps": 7,
+     "ce": 13
+    },
+    {
+     "pr": true,
+     "g": true,
+     "w": true,
+     "ps": 7,
+     "ce": 15
+    }
+   ]
+  },
+  {
+   "id": "sunrise-wake-up-light",
+   "fr": "Réveil lumineux simulateur d'aube",
+   "cat": "bien-etre-non-medical",
+   "origin": "P1",
+   "stage": 2,
+   "eliminated": "étage 2 : prix 59.9 € < 4 × coût livré (25.26 €)",
+   "score": 40,
+   "raw": 52,
+   "detail": {
+    "demande": 18,
+    "fenetre": 14,
+    "economie": 0,
+    "creatif": 12,
+    "logistique": 8
+   },
+   "caps": [
+    "marché FR non prouvé : plafond 40"
+   ],
+   "measured_pct": null,
+   "fr_advertisers": 2,
+   "fr_results": "10 résultats",
+   "econ": {
+    "P": 59.9,
+    "aov": 74.58,
+    "unit": 19.54,
+    "unitSrc": "85 % du prix AliExpress livré 22.99 € (ESTIMATION)",
+    "S": 21.57,
+    "margin": 0.451,
+    "roas": 3.46,
+    "roas_franchise": 4.15,
+    "minPub": 22.99,
+    "anchor": 0.38,
+    "multiple": 2.37
+   },
+   "trends": null,
+   "season": null,
+   "judges": [
+    {
+     "pr": true,
+     "g": true,
+     "w": true,
+     "ps": 6,
+     "ce": 12
+    },
+    {
+     "pr": true,
+     "g": true,
+     "w": false,
+     "ps": 6,
+     "ce": 11
+    }
+   ]
+  },
+  {
+   "id": "motion-sensor-wide-beam-headlamp",
+   "fr": "Lampe frontale rechargeable grand angle à détection de mouvement",
+   "cat": "sport-plein-air",
+   "origin": "P1",
+   "stage": 2,
+   "eliminated": "étage 2 : panier moyen 31 € < 45 €",
+   "score": 40,
+   "raw": 46,
+   "detail": {
+    "demande": 12,
+    "fenetre": 12,
+    "economie": 2,
+    "creatif": 13,
+    "logistique": 7
+   },
+   "caps": [
+    "marché FR non prouvé : plafond 40"
+   ],
+   "measured_pct": null,
+   "fr_advertisers": 2,
+   "fr_results": "25 résultats",
+   "econ": {
+    "P": 24.9,
+    "aov": 31,
+    "unit": 2.88,
+    "unitSrc": "85 % du prix AliExpress livré 3.39 € (ESTIMATION)",
+    "S": 13.5,
+    "margin": 0.655,
+    "roas": 2.3,
+    "roas_franchise": 2.76,
+    "minPub": 3.39,
+    "anchor": 0.14,
+    "multiple": 3.77
+   },
+   "trends": null,
+   "season": null,
+   "judges": [
+    {
+     "pr": true,
+     "g": false,
+     "w": true,
+     "ps": 5,
+     "ce": 13
+    },
+    {
+     "pr": true,
+     "g": false,
+     "w": true,
+     "ps": 5,
+     "ce": 12
+    }
+   ]
+  },
+  {
+   "id": "mini-thermal-sticker-printer",
+   "fr": "Mini imprimante thermique portable sans encre",
+   "cat": "bureau-tech",
+   "origin": "P1",
+   "stage": 2,
+   "eliminated": "étage 2 : prix 39.9 € < 4 × coût livré (21.09 €)",
+   "score": 40,
+   "raw": 49,
+   "detail": {
+    "demande": 8,
+    "fenetre": 20,
+    "economie": 0,
+    "creatif": 14,
+    "logistique": 7
+   },
+   "caps": [
+    "marché FR non prouvé : plafond 40"
+   ],
+   "measured_pct": null,
+   "fr_advertisers": 6,
+   "fr_results": "40 résultats",
+   "econ": {
+    "P": 39.9,
+    "aov": 49.68,
+    "unit": 14.87,
+    "unitSrc": "85 % du prix AliExpress livré 17.49 € (ESTIMATION)",
+    "S": 8.2,
+    "margin": 0.312,
+    "roas": 6.06,
+    "roas_franchise": 7.27,
+    "minPub": 17.49,
+    "anchor": 0.44,
+    "multiple": 1.89
+   },
+   "trends": null,
+   "season": null,
+   "judges": [
+    {
+     "pr": false,
+     "g": true,
+     "w": true,
+     "ps": 4,
+     "ce": 14
+    },
+    {
+     "pr": false,
+     "g": true,
+     "w": true,
+     "ps": 4,
+     "ce": 13
+    }
+   ]
+  },
+  {
+   "id": "precision-electric-screwdriver-set",
+   "fr": "Tournevis électrique de précision avec embouts magnétiques",
+   "cat": "bureau-tech",
+   "origin": "P1",
+   "stage": 2,
+   "eliminated": "étage 2 : prix 64.9 € < 4 × coût livré (18.3 €)",
+   "score": 39,
+   "raw": 39,
+   "detail": {
+    "demande": 8,
+    "fenetre": 4,
+    "economie": 8,
+    "creatif": 12,
+    "logistique": 7
+   },
+   "caps": [
+    "marché FR non prouvé : plafond 40"
+   ],
+   "measured_pct": null,
+   "fr_advertisers": 0,
+   "fr_results": "Aucune publicité ne correspond à vos critères de recherche.",
+   "econ": {
+    "P": 64.9,
+    "aov": 80.8,
+    "unit": 13.08,
+    "unitSrc": "85 % du prix AliExpress livré 15.39 € (ESTIMATION)",
+    "S": 35.72,
+    "margin": 0.633,
+    "roas": 2.26,
+    "roas_franchise": 2.71,
+    "minPub": 15.39,
+    "anchor": 0.24,
+    "multiple": 3.55
+   },
+   "trends": null,
+   "season": null,
+   "judges": [
+    {
+     "pr": true,
+     "g": true,
+     "w": true,
+     "ps": 4,
+     "ce": 12
+    },
+    {
+     "pr": false,
+     "g": true,
+     "w": true,
+     "ps": 4,
+     "ce": 11
+    }
+   ]
+  },
+  {
+   "id": "personalized-leather-toiletry-bag",
+   "fr": "Trousse de toilette en cuir personnalisée",
+   "cat": "cadeau-lifestyle",
+   "origin": "P1",
+   "stage": 2,
+   "eliminated": "étage 2 : prix 44.9 € < 4 × coût livré (14.22 €)",
+   "score": 37,
+   "raw": 37,
+   "detail": {
+    "demande": 8,
+    "fenetre": 12,
+    "economie": 0,
+    "creatif": 8,
+    "logistique": 9
+   },
+   "caps": [
+    "marché FR non prouvé : plafond 40"
+   ],
+   "measured_pct": null,
+   "fr_advertisers": 1,
+   "fr_results": "8 résultats",
+   "econ": {
+    "P": 44.9,
+    "aov": 55.9,
+    "unit": 9,
+    "unitSrc": "85 % du prix AliExpress livré 10.59 € (ESTIMATION)",
+    "S": 22.22,
+    "margin": 0.588,
+    "roas": 2.52,
+    "roas_franchise": 3.02,
+    "minPub": 10.59,
+    "anchor": 0.24,
+    "multiple": 3.16
+   },
+   "trends": null,
+   "season": null,
+   "judges": [
+    {
+     "pr": false,
+     "g": true,
+     "w": false,
+     "ps": 4,
+     "ce": 8
+    },
+    {
+     "pr": false,
+     "g": true,
+     "w": false,
+     "ps": 4,
+     "ce": 8
+    }
+   ]
+  }
+ ],
+ "eliminated_before_stage2": [
+  {
+   "id": "ai-translation-earbuds",
+   "why": "étage 1 : 280 résultats sur \"écouteurs traduction instantanée\", majorité de cartes sur ce produit"
+  },
+  {
+   "id": "slim-wallet-tracker-card",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "pet-hair-carpet-rake",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "engraved-leather-bracelet-men",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "magnetic-screw-holder-wristband",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "weighted-under-door-draft-stopper",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "bluetooth-label-maker",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "desk-clamp-tablet-phone-arm",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "magnetic-gym-phone-mount",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "smart-mug-warmer",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "expandable-over-sink-dish-rack",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "magnetic-double-sided-windshield-cleaner",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "pet-grooming-hammock",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "quiet-pet-nail-grinder",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "flapping-bird-cat-toy",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "zip-trading-card-binder",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "titanium-cutting-board",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "latte-art-stencil-camera",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "automatic-moving-cat-toy",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "mini-electric-food-chopper",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "adhesive-silicone-door-draft-seal",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "cup-holder-car-phone-mount",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "adhesive-shower-caddy-set",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "vacuum-mason-jar-lids",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "vertical-laptop-stand-dock",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "manual-neck-shoulder-relief-tool",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "foldable-aluminum-laptop-stand",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "magnetic-motion-sensor-closet-light",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "mini-cordless-car-vacuum",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "pull-out-cabinet-spice-rack",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "message-card-pendant-necklace",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "rechargeable-fabric-shaver",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "butter-slicer-dispenser",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "electric-pet-massager",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "ultrasonic-anti-bark-device",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "under-desk-cable-tray",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "heated-ankle-foot-massager",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  },
+  {
+   "id": "laptop-stand-usb-c-dock",
+   "why": "non retenu pour l étage 2 (pré-score plus bas, plafond 12)"
+  }
+ ],
+ "newly_valid_from_complement": [
+  "desk-clamp-tablet-phone-arm",
+  "magnetic-gym-phone-mount",
+  "smart-mug-warmer",
+  "vertical-laptop-stand-dock",
+  "message-card-pendant-necklace",
+  "manual-neck-shoulder-relief-tool",
+  "rechargeable-fabric-shaver",
+  "under-desk-cable-tray",
+  "electric-pet-massager",
+  "heated-ankle-foot-massager",
+  "adhesive-silicone-door-draft-seal",
+  "foldable-aluminum-laptop-stand",
+  "laptop-stand-usb-c-dock",
+  "cup-holder-car-phone-mount"
+ ]
+}

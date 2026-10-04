@@ -1,0 +1,216 @@
+{
+ "agent": "e1-1",
+ "calls_used": 11,
+ "results": [
+  {
+   "candidate_id": "adhesive-shower-caddy-set",
+   "searches": [
+    {
+     "query": "\"étagère douche sans perçage\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22%C3%A9tag%C3%A8re%20douche%20sans%20per%C3%A7age%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "étagère douche adhésive",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%C3%A9tag%C3%A8re%20douche%20adh%C3%A9sive&search_type=keyword_unordered",
+     "results_text": "1 résultat",
+     "results_n": 1,
+     "cards_seen": 1,
+     "relevant_cards": 1,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "étagère douche adhésive (keyword_unordered)",
+   "best_results_n": 1,
+   "best_results_text": "1 résultat",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%C3%A9tag%C3%A8re%20douche%20adh%C3%A9sive&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Ripaton",
+     "library_id": "1444828684172795",
+     "started": "30 sep 2026",
+     "days": 4,
+     "variants": null,
+     "domain": "www.ripaton.fr"
+    }
+   ],
+   "advertisers_distinct": 1,
+   "partial_lot": false,
+   "oldest_days": 4,
+   "status": "MESURÉ",
+   "note": "Phrase exacte 'étagère douche sans perçage' = 0, puis 1 seule pub active en FR en recherche non ordonnée : Ripaton, 'étagère d'angle douche adhésive', lancée il y a 4 jours. Pas de compteur 'N ads use this creative' visible. Concurrence Meta FR quasi nulle sur ces mots-clés."
+  },
+  {
+   "candidate_id": "titanium-cutting-board",
+   "searches": [
+    {
+     "query": "\"planche à découper titane\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22planche%20%C3%A0%20d%C3%A9couper%20titane%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond à vos critères de recherche.",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "planche à découper sans microplastique",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=planche%20%C3%A0%20d%C3%A9couper%20sans%20microplastique&search_type=keyword_unordered",
+     "results_text": "12 résultats",
+     "results_n": 12,
+     "cards_seen": 10,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "planche à découper sans microplastique (keyword_unordered)",
+   "best_results_n": 12,
+   "best_results_text": "12 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=planche%20%C3%A0%20d%C3%A9couper%20sans%20microplastique&search_type=keyword_unordered",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": true,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "La 1re requête 'query' n'a rien rendu ('The information is not on the page.'), refaite en markdown : 'Aucune publicité ne correspond à vos critères de recherche.' La 2e recherche (12 résultats, 10 cartes lues) ne contient AUCUNE planche en titane : produits voisins seulement, Bjornvik/bjarnvik.com 'STÅLVIK™ planche multifonction en acier inoxydable massif' (lancée 3 sep 2026, '2 ads use this creative and text' ; d'autres pubs 1 oct 2026) et Everdrop/www.everdrop.fr (+ Good For You Mag) 'planches à découper en fibres de bois scellées'. Zéro annonceur titane confirmé par 2 recherches. Le concurrent le plus proche est donc l'inox (Bjornvik)."
+  },
+  {
+   "candidate_id": "expandable-over-sink-dish-rack",
+   "searches": [
+    {
+     "query": "\"égouttoir évier extensible\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22%C3%A9gouttoir%20%C3%A9vier%20extensible%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "égouttoir sur évier",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%C3%A9gouttoir%20sur%20%C3%A9vier&search_type=keyword_unordered",
+     "results_text": "80 résultats",
+     "results_n": 80,
+     "cards_seen": 20,
+     "relevant_cards": 1,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "égouttoir sur évier (keyword_unordered)",
+   "best_results_n": 80,
+   "best_results_text": "80 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%C3%A9gouttoir%20sur%20%C3%A9vier&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Grange des loups",
+     "library_id": "1723380955550664",
+     "started": "10 sep 2026",
+     "days": 24,
+     "variants": null,
+     "domain": "www.amazon.fr"
+    }
+   ],
+   "advertisers_distinct": 1,
+   "partial_lot": true,
+   "oldest_days": 24,
+   "status": "MESURÉ",
+   "note": "Les 80 résultats concernent surtout des éviers en granit/résine (Primagran.fr, Democratik Design), de la robinetterie et du hors-sujet (formation immobilière, rénovation). Seul annonceur retenu : Grange des loups, décrit comme 'porte-serviettes extensible et égouttoir enroulable', qui renvoie vers amazon.fr. C'est un modèle enroulable, pas strictement le cadre inox extensible : à confirmer. Pas retenus car ambigus : Primagran.fr (ID 28995138340072401, 21 sep 2026) et edone.paris (ID 2284774065659372, 7 juil 2026 ; ID 932869106499795, 3 août 2026) avec un 'égouttoir à écoulement naturel', probablement un égouttoir intégré à l'évier. Seulement 20 cartes lues sur 80."
+  },
+  {
+   "candidate_id": "latte-art-stencil-camera",
+   "searches": [
+    {
+     "query": "\"pochoir café latte art\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22pochoir%20caf%C3%A9%20latte%20art%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "pochoir cappuccino",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=pochoir%20cappuccino&search_type=keyword_unordered",
+     "results_text": "Aucune publicité ne correspond",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "\"pochoir café latte art\" (keyword_exact_phrase)",
+   "best_results_n": 0,
+   "best_results_text": "Aucune publicité ne correspond",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22pochoir%20caf%C3%A9%20latte%20art%22&search_type=keyword_exact_phrase",
+   "advertisers": [],
+   "advertisers_distinct": 0,
+   "partial_lot": false,
+   "oldest_days": null,
+   "status": "MESURÉ",
+   "note": "Zéro pub active en FR, confirmé par 2 recherches (phrase exacte 'pochoir café latte art' puis non ordonnée 'pochoir cappuccino'). Les deux pages se sont bien chargées (statusCode 200) avec le message 'Aucune publicité ne correspond'. Mot-clé 'latte art maison' non testé faute de quota."
+  },
+  {
+   "candidate_id": "wireless-wall-sconce-magnetic-bulb",
+   "searches": [
+    {
+     "query": "\"applique murale sans fil\"",
+     "search_type": "keyword_exact_phrase",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=%22applique%20murale%20sans%20fil%22&search_type=keyword_exact_phrase",
+     "results_text": "Aucune publicité ne correspond",
+     "results_n": 0,
+     "cards_seen": 0,
+     "relevant_cards": 0,
+     "scrape_status": "ok"
+    },
+    {
+     "query": "applique murale rechargeable",
+     "search_type": "keyword_unordered",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=applique%20murale%20rechargeable&search_type=keyword_unordered",
+     "results_text": "3 résultats",
+     "results_n": 3,
+     "cards_seen": 3,
+     "relevant_cards": 3,
+     "scrape_status": "ok"
+    }
+   ],
+   "best_query": "applique murale rechargeable (keyword_unordered)",
+   "best_results_n": 3,
+   "best_results_text": "3 résultats",
+   "best_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=FR&media_type=all&q=applique%20murale%20rechargeable&search_type=keyword_unordered",
+   "advertisers": [
+    {
+     "name": "Runsgo shop",
+     "library_id": "1114302397806317",
+     "started": "29 sep 2026",
+     "days": 5,
+     "variants": null,
+     "domain": "runsgo.com"
+    },
+    {
+     "name": "Hendalla NL",
+     "library_id": "2161530874462303",
+     "started": "3 oct 2026",
+     "days": 1,
+     "variants": null,
+     "domain": "hendalla-nl.com"
+    }
+   ],
+   "advertisers_distinct": 2,
+   "partial_lot": false,
+   "oldest_days": 5,
+   "status": "MESURÉ",
+   "note": "Phrase exacte 'applique murale sans fil' = 0 (étonnant pour ce produit). La recherche non ordonnée donne 3 pubs de 2 annonceurs, toutes lancées depuis moins d'une semaine. Runsgo shop : 'applique murale magnétique RGB d'ambiance, sans fil, rechargeable' (la plus proche du candidat). Hendalla NL : 'applique LED avec détecteur de mouvement, sans fil, rechargeable' (2 pubs : 2161530874462303 et 1412705644333716), une variante proche. Aucun compteur 'N ads use this creative' visible. Requête 'applique sans branchement' non testée faute de quota."
+  }
+ ]
+}

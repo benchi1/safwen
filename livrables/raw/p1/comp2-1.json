@@ -1,0 +1,297 @@
+{
+ "agent": "comp2-1",
+ "calls_used": 6,
+ "results": [
+  {
+   "candidate_id": "rechargeable-hand-warmer",
+   "note": "O added. Meta Ad Library US shows ~54 active results. 8 of the 20 cards sell a rechargeable hand warmer: Norbbshop x4 (2-in-1 magnetic, started Sep 19, 2026), Tuix, Everwell, Dailyardmax (Magnetic Split, Sep 11, 2026) and Ignik. The oldest relevant card is Ignik Outdoors (Nov 16, 2025, 322 days), but it is a branded single warmer. The oldest magnetic 2-pack style card is Dailyardmax (Sep 11, 2026, 23 days). There is a cluster of dropship stores that launched in Sep 2026, in line with the season. The Ad Library page was sorted by total impressions. No 'N ads use this creative' text was returned.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 54,
+     "unit": "active ads (approx.)",
+     "quote": "~54 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=rechargeable%20hand%20warmer&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=rechargeable%20hand%20warmer&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 8,
+     "unit": "cards out of first 20",
+     "quote": "8. Norbbshop\nStarted running on Sep 19, 2026\nLibrary ID: 1082779934299054\nnorbbshop.com\n2-in-1 Rechargeable Magnetic Hand Warmers",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=rechargeable%20hand%20warmer&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=rechargeable%20hand%20warmer&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 322,
+     "unit": "days since start",
+     "quote": "19. Ignik Outdoors\nStarted running on Nov 16, 2025\nLibrary ID: 1553030309215430\nignik.com\nrechargeable hand warmer",
+     "stable_id": "1553030309215430",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=rechargeable%20hand%20warmer&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=rechargeable%20hand%20warmer&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 23,
+     "unit": "days since start",
+     "quote": "18. Dailyardmax\nStarted running on Sep 11, 2026\nLibrary ID: 2975322699474811\ndailyardmax.com\nMagnetic Split Hand Warmer",
+     "stable_id": "2975322699474811",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=rechargeable%20hand%20warmer&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=rechargeable%20hand%20warmer&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "precision-electric-screwdriver-set",
+   "note": "O added. Meta Ad Library US shows ~110 active results, and only 18 cards were returned. 10 of them sell the product: RYOBI TOOLS USA x8 (MicroTech Electric Precision Screwdriver Kit sold through homedepot.com, all started Oct 1, 2026, so a big-brand launch push), The Almighty Tools (52-in-1, Sep 20, 2026) and Cladist (Sep 29, 2026). The oldest relevant card is only 14 days old. Several cards are Amazon.com or Alibaba generic ads and some are Facebook-page ads marked 'no product'. EZARC (5 ads use this creative) is marked no product.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 110,
+     "unit": "active ads (approx.)",
+     "quote": "~110 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=precision%20electric%20screwdriver&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=precision%20electric%20screwdriver&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 10,
+     "unit": "cards out of first 18 returned",
+     "quote": "9. Page name: RYOBI TOOLS USA\nStarted running on: Oct 1, 2026\nLibrary ID: 1548892193191837\nLanding domain: www.homedepot.com\nProduct: MicroTech Electric Precision Screwdriver Kit",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=precision%20electric%20screwdriver&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=precision%20electric%20screwdriver&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 14,
+     "unit": "days since start",
+     "quote": "5. Page name: The Almighty Tools\nStarted running on: Sep 20, 2026\nLibrary ID: 1099176582665087\nLanding domain: almighty.tools\nProduct: Precision Electric Screwdriver 52-in-1",
+     "stable_id": "1099176582665087",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=precision%20electric%20screwdriver&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=precision%20electric%20screwdriver&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "vacuum-suction-phone-mount",
+   "note": "D added. Amazon US search returned only 1 non-sponsored result: LISEN Suction Phone Mount for Vacuum, price $29.99, ASIN B0GVDCFQT2. The rating count is shown abbreviated as '(3.4k)', so the value 3400 is an estimate. The Oct Prime promo may bias the figures.",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 3400,
+     "unit": "ratings (displayed as 3.4k)",
+     "quote": "Number of ratings: (3.4k)",
+     "stable_id": "B0GVDCFQT2",
+     "url": "https://www.amazon.com/s?k=vacuum+suction+phone+mount",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=vacuum+suction+phone+mount",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 3000,
+     "unit": "units (badge 3K+)",
+     "quote": "Bought in past month text: 3K+ bought in past month",
+     "stable_id": "B0GVDCFQT2",
+     "url": "https://www.amazon.com/s?k=vacuum+suction+phone+mount",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=vacuum+suction+phone+mount",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "cordless-heated-neck-shoulder-kneading-massager",
+   "note": "D added. The first matching result is COMFIER Cordless Neck and Shoulder Massager with Heat, Wearable 4D Shiatsu, price $49.99, ASIN B0CZLDT54F. Other cordless 4D or 'human-like' versions on page 1 have few ratings but fast badges: KNQZE 200+, B0H2MR46KQ 400+, B0GDG2DQQV 500+, Heycool 700+, plus several 'New on Amazon in past month'. The category is dense: Mirakel shows 10K+ and Nekteck 4K+, but those are corded neck massagers. Ratings '(5.2K)' are abbreviated, so the value is an estimate. Prime promo bias applies.",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 5200,
+     "unit": "ratings (displayed as 5.2K)",
+     "quote": "1. COMFIER Cordless Neck and Shoulder Massager with Heat, Wearable 4D Shiatsu Deep Ti\n$49.99\n(5.2K)\n1K+ bought in past month\nB0CZLDT54F",
+     "stable_id": "B0CZLDT54F",
+     "url": "https://www.amazon.com/s?k=neck+and+shoulder+kneading+massager",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=neck+and+shoulder+kneading+massager",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 1000,
+     "unit": "units (badge 1K+)",
+     "quote": "1K+ bought in past month\nB0CZLDT54F",
+     "stable_id": "B0CZLDT54F",
+     "url": "https://www.amazon.com/s?k=neck+and+shoulder+kneading+massager",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=neck+and+shoulder+kneading+massager",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "sunrise-wake-up-light",
+   "note": "D added. The first result is Hatch Restore 3 (sunrise alarm light plus white noise), price $169.99, ASIN B0DLLSCVZW. It is a branded premium product. Generic equivalents rank well: Odokee $59.99 (2.2K ratings, 6K+ bought, B0DGXD6WVW), Philips SmartSleep $106.99 (14.7K, 6K+), JALL $39.99 (28.2K, 3K+). Demand is strong and the category is crowded. Ratings are abbreviated, so values are estimates. Prime promo bias applies.",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 3200,
+     "unit": "ratings (displayed as 3.2K)",
+     "quote": "1. Hatch Restore 3 | Science-Backed Sleep Audio, Circadian Lighting (Putty) | White noise machine & sunrise al...\n$169.99\n(3.2K)\n8K+ bought in past month\nB0DLLSCVZW",
+     "stable_id": "B0DLLSCVZW",
+     "url": "https://www.amazon.com/s?k=sunrise+alarm+clock+wake+up+light",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=sunrise+alarm+clock+wake+up+light",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 8000,
+     "unit": "units (badge 8K+)",
+     "quote": "8K+ bought in past month\nB0DLLSCVZW",
+     "stable_id": "B0DLLSCVZW",
+     "url": "https://www.amazon.com/s?k=sunrise+alarm+clock+wake+up+light",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=sunrise+alarm+clock+wake+up+light",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 6000,
+     "unit": "units (badge 6K+)",
+     "quote": "2. Odokee Sunrise Alarm Clock White Noise Machine: Natural Wake Up Light | Dimmable Clock with Bluetooth Speak...\n$59.99\n(2.2K)\n6K+ bought in past month\nB0DGXD6WVW",
+     "stable_id": "B0DGXD6WVW",
+     "url": "https://www.amazon.com/s?k=sunrise+alarm+clock+wake+up+light",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=sunrise+alarm+clock+wake+up+light",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "motion-sensor-wide-beam-headlamp",
+   "note": "O added. Meta Ad Library US shows ~120 active results, and only 16 cards were returned. 10 of them sell a headlamp or LED headband: The Tackle King UltraBeam Headlamp x5 (oldest Sep 10, 2025, newer creatives Jun to Sep 2026, so a long-running advertiser), Lumi Light LED headband, LuxeLight Head Torch, plus Chloe Reid Alvarez, Loribeaut and Suzvo (Ultra-Bright Rechargeable LED Headlamp). Persistent advertising over 389 days is a strong O signal. The motion-sensor and 230-degree features were not confirmed in the extracted card text.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 120,
+     "unit": "active ads (approx.)",
+     "quote": "~120 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=wide%20beam%20headlamp%20motion%20sensor&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=wide%20beam%20headlamp%20motion%20sensor&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 10,
+     "unit": "cards out of first 16 returned",
+     "quote": "14. Suzvo/8 | Started running on Sep 27, 2026 | Library ID: 1055710487083264 | SUZVO.COM | Ultra-Bright Rechargeable LED Headlamp",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=wide%20beam%20headlamp%20motion%20sensor&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=wide%20beam%20headlamp%20motion%20sensor&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 389,
+     "unit": "days since start",
+     "quote": "2. The Tackle King | Started running on Sep 10, 2025 | Library ID: 1746281549393512 | THETACKLEKING.COM | UltraBeam Headlamp",
+     "stable_id": "1746281549393512",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=wide%20beam%20headlamp%20motion%20sensor&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=wide%20beam%20headlamp%20motion%20sensor&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  }
+ ]
+}

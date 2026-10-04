@@ -1,0 +1,411 @@
+{
+ "agent": "tiktok",
+ "calls_used": 8,
+ "pages": [
+  {
+   "url": "site:tiktok.com tiktok made me buy it 2026",
+   "scrape_status": "ok",
+   "note": "10 pages discover TikTok ; extraits citent gourde chien portable, 4-in-1 measuring, projecteur ciel étoilé, désinfecteur UV, cosmétiques Medicube. Aucun compteur de vues."
+  },
+  {
+   "url": "site:tiktok.com amazon finds must haves 2026",
+   "scrape_status": "ok",
+   "note": "10 vidéos ; extraits génériques, quelques likes (89 Likes) non liés à un produit précis ; coussin mémoire de forme et sacs silicone cités."
+  },
+  {
+   "url": "site:tiktok.com problem solving gadget",
+   "scrape_status": "ok",
+   "note": "Pages discover : pompes à lessive, verres doseurs ajustables, mini scelleuse, cintres gain de place, organiseur câbles/charge multi-appareils."
+  },
+  {
+   "url": "site:youtube.com tiktok made me buy it 2026 products",
+   "scrape_status": "ok",
+   "note": "Résultat volumineux lu via jq ; surtout marques/cosmétiques (Shiseido, Medicube, Charlotte Tilbury, Comfrt). Seule vue chiffrée : 13K views (9D6Sugu46-s), produits non éligibles."
+  },
+  {
+   "url": "https://www.tiktok.com/discover/tiktok-made-me-buy-it",
+   "scrape_status": "error",
+   "note": "firecrawl_scrape refusé : 'we do not support this site' (TikTok non supporté par Firecrawl). Aucune donnée."
+  },
+  {
+   "url": "https://www.tiktok.com/discover/amazon-must-haves",
+   "scrape_status": "error",
+   "note": "Non tenté (0 appel) : même domaine tiktok.com refusé par Firecrawl à l'appel précédent ; quota réalloué à des recherches."
+  },
+  {
+   "url": "site:tiktok.com viral home gadget \"Likes\" 2026 kitchen cleaning organizer",
+   "scrape_status": "ok",
+   "note": "Recherche de remplacement ; vidéos 33 à 1111 likes mais produits non nommés (gadgets cuisine génériques). Inexploitable pour un candidat précis."
+  },
+  {
+   "url": "site:tiktok.com winning dropshipping products Q4 2026 viral",
+   "scrape_status": "ok",
+   "note": "Recherche de remplacement ; vidéos de sourceurs (dailyfulfill, cnsupply) ; seul produit nommé : purificateur d'air portable (écarté)."
+  },
+  {
+   "url": "site:tiktok.com/discover useful finds under $20 2026 pet hair remover drain catcher",
+   "scrape_status": "ok",
+   "note": "Recherche de remplacement ; filtre machine à laver flottant poils, rouleaux anti-poils réutilisables, attrape-cheveux de douche à 9 $."
+  }
+ ],
+ "candidates": [
+  {
+   "candidate_id": "portable-dog-water-bottle",
+   "name_en": "Portable dog water bottle with drinking trough",
+   "name_fr": "Gourde portable pour chien avec abreuvoir intégré",
+   "keyword_en": "portable dog water bottle",
+   "category": "animaux",
+   "problem_or_desire": "Faire boire son chien en promenade sans gamelle ni gaspillage d'eau",
+   "wow_3s": "On presse la gourde, l'eau remplit l'abreuvoir, le chien boit, on relâche et l'eau restante remonte dans la gourde",
+   "est_weight_g": 250,
+   "fragile": false,
+   "variants_est": 3,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "us_price_usd": null,
+   "evidence": [
+    {
+     "family": "S",
+     "metric": "tiktok_video",
+     "value": null,
+     "unit": "vues",
+     "quote": "Content includes potential dropshipping ideas and winning products for the Q4 season, such as a portable dog water bottle and a 4-in-1 measuring ...",
+     "stable_id": "https://www.tiktok.com/discover/tiktok-made-me-buy-it-2026",
+     "url": "https://www.tiktok.com/discover/tiktok-made-me-buy-it-2026",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:tiktok.com tiktok made me buy it 2026",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "S",
+     "metric": "tiktok_video",
+     "value": null,
+     "unit": "vues",
+     "quote": "The collection includes items like a portable dog water bottle, a tiny room projector that creates a night sky effect, a UV toothbrush sanitizer ...",
+     "stable_id": "https://www.tiktok.com/discover/tiktok-made-me-buy-it-products-2026",
+     "url": "https://www.tiktok.com/discover/tiktok-made-me-buy-it-products-2026",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:tiktok.com tiktok made me buy it 2026",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "floating-washing-machine-pet-hair-filter",
+   "name_en": "Floating washing machine lint and pet hair filter bag",
+   "name_fr": "Filtre flottant attrape-poils pour machine à laver",
+   "keyword_en": "washing machine pet hair catcher",
+   "category": "maison-rangement",
+   "problem_or_desire": "Linge qui ressort couvert de poils d'animaux et de peluches malgré le lavage",
+   "wow_3s": "On sort le filtre du tambour en fin de cycle : il est rempli d'une boule de poils, à côté d'un pull propre",
+   "est_weight_g": 60,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "us_price_usd": null,
+   "evidence": [
+    {
+     "family": "S",
+     "metric": "tiktok_video",
+     "value": null,
+     "unit": "vues",
+     "quote": "Meet the reusable Floating Washing Machine Filter Bag—your effortless way to catch pet hair, lint, and small debris while you wash. Drop it in, ...",
+     "stable_id": "https://www.tiktok.com/discover/washer-hair-catcher-diy",
+     "url": "https://www.tiktok.com/discover/washer-hair-catcher-diy",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:tiktok.com/discover useful finds under $20 2026 pet hair remover drain catcher",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "reusable-pet-hair-remover-roller",
+   "name_en": "Reusable pet hair remover roller (no sticky sheets)",
+   "name_fr": "Rouleau anti-poils réutilisable sans recharge",
+   "keyword_en": "reusable pet hair remover roller",
+   "category": "animaux",
+   "problem_or_desire": "Poils de chat ou chien sur canapé et vêtements, rouleaux adhésifs jetables qui coûtent cher",
+   "wow_3s": "Quelques allers-retours sur un canapé couvert de poils, on ouvre le bac : il est plein de poils",
+   "est_weight_g": 200,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "us_price_usd": null,
+   "evidence": [
+    {
+     "family": "S",
+     "metric": "tiktok_video",
+     "value": null,
+     "unit": "vues",
+     "quote": "Best way to and how to get pet fur off clothes! No more wasteful and expensive lint rollers. These reusable and washable lint rollers are a MUST ...",
+     "stable_id": "https://www.tiktok.com/discover/clothes-hairy-from-cat",
+     "url": "https://www.tiktok.com/discover/clothes-hairy-from-cat",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:tiktok.com/discover useful finds under $20 2026 pet hair remover drain catcher",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "S",
+     "metric": "tiktok_video",
+     "value": null,
+     "unit": "vues",
+     "quote": "6 days ago · Pet Hair Remover for Furniture. Hack 2026 Diy Drain Catcher Dog Hair",
+     "stable_id": "https://www.tiktok.com/discover/how-to-take-hair-off-clothing-without-a-lint-roller",
+     "url": "https://www.tiktok.com/discover/how-to-take-hair-off-clothing-without-a-lint-roller",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:tiktok.com/discover useful finds under $20 2026 pet hair remover drain catcher",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "laundry-detergent-dispenser-pump",
+   "name_en": "Laundry detergent dispenser pump",
+   "name_fr": "Pompe doseuse pour bidon de lessive",
+   "keyword_en": "detergent pump dispenser",
+   "category": "maison-rangement",
+   "problem_or_desire": "Bouchon de lessive qui coule, dose approximative, bidon lourd à verser",
+   "wow_3s": "Une pression sur la pompe vissée sur le bidon et la dose exacte tombe dans le tiroir sans une goutte à côté",
+   "est_weight_g": 120,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "us_price_usd": null,
+   "evidence": [
+    {
+     "family": "S",
+     "metric": "tiktok_video",
+     "value": null,
+     "unit": "vues",
+     "quote": "Discover 10 practical Amazon finds—gadgets that solve daily problems from detergent pumps to adjustable measuring cups.",
+     "stable_id": "https://www.tiktok.com/discover/problem-solving-products-2026",
+     "url": "https://www.tiktok.com/discover/problem-solving-products-2026",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:tiktok.com problem solving gadget",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "adjustable-measuring-cup",
+   "name_en": "Adjustable 4-in-1 measuring cup/spoon",
+   "name_fr": "Verre doseur ajustable 4 en 1",
+   "keyword_en": "adjustable measuring cup",
+   "category": "cuisine",
+   "problem_or_desire": "Tiroir encombré de cuillères et verres doseurs, vaisselle en plus",
+   "wow_3s": "On fait coulisser le curseur : un seul ustensile passe de 1 c. à café à 1 tasse",
+   "est_weight_g": 100,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "us_price_usd": null,
+   "evidence": [
+    {
+     "family": "S",
+     "metric": "tiktok_video",
+     "value": null,
+     "unit": "vues",
+     "quote": "Discover 10 practical Amazon finds—gadgets that solve daily problems from detergent pumps to adjustable measuring cups.",
+     "stable_id": "https://www.tiktok.com/discover/problem-solving-products-2026",
+     "url": "https://www.tiktok.com/discover/problem-solving-products-2026",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:tiktok.com problem solving gadget",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "S",
+     "metric": "tiktok_video",
+     "value": null,
+     "unit": "vues",
+     "quote": "Content includes potential dropshipping ideas and winning products for the Q4 season, such as a portable dog water bottle and a 4-in-1 measuring ...",
+     "stable_id": "https://www.tiktok.com/discover/tiktok-made-me-buy-it-2026",
+     "url": "https://www.tiktok.com/discover/tiktok-made-me-buy-it-2026",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:tiktok.com tiktok made me buy it 2026",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "mini-bag-heat-sealer",
+   "name_en": "Mini handheld bag heat sealer",
+   "name_fr": "Mini scelleuse de sachets portative",
+   "keyword_en": "mini bag sealer",
+   "category": "cuisine",
+   "problem_or_desire": "Paquets de chips, céréales ou café entamés qui ramollissent, pinces qui lâchent",
+   "wow_3s": "On glisse la scelleuse le long d'un paquet de chips ouvert : refermé hermétiquement en 2 secondes",
+   "est_weight_g": 90,
+   "fragile": false,
+   "variants_est": 3,
+   "needs_size_guide": false,
+   "lithium_battery": true,
+   "us_specific": false,
+   "us_price_usd": null,
+   "evidence": [
+    {
+     "family": "S",
+     "metric": "tiktok_video",
+     "value": null,
+     "unit": "vues",
+     "quote": "1️⃣ Mini Food Sealer – Keep snacks fresh forever! 2️⃣ 3-in1 Cordless Hair Tool – Style, dry, volumize in minutes! 3️⃣ Foldable Desk Organizer – ...",
+     "stable_id": "https://www.tiktok.com/discover/best-problem-solving-products-2025",
+     "url": "https://www.tiktok.com/discover/best-problem-solving-products-2025",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:tiktok.com problem solving gadget",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "space-saving-closet-hangers",
+   "name_en": "Space-saving cascading closet hangers",
+   "name_fr": "Cintres gain de place en cascade",
+   "keyword_en": "space saving hangers",
+   "category": "maison-rangement",
+   "problem_or_desire": "Penderie trop petite dans les appartements, vêtements entassés",
+   "wow_3s": "Avant/après d'une penderie : une tringle bondée puis 5 vêtements suspendus verticalement sur un seul crochet",
+   "est_weight_g": 400,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "us_price_usd": null,
+   "evidence": [
+    {
+     "family": "S",
+     "metric": "tiktok_video",
+     "value": null,
+     "unit": "vues",
+     "quote": "These are some of our favorite dorm problem-solvers: ✨ Tiny closet? → Space-saving hangers & hanging organizers ✨ Uncomfortable dorm mattress? ...",
+     "stable_id": "https://www.tiktok.com/discover/best-problem-solving-products",
+     "url": "https://www.tiktok.com/discover/best-problem-solving-products",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:tiktok.com problem solving gadget",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "desk-charging-cable-organizer",
+   "name_en": "Multi-device desk charging dock and cable organizer",
+   "name_fr": "Station de rangement câbles et charge multi-appareils pour bureau",
+   "keyword_en": "charging station organizer",
+   "category": "bureau-tech",
+   "problem_or_desire": "Câbles emmêlés et appareils qui traînent partout sur le bureau ou la table de nuit",
+   "wow_3s": "Avant/après : un nid de câbles puis téléphone, écouteurs et montre alignés proprement sur un seul support",
+   "est_weight_g": 350,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "us_price_usd": null,
+   "evidence": [
+    {
+     "family": "S",
+     "metric": "tiktok_video",
+     "value": null,
+     "unit": "vues",
+     "quote": "- Why it sells: Solves tangled cables and multiple-device charging at once—high utility, low price friction. - How to market: Demo “one desk, ...",
+     "stable_id": "https://www.tiktok.com/@dailyfulfillsourcing/video/7677926911795793166",
+     "url": "https://www.tiktok.com/@dailyfulfillsourcing/video/7677926911795793166",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:tiktok.com problem solving gadget",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "memory-foam-seat-cushion",
+   "name_en": "Memory foam seat cushion for office chair and car",
+   "name_fr": "Coussin d'assise en mousse à mémoire de forme (bureau et voiture)",
+   "keyword_en": "memory foam seat cushion",
+   "category": "bureau-tech",
+   "problem_or_desire": "Inconfort après de longues heures assis en télétravail ou en voiture",
+   "wow_3s": "Une main appuie fort dans le coussin, l'empreinte reste puis disparaît lentement",
+   "est_weight_g": 800,
+   "fragile": false,
+   "variants_est": 3,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "us_price_usd": null,
+   "evidence": [
+    {
+     "family": "S",
+     "metric": "tiktok_video",
+     "value": null,
+     "unit": "vues",
+     "quote": "5. Memory Foam Seat Cushion — Adds comfort to office chairs and car seats, relieves pressure on long sits. 6. Reusable Silicone Food Bags — ...",
+     "stable_id": "https://www.tiktok.com/@amelia30620/video/7684607324429880597",
+     "url": "https://www.tiktok.com/@amelia30620/video/7684607324429880597",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:tiktok.com amazon finds must haves 2026",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  }
+ ],
+ "rejected_seen": [
+  "Projecteur ciel étoilé : proche du mini-projecteur, saturé en France",
+  "Désinfecteur UV de brosse à dents : allégation sanitaire, quasi médical",
+  "Medicube PDRN Gel Mask : cosmétique et marque, exclu",
+  "Dr.Melaxin Calcium Balm : cosmétique de marque, catégorie exclue",
+  "Recourbe-cils Shiseido : marque et beauté, exclu",
+  "Doudoune matelassée : guide des tailles nécessaire, exclu",
+  "Pantalon de jogging G4Free / Comfrt : tailles et marque, exclu",
+  "Spray acide hypochloreux : soin cosmétique, catégorie exclue",
+  "Outil coiffant sans fil 3 en 1 : proche de la brosse lissante saturée",
+  "Purificateur d'air portable : électronique, batterie, allégations santé",
+  "Attrape-cheveux de douche : vendu 9 $, panier trop bas",
+  "Sacs alimentaires en silicone : peu d'effet waouh, marché encombré",
+  "Organiseur de bureau pliable : faible effet waouh, peu démontrable",
+  "Carte multi-outils porte-clés : prix trop bas pour 29 €"
+ ]
+}

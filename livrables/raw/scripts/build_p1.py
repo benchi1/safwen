@@ -51,8 +51,19 @@ def code_exclusion(g):
     return None
 
 def is_positive(e):
-    return (e.get('status') == 'MESURÉ' and e.get('scrape_status') == 'ok' and e.get('metric') != 'absent'
-            and not (isinstance(e.get('value'), (int, float)) and e.get('value') == 0))
+    """Signal positif. Règle durcie après contrôle : un compteur de résultats Meta (meta_us_results)
+    n'est pas spécifique au produit et ne vaut pas preuve O. Une pub Meta identifiée (Library ID + date)
+    dont seule la pertinence est jugée par l'agent (ESTIMATION) compte."""
+    if e.get('scrape_status') != 'ok' or e.get('metric') in ('absent', 'meta_us_results', 'meta_fr_results'):
+        return False
+    v = e.get('value')
+    if isinstance(v, (int, float)) and v == 0:
+        return False
+    if e.get('status') == 'MESURÉ':
+        return True
+    if e.get('status') == 'ESTIMATION' and e.get('metric') in ('meta_us_ad', 'meta_us_relevant_ads') and isinstance(v, (int, float)) and v > 0:
+        return e.get('stable_id', 'n/a') != 'n/a' or 'Library ID' in (e.get('quote') or '')
+    return False
 
 def load(journal):
     labels, results = {}, {}
@@ -104,6 +115,9 @@ def main():
         g['code_excluded'] = code_exclusion(g)
         g['families'] = sorted({e['family'] for e in ev if is_positive(e)})
         g['alive'] = not g.get('excluded_by') and not g['code_excluded']
+        if g['alive'] and g.get('seasonality') == 'ete':
+            g['code_excluded'] = 'saison:ete (pic d été incompatible avec un lancement oct.-janv.)'
+            g['alive'] = False
         g['valid'] = g['alive'] and len(g['families']) >= 2
         prices = [raws[m]['us_price_usd'] for m in g['members'] if m in raws and isinstance(raws[m].get('us_price_usd'), (int, float))]
         g['us_price_usd'] = min(prices) if prices else None

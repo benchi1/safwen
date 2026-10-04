@@ -1,0 +1,641 @@
+{
+ "agent": "satur",
+ "calls_used": 10,
+ "pages": [
+  {
+   "url": "search: winning products dropshipping october 2026",
+   "scrape_status": "ok_search",
+   "note": "10 results. Found AutoDS Oct 2026, Sell The Trend 'Updated for October 2026', Dropified Top 50, Winning Hunter 100+, Tradelle 12 best (snippet: Xiaomi HD Smart Glasses, 5-in-1 Magnetic Wireless Charging Station, Levitating Flower Pot, Shoe Washing Machine Bag, RC Foam...). Rest is YouTube/Reddit/Facebook."
+  },
+  {
+   "url": "search: best products to dropship 2026 list",
+   "scrape_status": "ok_search",
+   "note": "Found Dropship.io, Shopify 150+ ideas, AutoDS Aug 2026, Zik Analytics, Inventory Source, Tradelle summer. AutoDS Aug 2026 snippet (not scraped) names: Ghost Bookshelf Lantern, Grid Rice & Grain Storage Container, Glass Hummingbird Feeders, Car Multi-Function Storage Bag, Disco Ball Plant Hanger, Electric Heating Sweatshirt, Basketball Dog Costume."
+  },
+  {
+   "url": "search: produits gagnants dropshipping 2026",
+   "scrape_status": "ok_search",
+   "note": "FR results are mostly method/category guides (Minea, Droppery, Printful FR, Copyfy, Sourcing-Force). Copyfy snippet lists generic home items (organisateurs de tiroir, poubelles automatiques avec capteur, range-épices magnétiques...). None scraped; no dated FR product list found."
+  },
+  {
+   "url": "search: trending products to sell online fall 2026",
+   "scrape_status": "ok_search",
+   "note": "General e-commerce lists (Printful, GoDaddy 19 trending, Amazon Sell blog, Hostinger 40, Syncee autumn 75, Printify). GoDaddy snippet: niacinamide body lotion, foldable chairs, vitamin C serum, scalp massagers (+3710% YoY), camping hammocks, snow brushes, adult coloring books, wireless charging desk mats. Not scraped."
+  },
+  {
+   "url": "search: tiktok shop best selling products 2026",
+   "scrape_status": "ok_search",
+   "note": "Shopify TikTok products 2026 (perfume, shampoo, casual dresses...), Printify TikTok 18 (magnetic eyelashes, toiletry bag, magnetic phone charger, privacy screen protector...), Fourthwall, Darkroom (categories only), Wonnda. Not scraped."
+  },
+  {
+   "url": "https://www.autods.com/blog/best-items-to-dropship-in-october-2026/",
+   "scrape_status": "ok",
+   "note": "Query mode OK. Published Sep 15, 2026 (modified 2026-09-24). 10 products, Halloween/Q4 oriented."
+  },
+  {
+   "url": "https://www.sellthetrend.com/blog/winning-products",
+   "scrape_status": "ok",
+   "note": "Query mode OK. Cumulative page with monthly sections Aug 2024 -> Oct 2026; article date answered as 21 September 2026 (meta modified 2026-09-22, first published 2026-04-26). Only sections Nov 2025 -> Oct 2026 fall in the 12-month window; branded product names (NEXUS AI picks)."
+  },
+  {
+   "url": "https://www.dropship.io/blog/best-dropshipping-products",
+   "scrape_status": "ok",
+   "note": "Query mode OK (cache 2026-10-03). Date September 7, 2026. 30 products, several sourced from SaleHoo June 2026 tracking / Etsy / Google 2026 reports."
+  },
+  {
+   "url": "https://winninghunter.com/blog/best-dropshipping-products",
+   "scrape_status": "ok",
+   "note": "Query mode OK. Date Mar 30, 2026. ~100 generic product types across 8 categories."
+  },
+  {
+   "url": "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/",
+   "scrape_status": "ok",
+   "note": "Query mode OK (cache 2026-10-04). Body shows no date; metadata article:published_time 2026-02-05T19:54:47, modified 2026-03-10. 56 numbered products."
+  }
+ ],
+ "lists": [
+  {
+   "url": "https://www.autods.com/blog/best-items-to-dropship-in-october-2026/",
+   "title": "10 Winning Dropshipping Products To Sell In October 2026 (Halloween Season)",
+   "publisher": "AutoDS",
+   "published": "2026-09-15",
+   "is_tool_vendor": true
+  },
+  {
+   "url": "https://www.sellthetrend.com/blog/winning-products",
+   "title": "Winning Products: The Definitive List (Updated for October 2026)",
+   "publisher": "Sell The Trend",
+   "published": "2026-09-21 (updated; first published 2026-04-26)",
+   "is_tool_vendor": true
+  },
+  {
+   "url": "https://www.dropship.io/blog/best-dropshipping-products",
+   "title": "Best Dropshipping Products: Validate Before You List",
+   "publisher": "Dropship.io",
+   "published": "2026-09-07",
+   "is_tool_vendor": true
+  },
+  {
+   "url": "https://winninghunter.com/blog/best-dropshipping-products",
+   "title": "100+ Best Dropshipping Products to Sell in 2026 Updated Monthly",
+   "publisher": "Winning Hunter",
+   "published": "2026-03-30",
+   "is_tool_vendor": true
+  },
+  {
+   "url": "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/",
+   "title": "Top 50 Trending Dropshipping Products to Sell in 2026 with Profit Margins",
+   "publisher": "Dropified",
+   "published": "2026-02-05 (metadata only, not shown on page)",
+   "is_tool_vendor": true
+  }
+ ],
+ "products": [
+  {
+   "name_en": "Electric scalp massager",
+   "name_fr": "Masseur de cuir chevelu (électrique)",
+   "list_urls": [
+    "https://www.dropship.io/blog/best-dropshipping-products",
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Pet water fountain",
+   "name_fr": "Fontaine à eau pour animaux",
+   "list_urls": [
+    "https://www.dropship.io/blog/best-dropshipping-products",
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Magnetic car phone mount",
+   "name_fr": "Support téléphone voiture magnétique",
+   "list_urls": [
+    "https://www.dropship.io/blog/best-dropshipping-products",
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Lick mat",
+   "name_fr": "Tapis de léchage pour chien/chat",
+   "list_urls": [
+    "https://www.dropship.io/blog/best-dropshipping-products",
+    "https://winninghunter.com/blog/best-dropshipping-products"
+   ]
+  },
+  {
+   "name_en": "Pet / dog cooling mat",
+   "name_fr": "Tapis rafraîchissant pour animaux",
+   "list_urls": [
+    "https://www.dropship.io/blog/best-dropshipping-products",
+    "https://winninghunter.com/blog/best-dropshipping-products"
+   ]
+  },
+  {
+   "name_en": "Reusable pet hair remover",
+   "name_fr": "Brosse anti-poils d'animaux réutilisable",
+   "list_urls": [
+    "https://www.dropship.io/blog/best-dropshipping-products",
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Packing cubes",
+   "name_fr": "Cubes de rangement pour valise",
+   "list_urls": [
+    "https://www.dropship.io/blog/best-dropshipping-products",
+    "https://winninghunter.com/blog/best-dropshipping-products"
+   ]
+  },
+  {
+   "name_en": "Wireless charger (magnetic charger / charging pad)",
+   "name_fr": "Chargeur sans fil (magnétique / pad)",
+   "list_urls": [
+    "https://www.dropship.io/blog/best-dropshipping-products",
+    "https://winninghunter.com/blog/best-dropshipping-products"
+   ]
+  },
+  {
+   "name_en": "LED / red light therapy face mask",
+   "name_fr": "Masque LED / luminothérapie rouge visage",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Heated eye massager (heat + vibration mask)",
+   "name_fr": "Masseur oculaire chauffant",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Reusable makeup remover pads",
+   "name_fr": "Cotons démaquillants lavables",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Smart posture corrector",
+   "name_fr": "Correcteur de posture connecté",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Mini projector",
+   "name_fr": "Mini vidéoprojecteur",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.sellthetrend.com/blog/winning-products"
+   ]
+  },
+  {
+   "name_en": "Oil sprayer bottle",
+   "name_fr": "Pulvérisateur d'huile",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Adjustable drawer organizer dividers",
+   "name_fr": "Séparateurs / organisateurs de tiroir",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Resistance bands",
+   "name_fr": "Bandes de résistance",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Smart jump rope",
+   "name_fr": "Corde à sauter connectée",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Yoga mat",
+   "name_fr": "Tapis de yoga",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Foam roller",
+   "name_fr": "Rouleau de massage en mousse",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Ab roller wheel",
+   "name_fr": "Roue abdominale",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Slow feeder bowl",
+   "name_fr": "Gamelle anti-glouton",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Weighted plush toy (incl. weighted dinosaur plush)",
+   "name_fr": "Peluche lestée",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Solar outdoor light",
+   "name_fr": "Lampe solaire d'extérieur",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.sellthetrend.com/blog/winning-products"
+   ]
+  },
+  {
+   "name_en": "Travel neck pillow",
+   "name_fr": "Coussin de voyage / tour de cou",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.sellthetrend.com/blog/winning-products"
+   ]
+  },
+  {
+   "name_en": "Fidget toy (desk fidget / squishy brain)",
+   "name_fr": "Jouet anti-stress (fidget)",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products",
+    "https://www.autods.com/blog/best-items-to-dropship-in-october-2026/"
+   ]
+  },
+  {
+   "name_en": "Heated winter jacket",
+   "name_fr": "Veste chauffante d'hiver",
+   "list_urls": [
+    "https://www.autods.com/blog/best-items-to-dropship-in-october-2026/"
+   ]
+  },
+  {
+   "name_en": "House-shaped piggy bank",
+   "name_fr": "Tirelire en forme de maison",
+   "list_urls": [
+    "https://www.autods.com/blog/best-items-to-dropship-in-october-2026/"
+   ]
+  },
+  {
+   "name_en": "Portable mesh nebulizer",
+   "name_fr": "Nébuliseur portable à tamis",
+   "list_urls": [
+    "https://www.autods.com/blog/best-items-to-dropship-in-october-2026/"
+   ]
+  },
+  {
+   "name_en": "Spinning whiskey glass",
+   "name_fr": "Verre à whisky rotatif",
+   "list_urls": [
+    "https://www.autods.com/blog/best-items-to-dropship-in-october-2026/"
+   ]
+  },
+  {
+   "name_en": "4-in-1 laser level & drill dust collector",
+   "name_fr": "Niveau laser 4-en-1 avec collecteur de poussière de perçage",
+   "list_urls": [
+    "https://www.autods.com/blog/best-items-to-dropship-in-october-2026/"
+   ]
+  },
+  {
+   "name_en": "Wine glass charcuterie toppers",
+   "name_fr": "Plateaux apéritif à poser sur verre à vin",
+   "list_urls": [
+    "https://www.autods.com/blog/best-items-to-dropship-in-october-2026/"
+   ]
+  },
+  {
+   "name_en": "Fire extinguisher drink dispenser",
+   "name_fr": "Distributeur de boisson en forme d'extincteur",
+   "list_urls": [
+    "https://www.autods.com/blog/best-items-to-dropship-in-october-2026/"
+   ]
+  },
+  {
+   "name_en": "LED Halloween bats",
+   "name_fr": "Chauves-souris LED d'Halloween",
+   "list_urls": [
+    "https://www.autods.com/blog/best-items-to-dropship-in-october-2026/"
+   ]
+  },
+  {
+   "name_en": "Animated eyeball doorbell",
+   "name_fr": "Sonnette animée œil (Halloween)",
+   "list_urls": [
+    "https://www.autods.com/blog/best-items-to-dropship-in-october-2026/"
+   ]
+  },
+  {
+   "name_en": "GreenGlide Trimmer",
+   "name_fr": "Tondeuse GreenGlide",
+   "list_urls": [
+    "https://www.sellthetrend.com/blog/winning-products"
+   ]
+  },
+  {
+   "name_en": "TrimPro Fat Trimmer",
+   "name_fr": "Appareil TrimPro Fat Trimmer",
+   "list_urls": [
+    "https://www.sellthetrend.com/blog/winning-products"
+   ]
+  },
+  {
+   "name_en": "RootRise Hair Clip",
+   "name_fr": "Pince à cheveux volume racines RootRise",
+   "list_urls": [
+    "https://www.sellthetrend.com/blog/winning-products"
+   ]
+  },
+  {
+   "name_en": "ShapeLift V-Neck Jumpsuit",
+   "name_fr": "Combinaison gainante col V ShapeLift",
+   "list_urls": [
+    "https://www.sellthetrend.com/blog/winning-products"
+   ]
+  },
+  {
+   "name_en": "GrillKing Apron",
+   "name_fr": "Tablier de barbecue GrillKing",
+   "list_urls": [
+    "https://www.sellthetrend.com/blog/winning-products"
+   ]
+  },
+  {
+   "name_en": "GraveGlow Harvester",
+   "name_fr": "Décoration Halloween GraveGlow Harvester",
+   "list_urls": [
+    "https://www.sellthetrend.com/blog/winning-products"
+   ]
+  },
+  {
+   "name_en": "DreamDuo Support Pillow",
+   "name_fr": "Oreiller de soutien DreamDuo",
+   "list_urls": [
+    "https://www.sellthetrend.com/blog/winning-products"
+   ]
+  },
+  {
+   "name_en": "ColorSwipe Hair Chalk Set",
+   "name_fr": "Craies capillaires ColorSwipe",
+   "list_urls": [
+    "https://www.sellthetrend.com/blog/winning-products"
+   ]
+  },
+  {
+   "name_en": "RenaissanceGrace Cross",
+   "name_fr": "Croix décorative RenaissanceGrace",
+   "list_urls": [
+    "https://www.sellthetrend.com/blog/winning-products"
+   ]
+  },
+  {
+   "name_en": "HeadlessHaunt Statue",
+   "name_fr": "Statue Halloween sans tête HeadlessHaunt",
+   "list_urls": [
+    "https://www.sellthetrend.com/blog/winning-products"
+   ]
+  },
+  {
+   "name_en": "SoleLift Arch Socks",
+   "name_fr": "Chaussettes de soutien de voûte plantaire SoleLift",
+   "list_urls": [
+    "https://www.sellthetrend.com/blog/winning-products"
+   ]
+  },
+  {
+   "name_en": "PawHammock Bath Stand",
+   "name_fr": "Hamac de toilettage pour animaux PawHammock",
+   "list_urls": [
+    "https://www.sellthetrend.com/blog/winning-products"
+   ]
+  },
+  {
+   "name_en": "CarryMate Phone Holster",
+   "name_fr": "Étui de transport pour téléphone CarryMate",
+   "list_urls": [
+    "https://www.sellthetrend.com/blog/winning-products"
+   ]
+  },
+  {
+   "name_en": "DryStep Shoe Dryer",
+   "name_fr": "Sèche-chaussures DryStep",
+   "list_urls": [
+    "https://www.sellthetrend.com/blog/winning-products"
+   ]
+  },
+  {
+   "name_en": "CollarFresh Sweat Pads",
+   "name_fr": "Patchs anti-transpiration pour col CollarFresh",
+   "list_urls": [
+    "https://www.sellthetrend.com/blog/winning-products"
+   ]
+  },
+  {
+   "name_en": "Heatless curling set",
+   "name_fr": "Kit de boucles sans chaleur",
+   "list_urls": [
+    "https://www.dropship.io/blog/best-dropshipping-products"
+   ]
+  },
+  {
+   "name_en": "Satin or silk pillowcase set",
+   "name_fr": "Taies d'oreiller en satin/soie",
+   "list_urls": [
+    "https://www.dropship.io/blog/best-dropshipping-products"
+   ]
+  },
+  {
+   "name_en": "Handheld milk frother",
+   "name_fr": "Mousseur à lait manuel",
+   "list_urls": [
+    "https://www.dropship.io/blog/best-dropshipping-products"
+   ]
+  },
+  {
+   "name_en": "White-noise machine",
+   "name_fr": "Machine à bruit blanc",
+   "list_urls": [
+    "https://www.dropship.io/blog/best-dropshipping-products"
+   ]
+  },
+  {
+   "name_en": "Wireless charging desk mat",
+   "name_fr": "Sous-main à recharge sans fil",
+   "list_urls": [
+    "https://www.dropship.io/blog/best-dropshipping-products"
+   ]
+  },
+  {
+   "name_en": "Portable car vacuum",
+   "name_fr": "Aspirateur de voiture portable",
+   "list_urls": [
+    "https://www.dropship.io/blog/best-dropshipping-products"
+   ]
+  },
+  {
+   "name_en": "Insulated water bottle",
+   "name_fr": "Gourde isotherme",
+   "list_urls": [
+    "https://www.dropship.io/blog/best-dropshipping-products"
+   ]
+  },
+  {
+   "name_en": "Mouth tape",
+   "name_fr": "Bande buccale pour le sommeil",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products"
+   ]
+  },
+  {
+   "name_en": "Sleep earbuds",
+   "name_fr": "Écouteurs de sommeil",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products"
+   ]
+  },
+  {
+   "name_en": "Mini massage gun",
+   "name_fr": "Mini pistolet de massage",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products"
+   ]
+  },
+  {
+   "name_en": "Weighted vest",
+   "name_fr": "Gilet lesté",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products"
+   ]
+  },
+  {
+   "name_en": "Self-cleaning litter box",
+   "name_fr": "Litière autonettoyante",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products"
+   ]
+  },
+  {
+   "name_en": "GPS dog tracker",
+   "name_fr": "Traceur GPS pour chien",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products"
+   ]
+  },
+  {
+   "name_en": "Blackhead removal vacuum",
+   "name_fr": "Aspirateur à points noirs",
+   "list_urls": [
+    "https://winninghunter.com/blog/best-dropshipping-products"
+   ]
+  },
+  {
+   "name_en": "Galaxy projector (app-controlled)",
+   "name_fr": "Projecteur galaxie connecté",
+   "list_urls": [
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Sunset lamp",
+   "name_fr": "Lampe coucher de soleil",
+   "list_urls": [
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Acupressure mat with pillow",
+   "name_fr": "Tapis d'acupression avec coussin",
+   "list_urls": [
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Gua sha stone set",
+   "name_fr": "Kit pierres Gua Sha",
+   "list_urls": [
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Infrared heating pad",
+   "name_fr": "Coussin chauffant infrarouge",
+   "list_urls": [
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Lymphatic drainage massager",
+   "name_fr": "Masseur drainage lymphatique",
+   "list_urls": [
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Diatomite bath mat",
+   "name_fr": "Tapis de bain en diatomite",
+   "list_urls": [
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Silicone air fryer liners",
+   "name_fr": "Moules silicone pour air fryer",
+   "list_urls": [
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Magnetic spice rack",
+   "name_fr": "Range-épices magnétique",
+   "list_urls": [
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Instant cooling towel",
+   "name_fr": "Serviette rafraîchissante",
+   "list_urls": [
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  },
+  {
+   "name_en": "Collapsible car trunk organizer",
+   "name_fr": "Organisateur de coffre pliable",
+   "list_urls": [
+    "https://www.dropified.com/blog/top-50-trending-dropshipping-products-to-sell-in-2026-with-profit-margins/"
+   ]
+  }
+ ]
+}

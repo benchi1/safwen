@@ -1,0 +1,282 @@
+{
+ "agent": "comp2-2",
+ "calls_used": 6,
+ "results": [
+  {
+   "candidate_id": "magnetic-screw-holder-wristband",
+   "note": "Meta US: ~78 results, but only 1 of the first 20 cards sells this product (Thegiftnorth-A, magnetic tool wristband, landing thegiftnorth.com, started Aug 11, 2026). The other cards are mostly Creative.Lighting (no product) and unrelated magnetic items. In this output, the text 'N ads use this creative and text' is a literal echo of the prompt, so it is not a real count. Weak O signal.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 78,
+     "unit": "results",
+     "quote": "~78 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=magnetic%20wristband%20for%20screws&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=magnetic%20wristband%20for%20screws&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 1,
+     "unit": "ads out of first 20",
+     "quote": "1. Thegiftnorth-A, Aug 11, 2026, Library ID: 28297924179815566, N ads use this creative and text, thegiftnorth.com, magnetic tool wristband",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=magnetic%20wristband%20for%20screws&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=magnetic%20wristband%20for%20screws&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 54,
+     "unit": "days since start",
+     "quote": "Thegiftnorth-A, Aug 11, 2026, Library ID: 28297924179815566",
+     "stable_id": "28297924179815566",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=magnetic%20wristband%20for%20screws&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=magnetic%20wristband%20for%20screws&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "weighted-under-door-draft-stopper",
+   "note": "Meta US: ~180 results. 5 of the first 20 cards sell an under-door draft stopper: Shopellox x2, Cozy Hoome, and Dovemead x2. None of the extracted ad texts mentions weighted velvet. The other cards are mostly adhesive weather stripping and door-bottom seals, which are a neighbouring product. The oldest relevant ad is Shopellox (Jan 8, 2026, shopellox.com). New entries in late Sep and early Oct 2026 fit the start of the heating season.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 180,
+     "unit": "results",
+     "quote": "~180 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=door%20draft%20stopper&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=door%20draft%20stopper&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 5,
+     "unit": "ads out of first 20",
+     "quote": "Dovemead, Sep 30, 2026, 1441000191249934, none, dovemead.com, triple seal under door draft stopper",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=door%20draft%20stopper&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=door%20draft%20stopper&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 269,
+     "unit": "days since start",
+     "quote": "Shopellox, Jan 8, 2026, 1191073439870143, none, shopellox.com, double sided door draft stopper",
+     "stable_id": "1191073439870143",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=door%20draft%20stopper&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=door%20draft%20stopper&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "mini-cordless-screwdriver-bit-set",
+   "note": "Meta US: only ~6 results. 2 of them sell a cordless screwdriver: Greenworks Power (Sep 16, 2026, no landing domain shown) and Tekario Online Shop (Sep 21, 2026, tekario.com). The extracted text does not say whether either is a 'mini' model with a bit set. The 2 Alibaba ads are for a drill and an impact wrench, so they do not count. Very weak O signal.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 6,
+     "unit": "results",
+     "quote": "~6 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=mini%20cordless%20screwdriver&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=mini%20cordless%20screwdriver&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 2,
+     "unit": "ads out of 6 shown",
+     "quote": "Page name: Tekario Online Shop\nStarted running on: Sep 21, 2026\nLibrary ID: 1088549256999767",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=mini%20cordless%20screwdriver&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=mini%20cordless%20screwdriver&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 18,
+     "unit": "days since start",
+     "quote": "Page name: Greenworks Power\nStarted running on: Sep 16, 2026\nLibrary ID: 1920607765987907",
+     "stable_id": "1920607765987907",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=mini%20cordless%20screwdriver&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=mini%20cordless%20screwdriver&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "self-leveling-cross-line-laser-level",
+   "note": "Meta US: ~16 results, of which 14 cards were extracted. 12 of the 14 sell a laser level: VEVOR Home Improvement x6 (vevor.com), Declaredover.co x5 (declaredover.com, '90° Electronic Cross-Line Laser Level') and Welfareis shop x1 (welfareis.com). Huepar was marked 'no product'. The oldest relevant ad is Welfareis (Jul 2, 2026). Five Declaredover creatives started on Sep 24-29, which looks like a dropshipping store actively testing. The total volume is small.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 16,
+     "unit": "results",
+     "quote": "~16 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=self%20leveling%20cross%20line%20laser%20level&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=self%20leveling%20cross%20line%20laser%20level&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 12,
+     "unit": "ads out of 14 shown",
+     "quote": "Declaredover.co, Started running on Sep 24, 2026, Library ID: 1104821211997819, none, WWW.DECLAREDOVER.COM, 90° Electronic Cross-Line Laser Level",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=self%20leveling%20cross%20line%20laser%20level&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=self%20leveling%20cross%20line%20laser%20level&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 94,
+     "unit": "days since start",
+     "quote": "Welfareis shop, Started running on Jul 2, 2026, Library ID: 27297389833204660, none, WELFAREIS.COM, Cross-Line Laser Level",
+     "stable_id": "27297389833204660",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=self%20leveling%20cross%20line%20laser%20level&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=self%20leveling%20cross%20line%20laser%20level&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "mini-thermal-sticker-printer",
+   "note": "Amazon US: first matching result is the PM290C Sticker Printer at $18.99 (B0FJ76RSN5), with 666 ratings and '200+ bought in past month'. The category is dense: cudinham X6 1.6K ratings / 900+; AHM2 1K+ bought in past month; iDPRT 1K+; Memoking T02 'AI Sticker Maker' 11.2K ratings / 600+ at $25.76 (B0BD5BX4HW); Memoking 'Smart AI APP' 200+ at $19.99. Prices run from $14.99 to $29.99. Rankings may be distorted by the October Prime promotion.",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 666,
+     "unit": "ratings",
+     "quote": "Sticker Printer, PM290C Mini Printer with 3 Rolls Paper, Pink**\nPrice: $18.99\nNumber of ratings: (666)",
+     "stable_id": "B0FJ76RSN5",
+     "url": "https://www.amazon.com/s?k=mini+thermal+printer",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=mini+thermal+printer",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 200,
+     "unit": "units (badge 200+)",
+     "quote": "bought in past month text: 200+ bought in past month\nASIN: B0FJ76RSN5",
+     "stable_id": "B0FJ76RSN5",
+     "url": "https://www.amazon.com/s?k=mini+thermal+printer",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=mini+thermal+printer",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "bluetooth-label-maker",
+   "note": "Amazon US: first matching result is the Nelko P21 in Black at $16.99 (B0CHJR142G), with 24.5K ratings and '8K+ bought in past month'. The ratings value 24500 converts the rounded display '24.5K'. Strong demand across the category: SUPVAN E11 20K+ bought in past month ($29.99); Phomemo D30 5K+; SUPVAN T50M Pro 4K+; NIIMBOT B1 3K+. The Nelko and Phomemo listings are well established, so this is a crowded market. Prime promotion may be inflating the numbers.",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 24500,
+     "unit": "ratings (displayed 24.5K)",
+     "quote": "1. Nelko P21 Label Maker Machine with Tape, Bluetooth Label Printer, Black\n$16.99\n24.5K",
+     "stable_id": "B0CHJR142G",
+     "url": "https://www.amazon.com/s?k=bluetooth+label+maker",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=bluetooth+label+maker",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 8000,
+     "unit": "units (badge 8K+)",
+     "quote": "24.5K\n8K+ bought in past month\nB0CHJR142G",
+     "stable_id": "B0CHJR142G",
+     "url": "https://www.amazon.com/s?k=bluetooth+label+maker",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=bluetooth+label+maker",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  }
+ ]
+}

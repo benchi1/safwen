@@ -1,0 +1,267 @@
+{
+ "agent": "comp-5",
+ "calls_used": 6,
+ "results": [
+  {
+   "candidate_id": "quick-clothing-fixer-stitch-gun",
+   "note": "Meta US scrape OK (~34 results). From the extraction summary, none of the 20 first cards sells a stitch gun. 14 cards advertise a 'universal zipper repair tool', a nearby product (sellers: Bgnie, Civilizek.*, Kidscustomprint&g, Weavbyte, bestemall.com, wordmindglow.com). The oldest is Bgnie, Library ID 1176922467700155, started Nov 4, 2025 (334 days). 6 cards are book ads (L.A. Boruff, 'no product'). The O signal for this exact product is weak or missing. The query may be picking up zipper-repair dropshippers instead. The relevance classification comes from the Firecrawl LLM summary.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 34,
+     "unit": "results",
+     "quote": "~34 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=quick%20clothing%20fixer&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=quick%20clothing%20fixer&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 0,
+     "unit": "ads out of first 20",
+     "quote": "Product: universal zipper repair tool",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=quick%20clothing%20fixer&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=quick%20clothing%20fixer&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "absent",
+     "value": null,
+     "unit": "n/a",
+     "quote": "Page name: Bgnie\nStarted running on: Nov 4, 2025\nLibrary ID: 1176922467700155\nLanding domain: bgnie.com\nProduct: universal zipper repair tool",
+     "stable_id": "1176922467700155",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=quick%20clothing%20fixer&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=quick%20clothing%20fixer&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "ai-translation-earbuds",
+   "note": "Meta US scrape OK (~1,000 results). Relevant cards among the first 20: Aviorra x4 (aviorra.com), Vasco Translator E1, Viora, and Kentfaith (multi-product), so 7. Timekettle 'M3 Translator' would make 8 if it counts as earbuds. The oldest relevant card is Aviorra, Library ID 1764170174451179, started Apr 25, 2025 (527 days at 2026-10-04). Several Aviorra cards are still being relaunched in Sep 2026, so a sustained advertiser. Note: the extraction gives the same Library ID 1314858750583515 for cards 5 and 6, which is likely an extraction error.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 1000,
+     "unit": "results",
+     "quote": "~1,000 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=translation%20earbuds&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=translation%20earbuds&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 7,
+     "unit": "ads out of first 20",
+     "quote": "8. Aviorra, Sep 21, 2026, 1080602281351895, aviorra.com, AI Translator Earbuds",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=translation%20earbuds&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=translation%20earbuds&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 527,
+     "unit": "days since start",
+     "quote": "1. Aviorra, Apr 25, 2025, 1764170174451179, aviorra.com, AI Translator Earbuds",
+     "stable_id": "1764170174451179",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=translation%20earbuds&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=translation%20earbuds&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "butter-slicer-dispenser",
+   "note": "Amazon US scrape OK during Prime October. Prices may be biased. First matching 'slicer + dispenser': KitchenArt 32000 Buttermate (B00020O3YC), $14.99, 1K ratings (rounded display), 600+ bought in past month. Closest to the press-type adjustable dispenser format: xyadyhz Butter Slicer and Dispenser (B0GT8PM3SJ), $11.99, 68 ratings, 200+/month. Also wanebeibay (B0FZ9ZY7H3, $12.99, 114 ratings, 200+), One-Click Butter Cutter (B0H4L6XK5F, $14.99, 18 ratings, 300+) and Guiyal (B0HDZ1L2L3, $11.49, 20 ratings, 100+). Several recent listings with few ratings but monthly sales, which suggests an emerging sub-niche. Wire slicers lead the page (B0D2GZFMZN 1K+/month).",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 1000,
+     "unit": "ratings",
+     "quote": "8. KitchenArt 32000 Buttermate Butter Cutter Slicer, Measuring Dispenser and Keeper, \n$14.99\n1K",
+     "stable_id": "B00020O3YC",
+     "url": "https://www.amazon.com/s?k=butter+slicer",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=butter+slicer",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 600,
+     "unit": "units/month (lower bound)",
+     "quote": "600+ bought in past month\nB00020O3YC",
+     "stable_id": "B00020O3YC",
+     "url": "https://www.amazon.com/s?k=butter+slicer",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=butter+slicer",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 200,
+     "unit": "units/month (lower bound)",
+     "quote": "14. xyadyhz Butter Slicer and Dispenser, Adjustable Cutter for Stick Butter, White\n$11.99\n68\n200+ bought in past month\nB0GT8PM3SJ",
+     "stable_id": "B0GT8PM3SJ",
+     "url": "https://www.amazon.com/s?k=butter+slicer",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=butter+slicer",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "vacuum-mason-jar-lids",
+   "note": "Amazon US scrape OK, but the extraction returned only 3 results instead of 20. Matching product: LOVE MOMENT Electric Mason Jar Vacuum Sealer Kit (B0BDDX27WT), $22.09, 18.9K ratings, 10K+ bought in past month. That is very strong demand, but it also means an established incumbent. Also valve lids (B0FRFL6V29, $18.99, 53 ratings, 50+/month). Prime October period, so prices may be biased.",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 18900,
+     "unit": "ratings",
+     "quote": "2. LOVE MOMENT Electric Mason Jar Vacuum Sealer Kit with One Touch Auto-Pause\n$22.09\n(18.9K)",
+     "stable_id": "B0BDDX27WT",
+     "url": "https://www.amazon.com/s?k=mason+jar+vacuum+sealer+lids",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=mason+jar+vacuum+sealer+lids",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 10000,
+     "unit": "units/month (lower bound)",
+     "quote": "10K+ bought in past month\nB0BDDX27WT",
+     "stable_id": "B0BDDX27WT",
+     "url": "https://www.amazon.com/s?k=mason+jar+vacuum+sealer+lids",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=mason+jar+vacuum+sealer+lids",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "mini-electric-food-chopper",
+   "note": "Amazon US scrape OK (16 results). First portable/rechargeable result: '2026 Upgrade Electric Garlic Chopper Mini' (B0GS1WVG12), $21.88, 96 ratings, 300+/month. Second: Electric Garlic Chopper 250ml USB Rechargeable (B0G7WRHW4S), $15.99, 1.5K ratings, 400+/month. Corded brand-name choppers dominate the page (BLACK+DECKER B01LYR6VNZ, $14.44, 23.3K ratings, 10K+/month; Hamilton Beach 37.5K ratings, 10K+). The cordless sub-niche is moderate. Prime October period.",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 96,
+     "unit": "ratings",
+     "quote": "4. 2026 Upgrade Electric Garlic Chopper Mini, 320 ml Small Garlic Chopper Mincer with 6 Stainless Steel Blades, Portable Rechargeable Cordless Chopper",
+     "stable_id": "B0GS1WVG12",
+     "url": "https://www.amazon.com/s?k=mini+electric+food+chopper",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=mini+electric+food+chopper",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 300,
+     "unit": "units/month (lower bound)",
+     "quote": "$21.88\n(96)\n300+ bought in past month\nB0GS1WVG12",
+     "stable_id": "B0GS1WVG12",
+     "url": "https://www.amazon.com/s?k=mini+electric+food+chopper",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=mini+electric+food+chopper",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 400,
+     "unit": "units/month (lower bound)",
+     "quote": "USB Rechargeable Garlic Mincer, Wireless Small Food Chopper for Onion, Veggie, Ginger, Chili, Fruit, Meat\n$15.99\n(1.5K)\n400+ bought in past month\nB0G7WRHW4S",
+     "stable_id": "B0G7WRHW4S",
+     "url": "https://www.amazon.com/s?k=mini+electric+food+chopper",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=mini+electric+food+chopper",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "cake-pan-with-lift-arm",
+   "note": "Amazon US scrape OK (20 results), but no title clearly shows a pan with a release lift arm. The page is dominated by divided brownie pans and 'all edges' pans. Nearby items: Chicago Metallic Slice Solutions (B00YF3AE1S, $16.99, 2K ratings, 300+/month); Baker's Edge (B000MMK448, $54.99, 4.6K, 300+); GoodCook (B0026RHHYC, 1K+/month); 'Brownie Pan with Lid, Spatula and Wedge' (B0H6PGXYRK, $52.99, 16 ratings, 50+). Farberware B09WZSD1LR has a truncated title ('Rectangular Cake Pan wi...', $24.99, 410 ratings, 600+/month) and needs checking on the product page. Amazon demand for the exact lift-arm format is not measured. A different query ('cake pan with lifter' / 'lift and serve pan') would be needed.",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "absent",
+     "value": null,
+     "unit": "n/a",
+     "quote": "1. Chicago Metallic Professional Slice Solutions Brownie Pan, 9-$16.99(2K)300+ bought in past monthB00YF3AE1S",
+     "stable_id": "n/a",
+     "url": "https://www.amazon.com/s?k=brownie+pan+with+lifter",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=brownie+pan+with+lifter",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  }
+ ]
+}

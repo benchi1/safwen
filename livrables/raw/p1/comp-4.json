@@ -1,0 +1,297 @@
+{
+ "agent": "comp-4",
+ "calls_used": 7,
+ "results": [
+  {
+   "candidate_id": "magnetic-motion-sensor-closet-light",
+   "note": "Meta US, requête 'motion sensor closet light' : ~260 pubs actives. L'extraction n'a renvoyé que 9 cartes (pas 20). 4 d'entre elles concernent des lampes à détecteur de mouvement ou des lampes de placard (Modolight, Embroiderym, EnjoyaitLife, NightLume). GlowRight et Maxxima vendent de l'éclairage plus générique et ne sont pas comptés. Les descriptions de produit sont courtes et génériques (résumé du LLM), d'où le comptage en ESTIMATION. La plus ancienne carte pertinente est 'Cabinet lights' d'EnjoyaitLife (17 mars 2026). La plus ancienne carte qui dit explicitement 'motion' est NightLume (28 mai 2026, ID 1623170165463971, 129 jours).",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 260,
+     "unit": "ads",
+     "quote": "~260 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=motion%20sensor%20closet%20light&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=motion%20sensor%20closet%20light&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 4,
+     "unit": "ads among first 9 cards returned",
+     "quote": "Page name: Modolight ... Physical product: Motion sensor light | Page name: Embroiderym ... Smart motion sensor light | EnjoyaitLife ... Cabinet lights | NightLume ... Motion lighting",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=motion%20sensor%20closet%20light&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=motion%20sensor%20closet%20light&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 201,
+     "unit": "days since start",
+     "quote": "Page name: EnjoyaitLife\nStarted running on: Mar 17, 2026\nLibrary ID: 1196539265665165\nLanding domain: no link\nPhysical product: Cabinet lights",
+     "stable_id": "1196539265665165",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=motion%20sensor%20closet%20light&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=motion%20sensor%20closet%20light&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "wheel-rim-barrel-brush",
+   "note": "Meta US, requête 'wheel barrel brush' : ~470 pubs actives. L'extraction a marqué 'no product' sur les 20 premières cartes, faute de lire le texte des pubs. Le nombre de pubs pour ce produit n'est donc pas mesuré. Plusieurs annonceurs sont des marques d'entretien auto (Viking Car Care, 7 cartes dont la plus ancienne date du 8 juin 2026, ID 3044797712537814 ; Detail Garage ; ethoscarcare.com). C'est un indice, mais le produit (brosse à jante) n'a pas été vérifié. Le repli en markdown n'a pas été fait pour cette requête, faute de quota (7/7 appels).",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 470,
+     "unit": "ads",
+     "quote": "~470 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=wheel%20barrel%20brush&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=wheel%20barrel%20brush&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": null,
+     "unit": "ads among first 20",
+     "quote": "4. Viking Car Care, Started running on Jun 8, 2026, Library ID: 3044797712537814, vikingcarcare.com, no product",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=wheel%20barrel%20brush&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=wheel%20barrel%20brush&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "twist-pile-car-drying-towel",
+   "note": "Meta US, requête 'car drying towel' : ~1 900 pubs actives. 14 des 20 premières cartes vendent une serviette de séchage auto. Les annonceurs sont ExoForma, Blackline Car Care (Slim Drying Towel), Getkeystone (Thirsty Drying Towel) et Genix Clean. Pubs anciennes et toujours actives : ExoForma tourne depuis le 9 mars 2025, avec des créations dupliquées ('2 ads' et '3 ads use this creative and text'). Pubs Blackline depuis septembre-octobre 2025. Sont exclues : Surface Max, Oreve, Elemental Grove, la station de lavage, la serviette de douche et les nettoyeurs haute pression.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 1900,
+     "unit": "ads",
+     "quote": "~1,900 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=car%20drying%20towel&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=car%20drying%20towel&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 14,
+     "unit": "ads among first 20",
+     "quote": "Page name: Blackline Car Care ... Product: Slim Drying Towel | Page name: Getkeystone ... Product: Thirsty Drying Towel | Page name: Genix Clean ... Product: drying towel",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=car%20drying%20towel&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=car%20drying%20towel&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 574,
+     "unit": "days since start",
+     "quote": "Page name: ExoForma\nStarted running on: Mar 9, 2025\nLibrary ID: 610056062184248\nN ads use this creative and text: 2 ads use this creative and text\nLanding domain: exoforma.com",
+     "stable_id": "610056062184248",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=car%20drying%20towel&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=car%20drying%20towel&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "mini-cordless-car-vacuum",
+   "note": "Meta US, requête 'cordless car vacuum' : ~540 pubs actives. 6 des 20 premières cartes mentionnent explicitement un aspirateur de voiture sans fil (Sakerplus, Bling-furnitureshop, Tristeyst x2, AutoCar Accessories, Nozbone/shopserenade). En ajoutant les aspirateurs à main sans fil, on monte à 12 cartes (Rouvenor 'Handheld Vacuum King' x5, Relaxrich). Rouvenor fait tourner ses pubs depuis le 9 mars 2026. Sont exclus : aspirateur balai, machine pour canapé, souffleurs, 'no product'.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 540,
+     "unit": "ads",
+     "quote": "~540 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=cordless%20car%20vacuum&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=cordless%20car%20vacuum&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 6,
+     "unit": "ads among first 20",
+     "quote": "Physical product: Sakerplus® Cordless Car Vacuum | Portable Cordless Car Vacuum | 4-in-1 High-Power Cordless Car Vacuum | cordless mini vacuum",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=cordless%20car%20vacuum&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=cordless%20car%20vacuum&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 345,
+     "unit": "days since start",
+     "quote": "Page name: Nozbone Skateshop\nStarted running on: Oct 24, 2025\nLibrary ID: 4311103002450941\nLanding domain: SHOPSERENADE.COM\nPhysical product: 4-in-1 Cordless Handheld Car Vacuum Cleaner",
+     "stable_id": "4311103002450941",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=cordless%20car%20vacuum&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=cordless%20car%20vacuum&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "ultrasonic-anti-bark-device",
+   "note": "Meta US, requête 'ultrasonic bark control device' : seulement ~25 pubs actives, mais les 20 premières cartes vendent toutes un appareil anti-aboiement à ultrasons. Le premier passage en 'query' avait tout marqué 'no product'. Le repli en markdown (7e appel) a confirmé le texte des pubs. Annonceurs D2C : Happy-Luna (barkaway, depuis le 30 avril 2026, 3 cartes), Hunters Doggy Daycare/QuietPaws ('21,875 dog owners have already made the switch'), STÙNICK SB1 (129,95 $, 7 cartes), Pawtique, Pawden Halo, Maple & Co 'The Silencer', MadridWind (convictioni/commendize), BarkStop (tamioh). Une seule carte Alibaba B2B. Les lancements sont concentrés en septembre 2026, signe d'une vague d'annonceurs récente.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 25,
+     "unit": "ads",
+     "quote": "~25 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=ultrasonic%20bark%20control%20device&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=ultrasonic%20bark%20control%20device&search_type=keyword_unordered",
+     "method": "markdown",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 20,
+     "unit": "ads among first 20",
+     "quote": "QuietPaws ultrasonic device stops dog barking at everything, from strangers to other dogs and doorbells. No shocks, humane and effective.",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=ultrasonic%20bark%20control%20device&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=ultrasonic%20bark%20control%20device&search_type=keyword_unordered",
+     "method": "markdown",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 157,
+     "unit": "days since start",
+     "quote": "Library ID: 1297560035774780\nStarted running on Apr 30, 2026 ... [Happy-Luna] ... 🐾 Handheld Ultrasonic Dog Bark Control Device",
+     "stable_id": "1297560035774780",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=ultrasonic%20bark%20control%20device&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=ultrasonic%20bark%20control%20device&search_type=keyword_unordered",
+     "method": "markdown",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "rechargeable-camping-fan-light",
+   "note": "Meta US, requête 'camping fan with light' : ~16 000 pubs actives, mais ce volume est surtout du bruit (t-shirts, climatiseur de camping-car, téléphones, onduleur...). Une seule carte sur 20 vend clairement un ventilateur de camping (Pineapplea, 'Outdoor Camping Fan', depuis le 30 juin 2026). Produits voisins non comptés : Venty Fan 'foldable travel essential fan' (5 cartes, depuis le 26 avril 2025) et Sakerra 'USB Outdoor Waist Fan' (3 cartes). Aucune carte n'indique explicitement un ventilateur 3-en-1 avec lumière. Le signal O pour ce produit précis est faible.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 16000,
+     "unit": "ads",
+     "quote": "~16,000 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=camping%20fan%20with%20light&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=camping%20fan%20with%20light&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 1,
+     "unit": "ads among first 20",
+     "quote": "17. Pineapplea Lot\nStarted running on Jun 30, 2026\nLibrary ID: 1632792845106269\npineapplea.com\nOutdoor Camping Fan",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=camping%20fan%20with%20light&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=camping%20fan%20with%20light&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 96,
+     "unit": "days since start",
+     "quote": "17. Pineapplea Lot\nStarted running on Jun 30, 2026\nLibrary ID: 1632792845106269\npineapplea.com\nOutdoor Camping Fan",
+     "stable_id": "1632792845106269",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=camping%20fan%20with%20light&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=camping%20fan%20with%20light&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  }
+ ]
+}

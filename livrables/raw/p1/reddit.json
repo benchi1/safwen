@@ -1,0 +1,324 @@
+{
+ "agent": "reddit",
+ "calls_used": 7,
+ "pages": [
+  {
+   "url": "site:reddit.com best purchase under $50 2026",
+   "scrape_status": "ok",
+   "note": "10 snippets; grabber, bidet, bedside lamp, toothbrush, phone cases"
+  },
+  {
+   "url": "site:reddit.com/r/BuyItForLife game changer 2026",
+   "scrape_status": "ok",
+   "note": "10 snippets; electric tin opener, fish spatula, vacuum sealer, mostly big brands"
+  },
+  {
+   "url": "site:reddit.com tiktok made me buy it actually worth it",
+   "scrape_status": "ok",
+   "note": "10 snippets; magnetic car phone mount only usable product"
+  },
+  {
+   "url": "site:reddit.com/r/CleaningTips best tool you bought",
+   "scrape_status": "ok",
+   "note": "10 snippets; spin mop, steam mop, robot vacuum, microfiber cloths"
+  },
+  {
+   "url": "site:reddit.com/r/dogs product that made life easier",
+   "scrape_status": "ok",
+   "note": "10 snippets; no-pull harness, dog boots, deshedding, poop bags"
+  },
+  {
+   "url": "site:reddit.com/r/HomeImprovement best cheap gadget 2026",
+   "scrape_status": "ok",
+   "note": "10 snippets; hose reel, humidity gadget, mostly appliances"
+  },
+  {
+   "url": "https://www.reddit.com/r/AskReddit/comments/1tfg1eh/whats_a_tiktok_made_me_buy_it_product_that/",
+   "scrape_status": "error",
+   "note": "Firecrawl scrape refused: 'we do not support this site' (reddit blocked); markdown retry and 2nd scrape skipped, same domain block"
+  }
+ ],
+ "candidates": [
+  {
+   "candidate_id": "magnetic-car-phone-mount",
+   "name_en": "Magnetic car phone mount",
+   "name_fr": "Support téléphone magnétique pour voiture",
+   "keyword_en": "magnetic car phone mount",
+   "category": "auto-voyage",
+   "problem_or_desire": "Suction-cup mounts fall off; phone slides around while using GPS",
+   "wow_3s": "Phone snaps onto the mount with one hand and stays put over bumps",
+   "est_weight_g": 80,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "us_price_usd": null,
+   "evidence": [
+    {
+     "family": "S",
+     "metric": "reddit_mention",
+     "value": null,
+     "unit": "votes",
+     "quote": "My friend got me one of those magnetic phone mounts for the car and its actually solid, way better than those suction cup ones that fall off",
+     "stable_id": "https://www.reddit.com/r/AskReddit/comments/1tfg1eh/whats_a_tiktok_made_me_buy_it_product_that/",
+     "url": "https://www.reddit.com/r/AskReddit/comments/1tfg1eh/whats_a_tiktok_made_me_buy_it_product_that/",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:reddit.com tiktok made me buy it actually worth it",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "grabber-reacher-tool",
+   "name_en": "Foldable grabber reacher tool",
+   "name_fr": "Pince de préhension pliable (attrape-objets)",
+   "keyword_en": "grabber reacher tool",
+   "category": "maison-rangement",
+   "problem_or_desire": "Reaching high shelves or picking things off the floor without a stool or bending",
+   "wow_3s": "Picks a single coin or a can off a top shelf in one grab",
+   "est_weight_g": 250,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "us_price_usd": null,
+   "evidence": [
+    {
+     "family": "S",
+     "metric": "reddit_mention",
+     "value": null,
+     "unit": "votes",
+     "quote": "A grabber! I'm short ...",
+     "stable_id": "https://www.reddit.com/r/Life/comments/1psqlae/whats_a_purchase_under_50_that_was_100_worth_it/",
+     "url": "https://www.reddit.com/r/Life/comments/1psqlae/whats_a_purchase_under_50_that_was_100_worth_it/",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:reddit.com best purchase under $50 2026",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "electric-can-opener",
+   "name_en": "Hands-free electric can opener",
+   "name_fr": "Ouvre-boîte électrique automatique",
+   "keyword_en": "electric can opener",
+   "category": "cuisine",
+   "problem_or_desire": "Manual can openers are hard on weak hands and leave sharp edges",
+   "wow_3s": "Placed on a can, it rides around the lid by itself and lifts it off cleanly",
+   "est_weight_g": 300,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": true,
+   "us_specific": false,
+   "us_price_usd": null,
+   "evidence": [
+    {
+     "family": "S",
+     "metric": "reddit_mention",
+     "value": null,
+     "unit": "votes",
+     "quote": "Electric tin opener. Fish spatula is a game changer for eggs imo.",
+     "stable_id": "https://www.reddit.com/r/BuyItForLife/comments/1mckl5s/requestwhat_are_some_gadgets_that_changed_your/",
+     "url": "https://www.reddit.com/r/BuyItForLife/comments/1mckl5s/requestwhat_are_some_gadgets_that_changed_your/",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:reddit.com/r/BuyItForLife game changer 2026",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "no-pull-dog-harness",
+   "name_en": "No-pull dog harness",
+   "name_fr": "Harnais anti-traction pour chien",
+   "keyword_en": "no pull dog harness",
+   "category": "animaux",
+   "problem_or_desire": "Dog pulls on the leash, walks are tiring and stressful",
+   "wow_3s": "Side-by-side: dog dragging owner vs calm walk after harness swap",
+   "est_weight_g": 250,
+   "fragile": false,
+   "variants_est": 3,
+   "needs_size_guide": true,
+   "lithium_battery": false,
+   "us_specific": false,
+   "us_price_usd": null,
+   "evidence": [
+    {
+     "family": "S",
+     "metric": "reddit_mention",
+     "value": null,
+     "unit": "votes",
+     "quote": "I started using a new harness and it's a game-changer. Walks are smoother, and no more pulling.",
+     "stable_id": "https://www.reddit.com/r/dogs/comments/1njmsrq/this_little_gadget_made_walks_way_easier/",
+     "url": "https://www.reddit.com/r/dogs/comments/1njmsrq/this_little_gadget_made_walks_way_easier/",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:reddit.com/r/dogs product that made life easier",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "dog-deshedding-brush",
+   "name_en": "Dog deshedding brush",
+   "name_fr": "Brosse anti-mue pour chien",
+   "keyword_en": "dog deshedding tool",
+   "category": "animaux",
+   "problem_or_desire": "Shedding hair everywhere in the apartment from double-coated dogs",
+   "wow_3s": "A few strokes pull out a huge clump of undercoat",
+   "est_weight_g": 200,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "us_price_usd": null,
+   "evidence": [
+    {
+     "family": "S",
+     "metric": "reddit_mention",
+     "value": null,
+     "unit": "votes",
+     "quote": "To reduce shedding overall for double coated breeds ( long or short hair), I highly recommend using the Furminator brand deshedding solution",
+     "stable_id": "https://www.reddit.com/r/dogs/comments/1j1vpij/multiple_dog_households_please_share_your_best/",
+     "url": "https://www.reddit.com/r/dogs/comments/1j1vpij/multiple_dog_households_please_share_your_best/",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:reddit.com/r/dogs product that made life easier",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "wide-opening-dog-boots",
+   "name_en": "Easy-on wide-opening dog boots",
+   "name_fr": "Bottines pour chien à ouverture large",
+   "keyword_en": "dog boots wide opening",
+   "category": "animaux",
+   "problem_or_desire": "Protecting paws from salt, hot pavement or mud; classic boots are a struggle to put on",
+   "wow_3s": "Boot slips on in one second thanks to the wide opening",
+   "est_weight_g": 200,
+   "fragile": false,
+   "variants_est": 3,
+   "needs_size_guide": true,
+   "lithium_battery": false,
+   "us_specific": false,
+   "us_price_usd": null,
+   "evidence": [
+    {
+     "family": "S",
+     "metric": "reddit_mention",
+     "value": null,
+     "unit": "votes",
+     "quote": "Dog boots with a wide opening. They're so much easier to put on and take off, making it far less annoying for us both.",
+     "stable_id": "https://www.reddit.com/r/dogs/comments/z46pmi/what_are_some_game_changer_items_that_you_have/",
+     "url": "https://www.reddit.com/r/dogs/comments/z46pmi/what_are_some_game_changer_items_that_you_have/",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:reddit.com/r/dogs product that made life easier",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "touch-bedside-lamp",
+   "name_en": "Touch-control bedside lamp",
+   "name_fr": "Lampe de chevet tactile",
+   "keyword_en": "touch bedside lamp",
+   "category": "cadeau-lifestyle",
+   "problem_or_desire": "Having to get up to switch lights on/off; simple gift for parents",
+   "wow_3s": "A tap on the lamp cycles brightness from dim to bright",
+   "est_weight_g": 500,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": true,
+   "us_specific": false,
+   "us_price_usd": null,
+   "evidence": [
+    {
+     "family": "S",
+     "metric": "reddit_mention",
+     "value": null,
+     "unit": "votes",
+     "quote": "Small desk/bedside lamp with easy controls: Not smart home level, just something convenient. My mom hates getting up just to turn lights on/off",
+     "stable_id": "https://www.reddit.com/r/Gifts/comments/1snwnfe/top_5_actually_practical_tech_gifts_under_50_for/",
+     "url": "https://www.reddit.com/r/Gifts/comments/1snwnfe/top_5_actually_practical_tech_gifts_under_50_for/",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:reddit.com best purchase under $50 2026",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "toilet-bidet-attachment",
+   "name_en": "Non-electric bidet toilet attachment",
+   "name_fr": "Kit bidet adaptable pour WC (sans électricité)",
+   "keyword_en": "bidet attachment",
+   "category": "maison-rangement",
+   "problem_or_desire": "Hygiene and toilet paper savings without installing a separate bidet",
+   "wow_3s": "Knob turn shows the nozzle spray extending under a clean toilet seat",
+   "est_weight_g": 700,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "us_price_usd": 30,
+   "evidence": [
+    {
+     "family": "S",
+     "metric": "reddit_mention",
+     "value": null,
+     "unit": "votes",
+     "quote": "Bidet, $30.",
+     "stable_id": "https://www.reddit.com/r/Frugal/comments/17bhm0s/what_is_a_product_under_50_that_you_dont_regret/",
+     "url": "https://www.reddit.com/r/Frugal/comments/17bhm0s/what_is_a_product_under_50_that_you_dont_regret/",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_search",
+     "query_used": "site:reddit.com best purchase under $50 2026",
+     "method": "search_snippet",
+     "status": "NON MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  }
+ ],
+ "rejected_seen": [
+  "Electric toothbrush: hygiene/care, brand-led, saturated market",
+  "Screen protectors and phone cases: commodity, saturated, low margin",
+  "Spin mop: bucket over 1 kg, bulky shipping",
+  "Steam mop: appliance, heavy, 230V adaptation",
+  "Robot vacuum (Roborock): branded, expensive, lithium",
+  "Auto retracting hose reel: heavy, suits houses with gardens",
+  "Vacuum sealer: appliance, heavy, food-storage niche",
+  "Wahl scalp trimmer: big brand, personal care category",
+  "200% size poop bags: consumable, recurring low-value product",
+  "Dog ramps and strollers: bulky, heavy, over 1 kg",
+  "Owala/Yeti water bottles: big brands, near saturated motivation bottle",
+  "Humidity sensor gadget: sells under 29 euros, weak wow",
+  "Microfiber cleaning cloths: consumable-like, no visual wow",
+  "Paint edging tool: thread says not worth it",
+  "Fish spatula: low wow, cheap generic kitchen item"
+ ]
+}

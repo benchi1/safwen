@@ -1,0 +1,312 @@
+{
+ "agent": "comp-1",
+ "calls_used": 6,
+ "results": [
+  {
+   "candidate_id": "wireless-wall-sconce-magnetic-bulb",
+   "note": "Meta US très faible : ~6 résultats seulement, 5 cartes rendues. 2 cartes vendent des appliques murales sur batterie (un lien d'affiliation Amazon via amzlink.to, une annonce de particulier). Le texte des pubs ne confirme pas la variante à ampoule magnétique : le décompte des pubs pertinentes est donc une estimation. Pas de vendeur DTC visible. Signal O faible.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 6,
+     "unit": "results",
+     "quote": "~6 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=battery%20operated%20wall%20sconces&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=battery%20operated%20wall%20sconces&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 2,
+     "unit": "ads among first 5 cards",
+     "quote": "Physical product: battery-operated wall sconces ... Physical product: Green Glass Vintage Style Bohemian Battery Operated Wall Sconce",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=battery%20operated%20wall%20sconces&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=battery%20operated%20wall%20sconces&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 30,
+     "unit": "days since start",
+     "quote": "Page name: Ourlittlepieceofidahome\nStarted running on Sep 4, 2026\nLibrary ID: 4521606911410445\nLanding domain: amzlink.to",
+     "stable_id": "4521606911410445",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=battery%20operated%20wall%20sconces&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=battery%20operated%20wall%20sconces&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "uv-suction-gnat-fruit-fly-trap",
+   "note": "Meta US : ~38 résultats. 10 des 20 premières cartes vendent des pièges d'intérieur contre les mouches ou moucherons (pièges en forme de citrouille chez Guecea, Aneedpicks et BeforeSprouted, Grandpa Gus's dont une créative est utilisée par 3 pubs, boule lumineuse LED de Newbeew). Le texte des pubs ne confirme pas explicitement le mécanisme UV à aspiration : décompte et ancienneté sont des estimations. La plus ancienne carte proche du produit est le 'BuzzBuster bug trapper and zapper' (Elprsdnt), lancé le 24/06/2024, soit 832 jours. Plusieurs boutiques ont lancé fin septembre 2026 : poussée saisonnière.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 38,
+     "unit": "results",
+     "quote": "~38 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=fruit%20fly%20trap%20indoor&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=fruit%20fly%20trap%20indoor&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 10,
+     "unit": "ads among first 20 cards",
+     "quote": "13. Guecea, Started running on Sep 29, 2026, Library ID: 1100915189218675, guecea.com, Pumpkin Shaped Indoor Fruit Fly Trap",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=fruit%20fly%20trap%20indoor&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=fruit%20fly%20trap%20indoor&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 832,
+     "unit": "days since start",
+     "quote": "6. Elprsdnt, Started running on Jun 24, 2024, Library ID: 434258722766268, www.elprsdnt.com, BuzzBuster bug trapper and zapper",
+     "stable_id": "434258722766268",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=fruit%20fly%20trap%20indoor&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=fruit%20fly%20trap%20indoor&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "titanium-cutting-board",
+   "note": "Meta US : ~9 000 résultats, largement dominés par la marque Pure Cut (purecut.co, TitanPro et TitanPro 2), avec des pubs actives depuis juin 2025. 10 des 20 premières cartes nomment explicitement une planche à découper en titane : 9 chez Pure Cut et 1 chez Auntie Rues (KatanaFlex). Les autres cartes Pure Cut sont classées 'no product' par l'extraction, mais concernent probablement le même produit. Un acteur établi domine : marché mûr aux US.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 9000,
+     "unit": "results",
+     "quote": "~9,000 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=titanium%20cutting%20board&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=titanium%20cutting%20board&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 10,
+     "unit": "ads among first 20 cards",
+     "quote": "17. Page name: Auntie Rues\nStarted running on: Aug 14, 2026\nLibrary ID: 2009060763830356\nLanding domain: auntierues.com\nPhysical product advertised: KatanaFlex Grade 1 titanium cutting board",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=titanium%20cutting%20board&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=titanium%20cutting%20board&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 270,
+     "unit": "days since start",
+     "quote": "4. Page name: Pure Cut\nStarted running on: Jan 7, 2026\nLibrary ID: 908824048164209\nLanding domain: purecut.co\nPhysical product advertised: TitanPro 2 Cutting Board",
+     "stable_id": "908824048164209",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=titanium%20cutting%20board&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=titanium%20cutting%20board&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "expandable-over-sink-dish-rack",
+   "note": "Meta US : ~510 résultats. 19 des 20 premières cartes vendent l'égouttoir télescopique ou extensible pour évier (seule Alibaba fait exception). On compte plus de 10 boutiques dropshipping différentes (Mindsparkl, Urintroduce, Wavemirax, Megamaree, Zenblux...), dont l'une a une créative utilisée par 8 pubs. Presque toutes ont été lancées entre fin août et fin septembre 2026 : produit actuellement testé en masse par des dropshippers, concurrence forte.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 510,
+     "unit": "results",
+     "quote": "~510 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=expandable%20dish%20rack%20over%20sink&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=expandable%20dish%20rack%20over%20sink&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 19,
+     "unit": "ads among first 20 cards",
+     "quote": "5. Blanceresem.RE04\nStarted running on Oct 2, 2026\nLibrary ID: 2195530088512321\nWWW.ZENBLUX.COM\nexpandable stainless steel over-the-sink dish drying rack",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=expandable%20dish%20rack%20over%20sink&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=expandable%20dish%20rack%20over%20sink&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 47,
+     "unit": "days since start",
+     "quote": "3. Voalsz shop\nStarted running on Aug 18, 2026\nLibrary ID: 1091303426671466\nVOALSZ.COM\ntelescopic rack",
+     "stable_id": "1091303426671466",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=expandable%20dish%20rack%20over%20sink&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=expandable%20dish%20rack%20over%20sink&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "latte-art-stencil-camera",
+   "note": "Meta US : ~37 résultats, 17 cartes rendues. 11 cartes vendent l'appareil en forme de caméra pour latte art (ou pochoir 3D), réparties sur environ 9 boutiques dropshipping (Nattitudem, Mroace, Suzvo, Viqzes, Distancedo...). Plusieurs créatives sont utilisées par 3 à 6 pubs. Toutes ont été lancées entre le 22/09 et le 03/10/2026 : produit très récent, en phase de test, vague dropshipping en cours aux US.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 37,
+     "unit": "results",
+     "quote": "~37 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=latte%20art%20stencil%20camera&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=latte%20art%20stencil%20camera&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 11,
+     "unit": "ads among first 17 cards rendered",
+     "quote": "1. Page name: Nattitudem\nStarted running on: Sep 28, 2026\nLibrary ID: 2105634936710451\n6 ads use this creative and text",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=latte%20art%20stencil%20camera&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=latte%20art%20stencil%20camera&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 10,
+     "unit": "days since start",
+     "quote": "2. Page name: Vofatiponal\nStarted running on: Sep 24, 2026\nLibrary ID: 2153614638864898\n3 ads use this creative and text",
+     "stable_id": "2153614638864898",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=latte%20art%20stencil%20camera&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=latte%20art%20stencil%20camera&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "flat-full-page-book-light",
+   "note": "Meta US : ~5 900 résultats, mais la recherche par mots-clés non ordonnés ne remonte que du bruit (cholestérol, livres audio, santé, auto). Aucune des 20 premières cartes ne vend une liseuse pleine page. Produit absent des pubs Meta US visibles : signal O non démontré.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 5900,
+     "unit": "results",
+     "quote": "~5,900 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=full%20page%20book%20light&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=full%20page%20book%20light&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 0,
+     "unit": "ads among first 20 cards",
+     "quote": "1. Cholesterol Relief Community | Started running on Jun 1, 2026 | Library ID: 866569929827744 | shop.pipitea.com | no product",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=full%20page%20book%20light&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=full%20page%20book%20light&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "absent",
+     "value": null,
+     "unit": "n/a",
+     "quote": "20. Lux Auto Restyling | Started running on Aug 20, 2026 | Library ID: 1031082282899378 | luxautorestyling.net | no product",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=full%20page%20book%20light&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=full%20page%20book%20light&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  }
+ ]
+}

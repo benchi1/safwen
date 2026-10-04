@@ -1,0 +1,1044 @@
+{
+ "assignments": [
+  {
+   "ref": "r2-1#0",
+   "canonical_id": "electric-scalp-massager"
+  },
+  {
+   "ref": "r2-1#1",
+   "canonical_id": "electric-scalp-massager"
+  },
+  {
+   "ref": "r2-1#2",
+   "canonical_id": "electric-pet-massager"
+  },
+  {
+   "ref": "r2-1#3",
+   "canonical_id": "mist-spray-detangling-massage-comb"
+  },
+  {
+   "ref": "r2-1#4",
+   "canonical_id": "cordless-heated-neck-shoulder-kneading-massager"
+  },
+  {
+   "ref": "r2-1#5",
+   "canonical_id": "heated-neck-stretcher-cervical-relaxer"
+  },
+  {
+   "ref": "r2-1#6",
+   "canonical_id": "heated-ankle-foot-massager"
+  },
+  {
+   "ref": "r2-1#7",
+   "canonical_id": "sunrise-wake-up-light"
+  },
+  {
+   "ref": "r2-2#0",
+   "canonical_id": "rechargeable-hand-warmer"
+  },
+  {
+   "ref": "r2-2#1",
+   "canonical_id": "rechargeable-hand-warmer"
+  },
+  {
+   "ref": "r2-2#2",
+   "canonical_id": "rechargeable-heated-fingerless-gloves"
+  },
+  {
+   "ref": "r2-2#3",
+   "canonical_id": "motion-sensor-wide-beam-headlamp"
+  },
+  {
+   "ref": "r2-2#4",
+   "canonical_id": "anti-slip-ice-cleats"
+  },
+  {
+   "ref": "r2-2#5",
+   "canonical_id": "solar-rechargeable-tent-light"
+  },
+  {
+   "ref": "r2-3#0",
+   "canonical_id": "magnetic-screw-holder-wristband"
+  },
+  {
+   "ref": "r2-3#1",
+   "canonical_id": "weighted-under-door-draft-stopper"
+  },
+  {
+   "ref": "r2-3#2",
+   "canonical_id": "adhesive-silicone-door-draft-seal"
+  },
+  {
+   "ref": "r2-3#3",
+   "canonical_id": "window-shrink-film-insulation-kit"
+  },
+  {
+   "ref": "r2-3#4",
+   "canonical_id": "wall-hole-repair-patch-kit"
+  },
+  {
+   "ref": "r2-3#5",
+   "canonical_id": "precision-electric-screwdriver-set"
+  },
+  {
+   "ref": "r2-3#6",
+   "canonical_id": "mini-cordless-screwdriver-bit-set"
+  },
+  {
+   "ref": "r2-3#7",
+   "canonical_id": "self-leveling-cross-line-laser-level"
+  },
+  {
+   "ref": "r2-4#0",
+   "canonical_id": "mini-thermal-sticker-printer"
+  },
+  {
+   "ref": "r2-4#1",
+   "canonical_id": "bluetooth-label-maker"
+  },
+  {
+   "ref": "r2-4#2",
+   "canonical_id": "mini-thermal-sticker-printer"
+  },
+  {
+   "ref": "r2-4#3",
+   "canonical_id": "foldable-aluminum-laptop-stand"
+  },
+  {
+   "ref": "r2-4#4",
+   "canonical_id": "laptop-stand-usb-c-dock"
+  },
+  {
+   "ref": "r2-4#5",
+   "canonical_id": "foldable-3in1-magnetic-wireless-charger"
+  },
+  {
+   "ref": "r2-4#6",
+   "canonical_id": "vacuum-suction-phone-mount"
+  },
+  {
+   "ref": "r2-4#7",
+   "canonical_id": "magnetic-car-phone-mount"
+  },
+  {
+   "ref": "r2-4#8",
+   "canonical_id": "cup-holder-car-phone-mount"
+  },
+  {
+   "ref": "r2-4#9",
+   "canonical_id": "desk-clamp-tablet-phone-arm"
+  },
+  {
+   "ref": "r2-4#10",
+   "canonical_id": "magnetic-gym-phone-mount"
+  },
+  {
+   "ref": "r2-4#11",
+   "canonical_id": "smart-mug-warmer"
+  }
+ ],
+ "new_groups": [
+  {
+   "canonical_id": "electric-scalp-massager",
+   "name_en": "Electric scalp massager (octopus / waterproof kneading)",
+   "name_fr": "Masseur crânien électrique",
+   "keywords_fr": [
+    "masseur crânien électrique",
+    "masseur cuir chevelu électrique",
+    "masseur tête pieuvre",
+    "masseur crânien étanche"
+   ],
+   "keyword_en": "electric scalp massager",
+   "aliexpress_name": "electric scalp head massager waterproof rechargeable",
+   "category": "bien-etre-non-medical",
+   "members": [
+    "r2-1#0",
+    "r2-1#1"
+   ],
+   "excluded_by": "liste_winning>=2",
+   "saturation_lists": 3,
+   "problem_or_desire": "Tension de la tête et stress après le travail, envie d'un massage crânien relaxant mains libres",
+   "wow_3s": "Appareil posé sur la tête, les picots tournent et pétrissent le cuir chevelu tout seuls",
+   "est_weight_g": 300,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": true,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "q4-cadeau",
+   "priority": 1,
+   "note": "Version pieuvre et version étanche fusionnées (même produit). Présent dans 3 listes winning : saturé."
+  },
+  {
+   "canonical_id": "electric-pet-massager",
+   "name_en": "Electric pet massager for dogs and cats",
+   "name_fr": "Masseur électrique pour chien et chat",
+   "keywords_fr": [
+    "masseur pour chien",
+    "masseur électrique chat",
+    "appareil de massage animaux",
+    "masseur rotatif chien chat"
+   ],
+   "keyword_en": "electric pet massager",
+   "aliexpress_name": "electric pet massager dog cat head massage rechargeable",
+   "category": "animaux",
+   "members": [
+    "r2-1#2"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Moment de complicité et de détente avec son animal, idée cadeau pour amoureux des animaux",
+   "wow_3s": "Le chien ou le chat fond et ferme les yeux dès que la tête rotative le touche",
+   "est_weight_g": 250,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": true,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "q4-cadeau",
+   "priority": 2,
+   "note": "Même mécanique que le masseur crânien humain (3 listes winning), mais angle animal non listé. Désir plus que problème, valeur perçue limitée à 29 €."
+  },
+  {
+   "canonical_id": "mist-spray-detangling-massage-comb",
+   "name_en": "Electric spray air-cushion massage comb (mist detangling brush)",
+   "name_fr": "Brosse électrique démêlante à brumisation",
+   "keywords_fr": [
+    "brosse démêlante électrique",
+    "brosse brumisateur cheveux",
+    "peigne massant électrique",
+    "brosse anti-frisottis spray"
+   ],
+   "keyword_en": "electric spray massage comb",
+   "aliexpress_name": "electric spray massage comb hair mist detangling brush",
+   "category": "bien-etre-non-medical",
+   "members": [
+    "r2-1#3"
+   ],
+   "excluded_by": "categorie_cosmetique_soin",
+   "saturation_lists": 0,
+   "problem_or_desire": "Démêlage douloureux le matin, nœuds et frisottis",
+   "wow_3s": "La brosse diffuse une brume fine et glisse dans une tignasse emmêlée sans tirer",
+   "est_weight_g": 200,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": true,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "neutre",
+   "priority": 1,
+   "note": "Outil capillaire relevant du soin/cosmétique, voisin de la brosse lissante saturée : exclu."
+  },
+  {
+   "canonical_id": "cordless-heated-neck-shoulder-kneading-massager",
+   "name_en": "Cordless 4D heated neck and shoulder kneading massager",
+   "name_fr": "Masseur cou et épaules chauffant à pétrissage sans fil",
+   "keywords_fr": [
+    "masseur cou et épaules",
+    "masseur cervical chauffant",
+    "masseur pétrissage épaules sans fil",
+    "masseur nuque chauffant"
+   ],
+   "keyword_en": "neck and shoulder kneading massager",
+   "aliexpress_name": "4D neck shoulder massager kneading heating cordless trapezius",
+   "category": "bien-etre-non-medical",
+   "members": [
+    "r2-1#4"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Nuque et épaules raides après le bureau ou le téléphone, envie d'un massage type kiné à la maison",
+   "wow_3s": "L'appareil drapé sur les épaules serre comme deux mains, la personne se relâche visiblement",
+   "est_weight_g": 800,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": true,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "q4-cadeau",
+   "priority": 3,
+   "note": "Fort volume pub US (jusqu'à 276). Poids 800 g proche de la limite, coût fournisseur probablement > 10 €. Différent de l'outil manuel existant. Rester sur un discours détente, sans allégation thérapeutique."
+  },
+  {
+   "canonical_id": "heated-neck-stretcher-cervical-relaxer",
+   "name_en": "Heated vibrating neck stretcher / cervical traction relaxer",
+   "name_fr": "Relaxeur cervical d'étirement chauffant et vibrant",
+   "keywords_fr": [
+    "étireur cervical",
+    "relaxeur de nuque",
+    "coussin traction cervicale",
+    "oreiller étirement cou chauffant"
+   ],
+   "keyword_en": "neck stretcher cervical traction",
+   "aliexpress_name": "neck stretcher cervical traction relaxer heating vibration",
+   "category": "bien-etre-non-medical",
+   "members": [
+    "r2-1#5"
+   ],
+   "excluded_by": "allegation_medicale",
+   "saturation_lists": 0,
+   "problem_or_desire": "Pression à la base du crâne et tension cervicale liées au travail de bureau",
+   "wow_3s": "Tête posée dans le support incurvé, nuque doucement étirée, voyant de chaleur allumé",
+   "est_weight_g": 700,
+   "fragile": false,
+   "variants_est": 1,
+   "needs_size_guide": false,
+   "lithium_battery": true,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "neutre",
+   "priority": 1,
+   "note": "La traction cervicale relève du dispositif ou de l'allégation médicale : exclu."
+  },
+  {
+   "canonical_id": "heated-ankle-foot-massager",
+   "name_en": "Portable heated vibrating ankle and foot massager",
+   "name_fr": "Masseur de cheville et pied portable chauffant",
+   "keywords_fr": [
+    "masseur de pieds chauffant",
+    "masseur cheville portable",
+    "chauffe-pieds massant",
+    "masseur pied vibrant sans fil"
+   ],
+   "keyword_en": "portable heated foot massager",
+   "aliexpress_name": "portable ankle foot massager heating vibration wrap",
+   "category": "bien-etre-non-medical",
+   "members": [
+    "r2-1#6"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Pieds et chevilles fatigués, froids et douloureux après une journée debout",
+   "wow_3s": "La bande se referme sur la cheville, le voyant chaleur s'allume, soupir de soulagement sur le canapé",
+   "est_weight_g": 500,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": true,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "hiver",
+   "priority": 2,
+   "note": "Signal pub faible (31). Démonstration peu spectaculaire en 3 s. Discours détente uniquement."
+  },
+  {
+   "canonical_id": "sunrise-wake-up-light",
+   "name_en": "Sunrise simulation wake-up light alarm clock",
+   "name_fr": "Réveil lumineux simulateur d'aube",
+   "keywords_fr": [
+    "réveil lumineux",
+    "simulateur d'aube",
+    "réveil lumière naturelle",
+    "réveil lever de soleil"
+   ],
+   "keyword_en": "sunrise alarm clock wake up light",
+   "aliexpress_name": "sunrise alarm clock wake up light simulation",
+   "category": "bien-etre-non-medical",
+   "members": [
+    "r2-1#7"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Réveils difficiles dans le noir des matins d'automne et d'hiver, idée cadeau",
+   "wow_3s": "Chambre sombre qui se remplit progressivement d'une lumière orangée avant la sonnerie",
+   "est_weight_g": 500,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "hiver",
+   "priority": 3,
+   "note": "Branché sur secteur (USB/230 V), pas de lithium. Marché FR connu (Philips) mais générique abordable crédible. Éviter tout discours luminothérapie/santé."
+  },
+  {
+   "canonical_id": "rechargeable-hand-warmer",
+   "name_en": "Rechargeable electric hand warmer (magnetic 2-pack, incl. spinner version)",
+   "name_fr": "Chauffe-mains électrique rechargeable",
+   "keywords_fr": [
+    "chauffe-mains rechargeable",
+    "chaufferette électrique",
+    "chauffe-mains USB",
+    "chauffe-mains réutilisable"
+   ],
+   "keyword_en": "rechargeable hand warmer",
+   "aliexpress_name": "rechargeable hand warmer magnetic 2 pack USB electric",
+   "category": "sport-plein-air",
+   "members": [
+    "r2-2#0",
+    "r2-2#1"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Mains gelées dehors l'hiver (transports, marche, stade), remplace les chaufferettes jetables",
+   "wow_3s": "On sépare les deux galets aimantés, chaleur immédiate, la caméra thermique montre les mains qui passent du bleu au rouge",
+   "est_weight_g": 250,
+   "fragile": false,
+   "variants_est": 3,
+   "needs_size_guide": false,
+   "lithium_battery": true,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "hiver",
+   "priority": 4,
+   "note": "Version fidget spinner fusionnée (même produit, angle cadeau). Fortes ventes Amazon US (jusqu'à 5000/mois). Lithium à signaler pour l'expédition. Prix US 10 à 20 $ : le lot de 2 aide à atteindre 29 €."
+  },
+  {
+   "canonical_id": "rechargeable-heated-fingerless-gloves",
+   "name_en": "Rechargeable heated fingerless gloves (touchscreen-friendly)",
+   "name_fr": "Mitaines chauffantes rechargeables",
+   "keywords_fr": [
+    "mitaines chauffantes",
+    "gants chauffants rechargeables",
+    "mitaines USB chauffantes",
+    "gants chauffants tactiles"
+   ],
+   "keyword_en": "heated fingerless gloves",
+   "aliexpress_name": "USB rechargeable heated fingerless gloves winter",
+   "category": "sport-plein-air",
+   "members": [
+    "r2-2#2"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Doigts froids en utilisant le téléphone dehors ou dans un bureau ou appartement mal chauffé",
+   "wow_3s": "Bouton pressé, LED rouge, les doigts tapent sur le smartphone dehors sans retirer les mitaines",
+   "est_weight_g": 200,
+   "fragile": false,
+   "variants_est": 3,
+   "needs_size_guide": false,
+   "lithium_battery": true,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "hiver",
+   "priority": 2,
+   "note": "Taille unique déclarée, mais un risque de guide des tailles est à vérifier. Textile, retours plus probables. Lithium."
+  },
+  {
+   "canonical_id": "motion-sensor-wide-beam-headlamp",
+   "name_en": "Rechargeable 230-degree wide-beam motion-sensor headlamp",
+   "name_fr": "Lampe frontale rechargeable grand angle à détection de mouvement",
+   "keywords_fr": [
+    "lampe frontale rechargeable",
+    "frontale LED grand angle",
+    "lampe frontale détecteur de mouvement",
+    "frontale bandeau LED"
+   ],
+   "keyword_en": "wide beam headlamp motion sensor",
+   "aliexpress_name": "230 degree wide beam LED headlamp rechargeable motion sensor",
+   "category": "sport-plein-air",
+   "members": [
+    "r2-2#3"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Courir, promener le chien ou bricoler le soir mains libres, allumer sans toucher",
+   "wow_3s": "Un geste de la main devant le front et le bandeau LED 230 degrés éclaire toute la pièce sombre",
+   "est_weight_g": 80,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": true,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "hiver",
+   "priority": 3,
+   "note": "Très forts volumes Amazon US (5000 à 8000/mois) mais prix US 14 $ : difficile à vendre 29 € seul, envisager un lot de 2."
+  },
+  {
+   "canonical_id": "anti-slip-ice-cleats",
+   "name_en": "Anti-slip ice cleats over shoes",
+   "name_fr": "Crampons antidérapants à enfiler sur les chaussures",
+   "keywords_fr": [
+    "crampons antidérapants chaussures",
+    "crampons à neige",
+    "semelles antiglisse verglas",
+    "chaînes à neige pour chaussures"
+   ],
+   "keyword_en": "ice cleats for shoes",
+   "aliexpress_name": "anti slip ice cleats snow grips shoe spikes",
+   "category": "sport-plein-air",
+   "members": [
+    "r2-2#4"
+   ],
+   "excluded_by": "guide_tailles",
+   "saturation_lists": 0,
+   "problem_or_desire": "Peur de glisser et chuter sur trottoir verglacé ou neige (seniors, montagne, randonnée)",
+   "wow_3s": "Chaussure qui glisse sur la glace, puis crampons enfilés en 2 secondes et la personne marche fermement",
+   "est_weight_g": 250,
+   "fragile": false,
+   "variants_est": 3,
+   "needs_size_guide": true,
+   "lithium_battery": false,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "hiver",
+   "priority": 1,
+   "note": "Tailles par pointure : guide des tailles obligatoire, exclu."
+  },
+  {
+   "canonical_id": "magnetic-screw-holder-wristband",
+   "name_en": "Magnetic wristband for holding screws and bits",
+   "name_fr": "Bracelet magnétique porte-vis pour bricoleur",
+   "keywords_fr": [
+    "bracelet magnétique bricolage",
+    "bracelet porte-vis",
+    "bracelet aimanté vis",
+    "cadeau bricoleur"
+   ],
+   "keyword_en": "magnetic wristband for screws",
+   "aliexpress_name": "magnetic wristband tool holder screws nails bits",
+   "category": "bricolage",
+   "members": [
+    "r2-3#0"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Vis, clous et embouts qui tombent ou se perdent en bricolant. Cadeau homme ou papa (Noël, fête des pères)",
+   "wow_3s": "On approche le poignet d'un tas de vis et elles sautent toutes sur le bracelet d'un coup",
+   "est_weight_g": 120,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "q4-cadeau",
+   "priority": 3,
+   "note": "Très bonne démo et forts avis US (21600), coût très bas. Prix US 20 $ : vendre 29 € en angle cadeau, éventuellement en lot avec gravure."
+  },
+  {
+   "canonical_id": "weighted-under-door-draft-stopper",
+   "name_en": "Weighted velvet under-door draft stopper",
+   "name_fr": "Boudin de porte lesté anti-courant d'air",
+   "keywords_fr": [
+    "boudin de porte",
+    "boudin anti courant d'air",
+    "bas de porte isolant",
+    "coupe-froid porte"
+   ],
+   "keyword_en": "door draft stopper",
+   "aliexpress_name": "weighted door draft stopper velvet under door",
+   "category": "maison-rangement",
+   "members": [
+    "r2-3#1"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Courant d'air froid et bruit sous les portes d'appartement, facture de chauffage",
+   "wow_3s": "Flamme de bougie qui vacille devant la porte, on pose le boudin et elle ne bouge plus",
+   "est_weight_g": 700,
+   "fragile": false,
+   "variants_est": 3,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "hiver",
+   "priority": 3,
+   "note": "Produit déjà vendu en GSB en France, différenciation par le design velours. Poids 700 g, volumineux : frais de port à vérifier."
+  },
+  {
+   "canonical_id": "adhesive-silicone-door-draft-seal",
+   "name_en": "Adhesive silicone door sweep draft seal strip",
+   "name_fr": "Joint bas de porte adhésif en silicone",
+   "keywords_fr": [
+    "joint bas de porte adhésif",
+    "bas de porte silicone",
+    "bande isolante porte",
+    "joint anti courant d'air porte"
+   ],
+   "keyword_en": "adhesive door draft seal strip",
+   "aliexpress_name": "self adhesive silicone door bottom seal strip draft stopper",
+   "category": "bricolage",
+   "members": [
+    "r2-3#2"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Jour sous la porte : froid, bruit, poussière et insectes. Pose en 30 secondes sans outil",
+   "wow_3s": "Lumière visible sous la porte, on colle la bande, plus aucun filet de lumière",
+   "est_weight_g": 150,
+   "fragile": false,
+   "variants_est": 3,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "hiver",
+   "priority": 2,
+   "note": "Énormes volumes US (10000/mois) mais prix US 10 $ : difficile à vendre 29 €, à proposer en lot de plusieurs portes. Concurrence forte en GSB."
+  },
+  {
+   "canonical_id": "window-shrink-film-insulation-kit",
+   "name_en": "Window shrink film insulation kit",
+   "name_fr": "Kit film isolant thermique rétractable pour fenêtres",
+   "keywords_fr": [
+    "film isolant fenêtre",
+    "survitrage film rétractable",
+    "isolation fenêtre film",
+    "kit isolation simple vitrage"
+   ],
+   "keyword_en": "window insulation shrink film kit",
+   "aliexpress_name": "window insulation shrink film kit heat shrink",
+   "category": "maison-rangement",
+   "members": [
+    "r2-3#3"
+   ],
+   "excluded_by": "consommable",
+   "saturation_lists": 0,
+   "problem_or_desire": "Fenêtres simple vitrage ou anciennes qui laissent passer le froid, coût du chauffage",
+   "wow_3s": "Le film plissé se tend et devient invisible en quelques secondes sous le sèche-cheveux",
+   "est_weight_g": 400,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "hiver",
+   "priority": 1,
+   "note": "Kit à usage unique (film plus adhésif) : consommable, exclu."
+  },
+  {
+   "canonical_id": "wall-hole-repair-patch-kit",
+   "name_en": "Self-adhesive aluminum mesh wall hole repair patch kit",
+   "name_fr": "Kit de patchs autocollants pour réparer les trous dans les murs",
+   "keywords_fr": [
+    "patch réparation mur",
+    "rustine placo",
+    "reboucher trou mur",
+    "kit réparation cloison"
+   ],
+   "keyword_en": "wall hole repair patch kit",
+   "aliexpress_name": "self adhesive wall repair patch aluminum mesh drywall",
+   "category": "bricolage",
+   "members": [
+    "r2-3#4"
+   ],
+   "excluded_by": "consommable",
+   "saturation_lists": 0,
+   "problem_or_desire": "Trous dans les murs ou le placo à reboucher avant un état des lieux de sortie",
+   "wow_3s": "Trou béant dans le mur, on colle le patch, on enduit, et le mur redevient lisse",
+   "est_weight_g": 200,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "neutre",
+   "priority": 1,
+   "note": "Patchs à usage unique : consommable, exclu."
+  },
+  {
+   "canonical_id": "precision-electric-screwdriver-set",
+   "name_en": "Precision electric screwdriver set with magnetic bits",
+   "name_fr": "Tournevis électrique de précision avec embouts magnétiques",
+   "keywords_fr": [
+    "tournevis électrique de précision",
+    "tournevis de précision sans fil",
+    "kit tournevis réparation téléphone",
+    "mini tournevis électrique"
+   ],
+   "keyword_en": "precision electric screwdriver",
+   "aliexpress_name": "precision electric screwdriver set magnetic bits rechargeable",
+   "category": "bureau-tech",
+   "members": [
+    "r2-3#5"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Réparer téléphone, PC, manette ou lunettes sans s'abîmer les doigts. Cadeau tech ou geek",
+   "wow_3s": "Le mini tournevis dévisse en une seconde toutes les vis d'une manette, le boîtier magnétique s'ouvre",
+   "est_weight_g": 350,
+   "fragile": false,
+   "variants_est": 3,
+   "needs_size_guide": false,
+   "lithium_battery": true,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "q4-cadeau",
+   "priority": 4,
+   "note": "Prix US 50 $ compatible avec 39 à 49 € en France, fort angle cadeau. Coût fournisseur possiblement un peu au-dessus de 10 €. Lithium."
+  },
+  {
+   "canonical_id": "mini-cordless-screwdriver-bit-set",
+   "name_en": "Small rechargeable cordless screwdriver with bit set",
+   "name_fr": "Mini visseuse sans fil rechargeable avec coffret d'embouts",
+   "keywords_fr": [
+    "mini visseuse sans fil",
+    "tournevis électrique rechargeable",
+    "visseuse montage meuble",
+    "petite visseuse appartement"
+   ],
+   "keyword_en": "mini cordless screwdriver",
+   "aliexpress_name": "mini cordless electric screwdriver rechargeable bit set",
+   "category": "bricolage",
+   "members": [
+    "r2-3#6"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Monter des meubles en kit et faire les petits travaux d'appartement sans perceuse lourde ni poignet douloureux",
+   "wow_3s": "Montage d'un meuble en kit : la vis rentre en 2 secondes au lieu de 30 tours de poignet",
+   "est_weight_g": 700,
+   "fragile": false,
+   "variants_est": 3,
+   "needs_size_guide": false,
+   "lithium_battery": true,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "q4-cadeau",
+   "priority": 3,
+   "note": "Forts volumes US (5000/mois) mais prix US 20 $ et concurrence GSB (marques distributeurs) en France. Lithium, 700 g."
+  },
+  {
+   "canonical_id": "self-leveling-cross-line-laser-level",
+   "name_en": "Self-leveling cross-line laser level",
+   "name_fr": "Niveau laser autonivelant à lignes croisées",
+   "keywords_fr": [
+    "niveau laser",
+    "laser croix autonivelant",
+    "niveau laser pour cadres",
+    "niveau laser lignes croisées"
+   ],
+   "keyword_en": "self leveling cross line laser level",
+   "aliexpress_name": "self leveling cross line laser level green rechargeable",
+   "category": "bricolage",
+   "members": [
+    "r2-3#7"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Accrocher cadres et étagères bien droits sans tâtonner ni faire de trous en trop",
+   "wow_3s": "Une croix laser parfaitement droite s'affiche sur le mur et on aligne 5 cadres d'une traite",
+   "est_weight_g": 500,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": true,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "neutre",
+   "priority": 3,
+   "note": "Distinct du « 4-in-1 laser level & drill dust collector » (1 liste winning), produit voisin. Prix US 38 $ cohérent avec 39 à 49 €. Coût fournisseur probablement > 10 €. Lithium."
+  },
+  {
+   "canonical_id": "mini-thermal-sticker-printer",
+   "name_en": "Inkless mini portable thermal sticker printer (incl. AI voice version)",
+   "name_fr": "Mini imprimante thermique portable sans encre",
+   "keywords_fr": [
+    "mini imprimante thermique",
+    "imprimante portable sans encre",
+    "imprimante autocollants bluetooth",
+    "mini imprimante photo téléphone"
+   ],
+   "keyword_en": "mini thermal printer",
+   "aliexpress_name": "mini portable thermal printer inkless bluetooth sticker",
+   "category": "bureau-tech",
+   "members": [
+    "r2-4#0",
+    "r2-4#2"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Imprimer notes, photos, listes et autocollants depuis le téléphone ou à la voix, sans encre ni ordinateur",
+   "wow_3s": "Une phrase prononcée ou une photo du téléphone sort instantanément sur papier d'un appareil de poche",
+   "est_weight_g": 300,
+   "fragile": false,
+   "variants_est": 3,
+   "needs_size_guide": false,
+   "lithium_battery": true,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "q4-cadeau",
+   "priority": 3,
+   "note": "Versions commande vocale IA et standard fusionnées (même appareil). Rouleaux de papier en revente complémentaire. Vérifier l'app en français. Lithium."
+  },
+  {
+   "canonical_id": "bluetooth-label-maker",
+   "name_en": "Portable Bluetooth label maker",
+   "name_fr": "Étiqueteuse Bluetooth portable",
+   "keywords_fr": [
+    "étiqueteuse bluetooth",
+    "étiqueteuse portable",
+    "imprimante étiquettes rangement",
+    "étiqueteuse smartphone"
+   ],
+   "keyword_en": "bluetooth label maker",
+   "aliexpress_name": "portable bluetooth label maker printer thermal labels",
+   "category": "maison-rangement",
+   "members": [
+    "r2-4#1"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Organiser bocaux, câbles et boîtes de rangement avec des étiquettes nettes imprimées depuis le téléphone",
+   "wow_3s": "Un garde-manger en désordre devient une rangée de bocaux parfaitement étiquetés en quelques secondes",
+   "est_weight_g": 200,
+   "fragile": false,
+   "variants_est": 3,
+   "needs_size_guide": false,
+   "lithium_battery": true,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "neutre",
+   "priority": 3,
+   "note": "Proche technologiquement de la mini imprimante thermique mais usage rangement distinct. Étiquettes en consommable complémentaire. Lithium."
+  },
+  {
+   "canonical_id": "foldable-aluminum-laptop-stand",
+   "name_en": "Foldable aluminum laptop stand",
+   "name_fr": "Support d'ordinateur portable pliable en aluminium",
+   "keywords_fr": [
+    "support ordinateur portable pliable",
+    "rehausseur PC portable",
+    "support laptop aluminium",
+    "support ordinateur ergonomique"
+   ],
+   "keyword_en": "foldable laptop stand",
+   "aliexpress_name": "foldable aluminum laptop stand portable adjustable",
+   "category": "bureau-tech",
+   "members": [
+    "r2-4#3"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Douleur à la nuque et dos voûté en travaillant sur un portable posé à plat dans un petit appartement",
+   "wow_3s": "Le support se déplie depuis une taille de poche et hisse l'ordinateur à hauteur des yeux",
+   "est_weight_g": 350,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "neutre",
+   "priority": 2,
+   "note": "Distinct du support vertical existant. Produit très banalisé sur Amazon FR à bas prix, difficile de tenir 29 €."
+  },
+  {
+   "canonical_id": "laptop-stand-usb-c-dock",
+   "name_en": "Laptop stand with built-in USB-C docking station",
+   "name_fr": "Support PC portable avec station d'accueil USB-C intégrée",
+   "keywords_fr": [
+    "support PC portable avec hub USB-C",
+    "station d'accueil support ordinateur",
+    "rehausseur laptop USB-C",
+    "support ordinateur avec ports"
+   ],
+   "keyword_en": "laptop stand with usb c hub",
+   "aliexpress_name": "laptop stand with USB C docking station hub",
+   "category": "bureau-tech",
+   "members": [
+    "r2-4#4"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Trop peu de ports, bureau encombré et ordinateur posé trop bas",
+   "wow_3s": "Un seul câble USB-C branché sur le support et tous les accessoires se connectent d'un coup",
+   "est_weight_g": 600,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "neutre",
+   "priority": 2,
+   "note": "Fort volume pub US (environ 195). Coût fournisseur nettement > 10 € (électronique hub), risque SAV de compatibilité."
+  },
+  {
+   "canonical_id": "foldable-3in1-magnetic-wireless-charger",
+   "name_en": "Foldable 3-in-1 magnetic wireless charging station",
+   "name_fr": "Station de charge sans fil magnétique pliable 3 en 1",
+   "keywords_fr": [
+    "chargeur sans fil 3 en 1",
+    "station de charge magnétique pliable",
+    "chargeur induction téléphone montre écouteurs",
+    "chargeur sans fil pliable"
+   ],
+   "keyword_en": "3 in 1 foldable magnetic wireless charger",
+   "aliexpress_name": "3 in 1 foldable magnetic wireless charging station",
+   "category": "bureau-tech",
+   "members": [
+    "r2-4#5"
+   ],
+   "excluded_by": "liste_winning>=2",
+   "saturation_lists": 2,
+   "problem_or_desire": "Fouillis de câbles sur la table de nuit pour téléphone, montre et écouteurs",
+   "wow_3s": "Téléphone, montre et écouteurs se clipsent sur une station pliable et chargent tous ensemble",
+   "est_weight_g": 250,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "q4-cadeau",
+   "priority": 1,
+   "note": "Catégorie chargeur sans fil présente dans 2 listes winning : saturé. Distinct de la station de charge à câbles existante."
+  },
+  {
+   "canonical_id": "vacuum-suction-phone-mount",
+   "name_en": "Vacuum suction phone mount",
+   "name_fr": "Support de téléphone à ventouse sous vide",
+   "keywords_fr": [
+    "support téléphone ventouse",
+    "support téléphone sous vide",
+    "support smartphone miroir",
+    "ventouse téléphone mains libres"
+   ],
+   "keyword_en": "vacuum suction phone mount",
+   "aliexpress_name": "vacuum suction cup phone holder magnetic mount",
+   "category": "bureau-tech",
+   "members": [
+    "r2-4#6"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Se filmer ou regarder des vidéos mains libres sur n'importe quelle surface (miroir, carrelage, vitre) sans percer",
+   "wow_3s": "Le support se verrouille sur un miroir d'une pression et tient le téléphone en l'air",
+   "est_weight_g": 150,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "neutre",
+   "priority": 4,
+   "note": "Fort volume pub US (443), démo immédiate, coût bas. Prix de vente à valider (lot de 2 pour atteindre 29 €). Les versions à pompe électrique ont une batterie, privilégier la version manuelle."
+  },
+  {
+   "canonical_id": "cup-holder-car-phone-mount",
+   "name_en": "Cup holder phone mount for car",
+   "name_fr": "Support téléphone pour porte-gobelet de voiture",
+   "keywords_fr": [
+    "support téléphone porte-gobelet",
+    "support smartphone voiture porte-gobelet",
+    "support téléphone voiture sans grille d'aération",
+    "support GPS porte-gobelet"
+   ],
+   "keyword_en": "cup holder phone mount",
+   "aliexpress_name": "car cup holder phone mount adjustable gooseneck",
+   "category": "auto-voyage",
+   "members": [
+    "r2-4#8"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Pas de bon emplacement pour le téléphone dans les voitures anciennes ou aux grilles d'aération fragiles",
+   "wow_3s": "La base se visse et se bloque dans le porte-gobelet, le téléphone se tient à la bonne hauteur",
+   "est_weight_g": 300,
+   "fragile": false,
+   "variants_est": 1,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "neutre",
+   "priority": 2,
+   "note": "Catégorie support téléphone voiture saturée (le magnétique est dans 3 listes). Les porte-gobelets sont plus petits et moins centraux dans les voitures françaises : transposition partielle."
+  },
+  {
+   "canonical_id": "desk-clamp-tablet-phone-arm",
+   "name_en": "Desk clamp phone and tablet mount arm",
+   "name_fr": "Bras support à pince pour téléphone et tablette",
+   "keywords_fr": [
+    "support tablette bureau",
+    "bras articulé tablette",
+    "support téléphone pince bureau",
+    "support tablette lit"
+   ],
+   "keyword_en": "tablet desk mount arm",
+   "aliexpress_name": "tablet phone holder desk clamp arm adjustable",
+   "category": "bureau-tech",
+   "members": [
+    "r2-4#9"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Nuque tendue en regardant des vidéos ou en visio sur téléphone ou tablette au bureau ou au lit",
+   "wow_3s": "Le bras se fixe sur le bureau et tient la tablette en lévitation à hauteur des yeux",
+   "est_weight_g": 400,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "neutre",
+   "priority": 3,
+   "note": "Fort volume pub US (506). Distinct du support adhésif invisible existant. Produit assez banalisé, prix à valider."
+  },
+  {
+   "canonical_id": "magnetic-gym-phone-mount",
+   "name_en": "Magnetic gym phone mount",
+   "name_fr": "Support téléphone magnétique pour salle de sport",
+   "keywords_fr": [
+    "support téléphone salle de sport",
+    "support téléphone magnétique musculation",
+    "support smartphone machine fitness",
+    "aimant téléphone gym"
+   ],
+   "keyword_en": "magnetic gym phone mount",
+   "aliexpress_name": "magnetic gym phone holder mount for fitness equipment",
+   "category": "sport-plein-air",
+   "members": [
+    "r2-4#10"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Filmer sa séance ou suivre un programme à la salle sans endroit où poser le téléphone",
+   "wow_3s": "Le téléphone se colle sur le cadre métallique d'une machine et filme la série",
+   "est_weight_g": 100,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "neutre",
+   "priority": 3,
+   "note": "Niche fitness réelle en France, coût très bas. Prix de vente perçu faible : envisager un lot de 2 pour atteindre 29 €."
+  },
+  {
+   "canonical_id": "smart-mug-warmer",
+   "name_en": "Smart mug warmer",
+   "name_fr": "Chauffe-tasse intelligent",
+   "keywords_fr": [
+    "chauffe-tasse",
+    "chauffe-tasse électrique",
+    "chauffe-mug bureau",
+    "garde café chaud"
+   ],
+   "keyword_en": "smart mug warmer",
+   "aliexpress_name": "smart mug warmer coffee cup heater desk",
+   "category": "cadeau-lifestyle",
+   "members": [
+    "r2-4#11"
+   ],
+   "excluded_by": null,
+   "saturation_lists": 0,
+   "problem_or_desire": "Café ou thé qui refroidit sur le bureau en télétravail",
+   "wow_3s": "Une tasse posée depuis une heure fume encore",
+   "est_weight_g": 400,
+   "fragile": false,
+   "variants_est": 2,
+   "needs_size_guide": false,
+   "lithium_battery": false,
+   "us_specific": false,
+   "transposable_fr": true,
+   "seasonality": "q4-cadeau",
+   "priority": 3,
+   "note": "Alimentation secteur, version 230 V à vérifier. Bon angle cadeau de bureau. Vendre sans tasse en verre pour éviter la casse."
+  }
+ ]
+}

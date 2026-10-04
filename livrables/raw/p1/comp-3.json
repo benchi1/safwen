@@ -1,0 +1,282 @@
+{
+ "agent": "comp-3",
+ "calls_used": 6,
+ "results": [
+  {
+   "candidate_id": "personalized-leather-toiletry-bag",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 672,
+     "unit": "ratings",
+     "quote": "1. Personalized Toiletry Bag for Men, Custom Toiletries Bag Gifts for Men, ... Leather Engraved Travel Cosmetic Shaving Hygiene Bag, $18.99, 672, B0DZ6SCD7C",
+     "stable_id": "B0DZ6SCD7C",
+     "url": "https://www.amazon.com/s?k=personalized+toiletry+bag+for+men",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=personalized+toiletry+bag+for+men",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 400,
+     "unit": "units/month (badge lower bound, other listing)",
+     "quote": "8. Personalized Leather Toiletry Bag for Men, Dopp Kit Gift, $24.90, (507), 400+ bought in past month, B0CF8NYGYZ",
+     "stable_id": "B0CF8NYGYZ",
+     "url": "https://www.amazon.com/s?k=personalized+toiletry+bag+for+men",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=personalized+toiletry+bag+for+men",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ],
+   "note": "Premier résultat pertinent B0DZ6SCD7C : $18.99, 672 avis, aucun badge 'bought in past month' visible (le même nombre 672 apparaît sur 3 ASIN variantes, sans parenthèses, à vérifier). Badge relevé sur un autre listing : B0CF8NYGYZ ($24.90, 507 avis, 400+/mois). Aussi B0GNB4CBQQ ($22.99, 69 avis, 400+/mois) et B0CLNNF3FC ($19.90, 620 avis, 200+/mois). Niche fragmentée avec beaucoup de vendeurs de personnalisation, prix 14 à 37 $. Biais Prime Day d'octobre possible."
+  },
+  {
+   "candidate_id": "engraved-leather-bracelet-men",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 55,
+     "unit": "ratings",
+     "quote": "6. Custom Name Bracelet with 1-6 Names Personalized Braided Leather engraved Bracelets for Men ... | $16.99 | (55) | 100+ bought in past month | B0FWRTZFKX",
+     "stable_id": "B0FWRTZFKX",
+     "url": "https://www.amazon.com/s?k=engraved+bracelet+for+men",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=engraved+bracelet+for+men",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 100,
+     "unit": "units/month (badge lower bound)",
+     "quote": "| $16.99 | (55) | 100+ bought in past month | B0FWRTZFKX",
+     "stable_id": "B0FWRTZFKX",
+     "url": "https://www.amazon.com/s?k=engraved+bracelet+for+men",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=engraved+bracelet+for+men",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 7800,
+     "unit": "ratings (other listing)",
+     "quote": "7. Mens Bracelet Personalized Custom Bracelets for Men Leather Engraved Bracelet Gift ... | $9.99 | (7.8K) | 100+ bought in past month | B084YVXPH8",
+     "stable_id": "B084YVXPH8",
+     "url": "https://www.amazon.com/s?k=engraved+bracelet+for+men",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=engraved+bracelet+for+men",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ],
+   "note": "Les 5 premiers résultats sont des bracelets gravés en acier inoxydable (maille cubaine), pas en cuir. Premier résultat en cuir : B0FWRTZFKX, $16.99, 55 avis, 100+/mois. Listing installé en cuir : B084YVXPH8, $9.99, 7.8K avis, 100+/mois. Les bracelets gravés en acier dominent le haut de la page. Prix bas (10 à 20 $), donc marge faible pour la pub payante."
+  },
+  {
+   "candidate_id": "ratchet-belt-no-holes",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 51600,
+     "unit": "ratings",
+     "quote": "1. CHAOREN Men's Leather Ratchet Belt - Customizable Fit (35mm) | Smooth Sliding, Precise Micro‑Adjust, Trim to Fit ... $14.99 (51.6k) 8K+ bought in past month B08LHBSYNK",
+     "stable_id": "B08LHBSYNK",
+     "url": "https://www.amazon.com/s?k=ratchet+belt",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=ratchet+belt",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 8000,
+     "unit": "units/month (badge lower bound)",
+     "quote": "$14.99\n(51.6k)\n8K+ bought in past month\nB08LHBSYNK",
+     "stable_id": "B08LHBSYNK",
+     "url": "https://www.amazon.com/s?k=ratchet+belt",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=ratchet+belt",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ],
+   "note": "Premier résultat B08LHBSYNK (CHAOREN) : $14.99, 51.6k avis, 8K+/mois. Demande américaine très forte mais concentrée sur des marques installées : CHAOREN (8 listings), BULLIANT (B0BKG7VQMT 47,647 avis, 2K+/mois), VATAN (B0DC3CK7R7 $7.99, 8K+/mois), KEMISANT, JUKMO. Prix plancher 8 à 25 $, donc concurrence par les prix sur Amazon. Biais Prime Day possible."
+  },
+  {
+   "candidate_id": "flapping-bird-cat-toy",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 15,
+     "unit": "active ads (US, keyword)",
+     "quote": "~15 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=flapping%20bird%20cat%20toy&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=flapping%20bird%20cat%20toy&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 2,
+     "unit": "ads among first 14 cards",
+     "quote": "Flutter flaps its wings and chirps when your cat touches or bites it. / our lifelike bird toy! 🐦 With flapping wings, realistic chirping, and motion-activated fun",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=flapping%20bird%20cat%20toy&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=flapping%20bird%20cat%20toy&search_type=keyword_unordered",
+     "method": "markdown",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 5,
+     "unit": "days since launch",
+     "quote": "Library ID: 3070306366654185 Started running on Sep 29, 2026 ... Beforehatched-Shop ... Interactive Cat Bird Toy: Perfect for Your Feline Friend",
+     "stable_id": "3070306366654185",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=flapping%20bird%20cat%20toy&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=flapping%20bird%20cat%20toy&search_type=keyword_unordered",
+     "method": "markdown",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ],
+   "note": "14 cartes visibles. Annonces confirmées : Nesqi 'Flutter' (ID 1602503401618290, lancée le Oct 3, 2026, kit à $44.99, nesqi.com) et Beforehatched (ID 3070306366654185, Sep 29, 2026). Les 11 autres cartes viennent de Kitty Collective, produit 'Wingmate' (kittycollective.co/products/wingmate), toutes lancées le Aug 15, 2026 (50 jours). Le texte ne dit pas que c'est un oiseau qui bat des ailes, donc non compté. Si Wingmate est bien ce produit : 13 sur 14 et 50 jours. Signal pub faible et récent, la plupart des cartes indiquent 'Low impression count'. 2 appels (query, puis markdown pour identifier le produit)."
+  },
+  {
+   "candidate_id": "automatic-moving-cat-toy",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 180,
+     "unit": "active ads (US, keyword)",
+     "quote": "~180 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=automatic%20cat%20toy&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=automatic%20cat%20toy&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 11,
+     "unit": "ads among first 20 cards",
+     "quote": "Paw-Friend, Started running on Aug 2, 2026, Library ID: 3665247743630589, paw-friend.com, Automatic Teaser Toy",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=automatic%20cat%20toy&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=automatic%20cat%20toy&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 157,
+     "unit": "days since launch",
+     "quote": "Kidsmegaworld, Started running on Apr 30, 2026, Library ID: 1761028601556801, happy-luna.com, Interactive Cat Chase Toy",
+     "stable_id": "1761028601556801",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=automatic%20cat%20toy&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=automatic%20cat%20toy&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ],
+   "note": "11 cartes pertinentes sur 20, comptées par moi : rangs 1, 5, 7, 8, 9, 10, 12, 14, 15, 17 et 18 (jouet à poursuivre, scarabée électrique, jouet taquin automatique, jeu de la taupe, jouet électronique, insecte volant, papillon, balle roulante). Annonceur dominant : Paw-Friend (paw-friend.com), avec au moins 7 annonces de juillet à septembre 2026 et de nouvelles créas le Sep 21, 2026. Autres : PetParkCo, Paws Pronto, Saeriesof. Le reste est du bruit (Alibaba : litière, gourde ; compléments alimentaires). Plus ancienne carte pertinente : Kidsmegaworld (happy-luna.com), le Apr 30, 2026, soit 157 jours."
+  },
+  {
+   "candidate_id": "adhesive-shower-caddy-set",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 44,
+     "unit": "active ads (US, keyword)",
+     "quote": "~44 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=adhesive%20shower%20caddy&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=adhesive%20shower%20caddy&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 10,
+     "unit": "ads among first 20 cards",
+     "quote": "Sharon Recommends, Started running on Oct 1, 2026, Library ID: 1627472045447202, itsblossom.com, 7-pack adhesive shower caddy set with rust-proof stainless steel construction",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=adhesive%20shower%20caddy&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=adhesive%20shower%20caddy&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 433,
+     "unit": "days since launch",
+     "quote": "Konsilee, Started running on Jul 28, 2025, Library ID: 1559474548359425, konsilee.com.au, Shower Caddy",
+     "stable_id": "1559474548359425",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=adhesive%20shower%20caddy&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=adhesive%20shower%20caddy&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ],
+   "note": "10 cartes pertinentes sur 20, comptées par moi : Konsilee aux rangs 5, 6, 7 et 8 (étagère d'angle de douche, le caractère adhésif n'est pas précisé), Sharon Recommends (itsblossom.com, lot de 7), Madrid Wind, Anniuoveary (warmsoftnook.com), Hailoyearn x2 (zenblux.com) et Hardpointing, ces quatre derniers en 'Heavy-Duty Adhesive Shower Caddy'. Plusieurs boutiques dropshipping ont lancé fin septembre 2026, signe d'une vague de tests en cours. Bruit : SHEIN HOME, crochets adhésifs. La plus ancienne carte pertinente pointe vers un domaine australien (konsilee.com.au). Ancienne carte Konsilee sur domaine US : ID 25816016528100884, le Mar 14, 2026 (204 jours)."
+  }
+ ]
+}

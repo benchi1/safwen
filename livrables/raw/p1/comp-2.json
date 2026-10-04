@@ -1,0 +1,282 @@
+{
+ "agent": "comp-2",
+ "calls_used": 6,
+ "results": [
+  {
+   "candidate_id": "magnetic-double-sided-windshield-cleaner",
+   "note": "Meta US ad library: 19 of the first 20 cards sell the double-sided magnetic windshield cleaner. Card 16 (Thenuvaro-P) is a windshield cover and is excluded. The ads are very concentrated: many pages (Kaedynn, SakerX, SakerHot, Sakerstore...) point to m.sakerplus.com, and others to renoments.com, cherishous.com and rushclick.com. All the creatives are recent (Sep 8 to 30, 2026), so this looks like a fresh test wave rather than a winner that has lasted.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 660,
+     "unit": "results",
+     "quote": "~660 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=magnetic%20windshield%20cleaner&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=magnetic%20windshield%20cleaner&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 19,
+     "unit": "ads out of first 20",
+     "quote": "Page name: Kaedynn\nStarted running on: Sep 20, 2026\nLibrary ID: 2541084636392986\nLanding domain: m.sakerplus.com\nProduct: Double-sided magnetic windshield cleaning kit",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=magnetic%20windshield%20cleaner&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=magnetic%20windshield%20cleaner&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 26,
+     "unit": "days since launch",
+     "quote": "Page name: Renoments-II\nStarted running on: Sep 8, 2026\nLibrary ID: 1788476372344895\n3 ads use this creative and text",
+     "stable_id": "1788476372344895",
+     "url": "https://www.facebook.com/ads/library/?id=1788476372344895",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=magnetic%20windshield%20cleaner&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "pet-grooming-hammock",
+   "note": "Meta US ad library: ~42 results in total, and the page showed only 14 cards. 7 of them sell a grooming hammock: Densaro, WavePaw x3, June/scerich x2, and Forttender (table/hammock). The other cards are close but different: grooming stations, tables or beds (Viqzes, Forubom, Tewvo, Artvly), plus 3 car seat covers. Ad pressure is low but real. The oldest relevant ad is 49 days old.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 42,
+     "unit": "results",
+     "quote": "~42 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=dog%20grooming%20hammock&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=dog%20grooming%20hammock&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 7,
+     "unit": "ads out of first 14 cards shown",
+     "quote": "Page name: WavePaw\nStarted running on: Sep 24, 2026\nLibrary ID: 911227148481194\nLanding domain: shopwavepaw.com\nPhysical product: grooming hammock",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=dog%20grooming%20hammock&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=dog%20grooming%20hammock&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 49,
+     "unit": "days since launch",
+     "quote": "Page name: Forttender.ND07\nStarted running on: Aug 16, 2026\nLibrary ID: 1788332645863056\nLanding domain: www.forttender.com\nPhysical product: raised grooming table / suspended hammock",
+     "stable_id": "1788332645863056",
+     "url": "https://www.facebook.com/ads/library/?id=1788332645863056",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=dog%20grooming%20hammock&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "interior-windshield-cleaning-wand",
+   "note": "Meta US ad library: only ~7 results, and none clearly sells an extendable interior wand. Five cards are Kaedynn/sakerplus ads, which are the magnetic double-sided cleaner already seen in the other candidate (same Library ID 2541084636392986). One card is a windshield cover (Prime Pick Market). One card is The Addvisor (theaddvisor.com) with a 'windshield cleaning kit' whose exact type is not stated, so it is not counted. Meta ad signal for this product: weak to none. Library ID 1121791487472417 needs checking by hand.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 7,
+     "unit": "results",
+     "quote": "~7 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=windshield%20cleaner%20tool%20interior&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=windshield%20cleaner%20tool%20interior&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 0,
+     "unit": "ads out of 7 cards (extendable interior wand confirmed)",
+     "quote": "Page name: The Addvisor\nStarted running on: Sep 26, 2026\nLibrary ID: 1121791487472417\nLanding domain: theaddvisor.com\nProduct: windshield cleaning kit",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=windshield%20cleaner%20tool%20interior&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=windshield%20cleaner%20tool%20interior&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "ESTIMATION",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "zip-trading-card-binder",
+   "note": "Meta US ad library: ~94 results. 7 of the 20 cards sell trading card binders: bindrz x3 (One Piece), Alibaba x3 (one of them a 'zipper card binder PU leather'), and Card Gorilla. The rest are apps (Ludex, deckloot), events, card shops and slab cases. Only one card is a zip binder (Alibaba, launched Aug 6, 2026). The oldest relevant binder ad (bindrz) has been running since Apr 23, 2025, which points to a lasting market. That ad is a themed binder, not specifically a 900-pocket zip binder.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 94,
+     "unit": "results",
+     "quote": "~94 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=trading%20card%20binder&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=trading%20card%20binder&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 7,
+     "unit": "ads out of first 20",
+     "quote": "13. Alibaba.com | Aug 6, 2026 | 1020902857443360 | alibaba.com | zipper card binder PU leather trading card album",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=trading%20card%20binder&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=trading%20card%20binder&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 529,
+     "unit": "days since launch",
+     "quote": "3. bindrz | Apr 23, 2025 | 525140244009178 | bindrz.com | One Piece themed trading card binders",
+     "stable_id": "525140244009178",
+     "url": "https://www.facebook.com/ads/library/?id=525140244009178",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=trading%20card%20binder&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "slim-wallet-tracker-card",
+   "note": "Meta US ad library: ~1,500 results. 13 of the 20 cards sell a tracker card, and Spotminders dominates (its own page plus Ryan Westbrook pointing to spotminders.com). Luxford Tech's 'finder card for Android' is excluded because it is not Find My. Also excluded: RFID wallets (CODE 118, Ridge) and a passport cover with a tracker. Spotminders has run several creatives without a break since Feb 5, 2026, which is a strong sign of a profitable product.",
+   "evidence": [
+    {
+     "family": "O",
+     "metric": "meta_us_results",
+     "value": 1500,
+     "unit": "results",
+     "quote": "~1,500 results",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=wallet%20tracker%20card&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=wallet%20tracker%20card&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_relevant_ads",
+     "value": 13,
+     "unit": "ads out of first 20",
+     "quote": "3. Spotminders, Aug 4, 2026, Library ID: 1583316106509551, www.spotminders.com, wallet tracker card",
+     "stable_id": "n/a",
+     "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=wallet%20tracker%20card&search_type=keyword_unordered",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=wallet%20tracker%20card&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "O",
+     "metric": "meta_us_ad",
+     "value": 241,
+     "unit": "days since launch",
+     "quote": "13. Spotminders, Feb 5, 2026, Library ID: 1781106465917879, spotminders.com, tracking cards",
+     "stable_id": "1781106465917879",
+     "url": "https://www.facebook.com/ads/library/?id=1781106465917879",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&media_type=all&q=wallet%20tracker%20card&search_type=keyword_unordered",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  },
+  {
+   "candidate_id": "pet-hair-carpet-rake",
+   "note": "Amazon US search, Prime promo in progress so data may be biased. The first result is exactly this product: 'Carpet Rake for Pet Hair Removal Tool,Reusable Pet Hair Remover Broom Blue', price $27.99. Ratings are shown rounded as (1.2K), so 1,200 is approximate. The category is very crowded with many carpet rakes: B0CM3KCJKB at $9.99 has (6.8K) and 8K+/month, B0DFCGLXND has 2K+/month, and Uproot Clean Pro B09LNX88YK has (30.8K). Strong US demand, but competition is fierce on price ($9.99 to $38.99).",
+   "evidence": [
+    {
+     "family": "D",
+     "metric": "amazon_us_ratings",
+     "value": 1200,
+     "unit": "ratings",
+     "quote": "1. Carpet Rake for Pet Hair Removal Tool,Reusable Pet Hair Remover Broom Blue\n$27.99\n(1.2K)",
+     "stable_id": "B0FWBBRCLJ",
+     "url": "https://www.amazon.com/dp/B0FWBBRCLJ",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=pet+hair+remover+for+carpet",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    },
+    {
+     "family": "D",
+     "metric": "amazon_us_bought_past_month",
+     "value": 7000,
+     "unit": "units/month (badge)",
+     "quote": "(1.2K)\n7K+ bought in past month\nB0FWBBRCLJ",
+     "stable_id": "B0FWBBRCLJ",
+     "url": "https://www.amazon.com/dp/B0FWBBRCLJ",
+     "observed_at": "2026-10-04",
+     "tool": "mcp__Firecrawl__firecrawl_scrape",
+     "query_used": "https://www.amazon.com/s?k=pet+hair+remover+for+carpet",
+     "method": "freeform",
+     "status": "MESURÉ",
+     "scrape_status": "ok"
+    }
+   ]
+  }
+ ]
+}

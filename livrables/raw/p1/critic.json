@@ -1,0 +1,65 @@
+{
+ "assessment": "Il y a 31 candidats valides, sous l'objectif de 40, avec une répartition très déséquilibrée. Cuisine, animaux, auto-voyage et cadeau-lifestyle sont bien couverts (6 chacune), mais quatre catégories sont presque vides (sport-plein-air, bricolage, bureau-tech : 1 chacune ; bien-etre-non-medical : 0). Les pages Amazon « most-wished-for », « most-gifted » et « new-releases » ont échoué (rendu vide ou limite de requêtes) ; un tour 2 ciblé sur les recherches Amazon et Meta, orienté hiver/cadeau Q4 et produits non saisonniers, s'impose.",
+ "gaps": [
+  "bien-etre-non-medical : 0 candidat valide, catégorie vide",
+  "sport-plein-air : 1 seul candidat, aucun produit d'hiver ou de froid",
+  "bricolage : 1 seul candidat, il manque des outils démontrables (magnétiques, réparation, isolation hiver)",
+  "bureau-tech : 1 seul candidat, il manque des accessoires de bureau et des gadgets cadeau Q4",
+  "maison-rangement : 4 candidats, il manque des produits d'hiver (isolation, chauffage d'appoint, anti-humidité)",
+  "Pages Amazon most-gifted, most-wished-for et new-releases inexploitées (empty_render ou rate_limited)"
+ ],
+ "tasks": [
+  {
+   "kind": "meta",
+   "cats": "bien-etre-non-medical",
+   "terms": [
+    "heated neck shoulder massager",
+    "electric scalp massager",
+    "heated eye mask",
+    "foot spa massager",
+    "sunrise alarm clock",
+    "heated foot warmer pad"
+   ],
+   "rationale": "Catégorie vide. Ces produits ont un fort potentiel de démonstration vidéo, conviennent comme cadeau d'hiver Q4, se vendent 29-60 € et évitent toute allégation médicale."
+  },
+  {
+   "kind": "amazon_search",
+   "cats": "sport-plein-air",
+   "terms": [
+    "rechargeable hand warmer",
+    "heated gloves rechargeable",
+    "rechargeable headlamp motion sensor",
+    "shoe ice cleats traction",
+    "heated vest usb",
+    "portable camping lantern rechargeable"
+   ],
+   "rationale": "Un seul candidat valide. On cible le froid et l'hiver (chaufferettes, gants chauffants, crampons), un usage visible en France d'octobre à février, ainsi que des lampes non saisonnières."
+  },
+  {
+   "kind": "amazon_search",
+   "cats": "bricolage, maison-rangement",
+   "terms": [
+    "magnetic wristband for holding screws",
+    "door draft stopper",
+    "window insulation film kit",
+    "wall hole repair kit",
+    "mini electric screwdriver set rechargeable",
+    "laser level self leveling"
+   ],
+   "rationale": "Bricolage n'a qu'un seul candidat. Ces outils ont un effet avant/après démontrable, et l'isolation d'hiver (bas de porte, film isolant pour fenêtres) répond aux économies de chauffage, un problème très visible en France au Q4."
+  },
+  {
+   "kind": "meta",
+   "cats": "bureau-tech, cadeau-lifestyle",
+   "terms": [
+    "heated desk pad",
+    "3 in 1 wireless charging station",
+    "mini portable thermal printer",
+    "foldable laptop stand",
+    "magnetic phone mount",
+    "smart mug warmer"
+   ],
+   "rationale": "Bureau-tech n'a qu'un seul candidat. Ce sont des gadgets cadeau Q4 et du confort de bureau en hiver (tapis chauffant, chauffe-tasse), dans la fourchette 29-60 €, faciles à démontrer en publicité."
+  }
+ ]
+}

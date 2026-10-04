@@ -25,12 +25,14 @@ Relevé du 2026-10-04 vers 15 h 35 UTC. Gate 1, phase P0.
 | AliExpress FR, page de recherche | OK | prix et « vendus » lisibles (ex. 18,29 €, 70 vendus ; 24,11 €, + 2 000 vendus) | Source d'ancre de prix fiable. |
 | Shopify (get-shop-info) | KO | « needs you to sign in again » | Inutile avant la gate 3. À reconnecter sur claude.ai/customize/connectors, puis nouvelle session. |
 | Agent de workflow + Firecrawl (canary) | OK | outils chargés par ToolSearch, firecrawl_search : 5 résultats | Le fan-out Firecrawl par agents est possible. |
+| Meta FR, expression exacte « brosse électrique » | OK après repli | extraction « query » en échec (« Query generation failed after all models ») ; en markdown : « ~78 results », Library ID, dates, annonceurs, liens | Le mode query peut échouer sur Meta : repli automatique en markdown (page d'environ 48 000 caractères). |
+| Détail d'une pub Meta (portée UE, DSA) | NON MESURÉ | la section « EU transparency » reste fermée (menu à ouvrir au clic) | La portée UE n'est pas lisible avec cet outil. L'URL d'une pub renvoie vers toutes les pubs de l'annonceur : utile pour compter ses créas actives. |
 
 ## Débit et budget
 
 - Limite de concurrence du forfait Firecrawl : sur 5 appels simultanés, 2 ont attendu 2 à 10 s en file. Plafond retenu : 3 agents Firecrawl en vol, un seul appel à la fois par agent.
 - Coûts observés : scrape avec extraction = 5 crédits, recherche de 5 résultats = 2 crédits, capacité Trends = 5 crédits.
-- Consommé en P0 : 11 appels, environ 54 crédits. Budget gate 1 : environ 250 appels (1 300 à 1 500 crédits).
+- Consommé en P0 : 14 appels, environ 69 crédits. Budget gate 1 : environ 250 appels (1 300 à 1 500 crédits).
 
 ## Décision
 

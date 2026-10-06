@@ -86,17 +86,17 @@ def lockups():
     bb_, st_ = T(b), T(st); R = bb_.bounds[2]
     top3 = pad - y0 + 3*U; base9 = pad - y0 + 10*U
     GAP = 2*U
-    w, ww = word("NAQA", base9-top3, R + GAP, base9)
+    w, ww = word("NAQAA", base9-top3, R + GAP, base9)
     xr = R + GAP + ww
     bars = unary_union([box(bb_.bounds[0], pad-y0+11*U, xr, pad-y0+12*U), box(bb_.bounds[0], pad-y0+13*U, xr, pad-y0+14*U)])
     W = math.ceil(xr + pad); H = math.ceil(bb_.bounds[3] + pad)
     open("v2/naqa-horizontal.svg","w").write(svg(W, H, P(unary_union([bb_, bars]))+P(st_,STAR_FILL)+w, "Naqa horizontal"))
     # vertical
     bw = bb_.bounds[2]-bb_.bounds[0]
-    d, bb = G.shape("NAQA", "Jost-2.ttf", 100, 0, 0)
-    size = 100*(2.6*U)/(bb[3]-bb[1]); d, bb = G.shape("NAQA", "Jost-2.ttf", size, 0, 0)
-    tr = (bw - (bb[2]-bb[0]))/3
-    d, bb = G.shape("NAQA", "Jost-2.ttf", size, 0, 0, tracking=tr)
+    d, bb = G.shape("NAQAA", "Jost-2.ttf", 100, 0, 0)
+    size = 100*(2.6*U)/(bb[3]-bb[1]); d, bb = G.shape("NAQAA", "Jost-2.ttf", size, 0, 0)
+    tr = (bw - (bb[2]-bb[0]))/4
+    d, bb = G.shape("NAQAA", "Jost-2.ttf", size, 0, 0, tracking=tr)
     base = bb_.bounds[3] + 1.8*U + 2.6*U
     w2 = f'<path fill="#000" transform="translate({bb_.bounds[0]-bb[0]:.2f} {base:.2f})" d="{d}"/>'
     open("v2/naqa-vertical.svg","w").write(svg(math.ceil(bb_.bounds[2]+pad), math.ceil(base+pad), P(bb_)+P(st_,STAR_FILL)+w2, "Naqa vertical"))

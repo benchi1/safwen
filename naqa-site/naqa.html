@@ -1,17 +1,19 @@
-<title>Naqa Ihram</title>
+<title>Naqaa Ihram</title>
 <meta name="description" content="Ihram 100 % coton d'Égypte. Doux, respirant, fait pour durer. Livraison offerte en 3 jours ou express en 24 h.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Amiri&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=Amiri&display=swap">
 <style>
-/* Maison Naqa : page blanche, motif d'étoiles à huit branches, vert de la Mosquée de Paris, typographie Art déco (1926) et serif d'atelier */
+/* Maison Naqaa : page blanche, motif d'étoiles à huit branches, vert de la Mosquée de Paris, typographie Art déco (1926) et serif d'atelier */
 :root{
-  --white:#FFFFFF; --paper:#F5F7F4; --ink:#17201B; --muted:#5D6862; --line:#E2E7E3;
-  --green:#0E4B3B; --green-deep:#0A3A2D; --green-soft:#E8F0EB; --gold:#A6834C; --gold-soft:#F4EEE3;
+  --white:#FFFFFF; --paper:#FAF5EA; --ink:#17201B; --muted:#5D6862; --line:#E2E7E3;
+  --green:#0B3846; --green-deep:#072833; --green-soft:#EAF3F3; --teal:#0F6E78; --gold:#A6834C; --gold-deep:#8A6A35; --gold-soft:#F4EAD6;
+  --grad:linear-gradient(165deg,#F2E5C8 0%,#F9F2E3 34%,#FFFDF9 66%,#FFFFFF 100%);
+  --grad-soft:linear-gradient(180deg,#FFFFFF 0%,#FAF4E6 100%);
   --serif:"Cormorant Garamond", "Cormorant", Garamond, "Times New Roman", serif;
   --sans:"Jost", "Futura", "Century Gothic", "Helvetica Neue", Arial, sans-serif;
   --ar:"Amiri", "Noto Naskh Arabic", "Geeza Pro", serif;
-  --star:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88'%3E%3Cg fill='none' stroke='%230E4B3B' stroke-opacity='.11' stroke-width='1'%3E%3Cpath d='M26 26h36v36H26z'/%3E%3Cpath d='M44 18.5L69.5 44 44 69.5 18.5 44z'/%3E%3Cpath d='M0 44h18.5M69.5 44H88M44 0v18.5M44 69.5V88'/%3E%3Ccircle cx='44' cy='44' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  --star:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88'%3E%3Cg fill='none' stroke='%23B08D52' stroke-opacity='.28' stroke-width='1'%3E%3Cpath d='M26 26h36v36H26z'/%3E%3Cpath d='M44 18.5L69.5 44 44 69.5 18.5 44z'/%3E%3Cpath d='M0 44h18.5M69.5 44H88M44 0v18.5M44 69.5V88'/%3E%3Ccircle cx='44' cy='44' r='3'/%3E%3C/g%3E%3C/svg%3E");
   --star-light:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='88'%3E%3Cg fill='none' stroke='%23FFFFFF' stroke-opacity='.12' stroke-width='1'%3E%3Cpath d='M26 26h36v36H26z'/%3E%3Cpath d='M44 18.5L69.5 44 44 69.5 18.5 44z'/%3E%3Cpath d='M0 44h18.5M69.5 44H88M44 0v18.5M44 69.5V88'/%3E%3Ccircle cx='44' cy='44' r='3'/%3E%3C/g%3E%3C/svg%3E");
   color-scheme:light;
 }
@@ -19,18 +21,18 @@
 [hidden]{display:none!important}
 html{scroll-behavior:smooth}
 body{background:var(--white);color:var(--ink);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
-h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.005em}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.005em}
 p{margin:0}
 button{font:inherit;color:inherit;cursor:pointer}
 img{display:block;max-width:100%}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .wrap{max-width:1240px;margin-inline:auto;padding-inline:24px}
 @media (max-width:600px){ .wrap{padding-inline:18px} }
-.kicker{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:500}
-.lede{color:var(--muted);font-size:17px;max-width:52ch}
+.kicker{font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+.lede{color:#3F4944;font-size:17.5px;font-weight:500;max-width:54ch}
 .ar{font-family:var(--ar)}
 .price{font-variant-numeric:tabular-nums}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:0;border-radius:2px;padding:17px 30px;font-size:14px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;background:var(--green);color:#fff;text-decoration:none;transition:background .2s, transform .15s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:0;border-radius:2px;padding:17px 30px;font-size:14px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;background:var(--green);color:#fff;text-decoration:none;transition:background .2s, transform .15s}
 .btn:hover{background:var(--green-deep)}
 .btn:active{transform:translateY(1px)}
 .btn.light{background:#fff;color:var(--green)}
@@ -41,40 +43,52 @@ img{display:block;max-width:100%}
 .link{background:none;border:0;padding:0;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--green);border-bottom:1px solid currentColor;padding-bottom:3px}
 
 /* ---------- en-tête ---------- */
-.announce{background:var(--green);color:#fff;font-size:12.5px;letter-spacing:.08em;text-align:center;padding:9px 16px}
+.announce{background:var(--green-deep);color:#fff;font-size:12.5px;letter-spacing:.08em;text-align:center;padding:9px 16px}
 .announce b{font-weight:500}
 header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;min-height:76px;gap:16px}
-.bar nav{display:flex;gap:28px;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.bar nav{display:flex;gap:28px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
 .bar nav a{color:var(--ink);text-decoration:none;opacity:.8}
 .bar nav a:hover{opacity:1;color:var(--green)}
 .logo{display:block;color:var(--green);line-height:0}
-.logo svg{height:54px;width:auto}
-.logo-v svg{height:120px!important}
-.final-mark svg{height:110px;width:auto;margin:0 auto 10px;display:block}
+.logo svg{height:58px;width:auto}
+.logo-v svg{height:96px!important}
+.final-mark svg{height:150px;width:auto;margin:0 auto 10px;display:block}
 .bar .right{display:flex;justify-content:flex-end}
 .cart-btn{display:flex;align-items:center;gap:10px;background:none;border:0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:8px 0}
 .cart-btn .n{display:inline-grid;place-items:center;min-width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:11px;letter-spacing:0}
 @media (max-width:860px){ .bar{grid-template-columns:auto 1fr} .bar nav{display:none} .logo svg{height:36px} }
 
 /* ---------- héros ---------- */
-.hero{position:relative;color:#fff;overflow:hidden;background:var(--green-deep)}
-.hero img{width:100%;height:clamp(560px,82vh,820px);object-fit:cover;object-position:50% 35%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,30,23,.72) 0%,rgba(8,30,23,.38) 42%,rgba(8,30,23,0) 70%),linear-gradient(0deg,rgba(8,30,23,.55),rgba(8,30,23,0) 40%)}
-.hero .copy{position:absolute;inset:auto 0 0 0;z-index:2;padding-block:0 64px}
-.hero .copy .wrap > *{max-width:580px}
-.hero .ar-line{font-family:var(--ar);font-size:22px;opacity:.85;margin-bottom:14px}
-.hero h1{font-size:clamp(46px,6.4vw,92px);font-weight:400}
-.hero h1 em{font-style:italic}
-.hero p.sub{font-size:18px;font-weight:300;margin-top:20px;opacity:.92;max-width:42ch}
-.hero .cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:32px}
-.hero .cta small{font-size:13px;opacity:.85;letter-spacing:.04em}
-@media (max-width:700px){
-  .hero img{height:auto;aspect-ratio:4/5;object-position:44% 40%}
-  .hero::after{background:linear-gradient(0deg,rgba(8,30,23,.85) 0%,rgba(8,30,23,.35) 55%,rgba(8,30,23,0) 80%)}
-  .hero .copy{padding-block:0 32px}
-  .hero p.sub{font-size:16px}
-}
+.hero{position:relative;overflow:hidden;background:var(--grad);padding-block:64px 24px}
+.hero-bg{position:absolute;inset:0;pointer-events:none}
+.hero-bg .tiles{position:absolute;inset:0 0 0 40%;background:var(--star) 0 0/88px 88px;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 35%,#000 60%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 35%,#000 60%,transparent 100%)}
+.hero-bg .ros{position:absolute;width:min(860px,120vw);right:-60px;bottom:-470px;opacity:.5}
+.hero-bg .ros svg{width:100%;height:auto}
+.hero-bg .glow{position:absolute;width:980px;height:980px;right:-180px;top:-380px;background:radial-gradient(circle,rgba(255,255,255,.95) 0%,rgba(255,255,255,.6) 30%,rgba(255,255,255,0) 62%)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1fr 1.1fr;gap:32px;align-items:center}
+.hero-grid > *{min-width:0}
+.hero .ar-line{font-family:var(--ar);font-size:26px;color:var(--gold-deep);margin-bottom:10px}
+.hero h1{font-size:clamp(46px,6vw,88px);font-weight:600;color:var(--ink)}
+.hero h1 em{font-style:italic;color:var(--gold-deep)}
+.hero p.sub{font-size:18.5px;font-weight:500;margin-top:22px;color:#3F4944;max-width:44ch}
+.hero .cta{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;margin-top:34px}
+.hero .cta small{font-size:13.5px;color:var(--muted)}
+.hero .art svg{width:100%;height:auto;display:block}
+.hero .art{animation:rise 1.4s ease both}
+@keyframes rise{from{opacity:.35;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (max-width:860px){ .hero{padding-block:40px 8px} .hero-grid{grid-template-columns:1fr} .hero-bg .tiles{inset:40% 0 0 0} }
+
+/* ---------- photo en arche ---------- */
+.story{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.story > *{min-width:0}
+.arch{position:relative;max-width:520px;width:100%;justify-self:center}
+.arch::before{content:"";position:absolute;inset:-14px;border:1px solid var(--gold);border-radius:50% 50% 0 0/34% 34% 0 0;opacity:.6}
+.arch img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:40% 50%;border-radius:50% 50% 0 0/34% 34% 0 0}
+.story h2{font-size:clamp(38px,4.6vw,62px)}
+.story .ar{font-size:30px;color:var(--gold-deep);margin-top:22px}
+.story .tr{font-size:14px;color:var(--muted);font-style:italic}
+@media (max-width:860px){ .story{grid-template-columns:1fr;gap:48px} }
 
 .proofbar{border-bottom:1px solid var(--line)}
 .proofbar .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-block:22px}
@@ -89,7 +103,7 @@ section{padding-block:110px}
 .head{display:grid;gap:16px;margin-bottom:56px;max-width:720px}
 .head h2{font-size:clamp(38px,4.6vw,62px)}
 .head.center{text-align:center;margin-inline:auto;justify-items:center}
-.pattern{background-color:var(--paper);background-image:var(--star);background-size:88px 88px}
+.pattern{background:var(--star) 0 0/88px 88px, var(--grad-soft)}
 .rule{display:flex;align-items:center;gap:14px;color:var(--gold)}
 .rule::before,.rule::after{content:"";height:1px;width:48px;background:currentColor;opacity:.6}
 .rule svg{width:14px;height:14px}
@@ -101,8 +115,8 @@ section{padding-block:110px}
 .step .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
 .step:hover .ph img{transform:scale(1.04)}
 .step .num{font-family:var(--serif);font-size:15px;color:var(--gold);letter-spacing:.3em}
-.step h3{font-size:30px}
-.step p{color:var(--muted);font-size:15.5px;max-width:38ch}
+.step h3{font-size:32px}
+.step p{color:#4E5852;font-size:15.5px;font-weight:500;max-width:38ch}
 @media (max-width:860px){ .steps{grid-template-columns:1fr;gap:44px} .step .ph{aspect-ratio:4/3} }
 
 /* collection */
@@ -113,7 +127,7 @@ section{padding-block:110px}
 .prod:hover .ph img{transform:scale(1.04)}
 .prod .tag{position:absolute;top:16px;left:16px;background:#fff;color:var(--green);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:7px 12px}
 .prod .info{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding-top:20px;align-items:baseline}
-.prod h3{font-size:30px}
+.prod h3{font-size:32px}
 .prod .p{font-size:18px;font-weight:500}
 .prod .s{color:var(--muted);font-size:14px;grid-column:1/-1}
 .prod .go{grid-column:1/-1;margin-top:14px;justify-self:start}
@@ -127,7 +141,7 @@ section{padding-block:110px}
 .compare{overflow-x:auto;margin-bottom:84px}
 .compare table{width:100%;min-width:620px;border-collapse:collapse;font-size:15px}
 .compare th,.compare td{text-align:left;padding:18px 20px;border-bottom:1px solid var(--line);vertical-align:top}
-.compare thead th{font-family:var(--serif);font-weight:500;font-size:24px;border-bottom:1px solid var(--ink)}
+.compare thead th{font-family:var(--serif);font-weight:600;font-size:24px;border-bottom:1px solid var(--ink)}
 .compare thead th small{display:block;font-family:var(--sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
 .compare td:first-child{color:var(--muted);font-size:13px;letter-spacing:.12em;text-transform:uppercase;width:20%}
 .compare td.them{color:var(--muted)}
@@ -140,12 +154,12 @@ section{padding-block:110px}
 .tabs button[aria-selected="true"]{color:var(--green);border-color:var(--green)}
 .panel{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
 .panel > *{min-width:0}
-.panel .stat{font-family:var(--serif);font-size:clamp(84px,11vw,150px);line-height:.9;color:var(--green);font-weight:400}
-.panel .stat-l{font-family:var(--serif);font-size:26px;margin-top:14px;max-width:20ch;line-height:1.2}
+.panel .stat{font-family:var(--serif);font-size:clamp(80px,10vw,140px);line-height:.95;color:var(--green);font-weight:600}
+.panel .stat-l{font-family:var(--serif);font-weight:600;font-size:27px;margin-top:14px;max-width:20ch;line-height:1.2}
 .panel ul{list-style:none;margin:0;padding:0;display:grid;gap:22px}
-.panel li{display:grid;grid-template-columns:20px 1fr;gap:16px;font-size:16.5px}
+.panel li{display:grid;grid-template-columns:20px 1fr;gap:16px;font-size:16.5px;font-weight:500;color:#3F4944}
 .panel li svg{width:14px;height:14px;margin-top:6px;color:var(--gold)}
-.panel li b{font-weight:500}
+.panel li b{font-weight:600;color:var(--ink)}
 .panel .note{font-size:12.5px;color:var(--muted);margin-top:22px}
 @media (max-width:860px){ .panel{grid-template-columns:1fr;gap:28px} }
 
@@ -153,8 +167,8 @@ section{padding-block:110px}
 .who{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
 .who article{border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:34px 30px;display:grid;gap:12px;align-content:start;background:#fff;min-width:0}
 .who .t{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-.who h3{font-size:27px}
-.who p{color:var(--muted);font-size:15px}
+.who h3{font-size:28px}
+.who p{color:#4E5852;font-size:15px;font-weight:500}
 .who .link{justify-self:start;margin-top:8px}
 @media (max-width:860px){ .who{grid-template-columns:1fr} }
 
@@ -173,17 +187,20 @@ section{padding-block:110px}
 /* faq */
 .faq{max-width:820px;margin-inline:auto}
 .faq details{border-bottom:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;padding:24px 40px 24px 0;font-family:var(--serif);font-size:24px;position:relative}
+.faq summary{list-style:none;cursor:pointer;padding:24px 40px 24px 0;font-family:var(--serif);font-weight:600;font-size:25px;position:relative}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"";position:absolute;right:6px;top:34px;width:12px;height:12px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);transform:rotate(45deg);transition:transform .25s}
 .faq details[open] summary::after{transform:rotate(-135deg);top:40px}
 .faq details p{padding:0 0 26px;color:var(--muted);max-width:66ch}
 
 /* bande finale */
-.final{background-color:var(--green);background-image:var(--star-light);background-size:88px 88px;color:#fff;text-align:center}
+.final{position:relative;overflow:hidden;background:var(--grad);text-align:center}
+.final .ros{position:absolute;width:760px;left:50%;top:50%;transform:translate(-50%,-50%);opacity:.35;pointer-events:none}
+.final .ros svg{width:100%;height:auto}
+.final .wrap{position:relative}
 .final .ar{font-size:30px;opacity:.85}
-.final h2{font-size:clamp(40px,5vw,70px);font-weight:400;margin-top:10px}
-.final p{opacity:.85;margin:18px auto 34px;max-width:46ch}
+.final h2{font-size:clamp(40px,5vw,70px);margin-top:10px}
+.final p{color:var(--muted);margin:18px auto 34px;max-width:46ch}
 
 footer.site{padding-block:72px 48px;font-size:14px;color:var(--muted)}
 footer .cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
@@ -280,7 +297,7 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
 @media (prefers-reduced-motion: reduce){ *{transition:none!important;scroll-behavior:auto!important} }
 </style>
 
-<div class="announce"><b>Livraison offerte</b> en 3 jours · Express 24 h disponible · Retours sous 30 jours</div>
+<div class="announce"><b>Livraison offerte</b> en 3 jours · Express 24 h disponible · Retours sous 14 jours</div>
 
 <header class="site">
   <div class="wrap bar">
@@ -289,7 +306,7 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
       <a href="#atelier">L'atelier</a>
       <a href="#difference">La différence</a>
     </nav>
-    <a class="logo" href="#top" aria-label="Naqa, retour en haut"><svg viewBox="0 0 782 325" aria-hidden="true" focusable="false"><path fill="#0E4B3B" d="M120.00 124.80L120.00 140.80L136.00 140.80L136.00 124.80ZM152.00 124.80L152.00 140.80L168.00 140.80L168.00 124.80ZM200.00 140.80L200.00 156.80L216.00 156.80L216.00 140.80ZM72.00 124.80L72.00 140.80L72.00 156.80L72.00 172.80L72.00 188.80L72.00 204.80L72.00 220.80L72.00 236.80L88.00 236.80L104.00 236.80L120.00 236.80L136.00 236.80L152.00 236.80L168.00 236.80L184.00 236.80L200.00 236.80L216.00 236.80L216.00 220.80L216.00 204.80L216.00 188.80L216.00 172.80L200.00 172.80L200.00 188.80L200.00 204.80L200.00 220.80L184.00 220.80L168.00 220.80L168.00 204.80L168.00 188.80L168.00 172.80L152.00 172.80L136.00 172.80L120.00 172.80L120.00 188.80L120.00 204.80L120.00 220.80L104.00 220.80L88.00 220.80L88.00 204.80L88.00 188.80L88.00 172.80L88.00 156.80L88.00 140.80L88.00 124.80L88.00 108.80L88.00 92.80L88.00 76.80L72.00 76.80L72.00 92.80L72.00 108.80ZM152.00 188.80L152.00 204.80L152.00 220.80L136.00 220.80L136.00 204.80L136.00 188.80ZM24.00 204.80L24.00 220.80L40.00 220.80L56.00 220.80L56.00 204.80L40.00 204.80L40.00 188.80L56.00 188.80L56.00 172.80L40.00 172.80L24.00 172.80L24.00 188.80ZM40.00 268.80L56.00 268.80L72.00 268.80L88.00 268.80L104.00 268.80L120.00 268.80L136.00 268.80L152.00 268.80L168.00 268.80L184.00 268.80L200.00 268.80L216.00 268.80L232.00 268.80L757.87 268.80L757.87 252.80L232.00 252.80L216.00 252.80L200.00 252.80L184.00 252.80L168.00 252.80L152.00 252.80L136.00 252.80L120.00 252.80L104.00 252.80L88.00 252.80L72.00 252.80L56.00 252.80L40.00 252.80L24.00 252.80L24.00 268.80ZM56.00 300.80L72.00 300.80L88.00 300.80L104.00 300.80L120.00 300.80L136.00 300.80L152.00 300.80L168.00 300.80L184.00 300.80L200.00 300.80L216.00 300.80L232.00 300.80L757.87 300.80L757.87 284.80L232.00 284.80L216.00 284.80L200.00 284.80L184.00 284.80L168.00 284.80L152.00 284.80L136.00 284.80L120.00 284.80L104.00 284.80L88.00 284.80L72.00 284.80L56.00 284.80L40.00 284.80L24.00 284.80L24.00 300.80L40.00 300.80Z"/><path fill="#A6834C" d="M93.01 29.39L85.39 29.39L80.00 24.00L74.61 29.39L66.99 29.39L66.99 37.01L61.60 42.40L66.99 47.79L66.99 55.41L74.61 55.41L80.00 60.80L85.39 55.41L93.01 55.41L93.01 47.79L98.40 42.40L93.01 37.01Z"/><path fill="#0E4B3B" transform="translate(252.71 236.80)" d="M85.22997416020671 -101.29198966408268V-33.281653746770026L11.286821705426355 -106.35658914728681V0.0H28.07235142118863V-68.01033591731266L102.01550387596899 5.064599483204134V-101.29198966408268ZM162.7906976744186 -26.046511627906973H216.33074935400515L213.1472868217054 -40.51679586563307H166.11886304909558ZM189.27131782945733 -72.64082687338501 205.47803617571057 -35.01808785529715 205.76744186046508 -30.821705426356587 219.51421188630488 0.0H238.90439276485785L189.27131782945733 -106.93540051679585L139.78294573643407 0.0H159.02842377260978L173.06459948320412 -31.68992248062015L173.35400516795863 -35.45219638242894ZM284.48578811369504 -50.64599483204134Q284.48578811369504 -61.06459948320413 288.97157622739013 -69.24031007751937Q293.4573643410852 -77.41602067183462 301.2713178294573 -82.04651162790697Q309.08527131782944 -86.67700258397932 319.2144702842377 -86.67700258397932Q329.7777777777777 -86.67700258397932 337.66408268733846 -81.75710594315245Q345.5503875968992 -76.83720930232558 350.0361757105943 -68.44444444444444Q354.52196382428934 -60.0516795865633 354.52196382428934 -49.633074935400515Q354.52196382428934 -39.21447028423772 350.0361757105943 -31.111111111111107Q345.5503875968992 -23.007751937984494 337.80878552971575 -18.449612403100772Q330.0671834625323 -13.891472868217054 319.937984496124 -13.891472868217054Q309.80878552971575 -13.891472868217054 301.8501291989664 -18.594315245478036Q293.891472868217 -23.297157622739018 289.18863049095603 -31.617571059431526Q284.48578811369504 -39.93798449612403 284.48578811369504 -50.64599483204134ZM266.39793281653743 -50.64599483204134Q266.39793281653743 -39.359173126614984 270.30490956072344 -29.6640826873385Q274.2118863049095 -19.968992248062015 281.37467700258395 -12.878552971576227Q288.5374677002584 -5.788113695090439 298.1602067183462 -1.808785529715762Q307.78294573643404 2.1705426356589146 319.2144702842377 2.1705426356589146Q330.6459948320413 2.1705426356589146 340.1963824289405 -1.808785529715762Q349.74677002583974 -5.788113695090439 356.8372093023255 -12.878552971576227Q363.92764857881133 -19.968992248062015 367.7622739018087 -29.6640826873385Q371.5968992248062 -39.359173126614984 371.5968992248062 -50.64599483204134Q371.5968992248062 -62.07751937984496 367.6899224806201 -71.62790697674419Q363.78294573643404 -81.1782945736434 356.6925064599483 -88.19638242894055Q349.6020671834625 -95.21447028423772 340.0516795865633 -99.19379844961239Q330.501291989664 -103.17312661498707 319.2144702842377 -103.17312661498707Q307.92764857881133 -103.17312661498707 298.30490956072344 -99.19379844961239Q288.6821705426356 -95.21447028423772 281.51937984496124 -88.19638242894055Q274.3565891472868 -81.1782945736434 270.3772609819121 -71.62790697674419Q266.39793281653743 -62.07751937984496 266.39793281653743 -50.64599483204134ZM314.43927648578807 -43.41085271317829 359.73126614987075 0.7235142118863048H379.70025839793277L334.1188630490956 -43.41085271317829ZM429.0439276485788 -26.046511627906973H482.58397932816536L479.4005167958656 -40.51679586563307H432.3720930232558ZM455.52454780361757 -72.64082687338501 471.73126614987075 -35.01808785529715 472.0206718346253 -30.821705426356587 485.76744186046506 0.0H505.15762273901805L455.52454780361757 -106.93540051679585L406.0361757105943 0.0H425.28165374677L439.3178294573643 -31.68992248062015L439.60723514211884 -35.45219638242894Z"/></svg>
+    <a class="logo" href="#top" aria-label="Naqaa, retour en haut"><svg viewBox="0 0 626 378" aria-hidden="true" focusable="false"><path fill="#0F6E78" d="M88.00 97.60L104.00 97.60L104.00 81.60L88.00 81.60L72.00 81.60L56.00 81.60L56.00 97.60L56.00 113.60L56.00 129.60L72.00 129.60L88.00 129.60L104.00 129.60L104.00 113.60L88.00 113.60L72.00 113.60L72.00 97.60ZM24.00 161.60L24.00 177.60L24.00 193.60L24.00 209.60L24.00 225.60L24.00 241.60L24.00 257.60L40.00 257.60L56.00 257.60L72.00 257.60L88.00 257.60L104.00 257.60L120.00 257.60L136.00 257.60L152.00 257.60L168.00 257.60L168.00 241.60L168.00 225.60L168.00 209.60L168.00 193.60L168.00 177.60L168.00 161.60L168.00 145.60L168.00 129.60L152.00 129.60L152.00 145.60L152.00 161.60L152.00 177.60L152.00 193.60L152.00 209.60L152.00 225.60L152.00 241.60L136.00 241.60L120.00 241.60L120.00 225.60L120.00 209.60L120.00 193.60L120.00 177.60L104.00 177.60L88.00 177.60L72.00 177.60L72.00 193.60L72.00 209.60L72.00 225.60L72.00 241.60L56.00 241.60L40.00 241.60L40.00 225.60L40.00 209.60L40.00 193.60L40.00 177.60L40.00 161.60L40.00 145.60L40.00 129.60L40.00 113.60L40.00 97.60L40.00 81.60L24.00 81.60L24.00 97.60L24.00 113.60L24.00 129.60L24.00 145.60ZM88.00 209.60L88.00 193.60L104.00 193.60L104.00 209.60L104.00 225.60L104.00 241.60L88.00 241.60L88.00 225.60ZM24.00 273.60L24.00 289.60L40.00 289.60L56.00 289.60L72.00 289.60L88.00 289.60L104.00 289.60L120.00 289.60L136.00 289.60L152.00 289.60L168.00 289.60L168.00 273.60L152.00 273.60L136.00 273.60L120.00 273.60L104.00 273.60L88.00 273.60L72.00 273.60L56.00 273.60L40.00 273.60ZM56.00 321.60L72.00 321.60L88.00 321.60L104.00 321.60L120.00 321.60L136.00 321.60L152.00 321.60L168.00 321.60L168.00 305.60L152.00 305.60L136.00 305.60L120.00 305.60L104.00 305.60L88.00 305.60L72.00 305.60L56.00 305.60L40.00 305.60L24.00 305.60L24.00 321.60L40.00 321.60ZM56.00 337.60L40.00 337.60L24.00 337.60L24.00 353.60L40.00 353.60L56.00 353.60L72.00 353.60L88.00 353.60L104.00 353.60L120.00 353.60L136.00 353.60L152.00 353.60L168.00 353.60L168.00 337.60L152.00 337.60L136.00 337.60L120.00 337.60L104.00 337.60L88.00 337.60L72.00 337.60ZM104.00 161.60L120.00 161.60L120.00 145.60L104.00 145.60ZM72.00 161.60L88.00 161.60L88.00 145.60L72.00 145.60ZM152.00 113.60L168.00 113.60L168.00 97.60L152.00 97.60Z"/><path fill="#0F6E78" d="M120.00 48.00L112.97 40.97L112.97 31.03L103.03 31.03L96.00 24.00L88.97 31.03L79.03 31.03L79.03 40.97L72.00 48.00L79.03 55.03L79.03 64.97L88.97 64.97L96.00 72.00L103.03 64.97L112.97 64.97L112.97 55.03Z"/><path fill="#0B3846" transform="translate(190.32 231.55)" d="M8.078890015752108 0.0V-78.88138445935739H18.738536564313918L23.339015601061647 -63.621258874047854V0.0ZM62.61139762207884 0.0 15.821159614181212 -60.59167511814081 18.738536564313918 -78.88138445935739 65.52877457221155 -18.28970934121658ZM62.61139762207884 0.0 58.23533219687978 -14.811298362212199V-78.88138445935739H73.60766458796365V0.0ZM86.06262002891482 0.0 117.81714606305158 -78.88138445935739H130.27210150400276L161.91442073236516 0.0H145.64443389508662L121.18335023628163 -64.7433269317912H126.79369052499837L101.99598644887037 0.0ZM102.89364089506505 -14.699091556437864V-27.490667414712036H145.3078134777636V-14.699091556437864ZM206.01169540167876 1.2342748635176832Q197.37177135705497 1.2342748635176832 189.91001877306172 -1.9075156981636923Q182.44826618906845 -5.049306259845068 176.8379259003517 -10.603543145674642Q171.22758561163496 -16.157780031504217 168.14189845284073 -23.619532615497484Q165.05621129404653 -31.08128519949075 165.05621129404653 -39.6090024383402Q165.05621129404653 -48.136719677189646 168.14189845284073 -55.48626545540858Q171.22758561163496 -62.83581123362751 176.78182249746453 -68.39004811945708Q182.33605938329413 -73.94428500528666 189.74170856440023 -77.02997216408087Q197.14735774550633 -80.11565932287508 205.7872817901301 -80.11565932287508Q214.42720583475386 -80.11565932287508 221.83285501585996 -77.02997216408087Q229.23850419696606 -73.94428500528666 234.8488444856828 -68.39004811945708Q240.45918477439955 -62.83581123362751 243.54487193319375 -55.43016205252141Q246.63055909198798 -48.02451287141531 246.63055909198798 -39.49679563256586Q246.63055909198798 -30.969078393716416 243.54487193319375 -23.563429212610316Q240.45918477439955 -16.157780031504217 234.90494788856998 -10.603543145674642Q229.3507110027404 -5.049306259845068 221.9450618216343 -1.9075156981636923Q214.5394126405282 1.2342748635176832 206.01169540167876 1.2342748635176832ZM241.58125283214292 5.834753900265412 205.45066137280708 -30.295837559070407 214.65161944630256 -39.6090024383402 250.8944177114127 -3.366204173230045ZM205.7872817901301 -13.015989469822841Q213.30513777701054 -13.015989469822841 218.97158146861443 -16.382193643052887Q224.63802516021835 -19.74839781628293 227.83591912478687 -25.695358522322678Q231.03381308935542 -31.642319228362425 231.03381308935542 -39.6090024383402Q231.03381308935542 -45.44375633860561 229.1824007940789 -50.26864898690201Q227.33098849880238 -55.093541635198406 223.96478432557234 -58.62805601708995Q220.5985801523423 -62.1625703989815 215.99810111559458 -64.0700860971452Q211.39762207884684 -65.97760179530889 205.7872817901301 -65.97760179530889Q198.381632609024 -65.97760179530889 192.71518891742008 -62.66750102496601Q187.04874522581616 -59.35740025462313 183.8508512612476 -53.41043954858338Q180.6529572966791 -47.46347884254364 180.6529572966791 -39.6090024383402Q180.6529572966791 -33.66204173230045 182.5043695919556 -28.72494227822972Q184.35578188723213 -23.787842824158986 187.66588265757503 -20.309431845154606Q190.9759834279179 -16.831020866150226 195.63256586755278 -14.923505167986534Q200.2891483071877 -13.015989469822841 205.7872817901301 -13.015989469822841ZM257.4024124463241 0.0 289.1569384804609 -78.88138445935739H301.61189392141205L333.2542131497745 0.0H316.98422631249593L292.5231426536909 -64.7433269317912H298.1334829424077L273.33577886627967 0.0ZM274.23343331247435 -14.699091556437864V-27.490667414712036H316.6476058951729V-14.699091556437864ZM335.6105560710355 0.0 367.36508210517223 -78.88138445935739H379.82003754612344L411.46235677448584 0.0H395.1923699372073L370.7312862784023 -64.7433269317912H376.341626567119L351.543922490991 0.0ZM352.4415769371857 -14.699091556437864V-27.490667414712036H394.8557495198843V-14.699091556437864Z"/><path fill="#0B3846" transform="translate(189.60 353.60)" d="M8.802887271786794 0.0V-85.9504132231405H25.430563229606292V0.0ZM45.4815842375651 0.0V-85.9504132231405H62.1092601953846V0.0ZM99.39926877725921 0.0V-85.9504132231405H116.0269447350787V0.0ZM55.99614403442155 -37.04548393543609V-51.71696272174741H104.04523705959113V-37.04548393543609ZM148.30419806496363 -35.94512302646274V-48.904929287704405H168.2329567497032Q174.34607291066624 -48.904929287704405 177.70828679919592 -52.022618529795565Q181.0705006877256 -55.14030777188672 181.0705006877256 -60.64211231675346Q181.0705006877256 -65.65486756874317 177.70828679919592 -69.01708145727284Q174.34607291066624 -72.37929534580252 168.2329567497032 -72.37929534580252H148.30419806496363V-85.9504132231405H169.70010462833432Q178.01394260724408 -85.9504132231405 184.310452253036 -82.71046165783008Q190.60696189882793 -79.47051009251966 194.0914381105769 -73.84644322443366Q197.57591432232584 -68.22237635634765 197.57591432232584 -60.88663696319199Q197.57591432232584 -53.306372923597806 194.0914381105769 -47.743437217121425Q190.60696189882793 -42.18050151064505 184.24932109142637 -39.0628122685539Q177.8916802840248 -35.94512302646274 169.4555799818958 -35.94512302646274ZM136.07796574303754 0.0V-85.9504132231405H152.70564170085703V0.0ZM183.02669785923376 0.0 154.6618388723652 -37.16774625865535 169.94462927477284 -41.93597686420653 203.19998119041185 0.0ZM206.01201462445482 0.0 240.6122520955057 -85.9504132231405H254.18336997284368L288.66134512067526 0.0H270.93330825388244L244.28012179208355 -70.54536049751361H250.3932379530466L223.3732645215899 0.0ZM224.35136310734399 -16.016364341723193V-29.95426918871895H270.5665212842247V-16.016364341723193ZM301.2543644122592 0.0V-85.9504132231405H312.9915474413082L347.8363095587976 -30.19879383515747H341.11188178173825L375.8343815760084 -85.9504132231405H387.57156460505746V0.0H371.0661509704572V-57.46329191305268L374.244971374158 -56.48519332729859L350.0370313767443 -17.605774543573588H338.7888976405723L314.5809576431586 -56.48519332729859L317.8820403700787 -57.46329191305268V0.0Z"/></svg>
 </a>
     <div class="right"><button class="cart-btn" id="cartBtn" aria-label="Ouvrir le panier">Panier <span class="n" id="cartN">0</span></button></div>
   </div>
@@ -297,28 +314,46 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
 
 <main id="top">
   <!-- HÉROS -->
-  <section class="hero" style="padding:0" aria-label="Naqa">
-    <img src="img/pere-fils-kaaba.jpg" alt="Un père et son fils en ihram blanc face à la Kaaba" fetchpriority="high">
-    <div class="copy"><div class="wrap">
-      <p class="ar-line" lang="ar">لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ</p>
-      <h1>Le blanc de votre <em>plus beau</em> voyage.</h1>
-      <p class="sub">L'ihram en pur coton d'Égypte. Doux sur la peau, frais sous le soleil de La Mecque, fait pour vous accompagner toute une vie.</p>
-      <div class="cta">
-        <button class="btn light" data-open="homme">Choisir mon ihram · 39,90 €</button>
-        <small>Livraison offerte · Express 24 h</small>
+  <section class="hero" aria-label="Naqaa Ihram">
+    <div class="hero-bg" aria-hidden="true"><div class="tiles"></div><div class="glow"></div><div class="ros"><svg viewBox="-320 -320 640 640" aria-hidden="true" focusable="false"><g fill="none" stroke="#B08D52" stroke-width="1.1" stroke-linejoin="round"><path d="M0.0 -96.0L67.9 67.9L-96.0 0.0L67.9 -67.9L0.0 96.0L-67.9 -67.9L96.0 0.0L-67.9 67.9Z"/><path d="M0.0 -200.0L184.8 76.5L-141.4 141.4L-76.5 -184.8L200.0 0.0L-76.5 184.8L-141.4 -141.4L184.8 -76.5L0.0 200.0L-184.8 -76.5L141.4 -141.4L76.5 184.8L-200.0 0.0L76.5 -184.8L141.4 141.4L-184.8 76.5Z"/><circle r="40" opacity="1"/><circle r="124" opacity="0.5"/><circle r="212" opacity="0.45"/><circle r="300" opacity="0.3"/><path d="M0.0 -218.0L-29.2 -256.3L0.0 -300.0L29.2 -256.3ZM29.3 -147.1L19.2 -175.0L39.0 -196.2L49.2 -169.0ZM83.4 -201.4L71.1 -248.0L114.8 -277.2L125.1 -225.7ZM83.3 -124.7L84.7 -154.3L111.1 -166.3L110.2 -137.3ZM154.1 -154.1L160.6 -201.9L212.1 -212.1L201.9 -160.6ZM124.7 -83.3L137.3 -110.2L166.3 -111.1L154.3 -84.7ZM201.4 -83.4L225.7 -125.1L277.2 -114.8L248.0 -71.1ZM147.1 -29.3L169.0 -49.2L196.2 -39.0L175.0 -19.2ZM218.0 0.0L256.3 -29.2L300.0 0.0L256.3 29.2ZM147.1 29.3L175.0 19.2L196.2 39.0L169.0 49.2ZM201.4 83.4L248.0 71.1L277.2 114.8L225.7 125.1ZM124.7 83.3L154.3 84.7L166.3 111.1L137.3 110.2ZM154.1 154.1L201.9 160.6L212.1 212.1L160.6 201.9ZM83.3 124.7L110.2 137.3L111.1 166.3L84.7 154.3ZM83.4 201.4L125.1 225.7L114.8 277.2L71.1 248.0ZM29.3 147.1L49.2 169.0L39.0 196.2L19.2 175.0ZM0.0 218.0L29.2 256.3L0.0 300.0L-29.2 256.3ZM-29.3 147.1L-19.2 175.0L-39.0 196.2L-49.2 169.0ZM-83.4 201.4L-71.1 248.0L-114.8 277.2L-125.1 225.7ZM-83.3 124.7L-84.7 154.3L-111.1 166.3L-110.2 137.3ZM-154.1 154.1L-160.6 201.9L-212.1 212.1L-201.9 160.6ZM-124.7 83.3L-137.3 110.2L-166.3 111.1L-154.3 84.7ZM-201.4 83.4L-225.7 125.1L-277.2 114.8L-248.0 71.1ZM-147.1 29.3L-169.0 49.2L-196.2 39.0L-175.0 19.2ZM-218.0 0.0L-256.3 29.2L-300.0 0.0L-256.3 -29.2ZM-147.1 -29.3L-175.0 -19.2L-196.2 -39.0L-169.0 -49.2ZM-201.4 -83.4L-248.0 -71.1L-277.2 -114.8L-225.7 -125.1ZM-124.7 -83.3L-154.3 -84.7L-166.3 -111.1L-137.3 -110.2ZM-154.1 -154.1L-201.9 -160.6L-212.1 -212.1L-160.6 -201.9ZM-83.3 -124.7L-110.2 -137.3L-111.1 -166.3L-84.7 -154.3ZM-83.4 -201.4L-125.1 -225.7L-114.8 -277.2L-71.1 -248.0ZM-29.3 -147.1L-49.2 -169.0L-39.0 -196.2L-19.2 -175.0Z" opacity=".9"/></g><path d="M0.0 -218.0L-29.2 -256.3L0.0 -300.0L29.2 -256.3ZM29.3 -147.1L19.2 -175.0L39.0 -196.2L49.2 -169.0ZM83.4 -201.4L71.1 -248.0L114.8 -277.2L125.1 -225.7ZM83.3 -124.7L84.7 -154.3L111.1 -166.3L110.2 -137.3ZM154.1 -154.1L160.6 -201.9L212.1 -212.1L201.9 -160.6ZM124.7 -83.3L137.3 -110.2L166.3 -111.1L154.3 -84.7ZM201.4 -83.4L225.7 -125.1L277.2 -114.8L248.0 -71.1ZM147.1 -29.3L169.0 -49.2L196.2 -39.0L175.0 -19.2ZM218.0 0.0L256.3 -29.2L300.0 0.0L256.3 29.2ZM147.1 29.3L175.0 19.2L196.2 39.0L169.0 49.2ZM201.4 83.4L248.0 71.1L277.2 114.8L225.7 125.1ZM124.7 83.3L154.3 84.7L166.3 111.1L137.3 110.2ZM154.1 154.1L201.9 160.6L212.1 212.1L160.6 201.9ZM83.3 124.7L110.2 137.3L111.1 166.3L84.7 154.3ZM83.4 201.4L125.1 225.7L114.8 277.2L71.1 248.0ZM29.3 147.1L49.2 169.0L39.0 196.2L19.2 175.0ZM0.0 218.0L29.2 256.3L0.0 300.0L-29.2 256.3ZM-29.3 147.1L-19.2 175.0L-39.0 196.2L-49.2 169.0ZM-83.4 201.4L-71.1 248.0L-114.8 277.2L-125.1 225.7ZM-83.3 124.7L-84.7 154.3L-111.1 166.3L-110.2 137.3ZM-154.1 154.1L-160.6 201.9L-212.1 212.1L-201.9 160.6ZM-124.7 83.3L-137.3 110.2L-166.3 111.1L-154.3 84.7ZM-201.4 83.4L-225.7 125.1L-277.2 114.8L-248.0 71.1ZM-147.1 29.3L-169.0 49.2L-196.2 39.0L-175.0 19.2ZM-218.0 0.0L-256.3 29.2L-300.0 0.0L-256.3 -29.2ZM-147.1 -29.3L-175.0 -19.2L-196.2 -39.0L-169.0 -49.2ZM-201.4 -83.4L-248.0 -71.1L-277.2 -114.8L-225.7 -125.1ZM-124.7 -83.3L-154.3 -84.7L-166.3 -111.1L-137.3 -110.2ZM-154.1 -154.1L-201.9 -160.6L-212.1 -212.1L-160.6 -201.9ZM-83.3 -124.7L-110.2 -137.3L-111.1 -166.3L-84.7 -154.3ZM-83.4 -201.4L-125.1 -225.7L-114.8 -277.2L-71.1 -248.0ZM-29.3 -147.1L-49.2 -169.0L-39.0 -196.2L-19.2 -175.0Z" fill="#B08D52" fill-opacity=".14" stroke="none"/></svg></div></div>
+    <div class="wrap hero-grid">
+      <div>
+        <p class="ar-line" lang="ar">لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ</p>
+        <h1>La pureté de votre <em>plus beau</em> voyage.</h1>
+        <p class="sub">L'ihram en pur coton d'Égypte. Doux sur la peau, frais sous le soleil de La Mecque, fait pour vous accompagner pendant des années.</p>
+        <div class="cta">
+          <button class="btn" data-open="homme">Choisir mon ihram · 39,90 €</button>
+          <small>Livraison offerte · Express 24 h</small>
+        </div>
       </div>
-    </div></div>
+      <div class="art"><svg viewBox="0 120 640 400" aria-hidden="true" focusable="false"><defs><linearGradient id="kf" x1="0" y1="0" x2="0" y2="1"><stop offset=".55" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="km"><rect x="0" y="120" width="640" height="400" fill="url(#kf)"/></mask></defs><g fill="none" stroke="#B08D52" stroke-linecap="round" mask="url(#km)"><ellipse cx="320" cy="430" rx="300" ry="66" stroke-width="1.2" opacity="0.35" stroke-dasharray="380 60 120 40"/><ellipse cx="320" cy="430" rx="236" ry="52" stroke-width="1.2" opacity="0.5" stroke-dasharray="300 50 160 30"/><ellipse cx="320" cy="430" rx="172" ry="38" stroke-width="1.2" opacity="0.65" stroke-dasharray="260 40 90 26"/><path d="M10 336v-26a14 14 0 0 1 28 0v26M44 336v-26a14 14 0 0 1 28 0v26M78 336v-26a14 14 0 0 1 28 0v26M112 336v-26a14 14 0 0 1 28 0v26M146 336v-26a14 14 0 0 1 28 0v26M470 336v-26a14 14 0 0 1 28 0v26M504 336v-26a14 14 0 0 1 28 0v26M538 336v-26a14 14 0 0 1 28 0v26M572 336v-26a14 14 0 0 1 28 0v26M606 336v-26a14 14 0 0 1 28 0v26" stroke-width="1" opacity="0.35"/><path d="M0 336H180M462 336H640" stroke-width="1" opacity="0.35" stroke-dasharray="60 10 30 8"/><path d="M89 336V200M103 336V200M85 200h22M89 200v-14h14v14M96 186v-20M87 250h18" stroke-width="1.1" opacity="0.45"/><path d="M541 336V200M555 336V200M537 200h22M541 200v-14h14v14M548 186v-20M539 250h18" stroke-width="1.1" opacity="0.45"/><path d="M200 236V424" stroke-width="2" opacity="1" stroke-dasharray="150 10 40"/><path d="M200 236H362" stroke-width="2" opacity="1"/><path d="M362 236V424" stroke-width="2.2" opacity="1"/><path d="M200 424H362" stroke-width="2" opacity="1" stroke-dasharray="70 8 90"/><path d="M362 236L446 200V386L362 424" stroke-width="2" opacity="1" stroke-dasharray="120 8 200"/><path d="M200 236L284 200H446" stroke-width="1.6" opacity="0.8" stroke-dasharray="180 10 60"/><path d="M200 270H362M362 270L446 234" stroke-width="1.4" opacity="1"/><path d="M200 296H362M362 296L446 260" stroke-width="1.4" opacity="1"/><path d="M206 283H356" stroke-width="1.1" opacity="0.8" stroke-dasharray="10 4 3 4 14 4 5 4"/><path d="M368 277L440 246" stroke-width="1.1" opacity="0.7" stroke-dasharray="8 4 3 4 12 4"/><path d="M302 312h40v104h-40zM322 312v104M306 318h32" stroke-width="1.3" opacity="0.9"/><path d="M232 300V410M264 300V416M394 286V400M420 274V392" stroke-width="1" opacity="0.35" stroke-dasharray="40 12 20 10"/><path d="M194 430H362L452 392" stroke-width="1.3" opacity="0.6" stroke-dasharray="90 10 40 8"/></g></svg></div>
+    </div>
   </section>
 
   <div class="proofbar"><div class="wrap">
     <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3c4 5 6 8.5 6 12a6 6 0 0 1-12 0c0-3.5 2-7 6-12Z"/></svg><span><b>100 % coton d'Égypte</b>Fibre extra-longue</span></div>
     <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg><span><b>Livré en 24 h ou 3 jours</b>Standard offerte</span></div>
-    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg><span><b>Garanti 2 ans</b>Remplacé s'il s'abîme</span></div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg><span><b>Doux pour la peau</b>Sans apprêt ni parfum</span></div>
     <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="8" width="18" height="12"/><path d="M3 12h18M12 8v12M8 8c-2-3 2-5 4 0 2-5 6-3 4 0"/></svg><span><b>Tout est dans la boîte</b>Ceinture, pochette, talbiya</span></div>
   </div></div>
 
+  <!-- LE VOYAGE -->
+  <section>
+    <div class="wrap story">
+      <div class="arch"><img src="img/pere-fils-kaaba.jpg" alt="Un père et son fils en ihram blanc face à la Kaaba"></div>
+      <div>
+        <p class="kicker">Le voyage d'une vie</p>
+        <h2 style="margin-top:14px">Le jour où tout le monde porte le même blanc.</h2>
+        <p class="lede" style="margin-top:20px">Au miqat, le roi et le berger portent le même tissu. Plus de rang, plus d'apparence. Il reste un cœur face à son Seigneur, et un tissu qui ne doit jamais vous en distraire.</p>
+        <p class="ar" lang="ar">لَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ</p>
+        <p class="tr">Me voici, Tu n'as point d'associé, me voici.</p>
+        <button class="btn" style="margin-top:30px" data-open="homme">Préparer mon voyage</button>
+      </div>
+    </div>
+  </section>
+
   <!-- ATELIER -->
-  <section id="atelier">
+  <section id="atelier" class="pattern">
     <div class="wrap">
       <div class="head center">
         <div class="rule"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 0l2.93 2.93H17.07V7.07L20 10l-2.93 2.93v4.14h-4.14L10 20l-2.93-2.93H2.93v-4.14L0 10l2.93-2.93V2.93h4.14Z"/></svg></div>
@@ -350,7 +385,7 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
   </section>
 
   <!-- COLLECTION -->
-  <section id="collection" class="pattern">
+  <section id="collection">
     <div class="wrap">
       <div class="head">
         <p class="kicker">La collection</p>
@@ -358,16 +393,16 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
       </div>
       <div class="grid3">
         <button class="prod" data-open="homme">
-          <div class="ph"><span class="tag">Le plus choisi</span><img src="img/ihram-packshot.jpg" alt="Ihram Naqa plié avec sa ceinture"></div>
-          <div class="info"><h3>Naqa Ihram</h3><span class="p price">39,90 €</span><span class="s">Homme · 2 pièces · coffret tout inclus</span><span class="go link">Choisir</span></div>
+          <div class="ph"><span class="tag">Le plus choisi</span><img src="img/ihram-packshot.jpg" alt="Ihram Naqaa plié avec sa ceinture"></div>
+          <div class="info"><h3>Naqaa Ihram</h3><span class="p price">39,90 €</span><span class="s">Homme · 2 pièces · coffret tout inclus</span><span class="go link">Choisir</span></div>
         </button>
         <button class="prod" data-open="junior">
           <div class="ph"><span class="tag">4 à 14 ans</span><img src="img/pere-fils-2.jpg" alt="Un garçon en ihram blanc aux côtés de son père"></div>
-          <div class="info"><h3>Naqa Junior</h3><span class="p price">19,90 €</span><span class="s">Enfant · 2 pièces à sa taille</span><span class="go link">Choisir</span></div>
+          <div class="info"><h3>Naqaa Junior</h3><span class="p price">19,90 €</span><span class="s">Enfant · 2 pièces à sa taille</span><span class="go link">Choisir</span></div>
         </button>
         <button class="prod" data-open="telekung">
           <div class="ph"><span class="tag">Inspiré de Malaisie</span><img src="img/telekung-kaaba.jpg" alt="Une femme en telekung blanc marchant vers la Kaaba"></div>
-          <div class="info"><h3>Naqa Telekung</h3><span class="p price">49,90 €</span><span class="s">Femme · voile long et jupe ample</span><span class="go link">Choisir</span></div>
+          <div class="info"><h3>Naqaa Telekung</h3><span class="p price">49,90 €</span><span class="s">Femme · voile long et jupe ample</span><span class="go link">Choisir</span></div>
         </button>
       </div>
       <div class="family">
@@ -382,18 +417,18 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
     <div class="wrap">
       <div class="head">
         <p class="kicker">La différence</p>
-        <h2>Pourquoi pas un ihram à 19 € ?</h2>
-        <p class="lede">Parce qu'il colle quand il fait chaud, qu'il irrite au troisième tour et qu'il finit au fond d'un placard. Le vôtre mérite mieux.</p>
+        <h2>Pourquoi Naqaa Ihram et pas un ihram low cost ?</h2>
+        <p class="lede">Parce que ce tissu reste contre votre peau pendant des heures, sous 40 °C, dans la foule. Avant le style, avant le prix, il y a votre santé.</p>
       </div>
 
       <div class="compare">
         <table>
-          <thead><tr><th></th><th>Ihram d'entrée de gamme<small>Souvent vendu 15 à 19 €</small></th><th class="us">Naqa<small>39,90 €, tout inclus</small></th></tr></thead>
+          <thead><tr><th></th><th>Ihram low cost<small>Souvent 15 à 19 €</small></th><th class="us">Naqaa<small>39,90 €, tout inclus</small></th></tr></thead>
           <tbody>
             <tr><td>Matière</td><td class="them">Polyester ou mélange coton</td><td class="us">100 % coton d'Égypte, fibre extra-longue</td></tr>
             <tr><td>Chaleur</td><td class="them">La sueur reste sur la peau</td><td class="us">Absorbée, la peau reste sèche</td></tr>
             <tr><td>Frottement</td><td class="them">Tissu rêche, bords épais</td><td class="us">Éponge douce, ourlets plats</td></tr>
-            <tr><td>Durée de vie</td><td class="them">Un voyage</td><td class="us">Plusieurs Omras, garanti 2 ans</td></tr>
+            <tr><td>Durée de vie</td><td class="them">Un voyage</td><td class="us">Plusieurs Omras et le Hajj</td></tr>
             <tr><td>Dans la boîte</td><td class="them">Le tissu seul</td><td class="us">Ceinture, pochette, carte de la talbiya</td></tr>
           </tbody>
         </table>
@@ -407,7 +442,7 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
       </div>
 
       <div class="panel" role="tabpanel" data-panel="sante" aria-labelledby="t-sante">
-        <div><p class="stat">×20</p><p class="stat-l">Le coton absorbe environ vingt fois plus d'humidité que le polyester.</p></div>
+        <div><p class="stat">×20</p><p class="stat-l">Le coton absorbe environ vingt fois plus d'humidité que le polyester.</p><p class="note">Avant le style, la santé : c'est par là que tout commence.</p></div>
         <ul>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 0l2.93 2.93H17.07V7.07L20 10l-2.93 2.93v4.14h-4.14L10 20l-2.93-2.93H2.93v-4.14L0 10l2.93-2.93V2.93h4.14Z"/></svg><span><b>La peau reste sèche.</b> C'est l'humidité qui transforme un simple frottement en brûlure entre les cuisses. Un tissu qui boit la sueur coupe le problème à la source.</span></li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 0l2.93 2.93H17.07V7.07L20 10l-2.93 2.93v4.14h-4.14L10 20l-2.93-2.93H2.93v-4.14L0 10l2.93-2.93V2.93h4.14Z"/></svg><span><b>Un toucher plus doux.</b> La fibre extra-longue laisse moins de bouts de fibres à la surface du fil. Le tissu glisse sur la peau au lieu de l'accrocher.</span></li>
@@ -419,11 +454,11 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
         <ul>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 0l2.93 2.93H17.07V7.07L20 10l-2.93 2.93v4.14h-4.14L10 20l-2.93-2.93H2.93v-4.14L0 10l2.93-2.93V2.93h4.14Z"/></svg><span><b>Le coton du linge d'exception.</b> Celui qu'on retrouve dans les draps des grands hôtels, choisi ici pour le vêtement le plus important de votre vie.</span></li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 0l2.93 2.93H17.07V7.07L20 10l-2.93 2.93v4.14h-4.14L10 20l-2.93-2.93H2.93v-4.14L0 10l2.93-2.93V2.93h4.14Z"/></svg><span><b>Une éponge dense et régulière.</b> Elle tombe bien, couvre sans transparence et ne se déforme pas quand vous marchez.</span></li>
-          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 0l2.93 2.93H17.07V7.07L20 10l-2.93 2.93v4.14h-4.14L10 20l-2.93-2.93H2.93v-4.14L0 10l2.93-2.93V2.93h4.14Z"/></svg><span><b>Un coffret, pas un sachet.</b> Plié à la main, scellé, accompagné de la carte de la talbiya. On ouvre un Naqa comme on ouvre un cadeau.</span></li>
+          <li><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 0l2.93 2.93H17.07V7.07L20 10l-2.93 2.93v4.14h-4.14L10 20l-2.93-2.93H2.93v-4.14L0 10l2.93-2.93V2.93h4.14Z"/></svg><span><b>Un coffret, pas un sachet.</b> Plié à la main, scellé, accompagné de la carte de la talbiya. On ouvre un Naqaa comme on ouvre un cadeau.</span></li>
         </ul>
       </div>
       <div class="panel" role="tabpanel" data-panel="duree" aria-labelledby="t-duree" hidden>
-        <div><p class="stat">2 ans</p><p class="stat-l">De garantie. S'il s'abîme, nous le remplaçons.</p></div>
+        <div><p class="stat" style="font-size:clamp(64px,8vw,110px)">Des années</p><p class="stat-l">Un tissu qui traverse les voyages.</p></div>
         <ul>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 0l2.93 2.93H17.07V7.07L20 10l-2.93 2.93v4.14h-4.14L10 20l-2.93-2.93H2.93v-4.14L0 10l2.93-2.93V2.93h4.14Z"/></svg><span><b>Un fil plus solide.</b> Les fibres longues se tiennent mieux entre elles : le tissu résiste aux lavages répétés et bouloche moins.</span></li>
           <li><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 0l2.93 2.93H17.07V7.07L20 10l-2.93 2.93v4.14h-4.14L10 20l-2.93-2.93H2.93v-4.14L0 10l2.93-2.93V2.93h4.14Z"/></svg><span><b>Il s'adoucit avec le temps.</b> Le coton de qualité gagne en souplesse à chaque lavage au lieu de s'user.</span></li>
@@ -453,7 +488,7 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
         <article><span class="t">Première Omra</span><h3>Vous ne savez pas quoi prendre.</h3><p>Tout est dans la boîte : les deux pièces, la ceinture pour vos papiers et la carte pour apprendre la talbiya avant de partir.</p><button class="link" data-open="homme">Je pars pour la première fois</button></article>
         <article><span class="t">Pèlerin fidèle</span><h3>Vous connaissez l'ihram qui gratte.</h3><p>Vous savez ce que c'est, le sa'i avec un tissu rêche. Passez à celui que vous garderez pour les prochains voyages.</p><button class="link" data-open="homme">Je change d'ihram</button></article>
         <article><span class="t">En famille</span><h3>Vous partez avec les vôtres.</h3><p>Le même coton pour vous, votre fils et votre épouse. Un seul colis, une seule boîte à ouvrir ensemble.</p><button class="link" data-family>Ajouter le pack famille</button></article>
-        <article><span class="t">À offrir</span><h3>Vos parents partent.</h3><p>Offrez-leur le tissu de leur voyage. Coffret prêt à offrir, pochette gravée à leur nom, livré chez eux en 24 h.</p><button class="link" data-open="homme" data-gift>Offrir un Naqa</button></article>
+        <article><span class="t">À offrir</span><h3>Vos parents partent.</h3><p>Offrez-leur le tissu de leur voyage. Coffret prêt à offrir, pochette gravée à leur nom, livré chez eux en 24 h.</p><button class="link" data-open="homme" data-gift>Offrir un Naqaa Ihram</button></article>
         <article><span class="t">Peau sensible</span><h3>La chaleur vous inquiète.</h3><p>Rougeurs, transpiration, peau qui réagit vite : un coton pur et sans apprêt, qui absorbe au lieu d'étouffer.</p><button class="link" data-open="homme">Voir l'ihram</button></article>
         <article><span class="t">Agences et groupes</span><h3>Vous accompagnez des pèlerins.</h3><p>Tarifs dégressifs dès 20 pièces, coffrets au nom de votre agence, livraison groupée avant le départ.</p><button class="link" data-pro>Demander un devis</button></article>
       </div>
@@ -485,19 +520,20 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
         <details><summary>L'éponge, ce n'est pas trop chaud ?</summary><p>Non, c'est la matière qui compte. Le coton absorbe la sueur et laisse passer l'air : vous avez moins chaud qu'avec un tissu fin en polyester qui colle à la peau.</p></details>
         <details><summary>Le telekung convient-il pour la Omra ?</summary><p>Oui. En état d'ihram, la femme porte un vêtement ample et couvrant, de la couleur de son choix, le visage et les mains découverts. Le telekung couvre tout le corps et laisse le visage libre.</p></details>
         <details><summary>Quand commander ?</summary><p>Idéalement deux semaines avant le départ, pour le laver une fois et apprendre à le nouer. Si vous partez demain, choisissez l'express : commandé avant 13 h, livré le lendemain.</p></details>
-        <details><summary>Comment fonctionne la garantie ?</summary><p>Pendant deux ans, si votre ihram se déchire, se déforme ou bouloche anormalement, écrivez-nous avec une photo. Nous vous en envoyons un neuf.</p></details>
+        <details><summary>Comment l'entretenir ?</summary><p>Lavez-le une fois avant le départ, il gagnera en douceur. Machine à 40 °C, sans adoucissant parfumé ni javel, séchage à l'air libre. Sur place, un lavage à la main suffit : il sèche en quelques heures.</p></details>
       </div>
     </div>
   </section>
 
   <!-- FINAL -->
   <section class="final">
+    <div class="ros" aria-hidden="true"><svg viewBox="-320 -320 640 640" aria-hidden="true" focusable="false"><g fill="none" stroke="#B08D52" stroke-width="1.1" stroke-linejoin="round"><path d="M0.0 -96.0L67.9 67.9L-96.0 0.0L67.9 -67.9L0.0 96.0L-67.9 -67.9L96.0 0.0L-67.9 67.9Z"/><path d="M0.0 -200.0L184.8 76.5L-141.4 141.4L-76.5 -184.8L200.0 0.0L-76.5 184.8L-141.4 -141.4L184.8 -76.5L0.0 200.0L-184.8 -76.5L141.4 -141.4L76.5 184.8L-200.0 0.0L76.5 -184.8L141.4 141.4L-184.8 76.5Z"/><circle r="40" opacity="1"/><circle r="124" opacity="0.5"/><circle r="212" opacity="0.45"/><circle r="300" opacity="0.3"/><path d="M0.0 -218.0L-29.2 -256.3L0.0 -300.0L29.2 -256.3ZM29.3 -147.1L19.2 -175.0L39.0 -196.2L49.2 -169.0ZM83.4 -201.4L71.1 -248.0L114.8 -277.2L125.1 -225.7ZM83.3 -124.7L84.7 -154.3L111.1 -166.3L110.2 -137.3ZM154.1 -154.1L160.6 -201.9L212.1 -212.1L201.9 -160.6ZM124.7 -83.3L137.3 -110.2L166.3 -111.1L154.3 -84.7ZM201.4 -83.4L225.7 -125.1L277.2 -114.8L248.0 -71.1ZM147.1 -29.3L169.0 -49.2L196.2 -39.0L175.0 -19.2ZM218.0 0.0L256.3 -29.2L300.0 0.0L256.3 29.2ZM147.1 29.3L175.0 19.2L196.2 39.0L169.0 49.2ZM201.4 83.4L248.0 71.1L277.2 114.8L225.7 125.1ZM124.7 83.3L154.3 84.7L166.3 111.1L137.3 110.2ZM154.1 154.1L201.9 160.6L212.1 212.1L160.6 201.9ZM83.3 124.7L110.2 137.3L111.1 166.3L84.7 154.3ZM83.4 201.4L125.1 225.7L114.8 277.2L71.1 248.0ZM29.3 147.1L49.2 169.0L39.0 196.2L19.2 175.0ZM0.0 218.0L29.2 256.3L0.0 300.0L-29.2 256.3ZM-29.3 147.1L-19.2 175.0L-39.0 196.2L-49.2 169.0ZM-83.4 201.4L-71.1 248.0L-114.8 277.2L-125.1 225.7ZM-83.3 124.7L-84.7 154.3L-111.1 166.3L-110.2 137.3ZM-154.1 154.1L-160.6 201.9L-212.1 212.1L-201.9 160.6ZM-124.7 83.3L-137.3 110.2L-166.3 111.1L-154.3 84.7ZM-201.4 83.4L-225.7 125.1L-277.2 114.8L-248.0 71.1ZM-147.1 29.3L-169.0 49.2L-196.2 39.0L-175.0 19.2ZM-218.0 0.0L-256.3 29.2L-300.0 0.0L-256.3 -29.2ZM-147.1 -29.3L-175.0 -19.2L-196.2 -39.0L-169.0 -49.2ZM-201.4 -83.4L-248.0 -71.1L-277.2 -114.8L-225.7 -125.1ZM-124.7 -83.3L-154.3 -84.7L-166.3 -111.1L-137.3 -110.2ZM-154.1 -154.1L-201.9 -160.6L-212.1 -212.1L-160.6 -201.9ZM-83.3 -124.7L-110.2 -137.3L-111.1 -166.3L-84.7 -154.3ZM-83.4 -201.4L-125.1 -225.7L-114.8 -277.2L-71.1 -248.0ZM-29.3 -147.1L-49.2 -169.0L-39.0 -196.2L-19.2 -175.0Z" opacity=".9"/></g><path d="M0.0 -218.0L-29.2 -256.3L0.0 -300.0L29.2 -256.3ZM29.3 -147.1L19.2 -175.0L39.0 -196.2L49.2 -169.0ZM83.4 -201.4L71.1 -248.0L114.8 -277.2L125.1 -225.7ZM83.3 -124.7L84.7 -154.3L111.1 -166.3L110.2 -137.3ZM154.1 -154.1L160.6 -201.9L212.1 -212.1L201.9 -160.6ZM124.7 -83.3L137.3 -110.2L166.3 -111.1L154.3 -84.7ZM201.4 -83.4L225.7 -125.1L277.2 -114.8L248.0 -71.1ZM147.1 -29.3L169.0 -49.2L196.2 -39.0L175.0 -19.2ZM218.0 0.0L256.3 -29.2L300.0 0.0L256.3 29.2ZM147.1 29.3L175.0 19.2L196.2 39.0L169.0 49.2ZM201.4 83.4L248.0 71.1L277.2 114.8L225.7 125.1ZM124.7 83.3L154.3 84.7L166.3 111.1L137.3 110.2ZM154.1 154.1L201.9 160.6L212.1 212.1L160.6 201.9ZM83.3 124.7L110.2 137.3L111.1 166.3L84.7 154.3ZM83.4 201.4L125.1 225.7L114.8 277.2L71.1 248.0ZM29.3 147.1L49.2 169.0L39.0 196.2L19.2 175.0ZM0.0 218.0L29.2 256.3L0.0 300.0L-29.2 256.3ZM-29.3 147.1L-19.2 175.0L-39.0 196.2L-49.2 169.0ZM-83.4 201.4L-71.1 248.0L-114.8 277.2L-125.1 225.7ZM-83.3 124.7L-84.7 154.3L-111.1 166.3L-110.2 137.3ZM-154.1 154.1L-160.6 201.9L-212.1 212.1L-201.9 160.6ZM-124.7 83.3L-137.3 110.2L-166.3 111.1L-154.3 84.7ZM-201.4 83.4L-225.7 125.1L-277.2 114.8L-248.0 71.1ZM-147.1 29.3L-169.0 49.2L-196.2 39.0L-175.0 19.2ZM-218.0 0.0L-256.3 29.2L-300.0 0.0L-256.3 -29.2ZM-147.1 -29.3L-175.0 -19.2L-196.2 -39.0L-169.0 -49.2ZM-201.4 -83.4L-248.0 -71.1L-277.2 -114.8L-225.7 -125.1ZM-124.7 -83.3L-154.3 -84.7L-166.3 -111.1L-137.3 -110.2ZM-154.1 -154.1L-201.9 -160.6L-212.1 -212.1L-160.6 -201.9ZM-83.3 -124.7L-110.2 -137.3L-111.1 -166.3L-84.7 -154.3ZM-83.4 -201.4L-125.1 -225.7L-114.8 -277.2L-71.1 -248.0ZM-29.3 -147.1L-49.2 -169.0L-39.0 -196.2L-19.2 -175.0Z" fill="#B08D52" fill-opacity=".14" stroke="none"/></svg></div>
     <div class="wrap">
-      <div class="final-mark"><svg viewBox="0 0 256 256" aria-hidden="true" focusable="false"><path fill="#FFFFFF" d="M82.68 58.73L82.68 71.68L82.68 84.62L82.68 97.57L82.68 110.52L82.68 123.47L82.68 136.42L82.68 149.36L82.68 162.31L82.68 175.26L82.68 188.21L95.63 188.21L108.58 188.21L121.53 188.21L134.47 188.21L147.42 188.21L160.37 188.21L173.32 188.21L186.27 188.21L199.21 188.21L199.21 175.26L199.21 162.31L199.21 149.36L199.21 136.42L186.27 136.42L186.27 149.36L186.27 162.31L186.27 175.26L173.32 175.26L160.37 175.26L160.37 162.31L160.37 149.36L160.37 136.42L147.42 136.42L134.47 136.42L121.53 136.42L121.53 149.36L121.53 162.31L121.53 175.26L108.58 175.26L95.63 175.26L95.63 162.31L95.63 149.36L95.63 136.42L95.63 123.47L95.63 110.52L95.63 97.57L95.63 84.62L95.63 71.68L95.63 58.73ZM134.47 175.26L134.47 162.31L134.47 149.36L147.42 149.36L147.42 162.31L147.42 175.26ZM56.79 136.42L43.84 136.42L43.84 149.36L43.84 162.31L43.84 175.26L56.79 175.26L69.73 175.26L69.73 162.31L56.79 162.31L56.79 149.36L69.73 149.36L69.73 136.42ZM56.79 201.16L43.84 201.16L43.84 214.10L56.79 214.10L69.73 214.10L82.68 214.10L95.63 214.10L108.58 214.10L121.53 214.10L134.47 214.10L147.42 214.10L160.37 214.10L173.32 214.10L186.27 214.10L199.21 214.10L212.16 214.10L212.16 201.16L199.21 201.16L186.27 201.16L173.32 201.16L160.37 201.16L147.42 201.16L134.47 201.16L121.53 201.16L108.58 201.16L95.63 201.16L82.68 201.16L69.73 201.16ZM56.79 227.05L43.84 227.05L43.84 240.00L56.79 240.00L69.73 240.00L82.68 240.00L95.63 240.00L108.58 240.00L121.53 240.00L134.47 240.00L147.42 240.00L160.37 240.00L173.32 240.00L186.27 240.00L199.21 240.00L212.16 240.00L212.16 227.05L199.21 227.05L186.27 227.05L173.32 227.05L160.37 227.05L147.42 227.05L134.47 227.05L121.53 227.05L108.58 227.05L95.63 227.05L82.68 227.05L69.73 227.05ZM121.53 110.52L134.47 110.52L134.47 97.57L121.53 97.57ZM147.42 110.52L160.37 110.52L160.37 97.57L147.42 97.57ZM186.27 123.47L199.21 123.47L199.21 110.52L186.27 110.52Z"/><path fill="#D2B47E" d="M99.69 20.36L93.52 20.36L89.16 16.00L84.79 20.36L78.63 20.36L78.63 26.53L74.27 30.89L78.63 35.25L78.63 41.42L84.79 41.42L89.16 45.78L93.52 41.42L99.69 41.42L99.69 35.25L104.05 30.89L99.69 26.53Z"/></svg>
+      <div class="final-mark"><svg viewBox="0 0 192 378" aria-hidden="true" focusable="false"><path fill="#0F6E78" d="M88.00 97.60L104.00 97.60L104.00 81.60L88.00 81.60L72.00 81.60L56.00 81.60L56.00 97.60L56.00 113.60L56.00 129.60L72.00 129.60L88.00 129.60L104.00 129.60L104.00 113.60L88.00 113.60L72.00 113.60L72.00 97.60ZM24.00 161.60L24.00 177.60L24.00 193.60L24.00 209.60L24.00 225.60L24.00 241.60L24.00 257.60L40.00 257.60L56.00 257.60L72.00 257.60L88.00 257.60L104.00 257.60L120.00 257.60L136.00 257.60L152.00 257.60L168.00 257.60L168.00 241.60L168.00 225.60L168.00 209.60L168.00 193.60L168.00 177.60L168.00 161.60L168.00 145.60L168.00 129.60L152.00 129.60L152.00 145.60L152.00 161.60L152.00 177.60L152.00 193.60L152.00 209.60L152.00 225.60L152.00 241.60L136.00 241.60L120.00 241.60L120.00 225.60L120.00 209.60L120.00 193.60L120.00 177.60L104.00 177.60L88.00 177.60L72.00 177.60L72.00 193.60L72.00 209.60L72.00 225.60L72.00 241.60L56.00 241.60L40.00 241.60L40.00 225.60L40.00 209.60L40.00 193.60L40.00 177.60L40.00 161.60L40.00 145.60L40.00 129.60L40.00 113.60L40.00 97.60L40.00 81.60L24.00 81.60L24.00 97.60L24.00 113.60L24.00 129.60L24.00 145.60ZM88.00 209.60L88.00 193.60L104.00 193.60L104.00 209.60L104.00 225.60L104.00 241.60L88.00 241.60L88.00 225.60ZM24.00 273.60L24.00 289.60L40.00 289.60L56.00 289.60L72.00 289.60L88.00 289.60L104.00 289.60L120.00 289.60L136.00 289.60L152.00 289.60L168.00 289.60L168.00 273.60L152.00 273.60L136.00 273.60L120.00 273.60L104.00 273.60L88.00 273.60L72.00 273.60L56.00 273.60L40.00 273.60ZM56.00 321.60L72.00 321.60L88.00 321.60L104.00 321.60L120.00 321.60L136.00 321.60L152.00 321.60L168.00 321.60L168.00 305.60L152.00 305.60L136.00 305.60L120.00 305.60L104.00 305.60L88.00 305.60L72.00 305.60L56.00 305.60L40.00 305.60L24.00 305.60L24.00 321.60L40.00 321.60ZM56.00 337.60L40.00 337.60L24.00 337.60L24.00 353.60L40.00 353.60L56.00 353.60L72.00 353.60L88.00 353.60L104.00 353.60L120.00 353.60L136.00 353.60L152.00 353.60L168.00 353.60L168.00 337.60L152.00 337.60L136.00 337.60L120.00 337.60L104.00 337.60L88.00 337.60L72.00 337.60ZM104.00 161.60L120.00 161.60L120.00 145.60L104.00 145.60ZM72.00 161.60L88.00 161.60L88.00 145.60L72.00 145.60ZM152.00 113.60L168.00 113.60L168.00 97.60L152.00 97.60Z"/><path fill="#0F6E78" d="M120.00 48.00L112.97 40.97L112.97 31.03L103.03 31.03L96.00 24.00L88.97 31.03L79.03 31.03L79.03 40.97L72.00 48.00L79.03 55.03L79.03 64.97L88.97 64.97L96.00 72.00L103.03 64.97L112.97 64.97L112.97 55.03Z"/></svg>
 </div>
       <h2>Votre voyage commence ici.</h2>
       <p>Le tissu est prêt. Il ne manque que vous.</p>
-      <button class="btn light" data-open="homme">Choisir mon ihram</button>
+      <button class="btn" data-open="homme">Choisir mon ihram</button>
     </div>
   </section>
 </main>
@@ -506,20 +542,20 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
   <div class="wrap">
     <div class="cols">
       <div>
-        <span class="logo logo-v"><svg viewBox="0 0 256 396" aria-hidden="true" focusable="false"><path fill="#0E4B3B" d="M72.00 76.80L72.00 92.80L72.00 108.80L72.00 124.80L72.00 140.80L72.00 156.80L72.00 172.80L72.00 188.80L72.00 204.80L72.00 220.80L72.00 236.80L88.00 236.80L104.00 236.80L120.00 236.80L136.00 236.80L152.00 236.80L168.00 236.80L184.00 236.80L200.00 236.80L216.00 236.80L216.00 220.80L216.00 204.80L216.00 188.80L216.00 172.80L200.00 172.80L200.00 188.80L200.00 204.80L200.00 220.80L184.00 220.80L168.00 220.80L168.00 204.80L168.00 188.80L168.00 172.80L152.00 172.80L136.00 172.80L120.00 172.80L120.00 188.80L120.00 204.80L120.00 220.80L104.00 220.80L88.00 220.80L88.00 204.80L88.00 188.80L88.00 172.80L88.00 156.80L88.00 140.80L88.00 124.80L88.00 108.80L88.00 92.80L88.00 76.80ZM136.00 220.80L136.00 204.80L136.00 188.80L152.00 188.80L152.00 204.80L152.00 220.80ZM40.00 172.80L24.00 172.80L24.00 188.80L24.00 204.80L24.00 220.80L40.00 220.80L56.00 220.80L56.00 204.80L40.00 204.80L40.00 188.80L56.00 188.80L56.00 172.80ZM40.00 252.80L24.00 252.80L24.00 268.80L40.00 268.80L56.00 268.80L72.00 268.80L88.00 268.80L104.00 268.80L120.00 268.80L136.00 268.80L152.00 268.80L168.00 268.80L184.00 268.80L200.00 268.80L216.00 268.80L232.00 268.80L232.00 252.80L216.00 252.80L200.00 252.80L184.00 252.80L168.00 252.80L152.00 252.80L136.00 252.80L120.00 252.80L104.00 252.80L88.00 252.80L72.00 252.80L56.00 252.80ZM40.00 284.80L24.00 284.80L24.00 300.80L40.00 300.80L56.00 300.80L72.00 300.80L88.00 300.80L104.00 300.80L120.00 300.80L136.00 300.80L152.00 300.80L168.00 300.80L184.00 300.80L200.00 300.80L216.00 300.80L232.00 300.80L232.00 284.80L216.00 284.80L200.00 284.80L184.00 284.80L168.00 284.80L152.00 284.80L136.00 284.80L120.00 284.80L104.00 284.80L88.00 284.80L72.00 284.80L56.00 284.80ZM120.00 140.80L136.00 140.80L136.00 124.80L120.00 124.80ZM152.00 140.80L168.00 140.80L168.00 124.80L152.00 124.80ZM200.00 156.80L216.00 156.80L216.00 140.80L200.00 140.80Z"/><path fill="#A6834C" d="M93.01 29.39L85.39 29.39L80.00 24.00L74.61 29.39L66.99 29.39L66.99 37.01L61.60 42.40L66.99 47.79L66.99 55.41L74.61 55.41L80.00 60.80L85.39 55.41L93.01 55.41L93.01 47.79L98.40 42.40L93.01 37.01Z"/><path fill="#0E4B3B" transform="translate(19.81 371.20)" d="M31.656847545219634 -37.62273901808785V-12.361757105943152L4.192248062015503 -39.50387596899225V0.0H10.426873385012918V-25.2609819121447L37.89147286821705 1.8811369509043925V-37.62273901808785ZM68.65254091300602 -9.674418604651162H88.53884582256674L87.35641688199827 -15.04909560723514H69.88871662360035ZM78.4881998277347 -26.980878552971575 84.50783807062876 -13.006718346253228 84.61533161068044 -11.448062015503876 89.72127476313523 0.0H96.92334194659776L78.4881998277347 -39.7188630490956L60.106804478897494 0.0H67.2551248923342L72.46856158484064 -11.770542635658913L72.57605512489232 -13.167958656330748ZM122.04099913867356 -18.811369509043924Q122.04099913867356 -22.681136950904392 123.70714900947459 -25.71782945736434Q125.37329888027561 -28.754521963824285 128.27562446167096 -30.474418604651156Q131.17795004306632 -32.19431524547803 134.9402239448751 -32.19431524547803Q138.8637381567614 -32.19431524547803 141.79293712316968 -30.366925064599478Q144.72213608957793 -28.53953488372093 146.38828596037897 -25.42222222222222Q148.05443583118 -22.304909560723512 148.05443583118 -18.435142118863048Q148.05443583118 -14.565374677002582 146.38828596037897 -11.555555555555554Q144.72213608957793 -8.545736434108527 141.84668389319552 -6.852713178294573Q138.97123169681308 -5.15968992248062 135.2089577950043 -5.15968992248062Q131.4466838931955 -5.15968992248062 128.49061154177434 -6.906459948320413Q125.53453919035314 -8.653229974160206 123.78776916451335 -11.743669250645993Q122.04099913867356 -14.834108527131782 122.04099913867356 -18.811369509043924ZM115.32265288544357 -18.811369509043924Q115.32265288544357 -14.619121447028423 116.77381567614125 -11.018087855297157Q118.22497846683893 -7.417054263565891 120.88544358311799 -4.783462532299741Q123.54590869939706 -2.1498708010335914 127.12006890611542 -0.6718346253229973Q130.69422911283377 0.8062015503875968 134.9402239448751 0.8062015503875968Q139.18621877691643 0.8062015503875968 142.73350559862186 -0.6718346253229973Q146.2807924203273 -2.1498708010335914 148.91438415159342 -4.783462532299741Q151.5479758828596 -7.417054263565891 152.97226528854435 -11.018087855297157Q154.3965546942291 -14.619121447028423 154.3965546942291 -18.811369509043924Q154.3965546942291 -23.057364341085268 152.94539190353143 -26.604651162790695Q151.49422911283375 -30.151937984496122 148.86063738156759 -32.758656330749346Q146.22704565030145 -35.36537467700258 142.67975882859602 -36.84341085271318Q139.1324720068906 -38.32144702842377 134.9402239448751 -38.32144702842377Q130.7479758828596 -38.32144702842377 127.17381567614126 -36.84341085271318Q123.59965546942291 -35.36537467700258 120.93919035314384 -32.758656330749346Q118.27872523686477 -30.151937984496122 116.80068906115417 -26.604651162790695Q115.32265288544357 -23.057364341085268 115.32265288544357 -18.811369509043924ZM133.1665805340224 -16.124031007751935 149.98931955211023 0.2687338501291989H157.40637381567615L140.4761412575366 -16.124031007751935ZM183.92144702842378 -9.674418604651162H203.8077519379845L202.62532299741602 -15.04909560723514H185.1576227390181ZM193.75710594315245 -26.980878552971575 199.77674418604653 -13.006718346253228 199.8842377260982 -11.448062015503876 204.99018087855296 0.0H212.1922480620155L193.75710594315245 -39.7188630490956L175.37571059431525 0.0H182.52403100775194L187.7374677002584 -11.770542635658913L187.84496124031008 -13.167958656330748Z"/></svg>
+        <span class="logo logo-v"><svg viewBox="0 0 626 378" aria-hidden="true" focusable="false"><path fill="#0F6E78" d="M88.00 97.60L104.00 97.60L104.00 81.60L88.00 81.60L72.00 81.60L56.00 81.60L56.00 97.60L56.00 113.60L56.00 129.60L72.00 129.60L88.00 129.60L104.00 129.60L104.00 113.60L88.00 113.60L72.00 113.60L72.00 97.60ZM24.00 161.60L24.00 177.60L24.00 193.60L24.00 209.60L24.00 225.60L24.00 241.60L24.00 257.60L40.00 257.60L56.00 257.60L72.00 257.60L88.00 257.60L104.00 257.60L120.00 257.60L136.00 257.60L152.00 257.60L168.00 257.60L168.00 241.60L168.00 225.60L168.00 209.60L168.00 193.60L168.00 177.60L168.00 161.60L168.00 145.60L168.00 129.60L152.00 129.60L152.00 145.60L152.00 161.60L152.00 177.60L152.00 193.60L152.00 209.60L152.00 225.60L152.00 241.60L136.00 241.60L120.00 241.60L120.00 225.60L120.00 209.60L120.00 193.60L120.00 177.60L104.00 177.60L88.00 177.60L72.00 177.60L72.00 193.60L72.00 209.60L72.00 225.60L72.00 241.60L56.00 241.60L40.00 241.60L40.00 225.60L40.00 209.60L40.00 193.60L40.00 177.60L40.00 161.60L40.00 145.60L40.00 129.60L40.00 113.60L40.00 97.60L40.00 81.60L24.00 81.60L24.00 97.60L24.00 113.60L24.00 129.60L24.00 145.60ZM88.00 209.60L88.00 193.60L104.00 193.60L104.00 209.60L104.00 225.60L104.00 241.60L88.00 241.60L88.00 225.60ZM24.00 273.60L24.00 289.60L40.00 289.60L56.00 289.60L72.00 289.60L88.00 289.60L104.00 289.60L120.00 289.60L136.00 289.60L152.00 289.60L168.00 289.60L168.00 273.60L152.00 273.60L136.00 273.60L120.00 273.60L104.00 273.60L88.00 273.60L72.00 273.60L56.00 273.60L40.00 273.60ZM56.00 321.60L72.00 321.60L88.00 321.60L104.00 321.60L120.00 321.60L136.00 321.60L152.00 321.60L168.00 321.60L168.00 305.60L152.00 305.60L136.00 305.60L120.00 305.60L104.00 305.60L88.00 305.60L72.00 305.60L56.00 305.60L40.00 305.60L24.00 305.60L24.00 321.60L40.00 321.60ZM56.00 337.60L40.00 337.60L24.00 337.60L24.00 353.60L40.00 353.60L56.00 353.60L72.00 353.60L88.00 353.60L104.00 353.60L120.00 353.60L136.00 353.60L152.00 353.60L168.00 353.60L168.00 337.60L152.00 337.60L136.00 337.60L120.00 337.60L104.00 337.60L88.00 337.60L72.00 337.60ZM104.00 161.60L120.00 161.60L120.00 145.60L104.00 145.60ZM72.00 161.60L88.00 161.60L88.00 145.60L72.00 145.60ZM152.00 113.60L168.00 113.60L168.00 97.60L152.00 97.60Z"/><path fill="#0F6E78" d="M120.00 48.00L112.97 40.97L112.97 31.03L103.03 31.03L96.00 24.00L88.97 31.03L79.03 31.03L79.03 40.97L72.00 48.00L79.03 55.03L79.03 64.97L88.97 64.97L96.00 72.00L103.03 64.97L112.97 64.97L112.97 55.03Z"/><path fill="#0B3846" transform="translate(190.32 231.55)" d="M8.078890015752108 0.0V-78.88138445935739H18.738536564313918L23.339015601061647 -63.621258874047854V0.0ZM62.61139762207884 0.0 15.821159614181212 -60.59167511814081 18.738536564313918 -78.88138445935739 65.52877457221155 -18.28970934121658ZM62.61139762207884 0.0 58.23533219687978 -14.811298362212199V-78.88138445935739H73.60766458796365V0.0ZM86.06262002891482 0.0 117.81714606305158 -78.88138445935739H130.27210150400276L161.91442073236516 0.0H145.64443389508662L121.18335023628163 -64.7433269317912H126.79369052499837L101.99598644887037 0.0ZM102.89364089506505 -14.699091556437864V-27.490667414712036H145.3078134777636V-14.699091556437864ZM206.01169540167876 1.2342748635176832Q197.37177135705497 1.2342748635176832 189.91001877306172 -1.9075156981636923Q182.44826618906845 -5.049306259845068 176.8379259003517 -10.603543145674642Q171.22758561163496 -16.157780031504217 168.14189845284073 -23.619532615497484Q165.05621129404653 -31.08128519949075 165.05621129404653 -39.6090024383402Q165.05621129404653 -48.136719677189646 168.14189845284073 -55.48626545540858Q171.22758561163496 -62.83581123362751 176.78182249746453 -68.39004811945708Q182.33605938329413 -73.94428500528666 189.74170856440023 -77.02997216408087Q197.14735774550633 -80.11565932287508 205.7872817901301 -80.11565932287508Q214.42720583475386 -80.11565932287508 221.83285501585996 -77.02997216408087Q229.23850419696606 -73.94428500528666 234.8488444856828 -68.39004811945708Q240.45918477439955 -62.83581123362751 243.54487193319375 -55.43016205252141Q246.63055909198798 -48.02451287141531 246.63055909198798 -39.49679563256586Q246.63055909198798 -30.969078393716416 243.54487193319375 -23.563429212610316Q240.45918477439955 -16.157780031504217 234.90494788856998 -10.603543145674642Q229.3507110027404 -5.049306259845068 221.9450618216343 -1.9075156981636923Q214.5394126405282 1.2342748635176832 206.01169540167876 1.2342748635176832ZM241.58125283214292 5.834753900265412 205.45066137280708 -30.295837559070407 214.65161944630256 -39.6090024383402 250.8944177114127 -3.366204173230045ZM205.7872817901301 -13.015989469822841Q213.30513777701054 -13.015989469822841 218.97158146861443 -16.382193643052887Q224.63802516021835 -19.74839781628293 227.83591912478687 -25.695358522322678Q231.03381308935542 -31.642319228362425 231.03381308935542 -39.6090024383402Q231.03381308935542 -45.44375633860561 229.1824007940789 -50.26864898690201Q227.33098849880238 -55.093541635198406 223.96478432557234 -58.62805601708995Q220.5985801523423 -62.1625703989815 215.99810111559458 -64.0700860971452Q211.39762207884684 -65.97760179530889 205.7872817901301 -65.97760179530889Q198.381632609024 -65.97760179530889 192.71518891742008 -62.66750102496601Q187.04874522581616 -59.35740025462313 183.8508512612476 -53.41043954858338Q180.6529572966791 -47.46347884254364 180.6529572966791 -39.6090024383402Q180.6529572966791 -33.66204173230045 182.5043695919556 -28.72494227822972Q184.35578188723213 -23.787842824158986 187.66588265757503 -20.309431845154606Q190.9759834279179 -16.831020866150226 195.63256586755278 -14.923505167986534Q200.2891483071877 -13.015989469822841 205.7872817901301 -13.015989469822841ZM257.4024124463241 0.0 289.1569384804609 -78.88138445935739H301.61189392141205L333.2542131497745 0.0H316.98422631249593L292.5231426536909 -64.7433269317912H298.1334829424077L273.33577886627967 0.0ZM274.23343331247435 -14.699091556437864V-27.490667414712036H316.6476058951729V-14.699091556437864ZM335.6105560710355 0.0 367.36508210517223 -78.88138445935739H379.82003754612344L411.46235677448584 0.0H395.1923699372073L370.7312862784023 -64.7433269317912H376.341626567119L351.543922490991 0.0ZM352.4415769371857 -14.699091556437864V-27.490667414712036H394.8557495198843V-14.699091556437864Z"/><path fill="#0B3846" transform="translate(189.60 353.60)" d="M8.802887271786794 0.0V-85.9504132231405H25.430563229606292V0.0ZM45.4815842375651 0.0V-85.9504132231405H62.1092601953846V0.0ZM99.39926877725921 0.0V-85.9504132231405H116.0269447350787V0.0ZM55.99614403442155 -37.04548393543609V-51.71696272174741H104.04523705959113V-37.04548393543609ZM148.30419806496363 -35.94512302646274V-48.904929287704405H168.2329567497032Q174.34607291066624 -48.904929287704405 177.70828679919592 -52.022618529795565Q181.0705006877256 -55.14030777188672 181.0705006877256 -60.64211231675346Q181.0705006877256 -65.65486756874317 177.70828679919592 -69.01708145727284Q174.34607291066624 -72.37929534580252 168.2329567497032 -72.37929534580252H148.30419806496363V-85.9504132231405H169.70010462833432Q178.01394260724408 -85.9504132231405 184.310452253036 -82.71046165783008Q190.60696189882793 -79.47051009251966 194.0914381105769 -73.84644322443366Q197.57591432232584 -68.22237635634765 197.57591432232584 -60.88663696319199Q197.57591432232584 -53.306372923597806 194.0914381105769 -47.743437217121425Q190.60696189882793 -42.18050151064505 184.24932109142637 -39.0628122685539Q177.8916802840248 -35.94512302646274 169.4555799818958 -35.94512302646274ZM136.07796574303754 0.0V-85.9504132231405H152.70564170085703V0.0ZM183.02669785923376 0.0 154.6618388723652 -37.16774625865535 169.94462927477284 -41.93597686420653 203.19998119041185 0.0ZM206.01201462445482 0.0 240.6122520955057 -85.9504132231405H254.18336997284368L288.66134512067526 0.0H270.93330825388244L244.28012179208355 -70.54536049751361H250.3932379530466L223.3732645215899 0.0ZM224.35136310734399 -16.016364341723193V-29.95426918871895H270.5665212842247V-16.016364341723193ZM301.2543644122592 0.0V-85.9504132231405H312.9915474413082L347.8363095587976 -30.19879383515747H341.11188178173825L375.8343815760084 -85.9504132231405H387.57156460505746V0.0H371.0661509704572V-57.46329191305268L374.244971374158 -56.48519332729859L350.0370313767443 -17.605774543573588H338.7888976405723L314.5809576431586 -56.48519332729859L317.8820403700787 -57.46329191305268V0.0Z"/></svg>
 </span>
         <form class="news" id="news"><input id="newsMail" type="email" placeholder="Votre e-mail" aria-label="Votre e-mail"><button type="submit">S'inscrire</button></form>
         <p style="margin-top:10px;font-size:13px">Conseils de préparation et rappels avant votre départ.</p>
       </div>
-      <div><h4>Collection</h4><ul><li>Naqa Ihram</li><li>Naqa Junior</li><li>Naqa Telekung</li><li>Pack famille</li></ul></div>
-      <div><h4>Service</h4><ul><li>Livraison</li><li>Retours et garantie</li><li>Agences et groupes</li></ul></div>
-      <div><h4>Contact</h4><ul><li>bonjour@naqaihram.com</li><li>@naqa.ihram</li></ul></div>
+      <div><h4>Collection</h4><ul><li>Naqaa Ihram</li><li>Naqaa Junior</li><li>Naqaa Telekung</li><li>Pack famille</li></ul></div>
+      <div><h4>Service</h4><ul><li>Livraison</li><li>Retours</li><li>Agences et groupes</li></ul></div>
+      <div><h4>Contact</h4><ul><li>bonjour@naqaaihram.com</li><li>@naqaa.ihram</li></ul></div>
     </div>
-    <div class="legal"><span>© 2026 Naqa. Ihram en coton d'Égypte.</span><span>Mentions légales · CGV · Confidentialité</span></div>
+    <div class="legal"><span>© 2026 Naqaa. Ihram en coton d'Égypte.</span><span>Mentions légales · CGV · Confidentialité</span></div>
   </div>
 </footer>
 
-<div class="mbuy" id="mbuy"><div><b>Naqa Ihram</b>39,90 € · livraison offerte</div><button class="btn" data-open="homme">Choisir</button></div>
+<div class="mbuy" id="mbuy"><div><b>Naqaa Ihram</b>39,90 € · livraison offerte</div><button class="btn" data-open="homme">Choisir</button></div>
 
 <!-- fiche produit -->
 <div class="scrim" id="scrim"></div>
@@ -533,7 +569,7 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
     <label class="engrave" for="sEngrave"><input type="checkbox" id="sEngrave"><span><b>Graver la pochette · +5 €</b><br>Votre prénom et la date de votre Omra.<input class="field" id="sEngraveText" placeholder="Ex. Youssef · Omra 2026" hidden></span></label>
     <ul class="incl" id="sIncl"></ul>
     <button class="btn block" id="sAdd">Ajouter au panier</button>
-    <p class="meta"><span>Standard <b>3 jours, offerte</b></span><span>Express <b>24 h, 9,90 €</b></span><span>Garanti <b>2 ans</b></span></p>
+    <p class="meta"><span>Standard <b>3 jours, offerte</b></span><span>Express <b>24 h, 9,90 €</b></span><span>Retours <b>14 jours</b></span></p>
   </div>
   <button class="x" id="sClose" aria-label="Fermer">×</button>
 </div>
@@ -551,7 +587,7 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
     <div class="sum"><span>Livraison</span><span class="price" id="dShip"></span></div>
     <div class="sum t"><span>Total</span><span class="price" id="dTot"></span></div>
     <button class="btn block" id="checkout">Commander</button>
-    <p class="tiny">Paiement sécurisé · 3 fois sans frais · Retours 30 jours</p>
+    <p class="tiny">Paiement sécurisé · 3 fois sans frais · Retours 14 jours</p>
   </footer>
 </aside>
 <div class="toast" id="toast" role="status"></div>
@@ -560,15 +596,15 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
 (function(){
 const EXPRESS = 9.90, ENGRAVE = 5;
 const P = {
-  homme:{name:'Naqa Ihram', kick:'Homme · 2 pièces', price:39.90, img:'img/ihram-packshot.jpg',
+  homme:{name:'Naqaa Ihram', kick:'Homme · 2 pièces', price:39.90, img:'img/ihram-packshot.jpg',
     why:"Deux pièces de pur coton d'Égypte qui respirent, ne frottent pas et vous suivront voyage après voyage.",
     sizes:['Standard','Grand'], hint:{Standard:"jusqu'à 1,85 m", Grand:"au-delà de 1,85 m"},
     incl:['Izar et rida, 2 pièces en éponge de coton','Ceinture large porte-documents','Pochette en coton','Carte de la talbiya, arabe, phonétique, français']},
-  junior:{name:'Naqa Junior', kick:'Enfant · 2 pièces', price:19.90, img:'img/pere-fils-2.jpg',
+  junior:{name:'Naqaa Junior', kick:'Enfant · 2 pièces', price:19.90, img:'img/pere-fils-2.jpg',
     why:"Le même coton que son père, coupé à sa taille, pour une première Omra dont il se souviendra.",
     sizes:['4–7 ans','8–11 ans','12–14 ans'], hint:{'4–7 ans':'100 à 125 cm','8–11 ans':'125 à 150 cm','12–14 ans':'150 à 165 cm'},
     incl:['Izar et rida à sa taille','Ceinture élastique douce','Pochette en coton']},
-  telekung:{name:'Naqa Telekung', kick:'Femme · 2 pièces', price:49.90, img:'img/telekung-kaaba.jpg',
+  telekung:{name:'Naqaa Telekung', kick:'Femme · 2 pièces', price:49.90, img:'img/telekung-kaaba.jpg',
     why:"Le vêtement de prière des femmes de Malaisie : un voile long et une jupe ample en coton fin, pour être couverte sans y penser.",
     sizes:['S/M','L/XL'], hint:{'S/M':'du 34 au 40','L/XL':'du 42 au 48'}, colors:['Blanc','Sable'],
     incl:['Voile long jusqu’aux hanches','Jupe ample à taille élastique','Pochette en coton']}
@@ -670,7 +706,7 @@ document.addEventListener('click', e => {
   const b = e.target.closest('[data-open],[data-family],[data-pro]'); if(!b) return;
   if(b.dataset.open){ closeCart(); openSheet(b.dataset.open, b.hasAttribute('data-gift')); }
   else if(b.hasAttribute('data-family')) addFamily();
-  else if(b.hasAttribute('data-pro')) toast('Devis agences : pro@naqaihram.com');
+  else if(b.hasAttribute('data-pro')) toast('Devis agences : pro@naqaaihram.com');
 });
 function toast(t){ const el = $('#toast'); el.textContent = t; el.classList.add('on'); clearTimeout(toast.h); toast.h = setTimeout(() => el.classList.remove('on'), 2600); }
 $('#news').addEventListener('submit', e => { e.preventDefault(); $('#newsMail').value = ''; toast('Merci, vous êtes inscrit.'); });

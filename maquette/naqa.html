@@ -1,0 +1,907 @@
+<title>Naqa Ihram</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Albert+Sans:wght@400;500;600&family=Amiri&display=swap">
+<style>
+/* Layout : boutique Shopify en une page, parcours Pourquoi → Comment → Quoi, tiroir panier, fiche produit à galerie gauche / achat droite */
+:root{
+  --bg:#F2F4F2; --surface:#FFFFFF; --ink:#16211D; --muted:#5A6862; --line:#D8DED9;
+  --accent:#1F5A4E; --accent-ink:#FFFFFF; --sand:#B89C68; --sand-soft:#ECE5D6;
+  --cloth:#FCFCFA; --cloth-shade:#DCE1DC; --cloth-deep:#C3CBC5; --kraft:#C8AE84; --kraft-deep:#A88D61;
+  --sauge:#B9C7B5; --sable:#E3D5B8;
+  --note-bg:#FFF1B8; --note-ink:#3D3410;
+  --f-display:"Marcellus", "Cormorant Garamond", Georgia, serif;
+  --f-body:"Albert Sans", "Helvetica Neue", Arial, sans-serif;
+  --f-ar:"Amiri", "Noto Naskh Arabic", "Geeza Pro", serif;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0E1412; --surface:#151D1A; --ink:#E6ECE9; --muted:#98A7A1; --line:#27332F;
+  --accent:#86C3B2; --accent-ink:#0E1412; --sand:#CDB68A; --sand-soft:#26231C;
+  --cloth:#E8ECE7; --cloth-shade:#BFC7C1; --cloth-deep:#9DA79F; --kraft:#A98F66; --kraft-deep:#866E4A;
+  --sauge:#93A68F; --sable:#C8B892; --note-bg:#3A3214; --note-ink:#F6E7A8; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0E1412; --surface:#151D1A; --ink:#E6ECE9; --muted:#98A7A1; --line:#27332F;
+  --accent:#86C3B2; --accent-ink:#0E1412; --sand:#CDB68A; --sand-soft:#26231C;
+  --cloth:#E8ECE7; --cloth-shade:#BFC7C1; --cloth-deep:#9DA79F; --kraft:#A98F66; --kraft-deep:#866E4A;
+  --sauge:#93A68F; --sable:#C8B892; --note-bg:#3A3214; --note-ink:#F6E7A8; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;line-height:1.12;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.ar{font-family:var(--f-ar);font-weight:400}
+.wrap{max-width:1180px;margin-inline:auto;padding-inline:20px}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.muted{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:15px 28px;font-weight:600;background:var(--accent);color:var(--accent-ink);text-decoration:none;transition:transform .15s ease, opacity .15s}
+.btn:hover{opacity:.92}
+.btn:active{transform:scale(.98)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.btn.block{width:100%}
+.price{font-variant-numeric:tabular-nums}
+
+/* barre d'annonce + en-tête */
+.announce{background:var(--accent);color:var(--accent-ink);font-size:13px;text-align:center;padding:8px 16px;letter-spacing:.02em}
+header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.logo{display:flex;align-items:baseline;gap:10px;text-decoration:none;background:none;border:0;padding:0}
+.logo b{font-family:var(--f-display);font-weight:400;font-size:26px;letter-spacing:.24em}
+.logo .ar{font-size:20px;color:var(--sand)}
+nav.main{display:flex;gap:26px;font-size:14px}
+nav.main button{background:none;border:0;padding:6px 0;color:var(--muted);border-bottom:1px solid transparent}
+nav.main button:hover,nav.main button[aria-current="page"]{color:var(--ink);border-color:var(--ink)}
+.cart-btn{display:flex;align-items:center;gap:8px;background:none;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:14px}
+.cart-btn .count{background:var(--ink);color:var(--bg);border-radius:999px;min-width:20px;height:20px;display:inline-grid;place-items:center;font-size:11px;font-weight:600;padding-inline:5px}
+@media (max-width:760px){ nav.main{display:none} }
+.mnav{display:none;gap:8px;overflow-x:auto;padding-block:0 12px;scrollbar-width:none}
+.mnav button{flex:none;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px}
+@media (max-width:760px){ .mnav{display:flex} }
+
+/* notes de conception */
+.note{display:none;background:var(--note-bg);color:var(--note-ink);border-radius:8px;padding:12px 14px;font-size:13px;line-height:1.5;max-width:62ch}
+.note b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+body.notes .note{display:block}
+.notes-toggle{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;display:flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:11px 16px;font-size:13px;font-weight:600;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+.notes-toggle i{width:9px;height:9px;border-radius:50%;background:var(--note-bg);display:inline-block}
+body.notes .notes-toggle{background:var(--note-bg);color:var(--note-ink)}
+body.notes .notes-toggle i{background:var(--note-ink)}
+.golden{display:none}
+body.notes .golden{display:block}
+.circle-legend{display:flex;flex-wrap:wrap;gap:24px;align-items:center;background:var(--note-bg);color:var(--note-ink);border-radius:var(--r);padding:20px;margin-block:20px}
+.circle-legend svg{flex:none}
+.circle-legend p{max-width:60ch;font-size:14px}
+.circle-legend p+p{margin-top:8px}
+.tag-why,.tag-how,.tag-what{display:none;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border-radius:4px;padding:3px 8px;width:max-content;background:var(--note-bg);color:var(--note-ink)}
+body.notes .tag-why,body.notes .tag-how,body.notes .tag-what{display:inline-block}
+
+/* vues */
+.view[hidden]{display:none!important}
+section.block{padding-block:72px}
+section.block + section.block{border-top:1px solid var(--line)}
+
+/* ACCUEIL : hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding-block:56px 40px}
+.hero > *{min-width:0}
+.hero h1{font-size:clamp(40px,6vw,76px);letter-spacing:-.01em}
+.hero .lead{font-size:18px;color:var(--muted);max-width:44ch;margin-top:22px}
+.hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:26px;font-size:13px;color:var(--muted)}
+.hero .meta span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--sand);margin-right:8px;vertical-align:middle}
+.hero-art{position:relative;aspect-ratio:1/1;max-width:100%;border-radius:18px;background:var(--sand-soft);display:grid;place-items:center;overflow:hidden}
+.hero-art .big-ar{position:absolute;inset:auto 0 -6% 0;text-align:center;font-family:var(--f-ar);font-size:clamp(120px,22vw,250px);line-height:1;color:var(--sand);opacity:.28;pointer-events:none}
+.hero-art svg{position:relative;width:82%;height:auto}
+@media (max-width:860px){ .hero{grid-template-columns:1fr;padding-block:32px} }
+
+/* Pourquoi : manifeste */
+.why{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:start}
+.why > *{min-width:0}
+.why h2{font-size:clamp(30px,3.6vw,46px)}
+.why .text p{font-size:19px;line-height:1.65;max-width:58ch}
+.why .text p + p{margin-top:18px}
+.why .text .quote{font-family:var(--f-ar);font-size:30px;color:var(--accent);line-height:1.6;direction:rtl;text-align:right;margin-top:28px}
+.why .text .tr{font-size:14px;color:var(--muted);font-style:italic}
+@media (max-width:860px){ .why{grid-template-columns:1fr;gap:24px} }
+
+/* Comment : 3 piliers */
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px;margin-bottom:40px}
+.sec-head h2{font-size:clamp(30px,3.6vw,46px);max-width:20ch}
+.sec-head p{max-width:46ch;color:var(--muted)}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pillar{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.pillar svg{width:44px;height:44px}
+.pillar h3{font-size:24px}
+.pillar p{color:var(--muted);font-size:15px}
+.pillar .proof{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);font-size:13px;color:var(--ink)}
+@media (max-width:860px){ .pillars{grid-template-columns:1fr} }
+
+/* Comment : le voyage */
+.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:0;counter-reset:step;position:relative}
+.journey::before{content:"";position:absolute;left:0;right:0;top:15px;height:1px;background:var(--line)}
+.step{position:relative;padding-right:20px;min-width:0}
+.step .dot{width:31px;height:31px;border-radius:50%;background:var(--bg);border:1px solid var(--ink);display:grid;place-items:center;font-size:12px;font-weight:600;font-variant-numeric:tabular-nums;position:relative}
+.step h3{font-size:20px;margin-top:18px}
+.step .where{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--sand);font-weight:600;margin-top:4px}
+.step p{font-size:14px;color:var(--muted);margin-top:8px}
+@media (max-width:860px){
+  .journey{grid-template-columns:1fr;gap:26px}
+  .journey::before{left:15px;right:auto;top:0;bottom:0;width:1px;height:auto}
+  .step{display:grid;grid-template-columns:31px 1fr;column-gap:18px;padding-right:0}
+  .step .dot{grid-row:span 3}
+  .step h3{margin-top:2px}
+}
+
+/* Quoi : collection */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;text-align:left;padding:0;min-width:0;transition:transform .2s ease, box-shadow .2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(0,0,0,.35)}
+.card .pic{aspect-ratio:4/3;background:var(--sand-soft);display:grid;place-items:center;position:relative}
+.card .pic svg{width:76%;height:auto}
+.card .badge{position:absolute;top:12px;left:12px;background:var(--surface);border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.06em;padding:5px 10px}
+.card .body{padding:20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.card h3{font-size:22px}
+.card .sub{font-size:14px;color:var(--muted)}
+.card .row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:14px}
+.card .row .price{font-size:18px;font-weight:600}
+.card .row .go{font-size:13px;font-weight:600;color:var(--accent)}
+@media (max-width:860px){ .grid3{grid-template-columns:1fr} }
+
+/* Quoi : dans la boîte */
+.box{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.box > *{min-width:0}
+.box .art{background:var(--sand-soft);border-radius:18px;aspect-ratio:5/4;display:grid;place-items:center;max-width:100%}
+.box .art svg{width:84%;height:auto}
+.box ul{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:14px}
+.box li{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start}
+.box li svg{width:22px;height:22px;margin-top:2px}
+.box li b{font-weight:600}
+.box li span{display:block;color:var(--muted);font-size:14px}
+@media (max-width:860px){ .box{grid-template-columns:1fr} }
+
+/* réassurance */
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.trust div{display:flex;flex-direction:column;gap:6px;min-width:0}
+.trust b{font-family:var(--f-display);font-weight:400;font-size:20px}
+.trust span{font-size:14px;color:var(--muted)}
+@media (max-width:860px){ .trust{grid-template-columns:1fr 1fr} }
+
+/* FAQ */
+.faq{max-width:780px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:20px 36px 20px 0;font-size:17px;font-weight:500;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:16px;font-size:22px;font-weight:300;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 20px;color:var(--muted);max-width:64ch}
+
+footer.site{border-top:1px solid var(--line);padding-block:48px 100px;font-size:14px;color:var(--muted)}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+footer .cols > *{min-width:0}
+footer h4{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink);margin:0 0 12px;font-weight:600}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+footer .news{display:flex;gap:8px;margin-top:14px;max-width:380px}
+footer .news input{flex:1;min-width:0;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:11px 16px;font:inherit}
+footer .news .btn{padding:11px 18px}
+@media (max-width:760px){ footer .cols{grid-template-columns:1fr} }
+
+/* FICHE PRODUIT */
+.crumbs{font-size:13px;color:var(--muted);padding-block:22px 0}
+.crumbs button{background:none;border:0;padding:0;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.pdp{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;padding-block:24px 72px;align-items:start}
+.pdp > *{min-width:0}
+.gallery .main{background:var(--sand-soft);border-radius:16px;aspect-ratio:1/1;display:grid;place-items:center;max-width:100%}
+.gallery .main svg{width:78%;height:auto}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.thumbs button{background:var(--sand-soft);border:1px solid transparent;border-radius:10px;aspect-ratio:1/1;display:grid;place-items:center;padding:0}
+.thumbs button svg{width:70%;height:auto}
+.thumbs button[aria-pressed="true"]{border-color:var(--ink)}
+.buy{position:sticky;top:96px;display:flex;flex-direction:column;gap:20px}
+.buy h1{font-size:clamp(34px,4vw,48px)}
+.buy .why-line{font-size:17px;color:var(--muted);max-width:44ch}
+.buy .pricing{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.buy .pricing .price{font-size:28px;font-weight:600}
+.buy .pricing .ship{font-size:13px;color:var(--accent);font-weight:600}
+.opt{display:flex;flex-direction:column;gap:10px}
+.opt .lbl{font-size:13px;font-weight:600;display:flex;justify-content:space-between}
+.opt .lbl span{font-weight:400;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:9px 16px;font-size:14px}
+.chips button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.swatches button{display:flex;align-items:center;gap:8px}
+.swatches i{width:16px;height:16px;border-radius:50%;border:1px solid var(--cloth-deep);display:inline-block}
+.qtyrow{display:grid;grid-template-columns:auto 1fr;gap:12px}
+.qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.qty button{background:none;border:0;width:44px;height:50px;font-size:18px}
+.qty output{min-width:24px;text-align:center;font-variant-numeric:tabular-nums}
+.benefits{display:grid;gap:10px;padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);font-size:14px}
+.benefits div{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start}
+.benefits svg{width:18px;height:18px;margin-top:3px}
+.delivery{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px}
+.delivery b{color:var(--ink);font-weight:600}
+.acc details{border-top:1px solid var(--line)}
+.acc details:last-child{border-bottom:1px solid var(--line)}
+.acc summary{list-style:none;cursor:pointer;padding:16px 30px 16px 0;font-weight:600;font-size:15px;position:relative}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";position:absolute;right:2px;top:12px;font-size:20px;font-weight:300}
+.acc details[open] summary::after{content:"−"}
+.acc .in{padding-bottom:18px;color:var(--muted);font-size:15px;display:grid;gap:10px}
+.acc ol,.acc ul{margin:0;padding-left:20px;display:grid;gap:6px}
+.acc table{border-collapse:collapse;width:100%;font-size:14px}
+.acc td{padding:8px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.acc td:first-child{color:var(--ink);font-weight:500;width:42%;padding-right:10px}
+@media (max-width:900px){ .pdp{grid-template-columns:1fr;gap:28px} .buy{position:static} }
+
+.pdp-how{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pdp-how > div{min-width:0;display:flex;flex-direction:column;gap:8px}
+.pdp-how h3{font-size:22px}
+.pdp-how p{color:var(--muted);font-size:15px}
+.pdp-how .k{font-family:var(--f-display);font-size:42px;color:var(--sand);line-height:1}
+@media (max-width:860px){ .pdp-how{grid-template-columns:1fr} }
+
+.sticky-atc{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--surface);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));display:none;align-items:center;gap:12px;transform:translateY(100%);transition:transform .25s ease}
+.sticky-atc.show{transform:none}
+.sticky-atc .t{flex:1;min-width:0;font-size:14px;line-height:1.3}
+.sticky-atc .t b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sticky-atc .btn{padding:12px 20px}
+@media (max-width:900px){ .sticky-atc{display:flex} body.has-sticky .notes-toggle{bottom:calc(84px + env(safe-area-inset-bottom,0px))} }
+
+/* TIROIR PANIER */
+.scrim{position:fixed;inset:0;background:rgba(10,16,14,.45);z-index:70;opacity:0;pointer-events:none;transition:opacity .25s}
+.scrim.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);z-index:80;background:var(--bg);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .3s ease;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.drawer.open{transform:none}
+.drawer header{display:flex;justify-content:space-between;align-items:center;padding:20px;border-bottom:1px solid var(--line)}
+.drawer header h2{font-size:24px}
+.drawer .x{background:none;border:0;font-size:26px;line-height:1;padding:4px 8px}
+.freebar{padding:14px 20px;font-size:13px;background:var(--surface);border-bottom:1px solid var(--line)}
+.freebar .track{height:4px;background:var(--line);border-radius:4px;margin-top:8px;overflow:hidden}
+.freebar .track i{display:block;height:100%;width:100%;background:var(--accent)}
+.lines{flex:1;overflow:auto;padding:8px 20px;display:flex;flex-direction:column}
+.line{display:grid;grid-template-columns:76px 1fr auto;gap:14px;padding-block:16px;border-bottom:1px solid var(--line);align-items:start}
+.line .thumb{background:var(--sand-soft);border-radius:8px;aspect-ratio:1/1;display:grid;place-items:center}
+.line .thumb svg{width:80%;height:auto}
+.line .info{min-width:0;font-size:14px}
+.line .info b{font-weight:600;display:block}
+.line .info span{color:var(--muted);font-size:13px}
+.line .mini{display:flex;align-items:center;gap:4px;margin-top:8px}
+.line .mini button{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:var(--surface);font-size:14px;line-height:1}
+.line .mini output{min-width:22px;text-align:center;font-variant-numeric:tabular-nums;font-size:14px}
+.line .rm{background:none;border:0;font-size:12px;color:var(--muted);text-decoration:underline;padding:0;margin-left:8px}
+.line .lp{font-weight:600;font-size:14px}
+.empty{margin:auto;text-align:center;display:grid;gap:14px;padding:40px 10px;color:var(--muted)}
+.upsell{margin:16px 0 8px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;font-size:13px}
+.upsell .thumb{background:var(--sand-soft);border-radius:8px;aspect-ratio:1/1;display:grid;place-items:center}
+.upsell .thumb svg{width:80%;height:auto}
+.upsell b{display:block;font-size:14px}
+.upsell button{border:1px solid var(--ink);background:none;border-radius:999px;padding:7px 12px;font-size:13px;font-weight:600}
+.drawer footer{padding:18px 20px;border-top:1px solid var(--line);display:grid;gap:10px;background:var(--surface)}
+.drawer footer .sum{display:flex;justify-content:space-between;font-size:14px}
+.drawer footer .sum.total{font-size:18px;font-weight:600}
+.drawer footer small{color:var(--muted);text-align:center}
+
+/* CHECKOUT (maquette) */
+.co{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;padding-block:40px 80px}
+.co > *{min-width:0}
+.co h1{font-size:34px;margin-bottom:6px}
+.co fieldset{border:0;padding:0;margin:28px 0 0;display:grid;gap:12px}
+.co legend{font-weight:600;margin-bottom:10px;font-size:15px}
+.co .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.co input{width:100%;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:14px;font:inherit}
+.co .radio{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid var(--ink);border-radius:8px;padding:14px;background:var(--surface);font-size:14px}
+.co .radio span{color:var(--muted);display:block;font-size:13px}
+.paybtns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.paybtns .btn{border-radius:8px}
+.summary{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;align-self:start;position:sticky;top:96px;display:grid;gap:12px;font-size:14px}
+.summary .sline{display:flex;justify-content:space-between;gap:12px}
+.summary .sline.total{font-size:18px;font-weight:600;padding-top:12px;border-top:1px solid var(--line)}
+.done{text-align:center;max-width:560px;margin:60px auto 100px;display:grid;gap:16px;justify-items:center}
+.done .ar{font-size:44px;color:var(--accent)}
+.done h1{font-size:38px}
+@media (max-width:860px){ .co{grid-template-columns:1fr} .summary{position:static;order:-1} .co .two{grid-template-columns:1fr} }
+
+.toast{position:fixed;left:50%;top:calc(80px + env(safe-area-inset-top,0px));transform:translate(-50%,-20px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-size:14px;z-index:90;opacity:0;transition:all .25s;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (prefers-reduced-motion: reduce){ *{transition:none!important;animation:none!important} }
+</style>
+
+<div class="announce" id="top">Livraison offerte en France · Expédié sous 24 h · Retour 30 jours</div>
+
+<header class="site">
+  <div class="wrap">
+    <div class="bar">
+      <button class="logo" data-go="home" aria-label="Naqa, accueil"><b>NAQA</b><span class="ar" lang="ar">نقاء</span></button>
+      <nav class="main" aria-label="Navigation principale">
+        <button data-go="homme">Ihram Homme</button>
+        <button data-go="junior">Junior</button>
+        <button data-go="telekung">Telekung Femme</button>
+        <button data-go="home" data-anchor="faq">Questions</button>
+      </nav>
+      <button class="cart-btn" id="openCart" aria-label="Ouvrir le panier">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        Panier <span class="count" id="cartCount">0</span>
+      </button>
+    </div>
+    <div class="mnav">
+      <button data-go="homme">Ihram Homme</button>
+      <button data-go="junior">Junior</button>
+      <button data-go="telekung">Telekung Femme</button>
+      <button data-go="home" data-anchor="faq">Questions</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ================= ACCUEIL ================= -->
+<div class="view" id="v-home">
+
+  <div class="wrap golden">
+    <div class="circle-legend">
+      <svg width="132" height="132" viewBox="0 0 132 132" aria-hidden="true">
+        <circle cx="66" cy="66" r="62" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="66" cy="66" r="42" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="66" cy="66" r="21" fill="currentColor" opacity=".15" stroke="currentColor" stroke-width="1.5"/>
+        <text x="66" y="70" text-anchor="middle" font-size="10" font-weight="700" fill="currentColor">POURQUOI</text>
+        <text x="66" y="38" text-anchor="middle" font-size="9" font-weight="700" fill="currentColor">COMMENT</text>
+        <text x="66" y="17" text-anchor="middle" font-size="9" font-weight="700" fill="currentColor">QUOI</text>
+      </svg>
+      <div>
+        <p><b>La structure du site suit le cercle Pourquoi → Comment → Quoi.</b> On commence par ce en quoi la marque croit, on montre ensuite comment le produit le tient, et on présente enfin ce qu'on vend. Le client achète la raison avant l'objet.</p>
+        <p><b>Pourquoi :</b> au miqat, le pèlerin doit penser à Allah, pas à son tissu qui glisse, gratte ou colle. <b>Comment :</b> respirant, anti-frottement, durable. <b>Quoi :</b> trois produits, une boîte, un prix clair, livraison offerte.</p>
+        <p>Chaque section porte son étiquette et une note qui dit à quelle section Shopify elle correspond. Clique sur « Notes » en bas à droite pour les masquer.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="wrap hero" aria-labelledby="h-hero">
+    <div>
+      <span class="tag-why">Pourquoi · accroche</span>
+      <p class="eyebrow" style="margin-top:8px">Ihram 100 % coton d'Égypte</p>
+      <h1 id="h-hero" style="margin-top:14px">Au miqat, tu ne dois penser qu'à Lui.</h1>
+      <p class="lead">Un ihram qui respire, qui ne frotte pas et qui tient tout le voyage. Pour que ton corps se fasse oublier et que ton cœur reste là où il doit être.</p>
+      <div class="cta">
+        <button class="btn" data-go="homme">Choisir mon ihram · 39,90 €</button>
+        <button class="btn ghost" data-scroll="collection">Voir la famille Naqa</button>
+      </div>
+      <div class="meta"><span>Livraison offerte</span><span>Expédié sous 24 h</span><span>Retour 30 jours</span></div>
+      <div class="note" style="margin-top:22px"><b>Section Shopify : Image banner</b>Le titre parle de l'intention, pas du tissu : c'est le Pourquoi. Le sous-titre fait le pont vers le Comment. Le bouton affiche le prix pour supprimer une question avant le clic.</div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="big-ar">نقاء</div>
+      <div id="heroArt"></div>
+    </div>
+  </section>
+
+  <!-- POURQUOI -->
+  <section class="block" aria-labelledby="h-why">
+    <div class="wrap why">
+      <div>
+        <span class="tag-why">Pourquoi</span>
+        <p class="eyebrow" style="margin-top:8px">Ce qui nous fait avancer</p>
+        <h2 id="h-why" style="margin-top:12px">Le blanc qui efface tout le reste.</h2>
+      </div>
+      <div class="text">
+        <p>À l'ihram, le roi et le berger portent le même tissu. Plus de marque, plus de rang, plus d'apparence. Il reste un homme face à son Seigneur.</p>
+        <p>Ce moment, tu l'attends depuis des mois, parfois des années. Il ne devrait jamais être gâché par un tissu qui chauffe, une cuisse irritée au troisième tour ou un drap qui glisse pendant le sa'i. Naqa, c'est la pureté. On fait un ihram qui se fait oublier, pour que tu puisses te donner entièrement à ce que tu es venu chercher.</p>
+        <p class="quote" lang="ar">لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ</p>
+        <p class="tr" style="text-align:right">Me voici, ô Allah, me voici.</p>
+        <div class="note" style="margin-top:20px"><b>Section Shopify : Rich text</b>C'est ici que se construit l'image spirituelle, avant tout argument technique. Un pèlerin qui n'est pas encore parti doit se projeter. Aucune promesse religieuse, seulement le sens de l'ihram et la place du produit à côté.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMENT : 3 piliers -->
+  <section class="block" aria-labelledby="h-how">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="tag-how">Comment · les 3 promesses</span>
+          <p class="eyebrow" style="margin-top:8px">Comment on y arrive</p>
+          <h2 id="h-how" style="margin-top:12px">Trois choses qu'un ihram doit réussir.</h2>
+        </div>
+        <p>La chaleur de La Mecque, des kilomètres à pied et des voyages qui se répètent. On a pensé le tissu pour ces trois épreuves.</p>
+      </div>
+      <div class="pillars">
+        <article class="pillar">
+          <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M22 6c6 8 10 13 10 19a10 10 0 0 1-20 0c0-6 4-11 10-19Z"/><path d="M17 27a5 5 0 0 0 5 5"/></svg>
+          <h3>Ta peau respire</h3>
+          <p>Le coton d'Égypte a des fibres longues et fines. Il absorbe la transpiration et laisse passer l'air, là où le polyester la garde contre la peau. Moins de moiteur, moins d'irritations, même à 40 °C.</p>
+          <p class="proof">100 % coton, sans fibre synthétique ni apprêt parfumé.</p>
+        </article>
+        <article class="pillar">
+          <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M8 30c5-4 9-4 14 0s9 4 14 0"/><path d="M8 22c5-4 9-4 14 0s9 4 14 0"/><path d="M8 14c5-4 9-4 14 0s9 4 14 0"/></svg>
+          <h3>Rien ne frotte</h3>
+          <p>Un tissage éponge doux qui glisse sur la peau au lieu de l'accrocher. Des bords finis à plat, sans grosse couture. Et une ceinture large incluse pour que l'izar tienne sans que tu le resserres à chaque pas.</p>
+          <p class="proof">Pensé pour 7 tours de tawaf et environ 3 km de sa'i.</p>
+        </article>
+        <article class="pillar">
+          <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M30 10a14 14 0 1 0 4 10"/><path d="M34 6v8h-8"/></svg>
+          <h3>Il te suivra longtemps</h3>
+          <p>Les fibres longues boulochent moins et s'adoucissent au lavage au lieu de s'abîmer. Ton ihram de cette Omra peut être celui de la prochaine, puis celui de ton Hajj.</p>
+          <p class="proof">Lavable en machine à 40 °C, séchage rapide au soleil.</p>
+        </article>
+      </div>
+      <div class="note" style="margin-top:20px"><b>Section Shopify : Multicolumn</b>Chaque colonne répond à une objection précise : « je vais avoir chaud », « ça va me brûler entre les cuisses », « je l'utiliserai une fois ». La dernière ligne en pointillés est la preuve concrète. Remplace les chiffres par ceux de ton fournisseur dès que tu les as.</div>
+    </div>
+  </section>
+
+  <!-- COMMENT : le voyage -->
+  <section class="block" aria-labelledby="h-journey">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="tag-how">Comment · preuve par le voyage</span>
+          <p class="eyebrow" style="margin-top:8px">Avec toi du début à la fin</p>
+          <h2 id="h-journey" style="margin-top:12px">Du miqat au retour.</h2>
+        </div>
+        <p>Chaque étape de la Omra met le tissu à l'épreuve. Voici ce que Naqa fait à chacune.</p>
+      </div>
+      <ol class="journey" style="list-style:none;padding:0;margin:0">
+        <li class="step"><span class="dot">1</span><h3>Le départ</h3><p class="where">France</p><p>Plié dans sa pochette, il tient dans ton bagage cabine. Tu peux le revêtir avant l'embarquement ou dans l'avion.</p></li>
+        <li class="step"><span class="dot">2</span><h3>Le miqat</h3><p class="where">L'intention</p><p>Deux pièces qui se nouent en une minute, même dans un siège d'avion. La ceinture garde tes papiers à portée de main.</p></li>
+        <li class="step"><span class="dot">3</span><h3>Le tawaf</h3><p class="where">Autour de la Kaaba</p><p>Dans la foule et la chaleur, le coton respire et l'épaule droite reste découverte sans que le rida glisse.</p></li>
+        <li class="step"><span class="dot">4</span><h3>Le sa'i</h3><p class="where">Safa et Marwa</p><p>Sept trajets, environ 3 km. C'est là que les cuisses souffrent. L'éponge douce et l'izar bien tenu évitent le frottement.</p></li>
+        <li class="step"><span class="dot">5</span><h3>Le retour</h3><p class="where">À la maison</p><p>Un lavage, et il retrouve sa place dans l'armoire, prêt pour le prochain appel.</p></li>
+      </ol>
+      <div class="note" style="margin-top:24px"><b>Section Shopify : Multirow ou section personnalisée</b>La numérotation est justifiée : c'est l'ordre réel des rites. Le client se voit dans son voyage et chaque bénéfice du produit est attaché à un moment précis. C'est plus parlant qu'une liste de caractéristiques.</div>
+    </div>
+  </section>
+
+  <!-- QUOI : collection -->
+  <section class="block" id="collection" aria-labelledby="h-what">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="tag-what">Quoi · la collection</span>
+          <p class="eyebrow" style="margin-top:8px">La famille Naqa</p>
+          <h2 id="h-what" style="margin-top:12px">Un tissu, trois façons de le porter.</h2>
+        </div>
+        <p>Pour toi, pour ton fils et pour celle qui part à tes côtés. Livraison offerte sur toute la collection.</p>
+      </div>
+      <div class="grid3" id="collectionGrid"></div>
+      <div class="note" style="margin-top:20px"><b>Section Shopify : Featured collection</b>Trois produits seulement : moins de choix, décision plus rapide. Le produit homme est mis en avant avec un badge, c'est ton produit phare et ta meilleure marge. Le Junior et le Telekung servent à faire monter le panier moyen d'une famille.</div>
+    </div>
+  </section>
+
+  <!-- QUOI : dans la boîte -->
+  <section class="block" aria-labelledby="h-boxed">
+    <div class="wrap box">
+      <div class="art" id="boxArt" aria-hidden="true"></div>
+      <div>
+        <span class="tag-what">Quoi · l'expérience de déballage</span>
+        <p class="eyebrow" style="margin-top:8px">Tout inclus</p>
+        <h2 id="h-boxed" style="font-size:clamp(30px,3.6vw,44px);margin-top:12px">Ouvre la boîte, et tu es prêt à partir.</h2>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m5 12 5 5 9-10"/></svg><div><b>L'ihram deux pièces</b><span>Izar pour la taille, rida pour les épaules.</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m5 12 5 5 9-10"/></svg><div><b>La ceinture porte-documents</b><span>Passeport, carte et téléphone restent avec toi.</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m5 12 5 5 9-10"/></svg><div><b>La pochette en coton</b><span>Pour le voyage aller, puis pour le ranger au retour.</span></div></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m5 12 5 5 9-10"/></svg><div><b>La carte de la talbiya</b><span>En arabe, en phonétique et en français, à glisser dans la ceinture.</span></div></li>
+        </ul>
+        <div class="note" style="margin-top:20px"><b>Section Shopify : Image with text</b>« Tout inclus » justifie le prix face aux ihrams à 15 € sur Amazon. La carte talbiya ne coûte presque rien et c'est elle qui fait les vidéos de déballage. Coût emballage estimé : 1,50 à 3 € par commande.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- réassurance -->
+  <section class="block" aria-label="Nos engagements">
+    <div class="wrap">
+      <div class="trust">
+        <div><b>Livraison offerte</b><span>Partout en France, sans minimum d'achat.</span></div>
+        <div><b>Expédié sous 24 h</b><span>Commande avant 14 h, départ le jour même.</span></div>
+        <div><b>Retour 30 jours</b><span>Non porté, remboursé sans discussion.</span></div>
+        <div><b>Paiement sécurisé</b><span>Carte, Apple Pay, Shop Pay, paiement en 3 fois.</span></div>
+      </div>
+      <div class="note" style="margin-top:20px"><b>Section Shopify : Multicolumn sans image</b>Placée juste après le Quoi, au moment où le client hésite. Ces quatre promesses doivent être vraies le jour du lancement : règle tes paramètres d'expédition et ta politique de retour en conséquence.</div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" id="faq" aria-labelledby="h-faq">
+    <div class="wrap">
+      <p class="eyebrow">Avant de commander</p>
+      <h2 id="h-faq" style="font-size:clamp(30px,3.6vw,44px);margin:12px 0 24px">Les questions qu'on nous pose.</h2>
+      <div class="faq">
+        <details><summary>L'éponge, ce n'est pas trop chaud ?</summary><p>C'est le coton qui compte, pas l'épaisseur. Une éponge en coton absorbe la sueur et sèche vite, elle garde la peau plus fraîche qu'un tissu fin en polyester qui colle.</p></details>
+        <details><summary>Une ceinture, c'est permis en ihram ?</summary><p>Selon l'avis de la majorité des savants, oui : la ceinture et la sacoche ne sont pas des vêtements cousus à la forme du corps. En cas de doute pour ta situation, demande à l'imam qui t'accompagne.</p></details>
+        <details><summary>Le telekung convient-il pour la Omra ?</summary><p>Oui. En état d'ihram, la femme porte un vêtement ample et couvrant de la couleur de son choix, le visage et les mains découverts. Le telekung couvre tout le corps et laisse le visage libre, sans gants ni niqab.</p></details>
+        <details><summary>Mon fils peut-il faire la Omra en ihram ?</summary><p>Oui, la Omra de l'enfant est valable et il en reçoit la récompense. Le Naqa Junior reprend les mêmes deux pièces, à sa taille, pour qu'il ne trébuche pas dans un tissu trop long.</p></details>
+        <details><summary>Quand faut-il commander ?</summary><p>Au moins deux semaines avant le départ. Tu auras le temps de le laver une fois : le coton devient plus doux et tu sauras le nouer les yeux fermés le jour J.</p></details>
+        <details><summary>Je peux le laver sur place ?</summary><p>Oui, à la main avec un savon sans parfum. Avec la chaleur, il sèche en quelques heures sur un balcon ou une chaise d'hôtel.</p></details>
+      </div>
+      <div class="note" style="margin-top:20px"><b>Section Shopify : Collapsible content</b>Chaque question est une objection réelle qui bloque l'achat. Les réponses religieuses restent prudentes et renvoient vers un imam : tu vends un tissu, pas une fatwa.</div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= FICHE PRODUIT ================= -->
+<div class="view" id="v-product" hidden>
+  <div class="wrap">
+    <p class="crumbs"><button data-go="home">Accueil</button> / <span id="crumbName"></span></p>
+    <div class="pdp">
+      <div class="gallery">
+        <div class="main" id="galMain" aria-live="polite"></div>
+        <div class="thumbs" id="galThumbs"></div>
+        <div class="note" style="margin-top:16px"><b>Galerie produit</b>Trois visuels minimum : le produit plié, le détail du tissu (pour toucher avec les yeux), le contenu de la boîte. Ajoute idéalement une photo portée et une courte vidéo de nouage.</div>
+      </div>
+      <div class="buy">
+        <div>
+          <span class="tag-why">Pourquoi en une phrase</span>
+          <p class="eyebrow" id="pSub" style="margin-top:6px"></p>
+          <h1 id="pName" style="margin-top:8px"></h1>
+          <p class="why-line" id="pWhy" style="margin-top:12px"></p>
+        </div>
+        <div class="pricing"><span class="price" id="pPrice"></span><span class="ship">Livraison offerte</span></div>
+
+        <div class="opt" id="optColor" hidden>
+          <p class="lbl">Couleur <span id="colorName"></span></p>
+          <div class="chips swatches" id="colorChips"></div>
+        </div>
+        <div class="opt">
+          <p class="lbl">Taille <span id="sizeHint"></span></p>
+          <div class="chips" id="sizeChips"></div>
+        </div>
+
+        <div class="qtyrow">
+          <div class="qty"><button id="qMinus" aria-label="Retirer un">−</button><output id="qVal">1</output><button id="qPlus" aria-label="Ajouter un">+</button></div>
+          <button class="btn block" id="addBtn">Ajouter au panier</button>
+        </div>
+        <p class="delivery"><span>Commande avant 14 h : <b>expédié aujourd'hui</b></span><span>Reçu en <b>2 à 4 jours</b></span><span>Retour <b>30 jours</b></span></p>
+        <div class="note"><b>Bloc achat (Buy buttons)</b>Prix, livraison offerte, délai et retour sont visibles sans scroller. La taille est présélectionnée pour qu'aucun clic ne soit bloqué. Le délai « avant 14 h » se met en place avec une app de date de livraison ou un bloc texte.</div>
+
+        <div>
+          <span class="tag-how">Comment · bénéfices</span>
+          <div class="benefits" id="pBenefits" style="margin-top:6px"></div>
+        </div>
+
+        <div class="acc">
+          <span class="tag-what">Quoi · détails</span>
+          <details open><summary>Dans la boîte</summary><div class="in"><ul id="pIncl"></ul></div></details>
+          <details><summary>Comment le porter</summary><div class="in"><ol id="pWear"></ol></div></details>
+          <details><summary>Matière et dimensions</summary><div class="in"><table><tbody id="pSpecs"></tbody></table></div></details>
+          <details><summary>Entretien</summary><div class="in"><p>Lave-le une fois avant le départ, il gagne en douceur. Machine à 40 °C, sans adoucissant parfumé. Séchage à l'air libre. Pas de javel, elle jaunit le coton.</p></div></details>
+          <details><summary>Livraison et retours</summary><div class="in"><p>Livraison offerte en Colissimo, suivi par e-mail. Expédition sous 24 h ouvrées. Tu as 30 jours pour nous le retourner s'il n'a pas été porté.</p></div></details>
+        </div>
+        <div class="note"><b>Blocs Collapsible tab</b>L'ordre suit les questions du client : qu'est-ce que je reçois, comment je le mets, en quoi c'est fait, comment je l'entretiens, quand je le reçois. Les dimensions sont à confirmer avec ton fournisseur.</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="block" aria-labelledby="h-pdphow">
+    <div class="wrap">
+      <span class="tag-how">Comment · développé</span>
+      <h2 id="h-pdphow" style="font-size:clamp(28px,3.4vw,40px);margin:10px 0 36px;max-width:22ch">Pensé pour ce que ton corps va vivre là-bas.</h2>
+      <div class="pdp-how" id="pdpHow"></div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="h-also">
+    <div class="wrap">
+      <span class="tag-what">Quoi · vente croisée</span>
+      <h2 id="h-also" style="font-size:clamp(26px,3vw,36px);margin:10px 0 28px">Tu pars en famille ?</h2>
+      <div class="grid3" id="alsoGrid"></div>
+      <div class="note" style="margin-top:20px"><b>Section Shopify : Related products</b>On ne propose que les deux autres produits de la famille. Un pèlerin part rarement seul : c'est le levier le plus simple pour passer de 39,90 € à 60 ou 110 € par commande.</div>
+    </div>
+  </section>
+
+  <div class="sticky-atc" id="stickyAtc"><div class="t"><b id="sName"></b><span id="sPrice" class="price muted"></span></div><button class="btn" id="sAdd">Ajouter</button></div>
+</div>
+
+<!-- ================= CHECKOUT ================= -->
+<div class="view" id="v-checkout" hidden>
+  <div class="wrap">
+    <div class="co" id="coForm">
+      <form id="checkoutForm" novalidate>
+        <p class="crumbs" style="padding:0 0 18px"><button type="button" data-go="home">Boutique</button> / Paiement</p>
+        <h1>Paiement</h1>
+        <p class="muted">Paiement express</p>
+        <div class="paybtns" style="margin-top:10px">
+          <button type="button" class="btn" data-pay>Shop Pay</button>
+          <button type="button" class="btn" data-pay style="background:var(--ink);color:var(--bg)">Apple Pay</button>
+        </div>
+        <fieldset><legend>Contact</legend><input id="coEmail" type="email" placeholder="E-mail" autocomplete="email" value="youssef.exemple@mail.fr"></fieldset>
+        <fieldset><legend>Livraison</legend>
+          <div class="two"><input id="coFirst" placeholder="Prénom" value="Youssef"><input id="coLast" placeholder="Nom" value="Exemple"></div>
+          <input id="coAddr" placeholder="Adresse" value="12 rue des Lilas">
+          <div class="two"><input id="coZip" placeholder="Code postal" value="69003"><input id="coCity" placeholder="Ville" value="Lyon"></div>
+        </fieldset>
+        <fieldset><legend>Mode d'expédition</legend>
+          <div class="radio"><div>Colissimo suivi<span>2 à 4 jours ouvrés</span></div><b>Offert</b></div>
+        </fieldset>
+        <fieldset><legend>Paiement</legend>
+          <input id="coCard" placeholder="Numéro de carte" value="Exemple : 4242 4242 4242 4242" readonly>
+        </fieldset>
+        <button class="btn block" style="margin-top:24px" type="submit" id="payBtn">Payer</button>
+        <div class="note" style="margin-top:16px"><b>Checkout Shopify</b>Le checkout est géré par Shopify et peu personnalisable sur l'abonnement de base. Tu peux y mettre ton logo, tes couleurs et activer Shop Pay. Champs préremplis ici à titre d'exemple : rien n'est envoyé.</div>
+      </form>
+      <aside class="summary" id="coSummary" aria-label="Récapitulatif"></aside>
+    </div>
+    <div class="done" id="coDone" hidden>
+      <span class="ar" lang="ar">عمرة مقبولة</span>
+      <h1>Commande confirmée.</h1>
+      <p class="muted">Ceci est une maquette : aucun paiement n'a été effectué. Dans la vraie boutique, le client reçoit ici son numéro de commande et un e-mail de confirmation.</p>
+      <p>Que ta Omra soit acceptée.</p>
+      <button class="btn" data-go="home">Retour à la boutique</button>
+      <div class="note"><b>Page de remerciement et e-mail</b>Le « Omra maqboula » est le seul moment où la marque se permet une invocation. Dans l'e-mail de confirmation, ajoute une vidéo « comment nouer ton ihram » : moins de SAV, plus de confiance.</div>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <div class="logo"><b>NAQA</b><span class="ar" lang="ar">نقاء</span></div>
+        <p style="margin-top:12px;max-width:40ch">Des ihrams en coton d'Égypte pour vivre la Omra et le Hajj l'esprit libre.</p>
+        <form class="news" id="newsForm"><input id="newsEmail" type="email" placeholder="Ton e-mail" aria-label="Ton e-mail"><button class="btn" type="submit">S'inscrire</button></form>
+        <p style="margin-top:8px;font-size:13px">Les conseils de préparation, avant ton départ.</p>
+      </div>
+      <div><h4>Boutique</h4><ul><li>Ihram Homme</li><li>Naqa Junior</li><li>Telekung Femme</li></ul></div>
+      <div><h4>Aide</h4><ul><li>Livraison</li><li>Retours</li><li>Contact : bonjour@naqaihram.com</li></ul></div>
+    </div>
+    <div class="note" style="margin-top:24px"><b>Footer et e-mails</b>L'inscription capte les pèlerins des mois avant le départ. Séquence conseillée : J-30 checklist bagage, J-14 rappel de commande, J-3 vidéo de nouage. C'est là que se fait la deuxième vente.</div>
+  </div>
+</footer>
+
+<!-- panier -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Panier" aria-hidden="true">
+  <header><h2>Ton panier</h2><button class="x" id="closeCart" aria-label="Fermer le panier">×</button></header>
+  <div class="freebar">La livraison est offerte sur ta commande.<div class="track"><i></i></div></div>
+  <div class="lines" id="cartLines"></div>
+  <footer id="cartFoot">
+    <div class="sum"><span>Sous-total</span><span class="price" id="cSub"></span></div>
+    <div class="sum"><span>Livraison</span><span>Offerte</span></div>
+    <div class="sum total"><span>Total</span><span class="price" id="cTot"></span></div>
+    <button class="btn block" id="toCheckout">Passer au paiement</button>
+    <small>Paiement sécurisé · Retour 30 jours</small>
+    <div class="note"><b>Tiroir panier</b>Le panier s'ouvre sur le côté : le client ne quitte pas la page. La vente croisée apparaît seulement si l'autre produit n'est pas déjà dans le panier. Marge estimée sur l'ihram homme : 39,90 € moins 6 € d'achat, environ 6 € de livraison, 2,50 € d'emballage et 1 € de frais de paiement, soit environ 24 € avant publicité.</div>
+  </footer>
+</aside>
+
+<button class="notes-toggle" id="notesToggle" aria-pressed="true"><i></i><span>Notes</span></button>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+const P = {
+  homme:{ id:'homme', name:'Naqa Ihram', short:'Ihram Homme', sub:'Homme · 2 pièces · tout inclus', price:39.90, badge:'Le plus choisi',
+    why:"Deux pièces de coton d'Égypte qui respirent et ne frottent pas, pour que tu ne penses plus à ce que tu portes.",
+    sizes:['Standard','Grand'], sizeHint:{Standard:'jusqu’à 1,85 m', Grand:'au-delà de 1,85 m'},
+    incl:['Izar (bas) et rida (haut)','Ceinture large porte-documents','Pochette de voyage en coton','Carte de la talbiya'],
+    wear:["Après le ghusl, enroule l'izar autour de la taille, côté droit sous le gauche.","Fixe-le avec la ceinture, sans serrer. Elle garde aussi tes papiers.","Pose le rida sur les épaules. Pour le tawaf, passe-le sous l'aisselle droite.","Au miqat, formule ton intention et commence la talbiya."],
+    specs:[['Composition','100 % coton d’Égypte, tissage éponge'],['Izar','115 × 230 cm (Grand : 125 × 250 cm)'],['Rida','115 × 230 cm (Grand : 125 × 250 cm)'],['Couleur','Blanc naturel, sans azurant'],['Coutures','Bords ourlés à plat, aucune couture de forme']],
+    how:[['40 °C','Respire','Le coton évacue l’humidité. Tu restes au sec pendant le tawaf, même aux heures chaudes.'],['3 km','Sans frottement','L’éponge douce et l’izar bien tenu protègent l’intérieur des cuisses pendant le sa’i.'],['+1','Prêt pour la suite','Lavable et résistant, il t’accompagnera pour ta prochaine Omra ou ton Hajj.']],
+    tone:'cloth', band:'sand' },
+  junior:{ id:'junior', name:'Naqa Junior', short:'Junior', sub:'Enfant · 2 pièces', price:19.90, badge:'4 à 14 ans',
+    why:"Le même ihram que son père, à sa taille. Pour que sa première Omra reste un souvenir, pas une gêne.",
+    sizes:['4–7 ans','8–11 ans','12–14 ans'], sizeHint:{'4–7 ans':'environ 100 à 125 cm','8–11 ans':'environ 125 à 150 cm','12–14 ans':'environ 150 à 165 cm'},
+    incl:['Izar et rida à sa taille','Petite ceinture élastique douce','Pochette en coton'],
+    wear:["Enroule l'izar autour de sa taille et fixe-le avec la ceinture élastique.","Pose le rida sur ses épaules, sans le croiser trop serré.","Pour les plus petits, c'est le parent qui formule l'intention à sa place."],
+    specs:[['Composition','100 % coton d’Égypte, éponge légère'],['Dimensions','de 80 × 150 cm à 100 × 190 cm selon la taille'],['Ceinture','élastique, sans boucle métallique'],['Couleur','Blanc naturel']],
+    how:[['Doux','Peau fragile','Plus léger que l’ihram adulte, pour une peau d’enfant qui chauffe vite.'],['Court','Ne traîne pas','Longueur adaptée pour qu’il marche et coure sans trébucher.'],['Élastique','Tient tout seul','La ceinture garde l’izar en place sans que tu le rattaches à chaque tour.']],
+    tone:'cloth', band:'sauge', scale:.78 },
+  telekung:{ id:'telekung', name:'Naqa Telekung', short:'Telekung Femme', sub:'Femme · 2 pièces', price:49.90, badge:'Inspiré de Malaisie',
+    why:"Le vêtement de prière des femmes de Malaisie : un voile long et une jupe ample, pour être couverte sans y penser.",
+    sizes:['S/M','L/XL'], sizeHint:{'S/M':'du 34 au 40','L/XL':'du 42 au 48'},
+    colors:[['Blanc','--cloth'],['Sable','--sable'],['Sauge','--sauge']],
+    incl:['Voile long (telekung) qui couvre jusqu’aux hanches','Jupe ample à taille élastique','Pochette en coton'],
+    wear:["Enfile la jupe, la taille élastique se règle seule.","Passe le voile par la tête : le visage reste découvert, comme l’exige l’ihram.","Les mains restent libres, sans gants."],
+    specs:[['Composition','100 % coton d’Égypte, tissage fin'],['Voile','longueur dos 110 cm'],['Jupe','longueur 105 cm, taille élastique'],['Opacité','double épaisseur au niveau de la poitrine']],
+    how:[['Fin','Léger','Un coton fin et opaque, plus frais qu’une abaya synthétique sous le soleil.'],['2','Pièces','Voile et jupe séparés : tu ajustes, tu laves, tu combines facilement.'],['0','Gêne','Le visage et les mains restent découverts, en accord avec l’ihram.']],
+    tone:'color', band:'sand' }
+};
+const ORDER=['homme','junior','telekung'];
+const euro = n => n.toFixed(2).replace('.',',')+' €';
+const $ = s => document.querySelector(s);
+const cssVar = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+/* ---------- illustrations SVG ---------- */
+let uid=0;
+function terry(id){
+  return `<pattern id="${id}" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" style="fill:var(--cloth-shade)"/><circle cx="6" cy="6" r="1" style="fill:var(--cloth-shade)"/></pattern>`;
+}
+function folded(opt={}){
+  const id='t'+(++uid), s=opt.scale||1, fill=opt.fill||'var(--cloth)', band=opt.band||'var(--sand)';
+  const W=280*s, H=34*s, x0=(400-W)/2, layers=opt.layers||4, baseY=250;
+  let g='';
+  for(let i=0;i<layers;i++){
+    const y=baseY-(i+1)*H, off=(i%2?6:-4)*s;
+    g+=`<rect x="${x0+off}" y="${y}" width="${W}" height="${H-2}" rx="${12*s}" style="fill:${fill};stroke:var(--cloth-deep)" stroke-width="1"/>`;
+    g+=`<rect x="${x0+off}" y="${y}" width="${W}" height="${H-2}" rx="${12*s}" fill="url(#${id})" opacity=".55"/>`;
+    g+=`<path d="M${x0+off+14*s} ${y+H-6} H${x0+off+W-14*s}" style="stroke:var(--cloth-deep)" stroke-width="1" opacity=".6"/>`;
+  }
+  const top=baseY-layers*H, bx=200-26*s;
+  g+=`<rect x="${bx}" y="${top-4}" width="${52*s}" height="${layers*H+6}" style="fill:${band}" opacity=".95"/>`;
+  g+=`<text x="200" y="${top+layers*H/2+4}" text-anchor="middle" font-size="${12*s}" letter-spacing="3" style="fill:var(--ink);font-family:var(--f-display)" transform="rotate(-90 200 ${top+layers*H/2})">NAQA</text>`;
+  return `<svg viewBox="0 0 400 300" role="img" aria-label="${opt.label||'Ihram plié'}"><defs>${terry(id)}</defs><ellipse cx="200" cy="258" rx="${160*s}" ry="10" style="fill:var(--ink)" opacity=".08"/>${g}</svg>`;
+}
+function detail(fill){
+  const id='d'+(++uid);
+  let loops='';
+  for(let r=0;r<9;r++) for(let c=0;c<9;c++){
+    const x=110+c*20+(r%2?10:0), y=60+r*20;
+    loops+=`<path d="M${x-5} ${y+4} q5 -12 10 0" fill="none" style="stroke:var(--cloth-deep)" stroke-width="1.4"/>`;
+  }
+  return `<svg viewBox="0 0 400 300" role="img" aria-label="Détail du tissage éponge"><defs><clipPath id="${id}"><circle cx="200" cy="150" r="118"/></clipPath></defs><circle cx="200" cy="150" r="118" style="fill:${fill||'var(--cloth)'};stroke:var(--cloth-deep)" stroke-width="1.5"/><g clip-path="url(#${id})">${loops}</g><text x="200" y="292" text-anchor="middle" font-size="12" letter-spacing="2" style="fill:var(--muted);font-family:var(--f-body)">FIBRE LONGUE · TISSAGE ÉPONGE</text></svg>`;
+}
+function boxed(fill){
+  return `<svg viewBox="0 0 400 300" role="img" aria-label="Contenu de la boîte">
+  <ellipse cx="200" cy="268" rx="170" ry="10" style="fill:var(--ink)" opacity=".08"/>
+  <path d="M60 120 H300 V262 H60 Z" style="fill:var(--kraft)"/>
+  <path d="M300 120 L340 100 V242 L300 262 Z" style="fill:var(--kraft-deep)"/>
+  <path d="M60 120 L100 100 H340 L300 120 Z" style="fill:var(--kraft-deep)" opacity=".75"/>
+  <rect x="78" y="108" width="210" height="34" rx="10" style="fill:${fill||'var(--cloth)'};stroke:var(--cloth-deep)"/>
+  <rect x="86" y="86" width="196" height="30" rx="10" style="fill:${fill||'var(--cloth)'};stroke:var(--cloth-deep)"/>
+  <rect x="164" y="84" width="38" height="58" style="fill:var(--sand)"/>
+  <g transform="rotate(-8 300 70)"><rect x="236" y="34" width="116" height="74" rx="4" style="fill:var(--surface);stroke:var(--line)"/>
+  <text x="294" y="66" text-anchor="middle" font-size="16" style="fill:var(--accent);font-family:var(--f-ar)">لبيك اللهم لبيك</text>
+  <text x="294" y="88" text-anchor="middle" font-size="8" letter-spacing="1.5" style="fill:var(--muted);font-family:var(--f-body)">TALBIYA</text></g>
+  <rect x="20" y="170" width="70" height="88" rx="12" style="fill:var(--sand-soft);stroke:var(--sand)"/><path d="M20 188 H90" style="stroke:var(--sand)"/>
+  <text x="55" y="222" text-anchor="middle" font-size="9" letter-spacing="1.5" style="fill:var(--ink);font-family:var(--f-body)">POCHETTE</text>
+  <text x="180" y="210" text-anchor="middle" font-size="22" letter-spacing="8" style="fill:var(--ink);font-family:var(--f-display)" opacity=".75">NAQA</text>
+  </svg>`;
+}
+function art(p, view, color){
+  const fill = p.colors ? `var(${(p.colors.find(c=>c[0]===color)||p.colors[0])[1]})` : 'var(--cloth)';
+  const band = p.band==='sauge' ? 'var(--sauge)' : 'var(--sand)';
+  if(view==='detail') return detail(fill);
+  if(view==='box') return boxed(fill);
+  return folded({scale:p.scale||1, fill, band, layers:p.id==='junior'?3:4, label:p.name});
+}
+
+/* ---------- état ---------- */
+let cart=[];
+try{ cart=JSON.parse(localStorage.getItem('naqa-cart')||'[]')||[]; }catch(e){ cart=[]; }
+const save=()=>{ try{ localStorage.setItem('naqa-cart',JSON.stringify(cart)); }catch(e){} };
+let cur={ p:'homme', size:null, color:null, qty:1, view:'fold' };
+
+/* ---------- accueil ---------- */
+$('#heroArt').innerHTML = folded({scale:1.05, label:'Ihram Naqa plié'});
+$('#boxArt').innerHTML = boxed();
+function card(p){
+  return `<button class="card" data-go="${p.id}">
+    <div class="pic">${p.badge?`<span class="badge">${p.badge}</span>`:''}${art(p,'fold', p.colors?p.colors[0][0]:null)}</div>
+    <div class="body"><h3>${p.name}</h3><p class="sub">${p.sub}</p>
+    <div class="row"><span class="price">${euro(p.price)}</span><span class="go">Découvrir →</span></div></div></button>`;
+}
+$('#collectionGrid').innerHTML = ORDER.map(k=>card(P[k])).join('');
+
+/* ---------- fiche produit ---------- */
+function renderProduct(){
+  const p=P[cur.p];
+  $('#crumbName').textContent=p.name;
+  $('#pSub').textContent=p.sub; $('#pName').textContent=p.name; $('#pWhy').textContent=p.why;
+  $('#pPrice').textContent=euro(p.price); $('#sName').textContent=p.name;
+  // couleurs
+  if(p.colors){
+    $('#optColor').hidden=false;
+    $('#colorChips').innerHTML=p.colors.map(([n,v])=>`<button aria-pressed="${n===cur.color}" data-color="${n}"><i style="background:var(${v})"></i>${n}</button>`).join('');
+    $('#colorName').textContent=cur.color;
+  } else $('#optColor').hidden=true;
+  // tailles
+  $('#sizeChips').innerHTML=p.sizes.map(s=>`<button aria-pressed="${s===cur.size}" data-size="${s}">${s}</button>`).join('');
+  $('#sizeHint').textContent=p.sizeHint[cur.size]||'';
+  $('#qVal').textContent=cur.qty;
+  $('#sPrice').textContent=euro(p.price*cur.qty)+' · '+cur.size+(cur.color?' · '+cur.color:'');
+  // galerie
+  const views=[['fold','Plié'],['detail','Tissu'],['box','Boîte']];
+  $('#galMain').innerHTML=art(p,cur.view,cur.color);
+  $('#galThumbs').innerHTML=views.map(([v,l])=>`<button aria-pressed="${v===cur.view}" data-view="${v}" aria-label="Voir : ${l}">${art(p,v,cur.color)}</button>`).join('');
+  // bénéfices
+  const tick='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m5 12 5 5 9-10"/></svg>';
+  $('#pBenefits').innerHTML=p.how.map(h=>`<div>${tick}<span><b>${h[1]}.</b> ${h[2]}</span></div>`).join('');
+  $('#pIncl').innerHTML=p.incl.map(i=>`<li>${i}</li>`).join('');
+  $('#pWear').innerHTML=p.wear.map(i=>`<li>${i}</li>`).join('');
+  $('#pSpecs').innerHTML=p.specs.map(s=>`<tr><td>${s[0]}</td><td>${s[1]}</td></tr>`).join('');
+  $('#pdpHow').innerHTML=p.how.map(h=>`<div><span class="k">${h[0]}</span><h3>${h[1]}</h3><p>${h[2]}</p></div>`).join('');
+  $('#alsoGrid').innerHTML=ORDER.filter(k=>k!==p.id).map(k=>card(P[k])).join('') + `<div class="card" style="justify-content:center;padding:28px;cursor:default"><p class="eyebrow">Pack famille</p><h3 style="margin-top:8px">Les trois ensemble : ${euro(P.homme.price+P.junior.price+P.telekung.price)}</h3><p class="sub" style="margin-top:8px">Une seule livraison, offerte. Une seule boîte à ouvrir ensemble avant le départ.</p><button class="btn" style="margin-top:18px" id="addFamily">Ajouter les trois</button></div>`;
+}
+
+/* ---------- panier ---------- */
+function keyOf(l){ return l.id+'|'+l.size+'|'+(l.color||''); }
+function add(id,size,color,qty){
+  const k=keyOf({id,size,color}); const f=cart.find(l=>keyOf(l)===k);
+  if(f) f.qty+=qty; else cart.push({id,size,color,qty});
+  save(); renderCart();
+}
+function renderCart(){
+  const n=cart.reduce((a,l)=>a+l.qty,0);
+  $('#cartCount').textContent=n;
+  const total=cart.reduce((a,l)=>a+P[l.id].price*l.qty,0);
+  if(!cart.length){
+    $('#cartLines').innerHTML=`<div class="empty"><p>Ton panier est vide.</p><button class="btn" data-go="homme">Voir l'ihram Naqa</button></div>`;
+  } else {
+    let html=cart.map((l,i)=>{const p=P[l.id];return `<div class="line"><div class="thumb">${art(p,'fold',l.color)}</div>
+      <div class="info"><b>${p.name}</b><span>${l.size}${l.color?' · '+l.color:''}</span>
+      <div class="mini"><button data-dec="${i}" aria-label="Retirer un">−</button><output>${l.qty}</output><button data-inc="${i}" aria-label="Ajouter un">+</button><button class="rm" data-rm="${i}">Retirer</button></div></div>
+      <span class="lp price">${euro(p.price*l.qty)}</span></div>`}).join('');
+    const has=new Set(cart.map(l=>l.id));
+    const sug = !has.has('junior') ? 'junior' : !has.has('telekung') ? 'telekung' : !has.has('homme') ? 'homme' : null;
+    if(sug){ const p=P[sug]; html+=`<div class="upsell"><div class="thumb">${art(p,'fold',p.colors?p.colors[0][0]:null)}</div><div><b>${p.name}</b>${sug==='junior'?'Tu pars avec ton fils ?':sug==='telekung'?'Elle part avec toi ?':'Pour toi aussi ?'} ${euro(p.price)}</div><button data-up="${sug}">Ajouter</button></div>`; }
+    $('#cartLines').innerHTML=html;
+  }
+  $('#cSub').textContent=euro(total); $('#cTot').textContent=euro(total);
+  $('#cartFoot').style.display=cart.length?'':'none';
+  renderSummary();
+}
+function renderSummary(){
+  const total=cart.reduce((a,l)=>a+P[l.id].price*l.qty,0);
+  $('#coSummary').innerHTML = (cart.length? cart.map(l=>`<div class="sline"><span>${l.qty} × ${P[l.id].name}<br><span class="muted">${l.size}${l.color?' · '+l.color:''}</span></span><span class="price">${euro(P[l.id].price*l.qty)}</span></div>`).join('') : '<p class="muted">Panier vide.</p>')
+   + `<div class="sline"><span>Livraison</span><span>Offerte</span></div><div class="sline total"><span>Total</span><span class="price">${euro(total)}</span></div>`;
+  $('#payBtn').textContent='Payer '+euro(total);
+}
+function openCart(){ $('#drawer').classList.add('open'); $('#scrim').classList.add('open'); $('#drawer').setAttribute('aria-hidden','false'); }
+function closeCart(){ $('#drawer').classList.remove('open'); $('#scrim').classList.remove('open'); $('#drawer').setAttribute('aria-hidden','true'); }
+function toast(t){ const el=$('#toast'); el.textContent=t; el.classList.add('show'); clearTimeout(toast.t); toast.t=setTimeout(()=>el.classList.remove('show'),1800); }
+
+/* ---------- navigation ---------- */
+function show(view){
+  ['home','product','checkout'].forEach(v=>$('#v-'+v).hidden = v!==view);
+  document.body.classList.toggle('has-sticky', view==='product');
+  document.querySelectorAll('nav.main button, .mnav button').forEach(b=>b.removeAttribute('aria-current'));
+}
+function go(target, anchor){
+  closeCart();
+  if(P[target]){
+    const p=P[target];
+    cur={p:target, size:p.sizes[0], color:p.colors?p.colors[0][0]:null, qty:1, view:'fold'};
+    show('product'); renderProduct();
+    document.querySelectorAll(`[data-go="${target}"]`).forEach(b=>{ if(b.closest('nav,.mnav')) b.setAttribute('aria-current','page'); });
+    try{ history.replaceState(null,'','#'+target); }catch(e){}
+    window.scrollTo({top:0});
+  } else if(target==='checkout'){
+    show('checkout'); $('#coForm').hidden=false; $('#coDone').hidden=true; renderSummary(); window.scrollTo({top:0});
+  } else {
+    show('home');
+    try{ history.replaceState(null,'',anchor?'#'+anchor:location.pathname); }catch(e){}
+    if(anchor){ const el=document.getElementById(anchor); el && el.scrollIntoView({behavior:'smooth'}); } else window.scrollTo({top:0});
+  }
+}
+
+document.addEventListener('click',e=>{
+  const t=e.target.closest('button'); if(!t) return;
+  if(t.dataset.go){ go(t.dataset.go, t.dataset.anchor); return; }
+  if(t.dataset.scroll){ document.getElementById(t.dataset.scroll).scrollIntoView({behavior:'smooth'}); return; }
+  if(t.dataset.size){ cur.size=t.dataset.size; renderProduct(); return; }
+  if(t.dataset.color){ cur.color=t.dataset.color; renderProduct(); return; }
+  if(t.dataset.view){ cur.view=t.dataset.view; renderProduct(); return; }
+  if(t.dataset.inc!==undefined){ cart[+t.dataset.inc].qty++; save(); renderCart(); return; }
+  if(t.dataset.dec!==undefined){ const l=cart[+t.dataset.dec]; l.qty--; if(l.qty<1) cart.splice(+t.dataset.dec,1); save(); renderCart(); return; }
+  if(t.dataset.rm!==undefined){ cart.splice(+t.dataset.rm,1); save(); renderCart(); return; }
+  if(t.dataset.up){ const p=P[t.dataset.up]; add(p.id,p.sizes[0],p.colors?p.colors[0][0]:null,1); toast(p.name+' ajouté'); return; }
+  if(t.dataset.pay!==undefined){ finish(); return; }
+  if(t.id==='addFamily'){ ORDER.forEach(k=>{const p=P[k]; add(k,p.sizes[0],p.colors?p.colors[0][0]:null,1);}); openCart(); return; }
+});
+$('#qMinus').onclick=()=>{ cur.qty=Math.max(1,cur.qty-1); renderProduct(); };
+$('#qPlus').onclick=()=>{ cur.qty=Math.min(10,cur.qty+1); renderProduct(); };
+function addCurrent(){ add(cur.p,cur.size,cur.color,cur.qty); openCart(); }
+$('#addBtn').onclick=addCurrent; $('#sAdd').onclick=addCurrent;
+$('#openCart').onclick=openCart; $('#closeCart').onclick=closeCart; $('#scrim').onclick=closeCart;
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeCart(); });
+$('#toCheckout').onclick=()=>go('checkout');
+function finish(){ $('#coForm').hidden=true; $('#coDone').hidden=false; cart=[]; save(); renderCart(); window.scrollTo({top:0}); }
+$('#checkoutForm').addEventListener('submit',e=>{ e.preventDefault(); finish(); });
+$('#newsForm').addEventListener('submit',e=>{ e.preventDefault(); toast('Inscription notée (maquette)'); $('#newsEmail').value=''; });
+
+/* barre d'achat collante : visible quand le bouton principal sort de l'écran */
+if('IntersectionObserver' in window){
+  new IntersectionObserver(([en])=>{ $('#stickyAtc').classList.toggle('show', !en.isIntersecting && !$('#v-product').hidden); }).observe($('#addBtn'));
+}
+
+/* notes */
+let notesOn=true; try{ notesOn = localStorage.getItem('naqa-notes')!=='0'; }catch(e){}
+function setNotes(on){ notesOn=on; document.body.classList.toggle('notes',on); $('#notesToggle').setAttribute('aria-pressed',on); $('#notesToggle span').textContent=on?'Masquer les notes':'Notes'; try{ localStorage.setItem('naqa-notes',on?'1':'0'); }catch(e){} }
+$('#notesToggle').onclick=()=>setNotes(!notesOn);
+setNotes(notesOn);
+
+/* démarrage */
+renderCart();
+const h=(location.hash||'').slice(1);
+if(P[h]) go(h); else if(h==='faq'||h==='collection') go('home',h); else show('home');
+})();
+</script>

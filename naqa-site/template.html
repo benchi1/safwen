@@ -49,7 +49,9 @@ header.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;backgrou
 .bar nav a{color:var(--ink);text-decoration:none;opacity:.8}
 .bar nav a:hover{opacity:1;color:var(--green)}
 .logo{display:block;color:var(--green);line-height:0}
-.logo svg{height:44px;width:auto}
+.logo svg{height:54px;width:auto}
+.logo-v svg{height:120px!important}
+.final-mark svg{height:110px;width:auto;margin:0 auto 10px;display:block}
 .bar .right{display:flex;justify-content:flex-end}
 .cart-btn{display:flex;align-items:center;gap:10px;background:none;border:0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;padding:8px 0}
 .cart-btn .n{display:inline-grid;place-items:center;min-width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:11px;letter-spacing:0}
@@ -186,7 +188,7 @@ section{padding-block:110px}
 footer.site{padding-block:72px 48px;font-size:14px;color:var(--muted)}
 footer .cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
 footer .cols > *{min-width:0}
-footer .logo svg{height:46px}
+
 footer h4{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);font-weight:500;margin:0 0 16px}
 footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 footer .news{display:flex;margin-top:22px;max-width:360px;border-bottom:1px solid var(--ink)}
@@ -490,7 +492,7 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
   <!-- FINAL -->
   <section class="final">
     <div class="wrap">
-      <p class="ar" lang="ar">نقاء</p>
+      <div class="final-mark">{{SYM_INV}}</div>
       <h2>Votre voyage commence ici.</h2>
       <p>Le tissu est prêt. Il ne manque que vous.</p>
       <button class="btn light" data-open="homme">Choisir mon ihram</button>
@@ -502,7 +504,7 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
   <div class="wrap">
     <div class="cols">
       <div>
-        <span class="logo">{{LOGO}}</span>
+        <span class="logo logo-v">{{LOGO_V}}</span>
         <form class="news" id="news"><input id="newsMail" type="email" placeholder="Votre e-mail" aria-label="Votre e-mail"><button type="submit">S'inscrire</button></form>
         <p style="margin-top:10px;font-size:13px">Conseils de préparation et rappels avant votre départ.</p>
       </div>

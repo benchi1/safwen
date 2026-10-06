@@ -1,5 +1,7 @@
 <title>Naqaa Ihram</title>
 <meta name="description" content="Ihram 100 % coton d'Égypte. Doux, respirant, fait pour durer. Livraison offerte en 3 jours ou express en 24 h.">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=Amiri&display=swap">
@@ -10,6 +12,8 @@
   --green:#0B3846; --green-deep:#072833; --green-soft:#EAF3F3; --teal:#0F6E78; --gold:#A6834C; --gold-deep:#8A6A35; --gold-soft:#F4EAD6;
   --grad:linear-gradient(165deg,#F2E5C8 0%,#F9F2E3 34%,#FFFDF9 66%,#FFFFFF 100%);
   --grad-soft:linear-gradient(180deg,#FFFFFF 0%,#FAF4E6 100%);
+  --gtext:linear-gradient(100deg,#072833 0%,#0B3846 22%,#0F6E78 52%,#25957A 76%,#A6834C 100%);
+  --gold-text:linear-gradient(95deg,#8A6A35 0%,#C9A764 50%,#9C7B40 100%);
   --serif:"Cormorant Garamond", "Cormorant", Garamond, "Times New Roman", serif;
   --sans:"Jost", "Futura", "Century Gothic", "Helvetica Neue", Arial, sans-serif;
   --ar:"Amiri", "Noto Naskh Arabic", "Geeza Pro", serif;
@@ -32,13 +36,16 @@ img{display:block;max-width:100%}
 .lede{color:#3F4944;font-size:17.5px;font-weight:500;max-width:54ch}
 .ar{font-family:var(--ar)}
 .price{font-variant-numeric:tabular-nums}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:0;border-radius:2px;padding:17px 30px;font-size:14px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;background:var(--green);color:#fff;text-decoration:none;transition:background .2s, transform .15s}
-.btn:hover{background:var(--green-deep)}
+.btn{--cut:16px;position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:12px;border:0;padding:19px 50px;font-size:13.5px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;color:#fff;text-decoration:none;background:linear-gradient(135deg,#E3C98F,#A6834C 55%,#D9BC86);clip-path:polygon(var(--cut) 0,calc(100% - var(--cut)) 0,100% 50%,calc(100% - var(--cut)) 100%,var(--cut) 100%,0 50%);transition:transform .15s, filter .25s}
+.btn::before{content:"";position:absolute;inset:1.6px;z-index:-1;background:linear-gradient(120deg,#072833 0%,#0B3846 30%,#0F6E78 72%,#1D8B74 100%);clip-path:polygon(calc(var(--cut) - 1px) 0,calc(100% - var(--cut) + 1px) 0,100% 50%,calc(100% - var(--cut) + 1px) 100%,calc(var(--cut) - 1px) 100%,0 50%)}
+.btn::after{content:"";position:absolute;inset:0;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23D9BC86' d='M10 0l2.93 2.93H17.07V7.07L20 10l-2.93 2.93v4.14h-4.14L10 20l-2.93-2.93H2.93v-4.14L0 10l2.93-2.93V2.93h4.14Z'/%3E%3C/svg%3E") no-repeat 24px 50%/9px 9px,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23D9BC86' d='M10 0l2.93 2.93H17.07V7.07L20 10l-2.93 2.93v4.14h-4.14L10 20l-2.93-2.93H2.93v-4.14L0 10l2.93-2.93V2.93h4.14Z'/%3E%3C/svg%3E") no-repeat calc(100% - 24px) 50%/9px 9px,linear-gradient(105deg,transparent 35%,rgba(255,255,255,.22) 50%,transparent 65%) no-repeat -150% 0/60% 100%;transition:background-position .7s ease}
+.btn:hover{filter:brightness(1.08)}
+.btn:hover::after{background-position:24px 50%,calc(100% - 24px) 50%,250% 0}
 .btn:active{transform:translateY(1px)}
-.btn.light{background:#fff;color:var(--green)}
-.btn.light:hover{background:var(--gold-soft)}
-.btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-.btn.line:hover{background:var(--ink);color:#fff}
+.btn:focus-visible{outline:none;filter:brightness(1.18) drop-shadow(0 0 0 #fff)}
+.btn:focus-visible::before{background:linear-gradient(120deg,#0F6E78,#1D8B74)}
+.btn.light,.btn.line{color:var(--green)}
+.btn.light::before,.btn.line::before{background:#fff}
 .btn.block{width:100%}
 .link{background:none;border:0;padding:0;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--green);border-bottom:1px solid currentColor;padding-bottom:3px}
 
@@ -210,7 +217,7 @@ footer h4{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(
 footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 footer .news{display:flex;margin-top:22px;max-width:360px;border-bottom:1px solid var(--ink)}
 footer .news input{flex:1;min-width:0;border:0;background:transparent;padding:12px 0;font:inherit;color:var(--ink)}
-footer .news button{background:none;border:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+footer .news button{background:none;border:0;clip-path:none;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
 footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid var(--line);margin-top:56px;padding-top:24px;font-size:12.5px}
 @media (max-width:860px){ footer .cols{grid-template-columns:1fr 1fr} footer .cols > :first-child{grid-column:1/-1} }
 
@@ -294,6 +301,99 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
   .mbuy b{display:block;font-family:var(--serif);font-size:18px;font-weight:500}
   .mbuy .btn{padding:14px 18px}
 }
+
+/* ---------- typographie en dégradé ---------- */
+.hero h1,.head h2,.story h2,.final h2,.j-h1,.x3d h2{background:var(--gtext);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 em,.head h2 em,.j-h1 em{background:var(--gold-text);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+.kicker{display:inline-flex;align-items:center;gap:10px}
+.kicker::before{content:"";width:9px;height:9px;background:var(--gold);clip-path:polygon(50% 0,64% 15%,85% 15%,85% 36%,100% 50%,85% 64%,85% 85%,64% 85%,50% 100%,36% 85%,15% 85%,15% 64%,0 50%,15% 36%,15% 15%,36% 15%)}
+
+/* ---------- verset ---------- */
+.verse{position:relative;overflow:hidden;background:linear-gradient(125deg,#062530 0%,#0B3846 40%,#0F6E78 85%,#1D8B74 100%);color:#fff;text-align:center;padding-block:120px}
+.verse .ros{position:absolute;width:900px;left:50%;top:50%;transform:translate(-50%,-50%);opacity:.2;pointer-events:none}
+.verse .ros svg{width:100%;height:auto}
+.verse .wrap{position:relative}
+.verse .ar{font-family:var(--ar);font-size:clamp(38px,5.4vw,74px);line-height:1.7;background:linear-gradient(90deg,#F3E6C4,#D9BC86 40%,#F7EDD3 60%,#C9A764);-webkit-background-clip:text;background-clip:text;color:transparent}
+.verse .fr{font-family:var(--serif);font-weight:600;font-style:italic;font-size:clamp(24px,2.8vw,36px);margin-top:10px}
+.verse .ref{display:inline-flex;align-items:center;gap:14px;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:#D9BC86;margin-top:22px;font-weight:600}
+.verse .ref::before,.verse .ref::after{content:"";width:40px;height:1px;background:currentColor}
+.verse p.ctx{max-width:56ch;margin:22px auto 0;color:rgba(255,255,255,.82);font-weight:500}
+
+/* ---------- 3D ---------- */
+.x3d{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.x3d > *{min-width:0}
+.stage{position:relative;aspect-ratio:1/1;max-width:100%;background:radial-gradient(circle at 50% 38%,#FFFFFF 0%,#FAF4E7 55%,#F0E3C6 100%);border-radius:50% 50% 10px 10px/32% 32% 10px 10px;overflow:hidden;touch-action:pan-y}
+.stage::before{content:"";position:absolute;inset:12px;border:1px solid rgba(166,131,76,.45);border-radius:inherit;pointer-events:none;z-index:2}
+.stage canvas{position:absolute;inset:0;width:100%!important;height:100%!important;cursor:grab}
+.stage canvas:active{cursor:grabbing}
+.stage .fb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hs{position:absolute;z-index:3;left:0;top:0;width:32px;height:32px;margin:-16px 0 0 -16px;border-radius:50%;border:1px solid var(--gold);background:rgba(255,255,255,.94);color:var(--green);font-size:12.5px;font-weight:600;display:grid;place-items:center;box-shadow:0 6px 18px rgba(11,56,70,.2);transition:background .2s,color .2s}
+.hs::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(166,131,76,.55);animation:pulse 2.4s ease-out infinite}
+.hs.on{background:var(--green);color:#fff;border-color:var(--green)}
+@keyframes pulse{from{transform:scale(.8);opacity:1}to{transform:scale(1.5);opacity:0}}
+.ctrl{position:absolute;z-index:3;left:50%;bottom:22px;transform:translateX(-50%);display:flex;gap:4px;background:rgba(255,255,255,.9);padding:5px;border-radius:999px;box-shadow:0 6px 20px rgba(11,56,70,.12)}
+.ctrl button{border:0;background:none;padding:9px 16px;border-radius:999px;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--muted);white-space:nowrap}
+.ctrl button[aria-pressed="true"]{background:var(--green);color:#fff}
+.hint{position:absolute;z-index:3;top:26%;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;pointer-events:none;transition:opacity .6s}
+.feats{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:2px}
+.feats button{width:100%;display:grid;grid-template-columns:30px 1fr;gap:16px;text-align:left;background:none;border:0;border-left:2px solid var(--line);padding:14px 18px;transition:background .2s,border-color .2s}
+.feats button[aria-current="true"]{border-color:var(--gold);background:var(--paper)}
+.feats .n{width:28px;height:28px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;font-size:12px;font-weight:600;color:var(--green)}
+.feats b{display:block;font-family:var(--serif);font-weight:600;font-size:23px;line-height:1.15}
+.feats .t{display:block;color:#4E5852;font-size:14.5px;font-weight:500;margin-top:4px;max-height:0;overflow:hidden;transition:max-height .35s ease}
+.feats button[aria-current="true"] .t{max-height:120px}
+@media (max-width:900px){ .x3d{grid-template-columns:1fr;gap:28px} .ctrl button{padding:8px 11px;font-size:10.5px} }
+
+/* ---------- journal ---------- */
+.jgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.jcard{background:#fff;border:1px solid var(--line);padding:0;text-align:left;display:flex;flex-direction:column;min-width:0;text-decoration:none;color:inherit;transition:transform .25s, box-shadow .25s}
+.jcard:hover{transform:translateY(-4px);box-shadow:0 18px 40px -24px rgba(11,56,70,.4)}
+.jcover{position:relative;aspect-ratio:16/10;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,#072833,#0B3846 35%,#0F6E78 75%,#1D8B74)}
+.jcover::before{content:"";position:absolute;inset:0;background:var(--star-light) 0 0/66px 66px}
+.jcover .ar{position:relative;font-family:var(--ar);font-size:58px;background:linear-gradient(90deg,#F3E6C4,#C9A764);-webkit-background-clip:text;background-clip:text;color:transparent}
+.jcard .b{padding:22px 24px 26px;display:grid;gap:8px;flex:1}
+.jcard .c{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+.jcard h3{font-size:26px;line-height:1.12}
+.jcard p{font-size:14.5px;color:#4E5852;font-weight:500}
+.jcard .m{font-size:12.5px;color:var(--muted);margin-top:auto;padding-top:8px}
+@media (max-width:900px){ .jgrid{grid-template-columns:1fr} }
+.jhead{background:var(--grad);padding-block:80px 56px;position:relative;overflow:hidden}
+.jhead .ros{position:absolute;width:640px;right:-160px;top:-200px;opacity:.45;pointer-events:none}
+.jhead .ros svg{width:100%;height:auto}
+.jhead .wrap{position:relative}
+.j-h1{font-size:clamp(44px,6vw,80px);margin-top:12px}
+.jfilters{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.jfilters button{border:1px solid var(--gold-soft);background:#fff;padding:9px 16px;font-size:13px;font-weight:600;color:var(--green);border-radius:999px}
+.jfilters button[aria-pressed="true"]{background:var(--green);color:#fff;border-color:var(--green)}
+.crumb{font-size:13px;color:var(--muted);font-weight:500}
+.crumb a{color:var(--green)}
+.awrap{display:grid;grid-template-columns:230px minmax(0,1fr);gap:64px;padding-block:56px 100px}
+.toc{position:sticky;top:120px;align-self:start;font-size:14px}
+.toc p{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:12px}
+.toc a{display:block;padding:7px 0 7px 14px;color:#4E5852;text-decoration:none;border-left:2px solid var(--line);font-weight:500}
+.toc a:hover{border-color:var(--gold);color:var(--green)}
+.prose{max-width:68ch;font-size:17.5px;line-height:1.78;color:#26302B;font-weight:400}
+.prose .intro{font-size:20px;font-weight:500;color:var(--ink);line-height:1.6}
+.prose h2{font-size:34px;margin:52px 0 14px;scroll-margin-top:120px}
+.prose p{margin:0 0 18px}
+.prose ul,.prose ol{margin:0 0 20px;padding-left:22px;display:grid;gap:9px}
+.prose li::marker{color:var(--gold)}
+.prose strong{font-weight:600;color:var(--ink)}
+.prose .ar-q{font-family:var(--ar);font-size:27px;line-height:2;text-align:center;direction:rtl;margin:28px 0;padding:26px 20px;background:var(--grad-soft);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);color:var(--green)}
+.prose .note-src{font-size:14.5px;color:var(--muted);font-style:italic}
+.ameta{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:13.5px;color:var(--muted);font-weight:500;margin-top:18px}
+.acta{margin-top:56px;padding:30px;background:var(--grad);border:1px solid var(--gold-soft);display:grid;grid-template-columns:120px 1fr;gap:26px;align-items:center}
+.acta img{width:120px;height:150px;object-fit:cover;border-radius:60px 60px 4px 4px/40px 40px 4px 4px}
+.acta h3{font-size:28px}
+.acta p{color:#4E5852;font-weight:500;font-size:15px;margin:6px 0 18px}
+.kw{display:flex;flex-wrap:wrap;gap:8px;margin-top:36px}
+.kw span{font-size:12px;padding:6px 12px;background:var(--paper);border:1px solid var(--gold-soft);color:var(--gold-deep);font-weight:500}
+.afaq{margin-top:56px}
+.afaq h2{margin-top:0}
+@media (max-width:900px){ .awrap{grid-template-columns:1fr;gap:0} .toc{display:none} .acta{grid-template-columns:1fr} }
+.mj{display:none;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--green);text-decoration:none;margin-right:18px;align-self:center}
+@media (max-width:860px){ .mj{display:inline} }
+
 @media (prefers-reduced-motion: reduce){ *{transition:none!important;scroll-behavior:auto!important} }
 </style>
 
@@ -304,15 +404,17 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
     <nav aria-label="Navigation principale">
       <a href="#collection">Collection</a>
       <a href="#atelier">L'atelier</a>
-      <a href="#difference">La différence</a>
+      <a href="#explorer">Explorer</a>
+      <a href="#journal">Journal</a>
     </nav>
     <a class="logo" href="#top" aria-label="Naqaa, retour en haut"><svg viewBox="0 0 626 378" aria-hidden="true" focusable="false"><path fill="#0F6E78" d="M88.00 97.60L104.00 97.60L104.00 81.60L88.00 81.60L72.00 81.60L56.00 81.60L56.00 97.60L56.00 113.60L56.00 129.60L72.00 129.60L88.00 129.60L104.00 129.60L104.00 113.60L88.00 113.60L72.00 113.60L72.00 97.60ZM24.00 161.60L24.00 177.60L24.00 193.60L24.00 209.60L24.00 225.60L24.00 241.60L24.00 257.60L40.00 257.60L56.00 257.60L72.00 257.60L88.00 257.60L104.00 257.60L120.00 257.60L136.00 257.60L152.00 257.60L168.00 257.60L168.00 241.60L168.00 225.60L168.00 209.60L168.00 193.60L168.00 177.60L168.00 161.60L168.00 145.60L168.00 129.60L152.00 129.60L152.00 145.60L152.00 161.60L152.00 177.60L152.00 193.60L152.00 209.60L152.00 225.60L152.00 241.60L136.00 241.60L120.00 241.60L120.00 225.60L120.00 209.60L120.00 193.60L120.00 177.60L104.00 177.60L88.00 177.60L72.00 177.60L72.00 193.60L72.00 209.60L72.00 225.60L72.00 241.60L56.00 241.60L40.00 241.60L40.00 225.60L40.00 209.60L40.00 193.60L40.00 177.60L40.00 161.60L40.00 145.60L40.00 129.60L40.00 113.60L40.00 97.60L40.00 81.60L24.00 81.60L24.00 97.60L24.00 113.60L24.00 129.60L24.00 145.60ZM88.00 209.60L88.00 193.60L104.00 193.60L104.00 209.60L104.00 225.60L104.00 241.60L88.00 241.60L88.00 225.60ZM24.00 273.60L24.00 289.60L40.00 289.60L56.00 289.60L72.00 289.60L88.00 289.60L104.00 289.60L120.00 289.60L136.00 289.60L152.00 289.60L168.00 289.60L168.00 273.60L152.00 273.60L136.00 273.60L120.00 273.60L104.00 273.60L88.00 273.60L72.00 273.60L56.00 273.60L40.00 273.60ZM56.00 321.60L72.00 321.60L88.00 321.60L104.00 321.60L120.00 321.60L136.00 321.60L152.00 321.60L168.00 321.60L168.00 305.60L152.00 305.60L136.00 305.60L120.00 305.60L104.00 305.60L88.00 305.60L72.00 305.60L56.00 305.60L40.00 305.60L24.00 305.60L24.00 321.60L40.00 321.60ZM56.00 337.60L40.00 337.60L24.00 337.60L24.00 353.60L40.00 353.60L56.00 353.60L72.00 353.60L88.00 353.60L104.00 353.60L120.00 353.60L136.00 353.60L152.00 353.60L168.00 353.60L168.00 337.60L152.00 337.60L136.00 337.60L120.00 337.60L104.00 337.60L88.00 337.60L72.00 337.60ZM104.00 161.60L120.00 161.60L120.00 145.60L104.00 145.60ZM72.00 161.60L88.00 161.60L88.00 145.60L72.00 145.60ZM152.00 113.60L168.00 113.60L168.00 97.60L152.00 97.60Z"/><path fill="#0F6E78" d="M120.00 48.00L112.97 40.97L112.97 31.03L103.03 31.03L96.00 24.00L88.97 31.03L79.03 31.03L79.03 40.97L72.00 48.00L79.03 55.03L79.03 64.97L88.97 64.97L96.00 72.00L103.03 64.97L112.97 64.97L112.97 55.03Z"/><path fill="#0B3846" transform="translate(190.32 231.55)" d="M8.078890015752108 0.0V-78.88138445935739H18.738536564313918L23.339015601061647 -63.621258874047854V0.0ZM62.61139762207884 0.0 15.821159614181212 -60.59167511814081 18.738536564313918 -78.88138445935739 65.52877457221155 -18.28970934121658ZM62.61139762207884 0.0 58.23533219687978 -14.811298362212199V-78.88138445935739H73.60766458796365V0.0ZM86.06262002891482 0.0 117.81714606305158 -78.88138445935739H130.27210150400276L161.91442073236516 0.0H145.64443389508662L121.18335023628163 -64.7433269317912H126.79369052499837L101.99598644887037 0.0ZM102.89364089506505 -14.699091556437864V-27.490667414712036H145.3078134777636V-14.699091556437864ZM206.01169540167876 1.2342748635176832Q197.37177135705497 1.2342748635176832 189.91001877306172 -1.9075156981636923Q182.44826618906845 -5.049306259845068 176.8379259003517 -10.603543145674642Q171.22758561163496 -16.157780031504217 168.14189845284073 -23.619532615497484Q165.05621129404653 -31.08128519949075 165.05621129404653 -39.6090024383402Q165.05621129404653 -48.136719677189646 168.14189845284073 -55.48626545540858Q171.22758561163496 -62.83581123362751 176.78182249746453 -68.39004811945708Q182.33605938329413 -73.94428500528666 189.74170856440023 -77.02997216408087Q197.14735774550633 -80.11565932287508 205.7872817901301 -80.11565932287508Q214.42720583475386 -80.11565932287508 221.83285501585996 -77.02997216408087Q229.23850419696606 -73.94428500528666 234.8488444856828 -68.39004811945708Q240.45918477439955 -62.83581123362751 243.54487193319375 -55.43016205252141Q246.63055909198798 -48.02451287141531 246.63055909198798 -39.49679563256586Q246.63055909198798 -30.969078393716416 243.54487193319375 -23.563429212610316Q240.45918477439955 -16.157780031504217 234.90494788856998 -10.603543145674642Q229.3507110027404 -5.049306259845068 221.9450618216343 -1.9075156981636923Q214.5394126405282 1.2342748635176832 206.01169540167876 1.2342748635176832ZM241.58125283214292 5.834753900265412 205.45066137280708 -30.295837559070407 214.65161944630256 -39.6090024383402 250.8944177114127 -3.366204173230045ZM205.7872817901301 -13.015989469822841Q213.30513777701054 -13.015989469822841 218.97158146861443 -16.382193643052887Q224.63802516021835 -19.74839781628293 227.83591912478687 -25.695358522322678Q231.03381308935542 -31.642319228362425 231.03381308935542 -39.6090024383402Q231.03381308935542 -45.44375633860561 229.1824007940789 -50.26864898690201Q227.33098849880238 -55.093541635198406 223.96478432557234 -58.62805601708995Q220.5985801523423 -62.1625703989815 215.99810111559458 -64.0700860971452Q211.39762207884684 -65.97760179530889 205.7872817901301 -65.97760179530889Q198.381632609024 -65.97760179530889 192.71518891742008 -62.66750102496601Q187.04874522581616 -59.35740025462313 183.8508512612476 -53.41043954858338Q180.6529572966791 -47.46347884254364 180.6529572966791 -39.6090024383402Q180.6529572966791 -33.66204173230045 182.5043695919556 -28.72494227822972Q184.35578188723213 -23.787842824158986 187.66588265757503 -20.309431845154606Q190.9759834279179 -16.831020866150226 195.63256586755278 -14.923505167986534Q200.2891483071877 -13.015989469822841 205.7872817901301 -13.015989469822841ZM257.4024124463241 0.0 289.1569384804609 -78.88138445935739H301.61189392141205L333.2542131497745 0.0H316.98422631249593L292.5231426536909 -64.7433269317912H298.1334829424077L273.33577886627967 0.0ZM274.23343331247435 -14.699091556437864V-27.490667414712036H316.6476058951729V-14.699091556437864ZM335.6105560710355 0.0 367.36508210517223 -78.88138445935739H379.82003754612344L411.46235677448584 0.0H395.1923699372073L370.7312862784023 -64.7433269317912H376.341626567119L351.543922490991 0.0ZM352.4415769371857 -14.699091556437864V-27.490667414712036H394.8557495198843V-14.699091556437864Z"/><path fill="#0B3846" transform="translate(189.60 353.60)" d="M8.802887271786794 0.0V-85.9504132231405H25.430563229606292V0.0ZM45.4815842375651 0.0V-85.9504132231405H62.1092601953846V0.0ZM99.39926877725921 0.0V-85.9504132231405H116.0269447350787V0.0ZM55.99614403442155 -37.04548393543609V-51.71696272174741H104.04523705959113V-37.04548393543609ZM148.30419806496363 -35.94512302646274V-48.904929287704405H168.2329567497032Q174.34607291066624 -48.904929287704405 177.70828679919592 -52.022618529795565Q181.0705006877256 -55.14030777188672 181.0705006877256 -60.64211231675346Q181.0705006877256 -65.65486756874317 177.70828679919592 -69.01708145727284Q174.34607291066624 -72.37929534580252 168.2329567497032 -72.37929534580252H148.30419806496363V-85.9504132231405H169.70010462833432Q178.01394260724408 -85.9504132231405 184.310452253036 -82.71046165783008Q190.60696189882793 -79.47051009251966 194.0914381105769 -73.84644322443366Q197.57591432232584 -68.22237635634765 197.57591432232584 -60.88663696319199Q197.57591432232584 -53.306372923597806 194.0914381105769 -47.743437217121425Q190.60696189882793 -42.18050151064505 184.24932109142637 -39.0628122685539Q177.8916802840248 -35.94512302646274 169.4555799818958 -35.94512302646274ZM136.07796574303754 0.0V-85.9504132231405H152.70564170085703V0.0ZM183.02669785923376 0.0 154.6618388723652 -37.16774625865535 169.94462927477284 -41.93597686420653 203.19998119041185 0.0ZM206.01201462445482 0.0 240.6122520955057 -85.9504132231405H254.18336997284368L288.66134512067526 0.0H270.93330825388244L244.28012179208355 -70.54536049751361H250.3932379530466L223.3732645215899 0.0ZM224.35136310734399 -16.016364341723193V-29.95426918871895H270.5665212842247V-16.016364341723193ZM301.2543644122592 0.0V-85.9504132231405H312.9915474413082L347.8363095587976 -30.19879383515747H341.11188178173825L375.8343815760084 -85.9504132231405H387.57156460505746V0.0H371.0661509704572V-57.46329191305268L374.244971374158 -56.48519332729859L350.0370313767443 -17.605774543573588H338.7888976405723L314.5809576431586 -56.48519332729859L317.8820403700787 -57.46329191305268V0.0Z"/></svg>
 </a>
-    <div class="right"><button class="cart-btn" id="cartBtn" aria-label="Ouvrir le panier">Panier <span class="n" id="cartN">0</span></button></div>
+    <div class="right"><a class="mj" href="#journal">Journal</a><button class="cart-btn" id="cartBtn" aria-label="Ouvrir le panier">Panier <span class="n" id="cartN">0</span></button></div>
   </div>
 </header>
 
 <main id="top">
+<div id="v-home">
   <!-- HÉROS -->
   <section class="hero" aria-label="Naqaa Ihram">
     <div class="hero-bg" aria-hidden="true"><div class="tiles"></div><div class="glow"></div><div class="ros"><svg viewBox="-320 -320 640 640" aria-hidden="true" focusable="false"><g fill="none" stroke="#B08D52" stroke-width="1.1" stroke-linejoin="round"><path d="M0.0 -96.0L67.9 67.9L-96.0 0.0L67.9 -67.9L0.0 96.0L-67.9 -67.9L96.0 0.0L-67.9 67.9Z"/><path d="M0.0 -200.0L184.8 76.5L-141.4 141.4L-76.5 -184.8L200.0 0.0L-76.5 184.8L-141.4 -141.4L184.8 -76.5L0.0 200.0L-184.8 -76.5L141.4 -141.4L76.5 184.8L-200.0 0.0L76.5 -184.8L141.4 141.4L-184.8 76.5Z"/><circle r="40" opacity="1"/><circle r="124" opacity="0.5"/><circle r="212" opacity="0.45"/><circle r="300" opacity="0.3"/><path d="M0.0 -218.0L-29.2 -256.3L0.0 -300.0L29.2 -256.3ZM29.3 -147.1L19.2 -175.0L39.0 -196.2L49.2 -169.0ZM83.4 -201.4L71.1 -248.0L114.8 -277.2L125.1 -225.7ZM83.3 -124.7L84.7 -154.3L111.1 -166.3L110.2 -137.3ZM154.1 -154.1L160.6 -201.9L212.1 -212.1L201.9 -160.6ZM124.7 -83.3L137.3 -110.2L166.3 -111.1L154.3 -84.7ZM201.4 -83.4L225.7 -125.1L277.2 -114.8L248.0 -71.1ZM147.1 -29.3L169.0 -49.2L196.2 -39.0L175.0 -19.2ZM218.0 0.0L256.3 -29.2L300.0 0.0L256.3 29.2ZM147.1 29.3L175.0 19.2L196.2 39.0L169.0 49.2ZM201.4 83.4L248.0 71.1L277.2 114.8L225.7 125.1ZM124.7 83.3L154.3 84.7L166.3 111.1L137.3 110.2ZM154.1 154.1L201.9 160.6L212.1 212.1L160.6 201.9ZM83.3 124.7L110.2 137.3L111.1 166.3L84.7 154.3ZM83.4 201.4L125.1 225.7L114.8 277.2L71.1 248.0ZM29.3 147.1L49.2 169.0L39.0 196.2L19.2 175.0ZM0.0 218.0L29.2 256.3L0.0 300.0L-29.2 256.3ZM-29.3 147.1L-19.2 175.0L-39.0 196.2L-49.2 169.0ZM-83.4 201.4L-71.1 248.0L-114.8 277.2L-125.1 225.7ZM-83.3 124.7L-84.7 154.3L-111.1 166.3L-110.2 137.3ZM-154.1 154.1L-160.6 201.9L-212.1 212.1L-201.9 160.6ZM-124.7 83.3L-137.3 110.2L-166.3 111.1L-154.3 84.7ZM-201.4 83.4L-225.7 125.1L-277.2 114.8L-248.0 71.1ZM-147.1 29.3L-169.0 49.2L-196.2 39.0L-175.0 19.2ZM-218.0 0.0L-256.3 29.2L-300.0 0.0L-256.3 -29.2ZM-147.1 -29.3L-175.0 -19.2L-196.2 -39.0L-169.0 -49.2ZM-201.4 -83.4L-248.0 -71.1L-277.2 -114.8L-225.7 -125.1ZM-124.7 -83.3L-154.3 -84.7L-166.3 -111.1L-137.3 -110.2ZM-154.1 -154.1L-201.9 -160.6L-212.1 -212.1L-160.6 -201.9ZM-83.3 -124.7L-110.2 -137.3L-111.1 -166.3L-84.7 -154.3ZM-83.4 -201.4L-125.1 -225.7L-114.8 -277.2L-71.1 -248.0ZM-29.3 -147.1L-49.2 -169.0L-39.0 -196.2L-19.2 -175.0Z" opacity=".9"/></g><path d="M0.0 -218.0L-29.2 -256.3L0.0 -300.0L29.2 -256.3ZM29.3 -147.1L19.2 -175.0L39.0 -196.2L49.2 -169.0ZM83.4 -201.4L71.1 -248.0L114.8 -277.2L125.1 -225.7ZM83.3 -124.7L84.7 -154.3L111.1 -166.3L110.2 -137.3ZM154.1 -154.1L160.6 -201.9L212.1 -212.1L201.9 -160.6ZM124.7 -83.3L137.3 -110.2L166.3 -111.1L154.3 -84.7ZM201.4 -83.4L225.7 -125.1L277.2 -114.8L248.0 -71.1ZM147.1 -29.3L169.0 -49.2L196.2 -39.0L175.0 -19.2ZM218.0 0.0L256.3 -29.2L300.0 0.0L256.3 29.2ZM147.1 29.3L175.0 19.2L196.2 39.0L169.0 49.2ZM201.4 83.4L248.0 71.1L277.2 114.8L225.7 125.1ZM124.7 83.3L154.3 84.7L166.3 111.1L137.3 110.2ZM154.1 154.1L201.9 160.6L212.1 212.1L160.6 201.9ZM83.3 124.7L110.2 137.3L111.1 166.3L84.7 154.3ZM83.4 201.4L125.1 225.7L114.8 277.2L71.1 248.0ZM29.3 147.1L49.2 169.0L39.0 196.2L19.2 175.0ZM0.0 218.0L29.2 256.3L0.0 300.0L-29.2 256.3ZM-29.3 147.1L-19.2 175.0L-39.0 196.2L-49.2 169.0ZM-83.4 201.4L-71.1 248.0L-114.8 277.2L-125.1 225.7ZM-83.3 124.7L-84.7 154.3L-111.1 166.3L-110.2 137.3ZM-154.1 154.1L-160.6 201.9L-212.1 212.1L-201.9 160.6ZM-124.7 83.3L-137.3 110.2L-166.3 111.1L-154.3 84.7ZM-201.4 83.4L-225.7 125.1L-277.2 114.8L-248.0 71.1ZM-147.1 29.3L-169.0 49.2L-196.2 39.0L-175.0 19.2ZM-218.0 0.0L-256.3 29.2L-300.0 0.0L-256.3 -29.2ZM-147.1 -29.3L-175.0 -19.2L-196.2 -39.0L-169.0 -49.2ZM-201.4 -83.4L-248.0 -71.1L-277.2 -114.8L-225.7 -125.1ZM-124.7 -83.3L-154.3 -84.7L-166.3 -111.1L-137.3 -110.2ZM-154.1 -154.1L-201.9 -160.6L-212.1 -212.1L-160.6 -201.9ZM-83.3 -124.7L-110.2 -137.3L-111.1 -166.3L-84.7 -154.3ZM-83.4 -201.4L-125.1 -225.7L-114.8 -277.2L-71.1 -248.0ZM-29.3 -147.1L-49.2 -169.0L-39.0 -196.2L-19.2 -175.0Z" fill="#B08D52" fill-opacity=".14" stroke="none"/></svg></div></div>
@@ -352,13 +454,24 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
     </div>
   </section>
 
+  <!-- VERSET -->
+  <section class="verse" aria-label="Verset sur la Omra">
+    <div class="ros" aria-hidden="true"><svg viewBox="-320 -320 640 640" aria-hidden="true" focusable="false"><g fill="none" stroke="#B08D52" stroke-width="1.1" stroke-linejoin="round"><path d="M0.0 -96.0L67.9 67.9L-96.0 0.0L67.9 -67.9L0.0 96.0L-67.9 -67.9L96.0 0.0L-67.9 67.9Z"/><path d="M0.0 -200.0L184.8 76.5L-141.4 141.4L-76.5 -184.8L200.0 0.0L-76.5 184.8L-141.4 -141.4L184.8 -76.5L0.0 200.0L-184.8 -76.5L141.4 -141.4L76.5 184.8L-200.0 0.0L76.5 -184.8L141.4 141.4L-184.8 76.5Z"/><circle r="40" opacity="1"/><circle r="124" opacity="0.5"/><circle r="212" opacity="0.45"/><circle r="300" opacity="0.3"/><path d="M0.0 -218.0L-29.2 -256.3L0.0 -300.0L29.2 -256.3ZM29.3 -147.1L19.2 -175.0L39.0 -196.2L49.2 -169.0ZM83.4 -201.4L71.1 -248.0L114.8 -277.2L125.1 -225.7ZM83.3 -124.7L84.7 -154.3L111.1 -166.3L110.2 -137.3ZM154.1 -154.1L160.6 -201.9L212.1 -212.1L201.9 -160.6ZM124.7 -83.3L137.3 -110.2L166.3 -111.1L154.3 -84.7ZM201.4 -83.4L225.7 -125.1L277.2 -114.8L248.0 -71.1ZM147.1 -29.3L169.0 -49.2L196.2 -39.0L175.0 -19.2ZM218.0 0.0L256.3 -29.2L300.0 0.0L256.3 29.2ZM147.1 29.3L175.0 19.2L196.2 39.0L169.0 49.2ZM201.4 83.4L248.0 71.1L277.2 114.8L225.7 125.1ZM124.7 83.3L154.3 84.7L166.3 111.1L137.3 110.2ZM154.1 154.1L201.9 160.6L212.1 212.1L160.6 201.9ZM83.3 124.7L110.2 137.3L111.1 166.3L84.7 154.3ZM83.4 201.4L125.1 225.7L114.8 277.2L71.1 248.0ZM29.3 147.1L49.2 169.0L39.0 196.2L19.2 175.0ZM0.0 218.0L29.2 256.3L0.0 300.0L-29.2 256.3ZM-29.3 147.1L-19.2 175.0L-39.0 196.2L-49.2 169.0ZM-83.4 201.4L-71.1 248.0L-114.8 277.2L-125.1 225.7ZM-83.3 124.7L-84.7 154.3L-111.1 166.3L-110.2 137.3ZM-154.1 154.1L-160.6 201.9L-212.1 212.1L-201.9 160.6ZM-124.7 83.3L-137.3 110.2L-166.3 111.1L-154.3 84.7ZM-201.4 83.4L-225.7 125.1L-277.2 114.8L-248.0 71.1ZM-147.1 29.3L-169.0 49.2L-196.2 39.0L-175.0 19.2ZM-218.0 0.0L-256.3 29.2L-300.0 0.0L-256.3 -29.2ZM-147.1 -29.3L-175.0 -19.2L-196.2 -39.0L-169.0 -49.2ZM-201.4 -83.4L-248.0 -71.1L-277.2 -114.8L-225.7 -125.1ZM-124.7 -83.3L-154.3 -84.7L-166.3 -111.1L-137.3 -110.2ZM-154.1 -154.1L-201.9 -160.6L-212.1 -212.1L-160.6 -201.9ZM-83.3 -124.7L-110.2 -137.3L-111.1 -166.3L-84.7 -154.3ZM-83.4 -201.4L-125.1 -225.7L-114.8 -277.2L-71.1 -248.0ZM-29.3 -147.1L-49.2 -169.0L-39.0 -196.2L-19.2 -175.0Z" opacity=".9"/></g><path d="M0.0 -218.0L-29.2 -256.3L0.0 -300.0L29.2 -256.3ZM29.3 -147.1L19.2 -175.0L39.0 -196.2L49.2 -169.0ZM83.4 -201.4L71.1 -248.0L114.8 -277.2L125.1 -225.7ZM83.3 -124.7L84.7 -154.3L111.1 -166.3L110.2 -137.3ZM154.1 -154.1L160.6 -201.9L212.1 -212.1L201.9 -160.6ZM124.7 -83.3L137.3 -110.2L166.3 -111.1L154.3 -84.7ZM201.4 -83.4L225.7 -125.1L277.2 -114.8L248.0 -71.1ZM147.1 -29.3L169.0 -49.2L196.2 -39.0L175.0 -19.2ZM218.0 0.0L256.3 -29.2L300.0 0.0L256.3 29.2ZM147.1 29.3L175.0 19.2L196.2 39.0L169.0 49.2ZM201.4 83.4L248.0 71.1L277.2 114.8L225.7 125.1ZM124.7 83.3L154.3 84.7L166.3 111.1L137.3 110.2ZM154.1 154.1L201.9 160.6L212.1 212.1L160.6 201.9ZM83.3 124.7L110.2 137.3L111.1 166.3L84.7 154.3ZM83.4 201.4L125.1 225.7L114.8 277.2L71.1 248.0ZM29.3 147.1L49.2 169.0L39.0 196.2L19.2 175.0ZM0.0 218.0L29.2 256.3L0.0 300.0L-29.2 256.3ZM-29.3 147.1L-19.2 175.0L-39.0 196.2L-49.2 169.0ZM-83.4 201.4L-71.1 248.0L-114.8 277.2L-125.1 225.7ZM-83.3 124.7L-84.7 154.3L-111.1 166.3L-110.2 137.3ZM-154.1 154.1L-160.6 201.9L-212.1 212.1L-201.9 160.6ZM-124.7 83.3L-137.3 110.2L-166.3 111.1L-154.3 84.7ZM-201.4 83.4L-225.7 125.1L-277.2 114.8L-248.0 71.1ZM-147.1 29.3L-169.0 49.2L-196.2 39.0L-175.0 19.2ZM-218.0 0.0L-256.3 29.2L-300.0 0.0L-256.3 -29.2ZM-147.1 -29.3L-175.0 -19.2L-196.2 -39.0L-169.0 -49.2ZM-201.4 -83.4L-248.0 -71.1L-277.2 -114.8L-225.7 -125.1ZM-124.7 -83.3L-154.3 -84.7L-166.3 -111.1L-137.3 -110.2ZM-154.1 -154.1L-201.9 -160.6L-212.1 -212.1L-160.6 -201.9ZM-83.3 -124.7L-110.2 -137.3L-111.1 -166.3L-84.7 -154.3ZM-83.4 -201.4L-125.1 -225.7L-114.8 -277.2L-71.1 -248.0ZM-29.3 -147.1L-49.2 -169.0L-39.0 -196.2L-19.2 -175.0Z" fill="#B08D52" fill-opacity=".14" stroke="none"/></svg></div>
+    <div class="wrap">
+      <p class="ar" lang="ar">وَأَتِمُّوا الْحَجَّ وَالْعُمْرَةَ لِلَّهِ</p>
+      <p class="fr">« Et accomplissez pour Allah le Hajj et la Omra. »</p>
+      <p class="ref">Sourate Al-Baqara · verset 196</p>
+      <p class="ctx">Accomplir, c'est aller jusqu'au bout, avec soin. Nous avons conçu Naqaa pour que rien de matériel ne vous en détourne.</p>
+    </div>
+  </section>
+
   <!-- ATELIER -->
   <section id="atelier" class="pattern">
     <div class="wrap">
       <div class="head center">
         <div class="rule"><svg viewBox="0 0 20 20" aria-hidden="true"><path fill="currentColor" d="M10 0l2.93 2.93H17.07V7.07L20 10l-2.93 2.93v4.14h-4.14L10 20l-2.93-2.93H2.93v-4.14L0 10l2.93-2.93V2.93h4.14Z"/></svg></div>
         <p class="kicker">De la fibre au pèlerin</p>
-        <h2>Né sur les rives du Nil, tissé pour la Kaaba.</h2>
+        <h2>Né sur les rives du Nil, <em>tissé pour la Kaaba.</em></h2>
         <p class="lede">Un ihram ne se fabrique pas comme une serviette de plage. Nous suivons chaque pièce, du champ jusqu'à votre porte.</p>
       </div>
       <div class="steps">
@@ -389,7 +502,7 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
     <div class="wrap">
       <div class="head">
         <p class="kicker">La collection</p>
-        <h2>Un seul tissu. Toute la famille.</h2>
+        <h2>Un seul tissu. <em>Toute la famille.</em></h2>
       </div>
       <div class="grid3">
         <button class="prod" data-open="homme">
@@ -412,12 +525,33 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
     </div>
   </section>
 
+  <!-- EXPLORER 3D -->
+  <section id="explorer" class="pattern">
+    <div class="wrap x3d">
+      <div class="stage" id="stage">
+        <img class="fb" id="stageFb" src="img/ihram-packshot.jpg" alt="Ihram Naqaa plié avec sa ceinture">
+        <p class="hint" id="hint">Faites-le tourner</p>
+        <div class="ctrl" role="group" aria-label="Vue 3D">
+          <button aria-pressed="true" data-v="plie">Plié</button>
+          <button aria-pressed="false" data-v="eclate">Ouvrir la boîte</button>
+          <button aria-pressed="true" data-v="rot">Rotation</button>
+        </div>
+      </div>
+      <div>
+        <p class="kicker">Explorer en 3D</p>
+        <h2 style="font-size:clamp(36px,4.2vw,56px);margin-top:14px">Regardez-le de près.</h2>
+        <p class="lede" style="margin-top:16px">Tournez le coffret, ouvrez-le, touchez chaque détail du doigt.</p>
+        <ul class="feats" id="feats"></ul>
+      </div>
+    </div>
+  </section>
+
   <!-- DIFFÉRENCE -->
   <section id="difference">
     <div class="wrap">
       <div class="head">
         <p class="kicker">La différence</p>
-        <h2>Pourquoi Naqaa Ihram et pas un ihram low cost ?</h2>
+        <h2>Pourquoi <em>Naqaa Ihram</em> et pas un ihram low cost ?</h2>
         <p class="lede">Parce que ce tissu reste contre votre peau pendant des heures, sous 40 °C, dans la foule. Avant le style, avant le prix, il y a votre santé.</p>
       </div>
 
@@ -512,6 +646,15 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
     </div>
   </section>
 
+  <!-- JOURNAL -->
+  <section id="journal-home">
+    <div class="wrap">
+      <div class="head"><p class="kicker">Le journal</p><h2>Préparer votre <em>Omra</em>, pas à pas.</h2><p class="lede">Rites, miqat, Rawdah, valise : nos guides pour partir serein.</p></div>
+      <div class="jgrid" id="jteaser"></div>
+      <p style="margin-top:40px;text-align:center"><a class="btn line" href="#journal">Tous les articles</a></p>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section class="pattern" id="faq">
     <div class="wrap">
@@ -536,6 +679,9 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
       <button class="btn" data-open="homme">Choisir mon ihram</button>
     </div>
   </section>
+</div>
+<div id="v-journal" hidden></div>
+<div id="v-article" hidden></div>
 </main>
 
 <footer class="site">
@@ -717,4 +863,407 @@ if('IntersectionObserver' in window){
 }
 render();
 })();
+</script>
+<script>
+/* Journal Naqaa : articles SEO (titre, méta, mots-clés, FAQ) */
+const ARTICLES = [
+{
+  slug:'comment-faire-la-omra', cat:'Guide', min:9, date:'2026-10-07',
+  title:"Comment faire la Omra : le guide étape par étape",
+  meta:"Comment faire la Omra en 2026 : ihram au miqat, tawaf, sa'i, rasage. Le guide clair des rites de la Omra, étape par étape, avec les erreurs à éviter.",
+  kw:['comment faire la omra','étapes de la omra','rites de la omra','omra guide','omra 2026'],
+  ar:'عمرة',
+  body:`
+<p class="intro">La Omra est le petit pèlerinage à La Mecque. Elle peut se faire toute l'année et se déroule en quelques heures seulement. Voici chaque étape dans l'ordre, telle que vous la vivrez sur place.</p>
+<h2 id="avant">Avant le départ</h2>
+<p>Prévoyez votre visa et votre permis de Omra, que l'on réserve dans l'application officielle <strong>Nusuk</strong>. Apprenez la talbiya, préparez votre ihram et lavez-le une fois pour l'assouplir. Si vous partez avec une agence, elle s'occupe en général du permis.</p>
+<h2 id="ihram">1. Entrer en état d'ihram au miqat</h2>
+<p>Avant d'atteindre le miqat, faites le grand lavage (ghusl), coupez vos ongles, parfumez le corps et non le tissu, puis revêtez l'ihram. Au miqat, formulez l'intention : <em>« Labbayka Allâhumma 'umratan »</em>, puis répétez la talbiya jusqu'à l'arrivée au Haram.</p>
+<blockquote class="ar-q" lang="ar">لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ، لَا شَرِيكَ لَكَ</blockquote>
+<h2 id="tawaf">2. Le tawaf : sept tours autour de la Kaaba</h2>
+<p>Commencez au niveau de la Pierre noire, la Kaaba à votre gauche. Les hommes découvrent l'épaule droite (idtiba') et pressent le pas sur les trois premiers tours (ramal) si la foule le permet. Saluez la Pierre noire à chaque tour, d'un geste de la main si vous ne pouvez pas l'approcher.</p>
+<h2 id="priere">3. La prière derrière Maqam Ibrahim et l'eau de Zamzam</h2>
+<p>Après le septième tour, recouvrez l'épaule et priez deux rak'at derrière Maqam Ibrahim, ou ailleurs dans la mosquée si l'espace manque. Buvez ensuite de l'eau de Zamzam, disponible partout dans le Haram.</p>
+<h2 id="sai">4. Le sa'i entre Safa et Marwa</h2>
+<p>Sept trajets, de Safa vers Marwa puis retour, en terminant à Marwa. Le parcours fait environ 450 mètres, soit près de 3 km au total. Les hommes accélèrent entre les deux repères verts. C'est souvent là que les cuisses frottent : un ihram en coton qui absorbe la transpiration fait une vraie différence.</p>
+<h2 id="halq">5. Se raser ou se raccourcir les cheveux</h2>
+<p>Les hommes se rasent la tête (halq) ou raccourcissent les cheveux (taqsir). Les femmes coupent une mèche de la longueur d'une phalange. Votre Omra est terminée et les interdits de l'ihram sont levés.</p>
+<h2 id="erreurs">Les erreurs fréquentes</h2>
+<ul><li>Dépasser le miqat sans être en ihram, notamment en avion vers Djeddah.</li><li>Mettre du parfum sur l'ihram lui-même.</li><li>Garder l'épaule découverte en dehors du tawaf.</li><li>Commencer le sa'i à Marwa au lieu de Safa.</li></ul>`,
+  faq:[["Combien de temps dure la Omra ?","Comptez de 3 à 6 heures selon l'affluence : environ 1 à 2 heures pour le tawaf, autant pour le sa'i, puis le rasage."],
+       ["Peut-on faire plusieurs Omras pendant un séjour ?","Oui. Depuis La Mecque, on sort se remettre en ihram à la mosquée Aïcha (Tan'im), qui sert de miqat aux résidents."],
+       ["Faut-il un permis pour la Omra ?","Oui, le permis se réserve gratuitement dans l'application Nusuk, ou par votre agence."]]
+},
+{
+  slug:'comment-mettre-ihram', cat:'Ihram', min:7, date:'2026-10-06',
+  title:"Comment mettre l'ihram : le guide pour homme, avec les interdits",
+  meta:"Comment mettre l'ihram homme : nouer l'izar, porter le rida, la ceinture, les interdits de l'ihram et les règles pour la femme et l'enfant. Guide illustré et simple.",
+  kw:['comment mettre ihram','ihram homme','interdits ihram','porter ihram','ihram coton'],
+  ar:'إحرام',
+  body:`
+<p class="intro">L'ihram, ce sont deux pièces de tissu blanc non cousues : l'izar autour de la taille et le rida sur les épaules. Simple sur le papier, plus délicat dans un siège d'avion. Voici comment bien le mettre, et ce qu'il interdit.</p>
+<h2 id="preparation">Se préparer</h2>
+<p>Faites le ghusl, coupez ongles et moustache, épilez ce qui doit l'être. Parfumez le corps si vous le souhaitez, jamais le tissu. Après l'intention, tout parfum devient interdit, y compris dans le savon : prévoyez un savon et une crème sans parfum.</p>
+<h2 id="izar">Nouer l'izar</h2>
+<ol><li>Placez le tissu derrière vous, à hauteur de taille, les deux pans de même longueur.</li><li>Ramenez le pan droit devant vous, puis le pan gauche par-dessus.</li><li>Roulez le haut deux ou trois fois vers l'extérieur pour le bloquer.</li><li>Ajoutez une ceinture large par-dessus : l'izar ne bougera plus, même pendant le sa'i.</li></ol>
+<p>L'izar doit couvrir du nombril jusqu'en dessous des genoux.</p>
+<h2 id="rida">Porter le rida</h2>
+<p>Posez-le sur les deux épaules comme un châle. Pendant le tawaf de la Omra seulement, passez-le sous l'aisselle droite pour découvrir l'épaule droite (idtiba'), puis recouvrez-la ensuite.</p>
+<h2 id="interdits">Les interdits de l'ihram</h2>
+<ul><li>Se parfumer, y compris avec un savon parfumé.</li><li>Se couper les cheveux ou les ongles.</li><li>Pour l'homme : porter un vêtement cousu à la forme du corps et se couvrir la tête.</li><li>Pour la femme : le niqab et les gants.</li><li>Les rapports conjugaux et le contrat de mariage.</li><li>Chasser.</li></ul>
+<h2 id="femme">Et pour la femme ?</h2>
+<p>Pas de tenue imposée : un vêtement ample et couvrant, de la couleur de son choix, le visage et les mains découverts. Le telekung malaisien, voile long et jupe ample, répond parfaitement à ces règles.</p>
+<h2 id="enfant">Et pour l'enfant ?</h2>
+<p>L'enfant peut porter l'ihram et sa Omra est valable. Pour les plus petits, c'est le parent qui formule l'intention. Choisissez un ihram à sa taille pour qu'il ne trébuche pas.</p>`,
+  faq:[["Peut-on porter une ceinture avec l'ihram ?","Oui, selon l'avis de la majorité des savants : la ceinture et la sacoche ne sont pas des vêtements cousus à la forme du corps."],
+       ["Quel tissu choisir pour l'ihram ?","Un coton pur, qui absorbe la transpiration et ne frotte pas. Le polyester garde l'humidité contre la peau et favorise les irritations."],
+       ["Quelles chaussures porter en ihram ?","Des sandales qui laissent le dessus du pied découvert, selon l'avis majoritaire."]]
+},
+{
+  slug:'reserver-rawdah-nusuk', cat:'Médine', min:6, date:'2026-10-05',
+  title:"Réserver la Rawdah sur Nusuk : le guide 2026",
+  meta:"Comment réserver un créneau pour prier dans la Rawdah à Médine avec l'application Nusuk : étapes, horaires hommes et femmes, conseils pour obtenir une place.",
+  kw:['réserver rawdah','rawdah nusuk','créneau rawdah','permis rawdah 2026','prier rawdah médine'],
+  ar:'الروضة',
+  body:`
+<p class="intro">La Rawdah est l'espace de la mosquée du Prophète ﷺ situé entre sa chambre et son minbar, un « jardin parmi les jardins du Paradis ». Pour y prier, il faut un permis gratuit, à réserver dans l'application Nusuk.</p>
+<h2 id="etapes">Les étapes de la réservation</h2>
+<ol><li>Téléchargez l'application <strong>Nusuk</strong> et créez votre compte avec votre passeport et votre visa.</li><li>Choisissez le service « Permis Al-Rawdah Al-Sharifa », version hommes ou femmes.</li><li>Sélectionnez la date et le créneau disponibles.</li><li>Validez : un QR code apparaît sur votre compte. Faites-en tout de suite une capture d'écran.</li></ol>
+<h2 id="quand">Quand réserver ?</h2>
+<p>Les créneaux ouvrent généralement 7 à 14 jours à l'avance, parfois seulement 3 à 5 jours pendant le Ramadan. Ils partent en quelques minutes : vérifiez l'application chaque jour à partir de dix jours avant votre séjour à Médine. Une liste d'attente et une réservation immédiate, quand vous êtes sur place et qu'il reste de la place, existent aussi.</p>
+<h2 id="jour-j">Le jour de la visite</h2>
+<ul><li>Soyez dans l'enceinte du Haram 30 minutes avant votre créneau, et à la porte indiquée 15 minutes avant.</li><li>Hommes et femmes ont des horaires et des entrées séparés.</li><li>La prière sur place est limitée à une dizaine de minutes pour laisser la place aux suivants.</li><li>Gardez votre QR code et votre pièce d'identité à portée de main.</li></ul>
+<h2 id="annuler">Annulez si vous ne pouvez pas venir</h2>
+<p>Un créneau réservé et non utilisé, sans annulation, peut vous empêcher d'obtenir un nouveau permis pendant un an. Une seule réservation active est généralement autorisée à la fois.</p>
+<p class="note-src">Les règles évoluent souvent : vérifiez toujours les conditions dans l'application Nusuk avant votre départ.</p>`,
+  faq:[["Le permis pour la Rawdah est-il payant ?","Non, il est gratuit et se réserve uniquement dans l'application Nusuk."],
+       ["Combien de temps peut-on rester dans la Rawdah ?","Environ dix minutes de prière, pour permettre au plus grand nombre d'y accéder."],
+       ["Peut-on y aller plusieurs fois ?","Oui, en général une réservation active à la fois : une fois la visite faite, vous pouvez en demander une autre selon les places."]]
+},
+{
+  slug:'lieux-a-visiter-la-mecque-medine', cat:'Visites', min:8, date:'2026-10-04',
+  title:"Les lieux à visiter à La Mecque et à Médine",
+  meta:"Les lieux saints et historiques à visiter pendant votre Omra : grotte de Hira, Mina, Arafat, mosquée Quba, mont Uhud, Baqi'. La liste pour La Mecque et Médine.",
+  kw:['lieux à visiter la mecque','que visiter à médine','ziyara omra','mont uhud','mosquée quba'],
+  ar:'زيارة',
+  body:`
+<p class="intro">Entre deux prières au Haram, de nombreux lieux racontent l'histoire de la Révélation. Voici ceux qui méritent le détour, à La Mecque puis à Médine.</p>
+<h2 id="mecque">À La Mecque</h2>
+<ul><li><strong>Jabal al-Nour et la grotte de Hira</strong> : là où la première révélation est descendue. Montée exigeante, à faire tôt le matin.</li><li><strong>Jabal Thawr</strong> : la grotte où le Prophète ﷺ et Abou Bakr se sont abrités pendant l'Hégire.</li><li><strong>Mina, Muzdalifa et Arafat</strong> : les lieux du Hajj, à voir pour comprendre le grand pèlerinage. Le mont de la Miséricorde (Jabal al-Rahma) domine Arafat.</li><li><strong>Le cimetière de Jannat al-Mu'alla</strong> : où repose Khadija, l'épouse du Prophète ﷺ.</li><li><strong>La mosquée Aïcha (Tan'im)</strong> : le miqat le plus proche pour une nouvelle Omra.</li></ul>
+<h2 id="medine">À Médine</h2>
+<ul><li><strong>La mosquée du Prophète ﷺ et la Rawdah</strong> : réservez votre créneau sur Nusuk.</li><li><strong>La mosquée Quba</strong> : la première mosquée de l'islam. Y prier deux rak'at équivaut à une Omra, selon le hadith.</li><li><strong>Le mont Uhud et le cimetière des martyrs</strong> : là où repose Hamza. « Uhud est une montagne qui nous aime et que nous aimons. »</li><li><strong>La mosquée Al-Qiblatayn</strong> : celle des deux qiblas, où la direction de la prière a changé.</li><li><strong>Le cimetière d'Al-Baqi'</strong> : où reposent de nombreux compagnons et membres de la famille du Prophète ﷺ.</li><li><strong>Les palmeraies</strong> : pour goûter les dattes Ajwa directement chez les producteurs.</li></ul>
+<h2 id="conseils">Conseils pratiques</h2>
+<p>Partez tôt le matin pour éviter la chaleur, portez des vêtements amples et gardez de l'eau sur vous. Les visites groupées en minibus, proposées partout autour des Harams, sont l'option la plus simple.</p>`,
+  faq:[["Faut-il un permis pour visiter Quba ou Uhud ?","Non, ces lieux se visitent librement. Seule la Rawdah demande un permis."],
+       ["Peut-on monter à la grotte de Hira ?","Oui, mais la montée est raide : comptez environ une heure et évitez les heures chaudes."]]
+},
+{
+  slug:'miqat-depuis-la-france', cat:'Ihram', min:5, date:'2026-10-03',
+  title:"Le miqat depuis la France : où et quand mettre l'ihram ?",
+  meta:"Miqat depuis la France : vol vers Djeddah ou Médine, où mettre l'ihram, quand formuler l'intention dans l'avion. Les cinq miqats expliqués simplement.",
+  kw:['miqat depuis la france','mettre ihram avion','miqat djeddah','ihram avion omra','les cinq miqats'],
+  ar:'ميقات',
+  body:`
+<p class="intro">Le miqat est la limite qu'on ne franchit pas sans être en état d'ihram. Depuis la France, on la survole souvent sans la voir : mieux vaut savoir exactement quand se préparer.</p>
+<h2 id="cinq">Les cinq miqats</h2>
+<ul><li><strong>Dhul-Hulayfa (Abyar Ali)</strong>, pour ceux qui viennent de Médine.</li><li><strong>Al-Juhfa (près de Rabigh)</strong>, pour ceux qui viennent du nord-ouest : Égypte, Maghreb, Europe.</li><li><strong>Qarn al-Manazil</strong>, pour ceux qui viennent du Najd.</li><li><strong>Yalamlam</strong>, pour ceux qui viennent du Yémen.</li><li><strong>Dhat 'Irq</strong>, pour ceux qui viennent d'Irak.</li></ul>
+<h2 id="djeddah">Vol direct vers Djeddah</h2>
+<p>Djeddah se trouve à l'intérieur de la limite des miqats. Selon l'avis majoritaire, il faut donc être en ihram avant d'y atterrir. Le plus simple : mettez l'ihram à l'aéroport en France ou dans l'avion, et formulez l'intention quand l'équipage annonce le passage du miqat, en général 30 à 45 minutes avant l'atterrissage.</p>
+<h2 id="medine">Vol vers Médine</h2>
+<p>Pas besoin d'ihram dans l'avion. Vous vous mettrez en ihram à Dhul-Hulayfa (Abyar Ali), sur la route de Médine à La Mecque.</p>
+<h2 id="conseils">Nos conseils</h2>
+<ul><li>Gardez l'ihram dans votre bagage cabine, jamais en soute.</li><li>Entraînez-vous à le nouer chez vous avant le départ.</li><li>Une ceinture évite de devoir rajuster l'izar pendant tout le vol.</li></ul>`,
+  faq:[["Peut-on mettre l'ihram à Djeddah ?","L'avis majoritaire demande d'être en ihram avant Djeddah, qui se trouve après le miqat. En cas de doute, demandez à un savant de confiance."],
+       ["Quand formuler l'intention dans l'avion ?","Au passage du miqat, que l'équipage annonce généralement 30 à 45 minutes avant l'arrivée."]]
+},
+{
+  slug:'valise-omra-checklist', cat:'Préparation', min:5, date:'2026-10-02',
+  title:"Que mettre dans sa valise pour la Omra : la checklist",
+  meta:"La checklist complète de la valise pour la Omra : documents, ihram, produits sans parfum, santé, confort. Tout ce qu'il faut emporter, et ce qu'il vaut mieux laisser.",
+  kw:['valise omra','checklist omra','que prendre pour la omra','préparer sa omra','bagage omra'],
+  ar:'سفر',
+  body:`
+<p class="intro">Une valise bien faite, c'est l'esprit libre sur place. Voici la liste que nous donnons à nos clients avant leur départ.</p>
+<h2 id="documents">Documents</h2>
+<ul><li>Passeport valide au moins 6 mois et visa.</li><li>Permis de Omra et compte Nusuk actif sur votre téléphone.</li><li>Billets, réservation d'hôtel, carte bancaire et un peu d'espèces en riyals.</li></ul>
+<h2 id="ihram">Pour l'ihram</h2>
+<ul><li>Deux ihrams en coton : un porté, un de rechange.</li><li>Une ceinture large porte-documents.</li><li>Des sandales confortables, déjà portées avant le départ.</li><li>Savon, shampoing, déodorant et crème anti-frottement <strong>sans parfum</strong>.</li></ul>
+<h2 id="sante">Santé</h2>
+<ul><li>Vos médicaments habituels avec l'ordonnance.</li><li>Pansements pour les ampoules, pastilles pour la gorge, sels de réhydratation.</li><li>Une gourde : Zamzam est disponible partout dans les Harams.</li></ul>
+<h2 id="confort">Confort</h2>
+<ul><li>Un petit sac à dos ou une pochette pour les chaussures dans la mosquée.</li><li>Un chargeur, une batterie externe et un adaptateur de prise de type G.</li><li>Des vêtements amples et légers pour après l'ihram.</li><li>Un petit tapis de prière pliable.</li></ul>
+<h2 id="laisser">À laisser à la maison</h2>
+<p>Bijoux de valeur, parfums que vous risqueriez d'utiliser par réflexe, et tout ce qui encombre : vous marcherez beaucoup.</p>`,
+  faq:[["Combien d'ihrams emporter ?","Deux : un porté et un de rechange, en cas de tache ou de lavage."],
+       ["Quelle prise électrique en Arabie saoudite ?","Principalement le type G (comme au Royaume-Uni), en 220 à 230 V."]]
+}
+];
+
+</script>
+<script>
+(function(){
+const $ = s => document.querySelector(s);
+const ROS = document.querySelector('.hero .ros') ? document.querySelector('.hero .ros').innerHTML : '';
+const BASE_TITLE = "Naqaa Ihram · Ihram 100 % coton d'Égypte pour la Omra et le Hajj";
+const BASE_DESC = "Ihram homme, enfant et telekung en pur coton d'Égypte : doux, respirant, sans frottement. Livraison offerte en 3 jours ou express 24 h. Guides Omra.";
+const fmtDate = d => new Date(d + 'T12:00:00').toLocaleDateString('fr-FR', {day:'numeric', month:'long', year:'numeric'});
+
+/* ---------- SEO : titre, description, données structurées ---------- */
+function setMeta(title, desc, ld){
+  document.title = title;
+  let m = document.querySelector('meta[name="description"]');
+  if(!m){ m = document.createElement('meta'); m.name = 'description'; document.head.appendChild(m); }
+  m.content = desc;
+  let s = document.getElementById('ld');
+  if(!s){ s = document.createElement('script'); s.type = 'application/ld+json'; s.id = 'ld'; document.head.appendChild(s); }
+  s.textContent = JSON.stringify(ld);
+}
+const ORG = {"@type":"Organization","name":"Naqaa Ihram","url":"https://naqaaihram.com"};
+const HOME_LD = {"@context":"https://schema.org","@graph":[ORG,
+  {"@type":"Product","name":"Naqaa Ihram","description":"Ihram homme 2 pièces en coton d'Égypte, ceinture, pochette et carte de la talbiya.","brand":{"@type":"Brand","name":"Naqaa"},
+   "offers":{"@type":"Offer","price":"39.90","priceCurrency":"EUR","availability":"https://schema.org/InStock","shippingDetails":{"@type":"OfferShippingDetails","shippingRate":{"@type":"MonetaryAmount","value":"0","currency":"EUR"}}}}]};
+
+/* ---------- cartes d'articles ---------- */
+const card = a => `<a class="jcard" href="#j-${a.slug}">
+  <div class="jcover"><span class="ar" lang="ar">${a.ar}</span></div>
+  <div class="b"><span class="c">${a.cat}</span><h3>${a.title}</h3><p>${a.meta.split('. ')[0]}.</p><span class="m">${a.min} min de lecture</span></div></a>`;
+$('#jteaser').innerHTML = ARTICLES.slice(0, 3).map(card).join('');
+
+let filter = 'Tous';
+function renderJournal(){
+  const cats = ['Tous', ...new Set(ARTICLES.map(a => a.cat))];
+  const list = ARTICLES.filter(a => filter === 'Tous' || a.cat === filter);
+  $('#v-journal').innerHTML = `
+  <header class="jhead"><div class="ros" aria-hidden="true">${ROS}</div><div class="wrap">
+    <p class="crumb"><a href="#top">Accueil</a> / Journal</p>
+    <h1 class="j-h1">Le journal de la <em>Omra</em></h1>
+    <p class="lede" style="margin-top:16px">Guides pratiques pour préparer votre Omra : rites, ihram, miqat, Rawdah, lieux à visiter et valise.</p>
+    <div class="jfilters" role="group" aria-label="Filtrer par thème">${cats.map(c => `<button aria-pressed="${c === filter}" data-cat="${c}">${c}</button>`).join('')}</div>
+  </div></header>
+  <section><div class="wrap"><div class="jgrid">${list.map(card).join('')}</div></div></section>`;
+  setMeta("Journal de la Omra : guides pratiques · Naqaa Ihram",
+    "Comment faire la Omra, mettre l'ihram, réserver la Rawdah sur Nusuk, miqat depuis la France, lieux à visiter : tous nos guides pour préparer votre Omra.",
+    {"@context":"https://schema.org","@type":"Blog","name":"Journal de la Omra","publisher":ORG,
+     "blogPost":ARTICLES.map(a => ({"@type":"BlogPosting","headline":a.title,"url":"https://naqaaihram.com/blogs/journal/" + a.slug}))});
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-cat]'); if(!b) return;
+  filter = b.dataset.cat; renderJournal();
+});
+
+function renderArticle(a){
+  const toc = [...a.body.matchAll(/<h2 id="([^"]+)">([^<]+)<\/h2>/g)].map(m => `<a href="#j-${a.slug}" data-to="${m[1]}">${m[2]}</a>`).join('');
+  const related = ARTICLES.filter(x => x.slug !== a.slug).slice(0, 3);
+  $('#v-article').innerHTML = `
+  <header class="jhead"><div class="ros" aria-hidden="true">${ROS}</div><div class="wrap">
+    <p class="crumb"><a href="#top">Accueil</a> / <a href="#journal">Journal</a> / ${a.cat}</p>
+    <h1 class="j-h1" style="max-width:20ch">${a.title}</h1>
+    <p class="ameta"><span>Par l'équipe Naqaa</span><span>${fmtDate(a.date)}</span><span>${a.min} min de lecture</span></p>
+  </div></header>
+  <div class="wrap awrap">
+    <nav class="toc" aria-label="Sommaire"><p>Sommaire</p>${toc}</nav>
+    <article class="prose">
+      ${a.body}
+      <aside class="acta"><img src="img/ihram-packshot.jpg" alt="Ihram Naqaa">
+        <div><h3>Partez avec un ihram qui ne vous trahit pas.</h3><p>100 % coton d'Égypte, ceinture et carte de la talbiya incluses. Livraison offerte en 3 jours, express en 24 h.</p>
+        <a class="btn" href="#collection">Découvrir Naqaa Ihram</a></div></aside>
+      <section class="afaq faq"><h2>Questions fréquentes</h2>${a.faq.map(f => `<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join('')}</section>
+      <div class="kw" aria-label="Mots-clés">${a.kw.map(k => `<span>${k}</span>`).join('')}</div>
+    </article>
+  </div>
+  <section class="pattern"><div class="wrap"><div class="head"><p class="kicker">À lire ensuite</p><h2>Continuer la <em>préparation</em></h2></div><div class="jgrid">${related.map(card).join('')}</div></div></section>`;
+  setMeta(a.title + " · Naqaa Ihram", a.meta, {"@context":"https://schema.org","@graph":[
+    {"@type":"Article","headline":a.title,"description":a.meta,"datePublished":a.date,"author":ORG,"publisher":ORG,"keywords":a.kw.join(', '),"inLanguage":"fr-FR"},
+    {"@type":"FAQPage","mainEntity":a.faq.map(f => ({"@type":"Question","name":f[0],"acceptedAnswer":{"@type":"Answer","text":f[1]}}))},
+    {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil"},{"@type":"ListItem","position":2,"name":"Journal"},{"@type":"ListItem","position":3,"name":a.title}]}]});
+}
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-to]'); if(!t) return;
+  e.preventDefault(); const el = document.getElementById(t.dataset.to); el && el.scrollIntoView({behavior:'smooth'});
+});
+
+/* ---------- routeur ---------- */
+function show(v){ ['home','journal','article'].forEach(k => $('#v-' + k).hidden = k !== v); }
+function route(){
+  const h = location.hash.slice(1);
+  if(h === 'journal'){ show('journal'); renderJournal(); window.scrollTo(0, 0); return; }
+  if(h.startsWith('j-')){
+    const a = ARTICLES.find(x => x.slug === h.slice(2));
+    if(a){ show('article'); renderArticle(a); window.scrollTo(0, 0); return; }
+  }
+  const wasHome = !$('#v-home').hidden;
+  show('home'); setMeta(BASE_TITLE, BASE_DESC, HOME_LD);
+  const el = h && document.getElementById(h);
+  if(el) setTimeout(() => el.scrollIntoView({behavior: wasHome ? 'smooth' : 'auto'}), 0);
+  else if(!wasHome || h === 'top') window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', route);
+route();
+
+/* ---------- 3D ---------- */
+const FEATS = [
+  ["Éponge de coton d'Égypte", "Fibre extra-longue, tissage éponge dense : elle absorbe la sueur et laisse la peau au sec, même à 40 °C."],
+  ["Ourlets plats", "Des bords finis à plat, sans couture épaisse : rien ne frotte à l'intérieur des cuisses pendant le sa'i."],
+  ["Ceinture porte-documents", "Elle tient l'izar sans serrer et garde passeport, carte et téléphone contre vous."],
+  ["Pochette en coton", "Pour le voyage aller, puis pour ranger votre ihram au retour. Votre prénom peut y être gravé."],
+  ["Carte de la talbiya", "En arabe, en phonétique et en français, pour la réciter dès le miqat."]
+];
+$('#feats').innerHTML = FEATS.map((f, i) => `<li><button data-f="${i}" aria-current="${i === 0}"><span class="n">${i + 1}</span><span><b>${f[0]}</b><span class="t">${f[1]}</span></span></button></li>`).join('');
+let active = 0;
+function setActive(i){
+  active = i;
+  document.querySelectorAll('[data-f]').forEach(b => b.setAttribute('aria-current', +b.dataset.f === i));
+  document.querySelectorAll('.hs').forEach(h => h.classList.toggle('on', +h.dataset.h === i));
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-f],[data-h]'); if(!b) return;
+  setActive(+(b.dataset.f ?? b.dataset.h));
+});
+
+function init3D(){
+  const T = window.THREE, stage = $('#stage');
+  if(!T || !T.OrbitControls) return;
+  let renderer;
+  try { renderer = new T.WebGLRenderer({antialias:true, alpha:true}); } catch(e){ return; }
+  $('#stageFb').remove();
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = T.PCFSoftShadowMap;
+  renderer.outputEncoding = T.sRGBEncoding;
+  stage.prepend(renderer.domElement);
+  const scene = new T.Scene();
+  const camera = new T.PerspectiveCamera(30, 1, .1, 100);
+  camera.position.set(5.6, 4.6, 6.8);
+  const controls = new T.OrbitControls(camera, renderer.domElement);
+  controls.target.set(0, .45, 0); controls.enableDamping = true; controls.dampingFactor = .08;
+  controls.enablePan = false; controls.enableZoom = false;
+  controls.minPolarAngle = .35; controls.maxPolarAngle = 1.32;
+  controls.autoRotate = !reduce; controls.autoRotateSpeed = 1.1;
+  controls.addEventListener('start', () => { $('#hint').style.opacity = 0; });
+
+  scene.add(new T.HemisphereLight(0xffffff, 0xd8c7a2, .9));
+  const sun = new T.DirectionalLight(0xffffff, .8); sun.position.set(4, 8, 5); sun.castShadow = true;
+  sun.shadow.mapSize.set(1024, 1024); Object.assign(sun.shadow.camera, {left:-4, right:4, top:4, bottom:-4, near:1, far:20}); sun.shadow.radius = 6;
+  scene.add(sun);
+  const fill = new T.DirectionalLight(0xfff1d6, .35); fill.position.set(-5, 3, -3); scene.add(fill);
+
+  const tex = (w, h, draw, rep) => {
+    const c = document.createElement('canvas'); c.width = w; c.height = h; draw(c.getContext('2d'), w, h);
+    const t = new T.CanvasTexture(c); t.encoding = T.sRGBEncoding; t.anisotropy = 4;
+    if(rep){ t.wrapS = t.wrapT = T.RepeatWrapping; t.repeat.set(rep, rep); }
+    return t;
+  };
+  const terry = tex(512, 512, (g, w, h) => {
+    g.fillStyle = '#FBFAF6'; g.fillRect(0, 0, w, h);
+    for(let i = 0; i < 14000; i++){
+      g.fillStyle = `rgba(${150 + Math.random()*40},${140 + Math.random()*30},${120 + Math.random()*20},${.06 + Math.random()*.12})`;
+      g.beginPath(); g.arc(Math.random()*w, Math.random()*h, .6 + Math.random()*1.4, 0, 7); g.fill();
+    }
+  }, 1.4);
+  const cloth = new T.MeshStandardMaterial({map:terry, roughness:.95, metalness:0});
+
+  function slab(w, d, t, r){
+    const s = new T.Shape(), x = -w/2, y = -d/2;
+    s.moveTo(x + r, y); s.lineTo(x + w - r, y); s.quadraticCurveTo(x + w, y, x + w, y + r);
+    s.lineTo(x + w, y + d - r); s.quadraticCurveTo(x + w, y + d, x + w - r, y + d);
+    s.lineTo(x + r, y + d); s.quadraticCurveTo(x, y + d, x, y + d - r); s.lineTo(x, y + r); s.quadraticCurveTo(x, y, x + r, y);
+    const g = new T.ExtrudeGeometry(s, {depth:Math.max(.02, t - .12), bevelEnabled:true, bevelThickness:.06, bevelSize:.06, bevelSegments:5, curveSegments:10});
+    g.rotateX(-Math.PI/2); g.computeBoundingBox(); g.translate(0, -g.boundingBox.min.y, 0);
+    return g;
+  }
+  const mesh = (g, m) => { const o = new T.Mesh(g, m); o.castShadow = o.receiveShadow = true; return o; };
+
+  const izar = new T.Group(), rida = new T.Group();
+  izar.add(mesh(slab(2.5, 1.7, .17, .14), cloth)); const iz2 = mesh(slab(2.48, 1.68, .17, .14), cloth); iz2.position.y = .17; izar.add(iz2);
+  rida.add(mesh(slab(2.44, 1.66, .17, .14), cloth)); const ri2 = mesh(slab(2.42, 1.64, .17, .14), cloth); ri2.position.y = .17; rida.add(ri2);
+  rida.position.set(.03, .34, -.02); rida.rotation.y = .035;
+
+  const bandTex = tex(256, 512, (g, w, h) => {
+    const gr = g.createLinearGradient(0, 0, w, h); gr.addColorStop(0, '#072833'); gr.addColorStop(1, '#0F6E78');
+    g.fillStyle = gr; g.fillRect(0, 0, w, h);
+    g.fillStyle = '#C9A764'; g.fillRect(14, 0, 4, h); g.fillRect(w - 18, 0, 4, h);
+    g.save(); g.translate(w/2, h/2); g.rotate(-Math.PI/2); g.fillStyle = '#F3E6C4';
+    g.font = '600 64px Outfit, Jost, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('NAQAA', 0, 0); g.restore();
+  });
+  const band = mesh(new T.BoxGeometry(.46, .74, 1.9), new T.MeshStandardMaterial({map:bandTex, roughness:.6}));
+  band.position.set(.55, .36, 0);
+
+  const beltTex = tex(256, 256, (g, w, h) => {
+    g.fillStyle = '#F6F3EC'; g.fillRect(0, 0, w, h); g.strokeStyle = 'rgba(160,150,130,.35)';
+    for(let x = 0; x < w; x += 8){ g.beginPath(); g.moveTo(x, 0); g.lineTo(x, h); g.stroke(); }
+  });
+  const belt = mesh(new T.CylinderGeometry(.34, .34, .44, 48), new T.MeshStandardMaterial({map:beltTex, roughness:.8}));
+  belt.rotation.x = Math.PI/2; belt.position.set(1.85, .34, .95);
+
+  const linen = tex(256, 256, (g, w, h) => {
+    g.fillStyle = '#E9DEC6'; g.fillRect(0, 0, w, h);
+    for(let i = 0; i < 3000; i++){ g.fillStyle = `rgba(120,100,70,${Math.random()*.12})`; g.fillRect(Math.random()*w, Math.random()*h, 2 + Math.random()*6, 1); }
+  }, 1);
+  const pouch = mesh(slab(1.0, .72, .26, .12), new T.MeshStandardMaterial({map:linen, roughness:1}));
+  pouch.position.set(-1.95, 0, 1.0); pouch.rotation.y = .32;
+
+  const cardTex = tex(512, 340, (g, w, h) => {
+    g.fillStyle = '#FBF6EA'; g.fillRect(0, 0, w, h);
+    g.strokeStyle = '#B08D52'; g.lineWidth = 3; g.strokeRect(14, 14, w - 28, h - 28); g.lineWidth = 1; g.strokeRect(24, 24, w - 48, h - 48);
+    g.fillStyle = '#0B3846'; g.textAlign = 'center'; g.direction = 'rtl';
+    g.font = '46px Amiri, serif'; g.fillText('لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ', w/2, h/2 - 10);
+    g.direction = 'ltr'; g.fillStyle = '#8A6A35'; g.font = '600 22px Jost, sans-serif'; g.fillText('T A L B I Y A', w/2, h/2 + 60);
+  });
+  const cream = new T.MeshStandardMaterial({color:0xFBF6EA, roughness:.7});
+  const card = mesh(new T.BoxGeometry(1.0, .02, .66), [cream, cream, new T.MeshStandardMaterial({map:cardTex, roughness:.7}), cream, cream, cream]);
+  card.position.set(-.45, .7, .25); card.rotation.y = -.18;
+
+  const ground = new T.Mesh(new T.PlaneGeometry(16, 16), new T.ShadowMaterial({opacity:.13}));
+  ground.rotation.x = -Math.PI/2; ground.receiveShadow = true;
+  scene.add(izar, rida, band, belt, pouch, card, ground);
+
+  // positions plié / ouvert
+  const parts = [
+    [rida, {y:.34}, {y:1.25}], [band, {y:.36, x:.55}, {y:2.05, x:.55}],
+    [card, {y:.7, x:-.45}, {y:2.6, x:-.2}], [belt, {x:1.85}, {x:2.45}], [pouch, {x:-1.95}, {x:-2.55}]
+  ];
+  let open = 0, openTarget = 0;
+  // points d'information, attachés aux objets
+  const anchor = (parent, x, y, z) => { const o = new T.Object3D(); o.position.set(x, y, z); parent.add(o); return o; };
+  const anchors = [anchor(rida, -.6, .36, -.25), anchor(izar, -1.2, .2, .82), anchor(scene, 0, 0, 0), anchor(pouch, 0, .3, 0), anchor(scene, 0, 0, 0)];
+  anchors[2] = belt; anchors[4] = card;
+  const dots = anchors.map((_, i) => {
+    const b = document.createElement('button'); b.className = 'hs' + (i === 0 ? ' on' : ''); b.dataset.h = i; b.textContent = i + 1;
+    b.setAttribute('aria-label', FEATS[i][0]); stage.appendChild(b); return b;
+  });
+
+  function size(){
+    const w = stage.clientWidth, h = stage.clientHeight;
+    renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+  }
+  size(); new ResizeObserver(size).observe(stage);
+
+  document.querySelectorAll('.ctrl button').forEach(b => b.addEventListener('click', () => {
+    const v = b.dataset.v; $('#hint').style.opacity = 0;
+    if(v === 'rot'){ controls.autoRotate = !controls.autoRotate; b.setAttribute('aria-pressed', controls.autoRotate); return; }
+    openTarget = v === 'eclate' ? 1 : 0;
+    document.querySelectorAll('.ctrl [data-v="plie"],.ctrl [data-v="eclate"]').forEach(x => x.setAttribute('aria-pressed', x === b));
+  }));
+
+  const v = new T.Vector3(); let running = false;
+  function frame(){
+    if(!running) return;
+    open += (openTarget - open) * .07;
+    parts.forEach(([o, a, b]) => { for(const k in a) o.position[k] = a[k] + (b[k] - a[k]) * open; });
+    card.rotation.x = -.55 * open; rida.rotation.z = .06 * open;
+    controls.update(); renderer.render(scene, camera);
+    const w = stage.clientWidth, h = stage.clientHeight;
+    anchors.forEach((a, i) => {
+      a.getWorldPosition(v);
+      if(i === 2) v.y += .38; if(i === 4) v.y += .05;
+      v.project(camera);
+      dots[i].style.transform = `translate(${(v.x * .5 + .5) * w}px, ${(-v.y * .5 + .5) * h}px)`;
+    });
+    requestAnimationFrame(frame);
+  }
+  new IntersectionObserver(([en]) => { const was = running; running = en.isIntersecting; if(running && !was) frame(); }).observe(stage);
+}
+if(document.readyState === 'complete') init3D(); else window.addEventListener('load', init3D);
+})();
+
 </script>

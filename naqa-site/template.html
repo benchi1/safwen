@@ -1,5 +1,7 @@
 <title>Naqaa Ihram</title>
 <meta name="description" content="Ihram 100 % coton d'Égypte. Doux, respirant, fait pour durer. Livraison offerte en 3 jours ou express en 24 h.">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500;600&family=Amiri&display=swap">
@@ -10,6 +12,8 @@
   --green:#0B3846; --green-deep:#072833; --green-soft:#EAF3F3; --teal:#0F6E78; --gold:#A6834C; --gold-deep:#8A6A35; --gold-soft:#F4EAD6;
   --grad:linear-gradient(165deg,#F2E5C8 0%,#F9F2E3 34%,#FFFDF9 66%,#FFFFFF 100%);
   --grad-soft:linear-gradient(180deg,#FFFFFF 0%,#FAF4E6 100%);
+  --gtext:linear-gradient(100deg,#072833 0%,#0B3846 22%,#0F6E78 52%,#25957A 76%,#A6834C 100%);
+  --gold-text:linear-gradient(95deg,#8A6A35 0%,#C9A764 50%,#9C7B40 100%);
   --serif:"Cormorant Garamond", "Cormorant", Garamond, "Times New Roman", serif;
   --sans:"Jost", "Futura", "Century Gothic", "Helvetica Neue", Arial, sans-serif;
   --ar:"Amiri", "Noto Naskh Arabic", "Geeza Pro", serif;
@@ -32,13 +36,16 @@ img{display:block;max-width:100%}
 .lede{color:#3F4944;font-size:17.5px;font-weight:500;max-width:54ch}
 .ar{font-family:var(--ar)}
 .price{font-variant-numeric:tabular-nums}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:0;border-radius:2px;padding:17px 30px;font-size:14px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;background:var(--green);color:#fff;text-decoration:none;transition:background .2s, transform .15s}
-.btn:hover{background:var(--green-deep)}
+.btn{--cut:16px;position:relative;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:12px;border:0;padding:19px 50px;font-size:13.5px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;color:#fff;text-decoration:none;background:linear-gradient(135deg,#E3C98F,#A6834C 55%,#D9BC86);clip-path:polygon(var(--cut) 0,calc(100% - var(--cut)) 0,100% 50%,calc(100% - var(--cut)) 100%,var(--cut) 100%,0 50%);transition:transform .15s, filter .25s}
+.btn::before{content:"";position:absolute;inset:1.6px;z-index:-1;background:linear-gradient(120deg,#072833 0%,#0B3846 30%,#0F6E78 72%,#1D8B74 100%);clip-path:polygon(calc(var(--cut) - 1px) 0,calc(100% - var(--cut) + 1px) 0,100% 50%,calc(100% - var(--cut) + 1px) 100%,calc(var(--cut) - 1px) 100%,0 50%)}
+.btn::after{content:"";position:absolute;inset:0;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23D9BC86' d='M10 0l2.93 2.93H17.07V7.07L20 10l-2.93 2.93v4.14h-4.14L10 20l-2.93-2.93H2.93v-4.14L0 10l2.93-2.93V2.93h4.14Z'/%3E%3C/svg%3E") no-repeat 24px 50%/9px 9px,url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23D9BC86' d='M10 0l2.93 2.93H17.07V7.07L20 10l-2.93 2.93v4.14h-4.14L10 20l-2.93-2.93H2.93v-4.14L0 10l2.93-2.93V2.93h4.14Z'/%3E%3C/svg%3E") no-repeat calc(100% - 24px) 50%/9px 9px,linear-gradient(105deg,transparent 35%,rgba(255,255,255,.22) 50%,transparent 65%) no-repeat -150% 0/60% 100%;transition:background-position .7s ease}
+.btn:hover{filter:brightness(1.08)}
+.btn:hover::after{background-position:24px 50%,calc(100% - 24px) 50%,250% 0}
 .btn:active{transform:translateY(1px)}
-.btn.light{background:#fff;color:var(--green)}
-.btn.light:hover{background:var(--gold-soft)}
-.btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-.btn.line:hover{background:var(--ink);color:#fff}
+.btn:focus-visible{outline:none;filter:brightness(1.18) drop-shadow(0 0 0 #fff)}
+.btn:focus-visible::before{background:linear-gradient(120deg,#0F6E78,#1D8B74)}
+.btn.light,.btn.line{color:var(--green)}
+.btn.light::before,.btn.line::before{background:#fff}
 .btn.block{width:100%}
 .link{background:none;border:0;padding:0;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--green);border-bottom:1px solid currentColor;padding-bottom:3px}
 
@@ -210,7 +217,7 @@ footer h4{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(
 footer ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 footer .news{display:flex;margin-top:22px;max-width:360px;border-bottom:1px solid var(--ink)}
 footer .news input{flex:1;min-width:0;border:0;background:transparent;padding:12px 0;font:inherit;color:var(--ink)}
-footer .news button{background:none;border:0;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+footer .news button{background:none;border:0;clip-path:none;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
 footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid var(--line);margin-top:56px;padding-top:24px;font-size:12.5px}
 @media (max-width:860px){ footer .cols{grid-template-columns:1fr 1fr} footer .cols > :first-child{grid-column:1/-1} }
 
@@ -294,6 +301,99 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
   .mbuy b{display:block;font-family:var(--serif);font-size:18px;font-weight:500}
   .mbuy .btn{padding:14px 18px}
 }
+
+/* ---------- typographie en dégradé ---------- */
+.hero h1,.head h2,.story h2,.final h2,.j-h1,.x3d h2{background:var(--gtext);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero h1 em,.head h2 em,.j-h1 em{background:var(--gold-text);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+.kicker{display:inline-flex;align-items:center;gap:10px}
+.kicker::before{content:"";width:9px;height:9px;background:var(--gold);clip-path:polygon(50% 0,64% 15%,85% 15%,85% 36%,100% 50%,85% 64%,85% 85%,64% 85%,50% 100%,36% 85%,15% 85%,15% 64%,0 50%,15% 36%,15% 15%,36% 15%)}
+
+/* ---------- verset ---------- */
+.verse{position:relative;overflow:hidden;background:linear-gradient(125deg,#062530 0%,#0B3846 40%,#0F6E78 85%,#1D8B74 100%);color:#fff;text-align:center;padding-block:120px}
+.verse .ros{position:absolute;width:900px;left:50%;top:50%;transform:translate(-50%,-50%);opacity:.2;pointer-events:none}
+.verse .ros svg{width:100%;height:auto}
+.verse .wrap{position:relative}
+.verse .ar{font-family:var(--ar);font-size:clamp(38px,5.4vw,74px);line-height:1.7;background:linear-gradient(90deg,#F3E6C4,#D9BC86 40%,#F7EDD3 60%,#C9A764);-webkit-background-clip:text;background-clip:text;color:transparent}
+.verse .fr{font-family:var(--serif);font-weight:600;font-style:italic;font-size:clamp(24px,2.8vw,36px);margin-top:10px}
+.verse .ref{display:inline-flex;align-items:center;gap:14px;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:#D9BC86;margin-top:22px;font-weight:600}
+.verse .ref::before,.verse .ref::after{content:"";width:40px;height:1px;background:currentColor}
+.verse p.ctx{max-width:56ch;margin:22px auto 0;color:rgba(255,255,255,.82);font-weight:500}
+
+/* ---------- 3D ---------- */
+.x3d{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.x3d > *{min-width:0}
+.stage{position:relative;aspect-ratio:1/1;max-width:100%;background:radial-gradient(circle at 50% 38%,#FFFFFF 0%,#FAF4E7 55%,#F0E3C6 100%);border-radius:50% 50% 10px 10px/32% 32% 10px 10px;overflow:hidden;touch-action:pan-y}
+.stage::before{content:"";position:absolute;inset:12px;border:1px solid rgba(166,131,76,.45);border-radius:inherit;pointer-events:none;z-index:2}
+.stage canvas{position:absolute;inset:0;width:100%!important;height:100%!important;cursor:grab}
+.stage canvas:active{cursor:grabbing}
+.stage .fb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hs{position:absolute;z-index:3;left:0;top:0;width:32px;height:32px;margin:-16px 0 0 -16px;border-radius:50%;border:1px solid var(--gold);background:rgba(255,255,255,.94);color:var(--green);font-size:12.5px;font-weight:600;display:grid;place-items:center;box-shadow:0 6px 18px rgba(11,56,70,.2);transition:background .2s,color .2s}
+.hs::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(166,131,76,.55);animation:pulse 2.4s ease-out infinite}
+.hs.on{background:var(--green);color:#fff;border-color:var(--green)}
+@keyframes pulse{from{transform:scale(.8);opacity:1}to{transform:scale(1.5);opacity:0}}
+.ctrl{position:absolute;z-index:3;left:50%;bottom:22px;transform:translateX(-50%);display:flex;gap:4px;background:rgba(255,255,255,.9);padding:5px;border-radius:999px;box-shadow:0 6px 20px rgba(11,56,70,.12)}
+.ctrl button{border:0;background:none;padding:9px 16px;border-radius:999px;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--muted);white-space:nowrap}
+.ctrl button[aria-pressed="true"]{background:var(--green);color:#fff}
+.hint{position:absolute;z-index:3;top:26%;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;pointer-events:none;transition:opacity .6s}
+.feats{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:2px}
+.feats button{width:100%;display:grid;grid-template-columns:30px 1fr;gap:16px;text-align:left;background:none;border:0;border-left:2px solid var(--line);padding:14px 18px;transition:background .2s,border-color .2s}
+.feats button[aria-current="true"]{border-color:var(--gold);background:var(--paper)}
+.feats .n{width:28px;height:28px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;font-size:12px;font-weight:600;color:var(--green)}
+.feats b{display:block;font-family:var(--serif);font-weight:600;font-size:23px;line-height:1.15}
+.feats .t{display:block;color:#4E5852;font-size:14.5px;font-weight:500;margin-top:4px;max-height:0;overflow:hidden;transition:max-height .35s ease}
+.feats button[aria-current="true"] .t{max-height:120px}
+@media (max-width:900px){ .x3d{grid-template-columns:1fr;gap:28px} .ctrl button{padding:8px 11px;font-size:10.5px} }
+
+/* ---------- journal ---------- */
+.jgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.jcard{background:#fff;border:1px solid var(--line);padding:0;text-align:left;display:flex;flex-direction:column;min-width:0;text-decoration:none;color:inherit;transition:transform .25s, box-shadow .25s}
+.jcard:hover{transform:translateY(-4px);box-shadow:0 18px 40px -24px rgba(11,56,70,.4)}
+.jcover{position:relative;aspect-ratio:16/10;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,#072833,#0B3846 35%,#0F6E78 75%,#1D8B74)}
+.jcover::before{content:"";position:absolute;inset:0;background:var(--star-light) 0 0/66px 66px}
+.jcover .ar{position:relative;font-family:var(--ar);font-size:58px;background:linear-gradient(90deg,#F3E6C4,#C9A764);-webkit-background-clip:text;background-clip:text;color:transparent}
+.jcard .b{padding:22px 24px 26px;display:grid;gap:8px;flex:1}
+.jcard .c{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+.jcard h3{font-size:26px;line-height:1.12}
+.jcard p{font-size:14.5px;color:#4E5852;font-weight:500}
+.jcard .m{font-size:12.5px;color:var(--muted);margin-top:auto;padding-top:8px}
+@media (max-width:900px){ .jgrid{grid-template-columns:1fr} }
+.jhead{background:var(--grad);padding-block:80px 56px;position:relative;overflow:hidden}
+.jhead .ros{position:absolute;width:640px;right:-160px;top:-200px;opacity:.45;pointer-events:none}
+.jhead .ros svg{width:100%;height:auto}
+.jhead .wrap{position:relative}
+.j-h1{font-size:clamp(44px,6vw,80px);margin-top:12px}
+.jfilters{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.jfilters button{border:1px solid var(--gold-soft);background:#fff;padding:9px 16px;font-size:13px;font-weight:600;color:var(--green);border-radius:999px}
+.jfilters button[aria-pressed="true"]{background:var(--green);color:#fff;border-color:var(--green)}
+.crumb{font-size:13px;color:var(--muted);font-weight:500}
+.crumb a{color:var(--green)}
+.awrap{display:grid;grid-template-columns:230px minmax(0,1fr);gap:64px;padding-block:56px 100px}
+.toc{position:sticky;top:120px;align-self:start;font-size:14px}
+.toc p{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:12px}
+.toc a{display:block;padding:7px 0 7px 14px;color:#4E5852;text-decoration:none;border-left:2px solid var(--line);font-weight:500}
+.toc a:hover{border-color:var(--gold);color:var(--green)}
+.prose{max-width:68ch;font-size:17.5px;line-height:1.78;color:#26302B;font-weight:400}
+.prose .intro{font-size:20px;font-weight:500;color:var(--ink);line-height:1.6}
+.prose h2{font-size:34px;margin:52px 0 14px;scroll-margin-top:120px}
+.prose p{margin:0 0 18px}
+.prose ul,.prose ol{margin:0 0 20px;padding-left:22px;display:grid;gap:9px}
+.prose li::marker{color:var(--gold)}
+.prose strong{font-weight:600;color:var(--ink)}
+.prose .ar-q{font-family:var(--ar);font-size:27px;line-height:2;text-align:center;direction:rtl;margin:28px 0;padding:26px 20px;background:var(--grad-soft);border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);color:var(--green)}
+.prose .note-src{font-size:14.5px;color:var(--muted);font-style:italic}
+.ameta{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:13.5px;color:var(--muted);font-weight:500;margin-top:18px}
+.acta{margin-top:56px;padding:30px;background:var(--grad);border:1px solid var(--gold-soft);display:grid;grid-template-columns:120px 1fr;gap:26px;align-items:center}
+.acta img{width:120px;height:150px;object-fit:cover;border-radius:60px 60px 4px 4px/40px 40px 4px 4px}
+.acta h3{font-size:28px}
+.acta p{color:#4E5852;font-weight:500;font-size:15px;margin:6px 0 18px}
+.kw{display:flex;flex-wrap:wrap;gap:8px;margin-top:36px}
+.kw span{font-size:12px;padding:6px 12px;background:var(--paper);border:1px solid var(--gold-soft);color:var(--gold-deep);font-weight:500}
+.afaq{margin-top:56px}
+.afaq h2{margin-top:0}
+@media (max-width:900px){ .awrap{grid-template-columns:1fr;gap:0} .toc{display:none} .acta{grid-template-columns:1fr} }
+.mj{display:none;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--green);text-decoration:none;margin-right:18px;align-self:center}
+@media (max-width:860px){ .mj{display:inline} }
+
 @media (prefers-reduced-motion: reduce){ *{transition:none!important;scroll-behavior:auto!important} }
 </style>
 
@@ -304,14 +404,16 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
     <nav aria-label="Navigation principale">
       <a href="#collection">Collection</a>
       <a href="#atelier">L'atelier</a>
-      <a href="#difference">La différence</a>
+      <a href="#explorer">Explorer</a>
+      <a href="#journal">Journal</a>
     </nav>
     <a class="logo" href="#top" aria-label="Naqaa, retour en haut">{{LOGO}}</a>
-    <div class="right"><button class="cart-btn" id="cartBtn" aria-label="Ouvrir le panier">Panier <span class="n" id="cartN">0</span></button></div>
+    <div class="right"><a class="mj" href="#journal">Journal</a><button class="cart-btn" id="cartBtn" aria-label="Ouvrir le panier">Panier <span class="n" id="cartN">0</span></button></div>
   </div>
 </header>
 
 <main id="top">
+<div id="v-home">
   <!-- HÉROS -->
   <section class="hero" aria-label="Naqaa Ihram">
     <div class="hero-bg" aria-hidden="true"><div class="tiles"></div><div class="glow"></div><div class="ros">{{ROSETTE}}</div></div>
@@ -351,13 +453,24 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
     </div>
   </section>
 
+  <!-- VERSET -->
+  <section class="verse" aria-label="Verset sur la Omra">
+    <div class="ros" aria-hidden="true">{{ROSETTE}}</div>
+    <div class="wrap">
+      <p class="ar" lang="ar">وَأَتِمُّوا الْحَجَّ وَالْعُمْرَةَ لِلَّهِ</p>
+      <p class="fr">« Et accomplissez pour Allah le Hajj et la Omra. »</p>
+      <p class="ref">Sourate Al-Baqara · verset 196</p>
+      <p class="ctx">Accomplir, c'est aller jusqu'au bout, avec soin. Nous avons conçu Naqaa pour que rien de matériel ne vous en détourne.</p>
+    </div>
+  </section>
+
   <!-- ATELIER -->
   <section id="atelier" class="pattern">
     <div class="wrap">
       <div class="head center">
         <div class="rule">{{STAR}}</div>
         <p class="kicker">De la fibre au pèlerin</p>
-        <h2>Né sur les rives du Nil, tissé pour la Kaaba.</h2>
+        <h2>Né sur les rives du Nil, <em>tissé pour la Kaaba.</em></h2>
         <p class="lede">Un ihram ne se fabrique pas comme une serviette de plage. Nous suivons chaque pièce, du champ jusqu'à votre porte.</p>
       </div>
       <div class="steps">
@@ -388,7 +501,7 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
     <div class="wrap">
       <div class="head">
         <p class="kicker">La collection</p>
-        <h2>Un seul tissu. Toute la famille.</h2>
+        <h2>Un seul tissu. <em>Toute la famille.</em></h2>
       </div>
       <div class="grid3">
         <button class="prod" data-open="homme">
@@ -411,12 +524,33 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
     </div>
   </section>
 
+  <!-- EXPLORER 3D -->
+  <section id="explorer" class="pattern">
+    <div class="wrap x3d">
+      <div class="stage" id="stage">
+        <img class="fb" id="stageFb" src="img/ihram-packshot.jpg" alt="Ihram Naqaa plié avec sa ceinture">
+        <p class="hint" id="hint">Faites-le tourner</p>
+        <div class="ctrl" role="group" aria-label="Vue 3D">
+          <button aria-pressed="true" data-v="plie">Plié</button>
+          <button aria-pressed="false" data-v="eclate">Ouvrir la boîte</button>
+          <button aria-pressed="true" data-v="rot">Rotation</button>
+        </div>
+      </div>
+      <div>
+        <p class="kicker">Explorer en 3D</p>
+        <h2 style="font-size:clamp(36px,4.2vw,56px);margin-top:14px">Regardez-le de près.</h2>
+        <p class="lede" style="margin-top:16px">Tournez le coffret, ouvrez-le, touchez chaque détail du doigt.</p>
+        <ul class="feats" id="feats"></ul>
+      </div>
+    </div>
+  </section>
+
   <!-- DIFFÉRENCE -->
   <section id="difference">
     <div class="wrap">
       <div class="head">
         <p class="kicker">La différence</p>
-        <h2>Pourquoi Naqaa Ihram et pas un ihram low cost ?</h2>
+        <h2>Pourquoi <em>Naqaa Ihram</em> et pas un ihram low cost ?</h2>
         <p class="lede">Parce que ce tissu reste contre votre peau pendant des heures, sous 40 °C, dans la foule. Avant le style, avant le prix, il y a votre santé.</p>
       </div>
 
@@ -511,6 +645,15 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
     </div>
   </section>
 
+  <!-- JOURNAL -->
+  <section id="journal-home">
+    <div class="wrap">
+      <div class="head"><p class="kicker">Le journal</p><h2>Préparer votre <em>Omra</em>, pas à pas.</h2><p class="lede">Rites, miqat, Rawdah, valise : nos guides pour partir serein.</p></div>
+      <div class="jgrid" id="jteaser"></div>
+      <p style="margin-top:40px;text-align:center"><a class="btn line" href="#journal">Tous les articles</a></p>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section class="pattern" id="faq">
     <div class="wrap">
@@ -534,6 +677,9 @@ footer .legal{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px
       <button class="btn" data-open="homme">Choisir mon ihram</button>
     </div>
   </section>
+</div>
+<div id="v-journal" hidden></div>
+<div id="v-article" hidden></div>
 </main>
 
 <footer class="site">
@@ -714,4 +860,10 @@ if('IntersectionObserver' in window){
 }
 render();
 })();
+</script>
+<script>
+{{JOURNAL}}
+</script>
+<script>
+{{APPJS}}
 </script>

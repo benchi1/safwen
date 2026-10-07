@@ -1,0 +1,5 @@
+{
+  "general": { "password_page": { "login_form_heading": "Accès boutique" } },
+  "products": { "product": { "add_to_cart": "Ajouter au panier", "sold_out": "Épuisé" } },
+  "cart": { "general": { "title": "Votre panier", "empty": "Votre panier est vide." } }
+}

@@ -1,0 +1,14 @@
+<header class="page-head"><div class="wrap"><h1 class="h-display grad-text">Collections</h1></div></header>
+<section class="section"><div class="wrap"><div class="grid-products">
+  {%- for collection in collections -%}
+    {%- if collection.products_count > 0 -%}
+      <a class="card reveal" href="{{ collection.url }}">
+        <div class="card__media">{%- if collection.featured_image -%}{{ collection.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', alt: collection.title }}{%- endif -%}</div>
+        <div class="card__info"><span class="card__title">{{ collection.title }}</span><span class="card__sub">{{ collection.products_count }} produits</span></div>
+      </a>
+    {%- endif -%}
+  {%- endfor -%}
+</div></div></section>
+{% schema %}
+{ "name": "Liste des collections" }
+{% endschema %}

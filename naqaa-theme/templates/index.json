@@ -1,0 +1,336 @@
+{
+ "sections": {
+  "hero": {
+   "type": "hero-kaaba",
+   "settings": {}
+  },
+  "proof": {
+   "type": "proofbar",
+   "settings": {},
+   "blocks": {
+    "proofbar-b0": {
+     "type": "item",
+     "settings": {
+      "icon": "drop",
+      "title": "100 % coton d'Égypte",
+      "text": "Fibre extra-longue"
+     }
+    },
+    "proofbar-b1": {
+     "type": "item",
+     "settings": {
+      "icon": "truck",
+      "title": "Livré en 24 h ou 3 jours",
+      "text": "Standard offerte"
+     }
+    },
+    "proofbar-b2": {
+     "type": "item",
+     "settings": {
+      "icon": "leaf",
+      "title": "Doux pour la peau",
+      "text": "Sans apprêt ni parfum"
+     }
+    },
+    "proofbar-b3": {
+     "type": "item",
+     "settings": {
+      "icon": "gift",
+      "title": "Tout est dans la boîte",
+      "text": "Ceinture, pochette, talbiya"
+     }
+    }
+   },
+   "block_order": [
+    "proofbar-b0",
+    "proofbar-b1",
+    "proofbar-b2",
+    "proofbar-b3"
+   ]
+  },
+  "story": {
+   "type": "story-arch",
+   "settings": {}
+  },
+  "verse": {
+   "type": "verse",
+   "settings": {}
+  },
+  "atelier": {
+   "type": "atelier",
+   "settings": {},
+   "blocks": {
+    "atelier-b0": {
+     "type": "step",
+     "settings": {
+      "fallback": "coton-nil.jpg",
+      "title": "Le coton du Nil",
+      "text": "Récolté dans le delta, là où pousse le coton à fibre extra-longue. Cueilli à la main pour ne pas casser la fibre."
+     }
+    },
+    "atelier-b1": {
+     "type": "step",
+     "settings": {
+      "fallback": "atelier-tissage.jpg",
+      "title": "Le tissage",
+      "text": "Filé fin puis tissé en éponge dense et souple. Assez épais pour couvrir, assez léger pour respirer sous 40 °C."
+     }
+    },
+    "atelier-b2": {
+     "type": "step",
+     "settings": {
+      "fallback": "pliage-boite.jpg",
+      "title": "La finition",
+      "text": "Ourlé à plat, contrôlé pièce par pièce, plié à la main dans son coffret avec la carte de la talbiya."
+     }
+    }
+   },
+   "block_order": [
+    "atelier-b0",
+    "atelier-b1",
+    "atelier-b2"
+   ]
+  },
+  "collection": {
+   "type": "featured-collection",
+   "settings": {
+    "collection": "ihram-et-tenues-de-omra"
+   }
+  },
+  "explorer": {
+   "type": "explorer-3d",
+   "settings": {},
+   "blocks": {
+    "explorer-3d-b0": {
+     "type": "feature",
+     "settings": {
+      "title": "Éponge de coton d'Égypte",
+      "text": "Fibre extra-longue, tissage éponge dense : elle absorbe la sueur et laisse la peau au sec, même à 40 °C."
+     }
+    },
+    "explorer-3d-b1": {
+     "type": "feature",
+     "settings": {
+      "title": "Ourlets plats",
+      "text": "Des bords finis à plat, sans couture épaisse : rien ne frotte à l'intérieur des cuisses pendant le sa'i."
+     }
+    },
+    "explorer-3d-b2": {
+     "type": "feature",
+     "settings": {
+      "title": "Ceinture porte-documents",
+      "text": "Elle tient l'izar sans serrer et garde passeport, carte et téléphone contre vous."
+     }
+    },
+    "explorer-3d-b3": {
+     "type": "feature",
+     "settings": {
+      "title": "Pochette en coton",
+      "text": "Pour le voyage aller, puis pour ranger votre ihram au retour."
+     }
+    },
+    "explorer-3d-b4": {
+     "type": "feature",
+     "settings": {
+      "title": "Carte de la talbiya",
+      "text": "En arabe, en phonétique et en français, pour la réciter dès le miqat."
+     }
+    }
+   },
+   "block_order": [
+    "explorer-3d-b0",
+    "explorer-3d-b1",
+    "explorer-3d-b2",
+    "explorer-3d-b3",
+    "explorer-3d-b4"
+   ]
+  },
+  "difference": {
+   "type": "difference",
+   "settings": {},
+   "blocks": {
+    "difference-b0": {
+     "type": "tab",
+     "settings": {
+      "tab": "Santé",
+      "stat": "×20",
+      "label": "Le coton absorbe environ vingt fois plus d'humidité que le polyester.",
+      "points": "La peau reste sèche. :: C'est l'humidité qui transforme un simple frottement en brûlure entre les cuisses. Un tissu qui boit la sueur coupe le problème à la source.\nUn toucher plus doux. :: La fibre extra-longue laisse moins de bouts de fibres à la surface du fil. Le tissu glisse sur la peau au lieu de l'accrocher.\nRien de synthétique, rien de parfumé. :: Aucun plastique qui chauffe, aucun apprêt parfumé : important quand le parfum est interdit en état d'ihram."
+     }
+    },
+    "difference-b1": {
+     "type": "tab",
+     "settings": {
+      "tab": "Excellence",
+      "stat": "35 mm",
+      "label": "La longueur de fibre qui fait la réputation du coton d'Égypte.",
+      "points": "Le coton du linge d'exception. :: Celui des draps des grands hôtels, choisi ici pour le vêtement le plus important de votre vie.\nUne éponge dense et régulière. :: Elle tombe bien, couvre sans transparence et ne se déforme pas quand vous marchez.\nUn coffret, pas un sachet. :: Plié à la main, accompagné de la carte de la talbiya. On ouvre un Naqaa comme on ouvre un cadeau."
+     }
+    },
+    "difference-b2": {
+     "type": "tab",
+     "settings": {
+      "tab": "Durabilité",
+      "stat": "Des années",
+      "label": "Un tissu qui traverse les voyages.",
+      "points": "Un fil plus solide. :: Les fibres longues se tiennent mieux entre elles : le tissu résiste aux lavages répétés et bouloche moins.\nIl s'adoucit avec le temps. :: Le coton de qualité gagne en souplesse à chaque lavage au lieu de s'user.\nUn ihram, plusieurs voyages. :: Votre première Omra, celles qui suivront, puis le Hajj. Le même tissu, fidèle."
+     }
+    },
+    "difference-b3": {
+     "type": "tab",
+     "settings": {
+      "tab": "Transmission",
+      "stat": "Une vie",
+      "label": "Un ihram, une histoire.",
+      "points": "On le garde. :: Beaucoup de pèlerins conservent leur ihram toute leur vie, comme le témoin de leur voyage.\nOn le transmet. :: Il passe du père au fils, pour une première Omra qui ressemble à la sienne.\nOn le garde pour le dernier voyage. :: Certains le conservent jusqu'au bout. Un tissu digne de ce moment ne peut pas être un tissu au rabais."
+     }
+    }
+   },
+   "block_order": [
+    "difference-b0",
+    "difference-b1",
+    "difference-b2",
+    "difference-b3"
+   ]
+  },
+  "segments": {
+   "type": "segments",
+   "settings": {},
+   "blocks": {
+    "segments-b0": {
+     "type": "seg",
+     "settings": {
+      "tag": "Première Omra",
+      "title": "Vous ne savez pas quoi prendre.",
+      "text": "Tout est dans la boîte : les deux pièces, la ceinture pour vos papiers et la carte pour apprendre la talbiya avant de partir.",
+      "link_label": "Je pars pour la première fois"
+     }
+    },
+    "segments-b1": {
+     "type": "seg",
+     "settings": {
+      "tag": "Pèlerin fidèle",
+      "title": "Vous connaissez l'ihram qui gratte.",
+      "text": "Vous savez ce que c'est, le sa'i avec un tissu rêche. Passez à celui que vous garderez pour les prochains voyages.",
+      "link_label": "Je change d'ihram"
+     }
+    },
+    "segments-b2": {
+     "type": "seg",
+     "settings": {
+      "tag": "En famille",
+      "title": "Vous partez avec les vôtres.",
+      "text": "Le même coton pour vous, votre fils et votre épouse. Un seul colis, une seule boîte à ouvrir ensemble.",
+      "link_label": "Voir la collection"
+     }
+    },
+    "segments-b3": {
+     "type": "seg",
+     "settings": {
+      "tag": "À offrir",
+      "title": "Vos parents partent.",
+      "text": "Offrez-leur le tissu de leur voyage. Coffret prêt à offrir avec votre message, livré chez eux en 24 h.",
+      "link_label": "Offrir un Naqaa"
+     }
+    },
+    "segments-b4": {
+     "type": "seg",
+     "settings": {
+      "tag": "Peau sensible",
+      "title": "La chaleur vous inquiète.",
+      "text": "Rougeurs, transpiration, peau qui réagit vite : un coton pur et sans apprêt, qui absorbe au lieu d'étouffer.",
+      "link_label": "Voir l'ihram"
+     }
+    },
+    "segments-b5": {
+     "type": "seg",
+     "settings": {
+      "tag": "Agences et groupes",
+      "title": "Vous accompagnez des pèlerins.",
+      "text": "Tarifs dégressifs dès 20 pièces, coffrets au nom de votre agence, livraison groupée avant le départ.",
+      "link_label": "Demander un devis",
+      "link": "/pages/contact"
+     }
+    }
+   },
+   "block_order": [
+    "segments-b0",
+    "segments-b1",
+    "segments-b2",
+    "segments-b3",
+    "segments-b4",
+    "segments-b5"
+   ]
+  },
+  "shipping": {
+   "type": "shipping",
+   "settings": {}
+  },
+  "journal": {
+   "type": "journal",
+   "settings": {
+    "blog": "journal",
+    "limit": 3
+   }
+  },
+  "faq": {
+   "type": "faq",
+   "settings": {},
+   "blocks": {
+    "faq-b0": {
+     "type": "qa",
+     "settings": {
+      "q": "L'éponge, ce n'est pas trop chaud ?",
+      "a": "<p>Non, c'est la matière qui compte. Le coton absorbe la sueur et laisse passer l'air : vous avez moins chaud qu'avec un tissu fin en polyester qui colle à la peau.</p>"
+     }
+    },
+    "faq-b1": {
+     "type": "qa",
+     "settings": {
+      "q": "Le telekung convient-il pour la Omra ?",
+      "a": "<p>Oui. En état d'ihram, la femme porte un vêtement ample et couvrant, de la couleur de son choix, le visage et les mains découverts. Le telekung couvre tout le corps et laisse le visage libre.</p>"
+     }
+    },
+    "faq-b2": {
+     "type": "qa",
+     "settings": {
+      "q": "Quand commander ?",
+      "a": "<p>Idéalement deux semaines avant le départ, pour le laver une fois et apprendre à le nouer. Si vous partez demain, choisissez l'express : commandé avant 13 h, livré le lendemain.</p>"
+     }
+    },
+    "faq-b3": {
+     "type": "qa",
+     "settings": {
+      "q": "Comment l'entretenir ?",
+      "a": "<p>Machine à 40 °C, sans adoucissant parfumé ni javel, séchage à l'air libre. Sur place, un lavage à la main suffit : il sèche en quelques heures.</p>"
+     }
+    }
+   },
+   "block_order": [
+    "faq-b0",
+    "faq-b1",
+    "faq-b2",
+    "faq-b3"
+   ]
+  },
+  "final": {
+   "type": "final-cta",
+   "settings": {}
+  }
+ },
+ "order": [
+  "hero",
+  "proof",
+  "story",
+  "verse",
+  "atelier",
+  "collection",
+  "explorer",
+  "difference",
+  "segments",
+  "shipping",
+  "journal",
+  "faq",
+  "final"
+ ]
+}

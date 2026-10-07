@@ -1,0 +1,24 @@
+<div class="proofbar">
+  <div class="wrap proofbar__in">
+    {%- for block in section.blocks -%}
+      <div class="proof" {{ block.shopify_attributes }}>{% render 'icon', name: block.settings.icon %}<span><b>{{ block.settings.title }}</b>{{ block.settings.text }}</span></div>
+    {%- endfor -%}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Barre de réassurance",
+  "blocks": [ { "type": "item", "name": "Élément", "settings": [
+    { "type": "select", "id": "icon", "label": "Icône", "options": [ { "value": "drop", "label": "Coton" }, { "value": "truck", "label": "Livraison" }, { "value": "leaf", "label": "Douceur" }, { "value": "gift", "label": "Coffret" }, { "value": "shield", "label": "Paiement" }, { "value": "return", "label": "Retour" } ], "default": "drop" },
+    { "type": "text", "id": "title", "label": "Titre", "default": "100 % coton d'Égypte" },
+    { "type": "text", "id": "text", "label": "Texte", "default": "Fibre extra-longue" }
+  ] } ],
+  "max_blocks": 4,
+  "presets": [ { "name": "Barre de réassurance", "blocks": [
+    { "type": "item", "settings": { "icon": "drop", "title": "100 % coton d'Égypte", "text": "Fibre extra-longue" } },
+    { "type": "item", "settings": { "icon": "truck", "title": "Livré en 24 h ou 3 jours", "text": "Standard offerte" } },
+    { "type": "item", "settings": { "icon": "leaf", "title": "Doux pour la peau", "text": "Sans apprêt ni parfum" } },
+    { "type": "item", "settings": { "icon": "gift", "title": "Tout est dans la boîte", "text": "Ceinture, pochette, talbiya" } }
+  ] } ]
+}
+{% endschema %}

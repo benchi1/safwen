@@ -1,0 +1,35 @@
+<section class="section bg-pattern">
+  <div class="wrap">
+    <div class="head reveal"><p class="kicker">{{ section.settings.kicker }}</p><h2 class="h-1 grad-text">{{ section.settings.title }}</h2></div>
+    <div class="who">
+      {%- for block in section.blocks -%}
+        <article class="reveal" {{ block.shopify_attributes }}><span class="t">{{ block.settings.tag }}</span><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p>{%- if block.settings.link_label != blank -%}<a class="link" href="{{ block.settings.link | default: routes.all_products_collection_url }}">{{ block.settings.link_label }}</a>{%- endif -%}</article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Profils de clients",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Sur-titre", "default": "Chaque voyage est unique" },
+    { "type": "inline_richtext", "id": "title", "label": "Titre", "default": "Vous partez <em>comment ?</em>" }
+  ],
+  "blocks": [ { "type": "seg", "name": "Profil", "settings": [
+    { "type": "text", "id": "tag", "label": "Étiquette" },
+    { "type": "text", "id": "title", "label": "Titre" },
+    { "type": "textarea", "id": "text", "label": "Texte" },
+    { "type": "text", "id": "link_label", "label": "Texte du lien" },
+    { "type": "url", "id": "link", "label": "Lien" }
+  ] } ],
+  "max_blocks": 6,
+  "presets": [ { "name": "Profils de clients", "blocks": [
+    { "type": "seg", "settings": { "tag": "Première Omra", "title": "Vous ne savez pas quoi prendre.", "text": "Tout est dans la boîte : les deux pièces, la ceinture pour vos papiers et la carte pour apprendre la talbiya avant de partir.", "link_label": "Je pars pour la première fois" } },
+    { "type": "seg", "settings": { "tag": "Pèlerin fidèle", "title": "Vous connaissez l'ihram qui gratte.", "text": "Vous savez ce que c'est, le sa'i avec un tissu rêche. Passez à celui que vous garderez pour les prochains voyages.", "link_label": "Je change d'ihram" } },
+    { "type": "seg", "settings": { "tag": "En famille", "title": "Vous partez avec les vôtres.", "text": "Le même coton pour vous, votre fils et votre épouse. Un seul colis, une seule boîte à ouvrir ensemble.", "link_label": "Voir la collection" } },
+    { "type": "seg", "settings": { "tag": "À offrir", "title": "Vos parents partent.", "text": "Offrez-leur le tissu de leur voyage. Coffret prêt à offrir avec votre message, livré chez eux en 24 h.", "link_label": "Offrir un Naqaa" } },
+    { "type": "seg", "settings": { "tag": "Peau sensible", "title": "La chaleur vous inquiète.", "text": "Rougeurs, transpiration, peau qui réagit vite : un coton pur et sans apprêt, qui absorbe au lieu d'étouffer.", "link_label": "Voir l'ihram" } },
+    { "type": "seg", "settings": { "tag": "Agences et groupes", "title": "Vous accompagnez des pèlerins.", "text": "Tarifs dégressifs dès 20 pièces, coffrets au nom de votre agence, livraison groupée avant le départ.", "link_label": "Demander un devis", "link": "/pages/contact" } }
+  ] } ]
+}
+{% endschema %}

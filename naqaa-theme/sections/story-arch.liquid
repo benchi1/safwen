@@ -1,0 +1,35 @@
+<section class="section">
+  <div class="wrap story">
+    <div class="arch reveal">
+      {%- if section.settings.image != blank -%}
+        {{ section.settings.image | image_url: width: 1100 | image_tag: loading: 'lazy', widths: '400,700,1100', sizes: '(max-width: 900px) 100vw, 50vw', alt: section.settings.image.alt | default: 'Un père et son fils en ihram face à la Kaaba' }}
+      {%- else -%}
+        <img src="{{ 'pere-fils-kaaba.jpg' | asset_url }}" alt="Un père et son fils en ihram face à la Kaaba" loading="lazy" width="1100" height="1375" style="object-position:40% 50%">
+      {%- endif -%}
+    </div>
+    <div class="reveal">
+      <p class="kicker">{{ section.settings.kicker }}</p>
+      <h2 class="h-1 grad-text" style="margin-top:14px">{{ section.settings.title }}</h2>
+      <p class="lede" style="margin-top:20px">{{ section.settings.text }}</p>
+      <p class="story__ar" lang="ar">{{ section.settings.arabic }}</p>
+      <p class="story__tr">{{ section.settings.translation }}</p>
+      <a class="btn" style="margin-top:30px" href="{{ section.settings.cta_link | default: routes.all_products_collection_url }}">{{ section.settings.cta_label }}</a>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Histoire en arche",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Photo" },
+    { "type": "text", "id": "kicker", "label": "Sur-titre", "default": "Le voyage d'une vie" },
+    { "type": "inline_richtext", "id": "title", "label": "Titre", "default": "Le jour où tout le monde porte <em>le même blanc.</em>" },
+    { "type": "textarea", "id": "text", "label": "Texte", "default": "Au miqat, le roi et le berger portent le même tissu. Plus de rang, plus d'apparence. Il reste un cœur face à son Seigneur, et un tissu qui ne doit jamais vous en distraire." },
+    { "type": "text", "id": "arabic", "label": "Arabe", "default": "لَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ" },
+    { "type": "text", "id": "translation", "label": "Traduction", "default": "Me voici, Tu n'as point d'associé, me voici." },
+    { "type": "text", "id": "cta_label", "label": "Bouton", "default": "Préparer mon voyage" },
+    { "type": "url", "id": "cta_link", "label": "Lien" }
+  ],
+  "presets": [ { "name": "Histoire en arche" } ]
+}
+{% endschema %}

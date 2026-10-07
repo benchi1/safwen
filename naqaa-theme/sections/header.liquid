@@ -1,0 +1,60 @@
+{%- assign menu = linklists[section.settings.menu] -%}
+<header class="header" id="header" data-header>
+  <div class="wrap header__bar">
+    <button class="icon-btn menu-toggle" type="button" aria-controls="mobile-nav" aria-expanded="false" data-menu-open>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h12"/></svg>
+      <span class="visually-hidden">Menu</span>
+    </button>
+    <nav class="header__nav" aria-label="Navigation principale">
+      {%- if menu != blank -%}
+        {%- for link in menu.links -%}
+          <a href="{{ link.url }}"{% if link.active %} aria-current="page"{% endif %}>{{ link.title }}</a>
+        {%- endfor -%}
+      {%- else -%}
+        <a href="{{ routes.all_products_collection_url }}">Collection</a>
+        <a href="{{ routes.root_url }}#explorer">Explorer</a>
+        <a href="/blogs/journal">Journal</a>
+      {%- endif -%}
+    </nav>
+    <a class="header__logo" href="{{ routes.root_url }}" aria-label="{{ shop.name }}, accueil">
+      {%- if section.settings.logo != blank -%}
+        {{ section.settings.logo | image_url: width: 400 | image_tag: alt: shop.name, loading: 'eager' }}
+      {%- else -%}
+        {% render 'logo' %}
+      {%- endif -%}
+    </a>
+    <div class="header__tools">
+      <a class="icon-btn" href="{{ routes.search_url }}" aria-label="Rechercher">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>
+      </a>
+      <a class="icon-btn" href="{{ routes.cart_url }}" data-cart-open aria-label="Ouvrir le panier">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8h14l-1.2 11.2a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="lbl">Panier</span>
+        <span class="cart-count" data-cart-count data-count="{{ cart.item_count }}">{{ cart.item_count }}</span>
+      </a>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+  <nav class="mobile-nav__panel" aria-label="Menu mobile">
+    <div class="header__logo" style="color:var(--c-petrol);margin-bottom:20px">{% render 'logo' %}</div>
+    {%- if menu != blank -%}
+      {%- for link in menu.links -%}<a href="{{ link.url }}">{{ link.title }}</a>{%- endfor -%}
+    {%- else -%}
+      <a href="{{ routes.all_products_collection_url }}">Collection</a>
+      <a href="/blogs/journal">Journal de la Omra</a>
+      <a href="/pages/notre-histoire">Notre histoire</a>
+      <a href="/pages/faq">Questions</a>
+    {%- endif -%}
+  </nav>
+</div>
+<div class="scrim" data-scrim></div>
+{% schema %}
+{
+  "name": "En-tête",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo (laisser vide pour le logo Naqaa vectoriel)" },
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,28 @@
+{%- comment -%} product-card : product, badge {%- endcomment -%}
+{%- assign title_main = product.title | split: '·' | first | strip -%}
+{%- assign title_sub = product.title | split: '·' | last | strip -%}
+<div class="card reveal">
+  <a class="card__media" href="{{ product.url }}" aria-label="{{ title_main | escape }}">
+    {%- if badge != blank -%}<span class="card__badge">{{ badge }}</span>{%- endif -%}
+    {%- if product.featured_media -%}
+      {{ product.featured_media.preview_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360,540,720,900', sizes: '(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw', alt: title_main }}
+      {%- if product.media.size > 1 -%}
+        {{ product.media[1].preview_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360,540,720,900', sizes: '(max-width: 560px) 100vw, (max-width: 900px) 50vw, 33vw', alt: '' }}
+      {%- endif -%}
+    {%- else -%}
+      {{ 'product-1' | placeholder_svg_tag }}
+    {%- endif -%}
+  </a>
+  <div class="card__quick">
+    {%- if product.has_only_default_variant -%}
+      <button class="btn" type="button" data-quick-add="{{ product.selected_or_first_available_variant.id }}">Ajouter au panier</button>
+    {%- else -%}
+      <a class="btn btn--light" href="{{ product.url }}">Choisir ma taille</a>
+    {%- endif -%}
+  </div>
+  <a href="{{ product.url }}" class="card__info" style="text-decoration:none">
+    <span class="card__title">{{ title_main }}</span>
+    <span class="card__price price">{{ product.price | money }}</span>
+    {%- if title_sub != title_main -%}<span class="card__sub">{{ title_sub }}</span>{%- endif -%}
+  </a>
+</div>

@@ -1,0 +1,29 @@
+<section class="hero" aria-label="{{ section.settings.title | strip_html | escape }}">
+  <div class="hero__bg" aria-hidden="true"><div class="hero__tiles"></div><div class="hero__glow"></div><div class="hero__ros">{% render 'rosette' %}</div></div>
+  <div class="wrap hero__grid">
+    <div>
+      {%- if section.settings.arabic != blank -%}<p class="hero__ar" lang="ar">{{ section.settings.arabic }}</p>{%- endif -%}
+      <h1 class="h-display grad-text">{{ section.settings.title }}</h1>
+      <p class="hero__sub">{{ section.settings.text }}</p>
+      <div class="hero__cta">
+        <a class="btn btn--lg" href="{{ section.settings.cta_link | default: routes.all_products_collection_url }}">{{ section.settings.cta_label }}</a>
+        <small>{{ section.settings.cta_note }}</small>
+      </div>
+    </div>
+    <div class="hero__art">{% render 'kaaba-art', section: section %}</div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Héros Kaaba",
+  "settings": [
+    { "type": "text", "id": "arabic", "label": "Ligne en arabe", "default": "لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ" },
+    { "type": "inline_richtext", "id": "title", "label": "Titre (italique = or)", "default": "La pureté de votre <em>plus beau</em> voyage." },
+    { "type": "textarea", "id": "text", "label": "Sous-titre", "default": "L'ihram en pur coton d'Égypte. Doux sur la peau, frais sous le soleil de La Mecque, fait pour vous accompagner pendant des années." },
+    { "type": "text", "id": "cta_label", "label": "Bouton", "default": "Choisir mon ihram · 39,90 €" },
+    { "type": "url", "id": "cta_link", "label": "Lien du bouton" },
+    { "type": "text", "id": "cta_note", "label": "Note sous le bouton", "default": "Livraison offerte · Express 24 h" }
+  ],
+  "presets": [ { "name": "Héros Kaaba" } ]
+}
+{% endschema %}

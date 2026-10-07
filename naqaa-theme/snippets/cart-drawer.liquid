@@ -1,0 +1,23 @@
+<aside class="drawer" id="cart-drawer" aria-label="Panier" aria-hidden="true" tabindex="-1">
+  <div class="drawer__head">
+    <h2>Votre panier</h2>
+    <button class="drawer__x" type="button" data-cart-close aria-label="Fermer le panier">&times;</button>
+  </div>
+  <div class="freebar">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.6"/><circle cx="17" cy="17.5" r="1.6"/></svg>
+    <span>La livraison standard est <b>offerte</b>. Express 24 h au paiement.</span>
+  </div>
+  <div class="drawer__lines" data-cart-lines></div>
+  <div class="drawer__foot" data-cart-foot hidden>
+    <div class="sum"><span>Sous-total</span><span class="price" data-cart-subtotal></span></div>
+    <div class="sum"><span>Livraison standard</span><span>Offerte</span></div>
+    <div class="sum sum--t"><span>Total</span><span class="price" data-cart-total></span></div>
+    <form action="{{ routes.cart_url }}" method="post">
+      <button class="btn btn--block btn--lg" type="submit" name="checkout">Commander en toute sécurité</button>
+    </form>
+    <p class="drawer__note">Paiement sécurisé · Retours sous 14 jours</p>
+    {%- if shop.enabled_payment_types.size > 0 -%}
+      <div class="pay-icons">{%- for type in shop.enabled_payment_types limit: 6 -%}{{ type | payment_type_svg_tag }}{%- endfor -%}</div>
+    {%- endif -%}
+  </div>
+</aside>

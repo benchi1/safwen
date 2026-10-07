@@ -1,0 +1,9 @@
+{
+  "current": {
+    "upsell_collection": "ihram-et-tenues-de-omra",
+    "sections": {}
+  },
+  "presets": {
+    "Naqaa": { "upsell_collection": "ihram-et-tenues-de-omra" }
+  }
+}

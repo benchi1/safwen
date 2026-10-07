@@ -1,0 +1,15 @@
+<header class="page-head"><div class="wrap"><h1 class="h-display grad-text">Connexion</h1></div></header>
+<section class="section" style="padding-top:56px"><div class="wrap wrap--narrow">
+  {%- form 'customer_login' -%}
+    {%- if form.errors -%}<p class="form-msg form-msg--err">{{ form.errors | default_errors }}</p>{%- endif -%}
+    <div class="field"><label for="l-email">E-mail</label><input id="l-email" type="email" name="customer[email]" autocomplete="email" required></div>
+    <div class="field"><label for="l-pw">Mot de passe</label><input id="l-pw" type="password" name="customer[password]" autocomplete="current-password"></div>
+    <button class="btn" type="submit">Se connecter</button>
+    <p style="margin-top:20px"><a href="{{ routes.account_register_url }}">Créer un compte</a></p>
+  {%- endform -%}
+  {%- form 'recover_customer_password' -%}
+    <details style="margin-top:28px"><summary>Mot de passe oublié ?</summary>
+      <div class="field" style="margin-top:14px"><label for="r-email">E-mail</label><input id="r-email" type="email" name="email"></div>
+      <button class="btn btn--line" type="submit">Recevoir le lien</button></details>
+  {%- endform -%}
+</div></section>

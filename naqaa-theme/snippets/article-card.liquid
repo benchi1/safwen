@@ -1,0 +1,13 @@
+<a class="jcard reveal" href="{{ article.url }}">
+  <div class="jcard__media">
+    {%- if article.image -%}{{ article.image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '400,800', sizes: '(max-width: 900px) 100vw, 33vw', alt: article.title }}{%- endif -%}
+  </div>
+  <div class="jcard__b">
+    {%- assign cat = article.tags | last -%}
+    {%- if cat != blank -%}<span class="jcard__c">{{ cat }}</span>{%- endif -%}
+    <h3>{{ article.title }}</h3>
+    <p>{{ article.excerpt_or_content | strip_html | truncatewords: 22 }}</p>
+    {%- assign words = article.content | strip_html | split: ' ' | size -%}
+    <span class="jcard__m">{{ words | divided_by: 200 | plus: 1 }} min de lecture</span>
+  </div>
+</a>

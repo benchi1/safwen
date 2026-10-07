@@ -1,0 +1,25 @@
+{%- assign b = section.settings.blog -%}
+<section class="section">
+  <div class="wrap">
+    <div class="head reveal"><p class="kicker">{{ section.settings.kicker }}</p><h2 class="h-1 grad-text">{{ section.settings.title }}</h2><p class="lede">{{ section.settings.text }}</p></div>
+    <div class="jgrid">
+      {%- if b != blank -%}
+        {%- for article in b.articles limit: section.settings.limit -%}{% render 'article-card', article: article %}{%- endfor -%}
+      {%- endif -%}
+    </div>
+    {%- if b != blank -%}<p style="margin-top:44px;text-align:center"><a class="btn btn--line" href="{{ b.url }}">Tous les articles</a></p>{%- endif -%}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Journal",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Sur-titre", "default": "Le journal" },
+    { "type": "inline_richtext", "id": "title", "label": "Titre", "default": "Préparer votre <em>Omra</em>, pas à pas." },
+    { "type": "textarea", "id": "text", "label": "Texte", "default": "Rites, miqat, Rawdah, valise : nos guides pour partir serein." },
+    { "type": "blog", "id": "blog", "label": "Blog" },
+    { "type": "range", "id": "limit", "label": "Nombre d'articles", "min": 2, "max": 6, "step": 1, "default": 3 }
+  ],
+  "presets": [ { "name": "Journal" } ]
+}
+{% endschema %}

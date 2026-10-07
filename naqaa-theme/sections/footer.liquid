@@ -1,0 +1,57 @@
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__cols">
+      <div>
+        <a class="footer__logo" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">{% render 'logo' %}</a>
+        <p style="margin-top:18px;max-width:38ch">{{ section.settings.about }}</p>
+        <p class="footer__verse" lang="ar">لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ</p>
+        {%- form 'customer', class: 'news' -%}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <label class="visually-hidden" for="news-email">Votre e-mail</label>
+          <input id="news-email" type="email" name="contact[email]" placeholder="Votre e-mail" autocomplete="email" required>
+          <button type="submit">S'inscrire</button>
+          {%- if form.posted_successfully? -%}<p style="margin-top:10px;color:var(--c-gold-light);flex-basis:100%">Merci, vous êtes inscrit.</p>{%- endif -%}
+        {%- endform -%}
+      </div>
+      {%- for block in section.blocks -%}
+        <div {{ block.shopify_attributes }}>
+          <h4>{{ block.settings.title }}</h4>
+          {%- assign m = linklists[block.settings.menu] -%}
+          <ul>
+            {%- if m != blank -%}
+              {%- for l in m.links -%}<li><a href="{{ l.url }}">{{ l.title }}</a></li>{%- endfor -%}
+            {%- else -%}
+              {{ block.settings.fallback }}
+            {%- endif -%}
+          </ul>
+        </div>
+      {%- endfor -%}
+    </div>
+    <div class="footer__legal">
+      <span>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. Ihram en coton d'Égypte.</span>
+      <span>
+        {%- for policy in shop.policies -%}<a href="{{ policy.url }}">{{ policy.title }}</a>{% unless forloop.last %} · {% endunless %}{%- endfor -%}
+      </span>
+    </div>
+  </div>
+</footer>
+{% schema %}
+{
+  "name": "Pied de page",
+  "settings": [
+    { "type": "textarea", "id": "about", "label": "Texte de présentation", "default": "Des ihrams en pur coton d'Égypte pour vivre la Omra et le Hajj l'esprit libre." }
+  ],
+  "blocks": [
+    { "type": "menu", "name": "Colonne de liens", "settings": [
+      { "type": "text", "id": "title", "label": "Titre", "default": "Liens" },
+      { "type": "link_list", "id": "menu", "label": "Menu" },
+      { "type": "html", "id": "fallback", "label": "Liens si aucun menu", "default": "<li><a href=\"/collections/all\">Collection</a></li>" }
+    ] }
+  ],
+  "default": { "blocks": [
+    { "type": "menu", "settings": { "title": "Collection", "fallback": "<li><a href=\"/collections/ihram-et-tenues-de-omra\">Ihram et tenues</a></li>" } },
+    { "type": "menu", "settings": { "title": "Journal", "fallback": "<li><a href=\"/blogs/journal\">Tous les articles</a></li>" } },
+    { "type": "menu", "settings": { "title": "Aide", "fallback": "<li><a href=\"/pages/faq\">FAQ</a></li>" } }
+  ] }
+}
+{% endschema %}

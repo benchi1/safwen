@@ -1,0 +1,26 @@
+<header class="page-head">
+  <div class="jhead__ros" aria-hidden="true">{% render 'rosette' %}</div>
+  <div class="wrap">
+    <p class="crumbs"><a href="{{ routes.root_url }}">Accueil</a> / Collection</p>
+    <h1 class="h-display grad-text">{{ collection.title }}</h1>
+    {%- if collection.description != blank -%}<div class="lede" style="margin-top:16px">{{ collection.description }}</div>{%- endif -%}
+  </div>
+</header>
+<section class="section" style="padding-top:64px">
+  <div class="wrap">
+    {%- paginate collection.products by 12 -%}
+      <div class="grid-products">
+        {%- for product in collection.products -%}
+          {%- assign badge = '' -%}{%- if forloop.first and current_page == 1 -%}{%- assign badge = 'Le plus choisi' -%}{%- endif -%}
+          {% render 'product-card', product: product, badge: badge %}
+        {%- else -%}
+          <p class="lede">Aucun produit pour l'instant.</p>
+        {%- endfor -%}
+      </div>
+      {%- if paginate.pages > 1 -%}<nav class="pagination" aria-label="Pagination">{{ paginate | default_pagination }}</nav>{%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>
+{% schema %}
+{ "name": "Collection" }
+{% endschema %}

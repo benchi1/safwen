@@ -1,0 +1,21 @@
+<section class="verse" aria-label="Verset">
+  <div class="verse__ros" aria-hidden="true">{% render 'rosette' %}</div>
+  <div class="wrap reveal">
+    <p class="verse__ar" lang="ar">{{ section.settings.arabic }}</p>
+    <p class="verse__fr">{{ section.settings.translation }}</p>
+    <p class="verse__ref">{{ section.settings.reference }}</p>
+    {%- if section.settings.context != blank -%}<p class="verse__ctx">{{ section.settings.context }}</p>{%- endif -%}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Verset",
+  "settings": [
+    { "type": "text", "id": "arabic", "label": "Verset en arabe", "default": "وَأَتِمُّوا الْحَجَّ وَالْعُمْرَةَ لِلَّهِ" },
+    { "type": "text", "id": "translation", "label": "Traduction", "default": "« Et accomplissez pour Allah le Hajj et la Omra. »" },
+    { "type": "text", "id": "reference", "label": "Référence", "default": "Sourate Al-Baqara · verset 196" },
+    { "type": "textarea", "id": "context", "label": "Texte", "default": "Accomplir, c'est aller jusqu'au bout, avec soin. Nous avons conçu Naqaa pour que rien de matériel ne vous en détourne." }
+  ],
+  "presets": [ { "name": "Verset" } ]
+}
+{% endschema %}

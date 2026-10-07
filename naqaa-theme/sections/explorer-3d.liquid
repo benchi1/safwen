@@ -1,0 +1,46 @@
+<section class="section bg-pattern" id="explorer">
+  <div class="wrap x3d">
+    <div class="stage" data-stage data-three="{{ 'three.min.js' | asset_url }}" data-orbit="{{ 'three-orbit.js' | asset_url }}">
+      <img class="stage__fb" data-stage-fb src="{{ 'ihram-packshot.jpg' | asset_url }}" alt="Ihram Naqaa plié avec sa ceinture" loading="lazy" width="1200" height="1200">
+      <p class="hint" data-hint>Faites-le tourner</p>
+      <div class="ctrl" role="group" aria-label="Vue 3D">
+        <button type="button" aria-pressed="true" data-v="plie">Plié</button>
+        <button type="button" aria-pressed="false" data-v="eclate">Ouvrir la boîte</button>
+        <button type="button" aria-pressed="true" data-v="rot">Rotation</button>
+      </div>
+    </div>
+    <div>
+      <p class="kicker">{{ section.settings.kicker }}</p>
+      <h2 class="h-1 grad-text" style="margin-top:14px">{{ section.settings.title }}</h2>
+      <p class="lede" style="margin-top:16px">{{ section.settings.text }}</p>
+      <ul class="feats" data-feats>
+        {%- for block in section.blocks -%}
+          <li {{ block.shopify_attributes }}><button type="button" data-f="{{ forloop.index0 }}" aria-current="{% if forloop.first %}true{% else %}false{% endif %}"><span class="n">{{ forloop.index }}</span><span><b>{{ block.settings.title }}</b><span class="t">{{ block.settings.text }}</span></span></button></li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</section>
+<script src="{{ 'explorer-3d.js' | asset_url }}" defer></script>
+{% schema %}
+{
+  "name": "Explorer en 3D",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Sur-titre", "default": "Explorer en 3D" },
+    { "type": "inline_richtext", "id": "title", "label": "Titre", "default": "Regardez-le <em>de près.</em>" },
+    { "type": "textarea", "id": "text", "label": "Texte", "default": "Tournez le coffret, ouvrez-le, touchez chaque détail du doigt." }
+  ],
+  "blocks": [ { "type": "feature", "name": "Point d'intérêt", "settings": [
+    { "type": "text", "id": "title", "label": "Titre" },
+    { "type": "textarea", "id": "text", "label": "Texte" }
+  ] } ],
+  "max_blocks": 5,
+  "presets": [ { "name": "Explorer en 3D", "blocks": [
+    { "type": "feature", "settings": { "title": "Éponge de coton d'Égypte", "text": "Fibre extra-longue, tissage éponge dense : elle absorbe la sueur et laisse la peau au sec, même à 40 °C." } },
+    { "type": "feature", "settings": { "title": "Ourlets plats", "text": "Des bords finis à plat, sans couture épaisse : rien ne frotte à l'intérieur des cuisses pendant le sa'i." } },
+    { "type": "feature", "settings": { "title": "Ceinture porte-documents", "text": "Elle tient l'izar sans serrer et garde passeport, carte et téléphone contre vous." } },
+    { "type": "feature", "settings": { "title": "Pochette en coton", "text": "Pour le voyage aller, puis pour ranger votre ihram au retour." } },
+    { "type": "feature", "settings": { "title": "Carte de la talbiya", "text": "En arabe, en phonétique et en français, pour la réciter dès le miqat." } }
+  ] } ]
+}
+{% endschema %}

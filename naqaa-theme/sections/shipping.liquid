@@ -1,0 +1,33 @@
+<section class="section" id="livraison">
+  <div class="wrap">
+    <div class="head head--center reveal">
+      <div class="rule">{% render 'icon-star' %}</div>
+      <p class="kicker">{{ section.settings.kicker }}</p>
+      <h2 class="h-1 grad-text">{{ section.settings.title }}</h2>
+      <p class="lede">{{ section.settings.text }}</p>
+    </div>
+    <div class="ship">
+      <div class="ship__opt is-hl reveal"><span class="ship__badge">Offerte</span><span class="ship__d">3 jours</span><h3>{{ section.settings.std_title }}</h3><p>{{ section.settings.std_text }}</p><span class="ship__pr">{{ section.settings.std_price }}</span></div>
+      <div class="ship__opt reveal"><span class="ship__d">24 h</span><h3>{{ section.settings.exp_title }}</h3><p>{{ section.settings.exp_text }}</p><span class="ship__pr">{{ section.settings.exp_price }}</span></div>
+    </div>
+    <p class="ship__foot">{{ section.settings.foot }}</p>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Livraison",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Sur-titre", "default": "Livraison" },
+    { "type": "inline_richtext", "id": "title", "label": "Titre", "default": "Chez vous en <em>24 heures</em> ou en 3 jours." },
+    { "type": "textarea", "id": "text", "label": "Texte", "default": "Vous choisissez au moment de commander. Votre ihram arrive toujours avant votre vol." },
+    { "type": "text", "id": "std_title", "label": "Standard : titre", "default": "Livraison standard" },
+    { "type": "textarea", "id": "std_text", "label": "Standard : texte", "default": "Expédiée sous 24 h, livrée à domicile ou en point relais en 2 à 3 jours ouvrés, avec suivi." },
+    { "type": "text", "id": "std_price", "label": "Standard : prix", "default": "0 €" },
+    { "type": "text", "id": "exp_title", "label": "Express : titre", "default": "Livraison express" },
+    { "type": "textarea", "id": "exp_text", "label": "Express : texte", "default": "Commandez avant 13 h, recevez demain chez vous. Pour ceux qui partent vite." },
+    { "type": "text", "id": "exp_price", "label": "Express : prix", "default": "9,90 €" },
+    { "type": "text", "id": "foot", "label": "Note", "default": "Jours ouvrés, France métropolitaine. Paiement sécurisé." }
+  ],
+  "presets": [ { "name": "Livraison" } ]
+}
+{% endschema %}

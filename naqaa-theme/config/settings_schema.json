@@ -1,0 +1,17 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Naqaa",
+    "theme_version": "1.0.0",
+    "theme_author": "Naqaa Ihram",
+    "theme_documentation_url": "https://naqaaihram.com",
+    "theme_support_url": "https://naqaaihram.com"
+  },
+  {
+    "name": "Marque",
+    "settings": [
+      { "type": "image_picker", "id": "favicon", "label": "Favicon" },
+      { "type": "collection", "id": "upsell_collection", "label": "Collection pour la vente croisée (panier, fiche produit, articles)" }
+    ]
+  }
+]

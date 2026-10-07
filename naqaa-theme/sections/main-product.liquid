@@ -1,0 +1,212 @@
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign title_main = product.title | split: '·' | first | strip
+  assign title_sub = product.title | split: '·' | last | strip
+  assign why = product.description | split: '</p>' | first | strip_html | strip
+  assign h = product.handle
+  assign kind = 'homme'
+  if h contains 'junior' or product.title contains 'Junior'
+    assign kind = 'junior'
+  elsif product.type == 'Telekung' or product.title contains 'Telekung'
+    assign kind = 'telekung'
+  endif
+  assign form_id = 'product-form-' | append: section.id
+-%}
+<section class="pdp" data-product-section data-section="{{ section.id }}">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Fil d'Ariane"><a href="{{ routes.root_url }}">Accueil</a> / {% if collection %}<a href="{{ collection.url }}">{{ collection.title }}</a> / {% endif %}{{ title_main }}</nav>
+    <div class="pdp__grid">
+
+      {%- comment -%} GALERIE {%- endcomment -%}
+      <div class="gallery" data-gallery>
+        <div class="gallery__thumbs" role="list">
+          {%- for media in product.media -%}
+            <button type="button" role="listitem" data-thumb="{{ forloop.index0 }}" aria-label="Voir l'image {{ forloop.index }}" aria-current="{% if forloop.first %}true{% else %}false{% endif %}">
+              {{ media.preview_image | image_url: width: 180 | image_tag: loading: 'lazy', alt: '' }}
+            </button>
+          {%- endfor -%}
+        </div>
+        <div style="position:relative;min-width:0">
+          {%- if section.settings.badge != blank and kind == 'homme' -%}<span class="gallery__badge">{{ section.settings.badge }}</span>{%- endif -%}
+          <div class="gallery__main" data-slides>
+            {%- for media in product.media -%}
+              <div class="gallery__slide" data-media-id="{{ media.id }}">
+                {%- if forloop.first -%}
+                  {{ media.preview_image | image_url: width: 1400 | image_tag: loading: 'eager', fetchpriority: 'high', widths: '500,800,1100,1400', sizes: '(max-width: 960px) 100vw, 55vw', alt: media.alt | default: title_main }}
+                {%- else -%}
+                  {{ media.preview_image | image_url: width: 1400 | image_tag: loading: 'lazy', widths: '500,800,1100,1400', sizes: '(max-width: 960px) 100vw, 55vw', alt: media.alt | default: title_main }}
+                {%- endif -%}
+              </div>
+            {%- else -%}
+              <div class="gallery__slide">{{ 'product-1' | placeholder_svg_tag }}</div>
+            {%- endfor -%}
+          </div>
+          {%- if product.media.size > 1 -%}<div class="gallery__dots" aria-hidden="true">{%- for media in product.media -%}<span{% if forloop.first %} class="on"{% endif %}></span>{%- endfor -%}</div>{%- endif -%}
+        </div>
+      </div>
+
+      {%- comment -%} ACHAT {%- endcomment -%}
+      <div class="buy">
+        <div class="buy__kicker">
+          <span class="kicker">{{ title_sub }}</span>
+          <span class="chip chip--gold">{% render 'icon-star' %} Coffret tout inclus</span>
+        </div>
+        <h1 class="buy__title grad-text">{{ title_main }}</h1>
+        {%- if why != blank -%}<p class="buy__why">{{ why }}</p>{%- endif -%}
+
+        <div class="buy__price">
+          <span class="price" data-price>{{ current_variant.price | money }}</span>
+          {%- if current_variant.compare_at_price > current_variant.price -%}<s data-compare>{{ current_variant.compare_at_price | money }}</s>{%- endif -%}
+          <span class="chip">{% render 'icon', name: 'truck' %} Livraison offerte</span>
+        </div>
+        <div class="minitrust">
+          <span>{% render 'icon-star' %} 100 % coton d'Égypte</span>
+          <span>{% render 'icon-star' %} Sans apprêt ni parfum</span>
+          <span>{% render 'icon-star' %} Retours 14 jours</span>
+        </div>
+
+        {%- form 'product', product, id: form_id, class: 'buy', novalidate: 'novalidate' -%}
+          <input type="hidden" name="id" value="{{ current_variant.id }}" data-variant-id>
+          {%- unless product.has_only_default_variant -%}
+            {%- for option in product.options_with_values -%}
+              <fieldset class="opt" data-option-index="{{ forloop.index0 }}">
+                <legend>{{ option.name }} <span data-option-label="{{ forloop.index0 }}">{{ option.selected_value }}</span></legend>
+                <div class="opt__vals">
+                  {%- assign oi = forloop.index0 -%}
+                  {%- for value in option.values -%}
+                    <input type="radio" id="{{ section.id }}-{{ oi }}-{{ forloop.index0 }}" name="opt-{{ oi }}" value="{{ value | escape }}" {% if option.selected_value == value %}checked{% endif %} data-opt="{{ oi }}">
+                    <label for="{{ section.id }}-{{ oi }}-{{ forloop.index0 }}">{{ value }}</label>
+                  {%- endfor -%}
+                </div>
+              </fieldset>
+            {%- endfor -%}
+            <button type="button" class="size-link" data-modal-open="size-{{ section.id }}">Guide des tailles</button>
+          {%- endunless -%}
+
+          {%- if section.settings.show_gift -%}
+          <div class="gift">
+            <label><input type="checkbox" data-gift-toggle> <span><b>Ajouter un message sur la carte (offert)</b><br>Idéal pour offrir à un parent qui part.</span></label>
+            <textarea name="properties[Message sur la carte]" maxlength="180" placeholder="Ex. Que ta Omra soit acceptée, papa." data-gift-text hidden disabled></textarea>
+          </div>
+          {%- endif -%}
+
+          <div class="qtyrow">
+            <div class="qty">
+              <button type="button" data-qty="-1" aria-label="Diminuer la quantité">−</button>
+              <label class="visually-hidden" for="qty-{{ section.id }}">Quantité</label>
+              <input id="qty-{{ section.id }}" type="number" name="quantity" value="1" min="1" max="20" inputmode="numeric">
+              <button type="button" data-qty="1" aria-label="Augmenter la quantité">+</button>
+            </div>
+            <button class="btn btn--block btn--lg" type="submit" name="add" data-atc {% unless current_variant.available %}disabled{% endunless %}>
+              <span class="spinner" aria-hidden="true"></span>
+              <span data-atc-label>{% if current_variant.available %}Ajouter au panier{% else %}Épuisé{% endif %}</span>
+              <span class="btn__price" data-atc-price>· {{ current_variant.price | money }}</span>
+            </button>
+          </div>
+          {{ form | payment_button }}
+        {%- endform -%}
+
+        <div class="eta" data-eta>
+          <div class="eta__row">{% render 'icon', name: 'truck' %}<div><b>Standard · offerte</b><span data-eta-std>Livrée en 2 à 3 jours ouvrés</span></div><em>0 €</em></div>
+          <div class="eta__row">{% render 'icon', name: 'bolt' %}<div><b>Express 24 h</b><span data-eta-exp>Commandée avant 13 h, livrée demain</span></div><em>9,90 €</em></div>
+        </div>
+
+        <div>
+          <p class="upsell__title" style="margin-bottom:12px">Dans le coffret</p>
+          <div class="inbox">
+            {%- case kind -%}
+              {%- when 'junior' -%}
+                <div>{% render 'icon', name: 'cloth' %}Izar et rida à sa taille</div><div>{% render 'icon', name: 'belt' %}Ceinture élastique douce</div><div>{% render 'icon', name: 'pouch' %}Pochette en coton</div><div>{% render 'icon', name: 'gift' %}Coffret prêt à offrir</div>
+              {%- when 'telekung' -%}
+                <div>{% render 'icon', name: 'cloth' %}Voile long jusqu'aux hanches</div><div>{% render 'icon', name: 'cloth' %}Jupe ample, taille élastique</div><div>{% render 'icon', name: 'pouch' %}Pochette en coton</div><div>{% render 'icon', name: 'gift' %}Coffret prêt à offrir</div>
+              {%- else -%}
+                <div>{% render 'icon', name: 'cloth' %}Izar et rida en éponge</div><div>{% render 'icon', name: 'belt' %}Ceinture porte-documents</div><div>{% render 'icon', name: 'pouch' %}Pochette en coton</div><div>{% render 'icon', name: 'card' %}Carte de la talbiya</div>
+            {%- endcase -%}
+          </div>
+        </div>
+
+        <div class="acc">
+          <details open><summary>{% render 'icon', name: 'info' %}Description</summary><div class="rte">{{ product.description }}</div></details>
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'tab' -%}
+              <details {{ block.shopify_attributes }}><summary>{% render 'icon', name: block.settings.icon %}{{ block.settings.title }}</summary><div class="rte">{{ block.settings.content }}</div></details>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+
+        {%- assign upcol = collections[settings.upsell_collection] -%}
+        {%- if upcol != blank and upcol.products_count > 1 -%}
+          <div class="upsell">
+            <p class="upsell__title">Partez en famille</p>
+            {%- for p in upcol.products limit: 4 -%}
+              {%- unless p.id == product.id -%}
+                <div class="upsell__item">
+                  {{ p.featured_media.preview_image | image_url: width: 160 | image_tag: loading: 'lazy', alt: '' }}
+                  <div><b>{{ p.title | split: '·' | first | strip }}</b><span>{{ p.title | split: '·' | last | strip }} · {{ p.price | money }}</span></div>
+                  {%- if p.available -%}
+                    {%- if p.has_only_default_variant -%}
+                      <button type="button" data-quick-add="{{ p.selected_or_first_available_variant.id }}">Ajouter</button>
+                    {%- else -%}
+                      <a href="{{ p.url }}" class="link" style="font-size:11.5px">Voir</a>
+                    {%- endif -%}
+                  {%- endif -%}
+                </div>
+              {%- endunless -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  <div class="sticky-atc" data-sticky-atc aria-hidden="true">
+    {%- if product.featured_media -%}{{ product.featured_media.preview_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: '' }}{%- endif -%}
+    <div class="sticky-atc__t"><b>{{ title_main }}</b><span><span data-sticky-variant>{{ current_variant.title | replace: 'Default Title', '' }}</span> · <span class="price" data-sticky-price>{{ current_variant.price | money }}</span></span></div>
+    <button class="btn" type="button" data-sticky-add>Ajouter</button>
+  </div>
+
+  <div class="modal" id="size-{{ section.id }}" role="dialog" aria-modal="true" aria-labelledby="size-title-{{ section.id }}" aria-hidden="true">
+    <div class="modal__box">
+      <button class="modal__x" type="button" data-modal-close aria-label="Fermer">&times;</button>
+      <p class="kicker">Guide des tailles</p>
+      <h2 class="h-2" id="size-title-{{ section.id }}" style="margin-top:10px">{{ title_main }}</h2>
+      {%- case kind -%}
+        {%- when 'junior' -%}
+          <table><thead><tr><th>Taille</th><th>Taille de l'enfant</th><th>Izar et rida</th></tr></thead><tbody>
+            <tr><td>4–7 ans</td><td>100 à 125 cm</td><td>80 × 150 cm</td></tr>
+            <tr><td>8–11 ans</td><td>125 à 150 cm</td><td>90 × 170 cm</td></tr>
+            <tr><td>12–14 ans</td><td>150 à 165 cm</td><td>100 × 190 cm</td></tr></tbody></table>
+        {%- when 'telekung' -%}
+          <table><thead><tr><th>Taille</th><th>Correspond au</th><th>Longueurs</th></tr></thead><tbody>
+            <tr><td>S/M</td><td>34 au 40</td><td>Voile 110 cm · jupe 105 cm</td></tr>
+            <tr><td>L/XL</td><td>42 au 48</td><td>Voile 115 cm · jupe 110 cm</td></tr></tbody></table>
+        {%- else -%}
+          <table><thead><tr><th>Taille</th><th>Votre taille</th><th>Izar et rida</th></tr></thead><tbody>
+            <tr><td>Standard</td><td>jusqu'à 1,85 m</td><td>115 × 230 cm</td></tr>
+            <tr><td>Grand</td><td>au-delà de 1,85 m</td><td>125 × 250 cm</td></tr></tbody></table>
+      {%- endcase -%}
+      <p style="margin-top:16px;color:var(--c-muted);font-size:14px">Entre deux tailles ? Prenez la plus grande : l'izar se règle à la taille.</p>
+    </div>
+  </div>
+
+  <script type="application/json" data-product-json>
+    {{ product | json }}
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Fiche produit",
+  "settings": [
+    { "type": "text", "id": "badge", "label": "Badge sur la photo (ihram homme)", "default": "Le plus choisi" },
+    { "type": "checkbox", "id": "show_gift", "label": "Message cadeau sur la carte", "default": true }
+  ],
+  "blocks": [
+    { "type": "tab", "name": "Onglet repliable", "settings": [
+      { "type": "text", "id": "title", "label": "Titre", "default": "Entretien" },
+      { "type": "select", "id": "icon", "label": "Icône", "options": [ { "value": "wash", "label": "Lavage" }, { "value": "truck", "label": "Livraison" }, { "value": "leaf", "label": "Santé" }, { "value": "info", "label": "Info" }, { "value": "return", "label": "Retour" } ], "default": "wash" },
+      { "type": "richtext", "id": "content", "label": "Contenu" }
+    ] }
+  ]
+}
+{% endschema %}

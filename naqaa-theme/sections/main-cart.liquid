@@ -1,0 +1,39 @@
+<header class="page-head"><div class="wrap"><h1 class="h-display grad-text">Votre panier</h1></div></header>
+<section class="section" style="padding-top:56px">
+  <div class="wrap">
+    {%- if cart.item_count > 0 -%}
+      <form action="{{ routes.cart_url }}" method="post" class="cartpage">
+        <div>
+          {%- for item in cart.items -%}
+            <div class="line">
+              <a href="{{ item.url }}">{{ item.image | image_url: width: 200 | image_tag: loading: 'lazy', alt: item.product.title }}</a>
+              <div class="line__i">
+                <b>{{ item.product.title | split: '·' | first | strip }}</b>
+                {%- unless item.product.has_only_default_variant -%}<span>{{ item.variant.title }}</span>{%- endunless -%}
+                {%- for p in item.properties -%}{%- if p.last != blank -%}<span>{{ p.first }} : {{ p.last }}</span>{%- endif -%}{%- endfor -%}
+                <label class="visually-hidden" for="upd-{{ item.key }}">Quantité</label>
+                <input id="upd-{{ item.key }}" type="number" name="updates[]" value="{{ item.quantity }}" min="0" style="width:70px;margin-top:10px;padding:8px;border:1px solid var(--c-line)">
+                <a class="line__rm" href="{{ item.url_to_remove }}">Retirer</a>
+              </div>
+              <span class="line__p price">{{ item.final_line_price | money }}</span>
+            </div>
+          {%- endfor -%}
+          <button class="btn btn--line" type="submit" name="update" style="margin-top:24px">Mettre à jour</button>
+        </div>
+        <aside class="cartpage__sum">
+          <div class="sum"><span>Sous-total</span><span class="price">{{ cart.total_price | money }}</span></div>
+          <div class="sum"><span>Livraison standard</span><span>Offerte</span></div>
+          <div class="sum sum--t"><span>Total</span><span class="price">{{ cart.total_price | money }}</span></div>
+          <div class="field"><label for="cart-note">Une précision ?</label><textarea id="cart-note" name="note" rows="3">{{ cart.note }}</textarea></div>
+          <button class="btn btn--block btn--lg" type="submit" name="checkout">Commander en toute sécurité</button>
+          <p class="drawer__note">Express 24 h disponible au paiement.</p>
+        </aside>
+      </form>
+    {%- else -%}
+      <div class="drawer__empty"><p class="lede">Votre panier est vide.</p><a class="btn" href="{{ routes.all_products_collection_url }}">Découvrir la collection</a></div>
+    {%- endif -%}
+  </div>
+</section>
+{% schema %}
+{ "name": "Panier" }
+{% endschema %}

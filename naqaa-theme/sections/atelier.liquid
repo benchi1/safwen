@@ -1,0 +1,48 @@
+<section class="section bg-pattern" id="atelier">
+  <div class="wrap">
+    <div class="head head--center reveal">
+      <div class="rule">{% render 'icon-star' %}</div>
+      <p class="kicker">{{ section.settings.kicker }}</p>
+      <h2 class="h-1 grad-text">{{ section.settings.title }}</h2>
+      <p class="lede">{{ section.settings.text }}</p>
+    </div>
+    <div class="steps">
+      {%- for block in section.blocks -%}
+        <article class="step reveal" {{ block.shopify_attributes }}>
+          <div class="step__ph">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '400,800', sizes: '(max-width: 900px) 100vw, 33vw' }}
+            {%- else -%}
+              <img src="{{ block.settings.fallback | asset_url }}" alt="{{ block.settings.title | escape }}" loading="lazy" width="800" height="1000">
+            {%- endif -%}
+          </div>
+          <span class="step__num">{{ forloop.index | replace: '1', 'I' | replace: '2', 'II' | replace: '3', 'III' }}</span>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "De la fibre au pèlerin",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Sur-titre", "default": "De la fibre au pèlerin" },
+    { "type": "inline_richtext", "id": "title", "label": "Titre", "default": "Né sur les rives du Nil, <em>tissé pour la Kaaba.</em>" },
+    { "type": "textarea", "id": "text", "label": "Texte", "default": "Un ihram ne se fabrique pas comme une serviette de plage. Nous suivons chaque pièce, du champ jusqu'à votre porte." }
+  ],
+  "blocks": [ { "type": "step", "name": "Étape", "settings": [
+    { "type": "image_picker", "id": "image", "label": "Photo" },
+    { "type": "select", "id": "fallback", "label": "Photo par défaut", "options": [ { "value": "coton-nil.jpg", "label": "Coton" }, { "value": "atelier-tissage.jpg", "label": "Tissage" }, { "value": "pliage-boite.jpg", "label": "Coffret" }, { "value": "atelier-moucharabieh.jpg", "label": "Atelier" } ], "default": "coton-nil.jpg" },
+    { "type": "text", "id": "title", "label": "Titre", "default": "Le coton du Nil" },
+    { "type": "textarea", "id": "text", "label": "Texte" }
+  ] } ],
+  "max_blocks": 3,
+  "presets": [ { "name": "De la fibre au pèlerin", "blocks": [
+    { "type": "step", "settings": { "fallback": "coton-nil.jpg", "title": "Le coton du Nil", "text": "Récolté dans le delta, là où pousse le coton à fibre extra-longue. Cueilli à la main pour ne pas casser la fibre." } },
+    { "type": "step", "settings": { "fallback": "atelier-tissage.jpg", "title": "Le tissage", "text": "Filé fin puis tissé en éponge dense et souple. Assez épais pour couvrir, assez léger pour respirer sous 40 °C." } },
+    { "type": "step", "settings": { "fallback": "pliage-boite.jpg", "title": "La finition", "text": "Ourlé à plat, contrôlé pièce par pièce, plié à la main dans son coffret avec la carte de la talbiya." } }
+  ] } ]
+}
+{% endschema %}

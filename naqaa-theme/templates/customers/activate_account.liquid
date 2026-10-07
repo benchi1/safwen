@@ -1,0 +1,9 @@
+<header class="page-head"><div class="wrap"><h1 class="h-1 grad-text">Choisir un mot de passe</h1></div></header>
+<section class="section" style="padding-top:56px"><div class="wrap wrap--narrow">
+  {%- form 'activate_account' -%}
+    {%- if form.errors -%}<p class="form-msg form-msg--err">{{ form.errors | default_errors }}</p>{%- endif -%}
+    <div class="field"><label for="p1">Mot de passe</label><input id="p1" type="password" name="customer[password]" autocomplete="new-password"></div>
+    <div class="field"><label for="p2">Confirmation</label><input id="p2" type="password" name="customer[password_confirmation]" autocomplete="new-password"></div>
+    <button class="btn" type="submit">Valider</button>
+  {%- endform -%}
+</div></section>

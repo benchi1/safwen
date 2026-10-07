@@ -1,0 +1,25 @@
+<section class="section">
+  <div class="wrap">
+    <div class="head reveal"><p class="kicker">{{ section.settings.kicker }}</p><h2 class="h-1 grad-text">{{ section.settings.title }}</h2></div>
+    <ol class="howto" style="padding:0;margin:0">
+      {%- for block in section.blocks -%}<li class="reveal" {{ block.shopify_attributes }}><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></li>{%- endfor -%}
+    </ol>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Comment le porter",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Sur-titre", "default": "En une minute" },
+    { "type": "inline_richtext", "id": "title", "label": "Titre", "default": "Comment <em>le porter.</em>" }
+  ],
+  "blocks": [ { "type": "s", "name": "Étape", "settings": [ { "type": "text", "id": "title", "label": "Titre" }, { "type": "textarea", "id": "text", "label": "Texte" } ] } ],
+  "max_blocks": 4,
+  "presets": [ { "name": "Comment le porter", "blocks": [
+    { "type": "s", "settings": { "title": "Préparez-vous", "text": "Ghusl, ongles coupés, parfum sur le corps et jamais sur le tissu." } },
+    { "type": "s", "settings": { "title": "Nouez l'izar", "text": "Autour de la taille, pan droit dessous, pan gauche dessus. Roulez le haut pour le bloquer." } },
+    { "type": "s", "settings": { "title": "Fixez la ceinture", "text": "Elle tient l'izar sans serrer et garde vos papiers contre vous." } },
+    { "type": "s", "settings": { "title": "Posez le rida", "text": "Sur les deux épaules. Au tawaf, passez-le sous l'aisselle droite." } }
+  ] } ]
+}
+{% endschema %}

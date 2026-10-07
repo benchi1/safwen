@@ -1,0 +1,10 @@
+<header class="page-head"><div class="wrap"><h1 class="h-display grad-text">Mon compte</h1><p class="lede" style="margin-top:12px">{{ customer.first_name }} · <a href="{{ routes.account_logout_url }}">Se déconnecter</a></p></div></header>
+<section class="section" style="padding-top:56px"><div class="wrap wrap--narrow">
+  <h2 class="h-2">Mes commandes</h2>
+  {%- paginate customer.orders by 20 -%}
+    {%- for order in customer.orders -%}
+      <div class="line" style="grid-template-columns:1fr auto auto"><a href="{{ order.customer_url }}">{{ order.name }}</a><span>{{ order.created_at | date: format: 'date' }}</span><span class="price">{{ order.total_price | money }}</span></div>
+    {%- else -%}<p class="lede" style="margin-top:16px">Aucune commande pour l'instant.</p>{%- endfor -%}
+  {%- endpaginate -%}
+  <p style="margin-top:28px"><a class="link" href="{{ routes.account_addresses_url }}">Mes adresses</a></p>
+</div></section>

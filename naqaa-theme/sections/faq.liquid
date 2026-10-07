@@ -1,0 +1,36 @@
+<section class="section bg-pattern" id="faq">
+  <div class="wrap">
+    <div class="head head--center reveal"><p class="kicker">{{ section.settings.kicker }}</p><h2 class="h-1 grad-text">{{ section.settings.title }}</h2></div>
+    <div class="faq">
+      {%- for block in section.blocks -%}
+        <details {{ block.shopify_attributes }}><summary>{{ block.settings.q }}</summary><div class="faq__a rte">{{ block.settings.a }}</div></details>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{%- if section.blocks.size > 0 -%}
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+  {%- for block in section.blocks -%}{ "@type": "Question", "name": {{ block.settings.q | json }}, "acceptedAnswer": { "@type": "Answer", "text": {{ block.settings.a | strip_html | json }} } }{% unless forloop.last %},{% endunless %}{%- endfor -%}
+] }
+</script>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Questions fréquentes",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Sur-titre", "default": "Questions" },
+    { "type": "inline_richtext", "id": "title", "label": "Titre", "default": "Avant de <em>partir.</em>" }
+  ],
+  "blocks": [ { "type": "qa", "name": "Question", "settings": [
+    { "type": "text", "id": "q", "label": "Question" },
+    { "type": "richtext", "id": "a", "label": "Réponse" }
+  ] } ],
+  "presets": [ { "name": "Questions fréquentes", "blocks": [
+    { "type": "qa", "settings": { "q": "L'éponge, ce n'est pas trop chaud ?", "a": "<p>Non, c'est la matière qui compte. Le coton absorbe la sueur et laisse passer l'air : vous avez moins chaud qu'avec un tissu fin en polyester qui colle à la peau.</p>" } },
+    { "type": "qa", "settings": { "q": "Le telekung convient-il pour la Omra ?", "a": "<p>Oui. En état d'ihram, la femme porte un vêtement ample et couvrant, de la couleur de son choix, le visage et les mains découverts. Le telekung couvre tout le corps et laisse le visage libre.</p>" } },
+    { "type": "qa", "settings": { "q": "Quand commander ?", "a": "<p>Idéalement deux semaines avant le départ, pour le laver une fois et apprendre à le nouer. Si vous partez demain, choisissez l'express : commandé avant 13 h, livré le lendemain.</p>" } },
+    { "type": "qa", "settings": { "q": "Comment l'entretenir ?", "a": "<p>Machine à 40 °C, sans adoucissant parfumé ni javel, séchage à l'air libre. Sur place, un lavage à la main suffit : il sèche en quelques heures.</p>" } }
+  ] } ]
+}
+{% endschema %}

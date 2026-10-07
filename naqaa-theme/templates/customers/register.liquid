@@ -1,0 +1,11 @@
+<header class="page-head"><div class="wrap"><h1 class="h-display grad-text">Créer un compte</h1></div></header>
+<section class="section" style="padding-top:56px"><div class="wrap wrap--narrow">
+  {%- form 'create_customer' -%}
+    {%- if form.errors -%}<p class="form-msg form-msg--err">{{ form.errors | default_errors }}</p>{%- endif -%}
+    <div class="field"><label for="g-first">Prénom</label><input id="g-first" type="text" name="customer[first_name]" autocomplete="given-name"></div>
+    <div class="field"><label for="g-last">Nom</label><input id="g-last" type="text" name="customer[last_name]" autocomplete="family-name"></div>
+    <div class="field"><label for="g-email">E-mail</label><input id="g-email" type="email" name="customer[email]" autocomplete="email" required></div>
+    <div class="field"><label for="g-pw">Mot de passe</label><input id="g-pw" type="password" name="customer[password]" autocomplete="new-password"></div>
+    <button class="btn" type="submit">Créer mon compte</button>
+  {%- endform -%}
+</div></section>

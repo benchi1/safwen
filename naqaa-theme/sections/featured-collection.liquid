@@ -1,0 +1,48 @@
+{%- assign col = section.settings.collection -%}
+<section class="section" id="collection">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="kicker">{{ section.settings.kicker }}</p>
+      <h2 class="h-1 grad-text">{{ section.settings.title }}</h2>
+    </div>
+    <div class="grid-products">
+      {%- if col != blank -%}
+        {%- for product in col.products limit: 6 -%}
+          {%- liquid
+            assign badge = ''
+            if forloop.first and section.settings.badge_first != blank
+              assign badge = section.settings.badge_first
+            endif
+          -%}
+          {% render 'product-card', product: product, badge: badge %}
+        {%- endfor -%}
+      {%- else -%}
+        {%- for i in (1..3) -%}<div class="card"><div class="card__media">{{ 'product-1' | placeholder_svg_tag }}</div></div>{%- endfor -%}
+      {%- endif -%}
+    </div>
+    {%- if section.settings.show_family and col != blank and col.products_count > 1 -%}
+      {%- assign fam_total = 0 -%}
+      {%- capture fam_ids -%}{%- for p in col.products limit: 3 -%}{{ p.selected_or_first_available_variant.id }}{% unless forloop.last %},{% endunless %}{%- assign fam_total = fam_total | plus: p.price -%}{%- endfor -%}{%- endcapture -%}
+      <div class="family reveal">
+        <div class="family__imgs">{%- for p in col.products limit: 3 -%}{{ p.featured_media.preview_image | image_url: width: 160 | image_tag: loading: 'lazy', alt: '' }}{%- endfor -%}</div>
+        <div><h3>{{ section.settings.family_title }}</h3><p>{{ section.settings.family_text }} <b>{{ fam_total | money }}</b>, livraison offerte.</p></div>
+        <button class="btn" type="button" data-add-many="{{ fam_ids }}">Ajouter les trois</button>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Collection en vedette",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Sur-titre", "default": "La collection" },
+    { "type": "inline_richtext", "id": "title", "label": "Titre", "default": "Un seul tissu. <em>Toute la famille.</em>" },
+    { "type": "collection", "id": "collection", "label": "Collection" },
+    { "type": "text", "id": "badge_first", "label": "Badge du premier produit", "default": "Le plus choisi" },
+    { "type": "checkbox", "id": "show_family", "label": "Afficher le pack famille", "default": true },
+    { "type": "text", "id": "family_title", "label": "Titre pack famille", "default": "Partir ensemble" },
+    { "type": "text", "id": "family_text", "label": "Texte pack famille", "default": "L'ihram du père, celui du fils et le telekung de la mère, dans un seul colis :" }
+  ],
+  "presets": [ { "name": "Collection en vedette" } ]
+}
+{% endschema %}

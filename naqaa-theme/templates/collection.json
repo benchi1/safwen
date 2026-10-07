@@ -1,0 +1,65 @@
+{
+ "sections": {
+  "main": {
+   "type": "main-collection",
+   "settings": {}
+  },
+  "seg": {
+   "type": "difference",
+   "settings": {},
+   "blocks": {
+    "difference-b0": {
+     "type": "tab",
+     "settings": {
+      "tab": "Santé",
+      "stat": "×20",
+      "label": "Le coton absorbe environ vingt fois plus d'humidité que le polyester.",
+      "points": "La peau reste sèche. :: C'est l'humidité qui transforme un simple frottement en brûlure entre les cuisses. Un tissu qui boit la sueur coupe le problème à la source.\nUn toucher plus doux. :: La fibre extra-longue laisse moins de bouts de fibres à la surface du fil. Le tissu glisse sur la peau au lieu de l'accrocher.\nRien de synthétique, rien de parfumé. :: Aucun plastique qui chauffe, aucun apprêt parfumé : important quand le parfum est interdit en état d'ihram."
+     }
+    },
+    "difference-b1": {
+     "type": "tab",
+     "settings": {
+      "tab": "Excellence",
+      "stat": "35 mm",
+      "label": "La longueur de fibre qui fait la réputation du coton d'Égypte.",
+      "points": "Le coton du linge d'exception. :: Celui des draps des grands hôtels, choisi ici pour le vêtement le plus important de votre vie.\nUne éponge dense et régulière. :: Elle tombe bien, couvre sans transparence et ne se déforme pas quand vous marchez.\nUn coffret, pas un sachet. :: Plié à la main, accompagné de la carte de la talbiya. On ouvre un Naqaa comme on ouvre un cadeau."
+     }
+    },
+    "difference-b2": {
+     "type": "tab",
+     "settings": {
+      "tab": "Durabilité",
+      "stat": "Des années",
+      "label": "Un tissu qui traverse les voyages.",
+      "points": "Un fil plus solide. :: Les fibres longues se tiennent mieux entre elles : le tissu résiste aux lavages répétés et bouloche moins.\nIl s'adoucit avec le temps. :: Le coton de qualité gagne en souplesse à chaque lavage au lieu de s'user.\nUn ihram, plusieurs voyages. :: Votre première Omra, celles qui suivront, puis le Hajj. Le même tissu, fidèle."
+     }
+    },
+    "difference-b3": {
+     "type": "tab",
+     "settings": {
+      "tab": "Transmission",
+      "stat": "Une vie",
+      "label": "Un ihram, une histoire.",
+      "points": "On le garde. :: Beaucoup de pèlerins conservent leur ihram toute leur vie, comme le témoin de leur voyage.\nOn le transmet. :: Il passe du père au fils, pour une première Omra qui ressemble à la sienne.\nOn le garde pour le dernier voyage. :: Certains le conservent jusqu'au bout. Un tissu digne de ce moment ne peut pas être un tissu au rabais."
+     }
+    }
+   },
+   "block_order": [
+    "difference-b0",
+    "difference-b1",
+    "difference-b2",
+    "difference-b3"
+   ]
+  },
+  "ship": {
+   "type": "shipping",
+   "settings": {}
+  }
+ },
+ "order": [
+  "main",
+  "seg",
+  "ship"
+ ]
+}

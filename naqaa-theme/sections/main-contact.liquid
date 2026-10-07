@@ -1,0 +1,16 @@
+<header class="page-head"><div class="wrap"><h1 class="h-display grad-text">{{ page.title }}</h1>{%- if page.content != blank -%}<div class="lede" style="margin-top:16px">{{ page.content }}</div>{%- endif -%}</div></header>
+<section class="section" style="padding-top:64px">
+  <div class="wrap wrap--narrow">
+    {%- form 'contact' -%}
+      {%- if form.posted_successfully? -%}<p class="form-msg">Merci, votre message est bien parti. Nous répondons sous 24 h ouvrées.</p>{%- endif -%}
+      {%- if form.errors -%}<p class="form-msg form-msg--err">{{ form.errors | default_errors }}</p>{%- endif -%}
+      <div class="field"><label for="c-name">Nom</label><input id="c-name" type="text" name="contact[name]" autocomplete="name" value="{{ form.name }}"></div>
+      <div class="field"><label for="c-email">E-mail</label><input id="c-email" type="email" name="contact[email]" autocomplete="email" value="{{ form.email }}" required></div>
+      <div class="field"><label for="c-msg">Message</label><textarea id="c-msg" name="contact[body]" rows="6">{{ form.body }}</textarea></div>
+      <button class="btn" type="submit">Envoyer</button>
+    {%- endform -%}
+  </div>
+</section>
+{% schema %}
+{ "name": "Contact" }
+{% endschema %}

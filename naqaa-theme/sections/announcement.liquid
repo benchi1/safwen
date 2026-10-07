@@ -1,0 +1,22 @@
+<div class="announce" role="region" aria-label="Annonce">
+  <div class="announce__track">
+    {%- for block in section.blocks -%}
+      <span {{ block.shopify_attributes }}>{{ block.settings.text }}</span>
+    {%- endfor -%}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Barre d'annonce",
+  "class": "section-announce",
+  "blocks": [
+    { "type": "message", "name": "Message", "settings": [ { "type": "inline_richtext", "id": "text", "label": "Texte", "default": "<b>Livraison offerte</b> en 3 jours" } ] }
+  ],
+  "max_blocks": 4,
+  "default": { "blocks": [
+    { "type": "message", "settings": { "text": "<b>Livraison offerte</b> en 3 jours" } },
+    { "type": "message", "settings": { "text": "Express 24 h disponible" } },
+    { "type": "message", "settings": { "text": "Retours sous 14 jours" } }
+  ] }
+}
+{% endschema %}

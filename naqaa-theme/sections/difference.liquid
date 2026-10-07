@@ -1,0 +1,71 @@
+<section class="section" id="difference">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="kicker">{{ section.settings.kicker }}</p>
+      <h2 class="h-1 grad-text">{{ section.settings.title }}</h2>
+      <p class="lede">{{ section.settings.text }}</p>
+    </div>
+    {%- if section.settings.show_table -%}
+    <div class="compare reveal">
+      <table>
+        <thead><tr><th></th><th>{{ section.settings.them_title }}<small>{{ section.settings.them_sub }}</small></th><th class="us">{{ section.settings.us_title }}<small>{{ section.settings.us_sub }}</small></th></tr></thead>
+        <tbody>
+          {%- assign rows = section.settings.rows | newline_to_br | split: '<br />' -%}
+          {%- for row in rows -%}
+            {%- assign c = row | strip | split: '|' -%}
+            {%- if c.size == 3 -%}<tr><td>{{ c[0] | strip }}</td><td class="them">{{ c[1] | strip }}</td><td class="us">{{ c[2] | strip }}</td></tr>{%- endif -%}
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+    {%- endif -%}
+    {%- if section.blocks.size > 0 -%}
+    <div class="tabs" role="tablist" aria-label="Nos engagements" data-tabs="{{ section.id }}">
+      {%- for block in section.blocks -%}
+        <button type="button" role="tab" id="tab-{{ block.id }}" aria-controls="panel-{{ block.id }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" data-tab="{{ block.id }}">{{ block.settings.tab }}</button>
+      {%- endfor -%}
+    </div>
+    {%- for block in section.blocks -%}
+      <div class="panel" role="tabpanel" id="panel-{{ block.id }}" aria-labelledby="tab-{{ block.id }}" data-panel="{{ block.id }}" {% unless forloop.first %}hidden{% endunless %} {{ block.shopify_attributes }}>
+        <div><p class="panel__stat"{% if block.settings.stat.size > 5 %} style="font-size:clamp(60px,7.5vw,104px)"{% endif %}>{{ block.settings.stat }}</p><p class="panel__lbl">{{ block.settings.label }}</p></div>
+        <ul>
+          {%- assign items = block.settings.points | newline_to_br | split: '<br />' -%}
+          {%- for it in items -%}
+            {%- assign parts = it | strip | split: '::' -%}
+            {%- if parts[0] != blank -%}<li>{% render 'icon-star' %}<span><b>{{ parts[0] | strip }}</b> {{ parts[1] | strip }}</span></li>{%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    {%- endfor -%}
+    {%- endif -%}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "La différence",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Sur-titre", "default": "La différence" },
+    { "type": "inline_richtext", "id": "title", "label": "Titre", "default": "Pourquoi <em>Naqaa Ihram</em> et pas un ihram low cost ?" },
+    { "type": "textarea", "id": "text", "label": "Texte", "default": "Parce que ce tissu reste contre votre peau pendant des heures, sous 40 °C, dans la foule. Avant le style, avant le prix, il y a votre santé." },
+    { "type": "checkbox", "id": "show_table", "label": "Tableau comparatif", "default": true },
+    { "type": "text", "id": "them_title", "label": "Colonne concurrent", "default": "Ihram low cost" },
+    { "type": "text", "id": "them_sub", "label": "Sous-titre concurrent", "default": "Souvent 15 à 19 €" },
+    { "type": "text", "id": "us_title", "label": "Colonne Naqaa", "default": "Naqaa Ihram" },
+    { "type": "text", "id": "us_sub", "label": "Sous-titre Naqaa", "default": "39,90 €, tout inclus" },
+    { "type": "textarea", "id": "rows", "label": "Lignes (critère | eux | nous)", "default": "Matière | Polyester ou mélange coton | 100 % coton d'Égypte, fibre extra-longue\nChaleur | La sueur reste sur la peau | Absorbée, la peau reste sèche\nFrottement | Tissu rêche, bords épais | Éponge douce, ourlets plats\nDurée de vie | Un voyage | Plusieurs Omras et le Hajj\nDans la boîte | Le tissu seul | Ceinture, pochette, carte de la talbiya" }
+  ],
+  "blocks": [ { "type": "tab", "name": "Onglet", "settings": [
+    { "type": "text", "id": "tab", "label": "Onglet", "default": "Santé" },
+    { "type": "text", "id": "stat", "label": "Chiffre", "default": "×20" },
+    { "type": "text", "id": "label", "label": "Légende du chiffre" },
+    { "type": "textarea", "id": "points", "label": "Points (Titre :: texte, un par ligne)" }
+  ] } ],
+  "max_blocks": 5,
+  "presets": [ { "name": "La différence", "blocks": [
+    { "type": "tab", "settings": { "tab": "Santé", "stat": "×20", "label": "Le coton absorbe environ vingt fois plus d'humidité que le polyester.", "points": "La peau reste sèche. :: C'est l'humidité qui transforme un simple frottement en brûlure entre les cuisses. Un tissu qui boit la sueur coupe le problème à la source.\nUn toucher plus doux. :: La fibre extra-longue laisse moins de bouts de fibres à la surface du fil. Le tissu glisse sur la peau au lieu de l'accrocher.\nRien de synthétique, rien de parfumé. :: Aucun plastique qui chauffe, aucun apprêt parfumé : important quand le parfum est interdit en état d'ihram." } },
+    { "type": "tab", "settings": { "tab": "Excellence", "stat": "35 mm", "label": "La longueur de fibre qui fait la réputation du coton d'Égypte.", "points": "Le coton du linge d'exception. :: Celui des draps des grands hôtels, choisi ici pour le vêtement le plus important de votre vie.\nUne éponge dense et régulière. :: Elle tombe bien, couvre sans transparence et ne se déforme pas quand vous marchez.\nUn coffret, pas un sachet. :: Plié à la main, accompagné de la carte de la talbiya. On ouvre un Naqaa comme on ouvre un cadeau." } },
+    { "type": "tab", "settings": { "tab": "Durabilité", "stat": "Des années", "label": "Un tissu qui traverse les voyages.", "points": "Un fil plus solide. :: Les fibres longues se tiennent mieux entre elles : le tissu résiste aux lavages répétés et bouloche moins.\nIl s'adoucit avec le temps. :: Le coton de qualité gagne en souplesse à chaque lavage au lieu de s'user.\nUn ihram, plusieurs voyages. :: Votre première Omra, celles qui suivront, puis le Hajj. Le même tissu, fidèle." } },
+    { "type": "tab", "settings": { "tab": "Transmission", "stat": "Une vie", "label": "Un ihram, une histoire.", "points": "On le garde. :: Beaucoup de pèlerins conservent leur ihram toute leur vie, comme le témoin de leur voyage.\nOn le transmet. :: Il passe du père au fils, pour une première Omra qui ressemble à la sienne.\nOn le garde pour le dernier voyage. :: Certains le conservent jusqu'au bout. Un tissu digne de ce moment ne peut pas être un tissu au rabais." } }
+  ] } ]
+}
+{% endschema %}

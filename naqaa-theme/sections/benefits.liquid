@@ -1,0 +1,28 @@
+<section class="section bg-pattern">
+  <div class="wrap">
+    <div class="head reveal"><p class="kicker">{{ section.settings.kicker }}</p><h2 class="h-1 grad-text">{{ section.settings.title }}</h2></div>
+    <div class="benefits">
+      {%- for block in section.blocks -%}
+        <div class="benefit reveal" {{ block.shopify_attributes }}><span class="benefit__k">{{ block.settings.k }}</span><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Bénéfices chiffrés",
+  "settings": [
+    { "type": "text", "id": "kicker", "label": "Sur-titre", "default": "Pensé pour là-bas" },
+    { "type": "inline_richtext", "id": "title", "label": "Titre", "default": "Ce que votre corps va vivre, <em>nous l'avons prévu.</em>" }
+  ],
+  "blocks": [ { "type": "b", "name": "Bénéfice", "settings": [
+    { "type": "text", "id": "k", "label": "Chiffre" }, { "type": "text", "id": "title", "label": "Titre" }, { "type": "textarea", "id": "text", "label": "Texte" }
+  ] } ],
+  "max_blocks": 3,
+  "presets": [ { "name": "Bénéfices chiffrés", "blocks": [
+    { "type": "b", "settings": { "k": "40 °C", "title": "Il respire", "text": "Le coton évacue l'humidité. Vous restez au sec pendant le tawaf, même aux heures chaudes." } },
+    { "type": "b", "settings": { "k": "3 km", "title": "Sans frottement", "text": "L'éponge douce et l'izar bien tenu protègent l'intérieur des cuisses pendant le sa'i." } },
+    { "type": "b", "settings": { "k": "+1", "title": "Prêt pour la suite", "text": "Lavable et résistant, il vous accompagnera pour votre prochaine Omra ou votre Hajj." } }
+  ] } ]
+}
+{% endschema %}

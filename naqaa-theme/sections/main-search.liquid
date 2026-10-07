@@ -1,0 +1,28 @@
+<header class="page-head"><div class="wrap">
+  <h1 class="h-display grad-text">Rechercher</h1>
+  <form action="{{ routes.search_url }}" method="get" role="search" class="news" style="max-width:560px;border-color:var(--c-ink)">
+    <label class="visually-hidden" for="q">Rechercher</label>
+    <input id="q" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Ihram, Omra, Rawdah…" style="color:var(--c-ink)">
+    <button type="submit" style="color:var(--c-teal)">Chercher</button>
+  </form>
+</div></header>
+<section class="section" style="padding-top:56px"><div class="wrap">
+  {%- if search.performed -%}
+    {%- paginate search.results by 12 -%}
+      <p class="lede" style="margin-bottom:32px">{{ search.results_count }} résultat{% if search.results_count > 1 %}s{% endif %} pour « {{ search.terms | escape }} »</p>
+      <div class="grid-products">
+        {%- for item in search.results -%}
+          {%- case item.object_type -%}
+            {%- when 'product' -%}{% render 'product-card', product: item %}
+            {%- when 'article' -%}{% render 'article-card', article: item %}
+            {%- else -%}<a class="jcard" href="{{ item.url }}"><div class="jcard__b"><h3>{{ item.title }}</h3></div></a>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+      {%- if paginate.pages > 1 -%}<nav class="pagination">{{ paginate | default_pagination }}</nav>{%- endif -%}
+    {%- endpaginate -%}
+  {%- endif -%}
+</div></section>
+{% schema %}
+{ "name": "Recherche" }
+{% endschema %}

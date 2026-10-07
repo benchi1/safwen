@@ -1,0 +1,41 @@
+<header class="page-head">
+  <div class="jhead__ros" aria-hidden="true">{% render 'rosette' %}</div>
+  <div class="wrap">
+    <p class="crumbs"><a href="{{ routes.root_url }}">Accueil</a> / <a href="{{ blog.url }}">{{ blog.title }}</a></p>
+    <h1 class="h-1 grad-text" style="max-width:22ch">{{ article.title }}</h1>
+    {%- assign words = article.content | strip_html | split: ' ' | size -%}
+    <p class="ameta"><span>Par {{ article.author }}</span><span>{{ article.published_at | date: format: 'date' }}</span><span>{{ words | divided_by: 200 | plus: 1 }} min de lecture</span></p>
+  </div>
+</header>
+<div class="wrap awrap">
+  <nav class="toc" aria-label="Sommaire" data-toc><p>Sommaire</p></nav>
+  <article class="prose" data-prose>
+    {%- if article.image -%}{{ article.image | image_url: width: 1400 | image_tag: loading: 'eager', widths: '600,1000,1400', sizes: '(max-width: 900px) 100vw, 70ch', alt: article.title }}{%- endif -%}
+    {{ article.content }}
+    {%- assign up = collections[settings.upsell_collection] -%}
+    {%- assign hero_p = up.products.first -%}
+    <aside class="acta">
+      {%- if hero_p -%}{{ hero_p.featured_media.preview_image | image_url: width: 240 | image_tag: loading: 'lazy', alt: '' }}{%- endif -%}
+      <div><h3>Partez avec un ihram qui ne vous trahit pas.</h3><p>100 % coton d'Égypte, ceinture et carte de la talbiya incluses. Livraison offerte en 3 jours, express en 24 h.</p>
+      <a class="btn" href="{% if hero_p %}{{ hero_p.url }}{% else %}{{ routes.all_products_collection_url }}{% endif %}">Découvrir Naqaa Ihram</a></div>
+    </aside>
+    {%- if article.tags.size > 0 -%}<div class="tags">{%- for tag in article.tags -%}<a href="{{ blog.url }}/tagged/{{ tag | handleize }}">{{ tag }}</a>{%- endfor -%}</div>{%- endif -%}
+  </article>
+</div>
+<section class="section bg-pattern">
+  <div class="wrap">
+    <div class="head"><p class="kicker">À lire ensuite</p><h2 class="h-1 grad-text">Continuer la <em>préparation</em></h2></div>
+    <div class="jgrid">
+      {%- assign shown = 0 -%}
+      {%- for a in blog.articles -%}
+        {%- if a.id != article.id and shown < 3 -%}{% render 'article-card', article: a %}{%- assign shown = shown | plus: 1 -%}{%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "Article", "headline": {{ article.title | json }}, "datePublished": {{ article.published_at | date: '%Y-%m-%d' | json }}, "author": { "@type": "Organization", "name": {{ shop.name | json }} }, "publisher": { "@type": "Organization", "name": {{ shop.name | json }} }{% if article.image %}, "image": {{ article.image | image_url: width: 1200 | prepend: 'https:' | json }}{% endif %} }
+</script>
+{% schema %}
+{ "name": "Article" }
+{% endschema %}

@@ -281,7 +281,13 @@ requestAnimationFrame(frame);
 
 // ---------- Export 4K ----------
 const ui = document.getElementById('ui'), title = document.getElementById('title');
-const download = (blob, name) => { const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; a.click(); };
+// Dans claude.ai, l'enregistrement passe par la capacité downloads ; en local, par un lien classique.
+const dl = window.claude?.use ? window.claude.use('downloads').catch(() => null) : Promise.resolve(null);
+const download = async (blob, name) => {
+  const d = await dl;
+  if (d) { try { await d.save({ filename:name, data:blob }); } catch (e) { if (e?.code !== 'declined') console.warn(e); } return; }
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; a.click();
+};
 document.getElementById('png').onclick = () => {
   fixedSize=[3840,2160]; resize(); composer.render();
   renderer.domElement.toBlob(b=>{ download(b,'rafale-eiffel-4k.png'); fixedSize=null; resize(); });

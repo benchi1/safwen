@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rafale sur Paris</title>
+<style>
+  :root { --fg:#f4efe6; --bg:#05070d; }
+  html,body { margin:0; height:100%; background:var(--bg); overflow:hidden; font-family:system-ui,-apple-system,sans-serif; }
+  canvas { display:block; width:100vw !important; height:100vh !important; object-fit:contain; }
+  #ui { position:fixed; left:16px; bottom:16px; display:flex; gap:8px; flex-wrap:wrap; }
+  #ui button { background:rgba(10,14,24,.55); color:var(--fg); border:1px solid rgba(255,255,255,.18);
+    padding:8px 14px; border-radius:999px; font-size:13px; letter-spacing:.02em; cursor:pointer; backdrop-filter:blur(8px); }
+  #ui button:hover { background:rgba(255,255,255,.12); }
+  #title { position:fixed; top:22px; left:0; right:0; text-align:center; color:var(--fg); pointer-events:none;
+    font-weight:300; letter-spacing:.5em; font-size:clamp(11px,1.4vw,18px); opacity:.85; text-transform:uppercase; }
+  .hidden { display:none !important; }
+</style>
+</head>
+<body>
+<div id="title">Rafale · Paris</div>
+<div id="ui">
+  <button id="png">Capture PNG 4K</button>
+  <button id="rec">Enregistrer vidéo 4K</button>
+  <button id="hide">Masquer (H)</button>
+</div>
+<script type="importmap">
+{ "imports": {
+  "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+} }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+const LOOP = 14; // secondes par passage
+const renderer = new THREE.WebGLRenderer({ antialias:true, preserveDrawingBuffer:true });
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.05;
+document.body.prepend(renderer.domElement);
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.FogExp2(0x3a3050, 0.00011);
+const camera = new THREE.PerspectiveCamera(42, 16/9, 1, 20000);
+
+// ---------- Ciel crépuscule ----------
+scene.add(new THREE.Mesh(new THREE.SphereGeometry(12000, 32, 16), new THREE.ShaderMaterial({
+  side: THREE.BackSide, depthWrite:false, fog:false,
+  uniforms: { sun: { value: new THREE.Vector3(-1, 0.04, -0.35).normalize() } },
+  vertexShader: `varying vec3 vDir; void main(){ vDir = normalize(position); gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }`,
+  fragmentShader: `uniform vec3 sun; varying vec3 vDir;
+    void main(){
+      float h = max(vDir.y, 0.);
+      vec3 col = mix(vec3(1.0,.52,.28), vec3(.36,.30,.55), smoothstep(0.,.18,h));
+      col = mix(col, vec3(.04,.07,.18), smoothstep(.15,.7,h));
+      float s = max(dot(vDir, sun), 0.);
+      col += vec3(1.,.55,.25)*pow(s,18.)*.55 + vec3(.9,.45,.3)*pow(s,3.)*.12 + vec3(1.,.8,.5)*pow(s,300.)*2.;
+      if (vDir.y < 0.) col = mix(vec3(1.0,.52,.28)*.5, vec3(.05,.05,.09), smoothstep(0.,.05,-vDir.y));
+      gl_FragColor = vec4(col,1.);
+    }`
+})));
+
+scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), .04).texture;
+scene.add(new THREE.HemisphereLight(0xffb27a, 0x4a5578, 1.1));
+const sun = new THREE.DirectionalLight(0xffa060, 2.2);
+sun.position.set(-3000, 300, -1000);
+scene.add(sun);
+const fill = new THREE.DirectionalLight(0x9fb4ff, .9); fill.position.set(800, -200, 900); scene.add(fill);
+
+// ---------- Sol, Champ-de-Mars, Seine, ville ----------
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(30000, 30000), new THREE.MeshStandardMaterial({ color:0x0d0f16, roughness:1 }));
+ground.rotation.x = -Math.PI/2; scene.add(ground);
+const champ = new THREE.Mesh(new THREE.PlaneGeometry(220, 900), new THREE.MeshStandardMaterial({ color:0x18241a, roughness:1 }));
+champ.rotation.x = -Math.PI/2; champ.position.set(0, 0.5, -560); scene.add(champ);
+
+const seineCurve = new THREE.CatmullRomCurve3([-3000,-1200,-400,0,500,1400,3000].map((x,i)=>new THREE.Vector3(x, 1, 260 + [500,200,90,130,170,0,-400][i])));
+{
+  const pts = seineCurve.getSpacedPoints(200), pos = [];
+  for (let i=0;i<pts.length;i++){
+    const t = seineCurve.getTangentAt(i/(pts.length-1)), n = new THREE.Vector3(-t.z,0,t.x).multiplyScalar(70);
+    pos.push(pts[i].x+n.x, 1, pts[i].z+n.z, pts[i].x-n.x, 1, pts[i].z-n.z);
+  }
+  const idx = []; for (let i=0;i<pts.length-1;i++){ const a=i*2; idx.push(a,a+1,a+2, a+1,a+3,a+2); }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos,3)); g.setIndex(idx); g.computeVertexNormals();
+  scene.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color:0x1b2238, emissive:0x3a2a40, emissiveIntensity:.6, roughness:.15, metalness:.8, side:THREE.DoubleSide })));
+}
+
+{
+  const N = 3500, box = new THREE.BoxGeometry(1,1,1); box.translate(0,.5,0);
+  const city = new THREE.InstancedMesh(box, new THREE.MeshStandardMaterial({ color:0x2a2a33, roughness:.9 }), N);
+  const m = new THREE.Matrix4(), lights = [], lc = [];
+  let k = 0;
+  while (k < N){
+    const r = 180 + Math.pow(Math.random(),.7)*4500, a = Math.random()*Math.PI*2;
+    const x = Math.cos(a)*r, z = Math.sin(a)*r;
+    if (Math.abs(x) < 130 && z < 0 && z > -1050) continue;          // Champ-de-Mars
+    if (seineCurve.getPoint(THREE.MathUtils.clamp((x+3000)/6000,0,1)).distanceTo(new THREE.Vector3(x,1,z)) < 110) continue;
+    const w = 25+Math.random()*35, d = 25+Math.random()*35, h = 18+Math.random()*16;
+    m.compose(new THREE.Vector3(x,0,z), new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0,1,0), a), new THREE.Vector3(w,h,d));
+    city.setMatrixAt(k++, m);
+    for (let j=0;j<3;j++){ lights.push(x+(Math.random()-.5)*w, Math.random()*h, z+(Math.random()-.5)*d); const c=new THREE.Color().setHSL(.09+Math.random()*.04,.9,.55+Math.random()*.2); lc.push(c.r,c.g,c.b); }
+  }
+  scene.add(city);
+  const lg = new THREE.BufferGeometry();
+  lg.setAttribute('position', new THREE.Float32BufferAttribute(lights,3));
+  lg.setAttribute('color', new THREE.Float32BufferAttribute(lc,3));
+  scene.add(new THREE.Points(lg, new THREE.PointsMaterial({ size:2.2, vertexColors:true, transparent:true, opacity:.85, depthWrite:false })));
+}
+
+// ---------- Tour Eiffel procédurale (330 m) ----------
+const tower = new THREE.Group(); scene.add(tower);
+const W = h => 1.6 + 61*Math.exp(-h/72);           // demi-largeur selon la hauteur
+const ironMat = new THREE.MeshStandardMaterial({ color:0x4a3520, emissive:0xff9a3c, emissiveIntensity:.22, roughness:.6, metalness:.4 });
+const corners = [[1,1],[1,-1],[-1,-1],[-1,1]];
+const P = (c,h,inset=0) => new THREE.Vector3(c[0]*(W(h)-inset), h, c[1]*(W(h)-inset));
+
+// arêtiers (4 piliers, chacun en 2 membrures jusqu'au 2e étage)
+for (const c of corners){
+  for (const inset of [0, 9]){
+    const pts = []; for (let h=0; h<=324; h+=6) pts.push(P(c,h, h<115 ? inset*(1-h/115) : 0));
+    tower.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 80, 1.5, 6), ironMat));
+  }
+}
+// treillis en croix de Saint-André (instancié)
+const braces = [];
+const lvls = []; for (let h=0; h<300; h+= h<115 ? 9 : 14) lvls.push(h); lvls.push(300);
+for (let i=0;i<lvls.length-1;i++){
+  const h0=lvls[i], h1=lvls[i+1];
+  for (let f=0; f<4; f++){
+    const a=corners[f], b=corners[(f+1)%4];
+    braces.push([P(a,h0),P(b,h1)],[P(b,h0),P(a,h1)]);
+    if (h0<115){ braces.push([P(a,h0),P(a,h1,9*(1-h1/115))],[P(a,h0,9*(1-h0/115)),P(a,h1)]); }
+  }
+  if (i%3===0) for (let f=0;f<4;f++) braces.push([P(corners[f],h0),P(corners[(f+1)%4],h0)]);
+}
+const braceGeo = new THREE.CylinderGeometry(.45,.45,1,5); braceGeo.translate(0,.5,0);
+const braceMesh = new THREE.InstancedMesh(braceGeo, ironMat, braces.length);
+{ const m=new THREE.Matrix4(), up=new THREE.Vector3(0,1,0);
+  braces.forEach(([a,b],i)=>{ const d=b.clone().sub(a); m.compose(a, new THREE.Quaternion().setFromUnitVectors(up, d.clone().normalize()), new THREE.Vector3(1,d.length(),1)); braceMesh.setMatrixAt(i,m); }); }
+tower.add(braceMesh);
+// arches de la base
+for (let f=0; f<4; f++){
+  const a=corners[f], b=corners[(f+1)%4], pts=[];
+  for (let i=0;i<=24;i++){ const t=i/24, h=8+ (1-Math.pow(2*t-1,2))*30; const pa=P(a,h), pb=P(b,h); pts.push(pa.lerp(pb,t)); }
+  tower.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 40, 1.3, 6), ironMat));
+}
+// plateformes
+for (const [h,t] of [[57,7],[115,5],[276,4]]){
+  const s = W(h)*2+6, p = new THREE.Mesh(new THREE.BoxGeometry(s,t,s), ironMat); p.position.y=h; tower.add(p);
+}
+const spire = new THREE.Mesh(new THREE.CylinderGeometry(.6,2.2,26,8), ironMat); spire.position.y=330; tower.add(spire);
+// phare rotatif
+const beamMat = new THREE.MeshBasicMaterial({ color:0xfff1c0, transparent:true, opacity:.05, blending:THREE.AdditiveBlending, depthWrite:false, side:THREE.DoubleSide });
+const beacon = new THREE.Group(); beacon.position.y=318; tower.add(beacon);
+for (const s of [1,-1]){ const g=new THREE.ConeGeometry(60,2600,24,1,true); g.translate(0,-1300,0); g.rotateZ(s*Math.PI/2); beacon.add(new THREE.Mesh(g, beamMat)); }
+// scintillement
+const sparkGeo = new THREE.BufferGeometry(), sp=[];
+for (let i=0;i<2500;i++){ const [a,b]=braces[(Math.random()*braces.length)|0]; const v=a.clone().lerp(b,Math.random()); sp.push(v.x,v.y,v.z); }
+sparkGeo.setAttribute('position', new THREE.Float32BufferAttribute(sp,3));
+const sparkCol = new Float32Array(sp.length); sparkGeo.setAttribute('color', new THREE.BufferAttribute(sparkCol,3));
+tower.add(new THREE.Points(sparkGeo, new THREE.PointsMaterial({ size:3, vertexColors:true, blending:THREE.AdditiveBlending, depthWrite:false, transparent:true })));
+
+// ---------- Rafale (nez vers +X, échelle 1 u = 1 m) ----------
+const jet = new THREE.Group(); scene.add(jet);
+const skin = new THREE.MeshStandardMaterial({ color:0x9aa1aa, roughness:.38, metalness:.55, envMapIntensity:.8 });
+const dark = new THREE.MeshStandardMaterial({ color:0x2b2f36, roughness:.5, metalness:.6 });
+{
+  const prof = [[0,7.6],[.18,7.0],[.45,6.0],[.7,4.6],[.86,2.8],[.92,0],[.95,-4],[.9,-6.4],[.72,-7.4],[0,-7.4]].map(([r,y])=>new THREE.Vector2(r,y));
+  const fus = new THREE.LatheGeometry(prof, 32); fus.rotateZ(-Math.PI/2); fus.scale(1,.95,1.15);
+  jet.add(new THREE.Mesh(fus, skin));
+  const flat = (pts, depth, mat) => { const s=new THREE.Shape(pts.map(([x,y])=>new THREE.Vector2(x,y))); return new THREE.Mesh(new THREE.ExtrudeGeometry(s,{ depth, bevelEnabled:true, bevelThickness:.04, bevelSize:.04, bevelSegments:1 }), mat); };
+  const wing = flat([[2.6,.9],[-5.0,5.45],[-6.5,5.45],[-6.9,.9],[-6.9,-.9],[-6.5,-5.45],[-5.0,-5.45],[2.6,-.9]], .14, skin);
+  wing.geometry.rotateX(Math.PI/2); wing.position.y=-.25; jet.add(wing);
+  const can = flat([[4.6,.7],[3.2,2.6],[2.6,2.6],[2.9,.7],[2.9,-.7],[2.6,-2.6],[3.2,-2.6],[4.6,-.7]], .08, skin);
+  can.geometry.rotateX(Math.PI/2); can.position.y=.35; jet.add(can);
+  const fin = flat([[-3.4,.6],[-6.5,3.9],[-7.3,3.9],[-7.2,.6]], .14, skin); fin.position.z=-.07; jet.add(fin);
+  const glass = new THREE.Mesh(new THREE.SphereGeometry(1,24,12,0,Math.PI*2,0,Math.PI/2), new THREE.MeshStandardMaterial({ color:0x1a1408, roughness:.05, metalness:1, emissive:0x553311, emissiveIntensity:.3 }));
+  glass.scale.set(2.3,.62,.5); glass.position.set(3.6,.62,0); jet.add(glass);
+  for (const z of [.95,-.95]){
+    const intake = new THREE.Mesh(new THREE.BoxGeometry(3.4,.9,.55), dark); intake.position.set(.8,-.35,z); jet.add(intake);
+    const noz = new THREE.Mesh(new THREE.CylinderGeometry(.42,.5,1.1,16,1,true), dark); noz.rotation.z=Math.PI/2; noz.position.set(-7.6,0,z*.48); jet.add(noz);
+  }
+}
+// post-combustion
+const flames = [];
+for (const z of [.46,-.46]){
+  for (const [len,rad,col,op] of [[7,.42,0xff7a2a,.55],[3.5,.28,0x9fd0ff,.9]]){
+    const g = new THREE.ConeGeometry(rad,len,16,1,true); g.translate(0,-len/2,0); g.rotateZ(Math.PI/2);
+    const f = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ color:col, transparent:true, opacity:op, blending:THREE.AdditiveBlending, depthWrite:false }));
+    f.position.set(-8.1,0,z); jet.add(f); flames.push(f);
+  }
+}
+jet.scale.setScalar(4); // lisibilité à distance
+
+// ---------- Fumigènes tricolores ----------
+const MAXP = 9000, LIFE = 6;
+const smokeGeo = new THREE.BufferGeometry();
+const sPos = new Float32Array(MAXP*3), sBirth = new Float32Array(MAXP).fill(-99), sCol = new Float32Array(MAXP*3);
+smokeGeo.setAttribute('position', new THREE.BufferAttribute(sPos,3));
+smokeGeo.setAttribute('birth', new THREE.BufferAttribute(sBirth,1));
+smokeGeo.setAttribute('color', new THREE.BufferAttribute(sCol,3));
+const smokeMat = new THREE.ShaderMaterial({
+  transparent:true, depthWrite:false,
+  uniforms:{ uTime:{value:0}, uScale:{value:500} },
+  vertexShader:`attribute float birth; attribute vec3 color; uniform float uTime, uScale; varying vec3 vC; varying float vA;
+    void main(){ float age = uTime - birth; vA = age < 0. || age > ${LIFE}.0 ? 0. : (1. - age/${LIFE}.0) * min(age*6.,1.);
+      vC = color; vec4 mv = modelViewMatrix*vec4(position,1.); gl_Position = projectionMatrix*mv;
+      gl_PointSize = (7. + age*10.) * uScale / -mv.z; }`,
+  fragmentShader:`varying vec3 vC; varying float vA;
+    void main(){ float d = length(gl_PointCoord-.5); if(d>.5) discard; gl_FragColor = vec4(vC, vA*.5*smoothstep(.5,.0,d)); }`
+});
+const smoke = new THREE.Points(smokeGeo, smokeMat); smoke.frustumCulled=false; scene.add(smoke);
+const emitters = [[-6.2,-.2,5.3, 0x1d4fd8],[-8,0,0, 0xf2f2f2],[-6.2,-.2,-5.3, 0xe11d2a]].map(([x,y,z,c])=>({ p:new THREE.Vector3(x,y,z), c:new THREE.Color(c) }));
+let sHead = 0;
+function emit(t, prevMat){
+  for (const e of emitters){
+    const a = e.p.clone().applyMatrix4(prevMat), b = e.p.clone().applyMatrix4(jet.matrixWorld);
+    for (let i=0;i<6;i++){
+      const v = a.clone().lerp(b, i/6).add(new THREE.Vector3().randomDirection().multiplyScalar(.6));
+      sPos.set([v.x,v.y,v.z], sHead*3); sCol.set([e.c.r,e.c.g,e.c.b], sHead*3); sBirth[sHead]=t - (5-i)/6/60;
+      sHead = (sHead+1)%MAXP;
+    }
+  }
+  smokeGeo.attributes.position.needsUpdate = smokeGeo.attributes.birth.needsUpdate = smokeGeo.attributes.color.needsUpdate = true;
+}
+
+// ---------- Post-traitement ----------
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+const bloom = new UnrealBloomPass(new THREE.Vector2(1,1), .55, .5, .85);
+composer.addPass(bloom);
+composer.addPass(new OutputPass());
+
+let fixedSize = null;
+function resize(){
+  const [w,h] = fixedSize || [innerWidth, innerHeight];
+  renderer.setPixelRatio(fixedSize ? 1 : Math.min(devicePixelRatio, 2));
+  renderer.setSize(w, h, false); composer.setSize(w, h);
+  composer.setPixelRatio(renderer.getPixelRatio());
+  camera.aspect = w/h; camera.updateProjectionMatrix();
+  smokeMat.uniforms.uScale.value = h*renderer.getPixelRatio()*.5;
+}
+addEventListener('resize', resize); resize();
+
+// ---------- Animation ----------
+const ease = x => x*x*(3-2*x);
+const camTarget = new THREE.Vector3(), prevMat = new THREE.Matrix4();
+let t0 = performance.now(), lastSpark = 0, lastU = 1;
+function frame(now){
+  const time = (now - t0)/1000, u = (time % LOOP)/LOOP;
+  if (u < lastU) sBirth.fill(-99); lastU = u;
+  // trajectoire : diagonale qui coupe le cadre de gauche à droite, au-dessus de la flèche
+  const d = THREE.MathUtils.lerp(-2600, 2600, u);
+  const y = 430 + Math.max(0,d)*.09;
+  prevMat.copy(jet.matrixWorld);
+  jet.position.set(d*Math.SQRT1_2, y, -d*Math.SQRT1_2);
+  jet.rotation.set(Math.sin(u*Math.PI*2)*.22, Math.PI/4, d>0 ? Math.atan(.09) : 0, 'YXZ');
+  jet.updateMatrixWorld();
+  if (u > 0.002) emit(time, prevMat);
+  for (const f of flames) f.scale.x = .85 + Math.random()*.3;
+  // caméra : contre-plongée lente autour de la tour, qui accompagne l'avion
+  const orbit = .55 + u*.4;
+  camera.position.set(Math.cos(orbit)*720, 25 + u*45, Math.sin(orbit)*720);
+  const k = ease(THREE.MathUtils.clamp(1 - Math.abs(d)/2000, 0, 1));
+  camTarget.set(0,190,0).lerp(jet.position, .12 + k*.28);
+  camera.lookAt(camTarget);
+  beacon.rotation.y = time*.6;
+  if (time - lastSpark > .08){ lastSpark = time; const on = (Math.floor(time/10)%2===0);
+    for (let i=0;i<sparkCol.length;i+=3){ const v = on && Math.random()<.18 ? 1.6 : 0; sparkCol[i]=v; sparkCol[i+1]=v; sparkCol[i+2]=v*.95; }
+    sparkGeo.attributes.color.needsUpdate = true; }
+  smokeMat.uniforms.uTime.value = time;
+  composer.render();
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+// ---------- Export 4K ----------
+const ui = document.getElementById('ui'), title = document.getElementById('title');
+const download = (blob, name) => { const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download=name; a.click(); };
+document.getElementById('png').onclick = () => {
+  fixedSize=[3840,2160]; resize(); composer.render();
+  renderer.domElement.toBlob(b=>{ download(b,'rafale-eiffel-4k.png'); fixedSize=null; resize(); });
+};
+document.getElementById('rec').onclick = e => {
+  const btn = e.currentTarget; if (btn.disabled) return; btn.disabled = true; btn.textContent = 'Enregistrement…';
+  fixedSize=[3840,2160]; resize(); t0 = performance.now(); lastU = 1;
+  const mime = ['video/webm;codecs=vp9','video/webm;codecs=vp8','video/webm'].find(m=>MediaRecorder.isTypeSupported(m));
+  const rec = new MediaRecorder(renderer.domElement.captureStream(60), { mimeType:mime, videoBitsPerSecond:45e6 }), chunks=[];
+  rec.ondataavailable = ev => chunks.push(ev.data);
+  rec.onstop = () => { download(new Blob(chunks,{type:'video/webm'}),'rafale-eiffel-4k.webm'); fixedSize=null; resize(); btn.disabled=false; btn.textContent='Enregistrer vidéo 4K'; };
+  rec.start(); setTimeout(()=>rec.stop(), LOOP*1000);
+};
+const toggle = () => { ui.classList.toggle('hidden'); title.classList.toggle('hidden'); };
+document.getElementById('hide').onclick = toggle;
+addEventListener('keydown', e => { if (e.key.toLowerCase()==='h') toggle(); });
+</script>
+</body>
+</html>
